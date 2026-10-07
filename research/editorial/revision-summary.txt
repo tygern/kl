@@ -1,0 +1,56 @@
+EDITORIAL REVISION, 7 OCTOBER 2026
+
+Manuscript: results/exceptional-leading.tex
+Title: Leading Kazhdan--Lusztig coefficients with fully commutative lower
+endpoints in type E.
+
+Three Astra reviewers assessed journal style, hierarchy and emphasis, and
+argument presentation. Each reviewed both the original and restructured
+manuscript. Their reports are style.txt, hierarchy.txt, arguments.txt and
+final-style.txt, final-hierarchy.txt, final-arguments.txt in this directory.
+
+APPLIED CHANGES
+
+1. Rewrote title, abstract, and introduction as a research article. The finite
+   E6/E7/E8 theorem and the uniform E_(4r+1) theorem are the two main results,
+   stated on the opening pages. No authorship was invented.
+2. Put definitions, terminal reduction, maximum common descents, parity,
+   and a shared ambient root-iteration lemma before the applications.
+3. Split the uniform argument into seed reality, translated roots/descent
+   sets, and the final coefficient/support/distinctness argument. Explained
+   the sign-to-descent step and maximum independence via a matching.
+4. Presented E13 as r=3 of the uniform theorem. Kept E9 and E10 as
+   complementary fixed-rank applications; removed the duplicated E13 proof.
+5. Consolidated all eleven finite noncommuting terminal rows in one table.
+   Kept the pruning, coset closure, FC completeness, and eligibility reasoning
+   in the main text. Simplified pruning using length-additive reduced words.
+6. Moved exact seed matrices, lowering witnesses, consistency counts, and
+   reproduction inventories to appendices. Removed search chronology,
+   agent/model history, failed-search statistics, and repeated disclaimers
+   from the article; those remain available in the research records.
+7. Retained a precise priority qualification, the distinction between mu
+   and the full polynomial, and conditional status of interval transfer.
+8. Fixed notation and local parameter domains. In particular, finite
+   non-cover vanishing is explicitly restricted to terminal uppers; the
+   global finite theorem remains the 0/1 bound. Restored non-FC in the
+   uniform statement, bound d and T locally, and described the affine
+   cover test with the length-26 filter.
+9. Added the generalized-E numbering diagram and standard equation labels.
+   Removed an orphaned seed-lemma statement and corrected an overfull line.
+
+VALIDATION
+
+Native compilation succeeds. The exported PDF has no overfull lines,
+unresolved references, or compiler warnings. All pages have extracted text,
+pass the margin checks, and were inspected in page contact sheets; the
+opening page, terminal table, and uniform proof were also checked separately.
+The mathematical certificate code is unchanged. The exposition reviewer
+independently checked all printed lowering words and preserved theorem scope.
+No new historical-priority or full-polynomial claim is introduced.
+
+The exact pre-polish source is source-before-polish.txt; it preserves the
+source snapshot covered by the previous mathematical audits. The first-pass
+editing script revise_paper.py is a historical editorial record; subsequent
+copyedits and layout fixes are saved in the final manuscript. Do not use it
+to regenerate the finished paper. Final hashes are in revision-manifest.json
+and results/pdf-build-manifest.json.

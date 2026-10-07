@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "archive_sha256": "79807c779c73d36d26ab1aac4e3b39f325265339adb8f2928b122f891c95426b",
+  "archive_bytes": 545168,
+  "crc_passed": true,
+  "manifest_files_checked": 36,
+  "changed_from_verified_inputs": [
+    "INPUTS.json",
+    "payload/output/pdf/exceptional-leading.pdf",
+    "payload/results/exceptional-leading.tex"
+  ],
+  "numeric_modes": "Default and full modes previously passed; proof code, seed data, certificates and expected outputs unchanged.",
+  "layout_change": "Needspace keeps finite eligible-endpoint corollary with beginning of proof."
+}

@@ -1,0 +1,179 @@
+EXPLICIT INFINITE TERMINAL-REFLECTION FAMILIES IN INDEFINITE E10 AND E13
+Research proof, 2026-10-07. Historical priority remains UNCONFIRMED.
+
+NUMBERING AND RESULT
+
+The E_n diagram is the chain 0--1--...--(n-2), with vertex n-1 attached
+to 2. Roots use this simple-root coordinate order, squared lengths 2,
+and inner products -1 on edges. All KL parameters are equal.
+
+For each of the following data sets define
+
+  beta_k = beta - a*k*gamma + (a*k^2+3*k)*delta,  k>=0,
+  b_k = r_(beta_k),    x = product of the commuting generators in I.
+
+E10:
+  a=1,
+  beta=(3,7,10,9,7,6,4,3,1,6),
+  delta=(2,4,6,5,4,3,2,1,0,3),
+  gamma=(1,2,3,2,2,1,1,0,0,1),
+  I={1,3,5,7,9}.
+
+E13:
+  a=2,
+  beta=(2,3,5,5,4,4,3,3,2,2,1,1,3),
+  delta=(2,4,6,5,4,3,2,1,0,0,0,0,3),
+  gamma=(1,2,3,2,2,1,1,0,0,0,0,0,1),
+  I={0,3,5,7,9,11,12}.
+
+THEOREM. Each sequence (b_k) consists of distinct, full-support,
+non-fully-commutative terminal elements of the indicated fixed indefinite
+Coxeter group. Both descent sets equal I. For every fully commutative y,
+the ordinary leading coefficient mu(y,b_k) belongs to {0,1}; it vanishes
+whenever the length gap is greater than one. The only FC y whose two
+descent sets contain those of b_k is x, and mu(x,b_k)=0.
+
+This is an explicit family theorem, not a classification of terminals or
+of arbitrary upper endpoints in these groups. It uses no combinatorial
+invariance theorem. Its structural FC input is a deduction from Green's
+2007 monomial Temperley--Lieb cell results, cited below. No novelty claim
+is made for either that input or this construction until priority is settled.
+
+REAL ROOTS AND THE ALL-PARAMETER FORMULA
+
+The nodes 0,...,7,n-1 form an affine E8 standard parabolic. Its null root
+is delta. The vector gamma is a real root of its finite E8 subdiagram
+obtained by omitting node7; gamma+delta is another real root. The finite
+integer certificates in indefinite_positive_families.json give sequences
+of simple reflections reducing beta, gamma, and gamma+delta to simple
+roots. Thus all three are real roots of the ambient group. Explicit
+reduction sequences for beta are recorded at the end of this proof.
+
+Set T=r_gamma r_(gamma+delta). Since gamma^2=2, delta^2=0, and
+(gamma,delta)=0, direct expansion gives, for EVERY ambient vector z,
+
+  T(z)=z+(z,delta)gamma-((z,gamma)+(z,delta))delta.           (1)
+
+In particular delta need not be radical in the ambient indefinite space.
+The two seeds satisfy (beta,gamma)=-3 and (beta,delta)=-a. Equation (1),
+together with T(delta)=delta and T(gamma)=gamma-2delta, implies
+
+  T^k(beta)=beta-a*k*gamma+(a*k^2+3*k)delta=beta_k.         (2)
+
+Therefore beta_k is real, has norm2, and b_k=T^k r_beta T^(-k).
+An independent all-k certificate verifies T(beta)=beta+v, T(v)=v+u,
+T(u)=u, where v=(a+3)delta-a gamma and u=2a delta; induction yields the
+equivalent formula beta_k=beta+k*v+binom(k,2)*u. Both v and u are
+coordinatewise nonnegative and beta is strictly positive. Thus beta_k
+is strictly positive in every simple-root coordinate for every k>=0.
+
+DESCENTS AND TERMINALITY
+
+Write m_j(k)=(alpha_j,beta_k). Exact Cartan multiplication gives:
+
+E10:
+  m(k)=(-1,1,-2-k,1+k,-1-k,1+k,-1-k,1+k,
+         -1-3*k-k^2,2+k).
+
+E13:
+  m(k)=(1,-1,-1-2*k,1+2*k,-1-2*k,1+2*k,-1-2*k,1+2*k,
+         -1-3*k-2*k^2,1,-1,1,1+2*k).
+
+In each case m_j(k)>0 exactly for j in I, while m_j(k)<=0 elsewhere.
+Moreover m_s(k)+m_t(k)<=0 for every edge s--t with s in I. These are
+explicit polynomial inequalities for k>=0, not numerical extrapolations.
+
+For a strictly positive integral root beta_k,
+
+  b_k(alpha_j)=alpha_j-m_j(k)beta_k.
+
+This is a negative root exactly when m_j(k)>0. Consequently R(b_k)=I.
+Since b_k is an involution, L(b_k)=I as well. If s in I and t is adjacent,
+
+  b_k(alpha_s+alpha_t)=alpha_s+alpha_t
+                         -(m_s(k)+m_t(k))*beta_k > 0.
+
+But (b_k s)(alpha_t)=b_k(alpha_s+alpha_t), so after deleting any right
+descent s, no adjacent generator t becomes a right descent. The same
+holds on the left. This is precisely the terminal/weakly-bad condition:
+no reduced word begins or ends with two noncommuting generators.
+
+FULL SUPPORT, MAXIMAL DESCENTS, DISTINCTNESS
+
+Every beta_k is positive in every coordinate. A proper standard
+parabolic omitting node i preserves the alpha_i coordinate of every
+vector. The reflection formula changes that coordinate on some alpha_j,
+because beta_(k,i)>0 and some m_j(k) is nonzero. Hence b_k has full support.
+
+The displayed I sets are independent and have maximum sizes5 and7.
+A short upper-bound certificate is a matching: for E10 use edges
+(0,1),(2,9),(3,4),(5,6),(7,8); for E13 use
+(0,1),(2,12),(3,4),(5,6),(7,8),(9,10). An independent set uses at most
+one endpoint of each matching edge and every unmatched vertex, giving
+the respective upper bounds5 and7 attained by I.
+
+The positive roots beta_k are distinct: v is nonzero and v,u>=0, so their
+heights strictly increase. Equal reflections in nonzero norm2 roots
+would imply roots differing only by sign. Therefore b_k are distinct,
+and their lengths are unbounded because a finitely generated Coxeter
+group has finite balls. No exact all-k length formula is needed here.
+
+FC BOTTOM UNIQUENESS AND THE LEADING COEFFICIENT
+
+Use the following maximum-independent lemma: in generalized E_n, if
+an FC element y has a maximum independent set I contained in both
+L(y) and R(y), then y=product I. To see this, Green's monomial TL
+a-function is at least |I| from the initial commuting factor and at
+most |I| by maximality. Proposition4.4(iv) puts y in the same monomial
+right cell as product I, and the analogous argument gives the same
+left cell. Proposition4.4(v) makes their intersection a singleton.
+This is precisely the deduction proved in
+research/en_literature/structural_lemmas.txt; it does not identify these
+monomial cells with ordinary KL cells.
+
+The commuting product x is a right parabolic factor of b_k and hence
+lies below b_k. It has odd length |I|. Every reflection has odd length,
+so ell(b_k)-ell(x) is even and mu(x,b_k)=0 by parity. If any other FC
+y<b_k has gap>1, some upper left or right descent is absent from the
+corresponding descent set of y. The ordinary KL descent criterion then
+forces mu(y,b_k)=0. Covers have mu=1. This proves the asserted 0/1 bound.
+
+The same uniqueness lemma shows the uppers are not FC: an FC b_k with
+these descents would equal x. The latter is a product of at least five
+distinct commuting reflections, whose geometric action has (-1)-eigenspace
+of dimension |I|, whereas b_k has (-1)-eigenspace of dimension1.
+
+FINITE CERTIFICATES AND REPRODUCIBILITY
+
+indefinite_positive_families.py is a standalone exact certificate runner
+using the integral root implementation in targeted.py. Run with
+  UV_CACHE_DIR=/private/tmp/kl-uv-cache uv run python \
+    research/en_families/indefinite_positive_families.py
+The runner verifies all real-root reductions, formula (1), the induction
+identities, all polynomial sign coefficients, the matching bounds, and
+concrete exact root matrices for k=0,...,4. Their reduced lengths are
+  E10: 101,217,333,449,565;
+  E13: 75,191,307,423,539.
+These sampled lengths are checks only; the arithmetic progression is
+not used or claimed as an all-k formula. Output JSON stores the explicit
+reduced words and a reduced word of length58 for T.
+
+For beta in E10, successively applying the simple reflections
+  1,3,5,4,7,6,5,9,2,1,0,3,2,1,4,3,2,5,6,7,8,9,2,1,0,
+  3,2,1,4,3,2,5,4,3,6,5,4,7,6,5,9,2,1,0,3,2,1,4,3,2
+reduces beta to alpha9; every intermediate vector is nonnegative and
+its height decreases. The analogous E13 sequence, ending at alpha12, is
+  0,3,5,4,7,6,5,9,8,7,6,11,10,9,8,7,12,2,1,3,2,4,3,5,
+  4,6,5,12,2,1,0,3,2,1,4,3,2.
+
+PRIMARY SOURCE AND LIMITS
+
+R.M. Green, On the Markov trace for Temperley--Lieb algebras of type E_n,
+arXiv:0704.0283v1, Definition4.1 and Proposition4.4(iv),(v), pp.9--11;
+the end of Lemma5.2 uses essentially the same cell-intersection argument.
+https://arxiv.org/abs/0704.0283
+The generalized E_n scope includes all n>=6, including these indefinite
+diagrams. The source supplies the FC uniqueness input, not the explicit
+terminal root families just constructed. Their historical priority remains
+unconfirmed; no classification or novelty inference follows from search
+failure. The parent has independently verified both all-k root families.

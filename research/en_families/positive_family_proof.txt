@@ -1,0 +1,136 @@
+AN EXPLICIT POSITIVE INFINITE AFFINE-E8 TERMINAL FAMILY
+Research proof, 2026-10-07. Historical novelty is NOT certified.
+
+NUMBERING AND THEOREM
+
+Let W be E9, i.e. affine E8, with simple nodes in the chain
+0-1-2-3-4-5-6-7 and an additional node8 attached to2. The affine node is7.
+Write alpha_i for the simple roots, with squared lengths2 and adjacent
+inner products-1. Put
+ delta=(2,4,6,5,4,3,2,1,3),
+ gamma=(1,1,1,1,1,0,0,0,0),
+ I={1,3,5,7,8}, x=prod_{i in I}s_i,
+ b0=(3,1,2,8,7,5,6,4,5,2,3,4,1,2,3,0,1,2,8,5,6,7,4,5,2,3,1).
+A tuple of node labels here denotes the corresponding word. Let T be the
+root translation a -> a-(a,gamma)delta, and set b_k=T^k b0 T^(-k), k>=0.
+
+THEOREM (using the FC uniqueness lemma specified below).
+For every k>=0, b_k is a full-support, non-fully-commutative terminal with
+L(b_k)=R(b_k)=I and length27+92k. Its only eligible fully commutative bottom
+is x, of length5. Consequently mu(y,b_k)=0 for every FC y. The basic
+structural argument proves this for length gaps greater than one; the
+finite cover check and FC length bound below eliminate the cover case.
+The family is unbounded in one fixed affine Coxeter group.
+
+This is a direct theorem about these explicit upper endpoints. It requires
+no 2026 combinatorial invariance. It is not a claim for every affine-E8 upper,
+not a classification of affine-E8 terminals, and not a historical priority
+claim. The upper endpoints are not fully commutative; k>=1 upper lengths exceed
+the maximum FC length44 in the independent complete E9 catalogue.
+
+ROOT CERTIFICATE AND TERMINAL PROOF
+
+The exact root-matrix calculation in positive_affine_family.py establishes:
+  ell(b0)=27, b0^2=1, L(b0)=R(b0)=I, b0 terminal;
+  delta is in the radical; gamma is a finite-E8 root;
+  gamma-b0(gamma)=(0,-2,-3,-3,-2,-2,-1,-1,-2);
+  d_j=(alpha_j,gamma-b0(gamma))=(2,-1,1,-1,1,-1,1,-1,-1)_j.
+The script stores all nine integer columns of b0 in positive_affine_family.json.
+These are finite arithmetic checks on one explicit 27-letter word.
+
+The translation exists in W: T=r_gamma r_(gamma+delta). Both roots are
+certified by explicit simple-reflection reduction to a simple root; an
+explicit reduced58-letter word for T is included in the JSON. Its action
+is exactly a -> a-(a,gamma)delta. Since b0 fixes delta and preserves the form,
+
+  b_k(alpha_j)=b0(alpha_j)+k*d_j*delta.                    (1)
+
+For j in I the base column is negative and d_j=-1; for j outside I the base
+column is positive and d_j>0. Thus R(b_k)=I for all k>=0. Conjugation preserves
+the involution property, so the left descent set is also I.
+
+For every edge s--t with s in I, the base image b0(alpha_s+alpha_t) is positive,
+by the finite terminal check. Moreover d_s+d_t>=0: it equals1 on edge1--0
+and0 on all other edges incident to I. Equation(1) therefore implies that
+b_k(alpha_s+alpha_t) is positive for every such edge. Since
+(b_k s)(alpha_t)=b_k(alpha_s+alpha_t), after deleting a right descent s there
+is no adjacent right descent t. The same holds on the left by involution.
+This is exactly Gern's weakly bad/terminal condition.
+
+At k=0 the reduced word has full support. At k>=1, each image b_k(alpha_s)
+for s in I is strictly negative in EVERY simple-root coordinate, since the
+base image is nonpositive and every coordinate of delta is positive. If an
+element omitted node i from its support, then its action would leave the
+alpha_i coordinate of every vector unchanged (each allowed simple reflection
+changes only its own coordinate). The displayed strict negativity contradicts
+that for every i. Hence all b_k have full support. Their matrices are distinct
+because d is nonzero, and their lengths are consequently unbounded.
+
+ELIGIBLE FC BOTTOM AND COEFFICIENT
+
+Use the following lemma proved in the priority branch from Green0704.0283,
+Proposition4.4(iv),(v): if b is supported in E_n, I is a maximum independent
+subset of its support, and L(b)=R(b)=I, then its only FC lower endpoint z
+satisfying I subset L(z),R(z) is the commuting product x=prod I.
+The E9 diagram has maximum independent size5 and I has that size. The parent
+also independently enumerated ALL44199 E9 FC elements, with maximum length44;
+filtering the two descent masks I yields exactly x. The separate script
+catalogue_eligible.py verifies the matrix, FC, and Bruhat predicates on these
+filtered candidates. Thus the uniqueness assertion has both a structural
+source and a complete finite enumeration cross-check.
+
+The commuting product x is below each b_k: it is the longest element of the
+commuting descent parabolic, hence a right factor. Conjugation preserves
+length parity, so ell(b_k) is odd and ell(b_k)-ell(x) is even. Therefore
+mu(x,b_k)=0. For any other FC y below b_k with length gap>1, at least one
+terminal descent is absent from the corresponding descent set of y; the
+ordinary descent criterion forces mu(y,b_k)=0. A cover would have mu=1.
+Incomparable/equal pairs are treated by the usual conventions.
+
+No FC covers actually occur. At k=0, deleting each letter of the explicit
+reduced 27-letter word, then retaining products of length26, enumerates
+every Bruhat cover by the strong exchange property. There are21 distinct
+covers, none FC. The exact records are in positive_base_cover_check.json;
+the parent independently agrees. For k>=1, ell(b_k)>=119, whereas the
+complete independent E9 FC catalogue has maximum length44. Therefore
+these b_k cannot have FC covers. Combining this finite catalogue bound
+and the base cover check with the structural argument gives mu(y,b_k)=0
+for EVERY fully commutative y, as asserted in the strengthened theorem.
+The 0/1 conclusion needs neither cover computation nor FC length bound.
+
+This argument also shows b_k cannot itself be fully commutative: its two
+descent sets contain I, but the unique FC element with those masks is x and
+ell(b_k)>5.
+
+OPTIONAL EXACT LENGTH PROOF
+
+The coefficient conclusion above needs only parity, not the length formula.
+The formula ell(b_k)=27+92k is additionally certified by affine-root inversion
+counting, without enumerating any affine group ball or principal lower ideal.
+
+Take the240 finite roots Phi of the standard E8 parabolic obtained by omitting
+node7. For a in Phi let n_min(a)=0 if a is positive, and1 if negative. Every
+positive affine real root has a unique form a+n*delta with n>=n_min(a).
+Write b0(a)=eta+h*delta with eta in Phi; h is the node7 coordinate of b0(a).
+Equation(1) sends a+n*delta to
+ eta+(n+h+k*d(a))*delta,
+where d(a)=sum_j a_j*d_j. Its image is negative precisely when the affine
+level is negative, or the level is zero and eta is negative. Thus the number
+of positive roots in this family inverted by b_k is
+ max(0,c(a)+k*s(a)),
+ c(a)=-h-n_min(a)+[eta negative], s(a)=-d(a).
+The stored240-row certificate verifies c(a)>=0 whenever s(a)>0 and c(a)<=0
+whenever s(a)<0. Hence every summand is linear or identically zero for all
+k>=0. Summing gives constant27 and slope92. This is an exact all-k proof,
+not extrapolation from sampled lengths. The script additionally recomputes
+reduced words, terminal predicates, and lengths for k=0,...,5 (up to487).
+
+SOURCE AND PRIORITY BOUNDARY
+
+The only non-elementary lower-endpoint input here is the FC uniqueness lemma
+from the separate source audit of R.M.Green, On the Markov trace for
+Temperley-Lieb algebras of type E_n, arXiv:0704.0283. Ordinary descent criteria
+and parity are classical. Historical novelty of this particular infinite
+upper family remains for the priority audit; the root-matrix proof does not
+establish it. The classical star/Catalan family from research/broad_cells is
+a different construction and must not be used as a novelty claim.

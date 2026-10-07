@@ -1,0 +1,68 @@
+[
+  {
+    "found": false,
+    "weak_prefixes": 730,
+    "tests": 36425,
+    "minimal_parabolics": 65,
+    "k": 1,
+    "extra_generator": null,
+    "threshold": 8,
+    "length": 91,
+    "seconds": 0.40977437497349456
+  },
+  {
+    "found": false,
+    "weak_prefixes": 1460,
+    "tests": 69936,
+    "minimal_parabolics": 62,
+    "k": 1,
+    "extra_generator": 0,
+    "threshold": 7,
+    "length": 92,
+    "seconds": 0.6625001669744961
+  },
+  {
+    "found": false,
+    "weak_prefixes": 1460,
+    "tests": 71679,
+    "minimal_parabolics": 62,
+    "k": 1,
+    "extra_generator": 1,
+    "threshold": 7,
+    "length": 92,
+    "seconds": 0.6803581250132993
+  },
+  {
+    "found": false,
+    "weak_prefixes": 1210,
+    "tests": 62343,
+    "minimal_parabolics": 65,
+    "k": 2,
+    "extra_generator": null,
+    "threshold": 8,
+    "length": 149,
+    "seconds": 0.7578855410101824
+  },
+  {
+    "found": false,
+    "weak_prefixes": 2420,
+    "tests": 118690,
+    "minimal_parabolics": 62,
+    "k": 2,
+    "extra_generator": 0,
+    "threshold": 7,
+    "length": 150,
+    "seconds": 1.1558654580148868
+  },
+  {
+    "found": false,
+    "weak_prefixes": 2420,
+    "tests": 121633,
+    "minimal_parabolics": 62,
+    "k": 2,
+    "extra_generator": 1,
+    "threshold": 7,
+    "length": 150,
+    "seconds": 1.2134036670031492
+  }
+]

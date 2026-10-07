@@ -1,0 +1,118 @@
+FINAL SIGNIFICANCE REASSESSMENT OF REVISED MANUSCRIPT
+2026-10-07. Reviewed actual results/exceptional-leading.tex after revision.
+No main-manuscript edits made by this reviewer.
+
+OVERALL JUDGMENT
+
+The revision now presents a coherent and defensible specialist research
+paper. It has addressed the principal positioning objections in my first
+review: finite ADE completion is explicit, the finite proof comes first,
+the lower-endpoint uniqueness is mathematical rather than another black-
+box enumeration, and the infinite families have a clear terminal-obstruction
+motivation. The old mechanisms are credited and the endpoint scopes are
+accurate. This is a material improvement in the substance visible to a
+reader, not merely a stylistic improvement.
+
+My recommendation remains major revision / not yet an acceptance
+recommendation, but its grounds are now narrower: publication depends
+on establishing the contribution against the literature and furnishing
+the promised auditable computational proof. I would no longer ask for
+another wholesale rewrite of the narrative. A new difficult KL theorem
+is not logically required for a publishable paper if the finite exceptional
+completion and classification are previously undocumented.
+
+I have not rerun all certificates and do not certify mathematical
+correctness of every computational assertion. This assessment should be
+combined with the independent mathematical and reproducibility reviews.
+
+WHAT IS NOW WORKING
+
+1. The finite simply laced corollary makes the real coverage immediately
+   apparent. The direct-product degree argument is appropriate and does
+   not overreach to all finite Weyl or all crystallographic groups.
+2. The terminal table followed by the analytic uniqueness corollary is
+   stronger exposition than counting eligible FC endpoints. It identifies
+   what the computer proves and what existing cell theory proves.
+3. The E8 exhaustion argument states the parabolic-pruning lemma and the
+   coset-closure argument. The contribution is recognizably a small terminal
+   classification yielding an all-upper theorem, not a vast unreported KL
+   polynomial computation.
+4. Green's Lemma 5.2 provenance and Laird's dated historical statement are
+   appropriately included. The paper does not turn a 2016 open direction
+   into an unsupported claim about what is open in 2026.
+5. The infinite-family paragraph explains why infinitely many full-support
+   terminals matter to the reduction strategy. It plainly describes the
+   descent and parity proof, so the reader is not led to expect unknown
+   odd-gap non-cover KL computations.
+6. The short interval-transfer paragraph accurately labels a formal
+   consequence and supplies no inflated claim of new interval models.
+   Taking CI as unconditional instead would not change the significance
+   assessment: the observation is still formal.
+7. The D4 example remains an effective explanation of why leading-mu
+   vanishing has limited implications for complete polynomials.
+
+SMALL ACTIONABLE POINT IN THE ACTUAL REVISED TEXT
+
+The abstract currently says, 'We also use Green's monomial cell theory to
+construct full-support terminal reflections ...'. The construction is
+root-theoretic; Green's theorem proves its coefficient consequence. Change
+this to 'We also construct ... . Green's monomial cell theory implies ...'
+or equivalent. This preserves the distinction already made correctly in
+the introduction. It is a local accuracy correction, not a major defect.
+
+The planned comparison with prior exceptional-type computations and
+the precise reproduction-scope paragraph will help. In particular, make
+clear that pre-existing cell/W-graph computations are not automatically
+the all-pairs FC-bottom theorem, while not implying that no earlier
+exceptional computations existed. An advertised reproduction command
+must be described in terms of what it actually reruns, separately from
+checking saved certificates and separately from symbolic all-rank proof.
+
+REMAINING PUBLICATION LIMITS
+
+The revised contribution statement ('complete certified exceptional
+terminal classification ... explicit rank-uniform terminal construction')
+is substantially more persuasive than the former blanket disclaimer.
+Nonetheless, search failure still does not prove priority. The current
+'historical priority remains unconfirmed' sentence is candid. For an
+actual submission, the author should be prepared to explain why this
+classification/proof is a worthwhile addition even if computations or
+observations circulated previously. A referee may know an unindexed
+predecessor. This cannot be repaired by stronger wording or by automatically
+promoting the infinite-family theorem to the main result.
+
+The finite result remains the publication anchor. Completing a natural
+finite ADE statement with a transparent, reproducible exceptional proof
+can justify a concise specialist paper. The infinite construction adds
+a credible second component, particularly its simultaneous all-rank
+root-membership and terminal-sign argument. Its leading-coefficient
+conclusion is still easy once the descents are known, and it still does
+not address arbitrary affine/indefinite uppers. Those limitations are
+now explained fairly in the manuscript.
+
+More parity-zero examples, effective eventual-vanishing thresholds, or
+changing CI from conditional to unconditional would not fundamentally
+raise the contribution level. If the finite completion is discovered to
+be already known with an equally usable proof, the remaining family
+construction alone would need a stronger independent significance case;
+the present revision does not erase that contingency.
+
+JOURNAL ASSESSMENT
+
+Algebraic Combinatorics and Journal of Algebraic Combinatorics remain
+appropriate subject matches, based on their official scopes checked in
+the first review:
+https://alco.centre-mersenne.org/
+https://link.springer.com/journal/10801/aims-and-scope
+The revised manuscript now makes that fit easier to assess. ALCO remains
+an ambitious, defensible submission rather than an acceptance prediction.
+JAC is also plausible. The substantive threshold is a documented useful
+research contribution, not merely correct examples in the journals'
+subject area. A stable public code/certificate archive and a careful
+novelty discussion remain prerequisites for a confident submission case.
+
+This review therefore supports proceeding with focused final verification
+and submission preparation, without claiming acceptance readiness or
+inventing a stronger theorem. The revised paper has a plausible standalone
+publication case, conditional on its actual novelty and proof audit, and
+is no longer undermined by its original result hierarchy.

@@ -1,0 +1,174 @@
+CELL / TERMINAL SEARCH REPORT
+Research date: 2026-10-07 UTC
+
+OUTCOME AND PRIORITY
+
+This search found and proved a sharp affine-D4 obstruction, and an explicit
+unbounded Catalan family, but both are covered by older work. They are a
+rediscovery and a useful boundary for the current project, NOT a new extension
+of Gern's theorem. No new positive infinite family was proved in this branch.
+
+In the simply laced star with center c and m commuting leaves a_1,...,a_m, put
+x=a_1...a_m and w=xcx. Then x is fully commutative and
+
+ P_{x,w}(q)=sum_{j=0}^{floor(m/2)} (binom(m,j)-binom(m,j-1)) q^j.
+
+For m=2k, mu(x,w)=Catalan(k). For odd m, mu(x,w)=0 by parity.
+The four-leaf case is affine D4 and gives 1+3q+2q^2, hence mu=2.
+The cases m>=5 have indefinite geometric form. This does not yield the same
+counterexample in every affine D_n: its degree-four graph is not a standard
+parabolic subgraph of the higher affine D diagrams.
+
+DECISIVE PRIOR SOURCE
+
+P. Mongelli, Kazhdan-Lusztig polynomials of boolean elements,
+arXiv:1111.2945v1 (12 November 2011), later J. Algebraic Combin.
+39 (2014), 497-525. https://arxiv.org/abs/1111.2945
+Primary full text: https://arxiv.org/pdf/1111.2945
+
+The upper xcx is a boolean reflection, because the commuting leaves allow
+xcx=a_1...a_m c a_m...a_1. Both endpoints are therefore boolean elements in
+Mongelli's sense. Corollary 3, printed p.13, covers ordinary polynomials for
+all boolean-element pairs in tree Coxeter graphs. Corollary 2, printed p.10,
+explicitly supplies Catalan mu values for the star-shaped diagram with leaf
+entries (top,bottom)=(2,1_l) and center (1_l,0). The polynomial f_4=1+3q+2q^2
+is even displayed on printed p.6. Thus the entire star result, including its
+unbounded leading coefficients and affine-D4 instance, is explicitly old.
+
+F. Brenti, A combinatorial formula for Kazhdan-Lusztig polynomials,
+Invent. Math.118 (1994), 371-394, provides older lattice and cube formulas.
+Primary extended abstract (1994):
+https://fpsac-archive.github.io/FPSAC94/ARTICLES/06Brenti.pdf
+Its Corollary1.15 gives R=(q-1)^rank on lattice intervals. The interval here
+is the face lattice of a cube, so classical combinatorial invariance already
+suffices. The direct proof below does not even require that general theorem.
+Brenti's 2024 survey, printed pp.3,6, cites the full paper's Theorem6.3 and
+Corollaries6.8-6.9 for the relevant lattice/Boolean/cube results:
+https://www.researchgate.net/publication/382934246_Some_open_problems_on_Coxeter_groups_and_unimodality
+
+Green's 0801.1650 introduction, printed pp.2-3, discussed the possibility of
+an all-Coxeter FC-bottom 0/1 statement as computational speculation. It was
+not a universal theorem or a numbered universal conjecture. No priority
+claim for refuting that speculation is made here.
+
+ELEMENTARY PROOF OF THE ENTIRE STAR INTERVAL
+
+Let A_L=prod_{i in L}a_i. Every A_L c A_R is reduced of length |L|+|R|+1.
+Indeed A_L c sends a leaf root alpha_j to
+  alpha_c + sum_{i in L}alpha_i + (-1)^[j in L] alpha_j,
+which is positive. Right multiplication by a different leaf leaves that
+column unchanged; appending every leaf of R therefore increases length.
+The initial A_L and c are also ascents.
+
+More generally A_L c A_R sends alpha_j to (-1)^[j in R] times the above
+positive root. Its center coefficient recovers R, and its diagonal leaf
+coefficient vanishes exactly when j belongs to L. Thus all 4^m pairs (L,R)
+give distinct group elements. Together with the 2^m leaf products, they
+constitute the whole principal lower ideal [e,w], by the subword criterion.
+The group representation is faithful, but only distinguishing its images
+is needed for the uniqueness argument.
+
+The elements of [x,w] other than x are exactly the A_L c A_R satisfying
+L union R=[m]. Using the fixed reduced word for each upper pair, the subword
+criterion and pair uniqueness give
+  A_L c A_R <= A_L' c A_R' iff L subset L' and R subset R'.
+A c-free subword can produce x exactly when each leaf is chosen once.
+The three coordinate states L-only/R-only/both are the two endpoints/free
+coordinate of a cube face. Hence [x,w] is the full face lattice of an m-cube,
+including the empty face x. It has 3^m+1 elements; relative rank r+1 has
+binom(m,r)2^(m-r) elements for 0<=r<=m.
+
+For a nonempty face z=A_L c A_R, common-right-descent R cancellation removes
+A_R from x and z; common-left-descent cancellation next removes
+A_[m]\R, a subset of A_L. This reduces R_{x,z} to
+R_{e,A_(L intersect R)c}=(q-1)^(|L intersect R|+1).
+All intervals between nonempty faces are Boolean; their ordinary KL
+polynomials equal 1. Ordinary R/KL reciprocity therefore gives, for F=P_x,w,
+  q^(m+1)F(q^-1)-F(q)=(q-1)sum_r binom(m,r)2^(m-r)(q-1)^r
+                       =(q-1)(q+1)^m.
+The KL degree bound determines F and yields the binomial-difference formula.
+No new 2026 combinatorial-invariance input is required.
+
+TERMINAL AND ELIGIBILITY DETAILS
+
+For m>=2, both descent sets of w equal all leaves. Removing leaf i on the
+right gives w a_i=A c A_[m]\i, which sends alpha_c to
+  (m-2)alpha_c + (m-2)alpha_i + (m-3)sum_{j!=i}alpha_j.
+This is positive for m>=3. Thus w is terminal for m>=3, on both sides
+because w is an involution. The m=1,2 tops are not terminal.
+
+Any eligible FC bottom must be above x, because its right descent set
+contains every commuting leaf. For A_L c A_R, the leaf part of its right
+descent set is exactly R; the left version is L. Eligibility forces
+L=R=[m], giving w, which is non-FC because a_i c a_i is a braid factor.
+Hence x is the unique eligible FC bottom for m>=2. The m=1 top has center
+as an additional descent and no eligible FC bottom.
+
+COMPUTATION AND INDEPENDENT VERIFICATION
+
+The discovery engine targeted.py implements exact integral simple-root
+matrices, root-sign descents, greedy descent length, lifting-property Bruhat
+comparison, finite subword lower ideals, the recursive FC criterion, and
+ordinary KL descent recurrence. It does not enumerate the ambient infinite
+group or a complete root system.
+
+certify_star.py checks m=1,...,8. It verifies lengths, all distinct normal
+forms, lower-ideal and interval cardinalities, exact cube rank counts,
+terminal/eligibility claims, polynomial formula, and agreement using every
+right descent of the upper. It compares all pairs of normal forms with the
+predicted componentwise order for m<=4.
+
+Output: star_family_checks.json and star_family_checks.log.
+Full evaluated KL dependencies for affineD4:
+  affine_d4_kl_certificate.json (integral matrices, words, lengths, descents,
+  polynomial coefficients, all correction terms, root recurrences).
+
+The parent independently used faithful affine signed permutations, direct
+subword Bruhat comparison instead of lifting, and R/KL reciprocity instead
+of KL descent recurrence. Its files are outside this branch:
+  research/verify_affine_d4_r.py
+  results/affine-d4-independent.json
+It verified all271 nontrivial reciprocity identities for the 272-element
+lower ideal. The interval itself has82 elements and ranks(1,16,32,24,8,1).
+The parent presentation results/star-boundary.tex was audited here: the
+normal-form uniqueness, whole-poset proof, and R cancellation are correct.
+
+BOUNDED ADDITIONAL SEARCH AND NEGATIVE EVIDENCE
+
+probe_layers.py tests full bipartite-color alternating words, both starting
+colors, layers1,...,21, for generalized E6,...,E16 and affineD4,...,affineD12.
+It uses exact matrices and does not enumerate their lower ideals. No
+noncommuting terminal was found among these full-color E words. This only
+rejects this particular construction; it gives no E classification.
+
+For affineD_even (ranks4,6,8,10,12), one starting color gives terminal reduced
+words (AB)^k A for k=1,...,10. There are50 recorded terminals in
+bipartite_terminal_scan.json. No theorem for all k or ranks is claimed.
+
+Two targeted lower-ideal calculations:
+* affineD4, A=four leaves, B=center, w=(AB)^3 A: length19, sole eligible
+  bottom A length4, lower ideal7440, P=[1,11,35,49,32,10,2]. The interval rank
+  is15, so mu=0, despite the leading nonzero coefficient2. Saved in
+  star4_layers7.json.
+* affineD6, A={0,1,3,5,6}, B={2,4}, w=ABA: length12, sole eligible bottom A
+  length5, lower ideal1568, P=(1+q)^3; interval rank7 and mu=1. Saved in
+  affineD6_layers3.json. This short palindromic family lies within the older
+  boolean-element framework, so it is not a new positive family.
+
+parabolic_factors.py exhausts weak prefixes looking for a reduced contiguous
+factor equal to the finite A3 longest element on center and two fixed leaves
+inside affineD4 (AB)^k A, k=1,...,5. It finds none. Symmetry covers all choices
+of the two leaves. This rules out that elementary a>=6 factor-bound approach
+for these five words, not other cell arguments or longer words.
+Saved: parabolic_factor_checks.json.
+
+REPRODUCE
+  python3 research/broad_cells/certify_star.py
+  python3 research/broad_cells/probe_layers.py
+  python3 research/broad_cells/parabolic_factors.py
+  python3 research/broad_cells/targeted.py --star 4 --layers 7 --kl
+  python3 research/broad_cells/targeted.py --affine-d 6 --layers 3 --color 0 --kl
+
+All search runs were bounded. No E8 group enumeration was attempted, no
+child agents were spawned, and no claimed new family survived prior-art
+checking in this branch.

@@ -1,0 +1,227 @@
+EDITORIAL REPORT: exceptional-leading.tex
+7 October 2026
+Scope: journal style, hierarchy, presentation, notation, and exact proposed prose. This is an editorial review of the supplied manuscript, not an independent proof or priority audit. No main TeX source has been edited.
+
+1. Overall assessment and priorities
+
+The manuscript contains a clear finite-type theorem, a short structural vanishing argument, and a substantial uniform construction. The present order and voice obscure that hierarchy. Its organizing principle is the history of the investigation: E6/E7, verification, E8, fixed-rank families, uniform family, transfers, failed searches. A research article should instead organize these results by mathematical dependence and significance.
+
+Highest-priority changes:
+(a) Put the finite theorem and rank-uniform theorem in the introduction, immediately after definitions. State the uniform result there with quantifiers even if its explicit roots are deferred.
+(b) Give the maximum-descent parity proposition a prominent explanatory paragraph. It is the conceptual reason that the explicit root constructions yield coefficient bounds without KL computations.
+(c) Absorb E13 into the uniform family as its r=3 specialization. Keep E10 as a separate application. There is no reason to prove the E13 construction twice.
+(d) Present E9 as the affine family in which the cover exception is also eliminated for every parameter; this distinguishes it sharply from the uniform eventual-vanishing conclusion.
+(e) Consolidate computational methods and reproducibility information into a dedicated proof section and an appendix. Preserve mathematical completeness arguments in the article, but move long path lists and repeated assurance language out of the main narrative.
+(f) Remove the investigation chronology, references to agents, state caps, unsuccessful search directions, and internal project vocabulary from the research article. Preserve them in the existing research reports.
+(g) Consolidate priority uncertainty into one restrained statement. Repeating it in the abstract, introduction, structural section, uniform section, and final section diminishes rather than strengthens precision.
+
+2. Proposed title and metadata
+
+Recommended title:
+Leading Kazhdan--Lusztig coefficients with fully commutative lower endpoints in type E
+
+Alternative, if the finite/uniform distinction should be explicit:
+Leading Kazhdan--Lusztig coefficients in exceptional types and generalized E families
+
+The first title is more natural and identifies the actual hypothesis. The current title's “extensions,” “families,” and “lower-endpoint bound” presume knowledge of the research project. Avoid a subtitle listing proof infrastructure. Change PDF metadata to agree with the final title. “Research working note with reproducible finite certificates” is not an author attribution; use the actual agreed authorship or leave the author field blank pending that decision. Do not invent authorship or institutional affiliation.
+
+3. Proposed abstract (TeX-ready)
+
+We study the leading coefficients $\mu(x,w)$ of ordinary equal-parameter
+Kazhdan--Lusztig polynomials when $x$ is fully commutative. For finite
+Weyl groups of types $E_6$, $E_7$, and $E_8$, we prove that
+$\mu(x,w)\in\{0,1\}$ for every upper endpoint $w$. The proof combines
+star reduction with exhaustive classifications of terminal elements;
+parabolic pruning makes the $E_8$ classification possible without
+full-group enumeration. We also derive a vanishing criterion from
+maximum commuting descent sets and construct explicit full-support
+terminal reflections in every generalized type $E_{4r+1}$, $r\geq3$.
+For these families, all coefficients with fully commutative lower endpoint
+vanish away from covers, and at each fixed rank they all vanish for
+sufficiently large parameter. Further constructions give complete
+vanishing for an infinite family in affine type $\widetilde E_8=E_9$
+and the same non-cover vanishing in type $E_{10}$.
+
+This abstract deliberately omits priority language, the conditional CI application, failed searches, and certificate file details. It calls the finite part computer-assisted by describing the method rather than using an apologetic final sentence. It does not claim a whole-type theorem in any infinite type, nor does it claim polynomial triviality. If desired, insert “computer-assisted” before “proof” in the second finite-method sentence.
+
+4. Proposed introduction paragraphs (TeX-ready; place theorem statements between them)
+
+For a Coxeter group $W$, the leading coefficients of the
+Kazhdan--Lusztig polynomials record a distinguished part of the
+Kazhdan--Lusztig basis multiplication. We consider the restriction
+obtained by requiring the lower endpoint to be fully commutative.
+Throughout, all Kazhdan--Lusztig polynomials are ordinary and
+equal-parameter. Our first result establishes the $0/1$ bound in the
+three finite exceptional simply laced types.
+
+[Insert the finite theorem, with its current exact hypotheses. A theorem heading “Finite exceptional types” is cleaner than “Computer-assisted exceptional extension.” Explain the computational character directly after the theorem.]
+
+The proof reduces arbitrary upper endpoints to terminal elements, meaning
+those with no reduced expression beginning or ending in two
+noncommuting generators. There are respectively one, four, and six
+terminal elements in $E_6$, $E_7$, and $E_8$ that are not products of
+commuting generators. For each such element, the descent conditions
+leave a unique fully commutative lower endpoint to consider. Parity
+settles all cases except a pair in a $D_6$ parabolic, whose coefficient
+is determined by Gern's work. We prove completeness of the finite
+classifications by exact computation; in type $E_8$, a parabolic
+reduction avoids enumeration of the ambient group.
+
+Gern proved the corresponding bound in type $D$
+\cite[Theorem 4.5.11]{Gern}. Related results hold in finite and affine
+type $A$ \cite{GreenLeading} and finite type $B$
+\cite[\S2.3, Theorem 2.3.8]{Chmutov}. Green's result with both endpoints
+fully commutative \cite[Remark 7.12]{GreenJones} and Jones's result
+with Deodhar upper endpoint \cite[Theorem 1.2]{Jones} impose different
+hypotheses. We do not claim priority for the finite exceptional result
+or the explicit families below.
+
+Our second result concerns the generalized diagrams $E_n$, whose arms
+have lengths $1$, $2$, and $n-4$. For $n=9$ this is affine type
+$\widetilde E_8$; for $n\geq10$ the group is indefinite. A structural
+criterion supplies the coefficient vanishing: if the common left and
+right descent set of an upper endpoint is a maximum independent set
+in its support, then only its commuting product can satisfy the
+necessary descent conditions on a fully commutative lower endpoint.
+A parity condition then eliminates every non-cover coefficient.
+We use this criterion to construct families in unbounded rank.
+
+[Insert a concise introduction version of the uniform theorem, referring to its later explicit formula. State both “for every r>=3” and “for each fixed r, sufficiently large k.” Avoid claiming uniformity of the eventual-vanishing threshold across ranks.]
+
+The roots defining these reflections are obtained from an explicit real
+root by powers of an element in an affine parabolic subgroup. Real-root
+membership of the initial vector is proved uniformly using an even
+sign change in a finite $D_{4r}$ parabolic. Thus the construction and
+coefficient argument require no Kazhdan--Lusztig polynomial computation.
+We also give an affine $E_9$ family for which every coefficient with
+fully commutative lower endpoint vanishes, and a separate family in
+$E_{10}$ with non-cover vanishing.
+
+[Optional final roadmap: one or two sentences after the section order is fixed. Omit generic “The paper is organized as follows” if the introduction is already long.]
+
+The first sentence above uses only the standard role of leading coefficients; if the paper does not develop basis multiplication at all, start directly with “We study the leading coefficients ...” to avoid an unused motivation.
+
+5. Proposed hierarchy
+
+1. Introduction and main results
+2. Descents, star operations, and the vanishing criterion
+   - notation and terminal reduction
+   - maximum common commuting descents and parity
+3. Finite exceptional types
+   - E6/E7 terminal data
+   - parabolic pruning and E8 terminal data
+   - proof of finite theorem
+4. Full-support families in generalized E types
+   - common affine-parabolic operator identity
+   - uniform E_(4r+1) construction and proof
+   - E10 application
+   - affine E9 family and complete vanishing
+5. Conditional consequence for Bruhat intervals (optional, brief)
+Appendix A. Computational certificates and reproduction
+
+Putting the affine family before the indefinite families is also reasonable if the proofs use its notation. What matters is avoiding a main proof that depends on “the earlier operator identity” buried inside a duplicated E10/E13 example. Extract that identity as a short lemma or displayed calculation before the constructions. This is an exposition refactor of an existing proof, not a new mathematical claim.
+
+The uniform theorem is important enough for an introductory statement, even if its full proof comes after the finite result. The current order makes it look like a late addendum.
+
+6. Exact local rewrites and deletions
+
+Current: “The essential new project output is the complete exceptional terminal classification and the resulting extension to arbitrary upper endpoints.”
+Replace: “The proof rests on a complete classification of terminal elements in the three exceptional types.”
+Reason: removes internal project voice and an unsupported novelty emphasis.
+
+Current section: “Statement and status”
+Replace: “Introduction” or “Main results.”
+
+Current section: “The exact exceptional terminal table”
+Replace: “Terminal elements in types $E_6$ and $E_7$.”
+Reason: E8 is not in that table; “exact” is redundant in a theorem paper.
+
+Current: “The complete table is:”
+Replace: “Table~\ref{tab:...} lists the terminal elements that are not products of commuting generators.”
+Use a numbered table and a caption explaining notation.
+
+Current: “the project's existing independently checked recurrence certificate”
+Replace: “an independent recurrence computation recorded in Appendix~...”.
+If Gern alone supplies the exact value used, delete the computational aside here and retain it as a reproducibility cross-check.
+
+Current: “This proof does not import Gern's type-$A/D$ star-reducibility classification into exceptional types.”
+Replace: “The reduction uses only descent containment and length-three star operations.”
+Retain the warning that star transport concerns mu, not full polynomials, only if a nearby argument could otherwise suggest polynomial invariance.
+
+Current: “The finite classification is part of the proof ... these are not sampled endpoints or heuristic matches.”
+Replace: “The finite classification is exhaustive. For $E_6$ and $E_7$, both implementations enumerate the group by breadth-first multiplication in the faithful integral geometric representation.”
+Then give the closure argument once.
+
+Current: “The standard lifting-property comparison exhausts eligible FC bottoms.”
+Replace: “Bruhat comparisons, computed using the lifting property, identify every fully commutative element satisfying the descent conditions.”
+If “eligible” is retained as a defined term, use “eligible lower endpoint,” never “FC bottom.”
+
+Current: “The exact formulas are” / “Evidence:” / “Originating engines:”
+Replace respectively: “The pairings are” / “Computational certificates:” / “Primary implementations:”.
+Best: remove the latter labels to the appendix entirely.
+
+Current: “The $E_{13}$ seed extends to every rank...”
+Replace: “For each $r\geq3$, define a root in type $E_{4r+1}$ by ...”.
+Then identify E13 as r=3 after the theorem.
+
+Current: “We first prove real-root membership uniformly, rather than inferring it from the norm.”
+Replace: “We first prove that $\beta_r$ is a real root.”
+The distinction between norm two and real-root membership matters mathematically, but its affirmative proof already makes the distinction. A single brief remark can be retained if needed for readers of indefinite root systems.
+
+Current: “The proof applies to arbitrarily large ranks and arbitrarily long upper endpoints. It is symbolic; small-rank computations only suggested its form.”
+Delete. The theorem and proof already establish the first sentence; the second is investigation history.
+
+Current: “Every other eligible rank is even.”
+Replace: “Every other eligible pair has even length difference.”
+“Rank” here is ambiguous with Coxeter rank and interval rank.
+
+Current: “An omitted generator would leave its coordinate row unchanged.”
+Replace: “Every product of generators other than $s_j$ leaves the $j$th coordinate unchanged.”
+This states the exact elementary fact used to deduce support.
+
+Current: “Eventually no FC element can cover $b_{r,k}$ from below...”
+Replace: “For sufficiently large $k$, no fully commutative element has length $\ell(b_{r,k})-1$, so the cover case is also excluded.”
+The current phrasing is understandable but reverses the usual grammatical subject of “covers.”
+
+Delete from main article: the “Broader search and novelty boundaries” section. Its agent references and numerical state caps describe research management. If a mathematically important obstruction is needed, state it as a concise contextual remark with a published citation, independent of the unsuccessful search narrative.
+
+7. Notation and typesetting
+
+- Define mu by cases, or first say it is zero for even d and then give the coefficient formula only for odd d. The present [q^((d-1)/2)] formula formally uses a half-integer exponent before explaining the convention.
+- Use E9 for the generalized rank-nine diagram and identify E9=tilde E8 once. Thereafter use one notation consistently in statements and headings; “affine E8” and “E9” currently alternate too freely.
+- Spell out “fully commutative” in theorem statements, captions, and the abstract. FC is acceptable for the set notation and dense implementation discussion after definition.
+- Prefer w_I=product_{s in I}s to i(I), if a global change is easy. It is recognizable Coxeter notation and makes commuting products easier to parse. No mathematical change is needed.
+- Use supp(w), defined once, for repeated support hypotheses. State “a maximum independent set of the subgraph induced by supp(b)” rather than “maximum independent in the support.” Distinguish maximum cardinality from inclusion-maximal throughout.
+- Replace manual equation tags (*), (**), (***) with \label and \eqref. Global star tags look provisional and make cross-references fragile.
+- Number all tables and supply descriptive captions. Group terminal words and descent data so the reader need not alternate between prose and tables.
+- The long digit strings are acceptable only in ranks <=10, where generator labels are single digits. State that convention locally. For general ranks use indexed generators or lists with separators.
+- “Noncommuting terminal” is shorthand for a terminal element that is not a product of commuting generators, not a claim about an element itself commuting. Define the shorthand clearly or use “nontrivial terminal cases” only when the commuting-product exclusion is explicit nearby.
+- Reserve “certificate” for a finite data object that a specified verifier checks. Use “proof” for the uniform even-sign-change argument. Avoid rhetorical uses such as “real-root certificate” when a two-line mathematical proof is present.
+- Give the reflection notation r_beta and the root sign convention before first use. Separate group rank n from family parameter r and affine parameter k visually in statements.
+- Remove date-specific adjectives such as “new invariance input.” Use “A conditional consequence of combinatorial invariance,” with the precise source and conditional hypothesis.
+
+8. Computation: what must remain visible
+
+Do not move away the logical reason the computation proves completeness. Keep the faithful representation, exhaustive closure, terminal test, FC recurrence justification, and parabolic-pruning lemma accessible in the proof. The E8 two-parabolic verification is substantive and worth a concise paragraph. The appendix can contain implementation paths, root/group counts, star-move counts, reproducer commands, JSON names, and which implementations are independent.
+
+One compact table can summarize each type's group size, noncommuting-terminal count, FC count, and proof method. Full length-distribution matching and known FC-count matching are consistency checks; say this once. Avoid repeatedly assuring readers that the calculations are exact or nonheuristic after the algorithmic argument has been given.
+
+9. Conditional invariance and scope
+
+The combinatorial-invariance application is secondary to the finite and family theorems. Retain it only if useful to the intended paper, clearly as a conditional corollary. Do not frame September 2026 as a mathematical property. One final scope paragraph suffices:
+
+“The finite theorem applies to every upper endpoint in types $E_6$, $E_7$, and $E_8$. The results in infinite generalized types apply to the displayed families. They concern the leading coefficient and do not determine the full Kazhdan--Lusztig polynomial.”
+
+The D4 example P=1+2q can illustrate the last sentence if a proof or precise checked reference is supplied; it should not interrupt the conclusion of the uniform proof. Do not repeatedly insert “No whole-type bound ...” inside theorem statements whose explicit quantifiers already delimit the result.
+
+10. Final editorial acceptance checklist
+
+- Finite and uniform main results both appear early.
+- Uniform all-zero conclusion is explicitly eventual in k at each fixed r.
+- E9 all-zero conclusion is explicitly for every k>=0.
+- E10 has only the established non-cover vanishing stated; do not silently strengthen its theorem during editing.
+- E13 is a uniform specialization, with any independent verification preserved in the appendix.
+- Ordinary equal-parameter setting is explicit and no parabolic/unequal-parameter variant is implied.
+- Priority is neither claimed nor repeatedly debated; classical inputs have precise citations.
+- No lab-report or agent-process prose remains in the main exposition.
+- Every computational dependency needed for a theorem is distinguished from optional cross-checks.

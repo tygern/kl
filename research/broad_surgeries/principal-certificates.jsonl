@@ -1,0 +1,3 @@
+{"edge": 3, "top_word": [0, 3, 2, 1, 2, 3, 5, 4, 3, 2, 0, 2, 1, 3, 5], "pair_count": 3184, "source_count": 3184, "target_count": 3184, "relation_bijective": true, "all_lengths_preserved": true}
+{"edge": 4, "top_word": [0, 3, 2, 1, 2, 3, 4, 5, 4, 3, 2, 0, 2, 1, 3], "pair_count": 3184, "source_count": 3184, "target_count": 3184, "relation_bijective": true, "all_lengths_preserved": true}
+{"edge": 4, "top_word": [0, 3, 2, 1, 5, 4, 3, 2, 0, 3, 2, 1, 4, 3, 5], "pair_count": 3184, "source_count": 3184, "target_count": 3184, "relation_bijective": true, "all_lengths_preserved": true}

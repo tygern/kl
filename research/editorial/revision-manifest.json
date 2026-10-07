@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-07",
+  "manuscript": "/Users/ic/workspace/kl/results/exceptional-leading.tex",
+  "source_sha256": "1b48565e11145f8d931d6e39bc1fcc082d5c9c9ecf9df9812b9fdf49ea16702c",
+  "original_source_sha256": "f6e623e00b9d2df27172be18bdaf9b081a24036f664f6808a27b0c3df1b73b4b",
+  "review_reports": [
+    "/Users/ic/workspace/kl/research/editorial/style.txt",
+    "/Users/ic/workspace/kl/research/editorial/hierarchy.txt",
+    "/Users/ic/workspace/kl/research/editorial/arguments.txt",
+    "/Users/ic/workspace/kl/research/editorial/final-style.txt",
+    "/Users/ic/workspace/kl/research/editorial/final-hierarchy.txt",
+    "/Users/ic/workspace/kl/research/editorial/final-arguments.txt"
+  ],
+  "scope": "Editorial restructure and copyedit; mathematical theorem scope and computation certificates preserved.",
+  "native_compiler": "success",
+  "pdf": "/Users/ic/workspace/kl/output/pdf/exceptional-leading.pdf"
+}

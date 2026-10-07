@@ -1,0 +1,180 @@
+GENERALIZED E_n LITERATURE AND PRIORITY REPORT
+Checked 2026-10-07 UTC (2026-10-06 America/Chicago).
+Scope: ordinary equal-parameter mu(x,w), x fully commutative, w arbitrary.
+Graph E_n has arms1,2,n-4, including affine E8 at n=9 and indefinite n>=10.
+No edits have been made to the final LaTeX or README by this audit.
+
+Addendum: parabolic_computation.txt now gives the precisely normalized
+spherical-module recurrence needed to replace full ordinary intervals by
+right-parabolic intervals, with a primary-source convention check and an
+explicit small wall-correction check. This was requested for the length34
+E9 upper endpoint after its ordinary lower ideal exceeded3million entries.
+
+ACTIONABLE FINDINGS
+
+The companion structural_lemmas.txt supplies two rigorous tools:
+(1) A maximum commuting set contained in both descent sets determines the
+    FC lower endpoint uniquely, by monomial TL cell intersections.
+(2) A reduced finite-parabolic longest factor of length>|I|+1 forces
+    mu(i(I),w)=0. This uses ordinary a, and holds for every equal-parameter
+    Coxeter group without a boundedness hypothesis. Star equivalence can
+    move the upper endpoint before applying the factor criterion.
+
+These tools can replace many numerical lower-endpoint/polynomial checks.
+They do not classify the infinite set of arbitrary upper endpoints.
+
+FINITE E6/E7/E8 PRIORITY STATUS
+
+No checked primary source states the full FC-lower/arbitrary-upper theorem
+in E6,E7,E8, nor the exact noncommuting terminal classification now obtained
+by the research team's independent enumerations. This is a candidate
+extension with priority UNCONFIRMED, not a certified new/open result.
+Absence from these searches cannot establish novelty.
+
+The parent now reports independent exhaustive E8 algorithms through E7 and
+D7 parabolics agreeing on64 terminals:58 commuting and6 noncommuting,
+of lengths7,8,8,15,28,50. The eligible FC bottom lengths are3,4,4,4,4,4.
+Only the length15 case has odd gap, and it is the old D6 pair treated by
+Gern. This audit did not rerun those enumerations. It checked historical
+scope and proof tools rather than replacing the independent certificates.
+
+The most directly relevant old endpoint results remain:
+- Green2009: FC lower/arbitrary upper in affine A, hence finite A.
+  https://arxiv.org/abs/0801.1650
+- Chmutov2014 thesis, Theorem2.3.8, printed p.58: same orientation in B.
+  https://deepblue.lib.umich.edu/handle/2027.42/108802
+- Gern2013, Theorem4.5.11, printed p.66: same orientation in D.
+  https://arxiv.org/abs/1304.6074
+- Green's trace results for E_n: BOTH endpoints FC.
+  https://arxiv.org/abs/0704.0283
+- Jones2009, Theorem1.2 and exceptional Theorem6.1: UPPER endpoint Deodhar,
+  arbitrary lower endpoint, including E8. This does not cover non-FC tops.
+  https://arxiv.org/abs/0711.1391
+Detailed earlier primary-source locators and caveats are in
+../exceptional_priority/report.txt; that report concentrated on E6/E7.
+
+Geck--Halls, On the Kazhdan--Lusztig cells in type E8, Math.Comp.84(2015),
+3029--3049, arXiv1401.6804v3, introduction and sections4--6, gives complete
+E8 cell algorithms, including reduction of101796 left cells to106 star
+representatives. Its leading character/matrix coefficients c_(w,E) differ
+from mu(x,w). It does not state the target restricted coefficient bound or
+the six-terminal classification. A cell partition or a cell representation
+W-graph is insufficient to bound every global mu: edges between cells and
+pairs with equal descent sets may not be recorded in that data.
+https://arxiv.org/abs/1401.6804
+Local PDF/text: ../exceptional_priority/geck-halls.*
+
+Historical terminal-classification evidence: Laird's2016 MS thesis,
+A Study of T-Avoiding Elements of Coxeter Groups, section5.3, printedp63,
+explicitly lists E_n type2 T-avoidance classification as an open direction.
+https://danaernst.com/scholarship/LairdThesis.pdf
+Her January2022 institutional CV describes the earlier research as A,B,
+affineC and preliminary affineA. Neither source establishes status in2026.
+https://statistics.arizona.edu/sites/default/files/Laird_CV%20Jan%202022_0.pdf
+Gilbertson/Ernst's2013 primary slides ask about additional types after
+A/B/C/D/F; no E classification is supplied.
+https://speakerdeck.com/dcernst/investigation-of-t-avoiding-elements-of-coxeter-groups
+
+GENERALIZED E_n FOUNDATIONS
+
+Stembridge, On the fully commutative elements of Coxeter groups,
+J.Algebraic Combin.5(1996),353--385, published Theorem5.1
+(author-preprint Theorem4.1), classifies FC-finite Coxeter systems and
+includes E_n for every n>=6. Thus the FC set is finite even for E9/E10.
+It says nothing analogous about arbitrary elements or terminal elements.
+Author preprint: https://websites.umich.edu/~jrs/papers/FC.pdf
+Published primary mirror:
+https://www2.math.ethz.ch/EMIS/journals/JACO/Volume5_4/cq9j136368033131.fulltext.pdf
+Local: stembridge-fc.pdf and .txt.
+
+Green2006 classifies all generalized E_n as star reducible. This means FC
+elements reduce by stars to commuting products. Arbitrary non-FC upper
+endpoints may reach other terminals. Green2007 develops their finite
+Temperley--Lieb algebra, trace and monomial cells uniformly in n. The
+trace's0/1 conclusion retains BOTH-FC hypotheses. Exact proof locators
+and deductions are in structural_lemmas.txt.
+
+Hagiwara--Ishikawa--Tagawa, A characterization of the simply-laced FC-finite
+Coxeter groups, Ann.Combin.8(2004), uses the same extended family.
+An indexed FPSAC2004 primary version, Proposition4.7, gives a loose FC
+length bound ell(w)<=2^(n-1)-1. This can cap FC enumeration but cannot cap
+terminal upper endpoints. Its KL application concerns the coefficient of
+q in P_(e,w) for FC UPPER w, not the top possible coefficient with FC lower.
+https://fpsac-archive.github.io/FPSAC04/posters.pdf
+https://doi.org/10.1007/s00026-004-0214-6
+
+Green--Xu2020 Proposition3.15 extends ordinary a=heap width on FC elements
+from Shi's finite/affine setting to all star-reducible groups. Their later
+2023 paper classifies cells of ordinary a-value2 in a(2)-finite groups.
+Generalized E_n occur in that framework, but the present E9 terminals have
+a>=5, so the a2-cell classification does not solve them. The2023 paper
+explicitly separates unconditional P1--P6 from additional boundedness-
+dependent statements. This was an important scope check for our factor
+lemma: it only uses P1,P4 and a direct parabolic-subalgebra inequality.
+2020: https://www.numdam.org/item/10.5802/alco.95.pdf
+2023: https://www.numdam.org/item/10.5802/alco.275.pdf
+Local PDFs/texts: green-xu-a2-classification.*, green-xu-a2.*
+
+INFINITE E9 UPPER ENDPOINTS
+
+The family agent's new affine reflection family beta+k delta is meaningful
+evidence that terminal classification in E9 differs from finite E6--E8.
+FC-finiteness and star reducibility do not contradict infinitely many
+non-FC terminals. Its exact words, matrices, length33+58k formula, and
+length34+58k extensions are in research/en_families/affine_reflection_family.*.
+This audit has not independently verified that construction and found no
+primary source with its exact terminal assertion. No mu-values for the
+whole family follow just from the reflection/root formula.
+
+Later update from the family agent: a different family conjugates a
+length27 terminal by translations along gamma=(1,1,1,1,1,0,0,0,0),
+with constant maximum commuting descent set I={1,3,5,7,8}. Conditional on
+its independently audited column-sign/terminal proof, Lemma1 makes i(I)
+the unique eligible FC bottom. Conjugation preserves length parity, so
+the gap from length5 stays even and its mu is0. The exact construction
+is in research/en_families/translation_cones.json. Searches for
+T-avoiding/weakly-bad plus affineE8, translation, and star-irreducible
+did not locate this family or a general terminal-cone theorem. Its
+priority is still unconfirmed. Such a family does not prove the bound
+for all affine E8 upper endpoints.
+
+Do not confuse affine subregular or antispherical KL formulas with these
+ordinary polynomials. An additional search found Kim--Suzuki's2024 primary
+work on affine subregular polynomials, but its stated parabolic/subregular
+scope does not directly evaluate our ordinary non-FC terminal tops:
+https://math.mit.edu/research/highschool/primes/materials/2024/Kim-Suzuki.pdf
+
+UNIFORM0/1: WHAT HAS AND HAS NOT BEEN SHOWN
+
+All generalized E_n have finite FC sets, an explicit diagram algebra,
+both-FC leading coefficients in{0,1}, and star-reducibility. None of these
+statements alone proves FC-lower/arbitrary-upper0/1. The missing steps
+are a classification/control of arbitrary terminals and their remaining
+odd-gap coefficients. The maximum-independent-descent lemma plus factor
+vanishing gives a concrete route, but there can be terminals with smaller
+descent sets or no sufficiently long direct parabolic factor.
+
+The universal all-Coxeter0/1 possibility is already false by Mongelli's
+2011/2014 explicit Catalan-star formulas; see the prior report. The affine
+D4 four-leaf example does not embed as a standard parabolic in E_n, whose
+diagram has only one trivalent vertex. Hence it supplies no immediate
+counterexample in this generalized E_n family.
+
+SEARCH COVERAGE (new searches after the E6/E7 audit)
+
+Queries combined E8/E_8/E_n/affineE8/E9 with fully commutative, lower,
+leading coefficients, zero-one/0or1, bad elements, weak star, T-avoiding,
+T2-avoiding, and terminal; also Green/Xu/star-reducible/a-function,
+reflection/Kazhdan-Lusztig/affine/formula, and Ernst/Laird classifications.
+Checked primary hits include the exact sources listed above, plus Jones's
+published article and the already downloaded Geck--Halls/PyCox sources.
+Search timestamps advertised by the engine often refer to crawling rather
+than publication; bibliographic dates above come from the documents.
+
+Unresolved priority limits: not every older E8 cell paper, unpublished
+exceptional-group data table, thesis, or specialist's computation has been
+exhaustively inspected. In particular Chen's older E8 cell work and the
+full duCloux1996 computational article are not excluded by a full-text
+reading in this audit. Public computational capability is old; an explicit
+FC-bottom theorem and the exact terminal classification may still be new,
+but that needs expert/complete bibliographic confirmation.

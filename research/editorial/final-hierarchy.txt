@@ -1,0 +1,57 @@
+FINAL HIERARCHY REVIEW
+
+Reviewed the complete rewritten results/exceptional-leading.tex. Main TeX was not edited. This assessment concerns the mathematical exposition, hierarchy and claim boundaries; it does not certify the independent arithmetic, source attributions or publication priority.
+
+VERDICT
+
+Approve the revised architecture, subject to the small clarity fixes below. It now reads as a mathematical article with two complementary main results, rather than a chronological research report. The finite theorem appears first with its correct all-upper-endpoint quantifier. The rank-uniform theorem has comparable prominence on the opening pages and receives the first substantial construction section. That proof order is effective: the symbolic result is now visible before the longest computational account, without diminishing the finite theorem's broader whole-group scope.
+
+The sequence Introduction -> Structural reductions -> Rank-uniform construction -> Finite exceptional types -> Complementary fixed-rank families -> Transfer/scope -> Certificates/seed data is coherent. There is no need for another large reordering. A modest roadmap edit would make the chosen order more explicit, because the current last introduction paragraph mentions applications/transfer/appendices but does not name the finite-proof section.
+
+SMALL FIXES BEFORE FINALIZATION
+
+1. In the terminal-reduction proof, introduce d=ell(w)-ell(x) before 'Hence assume x<w and d>=3 is odd.' The introduction no longer defines a global d, so the proof currently has an undeclared symbol.
+
+2. Define T=r_gamma r_(gamma+delta) next to the uniform construction's delta and gamma, before the uniform-descents lemma. That lemma states beta_(r,k)=T^k beta_r before T is explicitly introduced for this construction. The generic ambient-action lemma makes the intended operator recoverable, but a local definition is cleaner.
+
+3. The last sentence of the finite theorem's proof reads 'All other non-cover coefficients are zero, proving the theorem.' Restrict this explicitly to terminal upper endpoints: 'All other non-cover coefficients with terminal upper endpoint are zero; Lemma ... now proves the theorem.' Without that restriction, the sentence can be read as asserting vanishing for all non-cover pairs in finite E6/E7/E8, which is stronger than the theorem and has not been proved. This is the most important claim-boundary edit.
+
+4. In the uniform-descents proof, after the pairing formulas, insert the short bridge 'Since b_(r,k)(alpha_j)=alpha_j-m_j beta_(r,k), its right descent set is exactly I_r.' The current argument gives positivity of the pairings and then proves the edge test, but leaves that key root-sign inference unstated. The reflection/involution argument already supplies the left side. This is a readability improvement rather than a structural gap.
+
+5. Remove the space in 'coefficient assertions .' and decide whether the non-FC property should be in the introductory uniform theorem. It was in the original theorem and is still proved in the revision. Adding 'non-fully-commutative' to the stated family preserves that result at the level of the advertised theorem and helps explain why it differs from the both-endpoints-FC literature. The current theorem is true but slightly understates the original result.
+
+MAIN-RESULT EMPHASIS
+
+The abstract is effective. It distinguishes the finite whole-type bound, uniform non-cover/eventual vanishing, affine complete vanishing, and E10 non-cover vanishing. It does not overclaim full-polynomial control or general infinite-type bounds. Omitting priority disclaimers and unsuccessful searches from the abstract is the right choice; the introduction contains the necessary historical qualification.
+
+The uniform construction is the strongest candidate contribution to emphasize after the finite theorem: it is explicit in rank and parameter, uses full support at each rank, and has a short structural real-root certificate. Extracting the staircase-seed lemma and translated-descent lemma gives the proof a readable dependency chain. The shared root-action lemma correctly removes the old dependence on the weaker E13 construction. E13 is now a genuine specialization paragraph rather than a duplicated theorem/proof.
+
+The maximum-descent criterion is placed correctly and has a clear role. Its independence from terminality is stated just before the lemma and again in the proposition. Keeping only one of these two statements is optional tightening; neither causes a problem. The distinction between monomial TL cells and ordinary KL cells deserves to remain because it guards an actual mathematical interpretation.
+
+The finite classification now has one complete 11-row table and one computational proposition. The sole D6 exception is explained once. The table is compact enough for the main text: moving it to an appendix would weaken the finite theorem's explanation. Its exact physical placement should be checked in the rendered PDF, particularly whether the float separates the definition of b_(8,6) from its row. This review read source, not rendered pages.
+
+COMPUTATIONAL ESSENTIALS AND APPENDIX PROPORTION
+
+The division is now appropriate. Main text retains the faithful root representation, exact terminal condition, length-additive pruning proof, closure/transitivity argument for cosets, FC recurrence and omitted-element completeness argument, and the exhaustive search for eligible bottoms. These explain why the classification is exhaustive rather than just reporting counts.
+
+The appendix contains the distinct D7 verification route, candidate totals, consistency checks, root/coset counts, programs and certificate locations. Those details substantiate the proof without interrupting the classification argument. The two appendices are small relative to the substantive theorem/proof text and do not reproduce the former research diary. There is no reason to shorten them merely to lower the appendix proportion.
+
+The affine theorem retains the essential all-parameter inversion calculation, compressed into a five-class table, and explicitly handles the cover exception using maximum FC length 44 and the 21 checked base covers. Moving B0 to Seed data was sensible: the main proof still explains exactly which signs and edge sums it needs from that matrix. The E10 real-root lowering sequence and the fixed affine-root witnesses are also appropriate appendix material. Norm-two membership is not substituted for a real-root certificate.
+
+For an external submission, the certificate material still requires an accessible distribution: repository-relative paths, commands, source hashes and logs are useful inside the present project but should be tied to a persistent repository or deposited supplement when one exists. Do not invent an archive URL or DOI. This is a packaging task for submission, not a reason to alter the present mathematical architecture. Ensure that the prose 'Source hashes, logs, and complete code are included in the archive' matches the actual deliverable.
+
+SCOPE AND PRIORITY
+
+The CI corollary is clearly conditional and separated from the unconditional main proofs. Its length is acceptable if preserving that consequence is part of the manuscript's brief. It should not be promoted into the introduction's main-result pair or abstract. 'Interval transfer and scope' is an appropriate heading; no extra discussion of failed interval searches is needed.
+
+The D4 example is a useful, short demonstration of why mu=0 does not mean P=1. The statement of no historical-priority claim is restrained and does not undermine the definite mathematical claims. Removed agent histories, failed-search counts and sampled indefinite lengths should remain in the supplementary research records, not return to the article.
+
+OPTIONAL FINAL ROADMAP SENTENCE
+
+'Section 2 develops the descent and root-action tools. Section 3 proves the rank-uniform theorem, Section 4 proves the finite exceptional theorem, and Section 5 gives the complementary affine E8 and E10 constructions. Section 6 records the conditional interval transfer and the scope of the coefficient bounds. The appendices contain computational certificates and seed data.'
+
+Use cross-references rather than literal section numbers when implementing this. No further expansion of the introduction is necessary.
+
+OVERALL
+
+The revision meets the requested journal-style information hierarchy. After the small symbol/scope edits, its organization is ready for final mathematical, bibliographic and rendered-layout verification. This editorial approval does not imply independent proof verification or confirmed novelty priority.

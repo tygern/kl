@@ -1,0 +1,233 @@
+INDEPENDENT REFEREE: RANK-UNIFORM GENERALIZED-E FAMILY
+2026-10-07. Mathematical validity and historical priority are separate.
+
+VERDICT
+
+The two-parameter construction is valid for every integer r>=3 and k>=0.
+It gives full-support, non-FC terminal reflections in E_(4r+1), with all
+ordinary equal-parameter KL leading coefficients at FC lower endpoints
+in {0,1}; every non-cover coefficient vanishes. For each fixed r, all of
+these coefficients vanish for every sufficiently large k. The last claim
+requires no length formula: FC-finiteness and injectivity of the sequence
+suffice. No mathematical blocker was found in the final uniform section.
+
+This is uniform over the unbounded rank class 13,17,21,... . It is not a
+theorem for all upper endpoints, nor a full-support construction in every
+congruence class of ranks, nor a formula for the complete polynomial P.
+Priority of the explicit family is not settled by this correctness audit.
+
+AUDIT TARGET AND INDEPENDENCE
+
+Read results/exceptional-leading.tex, section "A rank-uniform full-support
+construction", including its final edge 7--8 rewrite. Audited source SHA256:
+  f6e623e00b9d2df27172be18bdaf9b081a24036f664f6808a27b0c3df1b73b4b
+Also compared research/en_uniform/construction.txt and construction.py.
+The last source additions were checked too: Gern Example 1.1.6 explicitly
+identifies W(D_N) with even signed permutations; the three-leaf D4 example
+has interval rank four and P=1+2q, so mu=0 while P is nonconstant, consistent
+with Mongelli's tree/Boolean formula. At r=2 the seed is the earlier affine
+reflection and m0=0, leaving only four descents instead of the maximum five.
+These additions do not change the theorem or its proof.
+
+The separate program referee_verify.py imports neither construction.py,
+targeted.py, prior family verifiers, nor an FC enumeration engine. It uses
+integer root vectors and exact Cartan multiplication. Its polynomial-ring
+assertions check local identities in Q[r,k,q], including the generic tail,
+the seed norm and signed-coordinate transformation, all modified pairings,
+and exceptional edge sums. Separate finite diagnostics check r=3,...,40
+(ranks 13,...,161), k=0,1,2,10,10^6. The program checks the ambient operator
+on every simple-root basis vector, N^3=0, the actual reflection signs and
+terminality, a matching, support, distinctness, and two fixed real-root
+reduction words. All passed. Output: referee-certificate.json. The theorem
+is proved below for all parameters; finite diagnostics are not extrapolated.
+
+1. UNIFORM REAL-ROOT MEMBERSHIP
+
+Use the chain 0--1--...--(4r-1), branch 4r attached to 2. Let N=4r. The
+seed coefficients are b0=r-1, b1=r, b_j=2r-floor(j/2) for 2<=j<N, b_N=r.
+Deleting node 0 gives finite D_N. In an orthonormal basis e1,...,eN, set
+  alpha1=e1+e2,
+  alpha_N=e2-e1,
+  alpha_j=e_(j+1)-e_j  (2<=j<N).
+Adjoin z orthogonal to the e-space, z^2=2-r, and put
+  alpha0=z-(e1+...+eN)/2.
+These N+1 linearly independent vectors have precisely the generalized-E
+Cartan form. The negative value of z^2 causes no problem: this is the
+indefinite ambient root space, and the D_N subspace remains Euclidean.
+
+Expanding beta_r gives (r-1)z plus finite coordinates
+  -(r-1)/2 on odd indices,  (3-r)/2 on even indices.
+Since (beta_r,alpha0)=r-2, applying s0 gives coefficient one on z, finite
+coordinates -1/2 on odd indices and +1/2 on even indices. Thus
+  s0(beta_r)=F(alpha0),
+where F changes the signs of precisely e2,e4,...,eN. This is an even
+number 2r of sign changes, hence is in W(D_N). An explicit expression is
+the product over j=1,...,r of
+  r_(e_(4j-2)-e_(4j)) r_(e_(4j-2)+e_(4j)).
+Each factor pair changes exactly those two coordinate signs; both roots
+are D_N roots. Therefore beta_r=s0 F(alpha0) is a real root FOR EVERY r.
+This step does not infer reality from norm two. For reference, cancellation
+of the paired long-arm coordinates gives the norm identity
+  (r-1)(r-2)+r(2-r)+r=2.
+
+2. THE AMBIENT TRANSLATION, WITH ALL PARAMETERS
+
+Let delta have coordinates (2,4,6,5,4,3,2,1) at 0,...,7 and 3 at branch N;
+let gamma have coordinates (1,2,3,2,2,1,1,0) there and 1 at branch N.
+All other coordinates are zero. The subdiagram on 0,...,7,N is affine E8.
+Here delta^2=0, gamma^2=2, (gamma,delta)=0. Gamma and gamma+delta are real
+roots; referee-certificate.json records explicit simple-reflection lowering
+words, supported in this fixed subdiagram and independent of r after
+renaming the branch. Both end at a simple root. Thus neither real-root
+assertion rests solely on a norm test.
+
+For T=r_gamma r_(gamma+delta), direct expansion gives, for EVERY ambient z,
+  Tz=z+(z,delta)gamma-[(z,gamma)+(z,delta)]delta.
+In particular delta is fixed, gamma maps to gamma-2delta, and Nop=T-1
+satisfies Nop^3=0 on the whole ambient space. Delta is not an ambient
+radical vector: (delta,alpha8)=-1. Treating it as radical would invalidate
+the construction, but neither this proof nor the audited TeX does so.
+
+Put a=2r-4. Direct Cartan pairings are
+  (beta_r,gamma)=-r,  (beta_r,delta)=-a.
+Consequently
+  Nop beta_r=-a gamma+(a+r)delta=:v,
+  Nop^2 beta_r=2a delta=:u,
+  Nop u=0.
+The binomial identity proves for every integer k>=0
+  beta_(r,k)=T^k beta_r
+            =beta_r-a k gamma+(a k^2+r k)delta
+            =beta_r+k v+binom(k,2)u.
+This both proves reality and fixes the sign/orientation of T. The first
+increment at 0,...,7 and the branch is
+  (4r-4,8r-8,12r-12,11r-12,8r-8,7r-8,4r-4,3r-4;7r-8).
+It is positive there and zero elsewhere; u is nonnegative. Since the seed
+is strictly positive, so is beta_(r,k) for every r>=3,k>=0.
+
+3. ALL-PARAMETER DESCENTS AND TERMINALITY
+
+The exact Cartan pairings m_j=(alpha_j,beta_(r,k)) are
+  m0=r-2, m1=2-r, m2=-1-a k;
+  m_j=(-1)^(j+1)(1+a k),  3<=j<=7;
+  m8=-1-a k^2-r k;
+  m_j=(-1)^(j+1),        9<=j<=4r-1;
+  m_(4r)=1+a k.
+Their positive set is exactly I_r={0,3,5,...,4r-1,4r}. Every m_j is nonzero.
+On every edge incident to I_r the sum is zero except possibly 7--8 and
+8--9. The exceptional sums respectively equal
+  -r k-a k(k-1),   -(a+r)k-a k(k-1).
+Both are nonpositive for integer k>=0. Writing the first this way makes
+the k=0 and k=1 boundary cases explicit, including r>4.
+
+For w=r_(beta_(r,k)), w(alpha_j)=alpha_j-m_j beta_(r,k). Strict positivity
+and integrality of beta imply that this root is negative exactly on I_r.
+Thus R(w)=I_r; involutivity gives L(w)=I_r. For s in I_r and t adjacent,
+  w s(alpha_t)=w(alpha_t+alpha_s)
+             =alpha_t+alpha_s-(m_t+m_s)beta_(r,k)
+is positive. No adjacent generator descends after removal of a descent.
+The same is true on the left. This proves the stipulated terminal property,
+with no appeal to finite type or to a computer enumeration of group elements.
+
+4. FULL SUPPORT, MAXIMUM INDEPENDENCE, NON-FC, DISTINCTNESS
+
+Since m0=r-2>0 and every coordinate of beta is positive, column 0 of the
+reflection differs from the identity in every coordinate row. Every simple
+reflection except s_j leaves coordinate row j fixed. Hence an element of a
+standard parabolic omitting j fixes that row; w belongs to no such parabolic
+and has full support in the actual rank 4r+1.
+
+I_r is independent of cardinality 2r+1. The matching
+  (0,1), (2,4r), (3,4), (5,6), ..., (4r-3,4r-2)
+has 2r disjoint edges and leaves one vertex unmatched. An independent set
+has at most one vertex per matching edge plus that last vertex, so 2r+1
+is the exact independence number. This elementary bound avoids needing
+any classification of independent sets.
+
+The reflection length is odd: it is conjugate to a simple reflection, or
+equivalently has determinant -1 in the faithful geometric representation.
+The product i(I_r) has a (-1)-eigenspace of dimension 2r+1 since its simple
+roots are orthogonal; a real-root reflection has dimension one. They cannot
+coincide. The maximum-descents lemma in part 5 then also proves that w is
+not fully commutative.
+
+The coordinate beta_(r,k),0 equals r-1+4k+(4r-8)k^2 and is strictly increasing
+for k>=0. Positive norm-two roots defining the same reflection must be
+equal: its rank-one difference from the identity has their common image
+line, and the norm and positivity fix the scalar. Thus the reflections are
+distinct for fixed r. Different r label different ranks, not points in a
+single fixed-rank family; no cross-rank comparison of lengths is needed.
+
+5. ORDINARY KL CONSEQUENCE AND EVENTUAL VANISHING
+
+Primary structural input: R. M. Green, On the Markov trace for Temperley--
+Lieb algebras of type E_n, arXiv:0704.0283, Definition 4.1 and Proposition
+4.4(iv),(v); also the final paragraph of Lemma 5.2. This applies to every
+generalized E_n, including indefinite cases. The cells used here are
+monomial Temperley--Lieb cells. No identification with ordinary KL cells
+or ordinary Lusztig a-values is required or made.
+
+If an FC x has a maximum independent set I in BOTH descent sets, i(I)
+occurs as both a reduced prefix and suffix. Its monomial a-value is |I|:
+the commuting prefix supplies the lower bound, and a larger commuting
+factor is impossible by the independence number of the support graph.
+Green 4.4(iv) puts x in the right monomial cell of i(I), and its left-right
+analogue puts it in the left monomial cell of i(I). Green 4.4(v) says their
+intersection is a singleton, which already contains i(I). Thus x=i(I).
+
+Now take any FC x<w and gap>1. If an upper left or right descent is absent
+from the corresponding lower descent set, the ordinary KL descent identity
+forces mu(x,w)=0; the only exceptional nonzero case of that identity is a
+cover. Otherwise the preceding lemma forces x=i(I_r), of odd length 2r+1.
+Since w is also odd, the gap is even and its ordinary leading coefficient
+is zero. Every cover has mu=1. This proves the 0/1 assertion and vanishing
+for every non-cover, uniformly without computing P. Non-comparable x have
+mu=0 by convention, if the statement is extended to all FC elements.
+
+For a fixed r, Stembridge's FC-finiteness classification gives a finite
+maximum length M_r of an FC element. Because each bounded Coxeter length
+ball is finite and k->w_(r,k) is injective, only finitely many k satisfy
+ell(w_(r,k))<=M_r+1. Therefore for every sufficiently large k there are no
+FC lower covers; all remaining coefficients were already zero. This is
+the asserted eventual all-zero result. It gives no explicit threshold,
+no threshold uniform in r, and no monotonic or closed-form length formula.
+
+6. AUDIT OF THE PROPOSED TWO-DIFFERENT-DESCENT-SETS STRENGTHENING
+
+This extension is valid as a separate lemma. Let K be a support vertex
+set in a generalized E diagram, and let I,J be MAXIMUM independent subsets
+of K, both of cardinality alpha(K). Define
+  x*=i(I)i(J\I),   ell(x*)=2 alpha(K)-|I intersect J|.
+The displayed word uses each generator at most once. It is reduced and FC;
+no commutations can create a repeated-letter braid. Every element of
+I intersect J commutes with every generator in I union J, so the displayed
+word can also be written with i(J) as a suffix. Hence I is contained in its
+left descents and J in its right descents. Both containments are equalities
+because FC descent sets are independent and I,J are maximum.
+
+For any FC x supported in K with I contained in L(x) and J contained in R(x),
+a_TL(x)=alpha(K), and the same holds for x*. By Green 4.4(iv), x and x* lie
+in the right cell of i(I) and the left cell of i(J). These cells belong to
+the same two-sided cell because x* lies in their intersection. Part (v)
+then forces x=x*. Thus, for an upper b with these descent sets, parity
+  ell(b) congruent to |I intersect J| modulo 2
+forces all non-cover FC leading coefficients to vanish. Covers remain 1.
+If x* is not below b, there is simply no eligible lower endpoint; no claim
+that x*<=b is required. The proof requires maximum independent sets in
+the SAME support graph, not merely inclusion-maximal independent sets.
+
+7. PRECISE LIMITATIONS
+
+The invariant mu is one specified leading coefficient, which is zero by
+parity for an even interval rank. Its vanishing does not eliminate lower
+degree terms of P. Even a theorem controlling every FC-lower mu for one
+fixed upper does not by itself give P=1, because KL recursion also uses
+different uppers and lower-degree contributions. No constant-polynomial
+claim follows from the maximum-descent argument, from arbitrarily large
+upper lengths, or from eventual all-zero mu. The audited TeX says this
+explicitly and correctly.
+
+The current uniform construction covers ranks n=4r+1, r>=3. It is stronger
+than embedding one fixed example into higher ranks because every upper has
+full support in its own growing diagram. It remains an explicit family,
+not a whole-type statement for arbitrary upper endpoints in infinite E_n.
+Historical novelty remains unconfirmed and is not certified by this report.

@@ -1,0 +1,9155 @@
+{
+  "conventions": {
+    "permutations": "one-line images; signed permutations act on {-n,...,-1,1,...,n}",
+    "multiplication": "words multiply on the right; simple-generator labels start at 0",
+    "A": "s_i swaps positions i and i+1, zero-based",
+    "B": "s_0 negates first entry; s_i swaps entries i and i+1 for i>=1, one-based",
+    "D": "s_0 sends first two entries (a,b) to (-b,-a); s_i swaps entries i and i+1 for i>=1, one-based",
+    "polynomial": "coefficient arrays in ascending powers of q"
+  },
+  "finite_checks": {
+    "A3": {
+      "group_order": 24,
+      "max_length": 6,
+      "fully_commutative_elements": 14,
+      "comparable_pairs_including_equal": 213,
+      "strict_pairs_with_fc_bottom": 160,
+      "fc_bottom_mu_distribution": {
+        "0": 117,
+        "1": 43
+      },
+      "checks": [
+        "group order",
+        "length change under generators",
+        "non-FC reduced braid witnesses",
+        "KL positivity",
+        "KL degree bound and constant term",
+        "KL invariance under inverse",
+        "P(x,w0)=1",
+        "independent inversion-formula lengths for every element",
+        "independent lifting-property Bruhat comparisons for every ordered pair",
+        "second sparse KL implementation for every comparable pair"
+      ]
+    },
+    "A4": {
+      "group_order": 120,
+      "max_length": 10,
+      "fully_commutative_elements": 42,
+      "comparable_pairs_including_equal": 3781,
+      "strict_pairs_with_fc_bottom": 2340,
+      "fc_bottom_mu_distribution": {
+        "0": 2141,
+        "1": 199
+      },
+      "checks": [
+        "group order",
+        "length change under generators",
+        "non-FC reduced braid witnesses",
+        "KL positivity",
+        "KL degree bound and constant term",
+        "KL invariance under inverse",
+        "P(x,w0)=1",
+        "independent inversion-formula lengths for every element",
+        "independent lifting-property Bruhat comparisons for every ordered pair",
+        "second sparse KL implementation for every comparable pair"
+      ]
+    },
+    "B3": {
+      "group_order": 48,
+      "max_length": 9,
+      "fully_commutative_elements": 24,
+      "comparable_pairs_including_equal": 847,
+      "strict_pairs_with_fc_bottom": 604,
+      "fc_bottom_mu_distribution": {
+        "0": 517,
+        "1": 87
+      },
+      "checks": [
+        "group order",
+        "length change under generators",
+        "non-FC reduced braid witnesses",
+        "KL positivity",
+        "KL degree bound and constant term",
+        "KL invariance under inverse",
+        "P(x,w0)=1",
+        "independent inversion-formula lengths for every element",
+        "independent lifting-property Bruhat comparisons for every ordered pair",
+        "second sparse KL implementation for every comparable pair"
+      ]
+    },
+    "D4": {
+      "group_order": 192,
+      "max_length": 12,
+      "fully_commutative_elements": 48,
+      "comparable_pairs_including_equal": 9817,
+      "strict_pairs_with_fc_bottom": 4914,
+      "fc_bottom_mu_distribution": {
+        "0": 4663,
+        "1": 251
+      },
+      "checks": [
+        "group order",
+        "length change under generators",
+        "non-FC reduced braid witnesses",
+        "KL positivity",
+        "KL degree bound and constant term",
+        "KL invariance under inverse",
+        "P(x,w0)=1",
+        "independent inversion-formula lengths for every element",
+        "independent lifting-property Bruhat comparisons for every ordered pair",
+        "second sparse KL implementation for every comparable pair"
+      ]
+    },
+    "B4": {
+      "group_order": 384,
+      "max_length": 16,
+      "fully_commutative_elements": 83,
+      "comparable_pairs_including_equal": 40249,
+      "strict_pairs_with_fc_bottom": 17695,
+      "fc_bottom_mu_distribution": {
+        "0": 17223,
+        "1": 472
+      },
+      "checks": [
+        "group order",
+        "length change under generators",
+        "non-FC reduced braid witnesses",
+        "KL positivity",
+        "KL degree bound and constant term",
+        "KL invariance under inverse",
+        "P(x,w0)=1",
+        "independent inversion-formula lengths for every element",
+        "independent lifting-property Bruhat comparisons for every ordered pair",
+        "second sparse KL implementation for every comparable pair"
+      ]
+    }
+  },
+  "certificates": [
+    {
+      "source": {
+        "type": "D4",
+        "bottom": {
+          "id": 3,
+          "one_line": [
+            1,
+            3,
+            2,
+            4
+          ],
+          "length": 1,
+          "reduced_word": [
+            2
+          ],
+          "fully_commutative": true,
+          "non_fc_reduced_word": null
+        },
+        "top": {
+          "id": 46,
+          "one_line": [
+            -1,
+            2,
+            -3,
+            4
+          ],
+          "length": 4,
+          "reduced_word": [
+            2,
+            0,
+            1,
+            2
+          ],
+          "fully_commutative": true,
+          "non_fc_reduced_word": null
+        }
+      },
+      "target": {
+        "type": "B3",
+        "bottom": {
+          "id": 18,
+          "one_line": [
+            3,
+            2,
+            -1
+          ],
+          "length": 4,
+          "reduced_word": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "fully_commutative": false,
+          "non_fc_reduced_word": [
+            0,
+            1,
+            2,
+            1
+          ]
+        },
+        "top": {
+          "id": 41,
+          "one_line": [
+            2,
+            -1,
+            -3
+          ],
+          "length": 7,
+          "reduced_word": [
+            0,
+            1,
+            2,
+            1,
+            0,
+            1,
+            2
+          ],
+          "fully_commutative": false,
+          "non_fc_reduced_word": [
+            2,
+            0,
+            1,
+            0,
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      "rank": 3,
+      "rank_vector": [
+        1,
+        4,
+        4,
+        1
+      ],
+      "polynomial_coefficients": [
+        1,
+        1
+      ],
+      "mu": 1,
+      "map": [
+        {
+          "source": {
+            "id": 3,
+            "one_line": [
+              1,
+              3,
+              2,
+              4
+            ],
+            "length": 1,
+            "reduced_word": [
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 18,
+            "one_line": [
+              3,
+              2,
+              -1
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 6,
+            "one_line": [
+              -2,
+              3,
+              -1,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              0,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 25,
+            "one_line": [
+              3,
+              -2,
+              -1
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 8,
+            "one_line": [
+              2,
+              3,
+              1,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 28,
+            "one_line": [
+              3,
+              1,
+              -2
+            ],
+            "length": 5,
+            "reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 10,
+            "one_line": [
+              -3,
+              -1,
+              2,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              2,
+              0
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 26,
+            "one_line": [
+              -3,
+              2,
+              -1
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 11,
+            "one_line": [
+              3,
+              1,
+              2,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              2,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 31,
+            "one_line": [
+              1,
+              2,
+              -3
+            ],
+            "length": 5,
+            "reduced_word": [
+              2,
+              1,
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 14,
+            "one_line": [
+              -1,
+              3,
+              -2,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 32,
+            "one_line": [
+              3,
+              -1,
+              -2
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0,
+              1,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 16,
+            "one_line": [
+              -3,
+              2,
+              -1,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              2,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              2,
+              0
+            ]
+          },
+          "target": {
+            "id": 34,
+            "one_line": [
+              2,
+              -3,
+              -1
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 21,
+            "one_line": [
+              3,
+              2,
+              1,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1
+            ]
+          },
+          "target": {
+            "id": 38,
+            "one_line": [
+              2,
+              1,
+              -3
+            ],
+            "length": 6,
+            "reduced_word": [
+              1,
+              2,
+              1,
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 24,
+            "one_line": [
+              -1,
+              -3,
+              2,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              2,
+              0,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 35,
+            "one_line": [
+              -1,
+              2,
+              -3
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              2,
+              1,
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              0,
+              1,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 46,
+            "one_line": [
+              -1,
+              2,
+              -3,
+              4
+            ],
+            "length": 4,
+            "reduced_word": [
+              2,
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 41,
+            "one_line": [
+              2,
+              -1,
+              -3
+            ],
+            "length": 7,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              0,
+              1,
+              0,
+              1,
+              2,
+              1
+            ]
+          }
+        }
+      ],
+      "source_cover_edges": [
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          6,
+          16
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          10,
+          24
+        ],
+        [
+          11,
+          21
+        ],
+        [
+          11,
+          24
+        ],
+        [
+          14,
+          46
+        ],
+        [
+          16,
+          46
+        ],
+        [
+          21,
+          46
+        ],
+        [
+          24,
+          46
+        ]
+      ],
+      "target_cover_edges": [
+        [
+          18,
+          25
+        ],
+        [
+          18,
+          26
+        ],
+        [
+          18,
+          28
+        ],
+        [
+          18,
+          31
+        ],
+        [
+          25,
+          32
+        ],
+        [
+          25,
+          34
+        ],
+        [
+          26,
+          34
+        ],
+        [
+          26,
+          35
+        ],
+        [
+          28,
+          32
+        ],
+        [
+          28,
+          38
+        ],
+        [
+          31,
+          35
+        ],
+        [
+          31,
+          38
+        ],
+        [
+          32,
+          41
+        ],
+        [
+          34,
+          41
+        ],
+        [
+          35,
+          41
+        ],
+        [
+          38,
+          41
+        ]
+      ],
+      "checks": [
+        "bijection",
+        "all pairwise order relations",
+        "all subinterval KL polynomials agree",
+        "all subinterval R-polynomial reciprocity identities",
+        "all right-descent choices in the KL recurrence"
+      ],
+      "target_top_full_simple_support": true,
+      "target_obstruction_to_type_A_parabolic_cosets": {
+        "right_cover_labels": {
+          "first": {
+            "reflection": [
+              -3,
+              2,
+              -1
+            ],
+            "cover": [
+              18,
+              31
+            ]
+          },
+          "second": {
+            "reflection": [
+              -1,
+              2,
+              3
+            ],
+            "cover": [
+              18,
+              26
+            ]
+          },
+          "product_order": 4
+        },
+        "left_cover_labels": {
+          "first": {
+            "reflection": [
+              -2,
+              -1,
+              3
+            ],
+            "cover": [
+              35,
+              41
+            ]
+          },
+          "second": {
+            "reflection": [
+              -1,
+              2,
+              3
+            ],
+            "cover": [
+              28,
+              32
+            ]
+          },
+          "product_order": 4
+        }
+      }
+    },
+    {
+      "source": {
+        "type": "D4",
+        "bottom": {
+          "id": 3,
+          "one_line": [
+            1,
+            3,
+            2,
+            4
+          ],
+          "length": 1,
+          "reduced_word": [
+            2
+          ],
+          "fully_commutative": true,
+          "non_fc_reduced_word": null
+        },
+        "top": {
+          "id": 46,
+          "one_line": [
+            -1,
+            2,
+            -3,
+            4
+          ],
+          "length": 4,
+          "reduced_word": [
+            2,
+            0,
+            1,
+            2
+          ],
+          "fully_commutative": true,
+          "non_fc_reduced_word": null
+        }
+      },
+      "target": {
+        "type": "B4",
+        "bottom": {
+          "id": 23,
+          "one_line": [
+            3,
+            2,
+            1,
+            4
+          ],
+          "length": 3,
+          "reduced_word": [
+            1,
+            2,
+            1
+          ],
+          "fully_commutative": false,
+          "non_fc_reduced_word": [
+            1,
+            2,
+            1
+          ]
+        },
+        "top": {
+          "id": 110,
+          "one_line": [
+            3,
+            4,
+            -2,
+            1
+          ],
+          "length": 6,
+          "reduced_word": [
+            1,
+            0,
+            2,
+            1,
+            3,
+            2
+          ],
+          "fully_commutative": true,
+          "non_fc_reduced_word": null
+        }
+      },
+      "rank": 3,
+      "rank_vector": [
+        1,
+        4,
+        4,
+        1
+      ],
+      "polynomial_coefficients": [
+        1,
+        1
+      ],
+      "mu": 1,
+      "map": [
+        {
+          "source": {
+            "id": 3,
+            "one_line": [
+              1,
+              3,
+              2,
+              4
+            ],
+            "length": 1,
+            "reduced_word": [
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 23,
+            "one_line": [
+              3,
+              2,
+              1,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 6,
+            "one_line": [
+              -2,
+              3,
+              -1,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              0,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 33,
+            "one_line": [
+              3,
+              2,
+              -1,
+              4
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 8,
+            "one_line": [
+              2,
+              3,
+              1,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 51,
+            "one_line": [
+              3,
+              4,
+              1,
+              2
+            ],
+            "length": 4,
+            "reduced_word": [
+              2,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 10,
+            "one_line": [
+              -3,
+              -1,
+              2,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              2,
+              0
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 42,
+            "one_line": [
+              3,
+              -2,
+              1,
+              4
+            ],
+            "length": 4,
+            "reduced_word": [
+              1,
+              0,
+              2,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 11,
+            "one_line": [
+              3,
+              1,
+              2,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              2,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 46,
+            "one_line": [
+              3,
+              2,
+              4,
+              1
+            ],
+            "length": 4,
+            "reduced_word": [
+              1,
+              2,
+              1,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1,
+              3
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 14,
+            "one_line": [
+              -1,
+              3,
+              -2,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 65,
+            "one_line": [
+              3,
+              4,
+              -1,
+              2
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              2,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 16,
+            "one_line": [
+              -3,
+              2,
+              -1,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              2,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              2,
+              0
+            ]
+          },
+          "target": {
+            "id": 68,
+            "one_line": [
+              3,
+              1,
+              -2,
+              4
+            ],
+            "length": 5,
+            "reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 21,
+            "one_line": [
+              3,
+              2,
+              1,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1
+            ]
+          },
+          "target": {
+            "id": 77,
+            "one_line": [
+              3,
+              4,
+              2,
+              1
+            ],
+            "length": 5,
+            "reduced_word": [
+              1,
+              2,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1,
+              3,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 24,
+            "one_line": [
+              -1,
+              -3,
+              2,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              2,
+              0,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 72,
+            "one_line": [
+              3,
+              -2,
+              4,
+              1
+            ],
+            "length": 5,
+            "reduced_word": [
+              1,
+              0,
+              2,
+              1,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 46,
+            "one_line": [
+              -1,
+              2,
+              -3,
+              4
+            ],
+            "length": 4,
+            "reduced_word": [
+              2,
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 110,
+            "one_line": [
+              3,
+              4,
+              -2,
+              1
+            ],
+            "length": 6,
+            "reduced_word": [
+              1,
+              0,
+              2,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        }
+      ],
+      "source_cover_edges": [
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          6,
+          16
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          10,
+          24
+        ],
+        [
+          11,
+          21
+        ],
+        [
+          11,
+          24
+        ],
+        [
+          14,
+          46
+        ],
+        [
+          16,
+          46
+        ],
+        [
+          21,
+          46
+        ],
+        [
+          24,
+          46
+        ]
+      ],
+      "target_cover_edges": [
+        [
+          23,
+          33
+        ],
+        [
+          23,
+          42
+        ],
+        [
+          23,
+          46
+        ],
+        [
+          23,
+          51
+        ],
+        [
+          33,
+          65
+        ],
+        [
+          33,
+          68
+        ],
+        [
+          42,
+          68
+        ],
+        [
+          42,
+          72
+        ],
+        [
+          46,
+          72
+        ],
+        [
+          46,
+          77
+        ],
+        [
+          51,
+          65
+        ],
+        [
+          51,
+          77
+        ],
+        [
+          65,
+          110
+        ],
+        [
+          68,
+          110
+        ],
+        [
+          72,
+          110
+        ],
+        [
+          77,
+          110
+        ]
+      ],
+      "checks": [
+        "bijection",
+        "all pairwise order relations",
+        "all subinterval KL polynomials agree",
+        "all subinterval R-polynomial reciprocity identities",
+        "all right-descent choices in the KL recurrence"
+      ],
+      "target_top_full_simple_support": true,
+      "target_obstruction_to_type_A_parabolic_cosets": {
+        "right_cover_labels": {
+          "first": {
+            "reflection": [
+              1,
+              -3,
+              -2,
+              4
+            ],
+            "cover": [
+              33,
+              68
+            ]
+          },
+          "second": {
+            "reflection": [
+              1,
+              -2,
+              3,
+              4
+            ],
+            "cover": [
+              23,
+              42
+            ]
+          },
+          "product_order": 4
+        },
+        "left_cover_labels": {
+          "first": {
+            "reflection": [
+              -2,
+              -1,
+              3,
+              4
+            ],
+            "cover": [
+              42,
+              68
+            ]
+          },
+          "second": {
+            "reflection": [
+              -1,
+              2,
+              3,
+              4
+            ],
+            "cover": [
+              23,
+              33
+            ]
+          },
+          "product_order": 4
+        }
+      }
+    },
+    {
+      "source": {
+        "type": "D4",
+        "bottom": {
+          "id": 0,
+          "one_line": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "length": 0,
+          "reduced_word": [],
+          "fully_commutative": true,
+          "non_fc_reduced_word": null
+        },
+        "top": {
+          "id": 62,
+          "one_line": [
+            3,
+            4,
+            -2,
+            -1
+          ],
+          "length": 5,
+          "reduced_word": [
+            0,
+            2,
+            1,
+            3,
+            2
+          ],
+          "fully_commutative": true,
+          "non_fc_reduced_word": null
+        }
+      },
+      "target": {
+        "type": "B4",
+        "bottom": {
+          "id": 23,
+          "one_line": [
+            3,
+            2,
+            1,
+            4
+          ],
+          "length": 3,
+          "reduced_word": [
+            1,
+            2,
+            1
+          ],
+          "fully_commutative": false,
+          "non_fc_reduced_word": [
+            1,
+            2,
+            1
+          ]
+        },
+        "top": {
+          "id": 180,
+          "one_line": [
+            2,
+            -1,
+            4,
+            -3
+          ],
+          "length": 8,
+          "reduced_word": [
+            0,
+            1,
+            2,
+            1,
+            0,
+            1,
+            2,
+            3
+          ],
+          "fully_commutative": false,
+          "non_fc_reduced_word": [
+            2,
+            0,
+            1,
+            0,
+            1,
+            2,
+            3,
+            1
+          ]
+        }
+      },
+      "rank": 5,
+      "rank_vector": [
+        1,
+        4,
+        8,
+        9,
+        5,
+        1
+      ],
+      "polynomial_coefficients": [
+        1,
+        1
+      ],
+      "mu": 0,
+      "map": [
+        {
+          "source": {
+            "id": 0,
+            "one_line": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "length": 0,
+            "reduced_word": [],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 23,
+            "one_line": [
+              3,
+              2,
+              1,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 1,
+            "one_line": [
+              -2,
+              -1,
+              3,
+              4
+            ],
+            "length": 1,
+            "reduced_word": [
+              0
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 46,
+            "one_line": [
+              3,
+              2,
+              4,
+              1
+            ],
+            "length": 4,
+            "reduced_word": [
+              1,
+              2,
+              1,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1,
+              3
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 2,
+            "one_line": [
+              2,
+              1,
+              3,
+              4
+            ],
+            "length": 1,
+            "reduced_word": [
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 42,
+            "one_line": [
+              3,
+              -2,
+              1,
+              4
+            ],
+            "length": 4,
+            "reduced_word": [
+              1,
+              0,
+              2,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 3,
+            "one_line": [
+              1,
+              3,
+              2,
+              4
+            ],
+            "length": 1,
+            "reduced_word": [
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 33,
+            "one_line": [
+              3,
+              2,
+              -1,
+              4
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 4,
+            "one_line": [
+              1,
+              2,
+              4,
+              3
+            ],
+            "length": 1,
+            "reduced_word": [
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 45,
+            "one_line": [
+              -3,
+              2,
+              1,
+              4
+            ],
+            "length": 4,
+            "reduced_word": [
+              1,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 5,
+            "one_line": [
+              -1,
+              -2,
+              3,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              0,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 72,
+            "one_line": [
+              3,
+              -2,
+              4,
+              1
+            ],
+            "length": 5,
+            "reduced_word": [
+              1,
+              0,
+              2,
+              1,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 6,
+            "one_line": [
+              -2,
+              3,
+              -1,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              0,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 60,
+            "one_line": [
+              3,
+              2,
+              4,
+              -1
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              3
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 7,
+            "one_line": [
+              -2,
+              -1,
+              4,
+              3
+            ],
+            "length": 2,
+            "reduced_word": [
+              0,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 76,
+            "one_line": [
+              -3,
+              2,
+              4,
+              1
+            ],
+            "length": 5,
+            "reduced_word": [
+              1,
+              2,
+              1,
+              0,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1,
+              3,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 8,
+            "one_line": [
+              2,
+              3,
+              1,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 56,
+            "one_line": [
+              3,
+              -2,
+              -1,
+              4
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 9,
+            "one_line": [
+              2,
+              1,
+              4,
+              3
+            ],
+            "length": 2,
+            "reduced_word": [
+              1,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 75,
+            "one_line": [
+              2,
+              -3,
+              1,
+              4
+            ],
+            "length": 5,
+            "reduced_word": [
+              1,
+              2,
+              1,
+              0,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 11,
+            "one_line": [
+              3,
+              1,
+              2,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              2,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 68,
+            "one_line": [
+              3,
+              1,
+              -2,
+              4
+            ],
+            "length": 5,
+            "reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 12,
+            "one_line": [
+              1,
+              3,
+              4,
+              2
+            ],
+            "length": 2,
+            "reduced_word": [
+              2,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 80,
+            "one_line": [
+              1,
+              2,
+              -3,
+              4
+            ],
+            "length": 5,
+            "reduced_word": [
+              2,
+              1,
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 13,
+            "one_line": [
+              1,
+              4,
+              2,
+              3
+            ],
+            "length": 2,
+            "reduced_word": [
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 59,
+            "one_line": [
+              -3,
+              2,
+              -1,
+              4
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 14,
+            "one_line": [
+              -1,
+              3,
+              -2,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 90,
+            "one_line": [
+              3,
+              -2,
+              4,
+              -1
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              1,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 15,
+            "one_line": [
+              -1,
+              -2,
+              4,
+              3
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              1,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 114,
+            "one_line": [
+              2,
+              -3,
+              4,
+              1
+            ],
+            "length": 6,
+            "reduced_word": [
+              1,
+              2,
+              1,
+              0,
+              1,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1,
+              3,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 17,
+            "one_line": [
+              3,
+              -2,
+              -1,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              2,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 105,
+            "one_line": [
+              3,
+              1,
+              4,
+              -2
+            ],
+            "length": 6,
+            "reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              1,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              1,
+              3
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 18,
+            "one_line": [
+              -2,
+              3,
+              4,
+              -1
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              2,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 119,
+            "one_line": [
+              1,
+              2,
+              4,
+              -3
+            ],
+            "length": 6,
+            "reduced_word": [
+              2,
+              1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 19,
+            "one_line": [
+              -2,
+              4,
+              -1,
+              3
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 94,
+            "one_line": [
+              -3,
+              2,
+              4,
+              -1
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              3,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 21,
+            "one_line": [
+              3,
+              2,
+              1,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1
+            ]
+          },
+          "target": {
+            "id": 86,
+            "one_line": [
+              3,
+              -1,
+              -2,
+              4
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0,
+              1,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 23,
+            "one_line": [
+              2,
+              4,
+              1,
+              3
+            ],
+            "length": 3,
+            "reduced_word": [
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 93,
+            "one_line": [
+              2,
+              -3,
+              -1,
+              4
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 26,
+            "one_line": [
+              3,
+              1,
+              4,
+              2
+            ],
+            "length": 3,
+            "reduced_word": [
+              2,
+              1,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 113,
+            "one_line": [
+              2,
+              1,
+              -3,
+              4
+            ],
+            "length": 6,
+            "reduced_word": [
+              1,
+              2,
+              1,
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 27,
+            "one_line": [
+              1,
+              4,
+              3,
+              2
+            ],
+            "length": 3,
+            "reduced_word": [
+              2,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              3,
+              2
+            ]
+          },
+          "target": {
+            "id": 98,
+            "one_line": [
+              -1,
+              2,
+              -3,
+              4
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              2,
+              1,
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              0,
+              1,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 31,
+            "one_line": [
+              3,
+              -1,
+              -2,
+              4
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1
+            ]
+          },
+          "target": {
+            "id": 126,
+            "one_line": [
+              3,
+              -1,
+              4,
+              -2
+            ],
+            "length": 7,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              1,
+              2,
+              1,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0,
+              1,
+              2,
+              3,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 33,
+            "one_line": [
+              -1,
+              4,
+              -2,
+              3
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 135,
+            "one_line": [
+              2,
+              -3,
+              4,
+              -1
+            ],
+            "length": 7,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              3,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 36,
+            "one_line": [
+              3,
+              -2,
+              4,
+              -1
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              2,
+              1,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 157,
+            "one_line": [
+              2,
+              1,
+              4,
+              -3
+            ],
+            "length": 7,
+            "reduced_word": [
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 37,
+            "one_line": [
+              -2,
+              4,
+              3,
+              -1
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              2,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              2,
+              3,
+              2
+            ]
+          },
+          "target": {
+            "id": 140,
+            "one_line": [
+              -1,
+              2,
+              4,
+              -3
+            ],
+            "length": 7,
+            "reduced_word": [
+              0,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              0,
+              1,
+              0,
+              1,
+              2,
+              3
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 49,
+            "one_line": [
+              3,
+              4,
+              1,
+              2
+            ],
+            "length": 4,
+            "reduced_word": [
+              2,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 134,
+            "one_line": [
+              2,
+              -1,
+              -3,
+              4
+            ],
+            "length": 7,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              0,
+              1,
+              0,
+              1,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 62,
+            "one_line": [
+              3,
+              4,
+              -2,
+              -1
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              2,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 180,
+            "one_line": [
+              2,
+              -1,
+              4,
+              -3
+            ],
+            "length": 8,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              0,
+              1,
+              0,
+              1,
+              2,
+              3,
+              1
+            ]
+          }
+        }
+      ],
+      "source_cover_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          5,
+          15
+        ],
+        [
+          5,
+          17
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          6,
+          17
+        ],
+        [
+          6,
+          18
+        ],
+        [
+          6,
+          19
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          7,
+          19
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          8,
+          23
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          9,
+          23
+        ],
+        [
+          9,
+          26
+        ],
+        [
+          11,
+          17
+        ],
+        [
+          11,
+          21
+        ],
+        [
+          11,
+          26
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          12,
+          26
+        ],
+        [
+          12,
+          27
+        ],
+        [
+          13,
+          19
+        ],
+        [
+          13,
+          23
+        ],
+        [
+          13,
+          27
+        ],
+        [
+          14,
+          31
+        ],
+        [
+          14,
+          33
+        ],
+        [
+          15,
+          33
+        ],
+        [
+          15,
+          36
+        ],
+        [
+          17,
+          31
+        ],
+        [
+          17,
+          36
+        ],
+        [
+          18,
+          36
+        ],
+        [
+          18,
+          37
+        ],
+        [
+          19,
+          33
+        ],
+        [
+          19,
+          37
+        ],
+        [
+          21,
+          31
+        ],
+        [
+          21,
+          49
+        ],
+        [
+          23,
+          33
+        ],
+        [
+          23,
+          49
+        ],
+        [
+          26,
+          36
+        ],
+        [
+          26,
+          49
+        ],
+        [
+          27,
+          37
+        ],
+        [
+          27,
+          49
+        ],
+        [
+          31,
+          62
+        ],
+        [
+          33,
+          62
+        ],
+        [
+          36,
+          62
+        ],
+        [
+          37,
+          62
+        ],
+        [
+          49,
+          62
+        ]
+      ],
+      "target_cover_edges": [
+        [
+          23,
+          33
+        ],
+        [
+          23,
+          42
+        ],
+        [
+          23,
+          45
+        ],
+        [
+          23,
+          46
+        ],
+        [
+          33,
+          56
+        ],
+        [
+          33,
+          59
+        ],
+        [
+          33,
+          60
+        ],
+        [
+          33,
+          68
+        ],
+        [
+          33,
+          80
+        ],
+        [
+          42,
+          56
+        ],
+        [
+          42,
+          68
+        ],
+        [
+          42,
+          72
+        ],
+        [
+          42,
+          75
+        ],
+        [
+          45,
+          59
+        ],
+        [
+          45,
+          75
+        ],
+        [
+          45,
+          76
+        ],
+        [
+          45,
+          80
+        ],
+        [
+          46,
+          60
+        ],
+        [
+          46,
+          72
+        ],
+        [
+          46,
+          76
+        ],
+        [
+          56,
+          86
+        ],
+        [
+          56,
+          90
+        ],
+        [
+          56,
+          93
+        ],
+        [
+          59,
+          93
+        ],
+        [
+          59,
+          94
+        ],
+        [
+          59,
+          98
+        ],
+        [
+          60,
+          90
+        ],
+        [
+          60,
+          94
+        ],
+        [
+          60,
+          105
+        ],
+        [
+          60,
+          119
+        ],
+        [
+          68,
+          86
+        ],
+        [
+          68,
+          105
+        ],
+        [
+          68,
+          113
+        ],
+        [
+          72,
+          90
+        ],
+        [
+          72,
+          105
+        ],
+        [
+          72,
+          114
+        ],
+        [
+          75,
+          93
+        ],
+        [
+          75,
+          113
+        ],
+        [
+          75,
+          114
+        ],
+        [
+          76,
+          94
+        ],
+        [
+          76,
+          114
+        ],
+        [
+          76,
+          119
+        ],
+        [
+          80,
+          98
+        ],
+        [
+          80,
+          113
+        ],
+        [
+          80,
+          119
+        ],
+        [
+          86,
+          126
+        ],
+        [
+          86,
+          134
+        ],
+        [
+          90,
+          126
+        ],
+        [
+          90,
+          135
+        ],
+        [
+          93,
+          134
+        ],
+        [
+          93,
+          135
+        ],
+        [
+          94,
+          135
+        ],
+        [
+          94,
+          140
+        ],
+        [
+          98,
+          134
+        ],
+        [
+          98,
+          140
+        ],
+        [
+          105,
+          126
+        ],
+        [
+          105,
+          157
+        ],
+        [
+          113,
+          134
+        ],
+        [
+          113,
+          157
+        ],
+        [
+          114,
+          135
+        ],
+        [
+          114,
+          157
+        ],
+        [
+          119,
+          140
+        ],
+        [
+          119,
+          157
+        ],
+        [
+          126,
+          180
+        ],
+        [
+          134,
+          180
+        ],
+        [
+          135,
+          180
+        ],
+        [
+          140,
+          180
+        ],
+        [
+          157,
+          180
+        ]
+      ],
+      "checks": [
+        "bijection",
+        "all pairwise order relations",
+        "all subinterval KL polynomials agree",
+        "all subinterval R-polynomial reciprocity identities",
+        "all right-descent choices in the KL recurrence"
+      ],
+      "target_top_full_simple_support": true,
+      "target_obstruction_to_type_A_parabolic_cosets": {
+        "right_cover_labels": {
+          "first": {
+            "reflection": [
+              -4,
+              2,
+              3,
+              -1
+            ],
+            "cover": [
+              60,
+              119
+            ]
+          },
+          "second": {
+            "reflection": [
+              -1,
+              2,
+              3,
+              4
+            ],
+            "cover": [
+              23,
+              45
+            ]
+          },
+          "product_order": 4
+        },
+        "left_cover_labels": {
+          "first": {
+            "reflection": [
+              -4,
+              2,
+              3,
+              -1
+            ],
+            "cover": [
+              33,
+              60
+            ]
+          },
+          "second": {
+            "reflection": [
+              -1,
+              2,
+              3,
+              4
+            ],
+            "cover": [
+              23,
+              33
+            ]
+          },
+          "product_order": 4
+        }
+      }
+    },
+    {
+      "source": {
+        "type": "D4",
+        "bottom": {
+          "id": 3,
+          "one_line": [
+            1,
+            3,
+            2,
+            4
+          ],
+          "length": 1,
+          "reduced_word": [
+            2
+          ],
+          "fully_commutative": true,
+          "non_fc_reduced_word": null
+        },
+        "top": {
+          "id": 46,
+          "one_line": [
+            -1,
+            2,
+            -3,
+            4
+          ],
+          "length": 4,
+          "reduced_word": [
+            2,
+            0,
+            1,
+            2
+          ],
+          "fully_commutative": true,
+          "non_fc_reduced_word": null
+        }
+      },
+      "target": {
+        "type": "A4",
+        "bottom": {
+          "id": 22,
+          "one_line": [
+            1,
+            4,
+            3,
+            2,
+            5
+          ],
+          "length": 3,
+          "reduced_word": [
+            1,
+            2,
+            1
+          ],
+          "fully_commutative": false,
+          "non_fc_reduced_word": [
+            1,
+            2,
+            1
+          ]
+        },
+        "top": {
+          "id": 83,
+          "one_line": [
+            3,
+            4,
+            5,
+            1,
+            2
+          ],
+          "length": 6,
+          "reduced_word": [
+            1,
+            0,
+            2,
+            1,
+            3,
+            2
+          ],
+          "fully_commutative": true,
+          "non_fc_reduced_word": null
+        }
+      },
+      "rank": 3,
+      "rank_vector": [
+        1,
+        4,
+        4,
+        1
+      ],
+      "polynomial_coefficients": [
+        1,
+        1
+      ],
+      "mu": 1,
+      "map": [
+        {
+          "source": {
+            "id": 3,
+            "one_line": [
+              1,
+              3,
+              2,
+              4
+            ],
+            "length": 1,
+            "reduced_word": [
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 22,
+            "one_line": [
+              1,
+              4,
+              3,
+              2,
+              5
+            ],
+            "length": 3,
+            "reduced_word": [
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 6,
+            "one_line": [
+              -2,
+              3,
+              -1,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              0,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 31,
+            "one_line": [
+              2,
+              4,
+              3,
+              1,
+              5
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 8,
+            "one_line": [
+              2,
+              3,
+              1,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 38,
+            "one_line": [
+              3,
+              4,
+              1,
+              2,
+              5
+            ],
+            "length": 4,
+            "reduced_word": [
+              1,
+              0,
+              2,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 10,
+            "one_line": [
+              -3,
+              -1,
+              2,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              2,
+              0
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 46,
+            "one_line": [
+              1,
+              4,
+              5,
+              2,
+              3
+            ],
+            "length": 4,
+            "reduced_word": [
+              2,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 11,
+            "one_line": [
+              3,
+              1,
+              2,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              2,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 42,
+            "one_line": [
+              1,
+              4,
+              3,
+              5,
+              2
+            ],
+            "length": 4,
+            "reduced_word": [
+              1,
+              2,
+              1,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1,
+              3
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 14,
+            "one_line": [
+              -1,
+              3,
+              -2,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 49,
+            "one_line": [
+              3,
+              4,
+              2,
+              1,
+              5
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 16,
+            "one_line": [
+              -3,
+              2,
+              -1,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              2,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              2,
+              0
+            ]
+          },
+          "target": {
+            "id": 57,
+            "one_line": [
+              2,
+              4,
+              5,
+              1,
+              3
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              2,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 21,
+            "one_line": [
+              3,
+              2,
+              1,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1
+            ]
+          },
+          "target": {
+            "id": 61,
+            "one_line": [
+              3,
+              4,
+              1,
+              5,
+              2
+            ],
+            "length": 5,
+            "reduced_word": [
+              1,
+              0,
+              2,
+              1,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 24,
+            "one_line": [
+              -1,
+              -3,
+              2,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              2,
+              0,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 65,
+            "one_line": [
+              1,
+              4,
+              5,
+              3,
+              2
+            ],
+            "length": 5,
+            "reduced_word": [
+              1,
+              2,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1,
+              3,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 46,
+            "one_line": [
+              -1,
+              2,
+              -3,
+              4
+            ],
+            "length": 4,
+            "reduced_word": [
+              2,
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 83,
+            "one_line": [
+              3,
+              4,
+              5,
+              1,
+              2
+            ],
+            "length": 6,
+            "reduced_word": [
+              1,
+              0,
+              2,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        }
+      ],
+      "source_cover_edges": [
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          6,
+          16
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          10,
+          24
+        ],
+        [
+          11,
+          21
+        ],
+        [
+          11,
+          24
+        ],
+        [
+          14,
+          46
+        ],
+        [
+          16,
+          46
+        ],
+        [
+          21,
+          46
+        ],
+        [
+          24,
+          46
+        ]
+      ],
+      "target_cover_edges": [
+        [
+          22,
+          31
+        ],
+        [
+          22,
+          38
+        ],
+        [
+          22,
+          42
+        ],
+        [
+          22,
+          46
+        ],
+        [
+          31,
+          49
+        ],
+        [
+          31,
+          57
+        ],
+        [
+          38,
+          49
+        ],
+        [
+          38,
+          61
+        ],
+        [
+          42,
+          61
+        ],
+        [
+          42,
+          65
+        ],
+        [
+          46,
+          57
+        ],
+        [
+          46,
+          65
+        ],
+        [
+          49,
+          83
+        ],
+        [
+          57,
+          83
+        ],
+        [
+          61,
+          83
+        ],
+        [
+          65,
+          83
+        ]
+      ],
+      "checks": [
+        "bijection",
+        "all pairwise order relations",
+        "all subinterval KL polynomials agree",
+        "all subinterval R-polynomial reciprocity identities",
+        "all right-descent choices in the KL recurrence"
+      ],
+      "target_top_full_simple_support": true,
+      "target_obstruction_to_type_A_parabolic_cosets": {}
+    },
+    {
+      "source": {
+        "type": "D4",
+        "bottom": {
+          "id": 0,
+          "one_line": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "length": 0,
+          "reduced_word": [],
+          "fully_commutative": true,
+          "non_fc_reduced_word": null
+        },
+        "top": {
+          "id": 74,
+          "one_line": [
+            -1,
+            4,
+            -3,
+            2
+          ],
+          "length": 5,
+          "reduced_word": [
+            2,
+            0,
+            1,
+            3,
+            2
+          ],
+          "fully_commutative": true,
+          "non_fc_reduced_word": null
+        }
+      },
+      "target": {
+        "type": "A4",
+        "bottom": {
+          "id": 14,
+          "one_line": [
+            3,
+            2,
+            1,
+            4,
+            5
+          ],
+          "length": 3,
+          "reduced_word": [
+            0,
+            1,
+            0
+          ],
+          "fully_commutative": false,
+          "non_fc_reduced_word": [
+            0,
+            1,
+            0
+          ]
+        },
+        "top": {
+          "id": 108,
+          "one_line": [
+            5,
+            3,
+            2,
+            4,
+            1
+          ],
+          "length": 8,
+          "reduced_word": [
+            0,
+            1,
+            0,
+            2,
+            3,
+            2,
+            1,
+            0
+          ],
+          "fully_commutative": false,
+          "non_fc_reduced_word": [
+            0,
+            1,
+            2,
+            3,
+            2,
+            0,
+            1,
+            0
+          ]
+        }
+      },
+      "rank": 5,
+      "rank_vector": [
+        1,
+        4,
+        9,
+        10,
+        5,
+        1
+      ],
+      "polynomial_coefficients": [
+        1,
+        1
+      ],
+      "mu": 0,
+      "map": [
+        {
+          "source": {
+            "id": 0,
+            "one_line": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "length": 0,
+            "reduced_word": [],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 14,
+            "one_line": [
+              3,
+              2,
+              1,
+              4,
+              5
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 1,
+            "one_line": [
+              -2,
+              -1,
+              3,
+              4
+            ],
+            "length": 1,
+            "reduced_word": [
+              0
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 29,
+            "one_line": [
+              3,
+              2,
+              4,
+              1,
+              5
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 2,
+            "one_line": [
+              2,
+              1,
+              3,
+              4
+            ],
+            "length": 1,
+            "reduced_word": [
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 34,
+            "one_line": [
+              4,
+              2,
+              1,
+              3,
+              5
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              0,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 3,
+            "one_line": [
+              1,
+              3,
+              2,
+              4
+            ],
+            "length": 1,
+            "reduced_word": [
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 30,
+            "one_line": [
+              3,
+              2,
+              1,
+              5,
+              4
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0,
+              3
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 4,
+            "one_line": [
+              1,
+              2,
+              4,
+              3
+            ],
+            "length": 1,
+            "reduced_word": [
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 38,
+            "one_line": [
+              3,
+              4,
+              1,
+              2,
+              5
+            ],
+            "length": 4,
+            "reduced_word": [
+              1,
+              0,
+              2,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 5,
+            "one_line": [
+              -1,
+              -2,
+              3,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              0,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 52,
+            "one_line": [
+              4,
+              2,
+              3,
+              1,
+              5
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 6,
+            "one_line": [
+              -2,
+              3,
+              -1,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              0,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 50,
+            "one_line": [
+              3,
+              2,
+              4,
+              5,
+              1
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              3
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 7,
+            "one_line": [
+              -2,
+              -1,
+              4,
+              3
+            ],
+            "length": 2,
+            "reduced_word": [
+              0,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 49,
+            "one_line": [
+              3,
+              4,
+              2,
+              1,
+              5
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 8,
+            "one_line": [
+              2,
+              3,
+              1,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 56,
+            "one_line": [
+              4,
+              2,
+              1,
+              5,
+              3
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              2,
+              1,
+              0,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              0,
+              1,
+              0,
+              3
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 9,
+            "one_line": [
+              2,
+              1,
+              4,
+              3
+            ],
+            "length": 2,
+            "reduced_word": [
+              1,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 60,
+            "one_line": [
+              4,
+              3,
+              1,
+              2,
+              5
+            ],
+            "length": 5,
+            "reduced_word": [
+              1,
+              0,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 10,
+            "one_line": [
+              -3,
+              -1,
+              2,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              2,
+              0
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 51,
+            "one_line": [
+              3,
+              2,
+              5,
+              1,
+              4
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0,
+              3,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 11,
+            "one_line": [
+              3,
+              1,
+              2,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              2,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 59,
+            "one_line": [
+              5,
+              2,
+              1,
+              3,
+              4
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              3,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              3,
+              2,
+              0,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 12,
+            "one_line": [
+              1,
+              3,
+              4,
+              2
+            ],
+            "length": 2,
+            "reduced_word": [
+              2,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 63,
+            "one_line": [
+              3,
+              5,
+              1,
+              2,
+              4
+            ],
+            "length": 5,
+            "reduced_word": [
+              1,
+              0,
+              3,
+              2,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 13,
+            "one_line": [
+              1,
+              4,
+              2,
+              3
+            ],
+            "length": 2,
+            "reduced_word": [
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 61,
+            "one_line": [
+              3,
+              4,
+              1,
+              5,
+              2
+            ],
+            "length": 5,
+            "reduced_word": [
+              1,
+              0,
+              2,
+              1,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 14,
+            "one_line": [
+              -1,
+              3,
+              -2,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 75,
+            "one_line": [
+              4,
+              2,
+              3,
+              5,
+              1
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              3,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 15,
+            "one_line": [
+              -1,
+              -2,
+              4,
+              3
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              1,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 71,
+            "one_line": [
+              4,
+              3,
+              2,
+              1,
+              5
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 16,
+            "one_line": [
+              -3,
+              2,
+              -1,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              2,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              2,
+              0
+            ]
+          },
+          "target": {
+            "id": 73,
+            "one_line": [
+              3,
+              2,
+              5,
+              4,
+              1
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 19,
+            "one_line": [
+              -2,
+              4,
+              -1,
+              3
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 72,
+            "one_line": [
+              3,
+              4,
+              2,
+              5,
+              1
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              1,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              3,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 21,
+            "one_line": [
+              3,
+              2,
+              1,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1
+            ]
+          },
+          "target": {
+            "id": 81,
+            "one_line": [
+              5,
+              2,
+              1,
+              4,
+              3
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              2,
+              3,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              3,
+              2,
+              0,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 23,
+            "one_line": [
+              2,
+              4,
+              1,
+              3
+            ],
+            "length": 3,
+            "reduced_word": [
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 82,
+            "one_line": [
+              4,
+              3,
+              1,
+              5,
+              2
+            ],
+            "length": 6,
+            "reduced_word": [
+              1,
+              0,
+              2,
+              1,
+              0,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1,
+              3,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 24,
+            "one_line": [
+              -1,
+              -3,
+              2,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              2,
+              0,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 78,
+            "one_line": [
+              5,
+              2,
+              3,
+              1,
+              4
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              1,
+              3,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              3,
+              1,
+              2,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 25,
+            "one_line": [
+              -3,
+              -1,
+              4,
+              2
+            ],
+            "length": 3,
+            "reduced_word": [
+              2,
+              0,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 74,
+            "one_line": [
+              3,
+              5,
+              2,
+              1,
+              4
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              3,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0,
+              3,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 26,
+            "one_line": [
+              3,
+              1,
+              4,
+              2
+            ],
+            "length": 3,
+            "reduced_word": [
+              2,
+              1,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 85,
+            "one_line": [
+              5,
+              3,
+              1,
+              2,
+              4
+            ],
+            "length": 6,
+            "reduced_word": [
+              1,
+              0,
+              3,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              3,
+              1,
+              2,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 27,
+            "one_line": [
+              1,
+              4,
+              3,
+              2
+            ],
+            "length": 3,
+            "reduced_word": [
+              2,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              3,
+              2
+            ]
+          },
+          "target": {
+            "id": 84,
+            "one_line": [
+              3,
+              5,
+              1,
+              4,
+              2
+            ],
+            "length": 6,
+            "reduced_word": [
+              1,
+              0,
+              2,
+              3,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              3,
+              2,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 33,
+            "one_line": [
+              -1,
+              4,
+              -2,
+              3
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 91,
+            "one_line": [
+              4,
+              3,
+              2,
+              5,
+              1
+            ],
+            "length": 7,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              1,
+              0,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              3,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 46,
+            "one_line": [
+              -1,
+              2,
+              -3,
+              4
+            ],
+            "length": 4,
+            "reduced_word": [
+              2,
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 97,
+            "one_line": [
+              5,
+              2,
+              3,
+              4,
+              1
+            ],
+            "length": 7,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 47,
+            "one_line": [
+              -1,
+              -3,
+              4,
+              2
+            ],
+            "length": 4,
+            "reduced_word": [
+              2,
+              0,
+              1,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 94,
+            "one_line": [
+              5,
+              3,
+              2,
+              1,
+              4
+            ],
+            "length": 7,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              3,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0,
+              3,
+              2,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 48,
+            "one_line": [
+              -3,
+              4,
+              -1,
+              2
+            ],
+            "length": 4,
+            "reduced_word": [
+              2,
+              0,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 93,
+            "one_line": [
+              3,
+              5,
+              2,
+              4,
+              1
+            ],
+            "length": 7,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              3,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 49,
+            "one_line": [
+              3,
+              4,
+              1,
+              2
+            ],
+            "length": 4,
+            "reduced_word": [
+              2,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 102,
+            "one_line": [
+              5,
+              3,
+              1,
+              4,
+              2
+            ],
+            "length": 7,
+            "reduced_word": [
+              1,
+              0,
+              2,
+              3,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              3,
+              2,
+              0,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 74,
+            "one_line": [
+              -1,
+              4,
+              -3,
+              2
+            ],
+            "length": 5,
+            "reduced_word": [
+              2,
+              0,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 108,
+            "one_line": [
+              5,
+              3,
+              2,
+              4,
+              1
+            ],
+            "length": 8,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              3,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              0,
+              1,
+              0
+            ]
+          }
+        }
+      ],
+      "source_cover_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          5,
+          15
+        ],
+        [
+          5,
+          24
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          6,
+          16
+        ],
+        [
+          6,
+          19
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          7,
+          19
+        ],
+        [
+          7,
+          25
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          8,
+          23
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          9,
+          23
+        ],
+        [
+          9,
+          26
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          10,
+          24
+        ],
+        [
+          10,
+          25
+        ],
+        [
+          11,
+          21
+        ],
+        [
+          11,
+          24
+        ],
+        [
+          11,
+          26
+        ],
+        [
+          12,
+          25
+        ],
+        [
+          12,
+          26
+        ],
+        [
+          12,
+          27
+        ],
+        [
+          13,
+          19
+        ],
+        [
+          13,
+          23
+        ],
+        [
+          13,
+          27
+        ],
+        [
+          14,
+          33
+        ],
+        [
+          14,
+          46
+        ],
+        [
+          15,
+          33
+        ],
+        [
+          15,
+          47
+        ],
+        [
+          16,
+          46
+        ],
+        [
+          16,
+          48
+        ],
+        [
+          19,
+          33
+        ],
+        [
+          19,
+          48
+        ],
+        [
+          21,
+          46
+        ],
+        [
+          21,
+          49
+        ],
+        [
+          23,
+          33
+        ],
+        [
+          23,
+          49
+        ],
+        [
+          24,
+          46
+        ],
+        [
+          24,
+          47
+        ],
+        [
+          25,
+          47
+        ],
+        [
+          25,
+          48
+        ],
+        [
+          26,
+          47
+        ],
+        [
+          26,
+          49
+        ],
+        [
+          27,
+          48
+        ],
+        [
+          27,
+          49
+        ],
+        [
+          33,
+          74
+        ],
+        [
+          46,
+          74
+        ],
+        [
+          47,
+          74
+        ],
+        [
+          48,
+          74
+        ],
+        [
+          49,
+          74
+        ]
+      ],
+      "target_cover_edges": [
+        [
+          14,
+          29
+        ],
+        [
+          14,
+          30
+        ],
+        [
+          14,
+          34
+        ],
+        [
+          14,
+          38
+        ],
+        [
+          29,
+          49
+        ],
+        [
+          29,
+          50
+        ],
+        [
+          29,
+          51
+        ],
+        [
+          29,
+          52
+        ],
+        [
+          30,
+          50
+        ],
+        [
+          30,
+          51
+        ],
+        [
+          30,
+          56
+        ],
+        [
+          30,
+          59
+        ],
+        [
+          30,
+          61
+        ],
+        [
+          30,
+          63
+        ],
+        [
+          34,
+          52
+        ],
+        [
+          34,
+          56
+        ],
+        [
+          34,
+          59
+        ],
+        [
+          34,
+          60
+        ],
+        [
+          38,
+          49
+        ],
+        [
+          38,
+          60
+        ],
+        [
+          38,
+          61
+        ],
+        [
+          38,
+          63
+        ],
+        [
+          49,
+          71
+        ],
+        [
+          49,
+          72
+        ],
+        [
+          49,
+          74
+        ],
+        [
+          50,
+          72
+        ],
+        [
+          50,
+          73
+        ],
+        [
+          50,
+          75
+        ],
+        [
+          51,
+          73
+        ],
+        [
+          51,
+          74
+        ],
+        [
+          51,
+          78
+        ],
+        [
+          52,
+          71
+        ],
+        [
+          52,
+          75
+        ],
+        [
+          52,
+          78
+        ],
+        [
+          56,
+          75
+        ],
+        [
+          56,
+          81
+        ],
+        [
+          56,
+          82
+        ],
+        [
+          59,
+          78
+        ],
+        [
+          59,
+          81
+        ],
+        [
+          59,
+          85
+        ],
+        [
+          60,
+          71
+        ],
+        [
+          60,
+          82
+        ],
+        [
+          60,
+          85
+        ],
+        [
+          61,
+          72
+        ],
+        [
+          61,
+          82
+        ],
+        [
+          61,
+          84
+        ],
+        [
+          63,
+          74
+        ],
+        [
+          63,
+          84
+        ],
+        [
+          63,
+          85
+        ],
+        [
+          71,
+          91
+        ],
+        [
+          71,
+          94
+        ],
+        [
+          72,
+          91
+        ],
+        [
+          72,
+          93
+        ],
+        [
+          73,
+          93
+        ],
+        [
+          73,
+          97
+        ],
+        [
+          74,
+          93
+        ],
+        [
+          74,
+          94
+        ],
+        [
+          75,
+          91
+        ],
+        [
+          75,
+          97
+        ],
+        [
+          78,
+          94
+        ],
+        [
+          78,
+          97
+        ],
+        [
+          81,
+          97
+        ],
+        [
+          81,
+          102
+        ],
+        [
+          82,
+          91
+        ],
+        [
+          82,
+          102
+        ],
+        [
+          84,
+          93
+        ],
+        [
+          84,
+          102
+        ],
+        [
+          85,
+          94
+        ],
+        [
+          85,
+          102
+        ],
+        [
+          91,
+          108
+        ],
+        [
+          93,
+          108
+        ],
+        [
+          94,
+          108
+        ],
+        [
+          97,
+          108
+        ],
+        [
+          102,
+          108
+        ]
+      ],
+      "checks": [
+        "bijection",
+        "all pairwise order relations",
+        "all subinterval KL polynomials agree",
+        "all subinterval R-polynomial reciprocity identities",
+        "all right-descent choices in the KL recurrence"
+      ],
+      "target_top_full_simple_support": true,
+      "target_obstruction_to_type_A_parabolic_cosets": {}
+    },
+    {
+      "source": {
+        "type": "D4",
+        "bottom": {
+          "id": 1,
+          "one_line": [
+            -2,
+            -1,
+            3,
+            4
+          ],
+          "length": 1,
+          "reduced_word": [
+            0
+          ],
+          "fully_commutative": true,
+          "non_fc_reduced_word": null
+        },
+        "top": {
+          "id": 92,
+          "one_line": [
+            -4,
+            -3,
+            -2,
+            -1
+          ],
+          "length": 6,
+          "reduced_word": [
+            0,
+            2,
+            1,
+            3,
+            2,
+            0
+          ],
+          "fully_commutative": true,
+          "non_fc_reduced_word": null
+        }
+      },
+      "target": {
+        "type": "B4",
+        "bottom": {
+          "id": 61,
+          "one_line": [
+            2,
+            4,
+            3,
+            -1
+          ],
+          "length": 5,
+          "reduced_word": [
+            0,
+            1,
+            2,
+            3,
+            2
+          ],
+          "fully_commutative": false,
+          "non_fc_reduced_word": [
+            0,
+            1,
+            2,
+            3,
+            2
+          ]
+        },
+        "top": {
+          "id": 275,
+          "one_line": [
+            2,
+            3,
+            -1,
+            -4
+          ],
+          "length": 10,
+          "reduced_word": [
+            0,
+            1,
+            2,
+            3,
+            2,
+            1,
+            0,
+            1,
+            2,
+            3
+          ],
+          "fully_commutative": false,
+          "non_fc_reduced_word": [
+            3,
+            2,
+            0,
+            1,
+            0,
+            1,
+            2,
+            3,
+            1,
+            2
+          ]
+        }
+      },
+      "rank": 5,
+      "rank_vector": [
+        1,
+        4,
+        10,
+        12,
+        6,
+        1
+      ],
+      "polynomial_coefficients": [
+        1,
+        2,
+        1
+      ],
+      "mu": 1,
+      "map": [
+        {
+          "source": {
+            "id": 1,
+            "one_line": [
+              -2,
+              -1,
+              3,
+              4
+            ],
+            "length": 1,
+            "reduced_word": [
+              0
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 61,
+            "one_line": [
+              2,
+              4,
+              3,
+              -1
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 5,
+            "one_line": [
+              -1,
+              -2,
+              3,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              0,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 91,
+            "one_line": [
+              -2,
+              4,
+              3,
+              -1
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 6,
+            "one_line": [
+              -2,
+              3,
+              -1,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              0,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 95,
+            "one_line": [
+              3,
+              4,
+              2,
+              -1
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              3,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 7,
+            "one_line": [
+              -2,
+              -1,
+              4,
+              3
+            ],
+            "length": 2,
+            "reduced_word": [
+              0,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 106,
+            "one_line": [
+              1,
+              4,
+              3,
+              -2
+            ],
+            "length": 6,
+            "reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              3,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 10,
+            "one_line": [
+              -3,
+              -1,
+              2,
+              4
+            ],
+            "length": 2,
+            "reduced_word": [
+              2,
+              0
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 96,
+            "one_line": [
+              4,
+              2,
+              3,
+              -1
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 14,
+            "one_line": [
+              -1,
+              3,
+              -2,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 131,
+            "one_line": [
+              3,
+              4,
+              -2,
+              -1
+            ],
+            "length": 7,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 15,
+            "one_line": [
+              -1,
+              -2,
+              4,
+              3
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              1,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 127,
+            "one_line": [
+              -1,
+              4,
+              3,
+              -2
+            ],
+            "length": 7,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              1,
+              2,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              3,
+              2,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 16,
+            "one_line": [
+              -3,
+              2,
+              -1,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              2,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              2,
+              0
+            ]
+          },
+          "target": {
+            "id": 137,
+            "one_line": [
+              4,
+              3,
+              2,
+              -1
+            ],
+            "length": 7,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              3,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              3,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 17,
+            "one_line": [
+              3,
+              -2,
+              -1,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              2,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 136,
+            "one_line": [
+              -3,
+              4,
+              2,
+              -1
+            ],
+            "length": 7,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              3,
+              2,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 18,
+            "one_line": [
+              -2,
+              3,
+              4,
+              -1
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              2,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 163,
+            "one_line": [
+              1,
+              4,
+              2,
+              -3
+            ],
+            "length": 7,
+            "reduced_word": [
+              2,
+              1,
+              0,
+              1,
+              2,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              1,
+              0,
+              1,
+              2,
+              3,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 19,
+            "one_line": [
+              -2,
+              4,
+              -1,
+              3
+            ],
+            "length": 3,
+            "reduced_word": [
+              0,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 148,
+            "one_line": [
+              3,
+              4,
+              1,
+              -2
+            ],
+            "length": 7,
+            "reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              1,
+              3,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 20,
+            "one_line": [
+              -3,
+              -2,
+              1,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              1,
+              2,
+              0
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 132,
+            "one_line": [
+              4,
+              -2,
+              3,
+              -1
+            ],
+            "length": 7,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              3,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 24,
+            "one_line": [
+              -1,
+              -3,
+              2,
+              4
+            ],
+            "length": 3,
+            "reduced_word": [
+              2,
+              0,
+              1
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 138,
+            "one_line": [
+              -4,
+              2,
+              3,
+              -1
+            ],
+            "length": 7,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 25,
+            "one_line": [
+              -3,
+              -1,
+              4,
+              2
+            ],
+            "length": 3,
+            "reduced_word": [
+              2,
+              0,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 168,
+            "one_line": [
+              1,
+              2,
+              3,
+              -4
+            ],
+            "length": 7,
+            "reduced_word": [
+              3,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          }
+        },
+        {
+          "source": {
+            "id": 28,
+            "one_line": [
+              -4,
+              -1,
+              2,
+              3
+            ],
+            "length": 3,
+            "reduced_word": [
+              3,
+              2,
+              0
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 149,
+            "one_line": [
+              4,
+              1,
+              3,
+              -2
+            ],
+            "length": 7,
+            "reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              3,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              3,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 30,
+            "one_line": [
+              -3,
+              1,
+              -2,
+              4
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              0,
+              2,
+              0
+            ]
+          },
+          "target": {
+            "id": 177,
+            "one_line": [
+              4,
+              3,
+              -2,
+              -1
+            ],
+            "length": 8,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              2,
+              1,
+              3,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 31,
+            "one_line": [
+              3,
+              -1,
+              -2,
+              4
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1
+            ]
+          },
+          "target": {
+            "id": 181,
+            "one_line": [
+              2,
+              4,
+              -3,
+              -1
+            ],
+            "length": 8,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              3,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 33,
+            "one_line": [
+              -1,
+              4,
+              -2,
+              3
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 171,
+            "one_line": [
+              3,
+              4,
+              -1,
+              -2
+            ],
+            "length": 8,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              1,
+              2,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0,
+              1,
+              2,
+              3,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 34,
+            "one_line": [
+              2,
+              -3,
+              -1,
+              4
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              2,
+              0,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              2,
+              0,
+              1
+            ]
+          },
+          "target": {
+            "id": 183,
+            "one_line": [
+              -4,
+              3,
+              2,
+              -1
+            ],
+            "length": 8,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              3,
+              2,
+              1,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              3,
+              2,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 35,
+            "one_line": [
+              -3,
+              2,
+              4,
+              -1
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              2,
+              0,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              2,
+              0,
+              3
+            ]
+          },
+          "target": {
+            "id": 214,
+            "one_line": [
+              1,
+              3,
+              2,
+              -4
+            ],
+            "length": 8,
+            "reduced_word": [
+              2,
+              3,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              3,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 36,
+            "one_line": [
+              3,
+              -2,
+              4,
+              -1
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              2,
+              1,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 186,
+            "one_line": [
+              -1,
+              4,
+              2,
+              -3
+            ],
+            "length": 8,
+            "reduced_word": [
+              0,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              1,
+              0,
+              1,
+              2,
+              3,
+              2,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 37,
+            "one_line": [
+              -2,
+              4,
+              3,
+              -1
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              2,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              2,
+              3,
+              2
+            ]
+          },
+          "target": {
+            "id": 204,
+            "one_line": [
+              2,
+              4,
+              1,
+              -3
+            ],
+            "length": 8,
+            "reduced_word": [
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 38,
+            "one_line": [
+              -4,
+              2,
+              -1,
+              3
+            ],
+            "length": 4,
+            "reduced_word": [
+              0,
+              3,
+              2,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              3,
+              0,
+              2,
+              0
+            ]
+          },
+          "target": {
+            "id": 195,
+            "one_line": [
+              4,
+              3,
+              1,
+              -2
+            ],
+            "length": 8,
+            "reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              1,
+              3,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              1,
+              3,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 40,
+            "one_line": [
+              -2,
+              -3,
+              1,
+              4
+            ],
+            "length": 4,
+            "reduced_word": [
+              1,
+              2,
+              0,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              2,
+              1,
+              0
+            ]
+          },
+          "target": {
+            "id": 184,
+            "one_line": [
+              2,
+              -4,
+              3,
+              -1
+            ],
+            "length": 8,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              1,
+              0,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 44,
+            "one_line": [
+              -4,
+              -2,
+              1,
+              3
+            ],
+            "length": 4,
+            "reduced_word": [
+              1,
+              3,
+              2,
+              0
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 172,
+            "one_line": [
+              4,
+              -1,
+              3,
+              -2
+            ],
+            "length": 8,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              1,
+              2,
+              3,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              0,
+              1,
+              2,
+              3,
+              2,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 47,
+            "one_line": [
+              -1,
+              -3,
+              4,
+              2
+            ],
+            "length": 4,
+            "reduced_word": [
+              2,
+              0,
+              1,
+              3
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 191,
+            "one_line": [
+              -1,
+              2,
+              3,
+              -4
+            ],
+            "length": 8,
+            "reduced_word": [
+              0,
+              3,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              3,
+              2,
+              0,
+              1,
+              0,
+              1,
+              2,
+              3
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 50,
+            "one_line": [
+              -4,
+              -1,
+              3,
+              2
+            ],
+            "length": 4,
+            "reduced_word": [
+              2,
+              3,
+              2,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              3,
+              2,
+              0
+            ]
+          },
+          "target": {
+            "id": 209,
+            "one_line": [
+              2,
+              1,
+              3,
+              -4
+            ],
+            "length": 8,
+            "reduced_word": [
+              1,
+              3,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              3,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 53,
+            "one_line": [
+              1,
+              -3,
+              -2,
+              4
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              0,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ]
+          },
+          "target": {
+            "id": 231,
+            "one_line": [
+              2,
+              3,
+              -4,
+              -1
+            ],
+            "length": 9,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              1,
+              0,
+              1,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              1,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 57,
+            "one_line": [
+              -4,
+              1,
+              -2,
+              3
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              1,
+              3,
+              2,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              1,
+              3,
+              0,
+              2,
+              0
+            ]
+          },
+          "target": {
+            "id": 218,
+            "one_line": [
+              4,
+              3,
+              -1,
+              -2
+            ],
+            "length": 9,
+            "reduced_word": [
+              0,
+              1,
+              0,
+              1,
+              2,
+              1,
+              3,
+              2,
+              1
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              1,
+              0,
+              1,
+              2,
+              3,
+              1,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 60,
+            "one_line": [
+              2,
+              -3,
+              4,
+              -1
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              2,
+              0,
+              1,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              2,
+              0,
+              3,
+              1
+            ]
+          },
+          "target": {
+            "id": 237,
+            "one_line": [
+              -1,
+              3,
+              2,
+              -4
+            ],
+            "length": 9,
+            "reduced_word": [
+              0,
+              2,
+              3,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              3,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3,
+              0
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 62,
+            "one_line": [
+              3,
+              4,
+              -2,
+              -1
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              2,
+              1,
+              3,
+              2
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 227,
+            "one_line": [
+              2,
+              4,
+              -1,
+              -3
+            ],
+            "length": 9,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3,
+              2
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              2,
+              0,
+              1,
+              0,
+              1,
+              2,
+              3,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 63,
+            "one_line": [
+              -4,
+              2,
+              3,
+              -1
+            ],
+            "length": 5,
+            "reduced_word": [
+              0,
+              2,
+              3,
+              2,
+              0
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              0,
+              2,
+              3,
+              2,
+              0
+            ]
+          },
+          "target": {
+            "id": 254,
+            "one_line": [
+              2,
+              3,
+              1,
+              -4
+            ],
+            "length": 9,
+            "reduced_word": [
+              1,
+              2,
+              3,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              3,
+              1,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3,
+              2
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 77,
+            "one_line": [
+              -4,
+              -3,
+              1,
+              2
+            ],
+            "length": 5,
+            "reduced_word": [
+              2,
+              1,
+              3,
+              2,
+              0
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 232,
+            "one_line": [
+              2,
+              -1,
+              3,
+              -4
+            ],
+            "length": 9,
+            "reduced_word": [
+              0,
+              1,
+              3,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              3,
+              2,
+              0,
+              1,
+              0,
+              1,
+              2,
+              3,
+              1
+            ]
+          }
+        },
+        {
+          "source": {
+            "id": 92,
+            "one_line": [
+              -4,
+              -3,
+              -2,
+              -1
+            ],
+            "length": 6,
+            "reduced_word": [
+              0,
+              2,
+              1,
+              3,
+              2,
+              0
+            ],
+            "fully_commutative": true,
+            "non_fc_reduced_word": null
+          },
+          "target": {
+            "id": 275,
+            "one_line": [
+              2,
+              3,
+              -1,
+              -4
+            ],
+            "length": 10,
+            "reduced_word": [
+              0,
+              1,
+              2,
+              3,
+              2,
+              1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "fully_commutative": false,
+            "non_fc_reduced_word": [
+              3,
+              2,
+              0,
+              1,
+              0,
+              1,
+              2,
+              3,
+              1,
+              2
+            ]
+          }
+        }
+      ],
+      "source_cover_edges": [
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          5,
+          15
+        ],
+        [
+          5,
+          17
+        ],
+        [
+          5,
+          20
+        ],
+        [
+          5,
+          24
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          6,
+          16
+        ],
+        [
+          6,
+          17
+        ],
+        [
+          6,
+          18
+        ],
+        [
+          6,
+          19
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          7,
+          19
+        ],
+        [
+          7,
+          25
+        ],
+        [
+          7,
+          28
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          10,
+          20
+        ],
+        [
+          10,
+          24
+        ],
+        [
+          10,
+          25
+        ],
+        [
+          10,
+          28
+        ],
+        [
+          14,
+          30
+        ],
+        [
+          14,
+          31
+        ],
+        [
+          14,
+          33
+        ],
+        [
+          15,
+          33
+        ],
+        [
+          15,
+          36
+        ],
+        [
+          15,
+          44
+        ],
+        [
+          15,
+          47
+        ],
+        [
+          16,
+          30
+        ],
+        [
+          16,
+          34
+        ],
+        [
+          16,
+          35
+        ],
+        [
+          16,
+          38
+        ],
+        [
+          17,
+          31
+        ],
+        [
+          17,
+          34
+        ],
+        [
+          17,
+          36
+        ],
+        [
+          18,
+          35
+        ],
+        [
+          18,
+          36
+        ],
+        [
+          18,
+          37
+        ],
+        [
+          19,
+          33
+        ],
+        [
+          19,
+          37
+        ],
+        [
+          19,
+          38
+        ],
+        [
+          20,
+          30
+        ],
+        [
+          20,
+          40
+        ],
+        [
+          20,
+          44
+        ],
+        [
+          24,
+          34
+        ],
+        [
+          24,
+          40
+        ],
+        [
+          24,
+          47
+        ],
+        [
+          25,
+          35
+        ],
+        [
+          25,
+          47
+        ],
+        [
+          25,
+          50
+        ],
+        [
+          28,
+          38
+        ],
+        [
+          28,
+          44
+        ],
+        [
+          28,
+          50
+        ],
+        [
+          30,
+          53
+        ],
+        [
+          30,
+          57
+        ],
+        [
+          31,
+          53
+        ],
+        [
+          31,
+          62
+        ],
+        [
+          33,
+          57
+        ],
+        [
+          33,
+          62
+        ],
+        [
+          34,
+          53
+        ],
+        [
+          34,
+          60
+        ],
+        [
+          35,
+          60
+        ],
+        [
+          35,
+          63
+        ],
+        [
+          36,
+          60
+        ],
+        [
+          36,
+          62
+        ],
+        [
+          37,
+          62
+        ],
+        [
+          37,
+          63
+        ],
+        [
+          38,
+          57
+        ],
+        [
+          38,
+          63
+        ],
+        [
+          40,
+          53
+        ],
+        [
+          40,
+          77
+        ],
+        [
+          44,
+          57
+        ],
+        [
+          44,
+          77
+        ],
+        [
+          47,
+          60
+        ],
+        [
+          47,
+          77
+        ],
+        [
+          50,
+          63
+        ],
+        [
+          50,
+          77
+        ],
+        [
+          53,
+          92
+        ],
+        [
+          57,
+          92
+        ],
+        [
+          60,
+          92
+        ],
+        [
+          62,
+          92
+        ],
+        [
+          63,
+          92
+        ],
+        [
+          77,
+          92
+        ]
+      ],
+      "target_cover_edges": [
+        [
+          61,
+          91
+        ],
+        [
+          61,
+          95
+        ],
+        [
+          61,
+          96
+        ],
+        [
+          61,
+          106
+        ],
+        [
+          91,
+          127
+        ],
+        [
+          91,
+          131
+        ],
+        [
+          91,
+          132
+        ],
+        [
+          91,
+          136
+        ],
+        [
+          91,
+          138
+        ],
+        [
+          95,
+          131
+        ],
+        [
+          95,
+          136
+        ],
+        [
+          95,
+          137
+        ],
+        [
+          95,
+          148
+        ],
+        [
+          95,
+          163
+        ],
+        [
+          96,
+          132
+        ],
+        [
+          96,
+          137
+        ],
+        [
+          96,
+          138
+        ],
+        [
+          96,
+          149
+        ],
+        [
+          96,
+          168
+        ],
+        [
+          106,
+          127
+        ],
+        [
+          106,
+          148
+        ],
+        [
+          106,
+          149
+        ],
+        [
+          106,
+          163
+        ],
+        [
+          106,
+          168
+        ],
+        [
+          127,
+          171
+        ],
+        [
+          127,
+          172
+        ],
+        [
+          127,
+          186
+        ],
+        [
+          127,
+          191
+        ],
+        [
+          131,
+          171
+        ],
+        [
+          131,
+          177
+        ],
+        [
+          131,
+          181
+        ],
+        [
+          132,
+          172
+        ],
+        [
+          132,
+          177
+        ],
+        [
+          132,
+          184
+        ],
+        [
+          136,
+          181
+        ],
+        [
+          136,
+          183
+        ],
+        [
+          136,
+          186
+        ],
+        [
+          137,
+          177
+        ],
+        [
+          137,
+          183
+        ],
+        [
+          137,
+          195
+        ],
+        [
+          137,
+          214
+        ],
+        [
+          138,
+          183
+        ],
+        [
+          138,
+          184
+        ],
+        [
+          138,
+          191
+        ],
+        [
+          148,
+          171
+        ],
+        [
+          148,
+          195
+        ],
+        [
+          148,
+          204
+        ],
+        [
+          149,
+          172
+        ],
+        [
+          149,
+          195
+        ],
+        [
+          149,
+          209
+        ],
+        [
+          163,
+          186
+        ],
+        [
+          163,
+          204
+        ],
+        [
+          163,
+          214
+        ],
+        [
+          168,
+          191
+        ],
+        [
+          168,
+          209
+        ],
+        [
+          168,
+          214
+        ],
+        [
+          171,
+          218
+        ],
+        [
+          171,
+          227
+        ],
+        [
+          172,
+          218
+        ],
+        [
+          172,
+          232
+        ],
+        [
+          177,
+          218
+        ],
+        [
+          177,
+          231
+        ],
+        [
+          181,
+          227
+        ],
+        [
+          181,
+          231
+        ],
+        [
+          183,
+          231
+        ],
+        [
+          183,
+          237
+        ],
+        [
+          184,
+          231
+        ],
+        [
+          184,
+          232
+        ],
+        [
+          186,
+          227
+        ],
+        [
+          186,
+          237
+        ],
+        [
+          191,
+          232
+        ],
+        [
+          191,
+          237
+        ],
+        [
+          195,
+          218
+        ],
+        [
+          195,
+          254
+        ],
+        [
+          204,
+          227
+        ],
+        [
+          204,
+          254
+        ],
+        [
+          209,
+          232
+        ],
+        [
+          209,
+          254
+        ],
+        [
+          214,
+          237
+        ],
+        [
+          214,
+          254
+        ],
+        [
+          218,
+          275
+        ],
+        [
+          227,
+          275
+        ],
+        [
+          231,
+          275
+        ],
+        [
+          232,
+          275
+        ],
+        [
+          237,
+          275
+        ],
+        [
+          254,
+          275
+        ]
+      ],
+      "checks": [
+        "bijection",
+        "all pairwise order relations",
+        "all subinterval KL polynomials agree",
+        "all subinterval R-polynomial reciprocity identities",
+        "all right-descent choices in the KL recurrence"
+      ],
+      "target_top_full_simple_support": true,
+      "source_top_full_simple_support": true,
+      "target_obstruction_to_type_A_parabolic_cosets": {
+        "right_cover_labels": {
+          "first": {
+            "reflection": [
+              -4,
+              2,
+              3,
+              -1
+            ],
+            "cover": [
+              61,
+              106
+            ]
+          },
+          "second": {
+            "reflection": [
+              -1,
+              2,
+              3,
+              4
+            ],
+            "cover": [
+              61,
+              91
+            ]
+          },
+          "product_order": 4
+        },
+        "left_cover_labels": {
+          "first": {
+            "reflection": [
+              -4,
+              2,
+              3,
+              -1
+            ],
+            "cover": [
+              127,
+              172
+            ]
+          },
+          "second": {
+            "reflection": [
+              -1,
+              2,
+              3,
+              4
+            ],
+            "cover": [
+              106,
+              127
+            ]
+          },
+          "product_order": 4
+        }
+      }
+    }
+  ],
+  "search_counts": {
+    "D4_fc_bottom_P_1_plus_q_rank_3_or_5": 280,
+    "B3": {
+      "non_fc_bottom_P_1_plus_q_rank_3_or_5": 5,
+      "full_support": 5,
+      "matching_fingerprint": 4
+    },
+    "B4": {
+      "non_fc_bottom_P_1_plus_q_rank_3_or_5": 1314,
+      "full_support": 1309,
+      "matching_fingerprint": 789
+    },
+    "A4": {
+      "non_fc_bottom_P_1_plus_q_rank_3_or_5": 36,
+      "full_support": 36,
+      "matching_fingerprint": 36
+    },
+    "D4_fc_bottom_rank_5_mu_1": 3,
+    "B4_non_fc_bottom_rank_5_P_1_plus_2q_plus_q2": 30
+  },
+  "bounded_absence_check": {
+    "target_type": "B2",
+    "target_bottom": {
+      "id": 0,
+      "one_line": [
+        1,
+        2
+      ],
+      "length": 0,
+      "reduced_word": [],
+      "fully_commutative": true,
+      "non_fc_reduced_word": null
+    },
+    "target_top": {
+      "id": 7,
+      "one_line": [
+        -1,
+        -2
+      ],
+      "length": 4,
+      "reduced_word": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "fully_commutative": false,
+      "non_fc_reduced_word": [
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    "target_rank_vector": [
+      1,
+      2,
+      2,
+      2,
+      1
+    ],
+    "source_type": "D4",
+    "tested_fc_bottom_rank_four_intervals": 966,
+    "isomorphic_models": 0,
+    "limitation": "Excludes only D4 FC-bottom models; makes no assertion about Dn for n>4."
+  },
+  "independent_bad_D6_computation": {
+    "type": "D6",
+    "bottom": [
+      -1,
+      -2,
+      4,
+      3,
+      6,
+      5
+    ],
+    "top": [
+      -1,
+      -6,
+      3,
+      -4,
+      5,
+      -2
+    ],
+    "bottom_length": 4,
+    "top_length": 15,
+    "interval_rank": 11,
+    "lower_ideal_size": 3184,
+    "interval_size": 1676,
+    "rank_vector": [
+      1,
+      12,
+      55,
+      140,
+      248,
+      339,
+      360,
+      287,
+      162,
+      59,
+      12,
+      1
+    ],
+    "polynomial_coefficients": [
+      1,
+      6,
+      11,
+      6,
+      1,
+      1
+    ],
+    "mu": 1,
+    "checks": [
+      "independent signed inversion length formula",
+      "lifting-property Bruhat comparisons",
+      "KL recurrence with every right descent of top",
+      "independent R-polynomial reciprocity identity"
+    ],
+    "elapsed_seconds": 0.172,
+    "kl_cache_entries": 24245,
+    "recurrence_certificate": "/Users/ic/workspace/kl/results/d6-recurrence-certificate.json"
+  },
+  "D6_dependency_verification": {
+    "records": 24245,
+    "comparable_records": 17267,
+    "strict_recurrence_checks": 17148,
+    "incomparable_zero_checks": 6978,
+    "root_polynomial": [
+      1,
+      6,
+      11,
+      6,
+      1,
+      1
+    ],
+    "root_right_descent_checks": 4,
+    "root_R_reciprocity": true,
+    "evaluator_called": false
+  },
+  "bad_D8_computation_status": "Not attempted by the default command; the thesis base computation is inherited, not independently reproduced.",
+  "bad_element_arithmetic": [
+    {
+      "n": 4,
+      "ell_w": 7,
+      "ell_x": 3,
+      "interval_rank": 4,
+      "a": 3,
+      "degree_bound": 1,
+      "mu": 0,
+      "basis": "exact arithmetic in supplied thesis formulas; not a KL computation"
+    },
+    {
+      "n": 6,
+      "ell_w": 15,
+      "ell_x": 4,
+      "interval_rank": 11,
+      "a": 5,
+      "degree_bound": 5,
+      "mu": 1,
+      "basis": "exact arithmetic in supplied thesis formulas; not a KL computation"
+    },
+    {
+      "n": 8,
+      "ell_w": 26,
+      "ell_x": 5,
+      "interval_rank": 21,
+      "a": 6,
+      "degree_bound": 9,
+      "mu": 0,
+      "basis": "exact arithmetic in supplied thesis formulas; not a KL computation"
+    },
+    {
+      "n": 10,
+      "ell_w": 40,
+      "ell_x": 6,
+      "interval_rank": 34,
+      "a": 8,
+      "degree_bound": 16,
+      "mu": 0,
+      "basis": "exact arithmetic in supplied thesis formulas; not a KL computation"
+    },
+    {
+      "n": 12,
+      "ell_w": 57,
+      "ell_x": 7,
+      "interval_rank": 50,
+      "a": 9,
+      "degree_bound": 24,
+      "mu": 0,
+      "basis": "exact arithmetic in supplied thesis formulas; not a KL computation"
+    },
+    {
+      "n": 14,
+      "ell_w": 77,
+      "ell_x": 8,
+      "interval_rank": 69,
+      "a": 11,
+      "degree_bound": 33,
+      "mu": 0,
+      "basis": "exact arithmetic in supplied thesis formulas; not a KL computation"
+    },
+    {
+      "n": 16,
+      "ell_w": 100,
+      "ell_x": 9,
+      "interval_rank": 91,
+      "a": 12,
+      "degree_bound": 44,
+      "mu": 0,
+      "basis": "exact arithmetic in supplied thesis formulas; not a KL computation"
+    },
+    {
+      "n": 18,
+      "ell_w": 126,
+      "ell_x": 10,
+      "interval_rank": 116,
+      "a": 14,
+      "degree_bound": 56,
+      "mu": 0,
+      "basis": "exact arithmetic in supplied thesis formulas; not a KL computation"
+    },
+    {
+      "n": 20,
+      "ell_w": 155,
+      "ell_x": 11,
+      "interval_rank": 144,
+      "a": 15,
+      "degree_bound": 70,
+      "mu": 0,
+      "basis": "exact arithmetic in supplied thesis formulas; not a KL computation"
+    },
+    {
+      "n": 22,
+      "ell_w": 187,
+      "ell_x": 12,
+      "interval_rank": 175,
+      "a": 17,
+      "degree_bound": 85,
+      "mu": 0,
+      "basis": "exact arithmetic in supplied thesis formulas; not a KL computation"
+    },
+    {
+      "n": 24,
+      "ell_w": 222,
+      "ell_x": 13,
+      "interval_rank": 209,
+      "a": 18,
+      "degree_bound": 102,
+      "mu": 0,
+      "basis": "exact arithmetic in supplied thesis formulas; not a KL computation"
+    },
+    {
+      "n": 26,
+      "ell_w": 260,
+      "ell_x": 14,
+      "interval_rank": 246,
+      "a": 20,
+      "degree_bound": 120,
+      "mu": 0,
+      "basis": "exact arithmetic in supplied thesis formulas; not a KL computation"
+    },
+    {
+      "n": 28,
+      "ell_w": 301,
+      "ell_x": 15,
+      "interval_rank": 286,
+      "a": 21,
+      "degree_bound": 140,
+      "mu": 0,
+      "basis": "exact arithmetic in supplied thesis formulas; not a KL computation"
+    },
+    {
+      "n": 30,
+      "ell_w": 345,
+      "ell_x": 16,
+      "interval_rank": 329,
+      "a": 23,
+      "degree_bound": 161,
+      "mu": 0,
+      "basis": "exact arithmetic in supplied thesis formulas; not a KL computation"
+    },
+    {
+      "n": 32,
+      "ell_w": 392,
+      "ell_x": 17,
+      "interval_rank": 375,
+      "a": 24,
+      "degree_bound": 184,
+      "mu": 0,
+      "basis": "exact arithmetic in supplied thesis formulas; not a KL computation"
+    }
+  ],
+  "elapsed_seconds": 3.236
+}

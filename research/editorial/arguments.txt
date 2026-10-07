@@ -1,0 +1,243 @@
+EXPOSITION REFEREE: ARGUMENT ARCHITECTURE AND CANDIDATE REWRITES
+7 October 2026. Source: results/exceptional-leading.tex.
+Read against research/en_uniform/referee.txt, research/en_e8/report.txt,
+and research/exceptional_referee/report.txt. This is an editorial review of
+audited mathematics, not a new correctness or priority certification.
+
+PRIORITIES
+
+1. Put both structural reductions before the applications. Define generalized
+E_n and support in the opening conventions; then present terminal reduction,
+maximum common descents, and the parity criterion in one preliminary section.
+The finite theorem uses terminal reduction; the infinite theorems use the
+maximum-descent criterion. Say this explicitly. Do not suggest the maximum-
+descent criterion settles every row of the finite terminal tables: some rows
+have smaller descent sets and still need the exhaustive eligibility checks.
+
+2. Make the uniform family the main indefinite construction. E13 is exactly
+r=3, not an independent argument. State its seed as a worked specialization
+or a single row of a seed table. Keep E10 as the separate fixed-rank example,
+using the same ambient-translation lemma and root-sign criterion. This removes
+the nearly duplicated real-root/translation/sign/support/length-parity proof.
+If theorem labels must stay compatible, keep an E10/E13 corollary after the
+uniform theorem, with E13 obtained by r=3. Preserve its separate certificates
+in the reproducibility appendix. Do not discard those certificates simply
+because their theorem is now a specialization.
+
+3. Divide the uniform argument into three named lemmas: reality of the seed;
+the translated positive roots; descent sets and terminality. The theorem's
+proof can then establish the matching bound, non-FC, support, distinctness,
+and eventual vanishing in short paragraphs. A reader should not need to hold
+the indefinite coordinate realization, the nilpotent operator, and the edge
+inequalities in memory simultaneously.
+
+4. Treat the finite classification as an explicit computational proposition,
+with its mathematical completeness proof and tables adjacent. An appendix
+can hold file manifests and secondary consistency checks, but not replace
+the proof that every terminal and every eligible lower endpoint is reached.
+Give the E8 recursive chain as an algorithm with a short induction proof.
+The independent D7 method can be a compact verification paragraph plus an
+appendix. Distinguish independent implementations from independent algorithms:
+the root/matrix engines share justified mathematical recurrences.
+
+5. Remove project chronology from the research narrative. The current abstract
+and final section mix results with search status, agent activity, failed caps,
+and future novelty checking. Keep one precise priority sentence, move search
+limitations to a short final discussion or supplement, and omit model/agent
+identities. Theorems should carry the mathematical scope; the introduction
+need not repeat that no whole-type infinite theorem is claimed after every
+positive statement. Retain one clear finite-versus-family scope paragraph.
+
+DEFINITIONS AND NOTATION
+
+* Define (W,S), Coxeter length, Bruhat order, and support before first use.
+  Support is the set of simple generators appearing in any reduced expression;
+  full support means supp(w)=S. Write L(w)={s:ell(sw)<ell(w)} and similarly R.
+* Define mu by cases. The current coefficient extraction with half-integral
+  exponent followed by a prose convention is decipherable but unnecessarily
+  awkward. Set mu(x,w)=[q^{(ell(w)-ell(x)-1)/2}]P_{x,w} when x<w and the gap
+  is odd, and zero otherwise. Covers consequently have mu=1. Maintain ordinary
+  equal-parameter throughout; do not conflate this with TL structure constants.
+* Define FC once, optionally adding the simply laced equivalent: no reduced
+  word contains sts with adjacent s,t. Explain independent set as mutually
+  commuting simple generators, and i(I) as their order-independent product.
+* Use n for rank throughout. The existing E_r finite section and r uniform
+  parameter reuse are avoidable. Reserve r for n=4r+1, and k for iteration.
+* Reserve alpha_j for simple roots, beta for constructed real roots, and
+  rho for an arbitrary ambient vector in the translation lemma. The current
+  z is both a special orthogonal direction and a generic operator argument.
+* Use K for a support vertex set and J for a parabolic subset, consistently.
+  Change 'maximality hypotheses' in the maximum-common-descents proof to
+  'maximum-cardinality hypothesis': maximal independent sets are insufficient.
+* gamma in the affine nonreflection family differs from gamma in the
+  indefinite construction. Give them distinct names (gamma_aff, gamma_ind)
+  or explicitly state the redefinition at the section boundary. Their
+  associated T operators are different as well.
+* Replace (*), (**), (***) by numbered equations and labels. Label the seed,
+  translation formula, and pairing array individually for navigable proofs.
+* A root inequality rho>0 means a positive root, hence nonnegative coordinates
+  and not zero. Distinguish this from 'every coordinate is strictly positive',
+  which the support proof really uses. Introduce normalized reflection
+  r_beta(v)=v-(v,beta)beta for real roots of square length two.
+
+DIAGRAMS AND WITNESSES
+
+One numbered generalized-E diagram should show the chain 0--1--2--...--n-2
+and branch n-1 at 2. Its caption should say E9 is affine E8, while E_n for
+n>=10 is indefinite. A second small diagram or highlighted subdiagram may
+mark the affine block {0,...,7,n-1} and the adjacent node 8. This makes the
+critical fact (delta,alpha_8)=-1 visible. Avoid a decorative diagram per rank.
+
+Move all long reduced-word witnesses into one table keyed by type and b_i;
+keep the main terminal table to length, descent set, eligible x, gap, and
+mu. A split long word must say concatenation without cancellation, and its
+declared length must remain 50. Distinguish witness enumeration from proof
+of exhaustiveness. Digit strings are safe only where every label is one
+digit. Multi-digit ranks need spaces or s_j notation; never use 1011 as a
+generator word without delimiters. A file manifest should map each finite
+and infinite result to its source, certificate, and reproduction command.
+
+FINITE PROOF DETAILS THAT MUST SURVIVE SHORTENING
+
+* Terminal reduction excludes covers before applying missing-descent vanishing.
+  It uses symmetric star transport. Keep the explanation that the new gap is
+  d or d-2>0 and the new upper has smaller length; stars may give incomparable
+  endpoints. Do not replace this by an unqualified oriented equality.
+* Full commutativity of starred lower endpoints is a cited structural input,
+  with finite star enumeration only a consistency check.
+* E6/E7: faithful representation, breadth-first closure under all generators,
+  exact terminal test on both sides, exact FC recurrence, exact Bruhat test.
+* E8: unique length-additive parabolic decomposition; all minimal coset
+  representatives; all right-terminal parabolic factors; ambient right test;
+  inverse test for the left side. Recursive completeness is induction starting
+  with the identity, without a cutoff. Enumerating only previously retained
+  right-terminals is justified by the pruning lemma, not by empirical counts.
+* Explain coset closure in one sentence: left multiplication by generators
+  followed by stripping right J-descents reaches every right coset because
+  the group acts transitively on its right cosets.
+* The FC-only enumeration is complete because every FC element has FC weak
+  predecessors and the recurrence tests all descending predecessors. Matching
+  a known FC count alone is not the proof.
+* Eligibility means x is FC, x<=b, and both descent inclusions. Do not weaken
+  it to 'matching descents'. State explicitly that each noncommuting terminal
+  has exactly one eligible x, after searching the complete FC catalogue.
+* Keep the D6 label map and ordinary standard-parabolic KL equality. Exact
+  mu=1 uses Gern's specific pair; his theorem alone yields only the bound.
+* Counts 138,240 (final E8 stage) and 143,660 (whole recursive chain) have
+  different meanings. Independent D7 candidates total 604,800.
+
+SMALL LOGICAL LINKS WORTH MAKING EXPLICIT
+
+The affine theorem claims non-FC but its proof never spells out the final
+step. Add: if b_k were FC, maximum common descents would force b_k=i(I),
+contradicting ell(b_k)=27+92k>5. This uses an established lemma, no new math.
+
+The gamma and gamma+delta real-root assertion should not merely say they
+'lie in the embedded affine parabolic': membership as vectors in its span
+is insufficient. State that gamma is a finite E8 root (give a fixed lowering
+certificate or cite its affine-root classification), so gamma+delta is an
+affine real root. The current certificate record supports both roots. Put
+the fixed lowering words in a compact appendix if direct inspection is desired.
+
+For uniform maximum independence include the matching
+(0,1),(2,4r),(3,4),(5,6),...,(4r-3,4r-2), with 4r-1 unmatched.
+It proves the upper bound 2r+1 in one line and I_r attains it. This is much
+more transparent than an unexplained independence-number assertion. The
+global ceil(n/2) formula can remain a brief preliminary observation.
+
+Explain distinct positive real roots give distinct reflections: the image
+of 1-r_beta is the beta-line; positivity and norm two fix its representative.
+Explain eventual length divergence via finite balls and injectivity, without
+implying monotonicity or asserting a linear indefinite length formula.
+
+The D4 example should state the gap: ell(xcx)-ell(x)=4, so mu=0 although
+P=1+2q. This instantly clarifies the difference between the leading coefficient
+convention and the highest nonzero term in a particular polynomial.
+
+CANDIDATE STANDALONE PROOF REWRITES (EXTRACTED FROM EXISTING ARGUMENTS)
+
+A. Pruning lemma, shorter reduced-word proof.
+
+Let w=av be the parabolic decomposition, with v in W_J and
+ell(w)=ell(a)+ell(v). If v had a reduced expression ending in adjacent
+generators ts, concatenating it with a reduced expression for a would give
+such an expression for w. Thus a right-terminal w has right-terminal v.
+The uniqueness of the parabolic decomposition now shows that testing all
+av, with a in W^J and v right-terminal in W_J, finds every right-terminal
+element of W. Applying the same test to the inverse selects the two-sided
+terminals. [Then give the root-sum test for implementation separately.]
+
+B. Maximum-common-descents lemma, expanded only where readers need a bridge.
+
+Let K contain supp(x), let I be maximum independent in K, and suppose
+I is contained in L(x) and R(x). The parabolic decomposition for W_I
+shows that i(I) occurs as both a reduced prefix and a reduced suffix of x.
+In Green's monomial Temperley--Lieb notation, a_TL(x) is the largest size
+of a commuting product occurring as a length-additive factor. Hence
+|I|<=a_TL(x)<=alpha(K)=|I|. Green's Proposition 4.4(iv), applied to the
+prefix and suffix, places x in the right and left monomial cells of i(I).
+By Proposition 4.4(v), their intersection consists of one element. Since
+i(I) belongs to that intersection, x=i(I). These are monomial TL cells;
+no identification with ordinary KL cells or ordinary a-values is needed.
+
+C. Ambient translation lemma.
+
+Suppose gamma and gamma+delta are real roots with gamma^2=2,
+delta^2=(gamma,delta)=0, and put T=r_gamma r_(gamma+delta).
+For every ambient vector rho, direct reflection multiplication gives
+T rho=rho+(rho,delta)gamma-[(rho,gamma)+(rho,delta)]delta.
+Writing N=T-1, one has N delta=0 and N gamma=-2delta; therefore
+N^2 rho=-2(rho,delta)delta and N^3=0. If
+(beta,gamma)=-c and (beta,delta)=-a, then
+T^k beta=beta-ak gamma+(ak^2+ck)delta
+         =beta+k[(a+c)delta-a gamma]+binom(k,2)2a delta.
+This is an identity on the entire root space: delta need not lie in its
+radical. In the indefinite applications (delta,alpha_8)=-1.
+[Use c=r for the uniform seed and c=3,a=1 for E10.]
+
+D. Reflection sign criterion, replacing duplicate prose in E10/uniform.
+
+Let beta be a positive integral real root whose simple-root coordinates are
+all strictly positive, and set m_j=(alpha_j,beta). Suppose the positive
+m_j occur precisely on an independent set I and m_s+m_t<=0 whenever
+s in I is adjacent to t. Then b=r_beta has L(b)=R(b)=I and is terminal.
+Indeed b(alpha_j)=alpha_j-m_j beta. If m_j<=0 this is positive; if m_j>0,
+integrality gives m_j>=1 and every coordinate is nonpositive, so it is
+negative. For s in I and t adjacent to s,
+bs(alpha_t)=alpha_t+alpha_s-(m_s+m_t)beta is positive. Thus no neighbor
+of a right descent becomes a right descent after its removal. This is
+right-terminality, and b=b^{-1} gives the left statement.
+
+If some m_j is nonzero, b also has full support: column j of b-1 has
+a nonzero entry in every row. Every product omitting a generator s_i fixes
+coordinate row i, so b belongs to no proper standard parabolic.
+
+E. Ending of the uniform theorem proof, after the three construction lemmas.
+
+The matching (0,1),(2,4r),(3,4),...,(4r-3,4r-2) has 2r edges and leaves
+one vertex uncovered. Every independent set therefore has at most 2r+1
+vertices, and I_r attains this bound. Since b_(r,k) is a reflection,
+ell(b_(r,k)) is odd, as is |I_r|. The maximum-descent parity criterion
+gives the asserted bound and non-cover vanishing. If b_(r,k) were FC,
+the maximum-common-descents lemma would give b_(r,k)=i(I_r). This is
+impossible: their (-1)-eigenspaces have dimensions one and 2r+1.
+
+Full support follows from the reflection sign lemma, since m_0=r-2>0.
+The coordinate beta_(r,k),0=r-1+4k+(4r-8)k^2 strictly increases with k.
+Distinct positive roots of norm two define distinct reflections, so the
+family is injective. For fixed r, let M_r be the maximum length of an FC
+element, which exists by FC-finiteness. Each bounded Coxeter-length ball
+is finite; hence only finitely many b_(r,k) have length at most M_r+1.
+For all remaining k no FC lower cover exists, and every other coefficient
+has already been shown to vanish. No threshold uniform in r is asserted.
+
+SCOPE TO PRESERVE VERBATIM IN SUBSTANCE
+
+Finite E6/E7/E8: arbitrary upper endpoints, FC lower endpoints, ordinary
+equal-parameter mu in {0,1}, computer-assisted exhaustive classification.
+Affine E8: the specified full-support family has all FC-lower mu zero.
+Indefinite E10 and uniform E_(4r+1), r>=3: specified full-support families,
+all non-cover coefficients zero; eventual all-zero for each fixed uniform r.
+Neither a full-polynomial formula nor a whole-type bound for infinite E_n
+follows. The conditional interval-transfer corollary uses a separate external
+input, unnecessary for any source theorem. Priority remains unconfirmed.

@@ -1,0 +1,17 @@
+{
+  "status": "All assertions passed",
+  "E6_E7": "Flat and recursive methods match independent complete enumerations",
+  "E8": "Flat E7, recursive parabolic, and independent D7 methods agree as integer matrices",
+  "right_terminal_count": 2160,
+  "commuting_terminal_count": 58,
+  "noncommuting_terminal_count": 6,
+  "eligible_gaps": [
+    4,
+    4,
+    4,
+    11,
+    24,
+    46
+  ],
+  "D7_and_E8_Poincare_histograms": "verified coefficient by coefficient"
+}

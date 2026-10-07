@@ -1,0 +1,8 @@
+{"n": 6, "edge": 0, "lift_count": 3}
+{"n": 6, "edge": 1, "lift_count": 3}
+{"n": 6, "edge": 2, "lift_count": 6}
+{"n": 6, "edge": 3, "lift_count": 2}
+{"n": 6, "edge": 3, "candidate_word": [0, 3, 2, 1, 2, 3, 5, 4, 3, 2, 0, 2, 1, 3, 5], "ranks": [1, 12, 55, 140, 248, 339, 360, 287, 162, 59, 12, 1], "principal_ranks_equal": true}
+{"n": 6, "edge": 4, "lift_count": 2}
+{"n": 6, "edge": 4, "candidate_word": [0, 3, 2, 1, 2, 3, 4, 5, 4, 3, 2, 0, 2, 1, 3], "ranks": [1, 12, 55, 140, 248, 339, 360, 287, 162, 59, 12, 1], "principal_ranks_equal": true}
+{"n": 6, "edge": 4, "candidate_word": [0, 3, 2, 1, 5, 4, 3, 2, 0, 3, 2, 1, 4, 3, 5], "ranks": [1, 12, 55, 140, 248, 339, 360, 287, 162, 59, 12, 1], "principal_ranks_equal": true}

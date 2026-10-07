@@ -1,0 +1,179 @@
+TARGETED FOLLOW-UP: UNIFORM TERMINAL FAMILY, PRIORITY AND E10 PLACEMENT
+2026-10-07. No manuscript edits, computations, or author contacts.
+
+OUTCOME
+
+No exact predecessor for the displayed E_(4r+1) staircase family was
+located in this targeted follow-up. This is not a novelty certificate.
+The old ingredients overlap very substantially with the proof mechanism;
+the candidate structural contribution is the particular seed and the
+simultaneous all-r/all-k terminality and full-support assertion. There
+is no basis for advertising a new affine-translation technique, monomial
+cell theory, or general KL-vanishing mechanism.
+
+Two useful attribution refinements emerged: Green explicitly credits
+Graham's 1995 thesis for the BOTH-FC coefficient bound in generalized E_n;
+and the particular monomial-cell facts used here trace through Green to
+Fan's published 1997 JAMS paper. A primary E10 paper also gives affine
+translations acting on the whole ambient indefinite root space, confirming
+that this aspect of the construction is established machinery.
+
+1. EXACT OLD MONOMIAL-CELL INPUT
+
+R.M. Green, On the Markov trace for Temperley--Lieb algebras of type E_n,
+J. Knot Theory Ramifications 18 (2009), 237--264; preprint:
+https://arxiv.org/pdf/0704.0283
+Precise preprint locators: Definition 4.1; Proposition 4.4(iv),(v);
+final paragraph of Lemma 5.2; Remark 9.5.
+Proposition 4.4's proof identifies (iv) with Fan, Proposition 4.4.3,
+and (v) with the proof of Fan, Theorem 6.1.2. Lemma 5.2 already uses
+the singleton left/right-cell argument. Remark 9.5 (printed p.33)
+credits Graham's thesis §9 with the two-FC-endpoint 0/1 bound and a
+nonrecursive description of the close elements. These statements have
+neither the arbitrary non-FC upper scope nor the explicit root family
+claimed in the present manuscript. This is exact overlap in the machinery,
+not an exact predecessor of the family.
+
+The cited Fan work is C.K. Fan, Structure of a Hecke algebra quotient,
+J. Amer. Math. Soc. 10 (1997), 139--167,
+https://doi.org/10.1090/S0894-0347-97-00222-1 .
+Its generalized E-series scope includes indefinite ranks. Direct AMS PDF
+retrieval failed in this follow-up; exact proposition numbering above is
+verified from Green's primary proof, not falsely represented as a fresh
+inspection of Fan's original PDF. Likewise Graham's original thesis was
+not retrieved here: J.J. Graham, Modular representations of Hecke algebras
+and related algebras, Ph.D. thesis, University of Sydney, 1995. Attribute
+the Graham statement through the explicit Green Remark 9.5 until the
+original thesis can be checked. The current Green citations suffice for
+the proof; these refinements improve historical attribution.
+
+2. T-AVOIDANCE AND LATER LITERATURE
+
+T. Laird, A Study of T-Avoiding Elements of Coxeter Groups, M.S. thesis,
+Northern Arizona University, May 2016, §5.3, printed p.63:
+https://in.nau.edu/department-mathematics-statistics/wp-content/uploads/sites/377/2018/08/LairdThesis-ek.pdf
+This is precisely the relevant terminal definition. It lists E_n
+classification as a future direction in 2016. Searches for subsequent
+work citing Laird or using the exact thesis title found no later E-series
+classification. That bounded result is weak negative evidence, not proof
+that the direction remains open. Her institutional January 2022 CV
+describes A/B/affine-C and preliminary affine-A work:
+https://statistics.arizona.edu/sites/default/files/Laird_CV%20Jan%202022_0.pdf
+
+D.C. Ernst's author research statement, §3.1, printed pp.3-4, reports
+2011-2012 work with Cross, Hills-Kimball and Quaranta producing an
+infinite noncommuting T-avoiding class in generalized F:
+https://danaernst.com/archive/Statements/ResearchErnst.pdf
+It rules out an unqualified 'first infinite terminal family' claim.
+It does not state the present E-series roots or their KL consequence.
+
+Recent relevant primary checks:
+R. Biagioli, L. Costantini, E. Sasso, Star and weak star irreducible fully
+commutative elements in Coxeter groups of affine types B and D (2025),
+https://arxiv.org/html/2508.08388v1 . Definitions 1.10-1.11 explicitly
+restrict to FC elements. Their objects are not arbitrary non-FC terminals.
+No Laird citation was found in that full text.
+R. Biagioli, C. Hohlweg, E. Sasso, On generating functions and automata
+associated to reflections in Coxeter systems (2026),
+https://arxiv.org/html/2602.16361v1 . Theorems 1.1-1.2 concern reflection-
+prefix languages and affine reflection generating functions. They do not
+classify terminal reflections or give FC-bottom KL bounds. Its full text
+also yielded no Laird citation. Thus these are related current work, not
+identified predecessors. Their absence of a citation cannot substitute
+for a comprehensive citation-database search.
+
+R.M. Green, Star reducible Coxeter groups, Glasgow Math. J.48 (2006),
+583--609, Theorems 5.11 and 6.3,
+https://arxiv.org/pdf/math/0509363 . All generalized E_n being star
+reducible concerns FC elements. Non-FC terminal examples are compatible
+with this result and do not contradict it. Keep that distinction clear.
+
+3. AFFINE TRANSLATIONS IN AN INDEFINITE AMBIENT SPACE
+
+A. Kleinschmidt, H. Nicolai, J. Palmkvist, Modular realizations of
+hyperbolic Weyl groups, arXiv:1010.2212v1 (11 October 2010), §6.4,
+equation (6.27), printed p.29 / PDF page30 in the 36-page v1:
+https://arxiv.org/abs/1010.2212v1
+Primary v1 full text inspected:
+https://pure.mpg.de/rest/items/item_458104_4/component/file_532591/content
+VERSION CORRECTION: the unversioned arXiv link now serves v2. In v2,
+the corresponding locator is §5.4, equation (5.27), PDF page25 (index24),
+as independently verified by the coordinating reviewer. Use
+https://arxiv.org/abs/1010.2212v2 for that locator. The v1 and v2 section
+and equation numbers must not be mixed.
+The authors explicitly write the affine E9 translation action on the
+whole E10 root space. Its quadratic dependence on the translating vector
+contains the null-vector correction familiar from the present iterate.
+Conventions and normalization differ, so do not copy its formula into the
+manuscript without translating them. The relevant overlap is conceptual:
+extending the affine-parabolic action to an indefinite ambient space is
+old. The paper does not identify the manuscript's seed, common maximum
+descent set, terminality inequalities, or FC-bottom coefficient theorem.
+
+The manuscript's direct reflection multiplication already proves the
+needed identity economically; adding this specialized reference to the
+main bibliography is optional, not necessary. It is enough to describe
+the root-action lemma as a recorded standard calculation. New terminology
+for this operation would obscure rather than strengthen the contribution.
+
+4. WHAT IS SPECIFIC TO THE UNIFORM CONSTRUCTION
+
+The contribution to test against predecessors is this exact combination:
+(a) the staircase seed in each rank 4r+1, with its all-r signed-permutation
+    real-root certificate;
+(b) an affine-parabolic orbit whose roots remain strictly positive and
+    whose positive simple pairings give the fixed maximum set I_r;
+(c) every edge adjacent to I_r has nonpositive pairing sum, uniformly in
+    both r and k, so both terminal conditions survive;
+(d) these yield distinct full-support non-FC reflections in every listed
+    rank, rather than unchanged proper-parabolic embeddings.
+
+This identifies mathematical content genuinely additional to the cited
+general machinery; it does NOT prove first discovery. Real-root membership
+is not automatic from norm two in indefinite type. Terminality is not
+preserved by arbitrary conjugation. Full support of the uppers is not
+lost merely because the translating element lies in an affine parabolic.
+Those are the useful features of the proof. Once they and the common
+descents are established, the KL consequence is short old-theory reasoning.
+The current revised introduction mostly makes this distinction correctly.
+
+5. E10: MOVE THE REPETITIVE PROOF TO AN APPENDIX
+
+Recommendation: retain the E10 result, but move its entire coordinate
+construction and proof into an appendix or combine it with its existing
+seed data. Leave a short main-text paragraph identifying the first
+indefinite rank E10 and referring to the appendix's proposition.
+
+Reason: E10 is outside the uniform congruence class, so it adds real scope.
+It should not simply be deleted. But its affine-parabolic root action,
+sign check, support proof, distinctness and parity argument repeat the
+uniform construction with a certified seed in place of the all-r proof.
+Giving it an equally prominent full subsection dilutes the finite ADE /
+uniform-family story. The affine E9 example deserves more main-text space
+because it has an exact length formula and removes the cover exception
+for every parameter. Neither placement decision changes theorem strength.
+
+Minimal main-text wording after the affine example:
+'The same root-action method gives a full-support terminal reflection
+family in E10, the first indefinite rank. Its non-cover FC-bottom leading
+coefficients vanish; the explicit roots and proof are in Appendix X.'
+Preserve the proposition label, certificate references, and seed lowering
+witness in the appendix. Update the introduction's section reference and
+do not imply E10 is a specialization of the 4r+1 construction.
+
+6. MINIMAL MANUSCRIPT CHANGES
+
+1. Refine the literature sentence to acknowledge Graham's two-FC result
+   through Green Remark 9.5, while retaining the precise endpoint contrast.
+2. One short attribution can call the cell input 'Fan's monomial-cell
+   theory, in the form recalled by Green'; retain the exact accessible
+   Green propositions and Lemma 5.2 used in the proof.
+3. Add at most one sentence distinguishing the explicit seed/terminal
+   inequalities from the standard affine-parabolic root action. Do not
+   turn the paper into a literature-audit report or list every tangential
+   recent paper.
+4. Move E10's full proof to the appendix as above. Keep affine E9 in the
+   main text, and maintain finite ADE as the principal publication anchor.
+5. Keep priority qualified. This follow-up closes no comprehensive priority
+   question and discovers no exact new blocker. No further theorem or
+   computation should be fabricated to create an impression of novelty.

@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "archive": "supplement/dist/exceptional-leading-proof.zip",
+  "archive_bytes": 545155,
+  "archive_sha256": "fb48f74d4a7f18e13b4bff15e997b8b79bd01cd17d33f07dfedee5b5dc0734b1",
+  "extraction": "/private/tmp/kl-proof-final-m8lv0g70/exceptional-leading-proof",
+  "manifest_files_verified": 36,
+  "archive_files": 37,
+  "changed_since_fully_tested_archive": [
+    "INPUTS.json",
+    "payload/output/pdf/exceptional-leading.pdf",
+    "payload/results/exceptional-leading.tex"
+  ],
+  "unchanged_proof_inputs": 33,
+  "all_proof_code_seed_certificate_expected_output_hashes_unchanged": true,
+  "numeric_rerun": "Not repeated: only manuscript TeX/PDF and their INPUTS provenance hashes changed; both modes already passed on identical proof inputs.",
+  "deterministic_second_build_same_sha256": true
+}

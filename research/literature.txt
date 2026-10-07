@@ -1,0 +1,369 @@
+LITERATURE AUDIT: FC mu bounds, interval transport, and Gern bad intervals
+Research date: 2026-10-07 UTC (local task date 2026-10-06)
+Author: literature subagent. Scope: primary-source audit, not an exhaustive novelty certification.
+
+MAIN FINDINGS
+
+1. Whole-type B/C novelty is ruled out by Chmutov (2014).
+   Michael S. Chmutov, The structure of W-graphs arising in Kazhdan-Lusztig theory,
+   PhD thesis, University of Michigan, 2014, §2.3, Theorem 2.3.8, printed p.58;
+   proof printed pp.61–62. Section 2.3 explicitly fixes W of type B_n. The theorem
+   states that x<w and x fully commutative imply mu(x,w) in {0,1}, with arbitrary w.
+   Hence it also covers equal-parameter C_n, the same Coxeter system. This is a
+   direct successor to Green's affine-A result and Gern's D result. It uses transport
+   across the double bond, plus Green's earlier both-FC result.
+   Primary repository: https://deepblue.lib.umich.edu/handle/2027.42/108802
+   Primary PDF: https://deepblue.lib.umich.edu/bitstream/handle/2027.42/108802/mchmutov_1.pdf?sequence=1
+   The repository blocked direct download (403), but its indexed primary PDF
+   returned the exact theorem and page. The author-uploaded full thesis text was
+   independently inspected at https://www.researchgate.net/publication/295404674_The_Structure_of_W-graphs_Arising_in_Kazhdan-Lusztig_Theory
+
+2. A/affine-A are already known; be precise about versions of Green's theorem.
+   R.M. Green, Leading coefficients of Kazhdan–Lusztig polynomials and fully
+   commutative elements, J. Algebraic Combin. 30 (2009), 165–171,
+   DOI 10.1007/s10801-008-0156-x, PUBLISHED Theorem 4.1 (Remark 4.2 for n=2).
+   https://doi.org/10.1007/s10801-008-0156-x
+   https://arxiv.org/abs/0801.1650
+   arXiv v1 has the same main theorem numbered 3.1, with Remark 3.2 for n=2.
+   Gern's citation to Green Theorem 3.1 follows the preprint numbering. The result
+   assumes x fully commutative, w arbitrary in affine A_(n-1), and includes finite
+   A by standard parabolic restriction. The introduction suggests broad generality
+   as computational evidence, not a proof in all Coxeter systems.
+
+3. Gern's input is exactly as advertised, but all original type-D numerics are old.
+   Tyson C. Gern, Leading Coefficients of Kazhdan–Lusztig Polynomials in Type D,
+   revised PhD thesis, University of Colorado Boulder, 2013, arXiv:1304.6074v1.
+   https://arxiv.org/abs/1304.6074
+   Theorem 4.5.11, printed p.66: x fully commutative and w arbitrary in D_n gives
+   mu(x,w) in {0,1}.
+   Proposition 4.5.1, printed p.63: a(w_n)=3n/4 if n=0 mod4, (3n+2)/4 if n=2 mod4.
+   Lemma 2.2.20 gives ell(w_n)=3n^2/8+n/4 for even n.
+   Lemmas 4.5.2–4.5.3, printed pp.63–64: large even bad-pair mu vanishes by
+   degree bounds using P_(e,w_n), a(w_n), and Lemma 2.3.9.
+   Lemma 4.5.4: mu(x_4,w_4)=0 by parity.
+   Lemma 4.5.5: mu(x_6,w_6)=1; mu(x_8,w_8)=0, computed with du Cloux's Coxeter.
+   Lemma 4.5.6: odd n>=5 reduces to n-1 with the same reduced expressions.
+   Lemma 4.5.7: all exceptional bad pairs have 0/1 mu.
+   Lemma 4.5.9: lower-FC/arbitrary-bad-top reduction.
+   Gern explicitly notes on printed p.26 that n=2 or4 mod8 forces even interval
+   rank, hence mu=0 without the difficult calculation.
+
+4. Both-endpoint results must not be conflated with the lower-endpoint theorem.
+   Green, Generalized Jones traces and Kazhdan–Lusztig bases,
+   J. Pure Appl. Algebra 211 (2007), no.3, 744–772,
+   DOI 10.1016/j.jpaa.2007.04.004; https://arxiv.org/abs/math/0509362 .
+   arXiv v2 Theorem 7.10 gives a trace computation under Properties B,F and a
+   bipartite Coxeter graph. Remark 7.12 explains the simply-laced both-FC 0/1
+   property (and cites Graham for ADE); Remark 7.13 explicitly asserts both-FC
+   0/1 for B and H_n, even the infinite-rank family of H-shaped diagrams.
+   These are old results, but do not alone cover lower FC/arbitrary upper.
+   Chmutov explicitly uses the B both-FC result to start his proof.
+
+5. Upper-Deodhar results also have different hypotheses.
+   Brant C. Jones, Leading coefficients of Kazhdan–Lusztig polynomials for Deodhar
+   elements, J. Algebraic Combin. 29 (2009), 229–260,
+   DOI 10.1007/s10801-008-0131-6; https://arxiv.org/abs/0711.1391 .
+   Theorem 1.2: upper w Deodhar in a finite Weyl group, arbitrary lower x => 0/1.
+   Theorem 6.1 explicitly covers E6,E7,E8,F4,G2 by finite checks; Theorem 5.4 covers
+   D, and the B corollary is numbered 4.2 in arXiv and 4.3 in the published copy.
+   Deodhar is a subclass of fully commutative. Gern's bad tops are not FC
+   (Corollary 2.3.7), so these do not directly handle his bad pairs.
+
+6. Exceptional/affine status: do not turn search non-results into an open-problem claim.
+   I did not locate a primary source proving the complete lower-FC/arbitrary-upper
+   0/1 assertion in affine D or all E,F,H. Found prior results concern both FC,
+   upper Deodhar, cell structure, FC enumeration, or general large mu examples.
+   Thus no defensible claim that those whole types are settled by pure invariance
+   unless an actual interval realization/classification is proved. Equally, this
+   audit does not certify that their full bounds remain open in October 2026.
+   Pan Chen, Non-trivial Kazhdan-Lusztig coefficients of affine Weyl groups,
+   https://arxiv.org/abs/1804.02353 , supplies coefficients n in affine B_n and
+   n+1 in affine C_n,D_n. Its abstract imposes no FC-bottom restriction. These
+   are NOT verified counterexamples to Green's FC conjecture. General 0/1 is false
+   already in A (McLarnan–Warrington), but that too does not refute FC-bottom 0/1.
+
+OLD TRANSPORT RESULTS THAT LIMIT NOVELTY
+
+7. Subsystem interval-pattern embeddings already preserve the entire polynomial.
+   Alexander Woo, Interval pattern avoidance for arbitrary root systems,
+   Canadian Mathematical Bulletin 53 (2010), 757–762,
+   DOI 10.4153/CMB-2010-080-2; https://arxiv.org/abs/math/0611328 .
+   Published Corollary 3.3; arXiv v1 Corollary 2. If a subsystem embedding embeds
+   [u,v] into [x,w], then P_(u,v)=P_(x,w). Published Theorem 3.1 (arXiv Theorem1)
+   is the isomorphism of Richardson varieties underlying it. Definition requires
+   endpoint flattenings, common subsystem coset, and interval isomorphism;
+   with the first two, equality of interval lengths suffices for the last.
+   https://www.cambridge.org/core/services/aop-cambridge-core/content/view/85C1445519680BA9B1E25DB940388A75/S0008439500017380a.pdf/interval-pattern-avoidance-for-arbitrary-root-systems.pdf
+   Do not claim any such transfer first follows from the September 2026 input.
+   Woo–Yong's type-A precursor: Governing singularities of Schubert varieties,
+   https://arxiv.org/abs/math/0603273 .
+
+8. Reflection subgroups alone are insufficient.
+   Dyer's reflection-subgroup theory gives the induced directed Bruhat graph in a
+   coset; it does not identify all ambient interval vertices with a subgroup
+   interval. EMS (below), Theorem 2.2, cites Dyer 1990 Theorem3.3/Cor3.4 and
+   Dyer 1991 Theorem1.4 for the labelled graph statement. Its Lemma3.1 discussion
+   explicitly cautions that the inverse to the coset graph map need not preserve
+   ambient Bruhat order. A claimed transfer needs convexity/full interval equality,
+   or an independently certified interval-poset isomorphism.
+   Dyer, Reflection subgroups of Coxeter systems, J. Algebra 135 (1990), 57–73.
+   Dyer, On the Bruhat graph of a Coxeter system, Compos. Math. 78 (1991), 185–191.
+   Dyer, Hecke algebras and shellings of Bruhat intervals, Compos. Math.89 (1993),91–115.
+   These locators are also accessible via EMS §2.2:
+   https://arxiv.org/html/2509.16433v2#S2.SS2
+
+9. FC is NOT recoverable from abstract lower Bruhat intervals across Coxeter types.
+   Elementary counterexample (direct proof, not attributed novelty): compare
+   [e,sts] in I2(3) and I2(4). Both have ranks of sizes 1,2,2,1 and every possible
+   consecutive-layer comparability. In I2(3), sts=tst is non-FC. In I2(4), sts is
+   FC because the only noncommuting braid has length4, longer than this element.
+   Thus even an isomorphism between principal LOWER intervals does not preserve
+   the full commutativity of their tops. A fortiori [x,w] alone cannot preserve a
+   bottom's FC property: every cover interval is a 2-chain, with FC or non-FC
+   bottom available. The conditional certificate should require a type-D model
+   with FC lower endpoint, not assert that the target endpoint is FC.
+   Stembridge's distributive-lattice characterization is for WEAK order, not full
+   strong Bruhat order. On the fully commutative elements of Coxeter groups,
+   J. Algebraic Combin. 5 (1996),353–385, Theorem3.2; heap criterion Prop2.3.
+   https://www2.math.ethz.ch/EMIS/journals/JACO/Volume5_4/cq9j136368033131.fulltext.pdf
+
+10. Existing partial invariance must be versioned and scoped carefully.
+   Grant T. Barkley, Christian Gaetz, Thomas Lam,
+   Combinatorial invariance for the coefficient of q in Kazhdan–Lusztig polynomials,
+   arXiv:2601.07793v2, https://arxiv.org/html/2601.07793v2 .
+   Corollary1.3: coefficient of q invariant in all Coxeter groups, plus corresponding
+   R and R-tilde coefficient statements. Corollary1.4: complete invariance for
+   intervals of rank<=6 in arbitrary Coxeter groups.
+   BGL here means Barkley–Gaetz–Lam, NOT Brenti–Godelle–Libedinsky.
+   Francesco Esposito, Mario Marietti, Salvatore Stella,
+   Flip Combinatorial Invariance and Weyl groups,
+   arXiv:2509.16433v2 (17 Sep 2026), https://arxiv.org/html/2509.16433v2 .
+   Corollary1.3(ii): full invariance up to length10 between finite Weyl-group
+   intervals, and up to length12 when BOTH realizations have type A.
+   v1 search snippets still say 8 and10; those are superseded by v2.
+   Corollary1.3(i): R-tilde congruence modulo q^7 for Weyl groups, modulo q^8 for A.
+   Theorem1.2 says flip invariance fails in H3,H4; this is NOT failure of KL
+   combinatorial invariance and NOT failure of an FC mu bound.
+   Earlier classical bounds: Federico Incitti, More on the combinatorial invariance
+   of Kazhdan–Lusztig polynomials, JCTA114 (2007),461–482,
+   https://doi.org/10.1016/j.jcta.2006.06.009 : A rank<=8, B,D rank<=6.
+
+11. Other old invariant subclasses need checking for any explicit I_n.
+   Principal lower intervals: Brenti–Caselli–Marietti (2006), Special matchings and
+   Kazhdan–Lusztig polynomials, Adv.Math202,555–601,
+   https://doi.org/10.1016/j.aim.2005.01.011 ; Delanoy (2006), Combinatorial
+   invariance of Kazhdan–Lusztig polynomials on intervals starting from the identity,
+   JAC24,437–463, https://doi.org/10.1007/s10801-006-0014-7 .
+   Marietti extends to parabolic lower intervals for arbitrary Coxeter groups,
+   Adv.Math335 (2018),180–210, https://doi.org/10.1016/j.aim.2018.07.008 .
+   Lattice intervals are also an older invariant class (Dyer thesis §7.23 and
+   Brenti, A combinatorial formula for Kazhdan–Lusztig polynomials, Invent.Math118
+   (1994),371–394; identified in EMS introduction). These cases must be ruled out
+   or acknowledged if one says a particular bad interval required full invariance.
+   Caselli–Marietti, Special Matchings, Brenti's Conjecture, and the Combinatorial
+   Invariance Conjecture, https://arxiv.org/html/2606.11776v1 , Theorem8.6 gives
+   special-matching recursion on arbitrary TYPE-A intervals. Its algorithm for
+   arbitrary type-A intervals remains conjectural (Conjecture8.13/Prop8.15).
+   Historical conjectures relating nonzero mu and special matchings cannot simply
+   be invoked as proved D-to-arbitrary-group transport:
+   https://www.mat.univie.ac.at/~slc/s/s49brenti.pdf (Conjecture31).
+
+BAD-INTERVAL CLAIM: DEFENSIBLE FORM AND NUMERICAL CALIBRATION
+
+12. Let I_n=[x_n,w_n] in Gern's D_n, n even>=4. If the supplied OpenAI Theorem1.1
+   is accepted, every interval [u,v] in any Coxeter system isomorphic to I_n has
+   the same full polynomial and hence the same mu and degree. This is a formal
+   conditional corollary. It is stronger in scope than old root-subsystem pattern
+   transport but does not itself construct any new realization or solve an entire
+   type. The D_n source computation and a-value are Gern's. The target a-function
+   need not equal the source a-value: transfer the resulting numerical polynomial
+   degree bound, not a(w) itself.
+
+13. For ell(w_n)=3n²/8+n/4, ell(x_n)=n/2+1,
+       d_n=3n²/8-n/4-1,
+       B_n=min(floor((d_n-1)/2), floor((ell(w_n)-a(w_n))/2)).
+   Gern's P_(x_n,w_n)=P_(e,w_n) reduction and a-bound produce B_n in the source.
+   At n=8, mu=0 further improves the bound to9, because d_8=21 and its top
+   allowable coefficient [q^10] vanishes. Formula alone gives10.
+   Numerical comparison (not a claim of sharpness):
+     n     d       ordinary bound   B_n       refined if n8
+     4      4        1               1
+     6     11        5               5
+     8     21       10              10         9
+    10     34       16              16
+    12     50       24              24
+    14     69       34              33
+    16     91       45              44
+   First generic strict improvement of B_n over ordinary bound occurs n=14;
+   n=8 is the earlier exceptional strict improvement.
+   mu is1 only n6; it is0 otherwise. Odd n duplicates the preceding even n,
+   so mu1 also at n7 if that redundant indexing is included.
+   For n=2,4 mod8, d_n is even and mu0 is automatic in any realization; it does
+   not require Gern or the new theorem. Substantive mu transport concerns the
+   odd-rank cases n=0,6 mod8, with n6 positive and all n>=8 zero.
+
+14. Relation to prior short-interval results:
+   I_4 rank4 already falls under arbitrary short invariance. I_6 rank11 is above
+   EMS's Weyl bound10. The type-A bound12 is inapplicable to a comparison with
+   the type-D source unless another type-A model with independently known value
+   is supplied. I_8 rank21 and later cases are well beyond those numeric ranges.
+   This only shows that the numerical range of those cited general theorems does
+   not cover them; it does not exclude old lattice/lower-interval/subsystem results
+   or other proofs for individual I_n. No primary source specifically proving
+   arbitrary abstract-realization invariance of Gern's whole bad-interval family
+   was found in this search. Phrase this as a search result, not proof of novelty.
+
+SOURCE PREPRINT STATUS
+
+15. The local supplied source is titled Combinatorial invariance of Kazhdan–Lusztig
+   polynomials, author OpenAI, dated 24 Sep 2026. Theorem1.1, printed p.2, claims
+   full equal-parameter invariance for arbitrary Coxeter systems, including infinite
+   and noncrystallographic ones. Corollary6.1 applies it to all subintervals and
+   R-polynomials. This audit verifies its statement, not its full proof or external
+   acceptance. Describe dependent claims conditionally unless an independent
+   complete proof audit is supplied. Its claim was also found in the public
+   kisonecat index: https://kisonecat.github.io/openai-math/combinatorics.html .
+
+SEARCH LOG / COVERAGE
+
+Used web search and opened primary papers, author manuscripts, university thesis
+pages, publisher PDFs, arXiv versioned full texts. Search-result discovery through
+secondary sites was followed to authored text wherever possible. Five public
+arXiv PDFs were downloaded and converted with pdftotext in /private/tmp/kl-literature:
+Green0801.1650, Green–Losonczy math/0102003, Green math/0509362,
+Jones0711.1391, Woo math/0611328. Shell networking initially failed in the sandbox;
+read-only public-paper downloads succeeded after authorized escalation. Chmutov
+university URLs gave403 and CiteSeer mirror gave404; university indexed text and
+author-uploaded full text still enabled exact theorem verification.
+
+Representative actual queries (all run, grouped chronologically):
+  fully commutative leading coefficient Kazhdan Lusztig mu type B bound 0 1
+  Kazhdan Lusztig fully commutative affine type D leading coefficients
+  Tyson Gern Leading Coefficients Kazhdan Lusztig Polynomials Type D 1304.6074
+  "fully commutative" "leading" "type B" Green
+  "fully commutative" "mu" "F4" Kazhdan
+  "fully commutative" "Bruhat" "lower interval"
+  Woo interval pattern embedding Kazhdan Lusztig root subsystems flattening theorem
+  "fully commutative" "lower intervals"
+  "fully commutative" "mu" "type B"
+  "fully commutative" "Bruhat order" "isomorphism"
+  Green generalized Jones traces Kazhdan Lusztig bases type B 0 1
+  "fully commutative" "Bruhat intervals"
+  "fully commutative" "isomorphic" "Bruhat"
+  "fully commutative" "coefficient" "H4"
+  "fully commutative" "coefficient" "F4"
+  "fully commutative" "combinatorial invariance"
+  "fully commutative" "mu(x" Kazhdan
+  "fully commutative" "0–1"
+  "The structure of W-graphs arising" thesis type B fully commutative
+  "fully commutative" "affine" "leading coefficients" 2023
+  "fully commutative" "lower" "isomorphisms" Bruhat
+  "fully commutative" "2.3.5"
+  Michael Chmutov thesis 2014 "2.3.8"
+  Chmutov "structure of W-graphs" deepblue
+  "Green" "0-1 conjecture" "fully" Chmutov
+  "fully commutative" "0-1" exceptional
+  "fully commutative" "Green" conjecture exceptional
+  "Chmutov" "fully commutative" theorem
+  "Theorem 2.3.8" "commutative"
+  combinatorial invariance Kazhdan Lusztig intervals length ten twelve Esposito Marietti Sentinelli
+  Brenti Godelle Libedinsky combinatorial invariance six Bruhat intervals
+    (Discovery corrected these authors to Barkley, Gaetz, Lam.)
+  Dyer combinatorial invariance leading coefficient Kazhdan Lusztig mu poset
+  "leading coefficient" "special matching" Kazhdan Lusztig
+  "Kazhdan" "degree bound" "Bruhat graph"
+  "Gern" "bad elements" Kazhdan Lusztig degree
+  Kazhdan Lusztig polynomials degree upper bound shortest path Bruhat graph
+  "Kazhdan-Lusztig" "mu" "special matchings"
+  "Kazhdan-Lusztig" "leading coefficient" "combinatorial invariant"
+  "fully commutative" "interval" "I2"
+  "fully commutative" "Green’s conjecture"
+  "fully commutative" "0–1 conjecture" Kazhdan
+  "fully commutative" "0-1 conjecture" affine
+  "Gern" "Kazhdan" "Chmutov"
+  "leading coefficients" "Deodhar" "Corollary 4.3"
+  "Bruhat graph" "degree" "shortest" "Kazhdan"
+
+Negative-search limits: search queries are not exhaustive; terminology and unpublished
+theses can hide relevant results (indeed Chmutov was easy to miss initially). No
+unqualified claim of first discovery, comprehensive novelty, or currently open
+whole-type conjecture is warranted by this log.
+
+INDEPENDENT DRAFT AUDIT (results/kl-transfer.tex; 2026-10-07 UTC)
+
+16. Proof audit, including the later product statement.
+    The witness theorem correctly combines graded rank preservation with equality
+    of the whole polynomial; no FC status of the target endpoint is required.
+    The obstruction is a valid consequence. The elementary I2(3)/I2(4) example
+    correctly separates FC status from abstract principal strong Bruhat order.
+    The bad-interval degree theorem uses only source-side a(w_n); it does not
+    claim a-function invariance. Both floor operations, the minimum, and the
+    exceptional n=8 sharpening are correct. The two residue-class gap formulas
+    are algebraically correct: M-A=k-1 for n=8k and M-A=k for n=8k+6.
+    The product theorem follows from tensor-product factorization of the KL
+    basis; k>=2 nontrivial factors force mu=0 because the degree is at most
+    (d-k)/2. With all ranks odd, the specified coefficient is the product of
+    the factor mu-values. The computed polynomial F has degree5, leading
+    coefficient1, and F(1)=26, so the stated F^k consequence follows.
+    The convex-coset proof via order-preserving parabolic projection is valid.
+    The recurrence proof of coset KL equality correctly handles zero terms and
+    puts every nonzero correction term in the same coset. Its induction is on
+    upper parabolic length, so all needed polynomial and mu factors are smaller.
+    The affine translation argument has the correct signs for the displayed
+    root-action convention; 2rho^vee is in the coroot lattice. Adjacent finite
+    left descents give an sts reduced prefix. Length-additive extension to a_mx
+    retains a noncommuting braid and hence fails FC.
+    I did not independently run/audit the complete finite computation code or
+    the exceptional root script: those are separate computational evidence.
+
+17. Corrections/precision recommendations sent to the parent, without editing tex.
+    (a) Green arXiv identifier must be0801.1650, not0706.2082; published theorem
+        is4.1, arXiv v1 theorem3.1. The parent had corrected these on reread.
+    (b) Stembridge DOI in the draft is wrong: replace10.1007/BF00215037 by
+        10.1007/BF00193185. Publisher confirms title, JAC5(1996)353–385:
+        https://link.springer.com/article/10.1007/BF00193185
+    (c) The prose after the definition of mu calls it the coefficient at the
+        largest allowed degree. This is correct only for odd rank. At even rank,
+        mu=0 by convention, while the actual coefficient of the largest allowed
+        integer power may be nonzero. Add the odd-rank qualification.
+    (d) Avoid calling aW_J a right coset while later calling aH a left coset.
+        Terminology varies for minimal right parabolic representatives, but the
+        unambiguous wording is: a in W^J is the minimal element of aW_J.
+    (e) The low-rank table should make the ambient hypotheses explicit: rank<=10
+        between finite Weyl realizations, and rank<=12 when both realizations
+        are typeA. The following draft paragraph already correctly says that
+        the typeA bound does not automatically compare with a typeD source.
+    (f) Principal-lower invariance means isomorphisms of principal lower
+        intervals (and their subinterval data); it must not be casually read as
+        invariance under comparison with any arbitrary interval merely having
+        the same abstract shape. No such stronger claim is needed in this note.
+
+18. Requested bibliography checks against publisher/primary records.
+    Lusztig, Cells in affine Weyl groups, II, J.Algebra109(1987)536–548:
+    DOI10.1016/0021-8693(87)90154-2 is CORRECT, including final90154-2.
+    https://www.sciencedirect.com/science/article/pii/0021869387901542
+    Humphreys, Reflection Groups and Coxeter Groups, CUP1990,
+    Cambridge Studies in Advanced Mathematics29, DOI10.1017/CBO9780511623646
+    is CORRECT. 1990 is first publication; corrected paperback first1992.
+    https://www.cambridge.org/core/books/abs/reflection-groups-and-coxeter-groups/frontmatter/17F873BA4A3481A3D8EDE32CD9C0F729
+    https://assets.cambridge.org/97805214/36137/frontmatter/9780521436137_frontmatter.pdf
+    Woo's pages757–762, volume53(2010), DOI10.4153/CMB-2010-080-2 are CORRECT.
+    Publisher PDF:
+    https://www.cambridge.org/core/services/aop-cambridge-core/content/view/85C1445519680BA9B1E25DB940388A75/S0008439500017380a.pdf/interval_pattern_avoidance_for_arbitrary_root_systems.pdf
+    BCM, Adv.Math.202(2006)555–601, DOI10.1016/j.aim.2005.01.011 CORRECT:
+    https://www.sciencedirect.com/science/article/pii/S0001870805000939
+    Its Theorem7.8 and Corollary8.4 were verified in the author's manuscript:
+    https://www.dm.unibo.it/~caselli/special.pdf . The former is the special-
+    matching R recurrence, the latter the KL recurrence. Their framework is
+    principal lower intervals. Delanoy's JAC24(2006)437–463 and
+    DOI10.1007/s10801-006-0014-7 are CORRECT, verified in published full text:
+    https://www.kurims.kyoto-u.ac.jp/EMIS/journals/JACO/Volume24_4/g468328324k77711.fulltext.pdf
+
+Additional executed audit searches:
+  site.link.springer.com Stembridge fully commutative BF00193185
+  site.cambridge.org Humphreys Reflection Groups Coxeter Groups 9780511623646 1990
+  site.dm.unibo.it caselli special.pdf 7.8 8.4
+  site.sciencedirect.com Special matchings and Kazhdan 555 2005.01.011
+  site.link.springer.com Combinatorial invariance 437 0014-7
+  site.sciencedirect.com Cells in affine Weyl groups II 90154
+  site.cambridge.org Interval pattern avoidance for arbitrary root systems 757

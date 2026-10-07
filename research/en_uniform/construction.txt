@@ -1,0 +1,234 @@
+RANK-UNIFORM FULL-SUPPORT TERMINAL REFLECTIONS IN E_(4r+1)
+All-parameter proof, 2026-10-07. Historical priority is UNCONFIRMED.
+
+THEOREM AND EXPLICIT DATA
+
+Let r>=3 and k>=0 be integers. Put N=4r and n=N+1. The generalized E_n
+diagram is the chain 0--1--...--(N-1), with branch vertex N attached
+to2. Every simple root alpha_i has norm2, with inner product-1 on edges.
+Write b=N for the branch label when giving reflection words below.
+
+Define the positive integral vector beta_r by its coordinates:
+  (beta_r)_0=r-1,  (beta_r)_1=r,  (beta_r)_2=2r-1,
+  (beta_r)_j=floor((4r+1-j)/2),  3<=j<=4r-1,
+  (beta_r)_(4r)=r.
+Thus its long arm is the staircase
+  2r-1, 2r-2,2r-2, 2r-3,2r-3, ..., 1,1.
+Here the first entry is the coefficient at node3.
+
+Set a=2r-4. In the same coordinate order, put
+  delta=(2,4,6,5,4,3,2,1,0,...,0,3),
+  gamma=(1,2,3,2,2,1,1,0,0,...,0,1),
+where the last coordinate is at branch4r and all coordinates8,...,4r-1
+in these two vectors are zero. Finally define
+
+  beta_(r,k)=beta_r-a*k*gamma+(a*k^2+r*k)*delta,
+  w_(r,k)=r_(beta_(r,k)),
+  I_r={0,3,5,...,4r-1,4r},    x_r=product_(s in I_r) s.
+
+For EVERY integer r>=3 and k>=0:
+  (i) beta_(r,k) is a positive real root with all coordinates nonzero;
+ (ii) w_(r,k) is a full-support, non-FC terminal element, with
+      L(w_(r,k))=R(w_(r,k))=I_r;
+(iii) for every fully commutative y in W(E_(4r+1)),
+      mu(y,w_(r,k)) belongs to {0,1}, and it is zero if the length gap
+      exceeds1. The only eligible FC bottom is x_r; mu(x_r,w_(r,k))=0;
+ (iv) for each fixed r the w_(r,k) are distinct and have unbounded length;
+  (v) for each fixed r, all these FC-lower coefficients are zero for
+      every sufficiently large k.
+
+An eligible bottom means a fully commutative element containing both
+upper descent sets in the corresponding lower descent sets. No bounded-r
+enumeration, KL-polynomial computation, or FC catalogue is a hypothesis.
+This provides full-support examples in unbounded ranks n=13,17,21,...,
+not an embedding of a fixed-rank endpoint pair. It claims neither the
+bound for arbitrary upper endpoints nor a formula for the whole P_y,w.
+
+1. UNIFORM REAL-ROOT PROOF FOR THE SEED
+
+Delete node0. The remaining standard parabolic is finite D_N, N=4r.
+In a Euclidean space with orthonormal basis e1,...,eN realize its roots by
+  alpha1=e1-e2,
+  alpha_j=e_j-e_(j+1),  2<=j<=N-1,
+  alpha_N=-e1-e2.
+The branch label N is distinguished from the Euclidean index N here.
+Let
+  lambda=(-e1+e2+...+eN)/2.
+Adjoin a vector h orthogonal to this Euclidean space with (h,h)=2-r,
+and realize alpha0=h+lambda. Since (lambda,lambda)=r, the Gram matrix
+of these N+1 vectors is exactly the E_(N+1) Cartan matrix: alpha0 has
+norm2, pairs-1 with alpha1, and pairs0 with every other simple root.
+This realizes the full ambient root space, not just the D_N parabolic.
+
+The coefficient of alpha0 in beta_r is r-1, and direct Cartan pairing
+gives (beta_r,alpha0)=r-2. Hence z=s0(beta_r) has alpha0 coefficient1
+and every other coefficient unchanged. Substituting the staircase into
+the displayed Euclidean realization yields
+
+  z=h+(-e1-e2+e3-e4+e5-e6+...+e_(N-1)-eN)/2.             (1)
+
+For complete coordinate verification: the first Euclidean coordinate is
+-1/2+r-r=-1/2, the second is1/2-r+(2r-1)-r=-1/2, and every subsequent
+coordinate j equals1/2-(beta_r)_(j-1)+(beta_r)_j, with the convention
+(beta_r)_N=0 for this last *long-arm* difference. The staircase difference
+is0 for odd j and-1 for even j, giving (1), including j=N.
+
+Let F negate exactly the even Euclidean coordinates2,4,...,N and fix the
+others. It negates2r coordinates, an even number, so F belongs to the
+even signed-permutation group W(D_N), and fixes h. Explicitly it is the
+product, for j=1,...,r, of the double sign changes
+
+  r_(e_(4j-2)-e_(4j)) r_(e_(4j-2)+e_(4j)).               (2)
+
+Both vectors in each factor are D_N roots, and the two orthogonal root
+reflections negate precisely those two coordinates. Equation (1) says
+z=F(alpha0). Therefore
+
+  beta_r=s0 F(alpha0).                                  (3)
+
+This is a uniform Weyl-group word construction of the seed root for every
+r>=3. In particular it proves reality, and hence norm2, without inferring
+real-root membership merely from a norm calculation or from finite samples.
+One can also write its reflection as w_(r,0)=s0 F s0 F s0, since F^2=1.
+
+2. UNIFORM AFFINE-PARABOLIC TRANSLATION
+
+The nodes0,...,7,N form a standard affine-E8 parabolic. Its null root
+is delta. The vector gamma is a root of the finite-E8 subdiagram obtained
+by omitting node7; gamma+delta is an affine real root. Their root status
+can alternatively be checked by the following fixed reduction words,
+which work for every branch label b=N:
+  gamma: 2,1,0,4,3,2,1,6,5,4,3,2;
+  gamma+delta: the preceding word followed by
+    b,2,1,0,3,2,1,4,3,2,5,4,3,6,5,4,7,6,5,b,2,1,0,3,2,1,4,3,2.
+Applied in the listed order, each reduces its positive root to alpha_b.
+
+Put T=r_gamma r_(gamma+delta). The identities gamma^2=2, delta^2=0,
+(gamma,delta)=0 give the exact ambient action
+
+  T(z)=z+(z,delta)gamma-((z,gamma)+(z,delta))delta.         (4)
+
+This formula is valid even though delta is not radical in E_(4r+1).
+Direct substitution of the seed coordinates gives
+  (beta_r,gamma)=-r,  (beta_r,delta)=-(2r-4)=-a.
+Also T(delta)=delta and T(gamma)=gamma-2delta. Induction in (4) gives
+
+  T^k(beta_r)=beta_r-a*k*gamma+(a*k^2+r*k)*delta.          (5)
+
+Thus every beta_(r,k) is real and w_(r,k)=T^k w_(r,0) T^(-k).
+For positivity and distinctness, rewrite (5) as
+  beta_(r,k)=beta_r+k*v+binom(k,2)*u,
+  v=(3r-4)delta-(2r-4)gamma,  u=2(2r-4)delta.
+Both v and u are coordinatewise nonnegative for r>=3, and v is nonzero.
+For example the coordinates of v at0,...,7 and the branch are
+  (4r-4,8r-8,12r-12,11r-12,8r-8,7r-8,4r-4,3r-4;7r-8),
+with zeros elsewhere. Since beta_r is strictly positive, so is every
+beta_(r,k). Their heights strictly increase with k.
+
+3. EXPLICIT DESCENTS AND TERMINALITY FOR ALL r,k
+
+Let m_j=(alpha_j,beta_(r,k)). Cartan multiplication gives
+  m0=r-2,   m1=2-r,   m2=-1-a*k,
+  mj=(-1)^(j+1)*(1+a*k),  3<=j<=7,
+  m8=-1-a*k^2-r*k,
+  mj=(-1)^(j+1),          9<=j<=4r-1,
+  m_(4r)=1+a*k.
+Thus m_j>0 exactly for j in I_r. Every edge incident to I_r has the sum
+of its two m-values nonpositive: most are0, while the exceptional sums
+are1-r-a*k on edge1--2, -a*k*(k-1)-r*k on edge7--8, and
+-a*k^2-r*k on edge8--9. All are nonpositive for integer r>=3,k>=0.
+The edge1--2 does not meet I_r but is listed to make the entire local
+sign pattern explicit.
+
+The reflection formula is
+  w_(r,k)(alpha_j)=alpha_j-m_j*beta_(r,k).
+Because beta_(r,k) is a strictly positive integral root, this image is
+negative exactly for m_j>0. Hence the right descent set is I_r, and the
+left descent set agrees since w_(r,k) is an involution. If s in I_r and
+t is adjacent, then
+  w_(r,k)(alpha_s+alpha_t)=alpha_s+alpha_t-(m_s+m_t)beta_(r,k)>0.
+Therefore, after deleting any right descent s, no adjacent t is a right
+descent. The same holds on the left. This is exactly the terminal condition
+that no reduced word begins or ends with two noncommuting generators.
+
+4. FULL SUPPORT, MAXIMUM INDEPENDENCE, AND THE FC BOTTOM
+
+An element of a standard parabolic omitting node i fixes the alpha_i
+coordinate of every vector. The reflection formula above changes that
+coordinate for some alpha_j, because the i-th root coordinate is positive
+and some m_j is nonzero. Thus every w_(r,k) has full support.
+
+The independent set I_r has size2r+1 and is maximum. Indeed the diagram
+contains the matching
+  (0,1),(2,4r),(3,4),(5,6),...,(4r-3,4r-2)
+of2r disjoint edges, leaving one vertex unmatched. An independent set has
+at most one vertex from each matching edge and the unmatched vertex,
+giving the bound2r+1 attained by I_r.
+
+Green's monomial Temperley--Lieb cell theorem implies the following
+maximum-independent lemma in every generalized E_n: if an FC element y
+has I contained in both L(y) and R(y), and I is maximum independent in
+the ambient support, then y=product I. For clarity, its proof uses the
+initial and final commuting factors to make the monomial a-value exactly
+|I|. Proposition4.4(iv) puts y in the corresponding monomial right and
+left cells of product I; Proposition4.4(v) makes the intersection a
+singleton. No ordinary-cell identification is used. The source explicitly
+covers every n>=6, including these indefinite diagrams.
+
+Consequently the only eligible FC bottom of w_(r,k) is x_r. It is below
+w_(r,k) because a commuting descent parabolic has its longest element
+as a right factor. Its length2r+1 is odd, as is the length of every
+reflection. The even length gap implies mu(x_r,w_(r,k))=0. For any other
+FC y with gap>1, a left or right upper descent is missing downstairs,
+so the ordinary KL descent criterion forces mu(y,w_(r,k))=0. Covers
+have mu=1, proving the asserted 0/1 bound for every FC lower endpoint.
+
+The upper elements are not FC: if they were, the same uniqueness lemma
+would identify them with x_r, whereas x_r has a(-1)-eigenspace of
+dimension2r+1 and each upper reflection has such an eigenspace of dimension1.
+
+5. UNBOUNDEDNESS AND EVENTUAL ZERO
+
+The positive norm2 roots beta_(r,k) have strictly increasing heights, so
+they are distinct. Equal reflections in norm2 roots would imply roots
+differing by sign, which is impossible here. Thus for each fixed r the
+reflections are distinct. Every ball in the finitely generated Coxeter
+group is finite, so their lengths tend to infinity as k tends to infinity
+(no monotonic length formula is asserted or needed).
+
+Generalized E_n is FC-finite for every n, by Stembridge's classification.
+For fixed r let M_r be the maximum FC length. Once ell(w_(r,k))>M_r+1,
+no FC Bruhat cover of the upper exists. All noncover FC coefficients
+already vanish by the structural proof. Therefore every FC-lower mu
+coefficient is zero for all sufficiently large k, for each fixed r.
+This statement gives no effective or rank-uniform threshold for k.
+
+SOURCES, COUNTERCHECKS, AND PRIORITY
+
+The all-r real-root argument (1)--(3), the symbolic translation (4)--(5),
+and the displayed Cartan pairings prove the construction for all stated
+parameters. They do not rely on testing finitely many ranks. The script
+construction.py provides independent arithmetic counterchecks for
+r=3,...,30 (ranks13,...,121), k=0,1,2,10, with output construction.json.
+It checks the even signed-coordinate identity, fixed real-root reductions,
+ambient translation formula, all polynomial sign coefficients, norm2,
+matching maximality, and terminal reflection matrices. It performs no
+group enumeration or KL computation. These finite checks are supplementary.
+
+The FC uniqueness source is R.M.Green, On the Markov trace for
+Temperley--Lieb algebras of type E_n, arXiv:0704.0283, Definition4.1,
+Proposition4.4(iv),(v), and the end of Lemma5.2.
+https://arxiv.org/abs/0704.0283
+FC-finiteness: J.R.Stembridge, On the fully commutative elements of
+Coxeter groups, J.Algebraic Combin.5(1996),353--385, published Theorem5.1
+(author-preprint Theorem4.1).
+https://websites.umich.edu/~jrs/papers/FC.pdf
+Detailed primary-source audits are in research/en_literature/.
+
+No historical novelty assertion is made. Root reflection and translation
+formulas, finite-D signed permutations, and the FC structural input are
+standard. The candidate contribution is this explicit uniform full-support
+terminal family and its coefficient consequence. At the boundary r=2 the
+seed becomes the previously found affine-E8 reflection of length33, but
+m0=0, so the odd maximum-independent descent set is lost. The hypothesis
+r>=3 is a structural threshold, not a computational cutoff.

@@ -1,0 +1,58 @@
+Expanded Astra search, 6 October 2026 (local) / 7 October UTC
+
+Wave 1 used three Astra xhigh agents with separate approaches:
+  broad_affine: affine geometry, alcove stabilization, unfolding and folding.
+  broad_exceptional: exact exceptional root systems and Gern star reduction.
+  broad_surgeries: changing Coxeter labels above nonidentity bottoms.
+
+Positive result (mathematical audit passed; publication priority unconfirmed):
+The full finite E6 and E7 FC-lower 0/1 statement reduces to a small exact
+terminal table. Two independent representations agree on the enumeration.
+E6: 51,840 elements, 662 FC elements, one non-FC weakly bad terminal.
+E7: 2,903,040 elements, 2,670 FC elements, four such terminals.
+Every new full-support terminal has even interval rank for its only compatible
+FC bottom. The sole odd case is the previously solved D6 case.
+
+Independent root verification:
+  research/verify_e6_independent.py: integer matrices, Python standard library.
+  research/verify_e7_matrices.cpp: integer matrices, compiled C++ for speed.
+  results/e6-independent-certificate.json
+  results/e7-independent-certificate.json
+The originating agent uses distinct root-ID representations. The matrix checks
+also exhaust FC closure under stars and verify that FC weakly bad terminals
+are commuting products. No full KL table is assumed or computed.
+
+This lead does not need the September 2026 CI input for its local proof.
+CI would subsequently transfer the enlarged model class to arbitrary Coxeter
+intervals. Star operations do not themselves supply interval isomorphisms.
+Publication priority is not established by computational agreement or by the
+absence of a search result. Do not describe a proved infinite affine family,
+or an E8 theorem, on the basis of the finite E6/E7 data.
+
+Negative/prior-art boundaries:
+  Diagram-surgery exhaustive screen: 16 lifted tops, 1,741 endpoint pairs;
+  all three rank-vector survivors extend to principal lower isomorphisms and
+  are covered by du Cloux (2003). See broad_surgeries/report.txt.
+  Affine coset translation and Reading-Waugh constructions are classical.
+  General affine interval stabilization is not available as a proved input.
+
+Wave 2 completed:
+  exceptional_referee: independent mathematical audit; no blocking error.
+  exceptional_priority: deep source audit, exact scopes and limitations.
+  broad_cells: cell/parity and generalized-E/affine-D terminal constructions.
+All six added agents used Astra with xhigh reasoning and distinct assignments.
+
+Decisive prior art found in wave 2:
+The m-leaf star with commuting lower x=all leaves and upper xcx has cube
+interval and Catalan mu for even m. The affine-D4 member has mu2, independently
+verified by signed affine actions/direct subwords/R reciprocity. However the
+EXACT whole star family is Mongelli1111.2945v1, Corollary2 printedp10;
+f4=1+3q+2q² is displayed printedp6. This is explicitly classical.
+
+Final deliverables:
+  results/exceptional-leading.tex -> output/pdf/exceptional-leading.pdf
+  results/star-boundary.tex -> output/pdf/star-boundary.pdf
+  updated results/kl-transfer.tex -> output/pdf/kl-transfer.pdf
+  results/exceptional-audit.json, results/affine-d4-independent.json
+  research/exceptional_priority/report.txt: deep checked priority history.
+No new explicit unbounded cross-type D-model family has been established.

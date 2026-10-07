@@ -1,0 +1,42 @@
+{
+  "status": "All assertions passed",
+  "poincare_polynomials": "E6 and E7 match coefficient by coefficient",
+  "commuting_terminal_counts": [
+    22,
+    36
+  ],
+  "maximum_absolute_root_coefficients": [
+    3,
+    4
+  ],
+  "E7_terminal_ranks": [
+    4,
+    4,
+    11,
+    24
+  ],
+  "D6_map_Gern_to_E7": {
+    "1": 1,
+    "2": 6,
+    "3": 2,
+    "4": 3,
+    "5": 4,
+    "6": 5
+  },
+  "D6_bottom": [
+    -1,
+    -2,
+    4,
+    3,
+    6,
+    5
+  ],
+  "D6_top": [
+    -1,
+    -6,
+    3,
+    -4,
+    5,
+    -2
+  ]
+}

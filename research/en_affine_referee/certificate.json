@@ -1,0 +1,1812 @@
+{
+  "status": "All symbolic and exact assertions passed",
+  "delta": [
+    2,
+    4,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1,
+    3
+  ],
+  "finite_root_count": 240,
+  "positive_family": {
+    "name": "odd-length terminal conjugates",
+    "base_word": [
+      3,
+      1,
+      2,
+      8,
+      7,
+      5,
+      6,
+      4,
+      5,
+      2,
+      3,
+      4,
+      1,
+      2,
+      3,
+      0,
+      1,
+      2,
+      8,
+      5,
+      6,
+      7,
+      4,
+      5,
+      2,
+      3,
+      1
+    ],
+    "base_row_matrix": [
+      [
+        0,
+        0,
+        1,
+        -1,
+        1,
+        0,
+        0,
+        0,
+        -1
+      ],
+      [
+        1,
+        0,
+        2,
+        -2,
+        2,
+        -1,
+        1,
+        -1,
+        -2
+      ],
+      [
+        2,
+        -1,
+        3,
+        -3,
+        3,
+        -2,
+        2,
+        -1,
+        -2
+      ],
+      [
+        2,
+        -1,
+        2,
+        -2,
+        3,
+        -2,
+        2,
+        -1,
+        -2
+      ],
+      [
+        2,
+        -1,
+        1,
+        -1,
+        2,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      [
+        2,
+        -1,
+        1,
+        -1,
+        1,
+        0,
+        1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      [
+        1,
+        -1,
+        2,
+        -2,
+        2,
+        -1,
+        1,
+        -1,
+        -1
+      ]
+    ],
+    "column_slopes": [
+      2,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      -1
+    ],
+    "length_formula": {
+      "intercept": 27,
+      "slope": 92,
+      "inversion_classes": [
+        {
+          "A": -1,
+          "B": -2,
+          "count": 6
+        },
+        {
+          "A": -1,
+          "B": -1,
+          "count": 20
+        },
+        {
+          "A": -1,
+          "B": 0,
+          "count": 1
+        },
+        {
+          "A": 0,
+          "B": -2,
+          "count": 8
+        },
+        {
+          "A": 0,
+          "B": -1,
+          "count": 44
+        },
+        {
+          "A": 0,
+          "B": 0,
+          "count": 82
+        },
+        {
+          "A": 0,
+          "B": 1,
+          "count": 44
+        },
+        {
+          "A": 0,
+          "B": 2,
+          "count": 8
+        },
+        {
+          "A": 1,
+          "B": 0,
+          "count": 1
+        },
+        {
+          "A": 1,
+          "B": 1,
+          "count": 20
+        },
+        {
+          "A": 1,
+          "B": 2,
+          "count": 6
+        }
+      ],
+      "no_breakpoints_for_k_ge_0": true
+    },
+    "right_translation_reduced_word": [
+      4,
+      2,
+      3,
+      0,
+      1,
+      2,
+      8,
+      6,
+      3,
+      4,
+      5,
+      2,
+      3,
+      4,
+      1,
+      2,
+      3,
+      0,
+      1,
+      2,
+      8,
+      6,
+      7,
+      5,
+      6,
+      4,
+      5,
+      3,
+      4,
+      1,
+      2,
+      3,
+      0,
+      1,
+      2,
+      8,
+      4,
+      5,
+      6,
+      3,
+      4,
+      5,
+      2,
+      3,
+      4,
+      1,
+      2,
+      3,
+      0,
+      1,
+      2,
+      8,
+      7,
+      6,
+      3,
+      4,
+      5,
+      2,
+      3,
+      4,
+      1,
+      2,
+      3,
+      0,
+      1,
+      2,
+      8,
+      6,
+      7,
+      5,
+      6,
+      4,
+      5,
+      3,
+      4,
+      1,
+      2,
+      3,
+      0,
+      1,
+      2,
+      8,
+      4,
+      5,
+      6,
+      7,
+      3,
+      4,
+      5,
+      2,
+      3,
+      1
+    ],
+    "right_translation_length": 92,
+    "base_prefix_for_all_k": true,
+    "distinct_and_full_support_for_all_k": true,
+    "descents": [
+      1,
+      3,
+      5,
+      7,
+      8
+    ],
+    "involutions_for_all_k": true,
+    "terminal_for_all_k": true,
+    "terminal_edge_checks": [
+      {
+        "s": 1,
+        "t": 0,
+        "slope": 1,
+        "base_root": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "s": 1,
+        "t": 2,
+        "slope": 0,
+        "base_root": [
+          1,
+          2,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "s": 3,
+        "t": 2,
+        "slope": 0,
+        "base_root": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "s": 3,
+        "t": 4,
+        "slope": 0,
+        "base_root": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "s": 5,
+        "t": 4,
+        "slope": 0,
+        "base_root": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "s": 5,
+        "t": 6,
+        "slope": 0,
+        "base_root": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "s": 7,
+        "t": 6,
+        "slope": 0,
+        "base_root": [
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "s": 8,
+        "t": 2,
+        "slope": 0,
+        "base_root": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    ],
+    "complete_FC_mask_candidates": 1,
+    "eligible_FC_bottoms_for_all_k": [
+      {
+        "word": [
+          1,
+          3,
+          5,
+          7,
+          8
+        ],
+        "length": 5,
+        "base_subword_positions": [
+          0,
+          1,
+          3,
+          4,
+          5
+        ],
+        "gap_intercept": 22,
+        "gap_slope": 92
+      }
+    ],
+    "gamma": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "shift_vector": [
+      0,
+      -2,
+      -3,
+      -3,
+      -2,
+      -2,
+      -1,
+      -1,
+      -2
+    ],
+    "independence_number": 5,
+    "eligible_mu_for_all_k": 0,
+    "all_FC_lower_mu_bound": [
+      0,
+      1
+    ]
+  },
+  "reflection_family": {
+    "name": "reflection beta+k delta",
+    "base_word": [
+      8,
+      7,
+      5,
+      6,
+      3,
+      4,
+      5,
+      2,
+      3,
+      4,
+      1,
+      2,
+      3,
+      0,
+      1,
+      2,
+      8,
+      2,
+      3,
+      4,
+      1,
+      2,
+      3,
+      0,
+      1,
+      2,
+      8,
+      5,
+      6,
+      7,
+      4,
+      5,
+      3
+    ],
+    "base_row_matrix": [
+      [
+        1,
+        0,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      [
+        0,
+        1,
+        2,
+        -2,
+        2,
+        -2,
+        2,
+        -2,
+        -2
+      ],
+      [
+        0,
+        0,
+        4,
+        -3,
+        3,
+        -3,
+        3,
+        -3,
+        -3
+      ],
+      [
+        0,
+        0,
+        3,
+        -2,
+        3,
+        -3,
+        3,
+        -3,
+        -3
+      ],
+      [
+        0,
+        0,
+        2,
+        -2,
+        3,
+        -2,
+        2,
+        -2,
+        -2
+      ],
+      [
+        0,
+        0,
+        2,
+        -2,
+        2,
+        -1,
+        2,
+        -2,
+        -2
+      ],
+      [
+        0,
+        0,
+        1,
+        -1,
+        1,
+        -1,
+        2,
+        -1,
+        -1
+      ],
+      [
+        0,
+        0,
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        2,
+        -2,
+        2,
+        -2,
+        2,
+        -2,
+        -1
+      ]
+    ],
+    "column_slopes": [
+      0,
+      0,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      -1
+    ],
+    "length_formula": {
+      "intercept": 33,
+      "slope": 58,
+      "inversion_classes": [
+        {
+          "A": -1,
+          "B": -2,
+          "count": 1
+        },
+        {
+          "A": -1,
+          "B": -1,
+          "count": 32
+        },
+        {
+          "A": 0,
+          "B": -1,
+          "count": 24
+        },
+        {
+          "A": 0,
+          "B": 0,
+          "count": 126
+        },
+        {
+          "A": 0,
+          "B": 1,
+          "count": 24
+        },
+        {
+          "A": 1,
+          "B": 1,
+          "count": 32
+        },
+        {
+          "A": 1,
+          "B": 2,
+          "count": 1
+        }
+      ],
+      "no_breakpoints_for_k_ge_0": true
+    },
+    "right_translation_reduced_word": [
+      6,
+      4,
+      5,
+      2,
+      3,
+      4,
+      1,
+      2,
+      3,
+      0,
+      1,
+      2,
+      8,
+      2,
+      3,
+      4,
+      1,
+      2,
+      3,
+      0,
+      1,
+      2,
+      8,
+      5,
+      6,
+      7,
+      4,
+      5,
+      6,
+      3,
+      4,
+      5,
+      2,
+      3,
+      4,
+      1,
+      2,
+      3,
+      0,
+      1,
+      2,
+      8,
+      2,
+      3,
+      4,
+      1,
+      2,
+      3,
+      0,
+      1,
+      2,
+      8,
+      5,
+      6,
+      7,
+      4,
+      5,
+      3
+    ],
+    "right_translation_length": 58,
+    "base_prefix_for_all_k": true,
+    "distinct_and_full_support_for_all_k": true,
+    "descents": [
+      3,
+      5,
+      7,
+      8
+    ],
+    "involutions_for_all_k": true,
+    "terminal_for_all_k": true,
+    "terminal_edge_checks": [
+      {
+        "s": 3,
+        "t": 2,
+        "slope": 0,
+        "base_root": [
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "s": 3,
+        "t": 4,
+        "slope": 0,
+        "base_root": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "s": 5,
+        "t": 4,
+        "slope": 0,
+        "base_root": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "s": 5,
+        "t": 6,
+        "slope": 0,
+        "base_root": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "s": 7,
+        "t": 6,
+        "slope": 0,
+        "base_root": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "s": 8,
+        "t": 2,
+        "slope": 0,
+        "base_root": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    ],
+    "complete_FC_mask_candidates": 5,
+    "eligible_FC_bottoms_for_all_k": [
+      {
+        "word": [
+          3,
+          5,
+          7,
+          8
+        ],
+        "length": 4,
+        "base_subword_positions": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "gap_intercept": 29,
+        "gap_slope": 58
+      },
+      {
+        "word": [
+          0,
+          3,
+          5,
+          7,
+          8
+        ],
+        "length": 5,
+        "base_subword_positions": [
+          0,
+          1,
+          2,
+          4,
+          13
+        ],
+        "gap_intercept": 28,
+        "gap_slope": 58
+      },
+      {
+        "word": [
+          1,
+          3,
+          5,
+          7,
+          8
+        ],
+        "length": 5,
+        "base_subword_positions": [
+          0,
+          1,
+          2,
+          4,
+          10
+        ],
+        "gap_intercept": 28,
+        "gap_slope": 58
+      },
+      {
+        "word": [
+          0,
+          1,
+          3,
+          5,
+          7,
+          8
+        ],
+        "length": 6,
+        "base_subword_positions": [
+          0,
+          1,
+          2,
+          4,
+          13,
+          14
+        ],
+        "gap_intercept": 27,
+        "gap_slope": 58
+      },
+      {
+        "word": [
+          1,
+          0,
+          3,
+          5,
+          7,
+          8
+        ],
+        "length": 6,
+        "base_subword_positions": [
+          0,
+          1,
+          2,
+          4,
+          10,
+          13
+        ],
+        "gap_intercept": 27,
+        "gap_slope": 58
+      }
+    ],
+    "mu_status": "No 0/1 bound proved for the odd eligible gaps",
+    "extensions": [
+      {
+        "name": "reflection extension 0",
+        "base_word": [
+          8,
+          7,
+          5,
+          6,
+          3,
+          4,
+          5,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          8,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          8,
+          5,
+          6,
+          7,
+          4,
+          5,
+          3,
+          0
+        ],
+        "base_row_matrix": [
+          [
+            -1,
+            1,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            0,
+            1,
+            2,
+            -2,
+            2,
+            -2,
+            2,
+            -2,
+            -2
+          ],
+          [
+            0,
+            0,
+            4,
+            -3,
+            3,
+            -3,
+            3,
+            -3,
+            -3
+          ],
+          [
+            0,
+            0,
+            3,
+            -2,
+            3,
+            -3,
+            3,
+            -3,
+            -3
+          ],
+          [
+            0,
+            0,
+            2,
+            -2,
+            3,
+            -2,
+            2,
+            -2,
+            -2
+          ],
+          [
+            0,
+            0,
+            2,
+            -2,
+            2,
+            -1,
+            2,
+            -2,
+            -2
+          ],
+          [
+            0,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            2,
+            -1,
+            -1
+          ],
+          [
+            0,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            0,
+            -1
+          ],
+          [
+            0,
+            0,
+            2,
+            -2,
+            2,
+            -2,
+            2,
+            -2,
+            -1
+          ]
+        ],
+        "column_slopes": [
+          0,
+          0,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        "length_formula": {
+          "intercept": 34,
+          "slope": 58,
+          "inversion_classes": [
+            {
+              "A": -1,
+              "B": -2,
+              "count": 1
+            },
+            {
+              "A": -1,
+              "B": -1,
+              "count": 32
+            },
+            {
+              "A": -1,
+              "B": 0,
+              "count": 1
+            },
+            {
+              "A": 0,
+              "B": -1,
+              "count": 24
+            },
+            {
+              "A": 0,
+              "B": 0,
+              "count": 124
+            },
+            {
+              "A": 0,
+              "B": 1,
+              "count": 24
+            },
+            {
+              "A": 1,
+              "B": 0,
+              "count": 1
+            },
+            {
+              "A": 1,
+              "B": 1,
+              "count": 32
+            },
+            {
+              "A": 1,
+              "B": 2,
+              "count": 1
+            }
+          ],
+          "no_breakpoints_for_k_ge_0": true
+        },
+        "right_translation_reduced_word": [
+          6,
+          4,
+          5,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          8,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          8,
+          5,
+          6,
+          7,
+          4,
+          5,
+          6,
+          3,
+          4,
+          5,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          8,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          8,
+          5,
+          6,
+          7,
+          4,
+          5,
+          3
+        ],
+        "right_translation_length": 58,
+        "base_prefix_for_all_k": true,
+        "distinct_and_full_support_for_all_k": true,
+        "descents": [
+          0,
+          3,
+          5,
+          7,
+          8
+        ],
+        "involutions_for_all_k": true,
+        "terminal_for_all_k": true,
+        "terminal_edge_checks": [
+          {
+            "s": 0,
+            "t": 1,
+            "slope": 0,
+            "base_root": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "s": 3,
+            "t": 2,
+            "slope": 0,
+            "base_root": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "s": 3,
+            "t": 4,
+            "slope": 0,
+            "base_root": [
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "s": 5,
+            "t": 4,
+            "slope": 0,
+            "base_root": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "s": 5,
+            "t": 6,
+            "slope": 0,
+            "base_root": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "s": 7,
+            "t": 6,
+            "slope": 0,
+            "base_root": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0
+            ]
+          },
+          {
+            "s": 8,
+            "t": 2,
+            "slope": 0,
+            "base_root": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "complete_FC_mask_candidates": 1,
+        "eligible_FC_bottoms_for_all_k": [
+          {
+            "word": [
+              0,
+              3,
+              5,
+              7,
+              8
+            ],
+            "length": 5,
+            "base_subword_positions": [
+              0,
+              1,
+              2,
+              4,
+              13
+            ],
+            "gap_intercept": 29,
+            "gap_slope": 58
+          }
+        ],
+        "mu_status": "Unique eligible gap is odd; coefficient remains unresolved"
+      },
+      {
+        "name": "reflection extension 1",
+        "base_word": [
+          8,
+          7,
+          5,
+          6,
+          3,
+          4,
+          5,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          8,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          8,
+          5,
+          6,
+          7,
+          4,
+          5,
+          3,
+          1
+        ],
+        "base_row_matrix": [
+          [
+            1,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            3,
+            -2,
+            2,
+            -2,
+            2,
+            -2,
+            -2
+          ],
+          [
+            0,
+            0,
+            4,
+            -3,
+            3,
+            -3,
+            3,
+            -3,
+            -3
+          ],
+          [
+            0,
+            0,
+            3,
+            -2,
+            3,
+            -3,
+            3,
+            -3,
+            -3
+          ],
+          [
+            0,
+            0,
+            2,
+            -2,
+            3,
+            -2,
+            2,
+            -2,
+            -2
+          ],
+          [
+            0,
+            0,
+            2,
+            -2,
+            2,
+            -1,
+            2,
+            -2,
+            -2
+          ],
+          [
+            0,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            2,
+            -1,
+            -1
+          ],
+          [
+            0,
+            0,
+            1,
+            -1,
+            1,
+            -1,
+            1,
+            0,
+            -1
+          ],
+          [
+            0,
+            0,
+            2,
+            -2,
+            2,
+            -2,
+            2,
+            -2,
+            -1
+          ]
+        ],
+        "column_slopes": [
+          0,
+          0,
+          1,
+          -1,
+          1,
+          -1,
+          1,
+          -1,
+          -1
+        ],
+        "length_formula": {
+          "intercept": 34,
+          "slope": 58,
+          "inversion_classes": [
+            {
+              "A": -1,
+              "B": -2,
+              "count": 1
+            },
+            {
+              "A": -1,
+              "B": -1,
+              "count": 32
+            },
+            {
+              "A": -1,
+              "B": 0,
+              "count": 1
+            },
+            {
+              "A": 0,
+              "B": -1,
+              "count": 24
+            },
+            {
+              "A": 0,
+              "B": 0,
+              "count": 124
+            },
+            {
+              "A": 0,
+              "B": 1,
+              "count": 24
+            },
+            {
+              "A": 1,
+              "B": 0,
+              "count": 1
+            },
+            {
+              "A": 1,
+              "B": 1,
+              "count": 32
+            },
+            {
+              "A": 1,
+              "B": 2,
+              "count": 1
+            }
+          ],
+          "no_breakpoints_for_k_ge_0": true
+        },
+        "right_translation_reduced_word": [
+          6,
+          4,
+          5,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          8,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          8,
+          5,
+          6,
+          7,
+          4,
+          5,
+          6,
+          3,
+          4,
+          5,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          8,
+          2,
+          3,
+          4,
+          1,
+          2,
+          3,
+          0,
+          1,
+          2,
+          8,
+          5,
+          6,
+          7,
+          4,
+          5,
+          3
+        ],
+        "right_translation_length": 58,
+        "base_prefix_for_all_k": true,
+        "distinct_and_full_support_for_all_k": true,
+        "descents": [
+          1,
+          3,
+          5,
+          7,
+          8
+        ],
+        "involutions_for_all_k": true,
+        "terminal_for_all_k": true,
+        "terminal_edge_checks": [
+          {
+            "s": 1,
+            "t": 0,
+            "slope": 0,
+            "base_root": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "s": 1,
+            "t": 2,
+            "slope": 1,
+            "base_root": [
+              1,
+              2,
+              4,
+              3,
+              2,
+              2,
+              1,
+              1,
+              2
+            ]
+          },
+          {
+            "s": 3,
+            "t": 2,
+            "slope": 0,
+            "base_root": [
+              0,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "s": 3,
+            "t": 4,
+            "slope": 0,
+            "base_root": [
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "s": 5,
+            "t": 4,
+            "slope": 0,
+            "base_root": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "s": 5,
+            "t": 6,
+            "slope": 0,
+            "base_root": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "s": 7,
+            "t": 6,
+            "slope": 0,
+            "base_root": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0
+            ]
+          },
+          {
+            "s": 8,
+            "t": 2,
+            "slope": 0,
+            "base_root": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "complete_FC_mask_candidates": 1,
+        "eligible_FC_bottoms_for_all_k": [
+          {
+            "word": [
+              1,
+              3,
+              5,
+              7,
+              8
+            ],
+            "length": 5,
+            "base_subword_positions": [
+              0,
+              1,
+              2,
+              4,
+              10
+            ],
+            "gap_intercept": 29,
+            "gap_slope": 58
+          }
+        ],
+        "mu_status": "Unique eligible gap is odd; coefficient remains unresolved"
+      }
+    ]
+  },
+  "method": "row integer matrices; finite-root affine inversion formulas; full FC mask catalogue; Green uniqueness independently checked"
+}

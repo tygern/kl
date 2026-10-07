@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "complete_E8_terminal_classification": true,
+  "distinct_parabolic_methods": [
+    "E7, 240 cosets",
+    "D7, 2160 cosets"
+  ],
+  "matrix_words_and_inversion_lengths_agree": true,
+  "terminal_count": 64,
+  "commuting_terminals": 58,
+  "bad_terminal_lengths": [
+    7,
+    8,
+    8,
+    15,
+    28,
+    50
+  ],
+  "eligible_ranks": [
+    4,
+    4,
+    4,
+    11,
+    24,
+    46
+  ],
+  "complete_FC_catalogue": 10846,
+  "FC_ascents_verified": 64632,
+  "parabolic_and_coset_poincare_products_match": true,
+  "source_sha256": {
+    "research/en_independent/e8-d7-terminals.json": "56f98e9bf0beb2bd46acd4079367757fb9982d118531a164b9c0c84dc38a78c5",
+    "research/en_e8/e8-terminals.json": "af83e8b603b7b9335482aaaeffb9eb90f19512f0275332a0b5b30df12fa32805",
+    "research/en_independent/e8-fc.json": "1758d474706206e9bcaffcdfa6265c572b2c8b199bb40f6aab309e0b413e0c60",
+    "research/en_independent/verify_e8.py": "9a273787eaf813b0852fdf12a972fd7edc1dcae9d0c3340013b0f8af6f9bb65a",
+    "research/en_independent/e8_d7_cosets.cpp": "415c2cf155b93e88815205f77b17e7bede23ec024fb469ad83e520deddb5f951",
+    "research/en_independent/fc_catalogue.cpp": "565edc2325e55c049b94a90354414521c0c0c02c56348424457ec8f850a195ff",
+    "research/en_e8/parabolic_terminals.cpp": "d9c3f1cc12c3fde59d88600816fa618a62bcc5f37195f48d5e5b09d76555ae74"
+  },
+  "priority": "Historical novelty remains unconfirmed."
+}

@@ -1,0 +1,1294 @@
+{
+  "symbolic": {
+    "coefficient_ring": "Q[r,k,q]",
+    "all_assertions_pass": true,
+    "edge_7_8_sum": "-r*k-(2*r-4)*k*(k-1)",
+    "edge_8_9_sum": "-(3*r-4)*k-(2*r-4)*k*(k-1)"
+  },
+  "scope": "All-rank proof in referee.txt; matrix rows are finite counterchecks.",
+  "independence": "No construction, targeted, or FC enumeration code is imported.",
+  "rows": [
+    {
+      "r": 3,
+      "rank": 13,
+      "alpha": 7,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 38,
+          "coordinate_0": 2
+        },
+        {
+          "k": 1,
+          "height": 162,
+          "coordinate_0": 10
+        },
+        {
+          "k": 2,
+          "height": 406,
+          "coordinate_0": 26
+        },
+        {
+          "k": 10,
+          "height": 6678,
+          "coordinate_0": 442
+        },
+        {
+          "k": 1000000,
+          "height": 60000064000038,
+          "coordinate_0": 4000004000002
+        }
+      ]
+    },
+    {
+      "r": 4,
+      "rank": 17,
+      "alpha": 9,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 67,
+          "coordinate_0": 3
+        },
+        {
+          "k": 1,
+          "height": 255,
+          "coordinate_0": 15
+        },
+        {
+          "k": 2,
+          "height": 683,
+          "coordinate_0": 43
+        },
+        {
+          "k": 10,
+          "height": 12747,
+          "coordinate_0": 843
+        },
+        {
+          "k": 1000000,
+          "height": 120000068000067,
+          "coordinate_0": 8000004000003
+        }
+      ]
+    },
+    {
+      "r": 5,
+      "rank": 21,
+      "alpha": 11,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 104,
+          "coordinate_0": 4
+        },
+        {
+          "k": 1,
+          "height": 356,
+          "coordinate_0": 20
+        },
+        {
+          "k": 2,
+          "height": 968,
+          "coordinate_0": 60
+        },
+        {
+          "k": 10,
+          "height": 18824,
+          "coordinate_0": 1244
+        },
+        {
+          "k": 1000000,
+          "height": 180000072000104,
+          "coordinate_0": 12000004000004
+        }
+      ]
+    },
+    {
+      "r": 6,
+      "rank": 25,
+      "alpha": 13,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 149,
+          "coordinate_0": 5
+        },
+        {
+          "k": 1,
+          "height": 465,
+          "coordinate_0": 25
+        },
+        {
+          "k": 2,
+          "height": 1261,
+          "coordinate_0": 77
+        },
+        {
+          "k": 10,
+          "height": 24909,
+          "coordinate_0": 1645
+        },
+        {
+          "k": 1000000,
+          "height": 240000076000149,
+          "coordinate_0": 16000004000005
+        }
+      ]
+    },
+    {
+      "r": 7,
+      "rank": 29,
+      "alpha": 15,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 202,
+          "coordinate_0": 6
+        },
+        {
+          "k": 1,
+          "height": 582,
+          "coordinate_0": 30
+        },
+        {
+          "k": 2,
+          "height": 1562,
+          "coordinate_0": 94
+        },
+        {
+          "k": 10,
+          "height": 31002,
+          "coordinate_0": 2046
+        },
+        {
+          "k": 1000000,
+          "height": 300000080000202,
+          "coordinate_0": 20000004000006
+        }
+      ]
+    },
+    {
+      "r": 8,
+      "rank": 33,
+      "alpha": 17,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 263,
+          "coordinate_0": 7
+        },
+        {
+          "k": 1,
+          "height": 707,
+          "coordinate_0": 35
+        },
+        {
+          "k": 2,
+          "height": 1871,
+          "coordinate_0": 111
+        },
+        {
+          "k": 10,
+          "height": 37103,
+          "coordinate_0": 2447
+        },
+        {
+          "k": 1000000,
+          "height": 360000084000263,
+          "coordinate_0": 24000004000007
+        }
+      ]
+    },
+    {
+      "r": 9,
+      "rank": 37,
+      "alpha": 19,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 332,
+          "coordinate_0": 8
+        },
+        {
+          "k": 1,
+          "height": 840,
+          "coordinate_0": 40
+        },
+        {
+          "k": 2,
+          "height": 2188,
+          "coordinate_0": 128
+        },
+        {
+          "k": 10,
+          "height": 43212,
+          "coordinate_0": 2848
+        },
+        {
+          "k": 1000000,
+          "height": 420000088000332,
+          "coordinate_0": 28000004000008
+        }
+      ]
+    },
+    {
+      "r": 10,
+      "rank": 41,
+      "alpha": 21,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 409,
+          "coordinate_0": 9
+        },
+        {
+          "k": 1,
+          "height": 981,
+          "coordinate_0": 45
+        },
+        {
+          "k": 2,
+          "height": 2513,
+          "coordinate_0": 145
+        },
+        {
+          "k": 10,
+          "height": 49329,
+          "coordinate_0": 3249
+        },
+        {
+          "k": 1000000,
+          "height": 480000092000409,
+          "coordinate_0": 32000004000009
+        }
+      ]
+    },
+    {
+      "r": 11,
+      "rank": 45,
+      "alpha": 23,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 494,
+          "coordinate_0": 10
+        },
+        {
+          "k": 1,
+          "height": 1130,
+          "coordinate_0": 50
+        },
+        {
+          "k": 2,
+          "height": 2846,
+          "coordinate_0": 162
+        },
+        {
+          "k": 10,
+          "height": 55454,
+          "coordinate_0": 3650
+        },
+        {
+          "k": 1000000,
+          "height": 540000096000494,
+          "coordinate_0": 36000004000010
+        }
+      ]
+    },
+    {
+      "r": 12,
+      "rank": 49,
+      "alpha": 25,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 587,
+          "coordinate_0": 11
+        },
+        {
+          "k": 1,
+          "height": 1287,
+          "coordinate_0": 55
+        },
+        {
+          "k": 2,
+          "height": 3187,
+          "coordinate_0": 179
+        },
+        {
+          "k": 10,
+          "height": 61587,
+          "coordinate_0": 4051
+        },
+        {
+          "k": 1000000,
+          "height": 600000100000587,
+          "coordinate_0": 40000004000011
+        }
+      ]
+    },
+    {
+      "r": 13,
+      "rank": 53,
+      "alpha": 27,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 688,
+          "coordinate_0": 12
+        },
+        {
+          "k": 1,
+          "height": 1452,
+          "coordinate_0": 60
+        },
+        {
+          "k": 2,
+          "height": 3536,
+          "coordinate_0": 196
+        },
+        {
+          "k": 10,
+          "height": 67728,
+          "coordinate_0": 4452
+        },
+        {
+          "k": 1000000,
+          "height": 660000104000688,
+          "coordinate_0": 44000004000012
+        }
+      ]
+    },
+    {
+      "r": 14,
+      "rank": 57,
+      "alpha": 29,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 797,
+          "coordinate_0": 13
+        },
+        {
+          "k": 1,
+          "height": 1625,
+          "coordinate_0": 65
+        },
+        {
+          "k": 2,
+          "height": 3893,
+          "coordinate_0": 213
+        },
+        {
+          "k": 10,
+          "height": 73877,
+          "coordinate_0": 4853
+        },
+        {
+          "k": 1000000,
+          "height": 720000108000797,
+          "coordinate_0": 48000004000013
+        }
+      ]
+    },
+    {
+      "r": 15,
+      "rank": 61,
+      "alpha": 31,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 914,
+          "coordinate_0": 14
+        },
+        {
+          "k": 1,
+          "height": 1806,
+          "coordinate_0": 70
+        },
+        {
+          "k": 2,
+          "height": 4258,
+          "coordinate_0": 230
+        },
+        {
+          "k": 10,
+          "height": 80034,
+          "coordinate_0": 5254
+        },
+        {
+          "k": 1000000,
+          "height": 780000112000914,
+          "coordinate_0": 52000004000014
+        }
+      ]
+    },
+    {
+      "r": 16,
+      "rank": 65,
+      "alpha": 33,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 1039,
+          "coordinate_0": 15
+        },
+        {
+          "k": 1,
+          "height": 1995,
+          "coordinate_0": 75
+        },
+        {
+          "k": 2,
+          "height": 4631,
+          "coordinate_0": 247
+        },
+        {
+          "k": 10,
+          "height": 86199,
+          "coordinate_0": 5655
+        },
+        {
+          "k": 1000000,
+          "height": 840000116001039,
+          "coordinate_0": 56000004000015
+        }
+      ]
+    },
+    {
+      "r": 17,
+      "rank": 69,
+      "alpha": 35,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 1172,
+          "coordinate_0": 16
+        },
+        {
+          "k": 1,
+          "height": 2192,
+          "coordinate_0": 80
+        },
+        {
+          "k": 2,
+          "height": 5012,
+          "coordinate_0": 264
+        },
+        {
+          "k": 10,
+          "height": 92372,
+          "coordinate_0": 6056
+        },
+        {
+          "k": 1000000,
+          "height": 900000120001172,
+          "coordinate_0": 60000004000016
+        }
+      ]
+    },
+    {
+      "r": 18,
+      "rank": 73,
+      "alpha": 37,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 1313,
+          "coordinate_0": 17
+        },
+        {
+          "k": 1,
+          "height": 2397,
+          "coordinate_0": 85
+        },
+        {
+          "k": 2,
+          "height": 5401,
+          "coordinate_0": 281
+        },
+        {
+          "k": 10,
+          "height": 98553,
+          "coordinate_0": 6457
+        },
+        {
+          "k": 1000000,
+          "height": 960000124001313,
+          "coordinate_0": 64000004000017
+        }
+      ]
+    },
+    {
+      "r": 19,
+      "rank": 77,
+      "alpha": 39,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 1462,
+          "coordinate_0": 18
+        },
+        {
+          "k": 1,
+          "height": 2610,
+          "coordinate_0": 90
+        },
+        {
+          "k": 2,
+          "height": 5798,
+          "coordinate_0": 298
+        },
+        {
+          "k": 10,
+          "height": 104742,
+          "coordinate_0": 6858
+        },
+        {
+          "k": 1000000,
+          "height": 1020000128001462,
+          "coordinate_0": 68000004000018
+        }
+      ]
+    },
+    {
+      "r": 20,
+      "rank": 81,
+      "alpha": 41,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 1619,
+          "coordinate_0": 19
+        },
+        {
+          "k": 1,
+          "height": 2831,
+          "coordinate_0": 95
+        },
+        {
+          "k": 2,
+          "height": 6203,
+          "coordinate_0": 315
+        },
+        {
+          "k": 10,
+          "height": 110939,
+          "coordinate_0": 7259
+        },
+        {
+          "k": 1000000,
+          "height": 1080000132001619,
+          "coordinate_0": 72000004000019
+        }
+      ]
+    },
+    {
+      "r": 21,
+      "rank": 85,
+      "alpha": 43,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 1784,
+          "coordinate_0": 20
+        },
+        {
+          "k": 1,
+          "height": 3060,
+          "coordinate_0": 100
+        },
+        {
+          "k": 2,
+          "height": 6616,
+          "coordinate_0": 332
+        },
+        {
+          "k": 10,
+          "height": 117144,
+          "coordinate_0": 7660
+        },
+        {
+          "k": 1000000,
+          "height": 1140000136001784,
+          "coordinate_0": 76000004000020
+        }
+      ]
+    },
+    {
+      "r": 22,
+      "rank": 89,
+      "alpha": 45,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 1957,
+          "coordinate_0": 21
+        },
+        {
+          "k": 1,
+          "height": 3297,
+          "coordinate_0": 105
+        },
+        {
+          "k": 2,
+          "height": 7037,
+          "coordinate_0": 349
+        },
+        {
+          "k": 10,
+          "height": 123357,
+          "coordinate_0": 8061
+        },
+        {
+          "k": 1000000,
+          "height": 1200000140001957,
+          "coordinate_0": 80000004000021
+        }
+      ]
+    },
+    {
+      "r": 23,
+      "rank": 93,
+      "alpha": 47,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 2138,
+          "coordinate_0": 22
+        },
+        {
+          "k": 1,
+          "height": 3542,
+          "coordinate_0": 110
+        },
+        {
+          "k": 2,
+          "height": 7466,
+          "coordinate_0": 366
+        },
+        {
+          "k": 10,
+          "height": 129578,
+          "coordinate_0": 8462
+        },
+        {
+          "k": 1000000,
+          "height": 1260000144002138,
+          "coordinate_0": 84000004000022
+        }
+      ]
+    },
+    {
+      "r": 24,
+      "rank": 97,
+      "alpha": 49,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 2327,
+          "coordinate_0": 23
+        },
+        {
+          "k": 1,
+          "height": 3795,
+          "coordinate_0": 115
+        },
+        {
+          "k": 2,
+          "height": 7903,
+          "coordinate_0": 383
+        },
+        {
+          "k": 10,
+          "height": 135807,
+          "coordinate_0": 8863
+        },
+        {
+          "k": 1000000,
+          "height": 1320000148002327,
+          "coordinate_0": 88000004000023
+        }
+      ]
+    },
+    {
+      "r": 25,
+      "rank": 101,
+      "alpha": 51,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 2524,
+          "coordinate_0": 24
+        },
+        {
+          "k": 1,
+          "height": 4056,
+          "coordinate_0": 120
+        },
+        {
+          "k": 2,
+          "height": 8348,
+          "coordinate_0": 400
+        },
+        {
+          "k": 10,
+          "height": 142044,
+          "coordinate_0": 9264
+        },
+        {
+          "k": 1000000,
+          "height": 1380000152002524,
+          "coordinate_0": 92000004000024
+        }
+      ]
+    },
+    {
+      "r": 26,
+      "rank": 105,
+      "alpha": 53,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 2729,
+          "coordinate_0": 25
+        },
+        {
+          "k": 1,
+          "height": 4325,
+          "coordinate_0": 125
+        },
+        {
+          "k": 2,
+          "height": 8801,
+          "coordinate_0": 417
+        },
+        {
+          "k": 10,
+          "height": 148289,
+          "coordinate_0": 9665
+        },
+        {
+          "k": 1000000,
+          "height": 1440000156002729,
+          "coordinate_0": 96000004000025
+        }
+      ]
+    },
+    {
+      "r": 27,
+      "rank": 109,
+      "alpha": 55,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 2942,
+          "coordinate_0": 26
+        },
+        {
+          "k": 1,
+          "height": 4602,
+          "coordinate_0": 130
+        },
+        {
+          "k": 2,
+          "height": 9262,
+          "coordinate_0": 434
+        },
+        {
+          "k": 10,
+          "height": 154542,
+          "coordinate_0": 10066
+        },
+        {
+          "k": 1000000,
+          "height": 1500000160002942,
+          "coordinate_0": 100000004000026
+        }
+      ]
+    },
+    {
+      "r": 28,
+      "rank": 113,
+      "alpha": 57,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 3163,
+          "coordinate_0": 27
+        },
+        {
+          "k": 1,
+          "height": 4887,
+          "coordinate_0": 135
+        },
+        {
+          "k": 2,
+          "height": 9731,
+          "coordinate_0": 451
+        },
+        {
+          "k": 10,
+          "height": 160803,
+          "coordinate_0": 10467
+        },
+        {
+          "k": 1000000,
+          "height": 1560000164003163,
+          "coordinate_0": 104000004000027
+        }
+      ]
+    },
+    {
+      "r": 29,
+      "rank": 117,
+      "alpha": 59,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 3392,
+          "coordinate_0": 28
+        },
+        {
+          "k": 1,
+          "height": 5180,
+          "coordinate_0": 140
+        },
+        {
+          "k": 2,
+          "height": 10208,
+          "coordinate_0": 468
+        },
+        {
+          "k": 10,
+          "height": 167072,
+          "coordinate_0": 10868
+        },
+        {
+          "k": 1000000,
+          "height": 1620000168003392,
+          "coordinate_0": 108000004000028
+        }
+      ]
+    },
+    {
+      "r": 30,
+      "rank": 121,
+      "alpha": 61,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 3629,
+          "coordinate_0": 29
+        },
+        {
+          "k": 1,
+          "height": 5481,
+          "coordinate_0": 145
+        },
+        {
+          "k": 2,
+          "height": 10693,
+          "coordinate_0": 485
+        },
+        {
+          "k": 10,
+          "height": 173349,
+          "coordinate_0": 11269
+        },
+        {
+          "k": 1000000,
+          "height": 1680000172003629,
+          "coordinate_0": 112000004000029
+        }
+      ]
+    },
+    {
+      "r": 31,
+      "rank": 125,
+      "alpha": 63,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 3874,
+          "coordinate_0": 30
+        },
+        {
+          "k": 1,
+          "height": 5790,
+          "coordinate_0": 150
+        },
+        {
+          "k": 2,
+          "height": 11186,
+          "coordinate_0": 502
+        },
+        {
+          "k": 10,
+          "height": 179634,
+          "coordinate_0": 11670
+        },
+        {
+          "k": 1000000,
+          "height": 1740000176003874,
+          "coordinate_0": 116000004000030
+        }
+      ]
+    },
+    {
+      "r": 32,
+      "rank": 129,
+      "alpha": 65,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 4127,
+          "coordinate_0": 31
+        },
+        {
+          "k": 1,
+          "height": 6107,
+          "coordinate_0": 155
+        },
+        {
+          "k": 2,
+          "height": 11687,
+          "coordinate_0": 519
+        },
+        {
+          "k": 10,
+          "height": 185927,
+          "coordinate_0": 12071
+        },
+        {
+          "k": 1000000,
+          "height": 1800000180004127,
+          "coordinate_0": 120000004000031
+        }
+      ]
+    },
+    {
+      "r": 33,
+      "rank": 133,
+      "alpha": 67,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 4388,
+          "coordinate_0": 32
+        },
+        {
+          "k": 1,
+          "height": 6432,
+          "coordinate_0": 160
+        },
+        {
+          "k": 2,
+          "height": 12196,
+          "coordinate_0": 536
+        },
+        {
+          "k": 10,
+          "height": 192228,
+          "coordinate_0": 12472
+        },
+        {
+          "k": 1000000,
+          "height": 1860000184004388,
+          "coordinate_0": 124000004000032
+        }
+      ]
+    },
+    {
+      "r": 34,
+      "rank": 137,
+      "alpha": 69,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 4657,
+          "coordinate_0": 33
+        },
+        {
+          "k": 1,
+          "height": 6765,
+          "coordinate_0": 165
+        },
+        {
+          "k": 2,
+          "height": 12713,
+          "coordinate_0": 553
+        },
+        {
+          "k": 10,
+          "height": 198537,
+          "coordinate_0": 12873
+        },
+        {
+          "k": 1000000,
+          "height": 1920000188004657,
+          "coordinate_0": 128000004000033
+        }
+      ]
+    },
+    {
+      "r": 35,
+      "rank": 141,
+      "alpha": 71,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 4934,
+          "coordinate_0": 34
+        },
+        {
+          "k": 1,
+          "height": 7106,
+          "coordinate_0": 170
+        },
+        {
+          "k": 2,
+          "height": 13238,
+          "coordinate_0": 570
+        },
+        {
+          "k": 10,
+          "height": 204854,
+          "coordinate_0": 13274
+        },
+        {
+          "k": 1000000,
+          "height": 1980000192004934,
+          "coordinate_0": 132000004000034
+        }
+      ]
+    },
+    {
+      "r": 36,
+      "rank": 145,
+      "alpha": 73,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 5219,
+          "coordinate_0": 35
+        },
+        {
+          "k": 1,
+          "height": 7455,
+          "coordinate_0": 175
+        },
+        {
+          "k": 2,
+          "height": 13771,
+          "coordinate_0": 587
+        },
+        {
+          "k": 10,
+          "height": 211179,
+          "coordinate_0": 13675
+        },
+        {
+          "k": 1000000,
+          "height": 2040000196005219,
+          "coordinate_0": 136000004000035
+        }
+      ]
+    },
+    {
+      "r": 37,
+      "rank": 149,
+      "alpha": 75,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 5512,
+          "coordinate_0": 36
+        },
+        {
+          "k": 1,
+          "height": 7812,
+          "coordinate_0": 180
+        },
+        {
+          "k": 2,
+          "height": 14312,
+          "coordinate_0": 604
+        },
+        {
+          "k": 10,
+          "height": 217512,
+          "coordinate_0": 14076
+        },
+        {
+          "k": 1000000,
+          "height": 2100000200005512,
+          "coordinate_0": 140000004000036
+        }
+      ]
+    },
+    {
+      "r": 38,
+      "rank": 153,
+      "alpha": 77,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 5813,
+          "coordinate_0": 37
+        },
+        {
+          "k": 1,
+          "height": 8177,
+          "coordinate_0": 185
+        },
+        {
+          "k": 2,
+          "height": 14861,
+          "coordinate_0": 621
+        },
+        {
+          "k": 10,
+          "height": 223853,
+          "coordinate_0": 14477
+        },
+        {
+          "k": 1000000,
+          "height": 2160000204005813,
+          "coordinate_0": 144000004000037
+        }
+      ]
+    },
+    {
+      "r": 39,
+      "rank": 157,
+      "alpha": 79,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 6122,
+          "coordinate_0": 38
+        },
+        {
+          "k": 1,
+          "height": 8550,
+          "coordinate_0": 190
+        },
+        {
+          "k": 2,
+          "height": 15418,
+          "coordinate_0": 638
+        },
+        {
+          "k": 10,
+          "height": 230202,
+          "coordinate_0": 14878
+        },
+        {
+          "k": 1000000,
+          "height": 2220000208006122,
+          "coordinate_0": 148000004000038
+        }
+      ]
+    },
+    {
+      "r": 40,
+      "rank": 161,
+      "alpha": 81,
+      "sample_checks": [
+        {
+          "k": 0,
+          "height": 6439,
+          "coordinate_0": 39
+        },
+        {
+          "k": 1,
+          "height": 8931,
+          "coordinate_0": 195
+        },
+        {
+          "k": 2,
+          "height": 15983,
+          "coordinate_0": 655
+        },
+        {
+          "k": 10,
+          "height": 236559,
+          "coordinate_0": 15279
+        },
+        {
+          "k": 1000000,
+          "height": 2280000212006439,
+          "coordinate_0": 152000004000039
+        }
+      ]
+    }
+  ],
+  "uniform_affine_root_witnesses": [
+    {
+      "lowering_word": [
+        2,
+        1,
+        0,
+        4,
+        3,
+        2,
+        1,
+        6,
+        5,
+        4,
+        3,
+        2
+      ],
+      "ends_at": "branch"
+    },
+    {
+      "lowering_word": [
+        2,
+        1,
+        0,
+        4,
+        3,
+        2,
+        1,
+        6,
+        5,
+        4,
+        3,
+        2,
+        "branch",
+        2,
+        1,
+        0,
+        3,
+        2,
+        1,
+        4,
+        3,
+        2,
+        5,
+        4,
+        3,
+        6,
+        5,
+        4,
+        7,
+        6,
+        5,
+        "branch",
+        2,
+        1,
+        0,
+        3,
+        2,
+        1,
+        4,
+        3,
+        2
+      ],
+      "ends_at": "branch"
+    }
+  ],
+  "audited_source_sha256": "1b48565e11145f8d931d6e39bc1fcc082d5c9c9ecf9df9812b9fdf49ea16702c"
+}

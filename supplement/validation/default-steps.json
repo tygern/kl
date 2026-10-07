@@ -1,0 +1,233 @@
+[
+  {
+    "step": "build-flat",
+    "command": [
+      "/usr/bin/clang++",
+      "-O3",
+      "-std=c++17",
+      "research/en_e8/parabolic_terminals.cpp",
+      "-o",
+      "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/default-zfehrpbo/bin/flat"
+    ],
+    "returncode": 0,
+    "seconds": 0.819
+  },
+  {
+    "step": "build-recursive",
+    "command": [
+      "/usr/bin/clang++",
+      "-O3",
+      "-std=c++17",
+      "research/en_e8/recursive_terminals.cpp",
+      "-o",
+      "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/default-zfehrpbo/bin/recursive"
+    ],
+    "returncode": 0,
+    "seconds": 0.768
+  },
+  {
+    "step": "build-d7",
+    "command": [
+      "/usr/bin/clang++",
+      "-O3",
+      "-std=c++17",
+      "research/en_independent/e8_d7_cosets.cpp",
+      "-o",
+      "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/default-zfehrpbo/bin/d7"
+    ],
+    "returncode": 0,
+    "seconds": 0.735
+  },
+  {
+    "step": "build-fc",
+    "command": [
+      "/usr/bin/clang++",
+      "-O3",
+      "-std=c++17",
+      "research/en_independent/fc_catalogue.cpp",
+      "-o",
+      "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/default-zfehrpbo/bin/fc"
+    ],
+    "returncode": 0,
+    "seconds": 0.755
+  },
+  {
+    "step": "E6-FC",
+    "command": [
+      "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/default-zfehrpbo/bin/fc",
+      "6"
+    ],
+    "returncode": 0,
+    "seconds": 0.219
+  },
+  {
+    "step": "E7-FC",
+    "command": [
+      "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/default-zfehrpbo/bin/fc",
+      "7"
+    ],
+    "returncode": 0,
+    "seconds": 0.015
+  },
+  {
+    "step": "E8-FC",
+    "command": [
+      "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/default-zfehrpbo/bin/fc",
+      "8"
+    ],
+    "returncode": 0,
+    "seconds": 0.034
+  },
+  {
+    "step": "E9-FC",
+    "command": [
+      "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/default-zfehrpbo/bin/fc",
+      "9"
+    ],
+    "returncode": 0,
+    "seconds": 0.129
+  },
+  {
+    "step": "E6-flat",
+    "command": [
+      "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/default-zfehrpbo/bin/flat",
+      "6"
+    ],
+    "returncode": 0,
+    "seconds": 0.108
+  },
+  {
+    "step": "E6-recursive",
+    "command": [
+      "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/default-zfehrpbo/bin/recursive",
+      "6"
+    ],
+    "returncode": 0,
+    "seconds": 0.105
+  },
+  {
+    "step": "E7-flat",
+    "command": [
+      "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/default-zfehrpbo/bin/flat",
+      "7"
+    ],
+    "returncode": 0,
+    "seconds": 0.017
+  },
+  {
+    "step": "E7-recursive",
+    "command": [
+      "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/default-zfehrpbo/bin/recursive",
+      "7"
+    ],
+    "returncode": 0,
+    "seconds": 0.009
+  },
+  {
+    "step": "E8-flat",
+    "command": [
+      "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/default-zfehrpbo/bin/flat",
+      "8"
+    ],
+    "returncode": 0,
+    "seconds": 0.523
+  },
+  {
+    "step": "E8-recursive",
+    "command": [
+      "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/default-zfehrpbo/bin/recursive",
+      "8"
+    ],
+    "returncode": 0,
+    "seconds": 0.016
+  },
+  {
+    "step": "E8-D7",
+    "command": [
+      "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/default-zfehrpbo/bin/d7"
+    ],
+    "returncode": 0,
+    "seconds": 0.18
+  },
+  {
+    "step": "finite-source-snapshot-audit",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/verify_exceptional.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.034
+  },
+  {
+    "step": "finite-method-comparison",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/en_e8/verify_outputs.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.022
+  },
+  {
+    "step": "E8-independent-verification",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/en_independent/verify_e8.py"
+    ],
+    "returncode": 0,
+    "seconds": 1.014
+  },
+  {
+    "step": "finite-support-matchings",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/journal-review/check_finite_descents.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.019
+  },
+  {
+    "step": "D6-recurrence-certificate",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "computations/verify_certificate.py"
+    ],
+    "returncode": 0,
+    "seconds": 2.107
+  },
+  {
+    "step": "uniform-symbolic-and-matrix-checks",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/en_uniform/referee_verify.py"
+    ],
+    "returncode": 0,
+    "seconds": 1.29
+  },
+  {
+    "step": "affine-proved-family",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "affine_proof.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.059
+  },
+  {
+    "step": "affine-FC-closure-and-covers",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/en_affine_referee/verify_fc_catalogue.py"
+    ],
+    "returncode": 0,
+    "seconds": 3.31
+  },
+  {
+    "step": "E10-all-k",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/en_affine_referee/verify_indefinite_e10.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.024
+  }
+]

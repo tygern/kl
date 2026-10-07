@@ -1,0 +1,264 @@
+APPLICATIONS OF GERN'S TYPE-D RESULTS AFTER FULL COMBINATORIAL INVARIANCE
+
+Research notes, 2026-10-06 (America/Chicago). These notes distinguish a consequence of the supplied
+2026 invariance theorem from a result that genuinely needed that theorem. No
+novelty claim is made for parabolic-coset transport, which is classical.
+
+1. Parabolic cosets give explicit families (classical transport).
+
+Let (W,S) be any Coxeter system, J a subset of S, and a in W^J a minimal
+representative for a right coset a W_J. For x <= y in W_J, multiplication
+z |-> a z gives an order isomorphism [x,y]_{W_J} -> [a x,a y]_W.
+
+Proof: Bruhat order restricted to a W_J agrees, under this multiplication,
+with Bruhat order on W_J; this is the standard parabolic subword lemma.
+The parabolic projection pi_J: W -> W^J is order preserving. An element z
+between a x and a y has a <= pi_J(z) <= a, hence belongs to a W_J. Thus the
+image is the entire interval, not merely an induced subposet. The length
+difference is preserved because l(a z)=l(a)+l(z) for z in W_J.
+
+Consequently, if W_J has type D_n and x is fully commutative in W_J, then
+mu_W(a x,a y) belongs to {0,1}. The ambient lower endpoint a x need not be
+fully commutative. In fact P^W_{a x,a y}=P^{W_J}_{x,y} was already a standard
+parabolic property; it follows by induction with the right KL recurrence
+using upper descents in J. Terms between a x and a y stay in the coset.
+Do not call this preservation a new consequence unavailable before 2026.
+
+2. An explicit infinite affine family whose lower endpoints are not FC.
+
+Take W of affine type D_n, n>=4, and J the finite D_n nodes. Use the affine
+root convention t_lambda(alpha+k delta)=alpha+(k-<lambda,alpha>) delta.
+Let rho^vee be the half-sum of positive finite coroots and m>=1. Then
+lambda_m=-2m rho^vee is in the coroot lattice and a_m=t_{lambda_m} belongs
+to W^J: a_m(alpha_j)=alpha_j+2m delta is positive for every finite simple
+root alpha_j. On the other hand a_m^{-1}(alpha_j)=alpha_j-2m delta is
+negative, so every j in J is a LEFT descent of a_m.
+
+Since D_n has adjacent simple nodes, its full simple descent set is not
+commutative. Thus a_m is not fully commutative (the longest rank-two
+parabolic element for any adjacent pair is a reduced left factor).
+For every x in W_J, a_m x has a reduced expression formed by concatenating
+a reduced expression of a_m with one of x. Therefore a_m x is not FC.
+
+For any FC x in D_n and arbitrary y>=x in D_n,
+  mu_affine-D_n(t_{-2m rho^vee} x, t_{-2m rho^vee} y) is 0 or 1.
+For Gern's distinguished pair (x_n,w_n), it equals 1 for n=6 or 7 and 0
+for every other n>=4. All degree bounds for P_{x_n,w_n} carry over too.
+The endpoints have unbounded absolute length as m grows; their interval
+rank is fixed. This is a genuine infinite family of non-FC lower endpoints,
+but its transport mechanism is classical, not an application establishing
+the whole affine-D fully-commutative-bottom conjecture.
+
+3. Explicit finite exceptional examples carrying the rank-11 bad interval.
+
+Use E7/E8 numbering with edges 1--3--4--5--6--7[--8] and 2--4. Let
+J={2,3,4,5,6,7}; its induced diagram is D6. Identify Gern's D6 generators
+(s1,s2,s3,s4,s5,s6) with (r2,r3,r4,r5,r6,r7). Write x and w for the
+images of his x6 and w6. They have lengths 4 and 15 and mu(x,w)=1.
+Let a=w0(E_k) w0(J), for k=7 or 8. The longest element of E7/E8 acts as
+-1 on roots. Thus a maps every positive root of J to a positive root;
+in particular a is minimal in a W_J. Its length is 63-30=33 in E7 and
+120-30=90 in E8. Hence
+  E7: l(a x)=37, l(a w)=48, mu(a x,a w)=1;
+  E8: l(a x)=94, l(a w)=105, mu(a x,a w)=1.
+Both intervals have rank 11 and are isomorphic to Gern's [x6,w6].
+
+The lower endpoints here are NOT fully commutative. Exact integer root
+certificates are reproduced by research/exceptional_cosets.py.
+In E7, right multiplying a successively by
+  r1,r3,r4,r2,r5,r4,r3,r1,r6,r5,r4,r2,r3,r4,r5
+reduces length at every step. The remainder b has right descents r6,r7:
+  b(alpha6)=-(alpha1+alpha3+alpha4+alpha5+alpha6+alpha7),
+  b(alpha7)=-(alpha1+2alpha2+2alpha3+3alpha4+2alpha5+alpha6).
+So b has a reduced suffix r6 r7 r6, and a has a reduced expression
+containing that braid. In E8 the shorter stripping sequence
+  r1,r3,r4,r2,r5,r4,r3,r1,r6
+leaves right descents r7,r8, with images
+  -(alpha1+2alpha2+2alpha3+3alpha4+2alpha5+alpha6),
+  -(alpha2+alpha3+2alpha4+2alpha5+2alpha6+2alpha7+alpha8).
+Again a is not FC, and concatenation proves a x is not FC.
+
+These examples concretely extend the endpoint class beyond FC type D and
+give E7/E8 occurrences of the exceptional coefficient 1. They are not
+new computations in the strong sense: parabolic-coset transport proves
+them without the supplied full invariance theorem.
+
+4. Products yield interior coefficient bounds, not only a mu bound.
+
+Assume full combinatorial invariance as in the supplied 2026 Theorem 1.1.
+Let an ambient interval [u,v] be isomorphic as an abstract poset to a
+product of k nontrivial Bruhat intervals [x_i,y_i] in finite D types with
+each x_i fully commutative. Put d_i=l(y_i)-l(x_i), d=sum d_i.
+The product is itself the interval from (x_i) to (y_i) in the product
+Coxeter group. Standard tensor-product factorization of the Hecke algebra
+gives
+  P_{u,v}(q)=prod_i P_{x_i,y_i}(q).
+Therefore
+  deg P_{u,v} <= sum_i floor((d_i-1)/2).
+For k>=2 this is strictly below (d-1)/2, so mu(u,v)=0.
+
+If every d_i is odd, the coefficient of q^{(d-k)/2} is
+  prod_i mu(x_i,y_i),
+and hence is 0 or 1 by Gern. This bounds a coefficient below the universal
+top slot, a statement not supplied by the single-interval mu bound alone.
+For an interval isomorphic to I6^k, where I6=[x6,w6], the degree is exactly
+5k and the coefficient at that degree is 1 (since mu(x6,w6)=1 and rank11).
+The interval rank is 11k. For k>=2 its mu is zero, even though the actual
+leading coefficient is 1. Any proposed finite/affine exceptional example
+requires a full poset isomorphism or a proved product decomposition.
+
+Novelty qualification: Hecke-algebra direct-product factorization is old.
+Full invariance permits its use on an arbitrary abstract product
+decomposition across ambient groups. Whether the same abstract-product
+statement had already been proved in a narrower setting needs a dedicated
+literature check. Avoid presenting it as newly discovered.
+
+5. Literature cautions and failed shortcuts.
+
+Michael S. Chmutov's 2014 Michigan dissertation, The structure of W-graphs
+arising in Kazhdan-Lusztig theory, explicitly proves Green's 0-1 conjecture
+in type B (abstract and Chapter 2, Section 2.3). Thus a full FC-bottom
+finite B/C bound is not a new application of Gern plus the 2026 theorem.
+Primary source URL:
+https://deepblue.lib.umich.edu/bitstream/handle/2027.42/108802/mchmutov_1.pdf?sequence=1
+The repository fetch returned an HTML challenge; no fake PDF was retained.
+The primary source is indexed by web search, and author-uploaded full text
+also appears at https://www.researchgate.net/publication/295404674.
+Green's affine-A result is https://arxiv.org/abs/0801.1650.
+
+An inclusion of root systems D_n inside B_n is insufficient. Bruhat order
+and Coxeter lengths depend on the ambient simple system; a reflection
+subgroup is not automatically an interval-preserving embedding. One must
+prove surjectivity onto the full ambient interval, not only an order
+embedding or agreement of endpoints' ranks.
+
+Likewise a root-subsystem pattern occurrence, or a flattened permutation,
+does not alone give equality of KL polynomials. Standard interval pattern
+embeddings with verified length condition may give such equality already
+by older geometric results, so they should not automatically be promoted
+as new consequences of full abstract invariance.
+
+No proof was found that every FC-bottom interval in exceptional E or
+affine D admits an FC-bottom finite-D realization. Such a claim would
+require a new realization theorem, and it is not a consequence of the
+2026 invariance theorem itself.
+
+6. Independent audit of results/kl-transfer.tex (snapshot 2026-10-06, America/Chicago).
+
+The affine translation sign convention, positive-root minimal-coset
+criterion, negative-root left-descent argument, and length-additive
+non-FC extension are correct as stated. The coset polynomial recurrence
+argument is valid; one should not substitute the false general claim
+that simultaneous left descents always cancel KL polynomials. Here the
+parabolic-coset condition and recurrence supply the needed extra input.
+The displayed rank, a-value, and degree formulas match Gern. Lemma 2.3.9
+is indeed the exact equality P_{x_n,w_n}=P_{e,w_n}, not merely degree
+monotonicity. The arithmetic table and two gap corollaries are correct.
+The principal-interval example I2(3)/I2(4) really gives six-element
+isomorphic intervals with different fully-commutative top status.
+
+One bibliographic error was reported to the parent: Green's cited arXiv
+0706.2082 is a physics paper. The correct identifier is 0801.1650.
+
+The computation team reports the independently computed identity
+  P_{x6,w6}=1+6q+11q^2+6q^3+q^4+q^5,
+with rank-11 interval size 1676 and lower ideal size 3184, checked using
+all available descents and R-polynomial reciprocity. This polynomial is
+not a formula quoted from Gern's thesis, so the final note should label
+its full expansion as a computer-assisted calculation of this project.
+The root certificates above check E7/E8 endpoint properties only; they
+do not independently recompute those KL polynomials. Classical coset
+equality carries the D6 polynomial to the exhibited exceptional pairs.
+
+7. Second audit: products and the explicit B3 example.
+
+The updated product theorem in results/kl-transfer.tex is correct. The
+degree estimate is strict at the mu exponent for k>=2; even total rank
+already makes mu zero by definition. For all odd factor ranks, only the
+product of their largest allowed terms can reach exponent (d-k)/2, so
+Gern's bound applies exactly as written. F(1)=26 is correct.
+
+The displayed B3 example agrees entry-by-entry with the JSON certificate:
+source [s3,s3 s1 s2 s3] in Gern D4 numbering, target bottom (3,2,-1),
+target top (2,-1,-3), polynomial 1+q, rank vector (1,4,4,1). Its bottom
+word b0 b1 b2 b1 is reduced and contains the m(b1,b2)=3 braid.
+The two right labels used in the type-A-coset exclusion can be verified
+from the actual covers
+  (3,2,-1) < (1,2,-3): label (-3,2,-1),
+  (3,2,-1) < (-3,2,-1): label (-1,2,3).
+Their product has order four. The argument works for conjugate type-A
+parabolics too: T(W) intersect H equals the reflection set T(H) for a
+parabolic subgroup H, including conjugates. Thus an ambient reflection
+belonging to H is a type-A reflection, and two such cannot have product
+order four. The left-label argument excludes right cosets analogously.
+
+8. A proved all-rank forbidden pattern for finite D realizations.
+
+Define L4 to be the eight-element graded poset with ranks
+  {a}, {b1,b2}, {c1,c2}, {d1,d2}, {z},
+and every possible order relation between consecutive ranks. This is
+exactly the Bruhat poset [e,w0] in I2(4)=B2.
+
+PROPOSITION. No Bruhat interval in a finite simply-laced Weyl group is
+isomorphic to L4. In particular, no interval in any finite D_n has this
+poset, with or without a fully commutative bottom. More generally, any
+Bruhat interval containing a closed subinterval isomorphic to L4 has no
+realization as a Bruhat interval in any finite simply-laced Weyl group.
+
+PROOF. Work in the real Euclidean reflection representation of a finite
+simply-laced Weyl group. For distinct reflections r_alpha,r_beta,
+  im(r_alpha r_beta - 1)=span(alpha,beta).
+Indeed the product fixes the orthogonal complement pointwise and acts
+on that plane as a nonidentity rotation. Its restriction minus the
+identity is invertible. Consequently, if two distinct-reflection
+factorizations represent the same group element, their root planes agree.
+
+Suppose an interval with the displayed layers existed. Every cover
+p<q has a left reflection label t with q=t p. Let Pi be the plane of
+the two distinct labels of a<b1 and a<b2. For each cj, the two paths
+a<b1<cj and a<b2<cj give two factorizations of cj a^{-1} into distinct
+reflections. The common-plane identity implies that the labels of both
+paths lie in Pi: the shared plane contains both distinct first labels,
+so it must be Pi. Thus all four b-to-c edge labels lie in Pi.
+
+Next use the two paths b1<c1<dj and b1<c2<dj for each dj. Their distinct
+first labels already lie in Pi and span it. The same identity forces
+their last labels into Pi; using b2 similarly covers the other labels.
+Finally paths c1<d1<z and c1<d2<z put the top edge labels in Pi. Every
+vertex is therefore obtained from a by left multiplication by reflections
+whose roots lie in Pi. All eight vertices lie in one coset of the group
+generated by the roots Phi intersect Pi.
+
+But Phi intersect Pi is a rank-two root subsystem in a finite simply-laced
+crystallographic root system. It is A1 x A1 or A2, and its reflection group
+has order four or six. A coset cannot contain eight distinct vertices.
+This is the desired contradiction. If a larger interval contained L4,
+any claimed interval isomorphism would restrict to an impossible L4
+interval in the target. QED.
+
+This proof is independent of full KL combinatorial invariance. It also
+follows immediately from the supplied preprint's Proposition 3.5 on
+transport of dihedral intervals, but invoking that result is unnecessary
+for the finite simply-laced conclusion. No novelty claim has been checked.
+It legitimately upgrades the program's bounded D4 absence observation
+to all D_n; the program itself should still report only its tested scope.
+
+It is a different obstruction from the coefficient test: P_{e,w0}=1 in
+finite B2, yet its interval has no finite-D realization. It also proves
+that a blanket claim 'every interval with mu<=1 has an FC-bottom D model'
+is false. The conclusion does not apply to infinite simply-laced groups,
+whose maximal rank-two reflection subgroups can be infinite dihedral.
+
+Primary historical reference located after writing the proof:
+  Matthew Dyer, On the "Bruhat graph" of a Coxeter system,
+  Compositio Mathematica 78 (1991), 185--191.
+  https://www.numdam.org/item/CM_1991__78_2_185_0.pdf
+Lemma 3.1 (p.188) proves that two nontrivial two-reflection factorizations
+of the same element generate a dihedral reflection subgroup, using the
+image-of-product-minus-identity plane argument. Section 3.4 (p.190)
+recovers a maximal dihedral coset intersection by closure under four-cycle
+moves, and explicitly observes that an interval with exactly two atoms
+or exactly two coatoms is isomorphic to an interval in a dihedral group.
+Thus the obstruction is a consequence of classical reflection-subgroup
+geometry, with our direct proof supplied for convenience. These are
+antecedents, not support for a priority claim.

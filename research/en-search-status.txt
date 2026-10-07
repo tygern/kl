@@ -1,0 +1,60 @@
+E_n plan completion record, 2026-10-07 UTC
+
+PROVED AND REPRODUCED
+1. Whole finite E8 FC-lower/arbitrary-upper mu in {0,1}. Six bad terminals,
+   five even eligible ranks, one old D6 case. Two independent exhaustive
+   decompositions through E7 and D7; separate Python matrix verification.
+   Recursive search tests 143660 products across the entire parabolic chain.
+2. Affine E8=E9 full-support upper family b_k=T^k b0 T^-k, length27+92k.
+   For EVERY FC x, mu(x,b_k)=0. Independent symbolic inversion proof, complete
+   E9 FC catalogue closure (44199 elements, maximum length44), and no FC base
+   covers (all21 checked) eliminate the cover exception.
+3. Indefinite E10/E13 full-support reflection families r_(beta_k), with
+   beta_k=beta0-a*k*gamma+(a*k*k+3*k)*delta, a=1 or2 respectively.
+   For EVERY FC x, mu(x,b_k) in {0,1}; noncover coefficients vanish.
+   Exact all-k unipotent action and terminal cone inequalities independently
+   verified. No exact all-k indefinite length formulas are claimed.
+4. Maximum-common-commuting-descents lemma and parity criterion are deductions
+   from Green's classical monomial TL cells, accurately distinguished from
+   ordinary KL cells. They apply in generalized E_n, not just finite Weyl types.
+5. Full combinatorial invariance conditionally transfers all these model
+   classes to whole abstract isomorphic intervals in arbitrary Coxeter groups.
+6. Rank-uniform full-support theorem: in every E_(4r+1), r>=3, the roots
+   beta_(r,k)=beta_r-(2r-4)k gamma+((2r-4)k^2+rk)delta, k>=0,
+   give terminal reflections with maximum odd common descent set I_r.
+   For every FC bottom mu is0/1, and all noncover mu vanish. For each
+   fixed r all mu vanish eventually as k grows, without an effective
+   threshold. Seed reality has a symbolic D_(4r) even sign-change proof;
+   no group, interval, or KL polynomial computation is a hypothesis.
+   Both symbolic proofs and independent arithmetic checks are saved in
+   research/en_uniform/. Priority remains unconfirmed. Full polynomials
+   and arbitrary-upper bounds remain undetermined.
+
+SCOPE / PRIORITY
+No whole-type theorem for infinite E_n is proved. No new explicit cross-type
+interval-isomorphism family is established. No precise predecessor for the
+finite E8 theorem or the concrete infinite E9/E10/E13 families was located,
+but historical priority is UNCONFIRMED. Root translations, cell theory,
+parabolic embeddings and parity are classical inputs. The Catalan-star
+family remains Mongelli prior art.
+
+UNRESOLVED / BOUNDED EVIDENCE
+The different affine-E8 reflection family has lengths33+58k, plus extensions
+34+58k. Remaining odd-gap mu values are unresolved. An exact ordinary ideal
+run hit a3million-state cap before the full33-letter word; no cardinality or
+polynomial inferred. Paired-star components of7056/2500/2500states closed
+without a zero/one witness; this does not determine mu. Parabolic-factor
+screens are recorded with exact bounds and negative outcomes.
+
+TEAM AND ARTIFACTS
+Three Astra agents resumed distinct methods: efficient E8 enumeration and
+independent proof review; symbolic affine/indefinite family search; primary
+literature and priority. Primary agent implemented different D7-coset and
+FC-only matrix engines, independent certificate checks, saved bounded probes,
+and integrated the final source/PDF.
+
+results/exceptional-leading.tex and output/pdf/exceptional-leading.pdf contain
+all proved extensions and qualifications. Existing kl-transfer.tex/PDF updated
+to reference this scope. star-boundary.tex remains unchanged and its editor
+left open. research/reproduce_en.py rebuilds proof certificates without network
+access or package installation. All reproduction steps passed.

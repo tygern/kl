@@ -1,0 +1,260 @@
+INDEPENDENT REFEREE AUDIT: AFFINE E8 AND INDEFINITE E10/E13 FAMILIES
+
+Verdict and scope
+
+All of the following claims pass the independent audit:
+
+(A) The affine-E8/E9 family b_k=t_(k gamma) b_0 t_(-k gamma), with the
+    specified length-27 b_0 and gamma=(1,1,1,1,1,0,0,0,0), consists of
+    distinct full-support terminals, has length 27+92k, and satisfies
+    mu(x,b_k)=0 for EVERY fully commutative x and every k>=0.
+
+(B) The secondary affine reflection family r_(beta+k delta) consists of
+    distinct full-support terminals of length 33+58k. Its five eligible FC
+    bottoms are the same for every k>=0. Its extensions by s_0 and s_1 are
+    terminals of length 34+58k, each with a unique eligible FC bottom.
+    The remaining odd-gap coefficients in these families are unresolved.
+
+(C) The specified quadratic real-root families in E10 and E13 give infinite
+    sets of distinct full-support terminals. For each upper endpoint, the
+    unique descent-compatible FC bottom has coefficient zero by parity.
+    Every FC lower endpoint therefore has coefficient in {0,1}. No exact
+    all-k length formula is needed or claimed for these indefinite families.
+
+These are assertions about explicit upper families. They are neither a
+classification of all terminals nor a proof of the assertion for arbitrary
+upper endpoints in an infinite E_n. Historical priority is not assessed.
+
+Independent implementation and reproducibility
+
+The code uses arbitrary-precision integer ROW matrices. It imports none of
+research/en_families/targeted.py or the family-discovery implementations.
+
+Run from any directory:
+  python3 research/en_affine_referee/verify_families.py
+  python3 research/en_affine_referee/verify_fc_catalogue.py
+  python3 research/en_affine_referee/verify_indefinite.py
+  python3 research/en_affine_referee/verify_indefinite_e10.py
+
+The outputs are certificate.json, fc-cover-certificate.json,
+e13-certificate.json, and e10-certificate.json in this directory. The
+corresponding verification logs record successful execution. The E10 script
+reuses the referee's exact arithmetic in verify_indefinite.py after selecting
+rank 10; it does not import the family-discovery code.
+
+1. Affine E8 positive family
+
+Number the graph by the chain 0-1-2-3-4-5-6-7, with node 8 adjacent to 2.
+Node 7 is the affine node. Let
+  delta=(2,4,6,5,4,3,2,1,3),
+  gamma=(1,1,1,1,1,0,0,0,0),
+  I={1,3,5,7,8}.
+The base word is
+  3 1 2 8 7 5 6 4 5 2 3 4 1 2 3 0 1 2 8 5 6 7 4 5 2 3 1.
+
+I checked directly that this word is reduced of length 27, its matrix W
+is an involution, and its support is the whole graph. The finite E8 root
+subsystem obtained by omitting node 7 has exactly 240 roots; gamma is one
+of them. Consequently gamma+delta is an affine real root. The element
+T=r_gamma r_(gamma+delta) acts by
+  T(a)=a-(a,gamma)delta.
+The matrix identity was checked exactly. Expanding T^k W T^(-k), using
+W(delta)=delta and (delta,gamma)=0, gives
+  b_k(alpha_j)=W(alpha_j)+k*d_j*delta,
+  d=(2,-1,1,-1,1,-1,1,-1,-1).
+This is a polynomial identity valid for all k, not extrapolation from samples.
+
+For j in I the base column is negative and d_j=-1; all other base columns
+are positive with d_j>0. Thus R(b_k)=I for every k>=0. Conjugation preserves
+the involution, so L(b_k)=I too. For every adjacent s,t with s in I, the
+base root W(alpha_s+alpha_t) is positive, and d_s+d_t>=0. Thus
+b_k(alpha_s+alpha_t) remains positive for all k. Since
+(b_k s)(alpha_t)=b_k(alpha_s+alpha_t), this proves the terminal property.
+
+Exact length, without affine-group enumeration
+
+Let Phi be the 240 finite roots. Positive affine real roots have the form
+a+n delta, a in Phi, where n>=n_min(a), with n_min=0 for positive a and
+n_min=1 for negative a. Write W(a)=eta+c delta, eta in Phi. The level c is
+the coordinate at node 7. Then b_k(a+n delta)=eta+(n+c+k*d(a))delta.
+The number of inverted roots on this string is
+  max(0,A+kB),
+  A=-c-n_min(a)+[eta is negative], B=-d(a).
+For each of the 240 roots, the verifier checks A>=0 whenever B>0 and A<=0
+whenever B<0. Hence each contribution is linear or identically zero for
+all k>=0. Their sum is exactly 27+92k. The stored classes give every pair
+(A,B) and its multiplicity, and the script recomputes all classes from roots.
+
+Let R=1+delta*d, where d is a row functional. The exact identities give
+b_k=W R^k, R^k=1+k delta*d, and length(R^k)=92k. The verifier constructs a
+reduced word of length 92 for R. Therefore a reduced base word followed by
+k copies of this word is reduced and represents b_k. In particular b_0 is
+a reduced prefix of b_k, proving full support for all k and providing a
+subword inclusion useful for the lower-endpoint assertions. Distinctness
+also follows directly from the nonzero linear matrix slope.
+
+Eligible-bottom uniqueness and coefficient vanishing
+
+The graph has maximum independent-set size 5. I has that size. Green's
+monomial TL a-function is the maximum size of an independent commuting
+factor. If x is FC and I is contained in both L(x) and R(x), then this
+a-function equals 5. The prefix i(I) and suffix i(I) put x in the monomial
+right and left cells of i(I), respectively. Green's singleton cell-
+intersection result forces x=i(I).
+
+I checked this deduction against the primary source itself:
+R.M. Green, On the Markov trace for Temperley--Lieb algebras of type E_n,
+arXiv:0704.0283, Definition 4.1 and Proposition 4.4(iv),(v), printed pp.9-11.
+The final paragraph of Lemma 5.2 uses the same cell-intersection argument.
+Local text: research/en_literature/green-en-trace.txt. This argument does
+not identify monomial TL cells with ordinary KL cells and does not use a
+trace formula with a non-FC upper endpoint.
+
+The only eligible x=i(I) has length 5, so its gap 22+92k is even and its
+ordinary coefficient is zero. For every other FC x, at least one descent
+of b_k is absent from the corresponding descent set of x. The classical
+descent criterion then gives zero except possibly at a cover.
+
+The possible covers are excluded independently, which strengthens the
+family theorem from a 0/1 bound to complete vanishing:
+* The verifier reconstructs all 44,199 listed E9 FC elements with unbounded
+  integer matrices. It proves each is FC by checking commuting descents
+  and every descending predecessor, and then checks all 297,936 ascents
+  for FC closure. A shortest omitted FC element would violate that closure.
+  Thus completeness is established rather than read from a status flag.
+* The complete catalogue has maximum FC length 44. For k>=1, b_k has
+  length at least 119, so no FC element can be a coatom.
+* For k=0, deletion of each letter of the fixed reduced 27-letter word
+  produces exactly 21 distinct Bruhat covers of length 26. None is FC.
+  All their reduced words are saved in fc-cover-certificate.json.
+
+It follows that mu(x,b_k)=0 for all FC x and all k>=0, with the standard
+zero convention outside strict Bruhat comparability.
+
+2. Secondary affine reflection family: verified structure, unresolved mu
+
+Let beta=(1,2,3,3,2,2,1,1,2). The vector beta-delta belongs to the finite
+E8 root system. Thus beta+k delta is a real root for every integer k>=0.
+Its reflection has columns
+  alpha_j-(alpha_j,beta)*(beta+k delta).
+The pairing vector is (0,0,-1,1,-1,1,-1,1,1), independent of k. Hence the
+descent set is J={3,5,7,8} on both sides, and every adjacent descent-root
+sum has pairing zero. These sums remain positive, proving terminality.
+The same 240-root inversion calculation gives length 33+58k for all k.
+The corresponding right translation has length 58 and gives a reduced
+base prefix for the whole family.
+
+The complete FC catalogue has exactly five elements containing J in both
+descent sets:
+  3 5 7 8;
+  0 3 5 7 8;
+  1 3 5 7 8;
+  0 1 3 5 7 8;
+  1 0 3 5 7 8.
+The verifier gives explicit subword positions for each in the base
+reflection. The reduced base-prefix relation puts all five below every
+later reflection. No other FC element can qualify because the descent
+sets are fixed and the catalogue is complete. Thus the five are eligible
+for EVERY k>=0, not just for the initially sampled k values.
+
+Generators 0 and 1 separately commute with these reflections, because
+their root pairings are zero. The extensions by s_0 and s_1 are involutions
+with descent sets J union {0} and J union {1}. Their root and root-sum
+images satisfy the same sign conditions for all k, and the exact inversion
+formulas give length 34+58k. Each descent set has maximum independent
+size 5, so the unique eligible bottom is its commuting product; the finite
+catalogue and explicit base subwords verify this independently.
+
+The bare-family gaps are 29+58k, 28+58k twice, and 27+58k twice. Parity
+settles the two even gaps only. Each extension has odd eligible gap
+29+58k. This audit proves no value or 0/1 bound for those remaining odd
+gaps. The positive family in section 1 does not settle them.
+
+3. Indefinite E10 and E13: quadratic real-root families
+
+Use the generalized E_n diagram with chain 0,...,n-2 and branch n-1 at 2.
+Both constructions use the affine-E8 parabolic on nodes 0,...,7 and n-1.
+Let delta be its null root, embedded with zeros on nodes 8,...,n-2, and
+gamma the finite-root vector recorded below. Set
+  T=r_gamma r_(gamma+delta), N=T-1.
+
+Important scope point: this delta is null on the embedded affine root
+space, but it is NOT in the radical of the full indefinite root form.
+Its ambient Cartan pairing is -1 at node 8. One must not use the affine
+linear-translation formula on arbitrary ambient roots. Instead, the
+verifier checks the full ambient matrices and proves N^3=0. Consequently
+  beta_k=T^k beta_0=beta_0+k*v+binom(k,2)*u,
+  v=N beta_0, u=N^2 beta_0, N u=0.
+This proves the quadratic formula for all k. Explicit sequences of simple
+reflections lower beta_0, gamma, and gamma+delta to simple roots. Thus they
+are REAL roots; a norm-two test alone would not suffice in indefinite type.
+Since T is a product of real-root reflections, every beta_k is real.
+
+E10 data:
+  beta_0=(3,7,10,9,7,6,4,3,1,6), base reflection length 101;
+  delta=(2,4,6,5,4,3,2,1,0,3);
+  gamma=(1,2,3,2,2,1,1,0,0,1);
+  v=(7,14,21,18,14,11,7,4,0,11), u=2 delta;
+  I={1,3,5,7,9}, maximum independent size 5.
+The pairing coefficients in the basis 1,k,binom(k,2) are
+  m0=(-1,1,-2,1,-1,1,-1,1,-1,2),
+  m1=(0,0,-1,1,-1,1,-1,1,-4,1),
+  m2=(0,0,0,0,0,0,0,0,-2,0).
+
+E13 data:
+  beta_0=(2,3,5,5,4,4,3,3,2,2,1,1,3), base reflection length 75;
+  delta=(2,4,6,5,4,3,2,1,0,0,0,0,3);
+  gamma=(1,2,3,2,2,1,1,0,0,0,0,0,1);
+  v=(8,16,24,21,16,13,8,5,0,0,0,0,13), u=4 delta;
+  I={0,3,5,7,9,11,12}, maximum independent size 7.
+The pairing coefficients are
+  m0=(1,-1,-1,1,-1,1,-1,1,-1,1,-1,1,1),
+  m1=(0,0,-2,2,-2,2,-2,2,-5,0,0,0,2),
+  m2=(0,0,0,0,0,0,0,0,-4,0,0,0,0).
+
+All coordinates of beta_0 are positive and v,u are nonnegative, so beta_k
+is strictly positive in every coordinate for all k>=0. The displayed
+pairing polynomials are positive exactly at I and nonpositive elsewhere.
+For every edge s--t with s in I, each coefficient of m_s(k)+m_t(k) in
+the basis 1,k,binom(k,2) is nonpositive. Therefore
+  r_(beta_k)(alpha_s+alpha_t)
+  =alpha_s+alpha_t-(m_s(k)+m_t(k))*beta_k
+is positive. This proves fixed right descent set I and right terminality
+for all k; the reflection is an involution, giving the left statements.
+
+Full support has a direct matrix proof. If an element omits generator j,
+row j of its root matrix equals row j of the identity, because every
+allowed simple reflection leaves the jth coordinate fixed. In E10,
+(alpha_1,beta_k)=1, so column 1 of r_(beta_k) differs from the identity
+in EVERY row; in E13 the same holds for column 0. Thus no generator can
+be omitted. Distinctness follows respectively from
+  E10: beta_k[0]=2k^2+5k+3,
+  E13: beta_k[0]=4k^2+4k+2.
+These coordinates strictly increase, and the fixed-pairing columns recover
+the roots from their reflection matrices.
+
+Green's maximal-independent-set argument gives the unique eligible FC
+bottom i(I), of odd length 5 or 7. Every real-root reflection is conjugate
+to a simple reflection, so its Coxeter length is odd. Hence the eligible
+gap is even, and its coefficient is zero. The missing-descent criterion
+gives mu(x,r_(beta_k)) in {0,1} for every FC x. No all-k length formula,
+ordinary a-function estimate, full interval computation, or KL recurrence
+is used in this conclusion.
+
+4. Parabolic extension and claim boundary
+
+The E9 family embeds in each E_n, n>=9, by keeping chain labels 0,...,7
+and mapping its branch label 8 to n-1. Every x below such an embedded
+upper endpoint has support in that standard parabolic. Ordinary KL
+polynomials and full commutativity restrict correctly, so the complete
+vanishing statement transfers to these embedded upper endpoints.
+
+The E10 and E13 families similarly embed in higher ranks, giving the 0/1
+bound for those explicit upper endpoints. The elements have full support
+in their native E10 or E13; in a strictly larger ambient E_n their support
+is the indicated proper parabolic. This transfer establishes neither
+full-support families in every rank nor an arbitrary-upper theorem for
+all infinite E_n.
+
+All completed verification runs pass. No final TeX source or README was
+edited by this referee task.

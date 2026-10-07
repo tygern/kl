@@ -1,0 +1,194 @@
+EXHAUSTIVE E8 TERMINALS BY RECURSIVE PARABOLIC PRUNING
+
+Outcome
+
+The search is complete, not length-bounded. It finds exactly 2,160 elements
+of W(E8) with no reduced expression ending in two noncommuting generators.
+Exactly 64 also have no reduced expression beginning in such a pair. These
+two-sided terminals consist of 58 products of commuting generators and six
+non-fully-commutative elements. The six lengths are 7,8,8,15,28,50. Each has
+one eligible fully commutative lower endpoint, with respective length gaps
+4,4,4,11,24,46.
+
+The recursive algorithm tests 143,660 candidate products across all ranks,
+and never enumerates or stores the full E8 group or full E7 group. The
+recorded E8 run used approximately 6 MB peak resident memory. Runtime and
+resource measurements are recorded in e8-recursive.json; they are machine-
+specific, not complexity guarantees.
+
+Files
+
+parabolic_terminals.cpp: exact root arithmetic and a flat E7-parabolic
+  implementation; E8 requires one complete E7 enumeration followed by only
+  240*576 = 138,240 products. Also includes the independent FC catalogue.
+recursive_terminals.cpp: reuses root arithmetic but replaces that complete
+  parabolic enumeration by recursive one-sided pruning along a subgroup chain.
+e6-validation.json, e7-validation.json, e8-terminals.json: flat outputs.
+e6-recursive.json, e7-recursive.json, e8-recursive.json: recursive outputs.
+verify_outputs.py: Python unbounded-integer matrix cross-check of all terminal
+  words, descents, terminal conditions, candidate bottoms, and agreement with
+  the independently implemented D7-coset algorithm.
+cross-checks.json: successful cross-check output.
+reproduce.py: compiles both C++ programs with assertions enabled, runs them
+  for E6/E7/E8, and invokes the cross-check. It also saves source hashes.
+
+Run: python3 research/en_e8/reproduce.py
+
+Diagram and terminology
+
+Use E8 generators 0,1,2,3,4,5,6 in a chain, with 7 adjacent to 2.
+For a subset K of the simple generators, write W_K for its standard
+parabolic subgroup. An element is right terminal relative to K if it has
+no reduced expression in W_K ending in two noncommuting generators.
+Two-sided terminal means the same condition for w and w inverse.
+
+The exact right-terminal test, for each s in K with w(alpha_s) negative,
+requires w(alpha_s + alpha_t) positive for every adjacent t in K. This is
+equivalent to the reduced-expression definition: s is a right descent of w,
+and t is a right descent of ws, precisely when w admits a reduced suffix ts.
+Since s(alpha_t)=alpha_t+alpha_s for adjacent simply laced generators, the
+test is a sign test on root sums. The implementation checks the left
+condition by applying this same test to w inverse.
+
+Completeness lemma
+
+Let J subset K. Every w in W_K has a unique standard parabolic decomposition
+w=a*v with a in W_K^J (the minimal right-coset representatives), v in W_J,
+and length(w)=length(a)+length(v).
+
+If w is right terminal relative to K, then v is right terminal relative to
+J. Indeed, a forbidden reduced suffix ts in v remains a forbidden reduced
+suffix in the length-additive concatenation a*v. Equivalently, a preserves
+the signs of all roots in the J root subsystem, because a is a minimal
+right-coset representative. Thus the right-terminal test for s,t in J
+has the same result in w and v.
+
+Consequently the following procedure gives ALL right-terminal elements of
+W_K: take every a in W_K^J and every right-terminal v in W_J, form a*v,
+and apply the right-terminal test for K. No element can be missed, and
+unique parabolic decomposition guarantees that no product is duplicated.
+The recursive program additionally asserts uniqueness of accepted states.
+
+Minimal coset enumeration
+
+Starting from the identity representative, multiply on the left by each
+generator in K. Repeatedly remove right descents in J to obtain the minimal
+element of that right coset. Each removal strictly lowers Coxeter length,
+so it terminates; absence of right descents in J characterizes the unique
+minimal representative. Store each resulting representative once and
+continue breadth-first closure. Since the generators in K act transitively
+on the right cosets, this visits every coset. The process never truncates
+by length or by a candidate cap. Expected coset cardinalities are asserted
+as a separate check.
+
+The program computes full root permutations of each representative and
+explicitly verifies positivity on all positive roots in the J subsystem.
+It also checks the resulting reduced lengths and inverse words of every
+retained right-terminal element.
+
+Recursive chain and exact counts
+
+Starting from the trivial subgroup, add generators in the order
+7,2,3,1,0,4,5,6. The successive types are A1,A2,A3,D4,D5,E6,E7,E8.
+
+  Type   Order       New cosets  Products tested  Right terminals
+  A1          2          2               2                2
+  A2          6          3               6                3
+  A3         24          4              12                6
+  D4        192          8              48               24
+  D5       1920         10             240               40
+  E6      51840         27            1080               72
+  E7    2903040         56            4032              576
+  E8  696729600        240          138240             2160
+
+The correctness lemma applies at every stage. Starting with the identity
+in the trivial group proves by induction that each row is exhaustive.
+Taking the inverse test after the final row yields every two-sided terminal.
+
+Fully commutative bottoms
+
+The code independently generates all fully commutative elements by ascent
+BFS. A candidate w is FC iff its right descent set commutes and every
+descending predecessor ws is FC. This is an exact simply laced criterion:
+a forbidden braid lies either in a proper reduced prefix or at the suffix;
+in the latter case its braid relation produces adjacent right descents.
+All shorter FC levels have already been generated when the criterion is
+applied. Prefixes of FC words are FC, so restriction to FC ascents loses no
+FC element. The E8 count is 10,846.
+
+Every left and right length-three star move on an FC element is checked to
+remain FC. The counts are 3,620 in E6, 16,776 in E7, and 77,476 in E8.
+For every non-FC terminal b the program tests every FC x for both descent
+inclusions and x <= b using the exact lifting recurrence for Bruhat order.
+No upper or lower length cutoff is used.
+
+E8 terminal certificate
+
+The flat output uses the following reduced words (spaces separate labels):
+
+1. 1 3 2 7 2 1 3
+   length 7; L=R={1,3,7}; eligible bottom 1 3 7; gap 4.
+
+2. 1 3 2 5 7 2 1 3
+   length 8; L=R={1,3,5,7}; eligible bottom 1 3 5 7; gap 4.
+
+3. 6 1 3 2 7 2 1 3
+   length 8; L=R={1,3,6,7}; eligible bottom 1 3 6 7; gap 4.
+
+4. 1 3 2 5 4 3 7 2 1 3 2 4 3 5 7
+   length 15; L=R={1,3,5,7}; eligible bottom 1 3 5 7; gap 11.
+
+5. 1 3 2 5 4 3 7 2 1 0 3 2 1 4 3 2 5 4 3 7 2 1 3 2 4 3 5 7
+   length 28; L=R={1,3,5,7}; eligible bottom 1 3 5 7; gap 24.
+
+6. 7 5 3 4 2 3 1 2 7 0 1 2 3 4 5 6 2 1 0 3 2 1 4 3 2 5 4 3 7
+   2 1 0 3 2 1 4 3 2 5 4 3 7 2 1 3 2 4 3 5 7
+   length 50; L=R={1,3,5,7}; eligible bottom 1 3 5 7; gap 46.
+
+The recursive output can choose different reduced expressions for the same
+elements. The Python cross-check compares exact integer matrices, not strings.
+Every reported eligible bottom is a product of commuting generators and
+is below its terminal by a direct subword/support check as well.
+
+Implication for the leading-coefficient theorem
+
+Parity makes the five even-gap terminal coefficients zero. The sole odd-gap
+case is supported on {1,2,3,4,5,7}, a standard D6 parabolic. Gern's generators
+(1,2,3,4,5,6) map to E8 labels (1,7,2,3,4,5), exactly as in E7 with branch
+label changed. It is the same (x6,w6) pair, with mu=1. Combined with the
+previously audited terminal-reduction argument and standard-parabolic KL
+invariance, this proves the ordinary equal-parameter FC-lower-endpoint
+0/1 assertion for E8 as well. This is a computer-assisted mathematical
+conclusion. No historical priority claim is made.
+
+Independent D7 implementation audit
+
+I read research/en_independent/e8_d7_cosets.cpp. Its parabolic J={1,...,7}
+is D7, with 322,560 elements and longest length 42. Its vector
+beta=(4,7,10,8,6,4,2,5) has simple-coroot pairings delta_{s,0}, so it is
+the fundamental weight at node 0. Its stabilizer in W(E8) is exactly W_J.
+Thus its 2,160-point orbit parametrizes all right cosets, independently of
+the minimal-representative normalization used above. Latest-first path
+recovery correctly realizes the left-reflection BFS, and the explicit
+absence of right descents in J verifies minimality.
+
+The composition formulas, inverse order, root-sum terminal test, FC
+recurrence, and Bruhat comparison are correct. I found no blocking error.
+This implementation tests 280 D7 right-terminal factors times 2,160 cosets,
+or 604,800 products. It independently obtains exactly the same 2,160 right
+terminals, 58 commuting terminals, six non-FC terminals, and eligible
+bottoms. The matrix cross-check verifies equality of the actual group
+elements for all six rows. It also checks the complete D7 length histogram
+and the convolution of the D7 and coset histograms against the E8 Poincare
+polynomial, coefficient by coefficient.
+
+Reproducibility status
+
+Both methods validate against the existing independent complete E6 and E7
+enumerations. The E8 flat and recursive methods terminate cleanly with all
+assertions enabled. A preliminary /usr/bin/time -l wrapper encountered a
+sandbox restriction on sysctl after the program itself had completed; a
+direct rerun exited zero, and all saved certificates come from clean direct
+runs. The recursive binary records peak RSS through getrusage directly.
+
+No source under the final document or README was modified by this task.

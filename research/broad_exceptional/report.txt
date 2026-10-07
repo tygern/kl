@@ -1,0 +1,155 @@
+Exceptional search: complete E6 and E7 lower-FC mu bound
+Research date: 2026-10-07 UTC
+
+RESULT
+
+Exact exhaustive enumeration, classical star transport, and Gern's type-D
+result give a computer-assisted proof:
+
+  If W has type E6 or E7, x is fully commutative, and w is arbitrary,
+  then mu(x,w) belongs to {0,1}.
+
+The proof fragment is e6_e7_proof.inc. Historical priority is unconfirmed.
+The proof does not require the September 2026 combinatorial-invariance input.
+It also does not construct the originally sought nonclassical D-model interval.
+Star operations preserve mu here; no full interval isomorphism or equality of
+complete KL polynomials is claimed.
+
+NUMBERING AND TERMINALS
+
+Use chain 0-1-2-3-...-(r-2), with node r-1 attached to node 2.
+A terminal (Gern: weakly bad) has no reduced expression beginning or ending
+with two noncommuting generators. An eligible bottom is fully commutative,
+below the terminal, and has left/right descent sets containing the respective
+terminal descent sets. Descent mismatch forces mu=0 outside covers.
+
+E6: 51,840 elements; 72 roots; 662 FC elements; longest length 36.
+There are 22 commuting terminals and one other terminal:
+  word 1325213, length 7; unique eligible bottom 135, length 3.
+The length difference is 4, so mu=0 by parity.
+
+E7: 2,903,040 elements; 126 roots; 2,670 FC elements; longest length 63.
+There are 36 commuting terminals and four other terminals:
+  word 1326213, length 7; bottom 136, length 3; difference 4; mu=0.
+  word 13256213, length 8; bottom 1356, length 4; difference 4; mu=0.
+  word 132543621324356, length 15; bottom 1356, length 4;
+    difference 11; mu=1 by Gern.
+  word 1325436210321432543621324356, length 28;
+    bottom 1356, length 4; difference 24; mu=0 by parity.
+
+The length-28 terminal has full E7 support. The length-15 terminal lies in
+standard D6 on nodes {1,2,3,4,5,6}. Gern's generators 1,2,3,4,5,6 map to
+E7 nodes 1,6,2,3,4,5. An exact signed-permutation check identifies the pair as
+  x=(-1,-2,4,3,6,5), w=(-1,-6,3,-4,5,-2).
+Thus it is precisely Gern's positive bad pair from Lemma 4.5.5.
+
+CERTIFICATION
+
+The C++ engine uses integral roots and represents each element by its images
+of all simple roots, a faithful representation. Breadth-first multiplication
+by every generator enumerates the full group and determines length. Root signs
+independently check every descent and corresponding length change. The program
+also checks every simple involution.
+
+The E7 length histogram matches the product of 1+q+...+q^m for exponents
+m=1,5,7,9,11,13,17. All 8,388 right star moves on FC elements preserve FC;
+inversion supplies the same number of left moves. Every FC weakly bad element
+is a commuting product. Full commutativity is computed using the exact
+recursive criterion explained in the proof fragment.
+
+The parent independently implemented integer-matrix enumerations of E6 and
+E7, reproducing all terminal lists, eligible bottoms, FC counts, and star
+closure checks. These implementations do not import this engine. The Python
+E6 implementation in this directory also reproduces the C++ results.
+
+Reproduce from the repository root:
+  python3 research/broad_exceptional/exact_e.py
+  clang++ -std=c++17 -O3 research/broad_exceptional/enumerate_bad.cpp -o research/broad_exceptional/enumerate_bad
+  research/broad_exceptional/enumerate_bad 6
+  research/broad_exceptional/enumerate_bad 7
+
+Saved outputs: e6_bad.json, e7_bad.json, and initial e6_bad.json.log.
+Source/output SHA256 hashes are in checksums.txt.
+No E8 enumeration or theorem is claimed.
+
+PROOF AUDIT
+
+Induct on the upper length. First dispose of incomparable/equal pairs, even
+length differences, and covers. At remaining odd differences d>=3, a descent
+mismatch forces mu=0. Otherwise upper descent sets are commuting because they
+are contained in the corresponding FC bottom descent sets. If the upper is
+not weakly bad, a reduced expression starts or ends with adjacent generators,
+giving a decreasing length-3 star. The same star is defined on the FC bottom
+and preserves FC. Symmetric mu transport applies. The new difference is d or
+d-2, hence stays positive; if the endpoints are incomparable, mu=0, otherwise
+the strictly shorter upper permits induction.
+
+All weakly bad terminals have already been handled above. This proof does not
+need the old both-FC bound or an unsupported extension of Gern's Proposition
+1.1.28 to E: the enumeration checks that FC terminals are commuting products.
+Use symmetric mu or explicitly exclude covers when stating star transport;
+naive ordered-mu transport can reverse a cover's endpoints.
+
+LITERATURE AUDIT: PRIORITY NOT CERTIFIED
+
+1. R.M. Green, Leading coefficients of Kazhdan-Lusztig polynomials and fully
+commutative elements, arXiv:0801.1650 (2008), published J. Algebraic Combin.
+30 (2009). https://arxiv.org/abs/0801.1650
+The main theorem is affine A. The introduction reports computational evidence
+for broader types, not a complete E theorem. Local supplied text:
+sources/green-leading-2008.txt; Propositions 2.1, 2.5 and Theorem 3.1 use
+preprint numbering. Published main theorem is Theorem 4.1.
+
+2. T.C. Gern, Leading Coefficients of Kazhdan-Lusztig Polynomials in Type D,
+arXiv:1304.6074 (2013). https://arxiv.org/abs/1304.6074
+Theorem 4.5.11 is the full type-D assertion. Lemma 4.5.5 gives the D6 value 1.
+Definition 2.1.1 and the proof of Theorem 4.5.11 supply the terminal strategy.
+Proposition 1.1.29 cites Shi (2005), Proposition 2.10, for FC star closure.
+Local full text: sources/gern-thesis-2013.txt.
+
+3. Michael S. Chmutov, The Structure of W-graphs Arising in Kazhdan-Lusztig
+Theory, Michigan PhD thesis (2014), Section 2.3, Theorem 2.3.8.
+https://deepblue.lib.umich.edu/handle/2027.42/108802
+Institutional PDF returned 403; the author-uploaded full text was inspected:
+https://www.researchgate.net/publication/295404674_The_Structure_of_W-graphs_Arising_in_Kazhdan-Lusztig_Theory
+The abstract and introduction explicitly credit affine A to Green and D to
+Gern, and state that this thesis proves B. Exceptional E types appear in
+quasi-minuscule quotient W-graphs, a different scope. Proposition 2.3.3
+articulates FC-bottom transport along simple bonds under descent containment.
+Nothing inspected establishes the complete E6/E7 assertion.
+
+4. R.M. Green, On the Markov trace for Temperley-Lieb algebras of type En,
+arXiv:0704.0283. https://arxiv.org/abs/0704.0283
+Theorem 1.2 explicitly assumes both endpoints fully commutative. It does not
+cover arbitrary upper endpoints. Its En includes an infinite graph family.
+
+5. R.M. Green, Generalized Jones traces and Kazhdan-Lusztig bases,
+arXiv:math/0509362. https://arxiv.org/abs/math/0509362
+Remark 7.12 gives the older both-FC 0/1 assertion in ADE, citing Graham.
+
+6. Brant C. Jones, Leading coefficients of Kazhdan-Lusztig polynomials for
+Deodhar elements, arXiv:0711.1391. https://arxiv.org/abs/0711.1391
+Theorem 6.1 handles Deodhar upper endpoints in finite exceptional types.
+Our noncommuting weakly bad terminals are not FC and hence not Deodhar.
+
+7. R.M. Green, Star reducible Coxeter groups, arXiv:math/0509363v2.
+https://arxiv.org/abs/math/0509363
+Theorem 6.3 includes En and all finite Coxeter groups. The definition concerns
+reducing FC elements, not classifying all bad elements. This theorem alone
+does not establish the full FC-bottom/arbitrary-top 0/1 assertion.
+
+8. Selina Gilbertson, directed by Dana Ernst, Investigation of T-avoiding
+elements of Coxeter groups, primary public lecture, March 3, 2013.
+https://speakerdeck.com/dcernst/investigation-of-t-avoiding-elements-of-coxeter-groups
+T-avoiding means weakly bad. Slides discuss A/B/C/D/F and ask about other types;
+there is no E classification. This does not exclude subsequent E work.
+
+Queries included fully commutative + E6/E7/E_6/E_7 + coefficient/mu/0-1;
+Gern + E6/E7/exceptional; T-avoiding + type E; bad elements + type E;
+and Chmutov + exceptional. Relevant hits concern both-FC or upper-Deodhar
+bounds, cells, or minuscule/quasi-minuscule W-graphs.
+
+Precise supportable conclusion: no primary source proving the complete
+E6/E7 FC-bottom/arbitrary-top bound was located in this search. That is not
+a certification of historical novelty. Parent has assigned a separate
+priority audit and an independent proof/code referee.

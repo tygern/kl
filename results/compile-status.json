@@ -1,0 +1,25 @@
+{
+  "compiler": "Codex desktop native LaTeX compiler",
+  "documents": [
+    {
+      "path": "/Users/ic/workspace/kl/results/kl-transfer.tex",
+      "status": "success",
+      "source_sha256": "d646774e6f64ffdc0736b87168aa309cb11d74851e8ebb56bfe66948e7c149c8"
+    },
+    {
+      "path": "/Users/ic/workspace/kl/results/exceptional-leading.tex",
+      "status": "success",
+      "source_sha256": "32784b0ba63feff35f3c618e83225a06b13313be1cec6bab3709114ee146325c"
+    },
+    {
+      "path": "/Users/ic/workspace/kl/results/star-boundary.tex",
+      "status": "success",
+      "source_sha256": "d4a8817adaea90c3d762cffcf4e025d56a3c89e06b80ed4becab50729ed7a350"
+    }
+  ],
+  "pdf_export": "All three exported successfully with latexmk; see pdf-build-manifest.json.",
+  "checked_this_turn": [
+    "/Users/ic/workspace/kl/results/exceptional-leading.tex"
+  ],
+  "unchanged_document": "star-boundary.tex retains its previously successful native compiler result; editor left open."
+}

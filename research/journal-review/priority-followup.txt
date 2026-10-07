@@ -1,0 +1,67 @@
+FOLLOW-UP PRIORITY AUDIT: FINITE EXCEPTIONAL RESULT
+Independent specialist-referee follow-up, 7 October 2026.
+Scope: exceptional-leading.tex; no manuscript edits. This supplements finite.txt and final-finite.txt. Recommendation remains MINOR REVISION for the revised finite portion, conditional on a permanent complete computational supplement. The priority searches below strengthen the positioning, but do not prove novelty.
+
+1. Direct inspection of the official PyCox source and data
+
+Official author page: https://pnp.mathematik.uni-stuttgart.de/idsr/idsr1/geckmf/
+Official repository: https://github.com/geckmf/PyCox
+Inspected source: https://raw.githubusercontent.com/geckmf/PyCox/main/chv1r6180.py
+Repository commit returned by the GitHub API: 750a004cbc6090ff43676397b15f77e64a0a1215, 2023-05-15T13:14:41Z.
+Permanent source locator: https://github.com/geckmf/PyCox/blob/750a004cbc6090ff43676397b15f77e64a0a1215/chv1r6180.py
+Internal banner is version 1r6p180, 27 January 2014. Download SHA256: 6677f1994d96eaba3a3c86ab3eb4d1f944d11c837a9030d7ae59d10f3f80833b.
+
+The actual source and API metadata are saved under priority-sources, together with inspect_pycox.py and its output pycox-data-inspection.json. The script statically parses constant tables; it does not import PyCox or run any large cell calculation. A second execution reproduced the JSON exactly.
+
+Findings:
+* E7KLCELLREPS (lines 14065–14246): 56 records, 128 seed words, sum of representative cell sizes 17938.
+* E8KLCELLREPS (lines 14271–15227): 106 records, 678 seed words, sum of representative cell sizes 646270.
+* Both have precisely the keys a, character, distinv, elms, replstar, size, special. All elms lists initially are empty. These are cell-reconstruction seeds and character/a-function data, not tables of all pairwise mu coefficients. There is no terminal-list field.
+* klcellreps (15273 onward) expands the seed words through star operations; cellrepstarorbit (15362 onward) reconstructs the star orbits of cells. This is excellent prior computational information, but its advertised output is not the terminal classification in the manuscript.
+* klcells (12013 onward) computes cells and representative W-graphs using induction from proper parabolics. At 12179–12183 it invokes relklpols and accumulates mpols into allmues; the latter supplies the displayed “mues” output at 12252. The E6 “mues:1” example (12105) therefore reports what occurred in that calculation, not an advertised all-pairs FC-lower/arbitrary-upper theorem. E7's example includes 1,2,3,4,6,5 (12119).
+* relklpols (10456 onward) works with a fixed parabolic cell in the usual cell-induction call. Its documentation also describes broader inputs. Separately, klpolynomials (10101 onward) explicitly computes a full polynomial matrix. The existence of that general algorithm is not evidence that a complete exceptional matrix was computed, checked for the present bound, or published as a theorem.
+* Source searches for fully/avoiding/weakly produced no mathematical FC-bottom theorem or terminal-classification routine in this snapshot. This last negative observation is limited to the inspected file, not all programs ever used by the authors.
+
+2. A rigorous reason cell W-graphs alone do not settle the residual pairs
+
+Geck–Halls, On the Kazhdan–Lusztig cells in type E8, Math. Comp. 84 (2015), 3029–3049, DOI https://doi.org/10.1090/mcom/2963; preprint https://arxiv.org/abs/1401.6804. Local full text: research/exceptional_priority/geck-halls.txt. Remark 2.1, printed preprint p.4, gives the W-graph action: T_s e_y is scalar when s is a left descent of y; otherwise its off-diagonal terms are tilde-mu(x,y)e_x for x with s a left descent. Consequently a pair is visible in this action only across a difference of left descent sets. If L(x)=L(y), neither orientation contributes an off-diagonal action entry. The right action has the analogous restriction using R. This is an elementary consequence of the displayed multiplication formula, not an inference from missing keywords.
+
+The actual PyCox wgraph constructor (9783–9808) applies the condition “s in self.Isets[x] and not s in self.Isets[y]”. The terminal residual pairs in this manuscript have equal left and right descent sets. Thus even complete action matrices would not directly display these residual values. This does NOT mean that intermediate polynomial caches never compute them, that information cannot be recovered by additional calculations, or that the general KL algorithm lacks the capability.
+
+Suggested manuscript wording:
+“The exceptional cell computations of Geck–Halls do not by themselves provide the residual coefficients used below: the W-graph action records a pair only across a difference of descent sets [Remark 2.1], whereas our residual pairs have equal left and right descent sets.”
+A footnote may add that this concerns published outputs, not possible intermediate calculations.
+
+Geck–Halls Sections 4 and 6 concern leading coefficients of character values, distinguished involutions, a-values, and reconstruction from 106 cells. Those representation-theoretic leading coefficients must not be identified with the ordinary KL polynomial coefficient mu(x,w) appearing here. The Geck PyCox paper, https://arxiv.org/abs/1201.5566, supplies prior general algorithms rather than the specific theorem under review. No FC-lower/all-upper 0/1 assertion or the manuscript's exact non-FC terminal lists was located in these primary texts or this official data interface.
+
+3. Full Shi papers: hypotheses, conclusions, and relevance
+
+Downloaded and text-extracted both papers from Nankai's primary institutional mirrors:
+A. Left cells containing a fully commutative element:
+https://cfc.nankai.edu.cn/_upload/article/files/51/85/f93474b642b19b7452a2005acc83/48ff05ba-d520-4d7a-88dd-5c5aeaed268a.pdf
+B. Fully commutative elements and Kazhdan–Lusztig cells, II:
+https://cfc.nankai.edu.cn/_upload/article/files/33/c9/99a45e764e18b406dc60b6f33ed6/8e272b77-5452-43ef-b007-c55b9d861091.pdf
+Saved as priority-sources/shi-leftcells.pdf/.txt and shi-fccells-ii.pdf/.txt. These replaced failed direct ECNU links fulc3b.pdf and fulc1.pdf; failures must not be represented as absent papers.
+
+Paper A is 14 pages. Its Section 1.8 defines Fc as a SUBSET OF FC ELEMENTS with a one-sided descent-removal property, and Fc' as a still smaller subset. Its Theorem 2.1 (p.7) describes elements z in the SAME LEFT CELL as w in Fc': z is a length-additive left extension of w; uniqueness follows under additional minimality conditions. Lemma 1.9 gives a descending right-star sequence inside Fc' to w_K. This is relevant structural background, but is not a classification of arbitrary non-FC elements terminal on both sides. In particular its Fc notation should not be mistaken for the non-FC terminal obstruction set. The full proof and concluding remarks develop left-cell minimal elements, not numerical 0/1 bounds for ordinary mu with arbitrary upper endpoint. The Introduction explicitly says its Weyl/affine Weyl conclusion was already obtained in Shi's earlier Fully commutative elements in Weyl and affine Weyl groups; that earlier result should be respected as prior cell structure, not misreported as the bound here.
+
+Paper B, Theorem 2.1 (p.5), equates FC closure under the indicated two-sided preorder with being a union of two-sided cells. Immediately preceding it, and again in Lemma 2.2's proof, the applicable irreducible diagrams are nonbranching, excluding affine F4. The branching D/E diagrams therefore cannot be brought into the proposed 0/1 theorem by this equivalence. Its Appendix gives certain low-rank right-cell graphs, not E6/E7/E8 terminal lists. Its graphs use nonvanishing KL adjacency, which alone does not specify the magnitude of every coefficient. No present bound or exact terminal lists were found in these two full primary texts.
+
+Additional related source previously examined: Green–Losonczy https://arxiv.org/abs/math/0102003, Theorem 2.2.3 and Example 2.2.5. The projection/cell-closure hypotheses fail in D and E; one cannot simply invoke that theorem for exceptional finite ADE. The direct Shi checks support, rather than replace, this distinction.
+
+4. Laird follow-up check, 2016–2026
+
+Laird's 2016 thesis is primary evidence for the earlier open problem:
+https://in.nau.edu/department-mathematics-statistics/wp-content/uploads/sites/377/2018/08/LairdThesis-ek.pdf
+Alternative official author/advisor copies:
+https://legacy.nau.edu/wp-content/uploads/sites/145/2018/08/LairdThesis-ek.pdf
+https://danaernst.com/scholarship/LairdThesis.pdf
+Section 5.3, printed p.63/PDF p.67, leaves the type E_n T2-avoiding classification open at that date. In simply laced type, the manuscript's two-sided terminal condition is the same relevant avoidance condition. This is useful historical positioning, not proof it remained open for the next decade.
+
+I checked the advisor's current publication/thesis list, https://danaernst.com/scholarship/academic-writing/, covering theses through May 2026, and his April 2026 CV, https://danaernst.com/scholarship/CV-Ernst.pdf. I also checked Laird's January 2022 CV at https://statistics.arizona.edu/sites/default/files/Laird_CV%20Jan%202022_0.pdf and the NAU thesis index https://nau.edu/math/masters-degrees/ms-mathematics/masters-theses/. These identify the 2015–2016 project and subsequent related braid/combinatorics work, but I located no listed sequel asserting the E_n classification. Targeted searches included the exact thesis title, Laird+Coxeter, T-avoiding+Coxeter, and year-restricted variants. The search output is dominated by the thesis and earlier talks; unrelated permutation-pattern “T-avoiding” hits were not counted as evidence. No comprehensive citing-article export from MathSciNet, zbMATH, Scopus, or Web of Science was obtained. Thus this is a bounded author/source check, not a certified exhaustive citation audit. Search-engine crawl dates were not treated as publication dates.
+
+5. Referee conclusion and defensible positioning
+
+No blocker or exact predecessor was found. Confidence that the INSPECTED sources do not explicitly contain the present theorem is high; confidence that the theorem has never appeared anywhere remains moderate. The affirmative case for publication should be the finite ADE completion, a small explicit exceptional obstruction list proved exhaustive with inspectable code, and the analytic maximum-independent-descent argument reducing eligible FC bottoms to unique products. The use of Gern's D6 value should remain explicit. The terminal list is computational structural information, not a new conceptual classification of all exceptional cells or a new KL algorithm.
+
+This direct source inspection removes the particular suspicion that the theorem is already verbatim or immediately certified by the advertised PyCox/Geck–Halls W-graph output. It does not support “first ever” wording or a claim that the relevant coefficients were never computed. A concise, reproducible specialist contribution remains defensible. Keep the manuscript's priority caveat, cite the actual predecessor scopes, and archive the full terminal-exhaustiveness/certificate supplement permanently. I see no reason to delay submission indefinitely for an impossible proof of negative priority.

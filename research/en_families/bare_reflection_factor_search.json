@@ -1,0 +1,14 @@
+{
+  "6": {
+    "found": false,
+    "weak_prefixes": 250,
+    "tests": 7527,
+    "minimal_parabolics": 46
+  },
+  "8": {
+    "found": false,
+    "weak_prefixes": 250,
+    "tests": 10507,
+    "minimal_parabolics": 65
+  }
+}

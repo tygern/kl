@@ -1,0 +1,74 @@
+FINAL SOURCE-PROOF AUDIT ADDENDUM
+
+Audited source: results/exceptional-leading.tex
+SHA-256:
+c5edb55e32e110d47f40e5c32ebc8552bc1b1d2889978d0684fd96bce760e9fd
+
+Verdict: no remaining mathematical blocker found in the finite exceptional,
+maximum-descent, affine-family, or indefinite-family proofs. The final
+source accurately separates whole finite-type theorems from explicit
+infinite upper families and from conditional combinatorial-invariance
+transfer. Historical priority remains explicitly unconfirmed.
+
+This addendum audits source content. Native compilation and PDF export/QA
+are handled separately by the parent task and are not claims of this audit.
+
+Exact transcription checks completed against independent certificates:
+
+1. All six E8 terminal words, including the concatenated length-50 word,
+   agree with the exhaustive flat-parabolic certificate.
+2. The affine base word and every entry of the displayed 9-by-9 B0 matrix
+   agree with the independent row-matrix certificate.
+3. The affine inversion-class table has exactly the five active classes
+   (A,B)=(0,1),(0,2),(1,0),(1,1),(1,2), with multiplicities
+   44,8,1,20,6. The other 161 root strings contribute zero. The table sums
+   to 27+92k exactly.
+4. In E10 and E13, the closed formula
+     beta_k=beta0-a*k*gamma+(a*k*k+3*k)*delta
+   agrees with the independently verified binomial formula, with a=1,2.
+   The pairings (beta0,gamma)=-3 and (beta0,delta)=-a were checked again.
+5. The displayed operator identity
+     (T-1)z=(z,delta)gamma-((z,gamma)+(z,delta))delta
+   agrees with direct reflection multiplication on every simple-basis
+   vector in both ranks. Its square on beta0 is 2a*delta and its cube
+   vanishes, giving the stated all-k formula.
+6. The displayed pairing polynomials agree with the certificate
+   coefficients. In particular the node-8 terms are
+   -1-k*k-3*k in E10 and -1-2*k*k-3*k in E13.
+
+Proof checks:
+
+* The finite-type star induction excludes covers before transport and
+  uses symmetric mu correctly, so starred order reversal causes no gap.
+* The E8 pruning argument is exhaustive by unique parabolic decomposition;
+  the recursive and D7 implementations provide independent decompositions.
+* Green's maximum-independent-set uniqueness deduction uses the monomial
+  TL a-function and the singleton left/right cell intersection. It does
+  not confuse these cells with ordinary KL cells.
+* The affine complete-vanishing theorem properly excludes all cover
+  exceptions using the independently certified FC maximum length 44 and
+  the 21 base covers, none fully commutative.
+* The indefinite all-k argument treats the embedded affine null root as
+  non-null in the ambient indefinite form. Its nilpotent operator argument
+  justifies quadratic, rather than incorrectly linear, root growth.
+* Real-root membership is proved by actual lowering certificates and
+  conjugation, not merely inferred from squared norm 2.
+* Positivity, fixed descents, terminal root-sum signs, full support, and
+  distinctness hold for every k>=0. Reflection parity and the maximum
+  independent sets prove the coefficient bounds without an all-k length
+  formula.
+* Standard-parabolic transfer retains the smaller support; full support
+  is only claimed in the native E9, E10, and E13 groups.
+
+The three wording issues identified during this final audit have been
+corrected in the source snapshot hashed above:
+
+* Complete-group enumeration is explicitly restricted to E6 and E7.
+* The E7-parabolic method is described by its actual minimal-coset
+  normalization procedure, rather than incorrectly as the D7 orbit method.
+* The Boolean-element comparison uses base lengths only for the base
+  elements. The separate statement that all but finitely many family
+  members are non-Boolean follows correctly from distinctness and the
+  finiteness of the Boolean set in fixed rank.
+
+No final TeX source, bibliography, or README was edited by this referee.

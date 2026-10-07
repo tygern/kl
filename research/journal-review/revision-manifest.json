@@ -1,0 +1,17 @@
+{
+  "status": "reviewer feedback implemented; novelty and public archival remain unconfirmed",
+  "files": {
+    "research/journal-review/check_finite_descents.py": "8e74199862ab737026d243b0d7c467ef8946325bbdcff4c249eab21bf511218d",
+    "research/journal-review/correctness.txt": "e35368a591428c16f24410f3b903cac372b234692279e44d4daca9dd9a82dde3",
+    "research/journal-review/correctness_checks.py": "a50e087bd47681b1cf44932640272c91a5c517ee5d4c214f5c4be8bfb175fff0",
+    "research/journal-review/final-correctness.txt": "b2ecd3d985cc1df33ebfc703eb7608a16c7b2e23d096c438eb7cbefb20d4d219",
+    "research/journal-review/final-finite.txt": "293b9437dbddf52cd19f14b2c7f1b2a3ca1101b6361365f53c26a1b541e6badb",
+    "research/journal-review/final-significance.txt": "f63db87bbf9f7512ddab802a21c7ef67e22c7116b2aba876f0872586d287b088",
+    "research/journal-review/finite-descents.json": "9c939593198d97b626168ed10fd9d0a8ce5a7680b4889b045d3e6f76506859c5",
+    "research/journal-review/finite.txt": "90b7c1baf9f82d375894ae28b082d1f0c808a27a50115937f8163dc149d35e39",
+    "research/journal-review/response-to-referees.txt": "054e65755b9632a57d59152ce20e036adf5ff4f1e485fb91566c2b2cd85154f1",
+    "research/journal-review/significance.txt": "9531fd196c155cc50e9e354e77c2b55ee396aaa901ae394ac84910a3eadcae10",
+    "results/exceptional-leading.tex": "9518ff26aef8f2eccc0cd47b02341e37ed784887c81a3d5c618f259ecb3f11c5"
+  },
+  "open_editor_preserved": "/Users/ic/workspace/kl/results/star-boundary.tex"
+}

@@ -1,0 +1,150 @@
+STRUCTURAL LEMMAS FOR THE GENERALIZED E_n INVESTIGATION
+Checked 2026-10-07 UTC. Graph convention: chain 0--1--...--(n-2),
+with vertex n-1 attached to 2; equivalently arms of lengths 1,2,n-4.
+Ordinary KL theory throughout uses equal parameters q=v^2.
+
+These are deductions from the cited sources, not claims of new priority.
+
+1. UNIQUENESS OF AN ELIGIBLE FC BOTTOM
+
+Let W=W(E_n), n>=6. Let J be any subset of the simple generators, and let
+I be an independent set of the induced graph on J of maximum cardinality.
+Suppose x is fully commutative, supp(x) is contained in J, and
+I is contained in L(x) intersect R(x). Then x=i(I), the product of I.
+
+Proof. Write a_TL(x) for Green's monomial Temperley--Lieb a-function: it is
+the greatest cardinality of an independent set A whose product i(A) occurs
+as a length-additive factor of x. Because I is in L(x), the standard
+parabolic decomposition gives x=i(I)y reduced. Consequently a_TL(x)>=|I|.
+Every independent factor of x is supported in J, so a_TL(x)<=alpha(J)=|I|.
+Green's Proposition 4.4(iv) now puts x in the monomial right cell of i(I).
+The same argument applied on the right puts x in its monomial left cell.
+Proposition 4.4(v) says this left/right cell intersection has one element.
+It already contains i(I), proving the assertion.
+
+The proof actually needs only a_TL(x)=|I|, together with both descent
+inclusions. It does not identify the TL cells with ordinary KL cells.
+Nor does it require I to be maximum in the whole ambient E_n graph:
+maximum in J suffices, since supp(x) is contained in J.
+
+Corollary. If b has L(b)=R(b)=I, with I maximum independent in supp(b),
+then every FC x<=b satisfying L(b) subset L(x) and R(b) subset R(x)
+equals i(I). This removes the eligible-bottom enumeration for such b.
+
+Primary foundation: R.M. Green, On the Markov trace for Temperley--Lieb
+algebras of type E_n, arXiv:0704.0283v1, Definition 4.1 (p.9),
+Proposition 4.4(iv),(v) (pp.10--11). The last paragraph of the proof of
+Lemma 5.2 (pp.13--14) uses essentially this same cell-intersection argument.
+https://arxiv.org/abs/0704.0283
+Local: green-en-trace.pdf and green-en-trace.txt.
+
+Elementary auxiliary computation: alpha(E_n)=ceil(n/2). If the trivalent
+vertex is excluded, the three residual paths give
+1+1+ceil((n-4)/2)=ceil(n/2). If it is included, deleting its neighbours
+leaves one vertex on the arm of length2 and a path of length n-5,
+giving 1+1+ceil((n-5)/2)=floor(n/2). Thus the maximum is as stated.
+
+For the two investigated full-support E9 terminals of lengths32 and34,
+I={1,3,5,7,8} has size5=alpha(E9). Their only eligible FC bottom is
+therefore 13578, provided the stated descent sets and Bruhat eligibility
+are checked. Those checks are in the independent computational records.
+
+2. DEGREE VANISHING FROM AN ORDINARY a-LOWER BOUND
+
+Let (W,S) be ANY Coxeter system with equal parameters. Let I be a commuting
+set, x=i(I)<b, and assume I subset L(b) (a right-hand version is identical).
+Then
+
+  P_(x,b)=P_(e,b),
+  deg P_(x,b) <= (ell(b)-a(b))/2.
+
+The first identity follows by successively applying P_(y,b)=P_(sy,b)
+when s belongs to L(b), deleting the letters of the commuting product x.
+The second follows from Lusztig's P1:
+
+  a(b)<=Delta(b)=ell(b)-2 deg P_(e,b).
+
+Thus if a(b)>|I|+1, the coefficient at degree
+(ell(b)-|I|-1)/2 vanishes: mu(x,b)=0. When the gap is even, mu is zero
+already by parity. The strict inequality is essential.
+
+Source scope: Lusztig, Hecke algebras with unequal parameters, REVISED
+2014 arXiv:math/0208154v2, section15.1 (printed p.63) explicitly notes that
+P1--P6 need no boundedness assumption in the equal-parameter case.
+Section15.2 proves P1 using positivity. Section14.1 defines Delta.
+The original 2003 edition does not incorporate Elias--Williamson positivity;
+cite the revised version when using the all-Coxeter scope.
+https://arxiv.org/abs/math/0208154v2
+Local: lusztig-unequal.pdf and lusztig-unequal.txt.
+
+3. A FINITE PARABOLIC FACTOR IS A SUFFICIENT WITNESS
+
+In the setting of Lemma2, suppose b=u w_K v is length additive, W_K is
+finite, and w_K is its longest element. If ell(w_K)>=|I|+2, then mu(x,b)=0.
+
+Proof. Repeated KL multiplication by simple generators along the reduced
+factorization gives b <=_LR w_K. P4 therefore gives a(b)>=a(w_K).
+The parabolic Hecke subalgebra has the same KL basis and multiplication
+coefficients on W_K as the ambient algebra. In it,
+
+  C_(w_K) C_(w_K) = (sum_(z in W_K) v^(2ell(z)-ell(w_K))) C_(w_K).
+
+The scalar has degree ell(w_K), whence directly a_W(w_K)>=ell(w_K).
+Combining this with Lemma2 proves the claim. This argument needs only the
+inequality from the subalgebra; it does NOT assume P12 (ambient/parabolic
+equality of a-functions). This matters for indefinite E_n.
+
+P4 is proved without boundedness by Lusztig section15.5 together with
+section14.4, printed pp.64 and59. Invariance of a under ordinary star
+operations also follows: stars relate elements in the same ordinary
+one-sided cell, and P4 in both directions gives equality. Hence it is
+enough to find such a longest factor in ANY star-equivalent element of b.
+
+For I of size5 in E9, a longest factor of length7 or more suffices. The
+family agent has found such a factor for the length32 terminal, of type
+A1+A2+A2, J={0,2,3,5,6}. The exact factorization is saved separately in
+research/en_families/parabolic_factor_search.json. At the time of this
+note, its direct factor search found no length>=7 witness in the two
+length34 reflection extensions. Absence of such a factor does not imply
+a(b)<=6 and does not determine their mu values.
+
+4. THE FC a-FUNCTION IS KNOWN IN ALL GENERALIZED E_n
+
+Green--Xu prove ordinary a(x)=n(x), the width of the FC heap, in every
+star-reducible Coxeter group. Their proof reduces x by stars to a commuting
+product and observes that each step preserves heap width. All generalized
+E_n are star reducible. Hence on FC elements ordinary a equals a_TL for
+every n>=6, including n>=10; this is not limited to finite/affine Weyl groups.
+It gives no value for a non-FC terminal upper endpoint.
+
+Primary: R.M. Green and T. Xu, Classification of Coxeter groups with finitely
+many elements of a-value2, Algebraic Combinatorics3(2020), 331--364,
+Proposition3.15, published p.343. Proposition3.13 cites Shi's earlier
+finite/affine result. https://www.numdam.org/item/10.5802/alco.95.pdf
+Local: green-xu-a2-classification.pdf and .txt.
+
+Star reducibility: R.M. Green, Star reducible Coxeter groups,
+Glasgow Math. J.48(2006), 583--609, arXiv:math/0509363v2,
+Theorem5.11 and Theorem6.3. https://arxiv.org/abs/math/0509363
+Local: green-star-reducible.pdf and .txt.
+
+5. TL PROJECTION: USEFUL FINITE DATA, BUT NOT A PROOF OF THE BOUND
+
+For a star-reducible group the quotient theta:H-->TL sends every ordinary
+KL basis element C'_w into the canonical TL lattice. Bar invariance implies
+theta(C'_w) is an integer linear combination of canonical TL basis elements.
+For E_n the latter agree with the monomial basis. Thus finite FC support
+gives a finite-dimensional receptacle for all these images even if W is
+infinite. However theta(C'_w)=0 is established by the weakly-complex lemma
+only when w=sx is non-FC and x is FC. One must not replace this hypothesis
+with arbitrary non-FC w.
+
+Primary locators: Green, Star reducible Coxeter groups, Theorem4.3,
+Lemma4.5, Theorem4.6; Theorem1.4(iv) for integral bar-fixed expansion.
+Its Theorem4.1 says an arbitrary element is a commuting product or has a
+noncommuting initial/final pair or a fork-shaped initial triple. This is
+useful reduction structure, not a classification of all non-FC terminals.
+
+Likewise the trace mu formula in Green's E_n Markov-trace paper,
+Theorem1.2 and Corollary9.3, assumes BOTH endpoints FC. It cannot be
+applied to arbitrary terminal upper endpoints.

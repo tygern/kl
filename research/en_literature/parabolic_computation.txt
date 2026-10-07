@@ -1,0 +1,109 @@
+SPHERICAL PARABOLIC COMPUTATION FOR THE E9 TARGET
+Checked and derived 2026-10-07 UTC. This is a mathematical algorithm note;
+no E9 numerical KL output is asserted here.
+
+PRIMARY CONVENTIONS
+
+Kashiwara--Tanisaki, Parabolic Kazhdan--Lusztig polynomials and Schubert
+varieties, arXiv:math/9908153v2, section2 equations(2.20)--(2.28),
+Proposition2.3, Remark2.4, Proposition2.5(ii), printedpp7--8.
+https://arxiv.org/abs/math/9908153
+Local readable copy: kashiwara-tanisaki-arxiv.pdf and .txt.
+The separately downloaded Kyoto PDF has corrupted text encoding.
+
+They take W^J to be the RIGHT-minimal representatives (R(w) intersect J
+empty), and induce the character T_j-->a for a=q or -1. Their spherical
+case a=q has
+
+  P^{J,q}_{u,v}=P_{u w_J,v w_J}
+
+when W_J is finite. Remark2.4 explicitly says their label a corresponds
+to Deodhar's original u=a-dagger, where a*a-dagger=-q. Thus this same
+spherical polynomial is often called P^{J,-1}. Mongelli's FPSAC2013
+Proposition2.2 uses that latter label and LEFT-minimal representatives.
+https://dmtcs.episciences.org/2326/pdf
+
+For implementation, identify the module and longest-element formula,
+not just the symbol '-1'. The sign/antispherical module is the wrong one.
+
+NORMALIZED MODULE AND DERIVED CANONICAL RECURRENCE
+
+Use q=v^2, H_s=v^-1 T_s, (H_s-v)(H_s+v^-1)=0, C_s=H_s+v^-1.
+Let M=H tensor_(H_J) triv, where H_j acts on triv by v for j in J.
+The standard basis is m_u=H_u tensor1 for u in W^J. Multiplication is
+
+ C_s m_u = m_(su)+v^-1 m_u,      if su>u and su in W^J;
+ C_s m_u = m_(su)+v m_u,         if su<u;
+ C_s m_u = (v+v^-1)m_u,          if su not in W^J.
+
+The last case is called a wall here; it always has su>u. The minimal
+representative is then u itself, but this is not ordinary generator
+multiplication and must use the displayed scalar.
+
+Let c_v=m_v+sum_(u<v) p_(u,v)m_u be the bar-invariant canonical basis,
+where p_(u,v) belongs to v^-1 Z[v^-1] and
+
+ p_(u,v)=v^(ell(u)-ell(v)) S_(u,v)(v^2),
+ S_(u,v):=P_(u w_J,v w_J).
+
+For s in L(v), put z=sv. Then z is also right-minimal. Form F=C_s c_z.
+Its coefficient at m_v is1. Every coefficient below m_v has no positive
+powers of v. Its constant term at m_y is nonzero only if
+
+ y<z, and either sy<y or sy not in W^J,
+
+and equals [v^-1]p_(y,z). Consequently
+
+ c_v=C_s c_z - sum_(y<z; sy<y OR sy not in W^J)
+                   ([v^-1]p_(y,z)) c_y.
+
+Proof of the correction rule: the action above can raise a strictly
+negative coefficient's exponent only by1. This gives a constant precisely
+in the descent/wall branches, from its v^-1 term. Contributions from
+m_(su) preserve their negative exponents. The leading m_z term has
+sz=v>z in W^J, so creates only m_v+v^-1m_z. Subtracting the displayed
+integer multiples of canonical c_y removes all constants, preserves bar
+invariance and the leading coefficient, and cannot introduce new constants
+at lower elements because the lower coefficients of c_y are strictly
+negative. Canonical uniqueness proves the result.
+
+Equivalent q recurrence, with nu(y,z)=[v^-1]p_(y,z):
+
+ S_(u,v)=A_(u,v) - sum_(u<=y<z; sy<y OR sy not in W^J)
+                         nu(y,z) q^((ell(v)-ell(y))/2) S_(u,y),
+
+where
+ A_(u,v)=S_(su,z)+q S_(u,z),       if su<u;
+ A_(u,v)=q S_(su,z)+S_(u,z),       if su>u and su in W^J;
+ A_(u,v)=(q+1) S_(u,z),           if su not in W^J.
+
+Set S_(u,v)=0 unless u<=v and S_(v,v)=1. Here nu is the top possible
+coefficient of the SPHERICAL polynomial S_(y,z), equivalently ordinary
+mu(y w_J,z w_J). Do not substitute ordinary mu(y,z). The correction
+exponent is integral whenever nu is nonzero.
+
+All indices and stored rows belong to the parabolic interval. It is not
+necessary to enumerate the full ordinary interval [e,vw_J]. A recursive
+canonical-basis implementation can store only rows actually demanded by
+these corrections; runtime still depends on the parabolic interval size.
+
+TARGET RECOVERY
+
+If J subset R(w), then w=v w_J reduced with v=w w_J in W^J, and
+
+ P_(e,w)=P_(w_J,w)=S_(e,v).
+
+Thus for an E9 length34 upper element with5 commuting right descents,
+compute S_(e,v) at quotient length29. For the length33 reflection with4
+commuting right descents, the quotient length is also29. The ordinary
+maximal Bruhat interval is a union of full right W_J cosets; the quotient
+has exactly 1/|W_J| as many elements. Here the factors are32 and16.
+
+MINIMAL WALL CHECK
+
+In A2 with simple s,t and J={s}, take v=st (right-minimal). Then
+c_t=m_t+v^-1m_e, while
+C_s c_t=m_(st)+v^-1m_t+(1+v^-2)m_e.
+The wall at e contributes a constant1. Subtract c_e to obtain
+c_(st)=m_(st)+v^-1m_t+v^-2m_e, corresponding to
+P_(s,sts)=1. Omitting the wall correction would incorrectly give1+q.

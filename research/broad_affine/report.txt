@@ -1,0 +1,175 @@
+AFFINE GEOMETRY / UNFOLDING RESEARCH REPORT
+Date: 2026-10-07 UTC. Scope: a focused search, not a novelty certification.
+
+RESULT
+No substantive new affine family with a proved finite-D FC-bottom interval
+witness was found. Two precise obstructions were obtained instead: (A) the
+unbounded Gern bad-interval family cannot be realized in any FIXED affine Weyl
+group; (B) even the elementary principal interval below the square of a
+bipartite Coxeter element in affine D4 has no PRINCIPAL finite-D interval model.
+Neither obstruction excludes finite-D models with arbitrary FC nonidentity
+bottoms, nor other unbounded source families, nor affine groups of growing rank.
+
+A. COATOM OBSTRUCTION TO FIXED-AFFINE-RANK REALIZATIONS OF GERN I_n
+
+Primary source verified directly:
+Grant T. Barkley and Christian Gaetz, Bounded Bruhat intervals and affine
+Coxeter groups, arXiv:2606.16894v1, Proposition 2.1.
+https://arxiv.org/html/2606.16894v1#S2.SS1
+The displayed bound is |U(w)|,|D(w)| <= |Phi_fin|. Phi_fin means ALL finite
+roots, not positive roots: their proof explicitly ends with
+2|Phi_fin^+| = |Phi_fin|. Consequently every interval in affine D_r has at most
+2r(r-1) coatoms, irrespective of endpoint length or lower FC status.
+The proof uses extreme rays of Dyer's cover-root cone and at most two affine
+roots from each family parallel to a finite positive root.
+
+Exact computations:
+gern_coatoms.py tests all n(n-1) signed-transposition reflections in D_n,
+using the signed inversion length formula and an independent lifting-property
+Bruhat comparison (existing computations/sparse_kl.py, read without editing).
+The complete list of cover reflections, not merely the total, is in
+research/broad_affine/gern_coatoms.json.
+For n=4,6,...,24 the coatom counts of I_n are
+6,12,20,30,42,56,72,90,110,132,156.
+Every lower cover of w_n lies above x_n for these n.
+The observed formula is n(n+2)/4. The report does NOT claim a proof of that
+exact formula for all n.
+
+Concrete certified consequence: I_10 has 30 coatoms, whereas affine D4 allows
+at most 24. Thus I_10 cannot be poset-isomorphic to ANY affine-D4 interval.
+Its rank is 34. The odd-rank example I_14 (rank 69) has 56 coatoms, and hence
+also cannot occur in affine D4. These are exclusions independent of CI and KL.
+
+A general elementary proof that the coatom counts are unbounded:
+Use the existing signed convention: s0 negates/swaps positions 1,2;
+s_i swaps i,i+1 for 1<=i<n. For even n>=4,
+w_n(1)=(-1)^(n/2), w_n(i)=i for odd i>1,
+w_n(i)=-(n+2-i) for even i.
+Let x_n=s0 s1 s3 s5 ... s_(n-1), a product of commuting simple reflections.
+For each even j in {2,4,...,n}, let t_(1,j) exchange positions 1 and j
+WITHOUT changing signs, and set z_j=w_n t_(1,j).
+
+1. z_j is a lower cover of w_n. The D length is
+   inv(w)+#{i<k : w(i)+w(k)<0}.
+   The second summand is unchanged by any ordinary permutation of positions.
+   Write a=w_n(1) in {1,-1}, b=w_n(j)<0. We have b<a. Each intermediate
+   entry w_n(k), 1<k<j, is either positive >=3>a (odd k), or is negative
+   strictly below b (even k). Thus there are no intermediate entries strictly
+   between b and a. Swapping entries at 1,j decreases inv by exactly one.
+
+2. z_j has full simple support. For each 2<=k<n the first k absolute values
+   cannot be {1,...,k}: if j>k they omit 1; if j<=k they include n (the value
+   originally at position 2 stays in the initial block, including when j=2).
+   Therefore z_j does not belong to the parabolic omitting s_k.
+   It has a negative entry outside position 1 whose absolute value exceeds 1:
+   at least one of the other n/2-1 even positions retains its original negative
+   value. Hence it lies neither in the parabolic omitting s0 (all values
+   positive) nor in the parabolic omitting s1. The latter is conjugate to the
+   ordinary symmetric group by changing the sign of coordinate 1; its negative
+   entries can occur only at position 1 or have absolute value 1.
+
+3. A reduced expression for z_j therefore contains every generator of x_n.
+   Select one occurrence of each of these mutually commuting generators.
+   The selected subword has product x_n, so x_n<=z_j by the subword criterion.
+
+The distinct z_j give at least n/2 coatoms of I_n. Thus if I_n occurs in
+fixed affine D_r, necessarily n/2 <= 2r(r-1), or n<=4r(r-1).
+More generally n<=2|Phi_fin| for any fixed affine Weyl group.
+This deliberately uses the fully proved weaker n/2 bound; the stronger exact
+quadratic formula remains a computational observation in this report.
+
+B. DEGREE-FOUR OBSTRUCTION TO NAIVE PRINCIPAL-INTERVAL UNFOLDING
+
+In affine D4 label the central simple reflection 2 and four commuting leaves
+0,1,3,4. Let c=s0 s1 s3 s4 s2, and w=c^2. Then w has reduced length 10.
+The faithful affine signed-permutation computation check_unfolding.py verifies
+length 10 and enumerates [e,w] by deletion from reduced words. It has 448
+vertices and rank vector
+[1,5,14,32,63,98,109,80,36,9,1].
+The JSON certificate is unfolding_obstruction.json.
+
+Intrinsic poset construction: on the atoms of a principal interval [e,v],
+join two atoms a,b when there exists a rank-three element having exactly
+those two atoms below it. In a simply-laced Coxeter system, such an element
+can only be sts=tst for adjacent simple generators s,t. Thus the graph
+constructed from [e,v] is a subgraph of its simple Coxeter diagram.
+For the present w, each of the four words s_i s2 s_i is a subword of c^2,
+so the intrinsically recovered graph is exactly the four-leaf star.
+Every finite-D diagram has maximum degree three, including disconnected
+subgraphs. Therefore [e,c^2] is not isomorphic to [e,v] in ANY finite D_N.
+This is an actual rank-ten obstruction, stronger than merely noting that the
+affine Coxeter diagram does not embed into a finite-D diagram.
+It DOES NOT rule out [a,b] in finite D_N with a nonidentity FC bottom.
+Also it does not conflict with boolean Coxeter-element intervals: those have
+no rank-three element on two atoms, and the above graph is empty.
+
+Periodic heaps alone cannot bypass this issue: heap order parametrizes weak
+order phenomena for FC elements, whereas strong Bruhat intervals identify
+subexpressions through braid relations. The degree-four obstruction records
+precisely such rank-three braid information.
+
+C. RANK-THREE SEARCH (NEGATIVE RESULT, NOT A THEOREM)
+
+I tested all affine-D4 elements through length20: 32,257 elements in the ball.
+All rank-three intervals among these have 2,3,or4 coatoms (crown sizes).
+Counts: 119,228 with 2; 2,928,558 with 3; 135,038 with 4.
+Thus no easy oversized rank-three crown distinguishes these intervals from
+finite simply-laced type. This is finite computational evidence only.
+The model is a faithful action x -> p*x+t, p an even signed permutation,
+t in the D4 coroot lattice. The affine generator flips/swaps the last two
+coordinates and adds e3+e4. BFS gives exact reduced lengths; lower covers
+are obtained by deletion and tested for length drop one. check_unfolding.py
+also checks the affine-D4 Coxeter relations in this action.
+Files: affine_d_crowns.py; crowns_D4_L10.json; crowns_D4_L20.json.
+
+D. PRIMARY-SOURCE AUDIT OF CANDIDATE GEOMETRIC TRANSPORTS
+
+1. Gaston Burrull, Nicolas Libedinsky, Rodrigo Villegas,
+   Shape and class of Bruhat Intervals, arXiv:2507.14033v1.
+   https://arxiv.org/html/2507.14033v1
+   Theorem C: classification of thick dominant affine-A2 intervals by polygon
+   isometries. Sections4 and7 describe genuine piecewise translation maps.
+   Proposition7.7 already proves KL invariance for those thick intervals.
+   Conjecture7.8 is eventual poset stabilization under dominant translation
+   in general affine Weyl groups; Proposition7.10 proves the affine-A2 case.
+   General affine-D stabilization may not be asserted from this paper.
+   Even stabilization by itself produces another AFFINE realization, not a
+   finite-D witness. For finite-D witness work it leaves the central gap open.
+
+2. Nathan Reading and Debra Waugh, The order dimension of Bruhat order on
+   infinite Coxeter groups, Electronic J. Combin.11(2), R13 (2005), Prop9.1.
+   https://www.combinatorics.org/ojs/index.php/eljc/article/download/v11i2r13/pdf/
+   Their copies of finite W inside a minuscule affine quotient look promising
+   geometrically, but the proof explicitly identifies the copy as the coset
+   xW. Hence they are exactly within the excluded classical coset mechanism.
+
+3. Barkley--Gaetz, arXiv:2606.16894v1, Theorem1.1 and proof.
+   Finitely many isomorphism types in any fixed affine interval rank do NOT
+   imply that every such interval has a finite Coxeter realization. The paper
+   specifically observes that maximal-chain reflection subgroups can remain
+   infinite affine groups; that is the obstacle it overcomes by coatom bounds.
+   The theorem is useful here for the rigorous obstruction A, not a witness.
+
+4. Direct folding is not an interval isomorphism. For example fold the three
+   outer nodes a,b,c of finite D4 by triality: the folded generator maps to
+   abc. In folded G2 the principal interval below st is a rank2 diamond with
+   four vertices. Its natural unfolded image top abc*d is a Coxeter element
+   in D4, whose principal interval is Boolean of rank4 with 16 vertices.
+   Fixed-point descriptions therefore cannot be substituted for full ambient
+   interval isomorphisms. This is an elementary obstruction to a tempting
+   folding proof, not a theorem forbidding alternative interval models.
+
+Search queries actually used include:
+  affine Weyl Bruhat intervals finite Weyl intervals isomorphic translation stability
+  Bruhat intervals Coxeter diagram edge subdivision isomorphism
+  affine D fully commutative heaps finite D unfolding Bruhat intervals
+  Coxeter Bruhat interval isomorphism cancellation generators
+  simply laced Bruhat intervals length three crown four affine A2 six
+  affine D Bruhat order signed permutation finite embedding intervals
+  Bruhat interval unfolding finite affine Coxeter type D
+
+No absence from these searches is treated as a novelty or open-problem proof.
+The report does not use the supplied CI theorem to manufacture a witness.
+The missing positive step remains a nonprincipal finite-D FC-bottom model
+for a naturally defined affine interval family that has genuine affine
+reflection support, with a complete subword/poset bijection proof.

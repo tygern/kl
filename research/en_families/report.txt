@@ -1,0 +1,139 @@
+GENERALIZED E_n TERMINAL-FAMILY CONSTRUCTION REPORT
+Final branch report, 2026-10-07 UTC. All new branch files are in this folder.
+No final LaTeX or README was edited. Historical priority is UNCONFIRMED.
+
+PROVED OUTPUT
+
+1. Affine E8 (our E9): an explicit infinite family b_k=T^k b_0 T^(-k)
+   of full-support, non-FC terminals, with fixed maximum independent
+   left/right descent set {1,3,5,7,8}. Exact length is 27+92k.
+   For EVERY FC lower endpoint y, mu(y,b_k)=0.
+   The structural proof first gives zero for gaps>1; a finite base-cover
+   certificate and the complete E9 FC maximum length44 eliminate covers.
+   See positive_family_proof.txt, positive_affine_family.py/.json, and
+   positive_base_cover_check.json. Parent independently verified the
+   all-k matrix argument, inversion length formula, and cover strengthening.
+
+2. Indefinite E10 and E13: explicit full-support terminal REFLECTION
+   families b_k=r_(beta_k), with
+     beta_k=beta-a*k*gamma+(a*k^2+3*k)*delta.
+   The constants are listed in indefinite_positive_family_proof.txt.
+   The descent sets are maximum independent sets of odd sizes5 and7.
+   Therefore mu(y,b_k) is0 for every FC y with gap>1, and belongs to{0,1}
+   for all FC y. The sole eligible FC bottom is product I; its gap is even.
+   The families are distinct and unbounded in their fixed ambient groups.
+   All-k proof uses explicit root reductions and the identity
+     T(z)=z+(z,delta)gamma-((z,gamma)+(z,delta))delta,
+   where T=r_gamma r_(gamma+delta), (beta,gamma)=-3,
+   (beta,delta)=-a, a=1 in E10 and2 in E13.
+   Exact runner: indefinite_positive_families.py, output .json and .log.
+   Parent's independent referee verified both families. Sample lengths
+   k=0,...,4 are E10:101,217,333,449,565; E13:75,191,307,423,539.
+   No all-k arithmetic length formula is claimed for these two families.
+
+The structural FC uniqueness input is a deduction from R.M. Green,
+On the Markov trace for Temperley--Lieb algebras of type E_n,
+arXiv:0704.0283, Proposition4.4(iv),(v), and the cell argument at the end
+of Lemma5.2. The source explicitly covers all generalized E_n, n>=6.
+The priority agent confirms this indefinite scope. It found no exact
+predecessor for these explicit families in targeted primary searches;
+that does not certify historical novelty. Root translations, descent
+sign formulas, the FC uniqueness input, and parity/descent criteria are
+standard. Candidate contribution is the explicit full-support terminal
+families and resulting FC-lower coefficient theorem.
+
+SEARCH DESIGN AND EXACT BOUNDS
+
+The initial involution-conjugation heuristic conjugated finite-E7 seeds
+and commuting products, then reduced by decreasing simple conjugations.
+It did NOT enumerate a group ball or classify terminal elements.
+All runs used pseudorandom seed934. Complete logs and parameters are in
+conjugates_E<n>_<trials>_934.json and conjugates_E<n>.log:
+  E8: 20,000 trials, at most80 initial conjugations; 5 noncommuting
+      terminals found, none full-support.
+  E9: 50,000 trials, at most100 conjugations; 13 terminals found,
+      including full-support lengths27,32,33,34.
+  E10:50,000 trials, at most100 conjugations; 18 terminals found,
+      none full-support in this bounded heuristic.
+  E11:50,000 trials, at most150 conjugations; 32 terminals found,
+      full-support lengths42,44,51,52,68.
+  E12:50,000 trials, at most150 conjugations; 36 terminals found,
+      none full-support in this bounded heuristic.
+The later algebraic E10 construction demonstrates why these negative
+heuristic results cannot imply nonexistence.
+
+The successful indefinite approach exhausts small Cartan pairings m,
+sets beta=C^(-1)m exactly over rationals, then requires beta positive
+integral, beta.m=2, a height-reducing real-root certificate, and the
+terminal cone inequalities. The following searches are exhaustive ONLY
+within their specified pairing box and sign constraints:
+  E10, |m_i|<=1, all independent positive supports:
+    3,272 pairing vectors tested; 1 real terminal root.
+  E11, same:7,607 vectors; 2 real terminal roots.
+  E12, same:17,597 vectors; 2 real terminal roots.
+  E13, same:40,553 vectors; 2 real terminal roots.
+  E10, |m_i|<=2, maximum-independent positive support only:
+    1,557 vectors; 8 real terminal roots.
+  E13, same:1,343 vectors; 10 real terminal roots.
+See cartan_candidates.py and cartan_E*_max*.json for exact constraints,
+integer vectors, reflection words, heights, lengths, and root reductions.
+
+For selected maximum-independent roots, indefinite_translation_search.py
+tests all240 roots gamma in the finite-E8 subdiagram of an affine-E8
+parabolic. It tests coefficientwise preservation of root positivity and
+the terminal cone under the quadratic translation orbit. The final
+runner separately proves the polynomial identity and certifies two
+selected families without dependence on the candidate-search output.
+
+OTHER POSITIVE AND UNRESOLVED E9 EVIDENCE
+
+The length32 terminal has a reduced longest parabolic factor of length7,
+type A1+A2+A2, with J={0,2,3,5,6}. The explicit length-additive prefix,
+factor, suffix are in parabolic_factor_search.json. Together with its
+unique FC bottom of length5, the ordinary a-function degree bound proves
+mu=0. This is separate from the infinite positive-conjugation family.
+
+The full-support length33 terminal is a reflection in root
+  (1,2,3,3,2,2,1,1,2),
+with descents I4={3,5,7,8}. Exact filtering of the complete E9 FC catalogue
+gives five eligible bottoms: product I4; s0/product I4; s1/product I4;
+s0s1/product I4; s1s0/product I4, of lengths4,5,5,6,6 respectively.
+Its right extensions by s0 or s1 have length34 and a unique eligible
+FC bottom of length5. Their mu values remain UNRESOLVED in this branch.
+See affine_reflection_family.py/.json and e9_full_support_eligible.json.
+
+Negative factor certificates: both length34 extensions have no reduced
+finite-parabolic longest factor of length>=7 (500 weak prefixes each,
+62 minimal parabolic tests per possible prefix). The bare length33
+reflection has none of length>=6 or>=8 (250 weak prefixes).
+For its shifted-root k=1,2 counterparts, the bare lengths91/149 have
+730/1,210 weak prefixes and no factor>=8; the two extensions have
+lengths92/150, 1,460/2,420 weak prefixes and no factor>=7.
+Exact successful/failed predicate counts are in shifted_factor_search.json.
+The left/right star orbit of one length34 extension closes at2,500
+elements without a descent-parabolic longest factor>=7; see
+star_cell_E9_length34.json. These failures do not give upper a-bounds
+and do not determine any unresolved KL coefficient.
+
+The length27 seed lower ideal was fully enumerated here (740,128
+elements) and has the sole eligible FC bottom13578. This is a finite
+cross-check, not an ingredient needed by the structural uniqueness proof.
+For larger reflection ideals, the parent's independent C++ subword
+calculation hit a3-million cap before completion; no complete ideal
+size or polynomial is claimed. The family construction avoids this
+otherwise expensive KL computation.
+
+REPRODUCIBILITY AND SCOPE
+
+All root arithmetic uses exact integers in targeted.py; no floating
+point equality or guessed order predicate is used. New certificate
+runners use only the standard Python library. In this sandbox, run uv
+with UV_CACHE_DIR=/private/tmp/kl-uv-cache. The definitive proof artifacts
+are positive_family_proof.txt and indefinite_positive_family_proof.txt.
+
+The older star/Catalan construction in research/broad_cells is covered
+exactly by Mongelli's2011 boolean-elements formula and is not a novelty
+claim. No whole-E8 enumeration, E8 inference, or all-generalized-E_n
+0/1 theorem was made by this branch. The parent's separate finite-E
+classification and its independently checked certificates are distinct
+work. No additional searches are pending in this branch.

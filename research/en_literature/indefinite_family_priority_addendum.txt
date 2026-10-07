@@ -1,0 +1,232 @@
+PRIORITY ADDENDUM: FULL-SUPPORT INDEFINITE E10 AND E13 FAMILIES
+Checked 2026-10-07 UTC / 2026-10-06 America/Chicago.
+This supplements report.txt and structural_lemmas.txt in this directory.
+It is a literature/scope audit, not an independent certificate of all computations.
+
+OUTCOME
+
+No precise predecessor was located for the displayed infinite full-support
+terminal reflection families in E10 or E13, or for the stated ordinary
+equal-parameter FC-lower coefficient consequence for those families.
+Priority is UNCONFIRMED. This is a bounded literature search, not evidence
+that no predecessor exists. The mathematical construction is independently
+certified by the parent/referee files cited below; its priority requires a
+separate assessment. The elementary root formulas, affine translations,
+monomial-cell facts, descent obstruction, and parity are established inputs.
+
+The defensible scope is an explicit infinite family of non-FC upper
+endpoints, with full support in a fixed indefinite Coxeter group, for which
+all FC-lower ordinary mu coefficients lie in {0,1}. It is not a whole-type
+theorem for arbitrary upper endpoints of E10 or E13. The constructions use
+an affine E9 standard parabolic for the conjugating element; nevertheless
+the upper reflections have full ambient support and do not themselves lie
+in that proper standard parabolic. Calling the construction wholly
+independent of affine methods would be inaccurate.
+
+1. EXACT TARGET UNDER AUDIT
+
+Graph: chain 0--1--...--(n-2), with vertex n-1 attached to 2. Thus the arms
+have lengths 1,2,n-4. Normalize simple-root squared lengths to 2.
+
+Embed the affine E9 subdiagram on {0,...,7,n-1}. Extend the vectors
+delta=(2,4,6,5,4,3,2,1;3), gamma=(1,2,3,2,2,1,1,0;1)
+by zeros in positions 8 through n-2. The semicolon denotes position n-1.
+Put T=r_gamma r_(gamma+delta).
+
+E10:
+  beta0=(3,7,10,9,7,6,4,3,1,6), I={1,3,5,7,9}, a=1.
+E13:
+  beta0=(2,3,5,5,4,4,3,3,2,2,1,1,3), I={0,3,5,7,9,11,12}, a=2.
+In each case beta_k=beta0-a*k*gamma+(a*k^2+3*k)*delta, b_k=r_(beta_k).
+
+The parent/referee verifies root membership by explicit lowering words,
+the exact nilpotent-operator formula for T, strict positivity and distinctness
+of beta_k, full support, and terminality with L(b_k)=R(b_k)=I for all k>=0.
+Independent sets I have the maximum sizes 5 and 7. Reflection length is
+odd; these sizes are odd. The maximum-common-descent lemma below therefore
+gives mu(x,b_k)=0 for every FC x with length gap greater than one. Covers
+have mu=1. No conjectural formula for ell(b_k) is used in this argument.
+
+Local evidence:
+  research/en_families/indefinite_E10_translations.json
+  research/en_families/indefinite_E13_translations.json
+  research/en_families/indefinite_translation_search.py
+  research/en_affine_referee/e10-certificate.json
+  research/en_affine_referee/e13-certificate.json
+  results/exceptional-leading.tex (read only in this audit).
+The initial search script checks k=0,1,2,3 and tests sufficient coefficient
+sign conditions. The subsequent referee certificate/proof, rather than
+those four observations alone, supplies the all-k statement.
+
+2. WHAT IS ALREADY IN THE LITERATURE
+
+R.M. Green, On the Markov trace for Temperley--Lieb algebras of type E_n,
+J. Knot Theory Ramifications 18(2) (2009), 237--264.
+  https://arxiv.org/abs/0704.0283
+  https://doi.org/10.1142/S0218216509006872
+  https://experts.colorado.edu/display/pubid_44359
+The arXiv preprint is from 2007; the journal publication is 2009. All n>=6
+are included, with no finite/affine restriction. Definition4.1, printed
+preprint p.9, defines the monomial TL a-function by independent factors.
+Proposition4.4(iv),(v), pp.10--11, identifies the right cell of a commuting
+product and gives singleton left/right cell intersections. The final
+paragraph of Lemma5.2, pp.13--14, already applies essentially the same
+intersection argument used here. Theorem1.2/Corollary9.3 concern TWO FC
+endpoints. They are not the arbitrary-upper statement under audit.
+The exact locators above refer to arXiv v1; journal metadata was separately
+checked against the author's institutional record.
+
+The maximum-common-descent argument is a deduction from those old facts:
+if x is FC and I is contained in L(x) and R(x), with I maximum independent
+in the relevant support, then |I|<=a_TL(x)<=|I|. Thus x shares both
+monomial cells with i(I), and x=i(I). The ordinary mu descent obstruction
+then leaves only this lower endpoint for a non-cover. If its parity agrees
+with that of the upper endpoint, mu vanishes. The deduction does not
+identify TL cells with ordinary KL cells. Neither it nor the final parity
+step should be promoted as an independently novel foundational theorem.
+Detailed proof: structural_lemmas.txt, section1.
+
+J.R. Stembridge, On the fully commutative elements of Coxeter groups,
+J. Algebraic Combin.5 (1996),353--385.
+  https://websites.umich.edu/~jrs/papers/FC.pdf
+  https://emis.de/ft/43562
+Published Theorem5.1, p.365, lists generalized E_n for every n>=6 among the
+FC-finite groups. The author preprint instead numbers this Theorem4.1,
+printed p.15. Do not cite preprint Theorem5.1 for FC-finiteness: that is a
+different theorem about parabolic quotients. Stembridge explicitly credits
+Fan's thesis for the simply-laced classification. FC-finiteness does not
+imply a finite set of terminal arbitrary upper endpoints.
+
+R.M. Green, Star reducible Coxeter groups, Glasgow Math.J.48(3) (2006),
+583--609. https://arxiv.org/abs/math/0509363
+Theorem5.11 and Theorem6.3 include all generalized E_n. The reducibility
+being asserted is for FC elements. It does not classify the non-FC
+terminals here. These families are consistent with star reducibility:
+a noncommuting terminal cannot be FC in a star-reducible Coxeter group.
+
+3. MONGELLI: EXACT EXCLUSION, AND THE OLDER STAR COUNTEREXAMPLE
+
+P. Mongelli, Kazhdan--Lusztig polynomials of boolean elements,
+J. Algebraic Combin.39(2) (2014),497--525; online7June2013;
+arXiv preprint2011.
+  https://arxiv.org/abs/1111.2945
+  https://link.springer.com/article/10.1007/s10801-013-0455-8
+ArXiv v1 p.4 defines a Boolean reflection by a reduced palindrome whose
+first half plus centre has distinct generators; a Boolean element lies
+below such a reflection. Hence in rank n every Boolean element has length
+at most 2n-1. The base lengths101 and75 exceed19 and25. Corollary2, p.10,
+already explicitly gives the star-shaped Catalan leading coefficients;
+Corollary3, p.13, is the ordinary product formula. Thus the affine-D4
+four-leaf mu=2 example is absolute prior art, as documented in the earlier
+priority report. Publisher metadata confirms the 2014 volume citation.
+
+Uniform exclusion of EVERY indefinite-family member needs an extra
+argument if no all-k length formula is asserted. Base lengths alone do
+not establish it. Here is a short self-contained argument:
+
+Every reflection has a reduced palindromic expression p s p^{-1}. If it
+has full rank-n support, p together with s uses all n generators, so its
+length is at least 2n-1. If the reflection is a Boolean element, the
+opposite inequality holds; hence equality holds, and the n letters in
+p together with s must be distinct. It is therefore itself a Boolean
+reflection. On a simply-laced tree, the root of such a full-support
+Boolean reflection has every coefficient equal to1. Indeed, build the
+root from the central simple root by the distinct conjugating simple
+reflections. Each effective new vertex must attach to the connected
+existing support; a tree allows exactly one such neighbour, so the new
+coefficient is1. An ineffective step would contradict reducedness of
+the palindrome. By induction all coefficients remain1.
+
+Our beta_k[0] equals 2k^2+5k+3 in E10 and 4k^2+4k+2 in E13. It is always
+greater than1. Thus no b_k is Boolean. This proof uses no length formula
+for the families. A weaker conclusion also follows immediately from
+distinctness and the finite rank-n Boolean set: all but finitely many
+members are non-Boolean. The stronger root argument is available here.
+
+4. RECENT PRIMARY-SOURCE CHECKS
+
+R. Biagioli, L. Costantini, E. Sasso, Star and weak star irreducible fully
+commutative elements in Coxeter groups of affine types B-tilde and D-tilde,
+arXiv:2508.08388v1,11August2025.
+  https://arxiv.org/abs/2508.08388
+  https://arxiv.org/html/2508.08388v1
+Definitions1.10 and1.11 explicitly begin with an FC element. Their affine
+B/D classifications cannot be read as classifications of arbitrary
+terminal elements, and do not cover these indefinite non-FC reflections.
+
+E. Sasso, Diagram calculus for affine Coxeter systems and properties of
+their associated root systems, Bologna Ph.D.thesis, defended13April2026.
+  https://amsdottorato.unibo.it/id/eprint/13139/
+  https://amsdottorato.unibo.it/id/eprint/13139/1/sasso_elisa_tesi.pdf
+Chapter2, Definitions2.1.1--2.1.2 (printed p.21), explicitly restrict star
+and weak-star irreducibility to FC elements. Theorem2.3.20 and section2.4
+classify affine D/B FC elements. The thesis also treats reflection-prefix
+automata and affine root enumeration, which are different questions.
+The repository's date and source metadata establish2026, rather than the
+inconsistent search-engine crawl/publication labels.
+
+R. Biagioli, C. Hohlweg, E. Sasso, On generating functions and automata
+associated to reflections in Coxeter systems, arXiv:2602.16361v1,
+18February2026.
+  https://arxiv.org/abs/2602.16361
+  https://arxiv.org/html/2602.16361v1
+Theorem1.1 constructs a regular reflection-prefix language; Theorem1.2
+gives affine reflection generating functions. Corollary3.8 records the
+standard reduced-palindrome/root-depth correspondence. Section5 Problem3
+asks for closed reflection generating functions in indefinite systems.
+The paper has no FC coefficient theorem; searches of its full text found
+no 'commutative' or 'terminal'. Its root and automaton methods are relevant
+context but not an explicit predecessor for the displayed families.
+The introduction also points out de Man's overlooked1999 rationality
+result; this is a useful warning that naming differences can conceal
+older results and that a negative keyword search is not a priority proof.
+
+5. OTHER SCOPE BOUNDARIES AND REMAINING LIMITS
+
+Green0801.1650 proves FC-lower/arbitrary-upper mu0/1 in affine A; Gern
+1304.6074 proves finite D. Chmutov's2014 thesis gives finite B/C. None
+of these is an indefinite E_n theorem. Jones0711.1391 treats Deodhar
+upper endpoints in finite Weyl groups, not these non-FC indefinite uppers.
+Precise locators and scope checks are in ../exceptional_priority/report.txt.
+
+Old generalized E_n TL work by Fan/Graham and Green supplies the FC
+algebra and cell argument. It cannot automatically be promoted to an
+arbitrary-upper KL theorem through the quotient map: the TL quotient
+does not simply kill every non-FC KL basis element in these branching
+types. See report.txt for the projection-property distinction.
+
+Taryn Laird's2016 thesis, section5.3, printed p.63, listed E_n terminal
+classification as an open direction at that time:
+  https://danaernst.com/scholarship/LairdThesis.pdf
+Her January2022 institutional CV lists A,B,affineC and preliminary affineA
+classification work, not a later E_n classification:
+  https://statistics.arizona.edu/sites/default/files/Laird_CV%20Jan%202022_0.pdf
+This is historical evidence only, not evidence that the problem remained
+open in2026. Terminology such as T-avoiding, T2-avoiding, star-irreducible,
+bad elements, and terminal elements is not uniform between authors.
+
+Searches in this addendum included combinations of:
+  'Coxeter terminal reflection Kazhdan'
+  'E_n fully commutative leading coefficients'
+  'T-avoiding reflection Coxeter'
+  'T-avoiding E10 E13 E_n type E'
+  'Kazhdan Lusztig indefinite fully commutative'
+  'fully commutative maximum descent Kazhdan'
+  'Kazhdan reflection 0,1 fully commutative'
+  'Coxeter T-avoiding indefinite'
+  'Coxeter terminal reflections'
+  'fully commutative E10 Kazhdan'
+  'reflection E10 Kazhdan Lusztig'
+  'reflection E13 Coxeter'
+  'Kazhdan-Lusztig polynomials reflections fully commutative leading'
+and the exact recent paper titles above. Primary full texts and author or
+publisher metadata were checked for the strongest apparent matches.
+Secondary indexes were used only for discovery. Searches with E13 often
+returned unrelated singularity names; those are not evidence either way.
+
+This audit does not exhaust unpublished notes, every thesis, every
+language, citation databases requiring subscriptions, or all consequences
+of general cell/automaton theorems. It finds no exact predecessor and no
+new priority blocker, but cannot certify first discovery. A suitable
+description is 'explicit families and reproducible proofs; priority not
+established by the present audit'.

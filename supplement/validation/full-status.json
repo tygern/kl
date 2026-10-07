@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "mode": "full",
+  "seconds": 16.058,
+  "compiler": "/usr/bin/clang++",
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "steps": 30,
+  "work": "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/full-69l0og71/work",
+  "expected_outputs_match": true,
+  "printed_table_matches_generated_terminals": true
+}

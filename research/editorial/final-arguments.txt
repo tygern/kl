@@ -1,0 +1,135 @@
+FINAL ARGUMENT/EXPOSITION REVIEW OF REWRITTEN SOURCE
+7 October 2026. Reviewed actual results/exceptional-leading.tex after the
+restructuring, against the original audit reports and prior source.
+No main source edits made.
+
+VERDICT
+
+No mathematical blocker found in the restructuring. The main dependencies
+remain intact, and the reordered paper is substantially easier to follow.
+Ordinary equal-parameter scope, finite arbitrary-upper scope, uniform-family
+scope, eventual vanishing at each fixed rank, and conditional transfer have
+all been preserved. E13 is correctly absorbed as r=3. The finite proof's
+computational completeness is still explained in the main text rather than
+delegated to numerical agreement or a file list.
+
+FIX BEFORE FINALIZING
+
+1. Last sentence of the finite theorem proof:
+   'All other non-cover coefficients are zero, proving the theorem.'
+   This can be read as a new assertion about arbitrary upper endpoints.
+   Replace with 'All other non-cover coefficients at terminal upper endpoints
+   are zero; Lemma ... therefore proves the theorem.' The asserted 0/1 bound
+   is global, but this vanishing description comes from the terminal table.
+
+2. Uniform descent lemma: add the missing sign bridge after the pairing array.
+   'Since beta_(r,k) has strictly positive integral coordinates,
+   b_(r,k)(alpha_j)=alpha_j-m_j beta_(r,k) is negative exactly when m_j>0.
+   Hence R(b_(r,k))=I_r.' For positive m_j, each coordinate is nonpositive
+   because m_j and all beta coordinates are positive integers; for m_j<0
+   the image is positive. Involutivity then gives L=R. The displayed edge-sum
+   test establishes terminality, but not by itself the claimed descent set.
+
+3. The first sentence of the uniform descent proof should explicitly cite
+   the lowering witnesses in Appendix Seed data, which establish that gamma
+   and gamma+delta are real roots. 'The roots lie in the affine parabolic'
+   is too compressed if read as the sole justification of reality.
+   Candidate: 'The fixed lowering words in Appendix ... show that gamma and
+   gamma+delta are real roots of the embedded affine parabolic.'
+   Also define T before it occurs in the lemma statement, or in that statement.
+
+4. The intro uniform theorem no longer says non-fully-commutative, although
+   the original theorem did and the revised proof still establishes it.
+   Add 'non-fully-commutative' to the theorem sentence to preserve that strength.
+
+5. Explicitly put 'for integers k>=0' in the E10 definition. The subsection
+   currently has no stated parameter domain. Likewise say 'Fix an integer
+   r>=3' at the start of the uniform construction rather than depending on
+   the reader to recover it from the introduction.
+
+6. For the affine k=0 cover test, say 'delete one letter and retain products
+   of length 26'. Deleting every letter from a reduced word does not always
+   produce a cover; the saved procedure and appendix correctly filter by
+   length. This is a small clarification of the algorithm, not a new check.
+
+7. Correct the stray space in 'coefficient assertions .'
+
+INDEPENDENT CHECK OF PRINTED LOWERING SEQUENCES
+
+I used a fresh direct integer implementation of simple-root reflection:
+m_j=2v_j-sum_{t adjacent to j} v_t; v_j <- v_j-m_j.
+No construction module or earlier verification module was imported.
+
+* Printed E10 seed sequence: 50 steps; final vector alpha_9.
+* Printed gamma sequence: 12 steps; final vector at the branch node.
+* Printed gamma+delta sequence: the 12-step gamma prefix followed by the
+  displayed 29-step tail; final vector at the branch node.
+* In all cases every pairing used for a lowering step is strictly positive
+  and every intermediate coordinate is nonnegative.
+* Gamma tests were done with branch 9 and branch 12. The sequence stays in
+  the same affine block, so its exact verification is independent of the
+  length of the unused tail and transfers to all uniform ranks.
+
+The phrase 'For gamma+delta, append ...' is correct but can be made more
+explicit: 'For gamma+delta, apply the preceding 12 reflections, then ...;
+the result is again the branch simple root.' This removes any ambiguity
+about whether the tail alone or the concatenated sequence is intended.
+
+STRUCTURAL CHECKS PASSED
+
+* Introduction may state existence/explicitness with the actual formula
+  deferred to the construction section. This is conventional and clear.
+* Generalized-E notation, support, ordinary mu by cases, FC, descents, and
+  i(I) are available before their technical uses. K renaming in maxI is
+  consistent, and 'maximum-cardinality' correctly replaced 'maximality'.
+* The ambient-action lemma retains the (rho,delta)gamma term, so it does not
+  incorrectly treat delta as an ambient radical vector. N maps the ambient
+  space into span{gamma,delta}; the stated N gamma and N delta then establish
+  N^3=0. The iteration has the correct sign and quadratic coefficient.
+* Uniform seed real-root proof via s_0F alpha_0 is intact. Translation and
+  positivity are intact. The exceptional 7--8 edge sum correctly retains
+  the factored -ak(k-1)-rk, including k=0 and k=1. The matching is correct.
+* Reflection parity, eigenspace contradiction, coordinate-row support proof,
+  injectivity, FC-finiteness, and finite-ball argument remain valid.
+* Terminal reduction retains symmetric star transport, excludes covers
+  before descent vanishing, preserves the FC lower endpoint, and keeps the
+  positive new gap and strictly shorter upper endpoint.
+* All 11 finite rows, lengths, lower words, and gaps agree with the audited
+  tables. The length-50 word has the same split concatenation. Both D6 maps
+  are expressed correctly by 1,n-1,2,3,4,5 for n=7 and n=8.
+* Main-text E8 proof has length-additive pruning, transitive coset closure,
+  recursive induction, right and inverse-left tests, exact FC recurrence,
+  FC weak-predecessor completeness, both descent inclusions, and Bruhat
+  comparison. The appendix supplies the independent decomposition and
+  distinguishes consistency checks from the completeness argument.
+* The affine B0 matrix is preserved in the appendix and referenced from
+  the proof. Its column slopes, inversion-string contribution table, length
+  formula, FC length bound, and base-cover elimination remain intact.
+  The new explicit non-FC contradiction fills an earlier presentation gap.
+* E10 seed/root formula, pairings, positivity, support, distinctness, and
+  parity proof agree with the audited original. Its separate lowering
+  certificate is now inspectable in print.
+
+OPTIONAL POLISH, NOT BLOCKING
+
+The paper still lacks a diagram; a single generalized-E numbering figure
+would help readers locate the branch and the affine block. If added, one
+diagram suffices. Display (delta,alpha_8)=-1 in the uniform construction to
+make the whole-ambient qualification concrete.
+
+The uniform theorem proof still uses 'It also shows' before the non-FC
+argument, although that deduction uses maxI rather than the preceding
+parity proposition. Replace with 'The reflections are not fully commutative:
+otherwise Lemma ...'. Add one explanatory clause for distinct roots giving
+distinct reflections if space permits: image(1-r_beta)=R beta, and positivity
+and norm two fix beta on that line.
+
+The existing 'Root inequalities refer to positivity in the simple-root basis'
+is adequate for specialists. 'A positive root has nonnegative coordinates'
+would prevent confusion with strict coordinate positivity in the support proof.
+
+The shortened paper removes project-search narratives, sample indefinite
+lengths, and Boolean-scope comparisons. These are ancillary observations,
+not lost ingredients of the stated theorems. Core mathematical conclusions
+remain present, except the explicit non-FC word in the intro uniform theorem
+flagged above. Priority remains deliberately unclaimed.

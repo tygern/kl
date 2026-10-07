@@ -1,0 +1,765 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\hypersetup{pdftitle={Intrinsic interval consequences of Gern's type D thesis},
+pdfauthor={Research draft prepared with an Astra research team}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ellW}{\ell}
+\newcommand{\FC}{\mathrm{FC}}
+\newcommand{\CD}{\mathcal C_D}
+\title{Intrinsic interval consequences of Gern's type $D$ thesis\\
+\large A research note using combinatorial invariance}
+\author{Research draft prepared with an Astra research team}
+\date{October 6, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We extract consequences of Gern's thesis that apply to arbitrary equal-parameter
+Coxeter systems by using Theorem 1.1 of the September 24, 2026 combinatorial
+invariance preprint. A type $D$ interval with fully commutative bottom becomes
+a certificate for a $0$--$1$ leading coefficient in every realization of its
+abstract interval poset. More specifically, Gern's bad-element intervals give
+an infinite family of degree bounds and exact leading coefficients, including
+vanishing of increasingly many top coefficients. All these statements are
+conditional on the cited invariance theorem; we do not independently certify
+its full proof. We distinguish these formal consequences from previously
+known type $B$ bounds, parabolic-coset transfers, and subsystem pattern
+embeddings. No new whole-type theorem or publication-level novelty claim is
+established here.
+\end{abstract}
+
+\section{Inputs and the precise scope of transfer}
+Throughout, $P_{u,v}(q)$ is the ordinary equal-parameter Kazhdan--Lusztig
+polynomial of a Coxeter system $(W,S)$. We use
+\[
+ P_{u,u}=1,\qquad P_{u,v}=0\ (u\not\leq v),\qquad
+ \deg P_{u,v}\leq\left\lfloor\frac{\ell(v)-\ell(u)-1}{2}\right\rfloor
+ \quad(u<v).
+\]
+For $u<v$ put $d=\ell(v)-\ell(u)$ and define
+\[
+ \mu(u,v)=\begin{cases}
+ [q^{(d-1)/2}]P_{u,v}(q),&d\text{ odd},\\
+ 0,&d\text{ even}.
+ \end{cases}
+\]
+For odd $d$, $\mu$ is the coefficient at the largest \emph{allowed}
+degree; it need not be the leading nonzero coefficient. For even
+$d$, $\mu$ is zero by convention.
+
+The two external inputs are:
+\begin{enumerate}
+\item Gern \cite[Theorem 4.5.11]{gern}: in finite type $D_n$, if $x$ is
+fully commutative and $x<w$, then $\mu(x,w)\in\{0,1\}$.
+\item OpenAI \cite[Theorem 1.1]{ci}: for arbitrary Coxeter systems,
+an order isomorphism $[u,v]\cong[x,w]$ preserves the ordinary
+equal-parameter polynomial: $P_{u,v}=P_{x,w}$.
+\end{enumerate}
+The second statement includes infinite and noncrystallographic systems.
+It requires an isomorphism of the \emph{whole closed interval}.
+An embedding, equal rank numbers, an undirected graph match, or a
+reflection-subgroup inclusion is not sufficient.
+The consequences proved below invoke this input, rather than silently
+treating the preprint as an independently verified theorem.
+
+\begin{definition}
+Let $\CD$ be the class of finite posets isomorphic to an interval $[x,w]$
+in some $D_n$, $n\geq4$, with $x$ fully commutative.
+A witness consists of $n,x,w$ and an explicit order isomorphism.
+\end{definition}
+
+\begin{theorem}[Type $D$ witness certificate]\label{thm:transfer}
+Assume the invariance input. In any Coxeter system, if $[u,v]\in\CD$
+and $u<v$, then $\mu(u,v)\in\{0,1\}$.
+The element $u$ is not required to be fully commutative.
+\end{theorem}
+\begin{proof}
+Choose a witness $\iota:[u,v]\longrightarrow[x,w]$.
+Bruhat intervals are finite graded posets, and an order isomorphism
+preserves their rank. Hence
+$\ell(v)-\ell(u)=\ell(w)-\ell(x)$.
+The invariance input gives $P_{u,v}=P_{x,w}$. For odd rank the coefficients
+defining $\mu$ are consequently equal; for even rank both are zero.
+Gern's theorem applies to the witness bottom $x$.
+\end{proof}
+
+\begin{corollary}[Obstruction]\label{cor:obstruction}
+Assume the invariance input. If $\mu(u,v)\geq2$, then $[u,v]$ has no
+fully commutative-bottom type $D$ witness.
+\end{corollary}
+\begin{proof}This is the contrapositive of Theorem~\ref{thm:transfer}.\end{proof}
+
+This certificate theorem is an immediate consequence of the two inputs,
+not a classification of $\CD$ or an independent new mechanism.
+In particular, it does not prove the fully commutative-bottom conjecture
+throughout an exceptional or affine type: that would require witnesses
+for \emph{all} the relevant intervals or a separate argument.
+
+\begin{proposition}[Fully commutative status is not encoded across types]
+The abstract principal lower interval does not determine whether its top
+is fully commutative across arbitrary Coxeter systems.
+\end{proposition}
+\begin{proof}
+Take $s,t$ with $m(s,t)=3$, and separately $s',t'$ with $m(s',t')=4$.
+The intervals $[e,sts]$ and $[e,s't's']$ each have levels
+\[
+ \{e\},\quad\{s,t\},\quad\{st,ts\},\quad\{sts\},
+\]
+with both rank-one elements below both rank-two elements (and the
+corresponding primed levels in the second interval).
+This follows directly from the subword criterion. They are therefore
+isomorphic six-element posets. In $I_2(3)$ the braid $sts=tst$ makes
+$sts$ non-fully-commutative. In $I_2(4)$ a reduced word of length three
+cannot contain the noncommuting braid of length four; $s't's'$ is fully
+commutative. See also Stembridge's definition and braid characterization
+\cite{stembridge}.
+\end{proof}
+
+\section{An infinite family carrying the thesis's exact calculations}
+We use Gern's numbering: $s_1$ sends the first two signed entries
+$(a,b)$ to $(-b,-a)$, $s_2$ interchanges the first two entries, and
+$s_i$ interchanges positions $i-1,i$ for $i\geq3$.
+Right multiplication has these effects on signed one-line notation.
+For even $n\geq4$ define
+\[
+ x_n=s_1s_2s_4s_6\cdots s_n,
+ \qquad
+ w_n(i)=\begin{cases}
+ (-1)^{n/2},&i=1,\\
+ i,&i>1\text{ odd},\\
+ -(n+2-i),&i\text{ even}.
+ \end{cases}
+\]
+Set $I_n=[x_n,w_n]$. These are Gern's Definition 2.3.8 and
+Corollary 2.2.19. The factors of $x_n$ commute, so $x_n$ is fully
+commutative. The formulas also give an even number of negative entries
+in $w_n$, as required for $D_n$.
+For odd $n\geq5$, the corresponding thesis elements are the even
+$(n-1)$ elements with an additional fixed last entry; their intervals
+are identical after standard parabolic inclusion.
+
+The following exact inputs are from the thesis:
+\begin{align}
+ L_n:=\ell(w_n)&=\frac{3n^2}{8}+\frac n4,
+ &\ell(x_n)&=\frac n2+1,\label{eq:lengths}\\
+ d_n:=\operatorname{rank} I_n&=\frac{3n^2}{8}-\frac n4-1,\label{eq:rank}\\
+ a_n:=a(w_n)&=\begin{cases}
+ 3n/4,&n\equiv0\pmod4,\\
+ (3n+2)/4,&n\equiv2\pmod4,
+ \end{cases}\label{eq:a}\\
+ P_{x_n,w_n}&=P_{e,w_n},\label{eq:equality}\\
+ \mu(x_n,w_n)&=\begin{cases}1,&n=6,\\0,&n\ne6.\end{cases}\label{eq:mu}
+\end{align}
+The locators are Lemma 2.2.20, Definition 2.3.8, Proposition 4.5.1,
+Lemma 2.3.9, and Lemmas 4.5.2--4.5.7, respectively.
+Equation~\eqref{eq:mu} uses the explicit computer calculations at
+$n=6$ and $n=8$ recorded in Lemma 4.5.5; it is not entirely a symbolic
+argument in the original thesis.
+The thesis's Proposition 1.3.5, citing Lusztig \cite[1.3(a)]{lusztig}, gives
+\[
+ \deg P_{e,w_n}\leq \frac{L_n-a_n}{2}.
+\]
+
+\begin{theorem}[Bad-interval degree and coefficient transfer]\label{thm:bad}
+Assume the invariance input. Let $[u,v]$ be an interval in any Coxeter
+system, and suppose $[u,v]\cong I_n$ for even $n\geq4$. Put
+\[
+ M_n=\left\lfloor\frac{d_n-1}{2}\right\rfloor,
+ \qquad A_n=\left\lfloor\frac{L_n-a_n}{2}\right\rfloor,
+ \qquad B_n=\min\{M_n,A_n\}.
+\]
+Then
+\[
+ \mu(u,v)=\begin{cases}1,&n=6,\\0,&n\ne6,\end{cases}
+ \qquad \deg P_{u,v}\leq B_n.
+\]
+For $n=8$ the bound improves to $\deg P_{u,v}\leq9$.
+\end{theorem}
+\begin{proof}
+Rank preservation identifies the rank with $d_n$, and invariance gives
+$P_{u,v}=P_{x_n,w_n}=P_{e,w_n}$. The exact $\mu$ assertion follows from
+\eqref{eq:mu}. The ordinary degree bound gives $M_n$, and Lusztig's
+bound with \eqref{eq:a} gives $A_n$, taking floors because polynomial
+degrees are integral. When $n=8$, $d_8=21$ and $M_8=A_8=10$.
+Equation~\eqref{eq:mu} says the coefficient of $q^{10}$ vanishes.
+Thus the degree is at most nine.
+\end{proof}
+
+\begin{corollary}[Increasing gaps at the allowed top degree]\label{cor:gaps}
+Assume the invariance input and $[u,v]\cong I_n$.
+If $n=8k$ with $k\geq2$, then
+\[
+ [q^{M_n-j}]P_{u,v}=0\quad(0\leq j\leq k-2).
+\]
+If $n=8k+6$ with $k\geq1$, then
+\[
+ [q^{M_n-j}]P_{u,v}=0\quad(0\leq j\leq k-1).
+\]
+These assertions concern the top $k-1$ and $k$ \emph{allowed}
+coefficients, respectively, without requiring any target cell or
+target $a$-function calculation.
+\end{corollary}
+\begin{proof}
+For $n=8k$ one obtains
+\[
+ M_n=12k^2-k-1,\qquad A_n=12k^2-2k,
+ \qquad M_n-A_n=k-1.
+\]
+For $n=8k+6$ one obtains
+\[
+ M_n=12k^2+17k+5,\qquad A_n=12k^2+16k+5,
+ \qquad M_n-A_n=k.
+\]
+Every exponent listed in the corollary is strictly greater than $A_n$;
+Theorem~\ref{thm:bad} therefore forces its coefficient to vanish.
+\end{proof}
+
+\begin{center}
+\begin{tabular}{rrrrrr}
+\toprule
+$n$&$L_n$&$\ell(x_n)$&$d_n$&degree bound&$\mu$\\
+\midrule
+4&7&3&4&1&0\\
+6&15&4&11&5&1\\
+8&26&5&21&9&0\\
+10&40&6&34&16&0\\
+12&57&7&50&24&0\\
+14&77&8&69&33&0\\
+16&100&9&91&44&0\\
+22&187&12&175&85&0\\
+24&222&13&209&102&0\\
+\bottomrule
+\end{tabular}
+\end{center}
+This table is arithmetic derived from the thesis formulas; it does not
+claim to recompute the high-rank polynomials. The special row $n=8$
+includes the improvement from Lemma 4.5.5.
+
+\begin{proposition}[Exact rank-eleven polynomial; computer assisted]\label{prop:d6}
+The project's exact recurrence computation gives
+\[
+ F(q):=P^{D_6}_{x_6,w_6}(q)=1+6q+11q^2+6q^3+q^4+q^5.
+\]
+Assuming the invariance input, every realization $[u,v]\cong I_6$
+has $P_{u,v}=F$ and $P_{u,v}(1)=26$.
+\end{proposition}
+\begin{proof}[Computational proof and transfer]
+The endpoints, with lengths four and fifteen, are
+\[
+ x_6=(-1,-2,4,3,6,5),\qquad w_6=(-1,-6,3,-4,5,-2).
+\]
+The saved Python implementation uses signed-inversion lengths,
+the Bruhat lifting property and the exact integer KL recurrence.
+Its separate $R$-polynomial recurrence checks
+\[
+ q^{11}P_{x_6,w_6}(q^{-1})=
+ \sum_{x_6\leq z\leq w_6}R_{x_6,z}(q)P_{z,w_6}(q).
+\]
+The closed interval has 1676 vertices and rank vector
+\[
+ (1,12,55,140,248,339,360,287,162,59,12,1).
+\]
+The lower ideal $[e,w_6]$ has 3184 vertices.
+The computation also checks each right-descent choice at $w_6$;
+its detailed recurrence certificate and verifier are saved with the
+project. The verifier never calls the KL evaluator: it checks 24,245
+stored dependency records, including 17,148 strict recurrence
+identities and 6978 incomparable zero cases. All recurrence
+dependencies have shorter upper length, so these identities with
+the diagonal and zero base cases certify the answer by induction.
+This is a computer-assisted finite calculation, separate
+from the thesis's assertion of $\mu=1$.
+The final transfer follows from the external invariance input.
+\end{proof}
+
+\begin{theorem}[Coefficients in abstract products]\label{thm:product}
+Assume the invariance input. Suppose $[u,v]$ is isomorphic to
+$\prod_{i=1}^k[x_i,w_i]$, where each factor is a nontrivial type
+$D$ interval with fully commutative $x_i$. Write
+$d_i=\ell(w_i)-\ell(x_i)$ and $d=\sum_i d_i$. Then
+\[
+ P_{u,v}(q)=\prod_i P_{x_i,w_i}(q),\qquad
+ \deg P_{u,v}\leq\sum_i\left\lfloor\frac{d_i-1}{2}\right\rfloor.
+\]
+For $k\geq2$ one has $\mu(u,v)=0$.
+If every $d_i$ is odd, the coefficient of $q^{(d-k)/2}$ is in
+$\{0,1\}$. In particular, if $[u,v]\cong I_6^k$, then
+$P_{u,v}=F^k$, its degree is $5k$, and its actual leading
+coefficient is one.
+\end{theorem}
+\begin{proof}
+The product poset is a Bruhat interval in the product Coxeter group.
+The Hecke algebra is the tensor product of the factor Hecke algebras;
+the tensor products of the canonical basis elements are bar invariant
+with the required triangular expansion, hence form the canonical basis.
+Their expansion gives the stated factorization of $P$.
+Invariance transfers it to $[u,v]$.
+The degree bound follows by adding factor bounds. Its right side is
+at most $(d-k)/2<(d-1)/2$ for $k\geq2$, which implies the $\mu$ assertion.
+If all $d_i$ are odd, reaching exponent $(d-k)/2$ requires the largest
+allowed exponent in every factor. That coefficient is
+$\prod_i\mu(x_i,w_i)\in\{0,1\}$ by Gern's theorem.
+Finally $F$ has degree five and leading coefficient one.
+\end{proof}
+Tensor-product factorization is classical. The unrestricted transfer
+from an abstract product decomposition is the use of full invariance;
+no independent novelty claim is made for the product statement.
+
+\section{Certified small examples in types \texorpdfstring{$B$ and $A$}{B and A}}
+Use generators $b_0,b_1,b_2$ of $B_3$, with $b_0$ negating the
+first signed entry, $b_1$ swapping the first two, and $b_2$ swapping
+the last two. The type $D_4$ interval
+\[
+ [(1,3,2,4),(-1,2,-3,4)]
+ =[s_3,s_3s_1s_2s_3]
+\]
+is isomorphic to the type $B_3$ interval
+\[
+ [(3,2,-1),(2,-1,-3)].
+\]
+Their endpoint lengths are $(1,4)$ and $(4,7)$, respectively;
+both have rank vector $(1,4,4,1)$ and polynomial $1+q$.
+The target bottom has reduced word $b_0b_1b_2b_1$ and is not
+fully commutative, because $b_1b_2b_1$ is a noncommuting braid.
+
+Here is the complete vertex bijection found by the computation:
+\begin{center}\small
+\begin{tabular}{rrr}
+\toprule
+relative rank&$D_4$ vertex&$B_3$ vertex\\
+\midrule
+0&$(1,3,2,4)$&$(3,2,-1)$\\
+1&$(-2,3,-1,4)$&$(3,-2,-1)$\\
+1&$(2,3,1,4)$&$(3,1,-2)$\\
+1&$(-3,-1,2,4)$&$(-3,2,-1)$\\
+1&$(3,1,2,4)$&$(1,2,-3)$\\
+2&$(-1,3,-2,4)$&$(3,-1,-2)$\\
+2&$(-3,2,-1,4)$&$(2,-3,-1)$\\
+2&$(3,2,1,4)$&$(2,1,-3)$\\
+2&$(-1,-3,2,4)$&$(-1,2,-3)$\\
+3&$(-1,2,-3,4)$&$(2,-1,-3)$\\
+\bottomrule
+\end{tabular}\end{center}
+The verifier checks all pairwise order relations, not just rank numbers.
+It also checks every subinterval's KL polynomial, $R$-reciprocity,
+and every available right descent in the KL recurrence.
+
+The $B_3$ interval is not contained in a left coset of a type $A$
+parabolic, even a conjugate one: two of its right cover reflections
+are $(-3,2,-1)$ and $(-1,2,3)$, whose product has order four.
+Two distinct reflections in a type $A$ Coxeter group have product
+order two or three; the cover labels of a coset of such a subgroup
+would lie in that subgroup. A corresponding pair of left cover labels
+of order four excludes right type $A$ parabolic cosets as well.
+Thus the target example actually encounters the double-bond structure,
+although its KL equality is already covered by short-interval results.
+
+Four additional saved certificates include $B_4$ intervals with non-fully-
+commutative bottom and ranks three and five, as well as type $A_4$
+examples of those ranks. The rank-five examples among these four have $P=1+q$ and
+$\mu=0$, illustrating the distinction between actual leading
+coefficient and $\mu$. These small examples are verification
+demonstrations, not new results in those types.
+
+A further rank-five certificate uses all four $D_4$ simple generators:
+\[
+ [(-2,-1,3,4),(-4,-3,-2,-1)]_{D_4}
+ \cong [(2,4,3,-1),(2,3,-1,-4)]_{B_4}.
+\]
+The endpoint lengths are $(1,6)$ and $(5,10)$. Each interval has
+34 vertices. Its rank vector and polynomial are
+\[
+ (1,4,10,12,6,1),\qquad P=1+2q+q^2,\qquad \mu=1.
+\]
+The $D_4$ bottom is $s_1$, and a reduced word of the top is
+$s_1s_3s_2s_4s_3s_1$. The $B_4$ bottom has reduced word
+$b_0b_1b_2b_3b_2$, containing the braid $b_2b_3b_2$.
+The source's top has full $D_4$ support, and the target also has
+saved order-four cover-reflection obstructions to type $A$ cosets.
+This is a useful example with a fork in the source and double bond
+in the target; its rank remains within previously known invariance.
+
+\section{A structural obstruction and the shape of \texorpdfstring{$I_6$}{I6}}
+\begin{proposition}[Eight-element dihedral obstruction]\label{prop:butterfly}
+Let $K=[e,w_0]$ be the principal interval in $I_2(4)=B_2$,
+with level sizes $(1,2,2,2,1)$. No interval in a finite simply
+laced Weyl group is isomorphic to $K$. Consequently, any interval
+containing a closed subinterval isomorphic to $K$ has no finite
+type $D$ realization, regardless of its bottom's FC status.
+\end{proposition}
+\begin{proof}
+We give the classical reflection-plane argument; see Dyer
+\cite[Lemma 3.1 and Section 3.4]{dyer} for its antecedents.
+Label a cover $z\lessdot z'$ by the reflection $z'z^{-1}$ and its
+positive root. In a diamond with bottom $z$, middle vertices
+$r_\alpha z,r_\beta z$, and top
+$r_\rho r_\alpha z=r_\sigma r_\beta z$, one has
+\[
+ r_\rho r_\alpha=r_\sigma r_\beta.
+\]
+In a finite real reflection representation, a nonidentity product
+of two distinct reflections has
+$\operatorname{im}(r_\rho r_\alpha-1)=\operatorname{span}(\rho,\alpha)$.
+The same image is $\operatorname{span}(\sigma,\beta)$.
+The first two roots $\alpha,\beta$ are distinct and independent, so
+all four diamond labels lie in their common plane.
+
+In $K$, every vertex at one of the three middle levels is covered
+by both vertices at the next middle level, when that level exists.
+Apply the diamond argument first from the bottom to each rank-two
+vertex. All labels at ranks zero through two lie in one plane.
+Apply it next to diamonds from rank one to rank three, and then
+from rank two to the top. At each step the two already known
+outgoing reflections are distinct, so their roots span that same
+plane. All cover labels consequently lie in that plane.
+
+The eight vertices must then lie in one coset of the reflection
+subgroup generated by roots in this plane: reach each vertex by a
+cover path from the bottom. In a finite simply laced root system,
+such a rank-two subsystem is $A_1\times A_1$ or $A_2$, whose
+reflection groups have four or six elements. A coset cannot contain
+eight distinct vertices, a contradiction.
+The last assertion follows by restricting any proposed interval
+isomorphism to the specified closed subinterval.
+\end{proof}
+Since $e$ is FC in $B_2$ and $P_{e,w_0}=1$, this obstruction is
+stronger than a test using $\mu\geq2$. In particular, it disproves
+the proposed shortcut that every FC-bottom interval in every finite
+type can be modeled by a finite-$D$ FC-bottom interval. It is a
+classical structural obstruction, not a new result of this project.
+
+\begin{proposition}[Shape certificates for $I_6$; computer assisted]
+The interval $I_6$ is not isomorphic to a principal lower interval
+in any Coxeter system, and it is not a lattice.
+\end{proposition}
+\begin{proof}
+The saved Bruhat-order computation gives rank eleven and twelve
+atoms. A principal interval $[e,z]$ of rank eleven has at most eleven
+atoms: they are the distinct simple generators occurring in a
+reduced expression of $z$, which has eleven letters.
+This proves the first assertion.
+
+For the second, take the following two atoms of $I_6$:
+\[
+ a=(-4,-2,1,3,6,5),\qquad b=(-1,-3,4,2,6,5).
+\]
+Their two distinct minimal common upper bounds are
+\[
+ c=(-4,-3,1,2,6,5),\qquad d=(-2,-4,3,1,6,5).
+\]
+They have relative ranks two and three, respectively, and are
+incomparable. The saved script enumerates all 720 common upper
+bounds, verifies $c,d$ are exactly the minimal ones, and checks
+the comparisons using the Bruhat lifting property. Thus $a,b$
+have no join, so $I_6$ is not a lattice. This order-only certificate
+does not use a KL-polynomial calculation.
+\end{proof}
+
+\section{Concrete other-type families and why they are classical}
+The transfer hypotheses can be met in other types without any
+new invariance theorem. The following explains both a useful application
+and its novelty limitation.
+
+\begin{lemma}[Convex parabolic cosets]\label{lem:coset}
+Let $J\subseteq S$, let $W_J$ be its standard parabolic subgroup, and
+let $a\in W^J$ be the minimal element of $aW_J$.
+For $x\leq w$ in $W_J$, multiplication by $a$ identifies
+$[x,w]_{W_J}$ with the entire interval $[ax,aw]_W$.
+\end{lemma}
+\begin{proof}
+Parabolic decomposition $z=z^Jz_J$ is length-additive, and the
+projection $z\mapsto z^J$ is order preserving. If $ax\leq z\leq aw$,
+then $a\leq z^J\leq a$, hence $z\in aW_J$.
+On this coset, $az_1\leq az_2$ if and only if $z_1\leq z_2$ in $W_J$.
+These are the standard parabolic Bruhat-order facts; see
+\cite[Section 2.5]{bb}. They identify precisely the vertices and order
+of the two intervals.
+\end{proof}
+
+\begin{proposition}[Classical coset polynomial equality]\label{prop:coset}
+Under the hypotheses of Lemma~\ref{lem:coset}, the equality
+\[
+ P^W_{ax,aw}=P^{W_J}_{x,w}
+\]
+holds independently of the invariance input.
+\end{proposition}
+\begin{proof}
+Induct on $\ell(w)$. The case $x=w$ is immediate. Choose a right
+descent $s\in J$ of $w$. Length additivity shows that the right descents
+in $J$ of $ax$ and $aw$ are the corresponding descents of $x$ and $w$.
+Use the standard right-handed KL recurrence with $s$.
+Its first two terms have upper element $aws=a(ws)$, so the induction
+hypothesis applies (and incomparable terms are zero).
+Every nonzero summand in its correction sum has
+$ax\leq z\leq a(ws)$ and $zs<z$. Lemma~\ref{lem:coset} puts $z=ay$
+with $x\leq y\leq ws$ in $W_J$.
+The descent condition and all length differences match. The polynomial
+and $\mu$ factors in that sum have smaller upper parabolic length and
+match by induction. Thus this recurrence is exactly the recurrence
+in $W_J$. The recurrence is Gern \cite[Proposition 1.2.6]{gern},
+with left and right exchanged, or \cite[Section 6.1]{bb}.
+\end{proof}
+
+For example, take an irreducible affine Weyl group $\widetilde D_n$ and
+its finite standard $D_n$ parabolic $J$. With $\rho^\vee$ half the sum
+of the positive coroots, let
+\[
+ a_m=t_{-2m\rho^\vee},\qquad m\geq1.
+\]
+Since $2\rho^\vee$ lies in the coroot lattice, these are affine Weyl
+group elements. Use the affine-root convention
+$t_\lambda(\alpha+r\delta)=\alpha+(r-\langle\lambda,\alpha\rangle)\delta$.
+For finite simple $\alpha_i$, $a_m(\alpha_i)=\alpha_i+2m\delta$ is positive;
+thus $a_m\in W^J$. Conversely,
+$a_m^{-1}(\alpha_i)=\alpha_i-2m\delta$ is negative, so every finite
+simple generator lies in the left descent set of $a_m$.
+An adjacent pair of finite simple generators consequently forces a
+reduced prefix $sts$, with $m(s,t)=3$, in $a_m$ by parabolic
+decomposition. Therefore $a_m$ and its length-additive extensions
+$a_m x_n$ are non-fully-commutative. This descent argument is also
+Gern \cite[Lemma 1.1.21 and Corollary 1.1.22]{gern}.
+Affine translations and the root-sign length criterion are standard;
+see \cite[Chapters 4 and 5]{humphreys}.
+
+Lemma~\ref{lem:coset} and Proposition~\ref{prop:coset} now give
+\[
+ [a_mx_n,a_mw_n]\cong I_n,
+ \quad P^{\widetilde D_n}_{a_mx_n,a_mw_n}=P^{D_n}_{x_n,w_n}.
+\]
+In particular, $\mu=1$ for $n=6$ and $\mu=0$ for the other even
+values, with all the degree bounds in Theorem~\ref{thm:bad}.
+The endpoint lengths tend to infinity as $m$ tends to infinity.
+This gives explicit affine examples with non-fully-commutative bottom,
+but Proposition~\ref{prop:coset} makes their equality classical.
+They cannot be presented as evidence that full invariance was needed.
+
+Finite $E_7$ and $E_8$ contain standard $D_6$ parabolics, and $E_6$
+contains a $D_4$ parabolic. Their standard parabolic intervals, and
+coset copies as above, provide analogous exceptional-type examples.
+Again these are already covered by parabolic theory, and do not
+settle the fully commutative-bottom bound for all of an exceptional type.
+
+For fully explicit rank-eleven exceptional examples, use the numbering
+$1$--$3$--$4$--$5$--$6$--$7$ (and $7$--$8$ in $E_8$), with
+$2$ attached to $4$. Set $J=\{2,3,4,5,6,7\}\cong D_6$ and relabel
+Gern's generators $(1,2,3,4,5,6)$ as $(2,3,4,5,6,7)$.
+Let $x,w$ be the resulting $x_6,w_6$, and put
+$a=w_0(E_r)w_0(J)$ for $r=7,8$. This is the minimal element of
+$aW_J$, of length $33$ in $E_7$ and $90$ in $E_8$.
+Consequently $(ax,aw)$ has lengths $(37,48)$ and $(94,105)$,
+respectively, and polynomial $F$ from Proposition~\ref{prop:d6}.
+The saved exact integer-root script checks that both lower endpoints
+are non-fully-commutative: stripping a displayed sequence of right
+descents from $a$ leaves two adjacent descents, hence a reduced
+noncommuting braid. Concatenation with a reduced word for $x$ preserves
+that braid. The script and application notes contain the full sequences
+and root images. These particular pairs are classical coset applications.
+
+\section{Literature and novelty audit}
+The audit is a documented search through October 6, 2026, not a proof
+of the absence of every unpublished or inaccessible result.
+\begin{center}
+\small
+\begin{tabular}{p{.35\textwidth}p{.56\textwidth}}
+\toprule
+Candidate statement&Assessment and primary reference\\
+\midrule
+Finite type $A$ FC-bottom $0$--$1$ bound&Known: Green
+\cite[Theorem 4.1; arXiv Theorem 3.1]{green}. His result also covers affine type $A$.\\
+Finite type $D$ FC-bottom bound&The supplied thesis:
+Gern \cite[Theorem 4.5.11]{gern}.\\
+Finite type $B/C$ FC-bottom bound&Known: Chmutov's 2014 thesis
+\cite[Theorem 2.3.8]{chmutov}. Types $B$ and $C$ have the same
+ordinary equal-parameter Coxeter system.\\
+Both endpoints FC in $B$ and $H$&Known: Green
+\cite[Remark 7.13]{jonestraces}. This does not alone prove the
+FC-bottom/arbitrary-upper statement.\\
+Upper endpoint Deodhar&Known: Jones \cite[Theorem 1.2]{jones},
+including exceptional finite Weyl types. This uses a different
+endpoint hypothesis; the bad elements $w_n$ are not FC.\\
+Subsystem interval pattern transfer&Known: Woo
+\cite[Corollary 3.3]{woo}; the arXiv numbering is Corollary 2.
+Those embeddings already preserve KL polynomials.\\
+Principal-lower-interval transfers&Known: Brenti--Caselli--Marietti
+\cite[Theorem 7.8 and Corollary 8.4]{bcm} and Delanoy \cite{delanoy}.\\
+Small arbitrary intervals&Known through rank six for arbitrary
+Coxeter systems: Barkley--Gaetz--Lam \cite[Corollary 1.4]{bgl}.\\
+Small finite Weyl/type $A$ intervals&Known through rank ten for Weyl
+groups and rank twelve when both realizations have type $A$:
+Esposito--Marietti--Stella
+\cite[Corollary 1.3(ii)]{ems}.\\
+Arbitrary realizations of $I_n$&Theorem~\ref{thm:bad} is a formal
+consequence of full invariance and Gern's calculations.
+Its unrestricted scope exceeds these short-interval results,
+but an independent novelty claim is not established.\\
+\bottomrule
+\end{tabular}
+\end{center}
+The rank-eleven $I_6$ test and rank-twenty-one $I_8$ test should not
+be described as outside \emph{every} prior result merely because their
+ranks exceed ten. A particular realization may be handled by special
+matchings, geometry, parabolic cancellation, or pattern embedding.
+Nor does the rank-twelve type $A$ statement automatically compare a
+type $A$ realization with a type $D$ realization; its precise ambient
+hypotheses matter. The defensible claim here is the new unrestricted
+\emph{deduction}, conditional on the supplied full theorem.
+For $I_6$, the shape certificate above specifically rules out
+principal-lower and lattice realizations. It does not rule out
+every other older transport mechanism for a particular realization.
+
+\section{Verification, computations, and remaining research}
+The project saves the source papers and extracted text, a literature
+audit, and executable Python code under \texttt{computations/}.
+The finite verification exhaustively compares two implementations on
+54,907 comparable pairs (including equal endpoints) and 201,600
+ordered Bruhat comparisons in
+$A_3,A_4,B_3,D_4,B_4$. They use BFS versus inversion-formula lengths
+and subword versus lifting-property Bruhat comparison; both implement
+the same standard KL recurrence. The independent $R$ recurrence adds
+a different polynomial identity check for the certified examples.
+The saved JSON report includes six complete order-isomorphism
+certificates and the targeted $D_6$ result. The $D_8$ base computation
+is inherited from the thesis and was not independently reproduced.
+The executed dependency-free command is
+\begin{quote}\ttfamily\small
+python3 computations/run\_search.py
+\end{quote}
+It can also be run through \texttt{uv run --offline} using an installed
+Python; project instructions give the exact command and certificate
+verification procedure. The exceptional root checks run with
+\texttt{python3 research/exceptional\_cosets.py}.
+Arithmetic degree tables, small-group KL calculations, and theorem
+proofs have different evidentiary roles: the table checks formulas;
+small-group calculations check concrete examples; neither proves
+unrestricted combinatorial invariance or whole-type coverage.
+
+The logical audit of Theorem~\ref{thm:bad} is short and exact:
+\begin{enumerate}
+\item The interval certificate supplies the whole closed poset, hence its rank.
+\item The external invariance theorem identifies the two ordinary polynomials.
+\item Gern's Lemma 2.3.9 permits the $e$-bottom $a$-function degree bound.
+\item Proposition 4.5.1 evaluates that source $a$-function.
+\item Taking integer floors and the ordinary degree bound yields $B_n$.
+\item Lemma 4.5.5 supplies the original computational base values;
+our certificate independently reproduces and expands the $n=6$
+calculation. The $n=8$ value remains inherited from the thesis and
+removes the allowed $q^{10}$ term.
+\end{enumerate}
+No target $a$-function, target fully commutative status, or
+target root-label compatibility is assumed. No assertion is made
+for unequal-parameter polynomials, parabolic variants, or
+$p$-Kazhdan--Lusztig polynomials.
+
+\paragraph{Update from the expanded search.}
+The companion paper \emph{Leading Kazhdan--Lusztig coefficients with
+fully commutative lower endpoints in type $E$} gives a
+computer-assisted extension to entire finite types $E_6,E_7,E_8$.
+Independent parabolic searches certify $E_8$ without enumerating its full
+group. The note also proves explicit unbounded full-support upper families
+in affine $E_8$ and indefinite $E_{10},E_{13}$. The affine family has zero
+$\mu$ for every FC lower endpoint; the indefinite families have the FC-bottom
+$0/1$ bound. Classical cell theory and parity supply the structural proof.
+These direct results enlarge the conditional abstract model class; they do
+not provide new interval isomorphisms. Their historical priority remains
+unconfirmed. The expanded search also independently
+verifies a fully commutative-bottom affine-$D_4$ pair with $\mu=2$:
+with central node $2$ and leaves $0,1,3,4$, put $x=s_0s_1s_3s_4$ and
+$w=xs_2x$. Then $P_{x,w}=1+3q+2q^2$. The cube-interval interpretation is
+classical, and Mongelli's 2011 preprint \emph{Kazhdan--Lusztig polynomials
+of boolean elements}, Corollary 2, explicitly covers the star pattern and
+its Catalan leading coefficient. This is a rediscovery, not a novelty claim.
+
+Large $\mu$-values in affine types $B,C,D$ are known
+\cite{chen}; they are not counterexamples to an FC-bottom assertion
+without checking their lower endpoints. Likewise the initial literature
+search's failure to find a complete exceptional-type or affine-$D$
+FC-bottom theorem is not a certification that such a theorem remains
+open. The separate literature file records queries, exact locators,
+version differences, and access limitations, including the university
+repository's blocked Chmutov PDF download.
+
+For a substantive next theorem, the missing step is a structural
+recognition result supplying FC-bottom $D$ witnesses for a naturally
+defined family in exceptional or affine type \emph{beyond} classical
+parabolic or subsystem embeddings. Another promising target is a
+certified non-parabolic realization of $I_6$ or $I_8$.
+Such a high-rank nonclassical realization has not been proved. The exceptional
+companion supplies separate direct finite-type and explicit infinite-family
+extensions. Its rank-uniform construction also gives full-support upper
+families in every $E_{4r+1}$, $r\geq3$, with a second unbounded parameter.
+Their FC-bottom leading coefficients are $0$ or $1$, and all non-cover
+coefficients vanish. A symbolic $D_{4r}$ sign-change proof establishes
+real-root membership; no KL polynomial computation is needed. Historical
+priority remains unconfirmed, and full polynomials are not determined.
+This note records completed conditional deductions
+and concrete classical applications without replacing those gaps by
+an unproved novelty claim.
+
+\begin{thebibliography}{99}
+\bibitem{gern} T. C. Gern, \emph{Leading Coefficients of
+Kazhdan--Lusztig Polynomials in Type $D$}, Ph.D. thesis, University
+of Colorado Boulder, 2013. \url{https://arxiv.org/abs/1304.6074}.
+\bibitem{ci} OpenAI, \emph{Combinatorial invariance of
+Kazhdan--Lusztig polynomials}, preprint, September 24, 2026.
+\url{https://github.com/openai/math/blob/main/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/paper.pdf}.
+\bibitem{green} R. M. Green, \emph{Leading coefficients of
+Kazhdan--Lusztig polynomials and fully commutative elements},
+J. Algebraic Combin. \textbf{30} (2009), 165--171.
+\url{https://arxiv.org/abs/0801.1650}.
+\bibitem{chmutov} M. S. Chmutov, \emph{The structure of $W$-graphs
+arising in Kazhdan--Lusztig theory}, Ph.D. thesis, University of
+Michigan, 2014, Section 2.3, Theorem 2.3.8.
+\url{https://hdl.handle.net/2027.42/108802}.
+\bibitem{stembridge} J. R. Stembridge, \emph{On the fully commutative
+elements of Coxeter groups}, J. Algebraic Combin. \textbf{5} (1996),
+353--385. \url{https://doi.org/10.1007/BF00193185}.
+\bibitem{woo} A. Woo, \emph{Interval pattern avoidance for arbitrary
+root systems}, Canad. Math. Bull. \textbf{53} (2010), 757--762.
+\url{https://arxiv.org/abs/math/0611328}.
+\bibitem{bb} A. Bj\"orner and F. Brenti,
+\emph{Combinatorics of Coxeter Groups}, Graduate Texts in Mathematics
+231, Springer, 2005. \url{https://doi.org/10.1007/3-540-27596-7}.
+\bibitem{humphreys} J. E. Humphreys, \emph{Reflection Groups and
+Coxeter Groups}, Cambridge Studies in Advanced Mathematics 29,
+Cambridge University Press, 1990.
+\url{https://doi.org/10.1017/CBO9780511623646}.
+\bibitem{lusztig} G. Lusztig, \emph{Cells in affine Weyl groups, II},
+J. Algebra \textbf{109} (1987), 536--548.
+\url{https://doi.org/10.1016/0021-8693(87)90154-2}.
+\bibitem{bcm} F. Brenti, F. Caselli, and M. Marietti,
+\emph{Special matchings and Kazhdan--Lusztig polynomials},
+Adv. Math. \textbf{202} (2006), 555--601.
+\url{https://doi.org/10.1016/j.aim.2005.01.011}.
+\bibitem{delanoy} E. Delanoy, \emph{Combinatorial invariance of
+Kazhdan--Lusztig polynomials on intervals starting from the identity},
+J. Algebraic Combin. \textbf{24} (2006), 437--463.
+\url{https://doi.org/10.1007/s10801-006-0014-7}.
+\bibitem{bgl} G. T. Barkley, C. Gaetz, and T. Lam,
+\emph{Combinatorial invariance for the coefficient of $q$ in
+Kazhdan--Lusztig polynomials}, 2026, arXiv:2601.07793v2.
+\url{https://arxiv.org/abs/2601.07793v2}.
+\bibitem{ems} F. Esposito, M. Marietti, and S. Stella,
+\emph{Flip Combinatorial Invariance and Weyl groups}, 2026,
+arXiv:2509.16433v2. \url{https://arxiv.org/abs/2509.16433v2}.
+\bibitem{dyer} M. Dyer, \emph{On the ``Bruhat graph'' of a Coxeter
+system}, Compositio Math. \textbf{78} (1991), 185--191.
+\url{https://www.numdam.org/item/CM_1991__78_2_185_0/}.
+\bibitem{jonestraces} R. M. Green, \emph{Generalized Jones traces and
+Kazhdan--Lusztig bases}, J. Pure Appl. Algebra \textbf{211} (2007),
+744--772. \url{https://arxiv.org/abs/math/0509362}.
+\bibitem{jones} B. C. Jones, \emph{Leading coefficients of
+Kazhdan--Lusztig polynomials for Deodhar elements}, J. Algebraic
+Combin. \textbf{29} (2009), 229--260.
+\url{https://arxiv.org/abs/0711.1391}.
+\bibitem{chen} P. Chen, \emph{Non-trivial Kazhdan--Lusztig
+coefficients of affine Weyl groups}, preprint, 2018.
+\url{https://arxiv.org/abs/1804.02353}.
+\end{thebibliography}
+\end{document}

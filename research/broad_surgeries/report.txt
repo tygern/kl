@@ -1,0 +1,92 @@
+WORD / COXETER-DIAGRAM SURGERY INVESTIGATION
+Research date: 2026-10-07 UTC. Scope: one explicit family of surgery attempts;
+not a classification or proof that no new cross-type family exists.
+
+MAIN RESULT
+No new family established. There is a useful rigorous negative result for the
+most immediate deformation of Gern's rank-eleven interval: changing any one
+D6 edge from braid label 3 to 4 and keeping a lifted reduced word of w6 does
+not produce any new realization of I6 beyond principal-lower isomorphisms.
+
+EXACT COMPUTATIONAL SCOPE
+Use zero-based Gern generators: D6 edges (0,2),(1,2),(2,3),(3,4),(4,5).
+Source bottom x6 has commuting word (0,1,3,5), length 4. Source top w6 has
+length 15 and word (1,0,2,3,4,5,4,2,1,0,2,3,2,1,0).
+Source rank numbers are
+  1,12,55,140,248,339,360,287,162,59,12,1
+and the interval has 1676 elements.
+
+For each of the five edges, replace its Cartan product 1 by 2. This changes
+the Coxeter braid length from 3 to 4. Exhaust all distinct target elements
+obtained from ALL source reduced expressions of w6. Exhaustion uses induction
+on source right descents, not a sample of expressions. The counts of lifted
+tops are 3,3,6,2,2 respectively. All have target length 15.
+
+For every lifted top, exhaust every possible target bottom of length four.
+There are 1741 top/bottom cases across these sixteen tops. Every hypothetical
+rank-eleven interval with one of those tops must occur in this enumeration.
+Rank counts rule out every case except three:
+  - One top when (3,4) is inflated, with bottom (0,1,3,5).
+  - Both tops when (4,5) is inflated, with the same bottom.
+The exact words are in lift-all-bottoms-results.jsonl.
+
+For all three survivors, certify a bijection of entire principal lower ideals,
+each with 3184 elements. Generate pairs of elements by the SAME subword mask
+in the chosen source/target top words. The relation is one-to-one, onto, and
+preserves every length. Thus it is an order isomorphism: if a<=b, choose a
+reduced subword for b in the top word and then a reduced subword for a inside
+that expression. The paired expressions stay reduced by length preservation;
+the subword criterion gives the target relation. Apply the same argument to
+the inverse. This certifies full order, not merely equality of rank counts.
+
+The three surviving I6 comparisons therefore extend to [e,w6] isomorphisms.
+They are covered by the old result below. They do NOT demonstrate a new use
+of the September 2026 arbitrary-interval invariance input.
+
+PRIOR ART BOUNDARY (PRIMARY SOURCES)
+Fokko du Cloux, Rigidity of Schubert closures and invariance of Kazhdan-Lusztig
+polynomials, Advances in Mathematics 180 (2003), 146-175,
+DOI 10.1016/S0001-8708(02)00100-7:
+  https://www.sciencedirect.com/science/article/pii/S0001870802001007
+Its abstract states preservation of ALL subinterval KL polynomials under
+principal-lower isomorphisms when one system has tree/affine-A constituents;
+in particular this includes a finite-D source. Consequently a nonprincipal
+bottom alone does not escape old invariance if the map extends below it.
+
+E. Delanoy, Combinatorial invariance of Kazhdan-Lusztig polynomials on intervals
+starting from the identity, J. Algebraic Combin. 24 (2006), 437-463, p.446:
+  https://www.kurims.kyoto-u.ac.jp/EMIS/journals/JACO/Volume24_4/g468328324k77711.fulltext.pdf
+The reduction to the full case explicitly replaces Coxeter labels by maximal
+dihedral lengths visible below the top, cites du Cloux Proposition 3.5, and
+preserves all subinterval R-polynomials. This is a direct prior-art warning
+against presenting truncated-braid diagram inflation as a new mechanism.
+
+SAVED REPRODUCIBLE FILES
+coxeter_surgery.py: exact integral simple-root representation; right products,
+  reduced words, lifting comparison, lower ideals; initial inflation screen.
+lift_bad_words.py: source-descent recursion enumerating all lifted tops.
+search_lift_bottoms.py: exhaustive length-four bottom rank-count screen.
+certify_principal_matches.py: exact paired-mask bijections for all survivors.
+inflation-results.jsonl, lift-results.jsonl, lift-all-bottoms-results.jsonl,
+principal-certificates.jsonl: saved outputs.
+
+Run from this directory with Python 3; no third-party packages are needed.
+All four scripts were executed successfully. The principal certificate script
+asserts every claimed bijection and every claimed length equality.
+
+LIMITS / NEXT APPROACH
+This screen does not treat tops of different length, bottom words of other
+length, simultaneous edge changes, insertions of mandatory letters, or a
+source interval other than I6. Changing both endpoint words beyond lifted
+source reduced expressions could still produce useful nonprincipal surgery.
+No novelty claim follows from this finite failure.
+
+An untested structural thought: folding B_n into D_(n+1), with the B short
+generator mapped to the product of the two commuting D fork generators,
+changes length by the number of negative entries. A constant-negative-count
+B interval could potentially have a D model under this folding. However, full
+ambient interval equality and FC of the D bottom would have to be proved;
+fixed-point subposet embedding alone is insufficient. The B-wide 0/1 theorem
+is already Chmutov's, so only additional exact-polynomial/degree transport or
+a genuinely different target family would add useful content. This thought
+was not tested and should not be cited as a result.

@@ -1,0 +1,34 @@
+# Generated files and local working artifacts
+__pycache__/
+*.py[cod]
+.DS_Store
+/tmp/
+/prompts/
+*.log
+**/reproduction-logs/
+/research/broad_exceptional/enumerate_bad
+/research/en_independent/e*-fc.json
+/supplement/dist/
+/output/supplement/
+/kl-transfer.pdf
+
+# Primary-source downloads stay local; citations and audits retain their URLs.
+/sources/
+*.pdf
+*.png
+*.html
+!/output/pdf/*.pdf
+/research/en_literature/green*.txt
+/research/en_literature/kashiwara-tanisaki*.txt
+/research/en_literature/stembridge-fc.txt
+/research/en_literature/lusztig-unequal.txt
+/research/en_uniform/stembridge-countFC.txt
+/research/en_uniform/hagiwara-ishikawa-tagawa-fpsac2004.txt
+/research/exceptional_priority/geck-pycox.txt
+/research/exceptional_priority/geck-halls.txt
+/research/exceptional_priority/mongelli-2011.txt
+/research/exceptional_priority/garfinkle-vogan.txt
+/research/journal-review/priority-sources/*
+!/research/journal-review/priority-sources/inspect_pycox.py
+!/research/journal-review/priority-sources/pycox-data-inspection.json
+!/research/journal-review/priority-sources/pycox-commit.json

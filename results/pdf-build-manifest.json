@@ -1,0 +1,53 @@
+[
+  {
+    "source": "/Users/ic/workspace/kl/results/exceptional-leading.tex",
+    "pdf": "/Users/ic/workspace/kl/output/pdf/exceptional-leading.pdf",
+    "source_sha256": "32784b0ba63feff35f3c618e83225a06b13313be1cec6bab3709114ee146325c",
+    "pdf_sha256": "3a5ba46a8c64b4da4852966f17795dab0431fa975670cfd190ab5bc3898861b4",
+    "bytes": 363144,
+    "command": [
+      "/opt/homebrew/bin/latexmk",
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "-no-shell-escape",
+      "-outdir=/Users/ic/workspace/kl/tmp/pdfs/build/exceptional-leading",
+      "/Users/ic/workspace/kl/results/exceptional-leading.tex"
+    ]
+  },
+  {
+    "source": "/Users/ic/workspace/kl/results/kl-transfer.tex",
+    "pdf": "/Users/ic/workspace/kl/output/pdf/kl-transfer.pdf",
+    "source_sha256": "d646774e6f64ffdc0736b87168aa309cb11d74851e8ebb56bfe66948e7c149c8",
+    "pdf_sha256": "23f1163ea645f9275d8e46a138f87d65363bec7dea59dc4fe69f9abd5da5d646",
+    "bytes": 433694,
+    "command": [
+      "/opt/homebrew/bin/latexmk",
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "-no-shell-escape",
+      "-outdir=/Users/ic/workspace/kl/tmp/pdfs/build/kl-transfer",
+      "/Users/ic/workspace/kl/results/kl-transfer.tex"
+    ]
+  },
+  {
+    "source": "/Users/ic/workspace/kl/results/star-boundary.tex",
+    "pdf": "/Users/ic/workspace/kl/output/pdf/star-boundary.pdf",
+    "source_sha256": "d4a8817adaea90c3d762cffcf4e025d56a3c89e06b80ed4becab50729ed7a350",
+    "pdf_sha256": "92ab07dab6d4a4537804715a46beb3edb6eaedb5059812df26ba4eec4937fe24",
+    "bytes": 282484,
+    "command": [
+      "/opt/homebrew/bin/latexmk",
+      "-pdf",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "-no-shell-escape",
+      "-outdir=/Users/ic/workspace/kl/tmp/pdfs/build/star-boundary",
+      "/Users/ic/workspace/kl/results/star-boundary.tex"
+    ]
+  }
+]

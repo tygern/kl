@@ -1,0 +1,316 @@
+[
+  {
+    "type": "E6",
+    "word": "1325213",
+    "length": 7,
+    "support": [
+      1,
+      2,
+      3,
+      5
+    ],
+    "common_descents": [
+      1,
+      3,
+      5
+    ],
+    "matching": [
+      [
+        1,
+        2
+      ]
+    ],
+    "independence_number": 3
+  },
+  {
+    "type": "E7",
+    "word": "1326213",
+    "length": 7,
+    "support": [
+      1,
+      2,
+      3,
+      6
+    ],
+    "common_descents": [
+      1,
+      3,
+      6
+    ],
+    "matching": [
+      [
+        1,
+        2
+      ]
+    ],
+    "independence_number": 3
+  },
+  {
+    "type": "E7",
+    "word": "13256213",
+    "length": 8,
+    "support": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
+    "common_descents": [
+      1,
+      3,
+      5,
+      6
+    ],
+    "matching": [
+      [
+        1,
+        2
+      ]
+    ],
+    "independence_number": 4
+  },
+  {
+    "type": "E7",
+    "word": "132543621324356",
+    "length": 15,
+    "support": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "common_descents": [
+      1,
+      3,
+      5,
+      6
+    ],
+    "matching": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "independence_number": 4
+  },
+  {
+    "type": "E7",
+    "word": "1325436210321432543621324356",
+    "length": 28,
+    "support": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "common_descents": [
+      1,
+      3,
+      5,
+      6
+    ],
+    "matching": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "independence_number": 4
+  },
+  {
+    "type": "E8",
+    "word": "1327213",
+    "length": 7,
+    "support": [
+      1,
+      2,
+      3,
+      7
+    ],
+    "common_descents": [
+      1,
+      3,
+      7
+    ],
+    "matching": [
+      [
+        1,
+        2
+      ]
+    ],
+    "independence_number": 3
+  },
+  {
+    "type": "E8",
+    "word": "13257213",
+    "length": 8,
+    "support": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
+    "common_descents": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "matching": [
+      [
+        1,
+        2
+      ]
+    ],
+    "independence_number": 4
+  },
+  {
+    "type": "E8",
+    "word": "61327213",
+    "length": 8,
+    "support": [
+      1,
+      2,
+      3,
+      6,
+      7
+    ],
+    "common_descents": [
+      1,
+      3,
+      6,
+      7
+    ],
+    "matching": [
+      [
+        1,
+        2
+      ]
+    ],
+    "independence_number": 4
+  },
+  {
+    "type": "E8",
+    "word": "132543721324357",
+    "length": 15,
+    "support": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "common_descents": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "matching": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "independence_number": 4
+  },
+  {
+    "type": "E8",
+    "word": "1325437210321432543721324357",
+    "length": 28,
+    "support": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "common_descents": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "matching": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "independence_number": 4
+  },
+  {
+    "type": "E8",
+    "word": "75342312701234562103214325437210321432543721324357",
+    "length": 50,
+    "support": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "common_descents": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "matching": [
+      [
+        0,
+        1
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        2,
+        7
+      ]
+    ],
+    "independence_number": 4
+  }
+]

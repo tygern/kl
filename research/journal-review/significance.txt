@@ -1,0 +1,185 @@
+INDEPENDENT JOURNAL SIGNIFICANCE REVIEW
+Date: 2026-10-07. Manuscript: results/exceptional-leading.tex.
+Scope: substantive contribution, literature positioning, publication threshold.
+This is an editorial assessment, not an independent verification of all code.
+
+RECOMMENDATION: MAJOR REVISION BEFORE SUBMISSION
+
+There is a plausible specialist research paper here, primarily because the
+finite E6/E7/E8 theorem treats every upper endpoint and could complete the
+finite simply laced story. I would not recommend acceptance of the present
+version. The paper presently gives too little explanation of its position
+in that story, and gives the explicit infinite families disproportionate
+weight as KL results. If the finite theorem/classification is already known,
+the remaining material would face a substantially higher significance hurdle.
+This review cannot certify historical priority. A focused search finding no
+predecessor is not proof of novelty, and a blanket disclaimer of priority
+does not itself establish a publishable contribution.
+
+The appropriate assessment is neither 'parity makes this trivial' nor
+'infinitely many full-support examples guarantee significance.' Constructing
+the terminals is substantive; their ordinary leading-coefficient conclusion
+is a short consequence of old theory once their descents are known.
+
+RESULT HIERARCHY
+
+1. Main potential contribution: the all-upper finite exceptional theorem,
+   together with the complete terminal classification and a reproducible
+   E8 search small enough to audit. This is much stronger in coverage than
+   an infinite sequence of specified uppers. There is a coherent short
+   paper centered on completing finite simply laced types.
+2. Secondary structural contribution: an explicit infinite full-support
+   family of non-FC terminal reflections at each rank E_(4r+1), r>=3,
+   with a symbolic all-rank proof. Full support matters: these are not
+   unchanged examples embedded in a growing parabolic. The D signed-
+   permutation realization provides a useful transparent root certificate.
+3. The maximum-descents lemma and parity criterion are useful organizing
+   tools, but immediate deductions from established monomial-cell theory
+   and the ordinary KL descent criterion. Attribute them accordingly.
+4. Affine E9 supplies a stronger all-coefficients-mu-zero assertion and an
+   exact length formula. Keep it as a worked complementary application.
+   The E10 family is a small-rank supplement; its proof is repetitive and
+   could be shortened or moved to an appendix.
+5. Interval transfer is a direct corollary of combinatorial invariance.
+   Even if CI is taken as an unconditional established theorem, this
+   remains a formal closure observation. Without a new family of cross-
+   type interval isomorphisms, it contributes essentially no independent
+   publication weight. Make it a brief remark, not a headline result or
+   a section that appears to advertise an additional research advance.
+
+PRIMARY-SOURCE COMPARISON AND HONEST SCOPE
+
+Green, Leading coefficients ... and fully commutative elements (2009),
+https://arxiv.org/abs/0801.1650 and https://arxiv.org/pdf/0801.1650,
+proves the FC-lower/arbitrary-upper assertion in affine A (hence finite A).
+Its introduction explicitly raises wider Coxeter scope, and Proposition
+2.1 gives the familiar descent/star mechanisms. Gern's 2013 thesis,
+https://arxiv.org/abs/1304.6074, Theorem 4.5.11, gives finite D. The
+manuscript is properly an extension of that approach rather than a new
+general method for leading KL coefficients. The already checked Chmutov
+2014 thesis, Theorem 2.3.8, is finite B/C in the same orientation:
+https://deepblue.lib.umich.edu/handle/2027.42/108802.
+
+An immediate useful strengthening of presentation is a corollary for ALL
+FINITE SIMPLY LACED WEYL GROUPS. The irreducible assertion combines A,D,E.
+For reducible groups, use the ordinary KL product formula: if m components
+have positive gap and total gap is d, the product degree is at most
+(d-m)/2. When m>=2 this cannot produce the coefficient in degree (d-1)/2;
+when m=1 the coefficient reduces to that one component. Full commutativity
+is componentwise. This is a genuine clarification of the scope obtainable
+without inventing a new theorem. Do not say 'all finite Weyl groups' or
+'all crystallographic groups' without separately addressing F4/G2, and
+do not say that the paper resolves arbitrary affine or indefinite uppers.
+
+Green's generalized E_n trace paper,
+https://arxiv.org/abs/0704.0283 and https://arxiv.org/pdf/0704.0283,
+has the precise old cell input: Definition 4.1 and Proposition 4.4.
+Moreover the FINAL PARAGRAPH OF LEMMA 5.2 (printed pp.13-14) already uses
+the same commuting-prefix/suffix and singleton left/right monomial-cell
+intersection argument. Cite that passage as additional provenance for the
+maximum-common-descent lemma. Its KL statements assume both endpoints FC;
+they do not themselves establish the non-FC-upper theorem in this paper.
+Jones's Deodhar-upper theorem likewise has different endpoint hypotheses:
+https://arxiv.org/abs/0711.1391, Theorem 1.2 and exceptional Theorem 6.1.
+
+Fresh check of Taryn Laird's 2016 thesis, A Study of T-Avoiding Elements
+of Coxeter Groups, §5.3 printed p.63:
+https://in.nau.edu/department-mathematics-statistics/wp-content/uploads/sites/377/2018/08/LairdThesis-ek.pdf
+lists generalized E_n T2-avoiding classification as an open direction.
+The definition of T-avoiding agrees with this manuscript's terminal
+condition. The thesis already discusses infinite generalized-F examples.
+This is valuable historical context, but cannot establish the status in
+2026. Cite it and use established terminology at first occurrence; avoid
+implying that the first ever infinite terminal family is obtained here.
+
+The existing local focused audit research/en_uniform/literature.txt
+correctly distinguishes FC enumeration, FC star-irreducibility, reflection
+enumeration, and arbitrary non-FC terminal classification. It also records
+that existing affine translations and D sign changes are old mathematics.
+My independent fresh searches did not locate an exact predecessor for the
+finite bound or the all-rank staircase family. That finding remains
+bounded: non-indexed computations, theses and unpublished observations
+are realistic gaps. No claim of certified novelty follows.
+
+WHY THE INFINITE RESULT IS MATHEMATICALLY LIMITED
+
+For each displayed upper b, descent containment eliminates almost every
+FC lower x; Green's old cell argument leaves a single commuting product;
+parity then gives zero. Thus the paper never confronts an unknown odd-gap
+non-cover leading coefficient in its new infinite families. It does not
+bound full KL polynomials or explain the general infinite E_n FC-lower
+problem. The D4 example P=1+2q is therefore an excellent scope safeguard.
+
+Terminality is not used in the parity criterion, as the manuscript notes.
+Accordingly its value must be motivated separately: the family provides
+explicit irreducible obstructions to the length-decreasing upper-endpoint
+star strategy. It shows that the finite proof's terminal list cannot be
+replaced in these infinite groups by a finite list. That is a stronger
+explanation of why the construction belongs in this paper than presenting
+its zero leading coefficients as if they were difficult KL calculations.
+
+Eventual vanishing at fixed rank uses old FC-finiteness plus unbounded
+length. It is useful but should not be sold as an asymptotic KL theorem.
+An effective k-threshold or a length formula would improve usability, but
+neither alone would change the main significance assessment. More ranks,
+more translated seeds, or more parity-zero examples also would not by
+themselves supply the missing conceptual advance.
+
+PRACTICAL REVISION THAT USES ONLY ESTABLISHED RESULTS
+
+- Put finite exceptional types immediately after the reductions, before
+  the lengthy uniform construction, matching the introduction's hierarchy.
+- State the finite simply laced corollary and explain explicitly which
+  cases come from prior work. Position the main contribution as the
+  certified exceptional classification plus its coefficient consequence.
+- Add one clear paragraph explaining what E8 parabolic pruning contributes
+  beyond running an existing exhaustive group calculation. The mathematical
+  exhaustion argument must be in the paper; independent programs and hashes
+  support it, but do not replace it. Archive the actual source/certificates
+  under a stable public identifier for submission.
+- Introduce terminals as the established T-avoiding/weakly bad elements,
+  citing Gern and Laird. Explain that infinite terminal obstructions are
+  the reason for the construction. Separate the structural theorem from
+  its easy coefficient corollary, or make that relationship explicit.
+- Attribute the maximum-descent mechanism directly to Green's existing
+  proof. Retain the D4 polynomial example and precise endpoint scopes.
+- Shorten E10 and collapse interval transfer to a remark. These changes
+  concentrate the paper; they do not magically make a known result new.
+- Replace a bare global priority disclaimer with a precise contribution
+  statement and careful citations. It is acceptable to say 'we give a
+  complete certified classification ... and derive ...'; it is not yet
+  justified to say 'first' or 'settles a longstanding open problem'.
+
+JOURNAL FIT AND PUBLICATION THRESHOLD
+
+Algebraic Combinatorics is a subject fit: its official scope includes
+active interplay between algebra and combinatorics, explicitly including
+root systems and representation theory:
+https://alco.centre-mersenne.org/ . Journal of Algebraic Combinatorics has
+similarly relevant official aims:
+https://link.springer.com/journal/10801/aims-and-scope . Its publication of
+Green's 2009 result is relevant precedent for subject and scale, but not
+an entitlement to publish a later exceptional completion.
+
+My editorial judgment is that ALCO would be an ambitious but defensible
+target only after the contribution/priority case and reproducible finite
+proof are made convincing. JAC is also a plausible specialist target,
+with the same unresolved novelty requirement. These are scope-based
+assessments, not acceptance predictions or claims about current editors'
+preferences. Neither journal's stated scope guarantees that the present
+parity families clear its significance threshold.
+
+ALCO's current author instructions permit a standard LaTeX PDF for initial
+submission and recommend amsart and BibTeX; no need to spend revision effort
+on the final journal class now:
+https://alco.centre-mersenne.org/page/instructions-for-authors/ .
+
+A concise paper proving a previously undocumented finite ADE completion
+with auditable exceptional classification, plus a well-motivated uniform
+terminal construction, could be publishable without a stronger KL theorem.
+If that finite completion turns out to be known, a standalone paper on
+the present examples would probably need more: a classification, a general
+construction theorem, a meaningful non-parity coefficient computation, or
+an application requiring these particular families. Those are potential
+future projects, not results to imply in this revision. Merely promoting
+the infinite families or CI corollary in the abstract would not suffice.

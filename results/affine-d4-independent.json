@@ -1,0 +1,71 @@
+{
+  "method": "Affine signed actions, direct subwords, R-polynomial reciprocity",
+  "simple_labels": "Forks0,1--center2--forks3,4; affine generator4",
+  "bottom_word": [
+    0,
+    1,
+    3,
+    4
+  ],
+  "top_word": [
+    0,
+    1,
+    3,
+    4,
+    2,
+    0,
+    1,
+    3,
+    4
+  ],
+  "bottom": [
+    [
+      -1,
+      -2,
+      -3,
+      -4
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ]
+  ],
+  "top": [
+    [
+      1,
+      3,
+      2,
+      4
+    ],
+    [
+      0,
+      -1,
+      1,
+      0
+    ]
+  ],
+  "lengths": [
+    4,
+    9
+  ],
+  "lower_ideal_size": 272,
+  "interval_rank_counts": {
+    "0": 1,
+    "1": 16,
+    "2": 32,
+    "3": 24,
+    "4": 8,
+    "5": 1
+  },
+  "polynomial": [
+    1,
+    3,
+    2
+  ],
+  "mu": 2,
+  "fc_bottom": "Four pairwise commuting generators, each once",
+  "reciprocity_identities_checked": 271,
+  "status": "passed"
+}

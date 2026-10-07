@@ -1,0 +1,201 @@
+REFEREE REPORT: FULLY COMMUTATIVE LOWER ENDPOINTS IN E6 AND E7
+Date: 2026-10-06 (local)
+
+Verdict
+
+I find no mathematical or implementation error blocking the proposed theorem:
+for ordinary equal-parameter Kazhdan--Lusztig coefficients in finite type E6
+or E7, mu(x,w) belongs to {0,1} whenever x is fully commutative.
+
+The supplied argument, including research/broad_exceptional/e6_e7_proof.tex,
+is a valid computer-assisted proof when its executable terminal classification
+is included as part of the evidence. It is stronger than a sample of tested
+intervals: a mathematical reduction handles every upper endpoint, and the
+computation exhaustively classifies every possible terminal case. This report
+makes no claim about historical priority or whether the theorem is new.
+
+1. Reduction and order conventions
+
+Induction on the upper length is sound. First dispose of x not strictly below
+w, even length differences, and length difference one. These have values 0,
+0, and 1, respectively. Hence the substantive induction step has odd gap
+d >= 3.
+
+Gern Proposition 1.2.4(3),(4) then allows the proof to assume
+L(w) subset L(x) and R(w) subset R(x). The exceptional value 1 in the missing-
+descent criterion occurs only for a cover, already excluded. Fully commutative
+elements have commuting descent sets. Therefore both descent sets of w are
+commuting as well. In particular, an upper endpoint with noncommuting descent
+set has already been handled; no additional classification is needed for it.
+
+If w is not weakly bad, a reduced expression starts st or ends ts with
+m(s,t)=3. In the first case, s is a left descent of w and t is not, since
+L(w) commutes. The left star is sw: it has t but not s as a left descent and
+has length one smaller. The descent inclusion and full commutativity of x
+put x in the same star domain. Its star remains fully commutative. The right
+case is identical after inversion.
+
+The draft correctly uses the symmetric star-transport identity. This matters:
+the unqualified oriented identity as printed in Gern Proposition 1.2.4 is
+unsafe when order reverses. In type A2, for example, the left star exchanges
+the ordered pair (s,ts) with (ts,s); the ordinary oriented mu values are 1
+and 0. The proposed proof excludes exactly this difficulty. For d >= 3,
+the starred length gap is d or d-2, so remains positive. A starred pair is
+either in the original order or incomparable; in the latter case its
+symmetric coefficient is zero. The induction hypothesis therefore applies
+to the strictly shorter upper endpoint whenever necessary. No assertion
+that stars preserve the full Bruhat interval or KL polynomial is used.
+
+2. Citation and scope audit
+
+The local primary text sources/gern-thesis-2013.txt supports the needed
+statements: Definition 1.1.25 defines the length-three stars for simply laced
+systems; Proposition 1.1.29 gives full-commutativity preservation; Proposition
+1.2.4 gives the descent and star identities; Corollary 1.2.5 handles products
+of commuting generators; Theorem 4.5.11 handles arbitrary upper endpoints
+in type D with fully commutative lower endpoints.
+
+Proposition 1.1.29 has an obvious variable typo: its conclusion prints *w
+although its hypothesis names x. It is the statement about *x that is used.
+The finite E6/E7 computations independently check full commutativity at every
+left and right length-three star move, so this application also has explicit
+finite verification (3,620 moves in E6; 16,776 in E7).
+
+Do not invoke Gern Proposition 1.1.28, Corollary 2.3.11, or the type-D bad-
+element classification as if their scope included E types. The current draft
+does not do so: its direct reduction and exhaustive terminal classification
+replace precisely that missing step. Explicit references to Proposition
+1.1.29 and Proposition 1.2.4 should be added to the reduction paragraph in
+the final integrated document.
+
+The type-D appeal uses standard-parabolic invariance of ordinary KL
+polynomials. This is standard and distinct from general combinatorial
+invariance. For clarity, state explicitly that P^E7_{x,b}=P^D6_{x,b} when
+both endpoints lie in this standard D6 parabolic. Full commutativity of x
+also restricts to the parabolic. No new combinatorial-invariance theorem is
+needed for the proof.
+
+3. Terminal data and the D6 identification
+
+The E6 diagram is 0-1-2-3-4 with 5 attached to 2. There are 22 commuting
+terminals, including the identity. The only other terminal has reduced word
+1325213, length 7, and both descent sets {1,3,5}. Its only eligible fully
+commutative bottom is 135, of length 3. The gap is 4 and mu is zero.
+
+The E7 diagram is 0-1-2-3-4-5 with 6 attached to 2. There are 36 commuting
+terminals. The remaining four words, lengths, eligible bottoms, and gaps are:
+
+  1326213                         7   136    4
+  13256213                        8   1356   4
+  132543621324356                15   1356  11
+  1325436210321432543621324356    28   1356  24
+
+All eligibility conditions matter: full commutativity, both descent-set
+inclusions, and x <= b. The code tests all of them; it does not merely match
+one descent set or select a preferred candidate. Even gaps settle rows 1,
+2, and 4. The last word has all seven generators in its support.
+
+The third row has support {1,2,3,4,5,6}. Its induced diagram is D6, with
+fork leaves 1 and 6 adjacent to 2 and long arm 2-3-4-5. Mapping Gern's
+one-based generators (1,2,3,4,5,6) to E7 labels (1,6,2,3,4,5) is an exact
+diagram isomorphism. Direct signed-permutation multiplication confirms:
+
+  bottom = (-1,-2,4,3,6,5), length 4;
+  top    = (-1,-6,3,-4,5,-2), length 15.
+
+These are Gern's x6 and w6. Theorem 4.5.11 already suffices for {0,1};
+Lemma 4.5.5 identifies the value as 1. That lemma's stated original proof
+uses du Cloux's coxeter program, so describing the whole result as purely
+noncomputational would be inaccurate. The current computer-assisted label
+is appropriate.
+
+4. Exact-enumeration audit
+
+I reviewed exact_e.py, enumerate_bad.cpp, verify_e6_independent.py, and
+verify_e7_matrices.cpp. The root-index and matrix representations are faithful
+simple-root-image representations. Breadth-first closure under every simple
+reflection enumerates all group elements, with minimal word lengths. Hash
+collisions do not identify unequal elements: the maps also test key equality.
+The enumeration is not truncated at a chosen length or constrained support.
+
+The matrix multiplication formula is correct: negate column s and add its
+old value to each adjacent column. Left actions and left descents are
+obtained correctly from inversion. The E7 int8_t matrix storage is safe:
+the E7 root coefficients have absolute value at most 4. My auxiliary check
+independently closes the roots and confirms 72 roots / bound 3 for E6 and
+126 roots / bound 4 for E7. Intermediate additions are evaluated as int.
+
+The full-commutativity recurrence is correct in simply laced type. A forbidden
+length-three braid before the last letter persists in a shorter reduced
+prefix. A forbidden braid at the last letter supplies adjacent right descents
+by the braid relation. Conversely, a non-FC reduced prefix remains non-FC
+after a reduced extension, and adjacent right descents give a braid suffix.
+Thus checking every descending predecessor and a commuting right descent
+set is an exact characterization, not a heuristic pattern test.
+
+The weakly-bad test is exact: s in R(w) and adjacent t in R(ws) is equivalent
+to a reduced suffix ts. Inversion supplies the analogous prefix criterion.
+Every weakly-bad fully commutative element is explicitly checked to be a
+product of distinct mutually commuting generators. The eligible bottoms are
+searched over the complete FC list.
+
+The greedy Bruhat comparison is the standard lifting recurrence. For a
+right descent s of w, replace w by ws, and replace x by xs exactly when s
+is a right descent of x. Reject only after the lower length is at least the
+upper length and the elements differ. The identity case cannot reach the
+zero-descent bit scan. I found no ordering, initialization, or indexing bug.
+
+The two engines are independently implemented representations, but share
+the same mathematical FC and Bruhat recurrences. Calling them independent
+implementations is accurate; calling them wholly independent algorithms
+would overstate the independence. Their common recurrences have been
+justified mathematically above.
+
+5. Reproduction and checks performed
+
+I reran verify_e6_independent.py successfully. I compiled
+verify_e7_matrices.cpp with c++ -std=c++17 -O3, ran it to completion with
+assertions enabled, and compared its parsed JSON with the supplied E7
+certificate: exact agreement. I also recompiled and reran enumerate_bad.cpp
+for E7. It exactly reproduces e7_bad.json and agrees with every matrix-engine
+terminal, eligible bottom, descent mask, length, full length histogram,
+commuting-terminal count, and star count (after accounting for one versus
+both sides).
+
+The E6/E7 element counts are 51,840 and 2,903,040; FC counts are 662 and
+2,670. I checked the entire length histograms, coefficient by coefficient,
+against the products of q-integers for degrees
+E6: 2,5,6,8,9,12 and E7: 2,6,8,10,12,14,18. The matches include maximal
+lengths 36 and 63. Independent-set counts of the diagrams give the asserted
+22 and 36 commuting terminals.
+
+Additional referee verification code is in
+research/exceptional_referee/verify_terminal_data.py, and its output is
+research/exceptional_referee/checks.json. This also checks all word
+transcriptions, gap values, the full support of the length-28 element, and
+the D6 map and signed permutations.
+
+Environment: Python 3.14.7; Apple clang 21.0.0, arm64-apple-darwin27.0.0.
+Audited source SHA-256 values:
+verify_e6_independent.py:
+  d80d0c8ce5098c7e9c8439c45106bd659d95e96f7827d8184d14f4bd47407b08
+verify_e7_matrices.cpp:
+  6c5f87ac0c7448f068b2fa5391f6ad11a0704449eea8f7c0de2f98bb631660d7
+enumerate_bad.cpp:
+  c4a7deaee54b7069ba565b8182a93658079c947280673ce98632a995c93857cf
+exact_e.py:
+  91ca54463b49cc918e441b72373c114acdc59c3f6ad1d46fd976c8967e5e7160
+
+6. Presentation recommendations, not mathematical blockers
+
+Retain the machine-assisted qualifier and ship source plus certificates and
+run instructions. Explicitly state the equal-parameter convention and the
+parabolic KL equality. Give citations for FC star closure and symmetric
+star transport. Keep the rank-one exclusion visible. Avoid claiming that
+star transport establishes interval isomorphisms or entire polynomial
+equalities. Treat any later application of general combinatorial invariance
+to these E6/E7 interval classes as a separate corollary with its own cited
+hypotheses. Keep the present statement about uncertified priority.
+
+Subject to those presentation points, the theorem and proposed proof pass
+this referee audit.

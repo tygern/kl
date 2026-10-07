@@ -1,0 +1,45 @@
+Local proof supplement work report
+2026-10-07
+
+Implemented entirely under supplement/; existing manuscript and research programs were not edited.
+
+Files
+- supplement/build_package.py: explicit inventory collector and deterministic ZIP builder.
+- supplement/run_proofs.py: single standard-library proof reproduction runner, with optional --full.
+- supplement/affine_proof.py: small proof-only entry point using the unchanged affine verification arithmetic; exploratory secondary-family main is not called.
+- supplement/README.md: exact recompute/verify scope, dependencies, shared versus separate implementations, requirements, and local-only status.
+- supplement/dist/exceptional-leading-proof.zip and matching expanded staging tree.
+- supplement/dist/build-summary.json: archive byte count and SHA256.
+- Archive INPUTS.json: transitive source/input inventory, source hashes, and exact selection rules for the two trimmed fixed-seed JSON inputs.
+- Archive MANIFEST.json: SHA256 of every distributed file except the manifest itself.
+- Archive expected-summary.json: stable mathematical outcomes, including all support matching records.
+
+Implementation choices
+The archive preserves original directory layout under payload/ so unchanged sources resolve their imports and relative reads. The runner verifies input hashes, copies the payload to a fresh retained working directory under runs/, compiles installed C++17 code with assertions enabled, runs the checks, and compares stable outcomes with the expected summary. It separately identifies the printed matching/table words with the regenerated terminal matrices. The immutable payload and manifest survive repeated runs.
+The default recomputes complete finite terminal classifications and relevant FC catalogues, verifies the proved uniform/affine/E10 families and matching certificate, and verifies the supplied D6 recurrence certificate. Historical full E6/E7 group-enumeration snapshots are compared by default and freshly recomputed only with --full. Random searches, capped KL probes, exploratory discovery engines, prebuilt binaries, full generated FC snapshots, and unrelated material are excluded. The E9 and E10 discovery-result JSON inputs are reduced to the exact fixed seed rows consumed by the proof verifiers, with transformations and source hashes recorded. The D6 24,245-record dependency certificate is retained intact.
+The affine and E10 arithmetic libraries contain their original optional entry points but those exploratory/unneeded entry points are not run. Source dependencies are expressly disclosed; no blanket claim of complete implementation independence is made.
+The ZIP and all work remain under supplement/ to respect the assigned directory boundary. A parent may copy the finished ZIP to output/supplement/ without changing its bytes.
+
+Validation
+Clean ZIP extraction: /private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof
+Default: all 24 steps passed in 12.331 seconds.
+Full: all 30 steps passed in 16.058 seconds, including fresh historical E6 and E7 root-index and independent integer-matrix full-group enumerations.
+Environment: Python 3.14.7, /usr/bin/clang++ with -O3 -std=c++17. No installation, network, uv, or third-party packages.
+Persistent top-level logs: supplement/isolated-default.stdout.log, supplement/isolated-default.stderr.log, supplement/isolated-full.stdout.log, supplement/isolated-full.stderr.log.
+Persistent status, stable output summaries, executed commands and pre-refresh verified manifest: supplement/validation/.
+Detailed per-step logs, binaries and generated certificates are retained in the clean extraction's runs/default-zfehrpbo and runs/full-69l0og71 directories; generated FC catalogues are intentionally not bundled into the small archive.
+
+Current archive at validation: 543,395 bytes, 37 files, SHA256 11e11c749d1b0075ac5228494a694bcde428d6bc3fa08e194e972e753abf9a1b.
+Final refresh completed after the parent finalized the manuscript and PDF. Fresh ZIP extraction passed archive CRC and all 36 manifest file hashes. Relative to the fully tested archive, only the manuscript TeX, rendered PDF, and their INPUTS.json provenance hashes changed; all 33 other proof inputs, runner code, fixed seeds, recurrence data, and expected results are byte-identical. No redundant numerical rerun was required. A second build produced the same archive SHA256, confirming deterministic packaging. Record: supplement/validation/final-refresh.json.
+Final archive: 545,155 bytes, 37 files, SHA256 fb48f74d4a7f18e13b4bff15e997b8b79bd01cd17d33f07dfedee5b5dc0734b1.
+Final fresh extraction: /private/tmp/kl-proof-final-m8lv0g70/exceptional-leading-proof.
+The finished ZIP may be copied unchanged to output/supplement/.
+
+Publication limitation
+Prepared locally only. No permanent public identifier, deposit, upload, license, copyright ownership, or author identity has been invented or assigned. A stable public software deposit remains an author/editor publication action.
+
+FINAL LAYOUT REFRESH BY PARENT
+Only a Needspace pagination guard was added to the manuscript after the final agent report. The archive was rebuilt, freshly extracted, CRC and all manifest file hashes checked. See validation/final-layout-refresh.json for current ZIP metadata. The distribution copy is output/supplement/exceptional-leading-proof.zip.
+
+GITHUB RELEASE PREFLIGHT
+The author requested a GitHub release in tygern/kl. The v0.1.0 archive is 545,490 bytes with SHA256 595d932c3f807c77b2ed7df63244dc376d20f6430b8ebbf456b97ae9974fa703. Fresh extraction passed CRC and all 36 manifest hashes. All proof inputs remain identical to those tested in both modes; only manuscript snapshots and release documentation changed. See validation/release-preflight.json. This supersedes the earlier local-only publication status; publication receipts are saved in output/supplement/.

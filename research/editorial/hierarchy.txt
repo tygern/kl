@@ -1,0 +1,89 @@
+EDITORIAL ASSESSMENT: exceptional-leading.tex
+
+Scope: complete source read, including the affine matrix and inversion-count proof. This is an editorial architecture and claim-preservation review, not a fresh proof or priority audit. The main TeX was not edited.
+
+CORE RECOMMENDATION
+
+The manuscript has two principal contributions: the whole-type finite E6/E7/E8 theorem and the explicit rank-uniform E_(4r+1) family. Both deserve statements in the introduction. The maximum-descent parity criterion is the conceptual tool connecting the constructions and should be visible before the reader encounters detailed computation. The uniform theorem is currently the last discovery in the narrative and therefore reads as an addendum, although it is the strongest symbolic construction: all r >= 3, all k >= 0, full support at every rank, eventual complete FC-bottom vanishing, and a uniform real-root certificate inside finite D_(4r). Those features should be foregrounded.
+
+Keep the finite theorem first: arbitrary upper endpoints in three entire groups is a different and broader quantifier than the selected infinite families. Give the uniform theorem equal prominence as the second main theorem, rather than presenting it as merely an extension of E13. Affine E8 and E10 are complementary constructions. The E13 construction is exactly the r=3 case and should cease to have a second full theorem/proof.
+
+WHY THE CURRENT ORDER OBSCURES THE RESULTS
+
+1. The opening says the essential new output is the finite classification, then the rank-uniform theorem appears many pages later. The abstract and introduction should reflect the final scope rather than the discovery sequence.
+2. E6/E7 tables, implementation details, E8 pruning, and the E8 table occupy alternating mathematical/computational layers. The single finite theorem needs one complete terminal classification, one explanation of the sole D6 exception, and one computation-completeness argument.
+3. The E13 proof is repeated in the uniform proof. The latter relies on an 'earlier operator identity' and on terminality 'exactly as in the fixed-rank proof', creating a dependence on the weaker result's placement. Extract the reusable identity once; make the uniform construction self-contained thereafter.
+4. Repeated statements about unconfirmed priority, no whole-type infinite theorem, no full-polynomial claim, and no explicit cross-type interval isomorphisms disperse attention. State the relevant scope precisely in each theorem, give one concise comparison with prior work in the introduction, and keep one short concluding discussion. The detailed priority/search audit belongs in the archive.
+5. Agent names, chronology, state caps, unsuccessful screens, sample indefinite lengths, and code paths read as a project log. They are not mathematical prerequisites for the positive theorems.
+
+PROPOSED JOURNAL ARCHITECTURE
+
+Title: 'Fully commutative lower endpoints in exceptional and generalized E Coxeter groups' is concise and accurately identifies the shared topic. A more explicit alternative is 'Leading coefficients with fully commutative lower endpoints in types E'. Neither title should imply a whole-type theorem for infinite E_n.
+
+1. Introduction and main results.
+   Define ordinary equal-parameter mu, FC, the generalized E_n diagram, and full support briefly. State the finite theorem (existing thm:main). State the uniform theorem early, using either its complete seed/translation definition or a precise overview theorem whose explicit formula is referenced to the construction section. Prefer a concise overview theorem here and keep the full coordinate definition with its proof; avoid reproducing long formulas twice. State a short proposition or paragraph recording the complementary affine E8 complete-vanishing family and E10 family. Explain that the former has exact lengths 27+92k and the latter has non-cover vanishing; E13 is r=3 in the uniform theorem. Compare hypotheses with Gern, Green, Chmutov, Jones, and the ADE result with both endpoints FC. End with the mechanism and a short roadmap. Avoid calling the work 'the first' or claiming established priority.
+
+2. Descent reduction and the parity criterion.
+   Give notation for L, R and terminality; retain terminal-reduction lemma and proof. Retain maximum-common-descents lemma and its monomial TL cell proof, followed by maximum-descent parity criterion. State clearly that this criterion itself does not require terminality. Include the independence-number calculation. The two tools then serve the two principal results: terminal reduction handles all finite upper endpoints; maximum descents/parity handles the explicit infinite families. Do not suggest that the maximum-independent criterion alone proves every finite terminal row: the exceptional D6 pair remains a separate input.
+
+3. The finite exceptional theorem.
+   3.1 A proposition giving the complete E6/E7/E8 two-sided terminal classification. Combine all 11 noncommuting rows into one logical table, possibly split visually by type. Use labels for E8 long words and list their reduced expressions immediately beneath the table or in an appendix if page width requires it. Include the commuting-terminal counts (22, 36, 58), sole eligible FC bottoms, lengths and differences. The shared D6 pair should be identified once, with both label maps in a compact sentence or footnote. Explain parity, the D6 coefficient 1, and commuting products, then explicitly conclude the finite theorem.
+   3.2 Certification of completeness. Retain the root-sign terminal test, the FC recurrence and why they test all reduced expressions, faithful representation/closure, and the parabolic pruning lemma with proof. Give the E7 and D7 decompositions and why their coset lists are exhaustive/minimal. These are mathematical proof obligations, not optional reproducibility notes. Reference the appendix for implementation architecture and run totals. The full theorem can be concluded at the end of 3.2 if that makes the dependency cleaner: the table proposition is then certified before use.
+
+4. Uniform terminal reflections in E_(4r+1).
+   Lead with the exact seed, I_r, affine parabolic, and beta_(r,k), followed by existing thm:uniform. Split the proof into clear paragraphs: (a) real-root certificate beta_r=s_0 F alpha_0, (b) common nilpotent translation identity, (c) positivity/descent/terminality, (d) parity and non-FC conclusion, (e) full support, distinctness and eventual vanishing. Keep every one of these proof steps in the main text. The even sign change in finite D_(4r) is a particularly clear structural feature; do not bury it in an appendix. State explicitly that r=3 recovers the displayed E13 family. The formula beta_(r,k,0)=r-1+4k+(4r-8)k^2 is sufficient for distinctness. Move seed-discovery and small-rank computational history out of the article. The r=2 limitation may remain as a brief remark, without 'previously unresolved' project-history language.
+
+5. Complementary fixed-rank constructions.
+   5.1 Affine E8: retain the word b0, conjugation family, theorem and all-parameter proof. The 9x9 base matrix may move to Appendix B, provided the main text explicitly states the sign/edge facts and cites the exact certificate. Retain the conjugation-column formula and why it proves terminality/full support. Retain the affine inversion formula and compact active-class table, or place both together in Appendix B with an explicit lemma cited from the proof. The all-zero theorem depends on the FC maximum length 44 and the 21-cover check at k=0; these must remain explicit, with reproducible certificates, even if the catalogue data are appendixed.
+   5.2 E10: retain the seed, pairings, real-root lowering certificate reference, reflection family and proof. Invoke the common nilpotent identity from section 4. E13 should receive only a specialization remark and, if helpful, its concrete seed and I13; no duplicate full proof. The existing explicit E13 data/certificates can be preserved in the supplement. Remove sample-length strings from the main text; they do not establish the theorem and risk implying a length formula. A short note on ordinary parabolic embeddings can follow both constructions, making clear that full support belongs to the original rank.
+
+6. Scope and further questions (short).
+   Keep a few sentences distinguishing coefficient vanishing from P=1; the D4 example P=1+2q is useful and concrete. Mention failure of a naive general simply-laced extension in affine D4 only with correct attribution to the existing Boolean-element literature. State the genuine open issue: no arbitrary-upper-endpoint theorem in the infinite generalized E_n groups follows. If the conditional CI transfer matters to the intended readership, include it as one clearly conditional corollary or one short paragraph here; otherwise place it in a supplementary note. It is a formal consequence of an external unverified input and has no constructed new cross-type interval isomorphisms, so it should not occupy the abstract or a major article section.
+
+Appendix A. Finite computational certification and reproduction.
+   Give exact representations, data structures, enumeration/closure tests, independent implementation relationship, integer arithmetic, commands, expected output and a stable manifest of scripts/certificates. Keep group/root/FC counts and Poincare-product checks here, including the distinction between 138,240 final-stage candidates and 143,660 candidates over the recursive chain. Retain 604,800 D7 candidates and 2,160 cosets as audit data, not headline achievements. The 77,476 FC star moves and E6/E7 move counts are corroboration, not a replacement for cited theoretical preservation.
+
+Appendix B. Finite certificates used in the infinite constructions.
+   Include affine B0, the complete inversion-class data or links to all 240 exact rows, FC-catalogue closure and maximum-length certificate, k=0 cover certificate, and E10 real-root lowering certificate. This material is essential to the claims that rely on it. Publishing only a directory name is insufficient: provide a reproducible manifest and persistent archive when available, without inventing a DOI or claiming an archive exists now.
+
+SUPPLEMENTAL ARCHIVE, NOT ARTICLE APPENDICES
+
+Archive the 16-top/1,741-pair surgery screen, surviving rank-vector matches, unsuccessful affine constructions, coatom-search logs, three-million-state cap, paired-star failures, reports grouped by agents, priority-audit search queries and chronology, and all conjectural sample lengths. These may be valuable research records, but they do not prove the stated positive results. A paper appendix should hold mathematical or computational support required by the article, not an exhaustive diary. Preserve the files and claims; editorial removal from main text is not deletion of research evidence. Existing independent companion work may be cited only if needed to establish a scope boundary.
+
+RECOMMENDED INTRODUCTION (PROSE DRAFT; INSERT FORMAL THEOREM STATEMENTS AT MARKERS)
+
+We study leading coefficients of ordinary Kazhdan--Lusztig polynomials when the lower endpoint is fully commutative. For x<w, write mu(x,w) for the coefficient of q^((ell(w)-ell(x)-1)/2) in P_(x,w), with mu(x,w)=0 when the length difference is even; we also set mu(x,w)=0 for x not strictly below w. Our results concern both entire finite exceptional Weyl groups and explicit families of upper endpoints in infinite generalized E Coxeter groups.
+
+The first result extends the fully commutative lower-endpoint bound to all three finite exceptional types.
+
+[Insert existing finite theorem, thm:main, unchanged.]
+
+The proof reduces arbitrary upper endpoints to terminal elements, those having no reduced expression that begins or ends with a noncommuting pair. We give exhaustive classifications of these elements in E6, E7 and E8. There are respectively one, four and six noncommuting terminals. In each case there is a unique fully commutative lower endpoint satisfying the necessary descent inclusions. Every resulting coefficient vanishes by parity except a pair in a D6 parabolic already handled by Gern. The E8 classification uses parabolic pruning and two independent decompositions, avoiding enumeration of the entire group.
+
+Our second main result is an explicit construction that is uniform in both rank and a family parameter. Let E_n denote the simply laced diagram with arms of lengths 1, 2 and n-4. Thus E9 is affine E8, whereas E_n is indefinite for n>=10.
+
+[Insert precise overview of thm:uniform: for every r>=3 the formulas in section 4 give distinct full-support non-FC terminal reflections b_(r,k), k>=0, in W(E_(4r+1)), with descent set I_r={0,3,5,...,4r-1,4r}; all FC-bottom coefficients belong to {0,1}, all non-cover coefficients vanish, and for each fixed r all FC-bottom coefficients vanish for sufficiently large k.]
+
+The construction uses the entire diagram in every rank. Its proof is symbolic: an even sign change in a finite D_(4r) parabolic certifies the seed as a real root, and conjugation by an element of an embedded affine parabolic produces the family. A maximum-descent criterion then forces every potentially nonzero non-cover coefficient to have even length difference. In particular, the proof requires no Kazhdan--Lusztig polynomial computations.
+
+Two complementary constructions cover ranks outside this uniform family. In affine E8 we give full-support terminal elements b_k of length 27+92k whose coefficients mu(x,b_k) vanish for every fully commutative x. In E10 we give infinitely many distinct full-support terminal reflections satisfying the 0/1 bound and non-cover vanishing. The E13 construction is the r=3 specialization of the rank-uniform theorem. These are families of upper endpoints; they do not establish a bound for arbitrary upper endpoints in an infinite E_n group.
+
+The lower-endpoint condition is central. Gern proves the corresponding bound in type D; Green treats type A and affine type A; and Chmutov treats finite type B, equivalently the same Coxeter system in type C. Results with both endpoints fully commutative, such as Green's ADE statement, or with a Deodhar upper endpoint, as in Jones's theorem, impose different hypotheses. Our arguments use classical descent and star operations, Green's monomial Temperley--Lieb cell theory, and standard root and parabolic constructions. We make no claim of established publication priority for the exceptional classification or the explicit families; the detailed source audit is retained with the supplementary material.
+
+We first establish the reduction and parity tools. We then prove the finite exceptional theorem and its exhaustive certification, construct the rank-uniform reflections, and give the complementary affine E8 and E10 families. The appendices record the exact finite certificates and reproduction procedures used in the computer-assisted parts of the proof.
+
+ABSTRACT PRIORITIES
+
+Use about 180--220 words, ordered: finite theorem and terminal counts; uniform theorem with its quantifiers and eventual vanishing; common maximum-descent mechanism; complementary affine E8/E10 constructions; division between exhaustive finite certificates and symbolic proof. Omit CI transfer, search limitations, agents, and the repeated priority disclaimer. The introduction supplies prior-work qualification. Do not call every infinite construction symbolic if its proof still depends on the affine finite checks.
+
+CLAIM-PRESERVATION CHECKLIST
+
+- Finite theorem: all w; uniform/affine/E10: only the displayed upper families.
+- Uniform/E10: 0/1 plus non-cover vanishing; affine: complete vanishing for all k; uniform: eventual complete vanishing, with no explicit threshold claimed.
+- Uniform full support varies with rank; parabolic embeddings do not give full support in a larger rank.
+- Ordinary leading coefficient mu, not all coefficients and not P=1.
+- Norm two is not sufficient for real-root membership in an indefinite group; retain the D-parabolic certificate and E10 lowering certificate.
+- Finite verification must certify all terminals and all eligible FC bottoms; summary counts alone do not suffice.
+- Numerical sample lengths for indefinite families remain observations only.
+- Conditional CI corollary remains conditional if retained; it is not an input to any primary theorem.
+- References to classical methods do not settle priority of their explicit applications.

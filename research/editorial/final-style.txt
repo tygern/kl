@@ -1,0 +1,129 @@
+FINAL STYLE REVIEW OF REWRITTEN exceptional-leading.tex
+7 October 2026
+Scope: prose and presentation, not an independent mathematical audit. Source read after the main structural rewrite. Main TeX unchanged by this reviewer.
+
+Assessment
+The revision is now organized as a research article. Its two main theorems are visible immediately; the structural reductions support both; the uniform argument stands independently; E13 is correctly presented as a specialization. The computational appendix retains the logical distinction between proof dependencies and cross-checks. The following local edits would remove the remaining conspicuous ambiguities and provisional phrasing. No further large-scale reorganization is needed.
+
+A. Highest-priority corrections
+
+1. Undefined d in terminal reduction.
+Current: “Hence assume x<w and d>=3 is odd.”
+Replace: “Hence assume that d=ell(w)-ell(x)>=3 is odd.”
+The introduction no longer defines d globally.
+
+2. Scope of vanishing in the final finite proof.
+Current: “All other non-cover coefficients are zero, proving the theorem.”
+Replace: “All remaining non-cover coefficients with terminal upper endpoint vanish. Lemma [terminal reduction] therefore proves the theorem.”
+As written, the sentence can be read as a stronger statement about every upper endpoint in the finite group. Star reduction establishes the 0/1 bound, not the stated global non-cover vanishing.
+
+3. Undefined T in the uniform-descents lemma statement.
+The statement writes beta_(r,k)=T^k beta_r, but T is only defined inside its proof. Define T=r_gamma r_(gamma+delta) immediately after equation (uniformroots), or omit the identity from the statement and establish it in the proof.
+
+4. Define the shorthand “noncommuting terminal.”
+First introduction occurrence should be “terminal elements that are not products of commuting generators.” In Structural reductions add, if retaining shorthand, “We call these noncommuting terminals.” Gern's weakly bad/bad terminology does not itself define the manuscript's different phrase.
+
+5. “Eligible” appears before definition.
+Intro: replace “Each has a unique eligible fully commutative lower endpoint” by “For each, a unique fully commutative lower endpoint satisfies both descent inclusions.” Prefer adding “below it” if possible. The precise definition can remain in the finite section.
+
+6. Abstract complete vanishing.
+Current: “Further constructions give complete vanishing for an infinite family ...”
+Replace: “Further constructions give vanishing of every such leading coefficient for an infinite family ...”.
+This prevents casual confusion with vanishing of the polynomial, especially in an abstract meant to stand alone. Alternatively retain “complete vanishing of these leading coefficients.”
+
+B. Recommended concise copyedits
+
+7. Definition of fully commutative.
+Replace “A fully commutative element has all its reduced expressions related by commuting adjacent commuting generators” with “An element is fully commutative if any two of its reduced expressions are related by interchanging adjacent commuting generators.”
+
+8. Maximum independent terminology.
+Intro “The common descent set is maximum independent” -> “The common descent set is an independent set of maximum cardinality.”
+Parity proposition: “where I is maximum independent in the support of b” -> “where I is a maximum independent set in the subgraph induced by supp(b).”
+Affine/E10 proof: “I is maximum independent of size 5” -> “I is a maximum independent set of size 5.”
+“Maximum independent” without “set” is compressed terminology that reads awkwardly.
+
+9. Priority sentence.
+Current “No claim of historical priority for the explicit constructions or their consequences is made here” may be read as concerning only families. If the finite result also remains unconfirmed, use “We do not claim historical priority for the finite exceptional theorem or the explicit families.” One occurrence in the introduction suffices.
+
+10. Symbolic proof language.
+Intro “starts from a staircase root and iterates an affine-parabolic root action” -> “starts from an explicit real root and applies powers of an element in an affine parabolic subgroup.” The staircase description is helpful beside the coordinates; it is less useful before readers have seen them.
+Heading “An ambient root action” -> “A root-iteration formula” or “Powers of an affine-parabolic element.” The latter is longer but more concrete.
+
+11. i(I) wording and duplication.
+“its order is immaterial” -> “the order of the factors is immaterial.” The original can be read as the group-theoretic order of the element.
+The maximum-descents lemma need not redefine i(I): replace “x=i(I):=product...” with “x=i(I).”
+
+12. Duplicate terminality disclaimer.
+The maximum-commuting-descents subsection says “It does not require terminality,” and the proposition repeats the same fact. Keep the proposition's sentence and remove the introductory duplicate, or vice versa.
+
+13. Star proof.
+“The new difference is d or d-2, so the starred upper remains longer” -> “The new length difference is d or d-2, so ell(*x)<ell(*w).” This is clearer and avoids informal “starred upper.”
+“Star transport says” -> “Star transport gives.”
+
+14. Uniform seed.
+“Since (beta_r,alpha_0)=r-2, its simple reflection is” -> “Since (beta_r,alpha_0)=r-2, we have”. A root has a reflecting hyperplane/reflection, but s_0 beta_r is its reflected image.
+“The exact formulas are” -> “The pairings are”.
+“all other edges follow immediately” -> “the remaining edge sums are nonpositive by the displayed formulas.”
+
+15. Uniform theorem proof.
+Remove space before period in “coefficient assertions .”
+“The set I_r is independent of size 2r+1” -> “The independent set I_r has size 2r+1.”
+“An omitted simple generator would leave its row unchanged” -> “A product omitting s_j leaves the jth coordinate unchanged.” This is the exact elementary support observation.
+“Eventually no FC element can cover b_(r,k) from below, completing the all-zero statement” -> “For sufficiently large k, no fully commutative element has length ell(b_(r,k))-1, so cover coefficients are also excluded.” The original reverses the standard grammatical direction of “covers,” and “all-zero statement” is lab-report language.
+
+16. Scope after r=3 example.
+“No effective threshold ... is asserted” -> “The argument does not give an effective threshold for eventual vanishing.” This states the limitation naturally. Deletion is also reasonable if no reader would expect a threshold from the theorem.
+
+17. Finite words.
+“concatenation, without cancellation, of ...” -> “concatenation of the two reduced-word strings ...”. “Without cancellation” is redundant and can sound like an instruction to multiply unreduced words. Do not call the full concatenation reduced unless its certification is retained, as it currently is.
+
+18. FC test.
+“Matsumoto's theorem justifies this test: a braid ...” -> “Matsumoto's theorem justifies this test: a noncommuting braid ...”. Ordinary commuting moves are also braid relations; specifying the kind prevents a brief ambiguity.
+“both descent inclusions exhausts all eligible endpoints” -> “the two descent inclusions identifies all eligible endpoints.” The subject is the computation, not a formal exhaustion operator.
+
+19. Finite proof label mapping.
+“Mapping ... to 1,n-1,2,3,4,5” should explicitly say “in E_n, for n=7,8.” Otherwise n has no local binding and the E6 reader may wonder which row is meant. This is a notation repair, not a changed argument.
+
+20. Affine terminology and repeated normalization.
+Use “affine type tilde E8” in the affine theorem (currently “affine E8”). The introductory identification E9=tilde E8 permits E9 in all coordinate statements.
+Delete repeated root normalization in the affine subsection; Structural reductions already fixes it globally.
+“full-support, non-FC terminal” -> “full-support terminal element that is not fully commutative.” Theorem statements benefit from spelling out FC.
+
+21. Affine column prose.
+“The columns are recorded ... The columns have descent set I” -> “The matrix is recorded in Appendix ... Its columns are negative precisely at the indices in I.” Matrices/columns do not themselves have Coxeter descent sets.
+“the sum of the columns on every edge incident to a descent is positive” -> “for every edge s~t with s in I, the sum of columns s and t is a positive root.” Match the chosen positivity convention.
+“Exact finite-root enumeration gives the following active classes” -> “The nonzero root-string contributions are grouped below by (A_eta,B_eta).” Some listed classes contribute zero at k=0, so “nonzero” can be replaced by “potentially nonzero” for complete precision.
+“The complete root-string data are included in the certificate” -> cite the appendix or exact certificate name rather than an unidentified singular certificate.
+
+22. Affine covers.
+“deleting one letter ... enumerates all Bruhat covers” -> “Deleting each letter in turn and retaining elements of length 26 gives all Bruhat covers of b_0.” This names the necessary length filter, which is already implicit in the appendix.
+
+23. E10 quantifiers.
+The formula and proposition do not currently explicitly say k>=0 locally. Add “For k>=0 define ...”. Previous sections also use k>=0, but independent theorem statements should not rely on that convention.
+“every non-cover coefficient vanishes” -> “mu(x,b_k)=0 whenever ell(b_k)-ell(x)>1.” Include x<b_k if preserving exact statement style. This avoids suggesting other polynomial coefficients vanish.
+
+24. Transfer.
+The conditional hypothesis is clear. “This is a conditional transfer statement” repeats the heading and opening assumption; delete this clause. If keeping the scope limitation, use “The statement does not supply explicit cross-type interval isomorphisms.” Prefer deleting that limitation altogether unless the intended audience expects them.
+
+25. D4 concluding example.
+“an even gap” -> “even length difference”.
+“the distinction ... is essential” can be deleted after the explicit example, which already demonstrates it. An economical final line is “Thus the criterion controls mu without determining the full polynomial.”
+
+C. Metadata, tables, and appendix
+
+26. PDF metadata still gives pdfauthor={Research working note}; remove the field or leave it empty to agree with the blank visible author. Metadata title should use the full actual title if convenient.
+
+27. The finite terminal table is now clear and well placed. The other two tables (root-string classes and certificate counts) should ideally have captions and labels. This is a presentation improvement, not a blocker.
+
+28. Appendix first paragraph should acknowledge all computational proof dependencies, not only finite classification and affine cover check. The affine length formula also uses finite-root enumeration, and the maximum FC length 44 comes from the catalogue. Suggested opening:
+“The finite terminal classification, the affine root-string count, and the affine fully commutative catalogue and cover check are computational parts of the proofs.”
+
+29. “Source hashes, logs, and complete code are included in the archive” is appropriate only if the deliverable actually contains an identifiable archive. If this is presently a repository tree rather than packaged archive, write “The accompanying source tree contains ...”. Similarly “certificate archive” should name the distribution or repository link before journal submission.
+
+30. The literature-audit local path is useful internally but need not appear in the published appendix. Published mathematical assertions should stand on the bibliography and restrained scope statement; the audit can remain supplementary material.
+
+31. “The uniform root proof is symbolic. Arithmetic checks in finitely many ranks are supplementary...” is a useful one-time distinction. No need to remove it; it prevents confusion caused by listing uniform-family Python code next to proof dependencies.
+
+D. Final verdict
+
+The rewritten document has a coherent journal-style narrative and appropriately restrained claims. Fix A1-A6 and the E10 parameter binding before final compilation. The remaining edits are short copyedits; they should not prompt another structural rewrite. Preserve the explicit quantifier “for each fixed r” in every version of eventual vanishing and keep non-cover vanishing attached specifically to mu and fully commutative lower endpoints.

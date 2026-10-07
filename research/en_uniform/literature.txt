@@ -1,0 +1,227 @@
+FOCUSED PRIORITY AUDIT: RANK-UNIFORM FULL-SUPPORT E_(4r+1) FAMILIES
+Checked 2026-10-07 UTC / 2026-10-06 America/Chicago.
+This supplements research/en_literature/indefinite_family_priority_addendum.txt.
+It is a primary-source scope audit, not a certificate of historical novelty.
+
+OUTCOME
+
+No exact predecessor was located for the explicit all-r staircase seed below,
+its affine-parabolic translates, or the resulting all-FC-lower leading-
+coefficient statement. Historical priority remains UNCONFIRMED. The search
+was focused and bounded, and a failure to locate a result is not evidence
+that it has never appeared. In particular the root action, type-D signed
+permutations, affine translations, monomial-cell argument, KL descent
+obstruction, and parity are established mathematics. The candidate contribution
+is the explicit rank-uniform terminal family and its coefficient consequence.
+
+1. EXACT TARGET AND ITS LIMITS
+
+The graph is the chain 0--1--...--(4r-1), with branch 4r attached to 2.
+For r>=3 put n=4r+1, a=2r-4, and
+  beta_0=r-1, beta_1=r, beta_2=2r-1,
+  beta_j=floor((4r+1-j)/2) for 3<=j<=4r-1, beta_(4r)=r.
+Embed affine E9 on {0,...,7,4r} and use
+  delta=(2,4,6,5,4,3,2,1;3), gamma=(1,2,3,2,2,1,1,0;1),
+with zero coordinates 8,...,4r-1; the semicolon denotes the branch.
+The roots and reflections under audit are
+  beta_(r,k)=beta_r-a*k*gamma+(a*k^2+r*k)*delta,
+  w_(r,k)=r_(beta_(r,k)), k>=0.
+Their common descent set is the maximum independent set
+  I_r={0,3,5,...,4r-1,4r}, |I_r|=2r+1.
+
+The companion construction.txt proves real-root membership through the finite
+D_(4r) parabolic, the translation identity, full support, terminality, and
+distinctness for every r,k. Its proof is symbolic; finite arithmetic checks
+are supplementary. The FC-lower consequence is mu(x,w_(r,k))=0 for every
+FC x with length gap greater than one, and hence mu in {0,1} for every FC x.
+At each fixed rank all these coefficients eventually vanish, since FC elements
+form a finite set and the upper lengths tend to infinity.
+
+This is not a theorem about all arbitrary upper endpoints of E_n, does not
+cover every congruence class of ranks, and does not compute full polynomials.
+The upper reflections have full ambient support, although the conjugating
+translation lies in a proper affine parabolic. They are not merely a fixed
+endpoint pair embedded unchanged into larger ranks.
+
+2. EXACT OLD FOUNDATION FOR THE FC-LOWER REDUCTION
+
+R.M. Green, On the Markov trace for Temperley--Lieb algebras of type E_n,
+J. Knot Theory Ramifications 18(2) (2009), 237--264.
+  https://arxiv.org/abs/0704.0283
+  https://doi.org/10.1142/S0218216509006872
+The preprint is from 2007; publication is 2009. It includes all n>=6,
+including indefinite E_n. Locators in arXiv v1:
+  Definition 4.1, printed p.9: a_TL is the maximum independent-factor size.
+  Proposition 4.4(iv), pp.10--11: the monomial right cell of i(I).
+  Proposition 4.4(v), p.11: a left/right cell intersection in a two-sided
+    cell has exactly one element.
+  Last paragraph of Lemma 5.2, pp.13--14: essentially the same commuting-
+    factor/singleton-intersection argument already appears explicitly.
+  Theorem 1.2 and Corollary 9.3 concern TWO FC endpoints. They do not by
+    themselves treat the non-FC upper reflections in the present family.
+
+Thus the maximum-common-descent lemma is an immediate deduction from an
+old source, not an independently established priority claim. If x is FC,
+supp(x) is in J, I is maximum independent in J, and I is in L(x) and R(x),
+then a_TL(x)=|I|. Both cell statements identify x with i(I). No identification
+between these monomial TL cells and ordinary KL cells is needed.
+
+The ordinary descent obstruction is stated in Tyson C. Gern, Leading
+coefficients of Kazhdan--Lusztig polynomials in type D, arXiv:1304.6074,
+Proposition 1.2.4, especially part (3): away from a cover, an upper descent
+missing from the corresponding lower descent set forces mu=0.
+  https://arxiv.org/abs/1304.6074
+Reflection length is odd, so an odd maximum common descent set leaves an
+eligible bottom of the same parity. This supplies the coefficient conclusion.
+
+3. A SLIGHTLY BROADER DEDUCTION: DIFFERENT MAXIMUM DESCENT SETS
+
+This is a deduction from the same Green proposition, not a novelty claim.
+Let b be any upper element of W(E_n), let J=supp(b), and let I,K be maximum
+independent subsets of J with I subset L(b), K subset R(b). Put alpha=|I|=|K|.
+Among FC lower elements, at most one can contain I in its left descents and
+K in its right descents. In fact that unique element in the ambient group is
+  x_*=i(I)i(K\I),   ell(x_*)=2alpha-|I intersect K|.
+
+Proof. Each generator occurs once in the displayed word, so it is reduced
+and FC. Every member of I intersect K commutes with every member of I union K;
+therefore I subset L(x_*) and K subset R(x_*). Its a_TL value is alpha, using
+the prefix and the maximum independent-set bound. Proposition 4.4(iv) puts
+it in the right cell of i(I) and left cell of i(K). Any other eligible FC x
+has a_TL(x)=alpha and lies in that same intersection, so Proposition 4.4(v)
+identifies it with x_*. The existence of x_* itself ensures these two cells
+belong to the same two-sided cell, as the proposition requires.
+
+Consequently, if ell(b) is congruent to |I intersect K| modulo 2, every
+FC-lower noncover mu(x,b) vanishes. If x_* is not below b, they vanish
+regardless of parity. Extra upper descents may also make x_* ineligible.
+Terminality and involutivity are not needed for this general deduction;
+the present reflection family is one way to enforce its hypotheses.
+
+4. WHY THIS DOES NOT DETERMINE THE FULL KL POLYNOMIAL
+
+P. Mongelli, Kazhdan--Lusztig polynomials of boolean elements,
+J. Algebraic Combin.39 (2014), 497--525 (online 7 June 2013).
+  https://arxiv.org/abs/1111.2945
+  https://doi.org/10.1007/s10801-013-0455-8
+Exact locators in arXiv v1: section 3, printed p.6, defines f_h by the
+Catalan triangle; Corollary 3, printed p.13, is the ordinary-polynomial
+product formula. Corollary 2, printed p.10, gives the corresponding star
+leading coefficients and already covers the four-leaf mu=2 example.
+
+For the D4 three-leaf star with center c and commuting leaves a,b,d, put
+x=abd and w=xcx. Then ell(x)=3, ell(w)=7, L(w)=R(w)={a,b,d}, and the
+common descent set is maximum independent. Mongelli's formula gives
+  P_(x,w)(q)=f_3(q)=1+2q,
+although mu(x,w)=0 by the even gap. Thus neither P=1 nor a 0/1 assertion
+for all polynomial coefficients follows from this parity mechanism. The
+example embeds parabolically into every generalized E_n (with proper support).
+Its polynomial is an old exact calculation, not a new counterexample.
+
+Mongelli's boolean upper elements in fixed rank n have length at most 2n-1.
+His formula therefore cannot cover an infinite sequence of distinct uppers
+at fixed rank. This alone excludes all but finitely many members of each
+present fixed-rank family from that scope; no indefinite length formula is
+required. The old star examples prevent claiming that FC-lower 0/1 holds
+for arbitrary Coxeter groups.
+
+5. ROOT-THEORETIC CONSTRUCTION: OLD INPUT VERSUS SPECIFIC FAMILY
+
+Deleting node 0 leaves type D_(4r). The even signed-permutation realization
+is standard and is explicitly given in Gern, Example 1.1.6, printed pp.2--3,
+which cites Björner--Brenti, Combinatorics of Coxeter Groups, Proposition 8.2.3.
+The construction uses the half-integral D weight
+  lambda=(-e_1+e_2+...+e_(4r))/2
+and the action negating coordinates 2,4,...,4r. Its 2r sign changes are even,
+so it belongs to W(D_(4r)). This proves that the seed is in the simple-root
+orbit. The staircase coefficients and the terminal inequalities are the
+specific data under audit; the spin-weight orbit mechanism is not new.
+Norm 2 alone would not certify a real root in an indefinite root system.
+
+Likewise T=r_gamma r_(gamma+delta) and
+  T(z)=z+(z,delta)gamma-((z,gamma)+(z,delta))delta
+are standard reflection algebra. The quadratic iterate follows because
+T(delta)=delta and T(gamma)=gamma-2delta. The embedded delta is not radical
+in the ambient indefinite group. These formulas should not be advertised
+as a new translation method. The specific seed, signs, and simultaneous
+all-r/all-k terminal inequalities are what need comparison to prior work.
+
+Arbitrary conjugation does not preserve ordinary KL polynomials or length.
+Conjugation by the longest element of an entire finite Coxeter group
+permutes its simple system and does preserve KL data. A longest element
+of a proper parabolic generally does not permute the ambient simple system.
+In this construction the D action is used to certify real-root membership;
+the KL claim is obtained separately from descent sets and parity.
+
+The independent-set number of E_n is ceil(n/2), so its odd parity occurs
+exactly for n congruent to 1 or 2 modulo 4. Passing from n to n+4 preserves
+this parity but does not by itself preserve terminality or produce maximum
+descent sets. A rank-extension assertion requires a root/word construction
+and sign proof, supplied here for n=4r+1 rather than inferred from padding.
+
+6. FC FINITENESS, LENGTH BOUNDS, AND EARLIER TERMINAL INVESTIGATIONS
+
+J.R. Stembridge, On the fully commutative elements of Coxeter groups,
+J. Algebraic Combin.5 (1996), 353--385.
+  https://websites.umich.edu/~jrs/papers/FC.pdf
+Published Theorem 5.1, p.365 (author-preprint Theorem 4.1, p.15), includes
+all generalized E_n among the FC-finite groups. This suffices for eventual
+zero at each fixed rank. It does not make the upper group finite.
+
+M. Hagiwara, M. Ishikawa, H. Tagawa, A Characterization of the Simply-Laced
+FC-Finite Coxeter Groups, Ann. Comb.8 (2004), 177--196.
+  https://doi.org/10.1007/s00026-004-0214-6
+Primary FPSAC 2004 short paper:
+  https://media.pims.math.ca/pdf/science/2004/fpsac/papers/Hagiwara.pdf
+Proposition 4.7, short-paper p.7 / proceedings printed p.113, states
+  max ell(FC(E_n)) <= 2^(n-1)-1.
+The exponent was visually verified in the PDF. This is an upper bound,
+not an exact maximum formula; journal proposition numbering was not verified.
+Thus ell(b)>2^(n-1) suffices to exclude FC covers. No effective k threshold
+is obtained merely by citing this bound.
+
+J.R. Stembridge, The Enumeration of Fully Commutative Elements of Coxeter
+Groups, J. Algebraic Combin.7 (1998), 291--320.
+  https://dept.math.lsa.umich.edu/~jrs/papers/countFC.pdf
+  https://doi.org/10.1023/A:1008623323374
+The author preprint's sections 3.6 and 4.7 handle the E-series through
+formal languages. This is rank-uniform FC enumeration and FC-involution
+enumeration, not a classification of arbitrary terminal upper elements.
+No sharper exact maximum-length formula was located in that paper during
+this audit. This does not establish that no such formula is known elsewhere.
+
+Dana Ernst's author research statement, section 3.1, printed pp.3--4,
+  https://danaernst.com/archive/Statements/ResearchErnst.pdf
+reports work during 2011--2012 with Ryan Cross, Katie Hills-Kimball, and
+Christie Quaranta on an infinite class of noncommuting T-avoiding elements
+in generalized type F. Thus an unqualified claim of the first infinite
+family of noncommuting terminal elements would be unsafe. The passage does
+not state this E_(4r+1) family or an FC-lower ordinary-mu theorem.
+The earlier literature audit also checks Laird's 2016 thesis discussion of
+E_n T-avoiding classification as a historical open direction. Historical
+open-problem statements do not certify its status in 2026.
+
+7. SEARCH COVERAGE AND REMAINING PRIORITY LIMITS
+
+Primary documents checked include Green's E_n trace and star-reducibility
+papers, Stembridge's FC classification and enumeration, the Hagiwara--
+Ishikawa--Tagawa short paper, Gern's thesis, Mongelli's boolean formulas,
+and earlier reports' E_n/T-avoiding undergraduate work. The preceding
+addendum also checks 2025--2026 work by Biagioli--Costantini--Sasso on FC
+star-irreducibility and Biagioli--Hohlweg--Sasso on reflection enumeration:
+these do not state the FC-lower consequence for arbitrary upper reflections.
+
+Targeted queries used combinations of: generalized E_n; E_(4r+1);
+E_(4n+1); E-series roots/reflections; D spin Weyl orbit; T-avoiding;
+T2-avoiding; bad elements; star-irreducible; terminal elements; longest-
+element conjugation; affine-parabolic translation; maximal descent sets;
+fully commutative lower; maximum fully commutative length. Mathematical
+subscripts often produced irrelevant search hits, and non-indexed theses,
+seminar notes, and unpublished computations remain a particular limitation.
+No exact coefficient vector or all-r construction matching this family
+was located. No author was contacted. Priority remains unconfirmed.
+
+Suggested conservative wording: an explicit family in every E_(4r+1),
+r>=3, for which the FC-lower bound follows from Green's monomial-cell
+theorem and the ordinary KL descent criterion. Keep the construction's
+mathematical proof separate from any later historical-priority claim.

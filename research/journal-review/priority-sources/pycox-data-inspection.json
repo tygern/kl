@@ -1,0 +1,71 @@
+{
+  "E7KLCELLREPS": {
+    "rows": 56,
+    "keys": [
+      "a",
+      "character",
+      "distinv",
+      "elms",
+      "replstar",
+      "size",
+      "special"
+    ],
+    "total_seed_words": 128,
+    "sum_cell_sizes": 17938,
+    "initial_elms_empty": true,
+    "source_line": 14065,
+    "source_end_line": 14246,
+    "first_record": {
+      "a": 0,
+      "distinv": "",
+      "replstar": [
+        ""
+      ],
+      "special": "1_a",
+      "elms": [],
+      "character": [
+        [
+          "1_a",
+          1
+        ]
+      ],
+      "size": 1
+    }
+  },
+  "E8KLCELLREPS": {
+    "rows": 106,
+    "keys": [
+      "a",
+      "character",
+      "distinv",
+      "elms",
+      "replstar",
+      "size",
+      "special"
+    ],
+    "total_seed_words": 678,
+    "sum_cell_sizes": 646270,
+    "initial_elms_empty": true,
+    "source_line": 14271,
+    "source_end_line": 15227,
+    "first_record": {
+      "a": 0,
+      "character": [
+        [
+          "1_x",
+          1
+        ]
+      ],
+      "distinv": "",
+      "replstar": [
+        ""
+      ],
+      "elms": [],
+      "special": "1_x",
+      "size": 1
+    }
+  },
+  "source_sha256": "6677f1994d96eaba3a3c86ab3eb4d1f944d11c837a9030d7ae59d10f3f80833b",
+  "commit": "750a004cbc6090ff43676397b15f77e64a0a1215",
+  "commit_date": "2023-05-15T13:14:41Z"
+}
