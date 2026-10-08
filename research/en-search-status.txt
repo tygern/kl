@@ -75,7 +75,7 @@ All these values lie in {0,1}. The two length-34 extensions satisfy every
 hypothesis of the parity criterion except parity and have mu = 1, so the
 parity hypothesis cannot be dropped. The translated members r_{beta + k delta},
 k >= 1, remain open. These values are reported in Section 5 of the revised
-manuscript and certified in the prepared v0.2.0 supplement
+manuscript and certified in the v0.2.0 supplement
 (research/review_checks/).
 
 TEAM AND ARTIFACTS

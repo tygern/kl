@@ -27,7 +27,7 @@ Code is licensed under the [MIT License](LICENSE). The manuscript text and the P
 
 ## Reproduce
 
-Release **v0.2.0** of the repository is prepared under `output/supplement/` (archive `exceptional-leading-proof.zip`, `SHA256SUMS`, release notes) but has not yet been published; it certifies every computational claim of the current paper. The previous release, [v0.1.0](https://github.com/tygern/kl/releases/tag/v0.1.0), remains the historical tag for the earlier version of the manuscript. Extract the supplement archive, enter `exceptional-leading-proof`, and run
+[Release **v0.2.0**](https://github.com/tygern/kl/releases/tag/v0.2.0) of the repository (archive `exceptional-leading-proof.zip`, `SHA256SUMS`, release notes) certifies every computational claim of the current paper. The previous release, [v0.1.0](https://github.com/tygern/kl/releases/tag/v0.1.0), remains the historical tag for the earlier version of the manuscript. Extract the supplement archive, enter `exceptional-leading-proof`, and run
 
 ```sh
 python3 run_proofs.py

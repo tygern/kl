@@ -19,7 +19,7 @@ assistance from large language model systems:
 - Anthropic's **Claude Fable 5.1** carried out an independent adversarial
   review on 7 October 2026 and, in the revision that followed the review,
   implemented the author's decisions (manuscript restructuring, repository
-  hygiene, the prepared v0.2.0 supplement).
+  hygiene, the v0.2.0 supplement).
 
 The author directed the work, checked the proofs, computations and
 references, and takes full responsibility for the content.
@@ -157,8 +157,8 @@ prompts and this provenance file. The revision was implemented by Claude
 Fable 5.1 agents under the author's direction: the manuscript was
 restructured, the two research notes were archived under
 `research/archive/notes/`, the review's computations were turned into
-certificates for a prepared (not yet published) release v0.2.0 of the
-supplement, and the repository hygiene items above were carried out. The
+certificates for release v0.2.0 of the supplement (published 8 October
+2026 from commit 39f1f7e), and the repository hygiene items above were carried out. The
 addenda dated 7 October 2026 in `research/en_families/report.txt`,
 `research/en-search-status.txt`, `research/en_affine_referee/report.txt` and
 `research/exceptional_priority/report.txt` record the values the review

@@ -200,7 +200,7 @@ x = 5343010 (not FC) and w = 0125342312501234 (FC, length 16) have mu = 5
 with P = 1 + 8q + 22q^2 + 20q^3 + 5q^4. So a global E6 0/1 bound is false,
 and the FC hypothesis on the lower endpoint is essential. These values are
 reported in Section 5 of the revised manuscript and certified in the
-prepared v0.2.0 supplement (research/review_checks/).
+v0.2.0 supplement (research/review_checks/).
 
 E. CELL/REDUCTION LITERATURE AND ADDITIONAL CHECKS
 
