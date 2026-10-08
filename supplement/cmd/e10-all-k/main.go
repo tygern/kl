@@ -3,7 +3,7 @@
 //
 // It ports research/en_affine_referee/verify_indefinite_e10.py, which in turn
 // uses the library part of research/en_affine_referee/verify_indefinite.py;
-// the shared library is go/internal/indefinite. It reads the payload seed
+// the shared library is internal/indefinite. It reads the payload seed
 // research/en_families/cartan_E10_m2_max1.json relative to the working
 // directory and writes research/en_affine_referee/e10-certificate.json.
 // It imports no other engine of this module.

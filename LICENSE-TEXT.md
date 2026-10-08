@@ -19,7 +19,7 @@ purpose, including commercially, provided you give appropriate credit
 link to the license, and indicate whether changes were made.
 
 All code in this repository (the proof supplement, the computation and
-verification programs of the Go module under `supplement/`, the archived programs
-under `research/archive/python-cpp/`, the exploratory code under `research/`,
-and the build tooling) is licensed separately under the MIT License; see the
-file `LICENSE` at the repository root.
+verification programs of the Go module under `supplement/`, and the build and
+research-check programs of the Go module under `tools/`) is licensed
+separately under the MIT License; see the file `LICENSE` at the repository
+root.

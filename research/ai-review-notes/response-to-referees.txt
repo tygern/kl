@@ -36,3 +36,5 @@ Historical priority is not certified by failure to find a predecessor. A special
 
 Publication judgment
 A previously undocumented finite ADE completion with a compact auditable exceptional classification could support a specialist paper. The uniform terminal construction strengthens that case as a secondary structural result. If the finite result is already known with an equally usable proof, the remaining examples face a substantially higher significance threshold. Journal scope fit is not an acceptance prediction.
+
+The programs named above were deleted in the Go-only revision (October 2026); they are in the repository history at commit d997526 (the Go commands that replace the ported ones are listed in supplement/DEVELOPING.md and tools/README.md).

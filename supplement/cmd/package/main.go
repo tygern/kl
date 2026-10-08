@@ -1,9 +1,9 @@
 // Command package collects the explicit, minimal proof supplement archive
-// for release v0.3.0; no network, no installations.
+// for release v0.4.0; no network, no installations.
 //
 // It ports supplement/build_package.py: the same payload inventory of data
 // files (shipped certificates, snapshots, the manuscript snapshot and its
-// rendered PDF) with their purposes, the same two seed reductions, LICENSE,
+// rendered PDF) with their purposes, the same seed reduction, LICENSE,
 // the archive README (supplement/README.md), INPUTS.json with version, scope
 // and provenance, expected-summary.json computed from the shipped
 // certificates with the same assertions, MANIFEST.json over every archive
@@ -13,8 +13,8 @@
 // except this packager, which only runs in the repository.
 //
 // Run from the repository root as `go run -C supplement ./cmd/package` (the module
-// lives in go/, so the go command changes into it; the packager then treats
-// the parent of its module directory as the repository root). It writes
+// lives in supplement/, so the go command changes into it; the packager then
+// treats the parent of its module directory as the repository root). It writes
 // supplement/dist/exceptional-leading-proof/ (staging),
 // supplement/dist/exceptional-leading-proof.zip and
 // supplement/dist/build-summary.json. Standard library only; it imports no
@@ -35,7 +35,7 @@ import (
 	"time"
 )
 
-const version = "v0.3.0"
+const version = "v0.4.0"
 
 // renamed maps the current location of the internal review notes to their
 // pre-rename location; the archive always uses the new path.
@@ -60,38 +60,49 @@ var files = map[string]string{
 	"results/fc-maxima-certificate.json":                        "Shipped FC maxima certificate for E6-E13; regenerated and compared.",
 	"results/terminal-structure-certificate.json":               "Shipped structure certificate for the exceptional terminals; regenerated and compared.",
 	"results/uniform-family-certificate.json":                   "Shipped uniform-family certificate (default pairs); regenerated and compared.",
+	"research/en_families/affine_reflection_family.json":        "Shipped certificate of the affine E8 reflection family r_{beta+k delta}, beta = (1,2,3,3,2,2,1,1,2), written by affine-reflection-family; regenerated and compared.",
+	"research/en_families/cartan_E10_m2_max1.json":              "E10 real terminal roots with pairings bounded by 2 on maximum independent sets, written by cartan-candidates -rank 10 -max-entry 2 -max-only; regenerated and compared, and e10-all-k reads its beta0 row.",
+	"research/en_uniform/construction.json":                     "Finite counterchecks of the rank-uniform construction for r = 3..30 written by uniform-construction -max-r 30; regenerated and compared.",
+	"research/exceptional_referee/checks.json":                  "Third check of the Table 1 data from the E6/E7 integer-matrix certificates, printed by terminal-data-check; regenerated and compared.",
+	"research/en_e8/e8-recursive-chains.json":                   "E8 terminal classification repeated along four parabolic chains, written by terminals-recursive -chains-certificate; regenerated and compared.",
+	"results/d6-ambient-certificate.json":                       "Kazhdan-Lusztig polynomial of the length-15 pair of Table 1 computed by the KL recursion in ambient E7, ambient E8 and D6, written by d6-ambient; regenerated and compared.",
 }
 
 // purposes describes each package of the Go module, keyed by its directory
 // relative to go/.
 var purposes = map[string]string{
-	"cmd/proofs":              "Proof runner: builds every program below, rebuilds every classification and certificate in an isolated working copy of payload/, compares the regenerated snapshots with the shipped ones and the stable outcomes with expected-summary.json (go run ./cmd/proofs [-full]).",
-	"cmd/fc-catalogue":        "Generates complete FC catalogues of E6-E9 (ports fc_catalogue.cpp); no catalogue snapshots shipped.",
-	"cmd/terminals-flat":      "Flat finite terminal engine (ports parabolic_terminals.cpp); shares its arithmetic with the recursive engine through internal/parabolic.",
-	"cmd/terminals-recursive": "Recursive complete finite parabolic pruning engine (ports recursive_terminals.cpp); shares its arithmetic with the flat engine through internal/parabolic.",
-	"internal/parabolic":      "Arithmetic shared by the flat and recursive finite terminal engines, so those two are not independent implementations.",
-	"cmd/e8-d7":               "Separate complete E8/D7 terminal enumeration (ports e8_d7_cosets.cpp); imports no internal package.",
-	"cmd/enumerate-bad":       "Full E6/E7 root-index enumeration (ports enumerate_bad.cpp; rerun with -full); imports no internal package.",
-	"cmd/matrix-search":       "Full E6 and E7 independent integer-matrix enumerations (ports verify_e6_independent.py and verify_e7_matrices.cpp; rerun with -full); imports no internal package.",
-	"cmd/verify-exceptional":  "Compares the four historical E6/E7 full-group snapshots (root-index and integer-matrix enumerations) and identifies the signed D6 pair (ports verify_exceptional.py).",
-	"cmd/verify-outputs":      "Exact integer-matrix cross-comparison of all finite terminal outputs and baseline snapshots (ports verify_outputs.py); -matrices N prints the generated terminal matrices that the runner compares with the printed table words.",
-	"cmd/verify-e8":           "Independent integer-matrix closure, inversion-length, descent and endpoint verifier (ports verify_e8.py); hashes JSON inputs without their timing fields; imports neither enumeration engine.",
-	"cmd/finite-descents":     "Independent table descent and support matching verifier (ports check_finite_descents.py from the AI-generated internal review notes).",
-	"cmd/d6-certificate":      "D6 saved recurrence certificate checker (ports verify_certificate.py); uses the primitives of internal/d6 and calls no KL evaluator.",
-	"internal/d6":             "D6 signed permutation, length, Bruhat, lower ideal, R-polynomial and polynomial primitives (ports sparse_kl.py and coxeter.py without any KL evaluator); shared with the generator's design, so the checker is not an independent implementation.",
-	"cmd/uniform-verify":      "Independent symbolic uniform verifier and finite matrix diagnostics (ports referee_verify.py); records the manuscript hash.",
-	"internal/affine":         "Row-matrix affine arithmetic and all-k inversion/terminal verifier (ports the library part of verify_families.py); shared by affine-proof and affine-fc-covers.",
-	"cmd/affine-proof":        "Proof-only entry point for the proved affine conjugate family (ports affine_proof.py); writes proved-affine-certificate.json.",
-	"cmd/affine-fc-covers":    "E9 exact FC closure and complete base cover verification (ports verify_fc_catalogue.py); independent of the FC enumerator but shares affine arithmetic with affine-proof.",
-	"internal/indefinite":     "Arithmetic library of the E10 verifier (ports the library part of verify_indefinite.py; the E13 main is not ported).",
-	"cmd/e10-all-k":           "All-k E10 root/reflection proof verifier (ports verify_indefinite_e10.py).",
-	"cmd/e6-mu-table":         "Complete E6 Kazhdan-Lusztig table with every mu value: maximum 10 attained by 8 pairs, histogram of mu >= 2, and mu in {0,1} for every FC lower endpoint (manuscript Section 5; ports e6_mu_table.cpp).",
-	"cmd/e9-quotient-kl":      "Parabolic-quotient KL engine for the length-33 affine E8 reflection r_beta and its two length-34 extensions; polynomials of the odd-gap eligible bottoms (Section 5; ports e9_quotient_kl.cpp); validated against a naive recursion.",
-	"cmd/d8-gern-kl":          "KL polynomials on the lower ideals of Gern's w_6 and w_8 in two independent models of D_n: the D6 value 1+6q+11q^2+6q^3+q^4+q^5 and the D8 polynomial of the archived transfer note (geometric model with -full; ports d8_gern_kl.cpp).",
-	"cmd/fc-maxima":           "Independent FC enumeration of E6-E13 by height vectors: counts and maximum lengths (55, 66, 78, 92 for E10-E13; Section 4 remark; ports fc_maxima.cpp).",
-	"cmd/terminal-structure":  "Gern-plus-two matrix identities, exhaustive D5/D6/D7 enumeration, layered palindromes, orthogonal reflections, weak-order chain and w_0(J) factorizations of w_4, w_6, w_7, w_8 (Section 3 remarks; ports terminal_structure.py).",
-	"cmd/uniform-covers":      "Finite checks of the cover lemma ingredients for b_{r,k}: descents and non-FC status of bs, sbs = r_{s beta}, lengths 8r^2+3+116k, no FC Bruhat covers (Section 4; ports uniform_family_checks.py; more rows with -full).",
-	"cmd/affine-d4":           "Independent affine D4 witness P_{x,xcx} = 1+3q+2q^2, mu = 2, by direct subwords and R-polynomial reciprocity (Section 5; ports verify_affine_d4_r.py).",
+	"cmd/proofs":                   "Proof runner: builds every program below, rebuilds every classification and certificate in an isolated working copy of payload/, compares the regenerated snapshots with the shipped ones and the stable outcomes with expected-summary.json (go run ./cmd/proofs [-full]).",
+	"cmd/fc-catalogue":             "Generates complete FC catalogues of E6-E9 (ports fc_catalogue.cpp); no catalogue snapshots shipped.",
+	"cmd/terminals-flat":           "Flat finite terminal engine (ports parabolic_terminals.cpp); shares its arithmetic with the recursive engine through internal/parabolic.",
+	"cmd/terminals-recursive":      "Recursive complete finite parabolic pruning engine (ports recursive_terminals.cpp); -chains-certificate repeats the E8 classification along four parabolic chains; shares its arithmetic with the flat engine through internal/parabolic.",
+	"internal/parabolic":           "Arithmetic shared by the flat and recursive finite terminal engines, so those two are not independent implementations.",
+	"cmd/e8-d7":                    "Separate complete E8/D7 terminal enumeration (ports e8_d7_cosets.cpp); imports no internal package.",
+	"cmd/enumerate-bad":            "Full E6/E7 root-index enumeration (ports enumerate_bad.cpp; rerun with -full); imports no internal package.",
+	"cmd/matrix-search":            "Full E6 and E7 independent integer-matrix enumerations (ports verify_e6_independent.py and verify_e7_matrices.cpp; rerun with -full); imports no internal package.",
+	"cmd/verify-exceptional":       "Compares the four historical E6/E7 full-group snapshots (root-index and integer-matrix enumerations) and identifies the signed D6 pair (ports verify_exceptional.py).",
+	"cmd/verify-outputs":           "Exact integer-matrix cross-comparison of all finite terminal outputs and baseline snapshots (ports verify_outputs.py); -matrices N prints the generated terminal matrices that the runner compares with the printed table words.",
+	"cmd/verify-e8":                "Independent integer-matrix closure, inversion-length, descent and endpoint verifier (ports verify_e8.py); hashes JSON inputs without their timing fields; imports neither enumeration engine.",
+	"cmd/finite-descents":          "Independent table descent and support matching verifier (ports check_finite_descents.py from the AI-generated internal review notes).",
+	"cmd/d6-certificate":           "D6 saved recurrence certificate checker (ports verify_certificate.py); uses the primitives of internal/d6 and calls no KL evaluator.",
+	"internal/d6":                  "D6 signed permutation, length, Bruhat, lower ideal, R-polynomial and polynomial primitives (ports sparse_kl.py and coxeter.py without any KL evaluator); shared with the generator's design, so the checker is not an independent implementation.",
+	"cmd/uniform-verify":           "Independent symbolic uniform verifier and finite matrix diagnostics (ports referee_verify.py); records the manuscript hash.",
+	"internal/affine":              "Row-matrix affine arithmetic and all-k inversion/terminal verifier (ports the library part of verify_families.py); shared by affine-proof and affine-fc-covers.",
+	"cmd/affine-proof":             "Proof-only entry point for the proved affine conjugate family (ports affine_proof.py); writes proved-affine-certificate.json.",
+	"cmd/affine-fc-covers":         "E9 exact FC closure and complete base cover verification (ports verify_fc_catalogue.py); independent of the FC enumerator but shares affine arithmetic with affine-proof.",
+	"internal/indefinite":          "Arithmetic library of the E10 verifier (ports the library part of verify_indefinite.py; the E13 main is not ported).",
+	"cmd/e10-all-k":                "All-k E10 root/reflection proof verifier (ports verify_indefinite_e10.py).",
+	"cmd/e6-mu-table":              "Complete E6 Kazhdan-Lusztig table with every mu value: maximum 10 attained by 8 pairs, histogram of mu >= 2, and mu in {0,1} for every FC lower endpoint (manuscript Section 5; ports e6_mu_table.cpp).",
+	"cmd/e9-quotient-kl":           "Parabolic-quotient KL engine for the length-33 affine E8 reflection r_beta and its two length-34 extensions; polynomials of the odd-gap eligible bottoms (Section 5; ports e9_quotient_kl.cpp); validated against a naive recursion.",
+	"cmd/d8-gern-kl":               "KL polynomials on the lower ideals of Gern's w_6 and w_8 in two independent models of D_n: the D6 value 1+6q+11q^2+6q^3+q^4+q^5 and the D8 polynomial of the archived transfer note (geometric model with -full; ports d8_gern_kl.cpp).",
+	"cmd/fc-maxima":                "Independent FC enumeration of E6-E13 by height vectors: counts and maximum lengths (55, 66, 78, 92 for E10-E13; Section 4 remark; ports fc_maxima.cpp).",
+	"cmd/terminal-structure":       "Gern-plus-two matrix identities, exhaustive D5/D6/D7 enumeration, layered palindromes, orthogonal reflections, weak-order chain and w_0(J) factorizations of w_4, w_6, w_7, w_8 (Section 3 remarks; ports terminal_structure.py).",
+	"cmd/uniform-covers":           "Finite checks of the cover lemma ingredients for b_{r,k}: descents and non-FC status of bs, sbs = r_{s beta}, lengths 8r^2+3+116k, no FC Bruhat covers (Section 4; ports uniform_family_checks.py; more rows with -full).",
+	"cmd/affine-d4":                "Independent affine D4 witness P_{x,xcx} = 1+3q+2q^2, mu = 2, by direct subwords and R-polynomial reciprocity (Section 5; ports verify_affine_d4_r.py).",
+	"cmd/affine-reflection-family": "Certifies the affine E8 reflection family r_{beta+k delta} (length 33 + 58k, terminal with full support, both one-generator extensions with a full-support FC bottom) for k = 0..10 (Section 5; ports affine_reflection_family.py).",
+	"cmd/cartan-candidates":        "Exhausts the terminal reflections of E_n with bounded root pairings on an independent set and certifies each as a real root with the stated descents; regenerates the E10 seed (ports cartan_candidates.py).",
+	"cmd/uniform-construction":     "Finite counterchecks of the rank-uniform E_(4r+1) construction for r = 3..30: seed certificate, translation identities, norm-2 positive roots whose reflections are right terminal (Section 4; ports construction.py).",
+	"cmd/terminal-data-check":      "Third check of Table 1 from the E6/E7 integer-matrix certificates: Poincare polynomials, commuting terminal counts, E7 word transcriptions and the D6 identification (ports verify_terminal_data.py).",
+	"cmd/d6-ambient":               "KL recursion on the lower ideal of the length-15 terminal of Table 1 in ambient E7, ambient E8 and the D6 parabolic: P = 1+6q+11q^2+6q^3+q^4+q^5, mu = 1, ideal 3,184, interval 1,676 (Appendix A; self-contained).",
 }
 
 // excludedPackages are module directories that stay in the repository.
@@ -229,7 +240,7 @@ func main() {
 		inventory = append(inventory, entry{"payload/" + archivePath, archivePath, digest(origin), "unchanged", files[archivePath]})
 	}
 
-	// Two discovery-result files are reduced to the exact seed rows the proofs use.
+	// One discovery-result file is reduced to the exact seed row the proofs use.
 	type selection struct {
 		path    string
 		selects func(any) any
@@ -246,17 +257,6 @@ func main() {
 				panic(failure{"no length-27 row in e9_full_support_eligible.json"})
 			},
 			"Retain only the length-27 base word row used by the proved affine family."},
-		{"research/en_families/cartan_E10_m2_max1.json",
-			func(data any) any {
-				want := literal(`[3,7,10,9,7,6,4,3,1,6]`)
-				for _, row := range items(field(data, "real_terminal_roots")) {
-					if equal, _ := sameJSON(field(row, "beta"), want); equal {
-						return newObject().set("real_terminal_roots", []any{row})
-					}
-				}
-				panic(failure{"no beta0 row in cartan_E10_m2_max1.json"})
-			},
-			"Retain only the E10 beta0 row and reduced-word witness used by e10-all-k."},
 	}
 	for _, s := range selections {
 		target := filepath.Join(p.stage, "payload", filepath.FromSlash(s.path))
@@ -294,9 +294,16 @@ func main() {
 		copyFile(origin, filepath.Join(p.stage, filepath.FromSlash(rel)))
 		inventory = append(inventory, entry{rel, "supplement/" + rel, digest(origin), "unchanged", purpose})
 	}
+	present := map[string]bool{}
 	for _, pkg := range listPackages(goDir) {
+		present[pkg] = true
 		if !excludedPackages[pkg] && purposes[pkg] == "" {
 			fatal("no purpose recorded for Go package %s", pkg)
+		}
+	}
+	for pkg := range purposes {
+		if !present[pkg] {
+			fatal("purpose recorded for a Go package that does not exist: %s", pkg)
 		}
 	}
 

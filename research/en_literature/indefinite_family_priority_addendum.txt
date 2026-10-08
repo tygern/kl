@@ -233,3 +233,5 @@ of general cell/automaton theorems. It finds no exact predecessor and no
 new priority blocker, but cannot certify first discovery. A suitable
 description is 'explicit families and reproducible proofs; priority not
 established by the present audit'.
+
+The programs named above were deleted in the Go-only revision (October 2026); they are in the repository history at commit d997526 (the Go commands that replace the ported ones are listed in supplement/DEVELOPING.md and tools/README.md).

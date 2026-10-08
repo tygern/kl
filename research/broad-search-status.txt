@@ -59,3 +59,5 @@ Final deliverables:
   results/exceptional-audit.json, results/affine-d4-independent.json
   research/exceptional_priority/report.txt: deep checked priority history.
 No new explicit unbounded cross-type D-model family has been established.
+
+The programs named above were deleted in the Go-only revision (October 2026); they are in the repository history at commit d997526 (the Go commands that replace the ported ones are listed in supplement/DEVELOPING.md and tools/README.md).

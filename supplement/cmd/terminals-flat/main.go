@@ -14,7 +14,7 @@
 // then marked "complete": false). The certificate is written to stdout; the
 // timing field of the original is dropped.
 //
-// Imports: the standard library and go/internal/parabolic (shared with
+// Imports: the standard library and internal/parabolic (shared with
 // terminals-recursive, as in the original). It imports none of the other
 // engines of the supplement.
 package main

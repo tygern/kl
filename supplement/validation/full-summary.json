@@ -1638,5 +1638,1438 @@
       2
     ],
     "mu": 2
+  },
+  "affine_reflection_family": {
+    "beta": [
+      1,
+      2,
+      3,
+      3,
+      2,
+      2,
+      1,
+      1,
+      2
+    ],
+    "finite_root_count": 240,
+    "length_slope": 58,
+    "length_offset_for_k_plus_1": -25,
+    "lengths": [
+      33,
+      91,
+      149,
+      207,
+      265,
+      323,
+      381,
+      439,
+      497,
+      555,
+      613
+    ],
+    "terminal_for_all_checked_k": true,
+    "extension_bottom_lengths_all_5": true
+  },
+  "E10_cartan_candidates": {
+    "rank": 10,
+    "max_pairing_absolute_value": 2,
+    "maximum_independent_only": true,
+    "independence_number": 5,
+    "independent_sets_tested": 9,
+    "pairings_tested": 1557,
+    "positive_integer_vectors": 1522,
+    "norm_two_vectors": 8,
+    "real_terminal_roots": [
+      {
+        "beta": [
+          5,
+          11,
+          16,
+          14,
+          10,
+          8,
+          5,
+          3,
+          2,
+          9
+        ],
+        "I": [
+          1,
+          3,
+          5,
+          8,
+          9
+        ],
+        "height": 83,
+        "length": 137
+      },
+      {
+        "beta": [
+          6,
+          14,
+          20,
+          17,
+          13,
+          10,
+          6,
+          3,
+          2,
+          11
+        ],
+        "I": [
+          1,
+          3,
+          5,
+          8,
+          9
+        ],
+        "height": 102,
+        "length": 161
+      },
+      {
+        "beta": [
+          7,
+          16,
+          23,
+          20,
+          15,
+          12,
+          7,
+          4,
+          3,
+          12
+        ],
+        "I": [
+          1,
+          3,
+          5,
+          8,
+          9
+        ],
+        "height": 119,
+        "length": 179
+      },
+      {
+        "beta": [
+          3,
+          7,
+          10,
+          9,
+          7,
+          6,
+          4,
+          3,
+          1,
+          6
+        ],
+        "I": [
+          1,
+          3,
+          5,
+          7,
+          9
+        ],
+        "height": 56,
+        "length": 101
+      },
+      {
+        "beta": [
+          4,
+          10,
+          15,
+          13,
+          10,
+          8,
+          5,
+          4,
+          1,
+          8
+        ],
+        "I": [
+          1,
+          3,
+          5,
+          7,
+          9
+        ],
+        "height": 78,
+        "length": 133
+      },
+      {
+        "beta": [
+          4,
+          9,
+          13,
+          11,
+          8,
+          7,
+          4,
+          3,
+          1,
+          7
+        ],
+        "I": [
+          1,
+          3,
+          5,
+          7,
+          9
+        ],
+        "height": 67,
+        "length": 117
+      },
+      {
+        "beta": [
+          6,
+          14,
+          20,
+          17,
+          13,
+          10,
+          6,
+          4,
+          1,
+          11
+        ],
+        "I": [
+          1,
+          3,
+          5,
+          7,
+          9
+        ],
+        "height": 102,
+        "length": 161
+      },
+      {
+        "beta": [
+          5,
+          12,
+          17,
+          15,
+          11,
+          9,
+          6,
+          4,
+          1,
+          9
+        ],
+        "I": [
+          1,
+          3,
+          5,
+          7,
+          9
+        ],
+        "height": 89,
+        "length": 145
+      }
+    ]
+  },
+  "uniform_construction": {
+    "theorem_r_minimum": 3,
+    "checked_r_maximum": 30,
+    "parameter_formula": "beta_(r,k)=beta_r-(2r-4)k*gamma+((2r-4)k^2+r*k)*delta",
+    "rows": [
+      {
+        "r": 3,
+        "rank": 13,
+        "a": 2,
+        "checks": [
+          {
+            "k": 0,
+            "height": 38,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 162,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 406,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 6678,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 4,
+        "rank": 17,
+        "a": 4,
+        "checks": [
+          {
+            "k": 0,
+            "height": 67,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 255,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 683,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 12747,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 5,
+        "rank": 21,
+        "a": 6,
+        "checks": [
+          {
+            "k": 0,
+            "height": 104,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 356,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 968,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 18824,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 6,
+        "rank": 25,
+        "a": 8,
+        "checks": [
+          {
+            "k": 0,
+            "height": 149,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 465,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 1261,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 24909,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 7,
+        "rank": 29,
+        "a": 10,
+        "checks": [
+          {
+            "k": 0,
+            "height": 202,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 582,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 1562,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 31002,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 8,
+        "rank": 33,
+        "a": 12,
+        "checks": [
+          {
+            "k": 0,
+            "height": 263,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 707,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 1871,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 37103,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 9,
+        "rank": 37,
+        "a": 14,
+        "checks": [
+          {
+            "k": 0,
+            "height": 332,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 840,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 2188,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 43212,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 10,
+        "rank": 41,
+        "a": 16,
+        "checks": [
+          {
+            "k": 0,
+            "height": 409,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 981,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 2513,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 49329,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 11,
+        "rank": 45,
+        "a": 18,
+        "checks": [
+          {
+            "k": 0,
+            "height": 494,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 1130,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 2846,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 55454,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 12,
+        "rank": 49,
+        "a": 20,
+        "checks": [
+          {
+            "k": 0,
+            "height": 587,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 1287,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 3187,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 61587,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 13,
+        "rank": 53,
+        "a": 22,
+        "checks": [
+          {
+            "k": 0,
+            "height": 688,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 1452,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 3536,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 67728,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 14,
+        "rank": 57,
+        "a": 24,
+        "checks": [
+          {
+            "k": 0,
+            "height": 797,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 1625,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 3893,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 73877,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 15,
+        "rank": 61,
+        "a": 26,
+        "checks": [
+          {
+            "k": 0,
+            "height": 914,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 1806,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 4258,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 80034,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 16,
+        "rank": 65,
+        "a": 28,
+        "checks": [
+          {
+            "k": 0,
+            "height": 1039,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 1995,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 4631,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 86199,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 17,
+        "rank": 69,
+        "a": 30,
+        "checks": [
+          {
+            "k": 0,
+            "height": 1172,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 2192,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 5012,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 92372,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 18,
+        "rank": 73,
+        "a": 32,
+        "checks": [
+          {
+            "k": 0,
+            "height": 1313,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 2397,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 5401,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 98553,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 19,
+        "rank": 77,
+        "a": 34,
+        "checks": [
+          {
+            "k": 0,
+            "height": 1462,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 2610,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 5798,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 104742,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 20,
+        "rank": 81,
+        "a": 36,
+        "checks": [
+          {
+            "k": 0,
+            "height": 1619,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 2831,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 6203,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 110939,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 21,
+        "rank": 85,
+        "a": 38,
+        "checks": [
+          {
+            "k": 0,
+            "height": 1784,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 3060,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 6616,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 117144,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 22,
+        "rank": 89,
+        "a": 40,
+        "checks": [
+          {
+            "k": 0,
+            "height": 1957,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 3297,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 7037,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 123357,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 23,
+        "rank": 93,
+        "a": 42,
+        "checks": [
+          {
+            "k": 0,
+            "height": 2138,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 3542,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 7466,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 129578,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 24,
+        "rank": 97,
+        "a": 44,
+        "checks": [
+          {
+            "k": 0,
+            "height": 2327,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 3795,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 7903,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 135807,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 25,
+        "rank": 101,
+        "a": 46,
+        "checks": [
+          {
+            "k": 0,
+            "height": 2524,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 4056,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 8348,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 142044,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 26,
+        "rank": 105,
+        "a": 48,
+        "checks": [
+          {
+            "k": 0,
+            "height": 2729,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 4325,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 8801,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 148289,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 27,
+        "rank": 109,
+        "a": 50,
+        "checks": [
+          {
+            "k": 0,
+            "height": 2942,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 4602,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 9262,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 154542,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 28,
+        "rank": 113,
+        "a": 52,
+        "checks": [
+          {
+            "k": 0,
+            "height": 3163,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 4887,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 9731,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 160803,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 29,
+        "rank": 117,
+        "a": 54,
+        "checks": [
+          {
+            "k": 0,
+            "height": 3392,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 5180,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 10208,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 167072,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      },
+      {
+        "r": 30,
+        "rank": 121,
+        "a": 56,
+        "checks": [
+          {
+            "k": 0,
+            "height": 3629,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 1,
+            "height": 5481,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 2,
+            "height": 10693,
+            "norm": 2,
+            "terminal": true
+          },
+          {
+            "k": 10,
+            "height": 173349,
+            "norm": 2,
+            "terminal": true
+          }
+        ]
+      }
+    ]
+  },
+  "terminal_data_checks": {
+    "D6_bottom": [
+      -1,
+      -2,
+      4,
+      3,
+      6,
+      5
+    ],
+    "D6_map_Gern_to_E7": {
+      "1": 1,
+      "2": 6,
+      "3": 2,
+      "4": 3,
+      "5": 4,
+      "6": 5
+    },
+    "D6_top": [
+      -1,
+      -6,
+      3,
+      -4,
+      5,
+      -2
+    ],
+    "E7_terminal_ranks": [
+      4,
+      4,
+      11,
+      24
+    ],
+    "commuting_terminal_counts": [
+      22,
+      36
+    ],
+    "maximum_absolute_root_coefficients": [
+      3,
+      4
+    ],
+    "poincare_polynomials": "E6 and E7 match coefficient by coefficient",
+    "status": "All assertions passed"
+  },
+  "E8_chains": {
+    "group_order": 696729600,
+    "right_terminal_count": 2160,
+    "terminal_count": 64,
+    "commuting_terminals": 58,
+    "noncommuting_terminal_count": 6,
+    "right_terminal_sets_equal": true,
+    "terminal_sets_equal": true,
+    "chains": [
+      {
+        "chain": "e7",
+        "added_generators": [
+          7,
+          2,
+          3,
+          1,
+          0,
+          4,
+          5,
+          6
+        ],
+        "coset_counts": [
+          2,
+          3,
+          4,
+          8,
+          10,
+          27,
+          56,
+          240
+        ],
+        "right_terminal_counts": [
+          2,
+          3,
+          6,
+          24,
+          40,
+          72,
+          576,
+          2160
+        ],
+        "candidates_tested": [
+          2,
+          6,
+          12,
+          48,
+          240,
+          1080,
+          4032,
+          138240
+        ],
+        "terminal_count": 64
+      },
+      {
+        "chain": "d7",
+        "added_generators": [
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          7,
+          0
+        ],
+        "coset_counts": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          64,
+          2160
+        ],
+        "right_terminal_counts": [
+          2,
+          3,
+          6,
+          10,
+          20,
+          35,
+          280,
+          2160
+        ],
+        "candidates_tested": [
+          2,
+          6,
+          12,
+          30,
+          60,
+          140,
+          2240,
+          604800
+        ],
+        "terminal_count": 64
+      },
+      {
+        "chain": "a7",
+        "added_generators": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "coset_counts": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          17280
+        ],
+        "right_terminal_counts": [
+          2,
+          3,
+          6,
+          10,
+          20,
+          35,
+          70,
+          2160
+        ],
+        "candidates_tested": [
+          2,
+          6,
+          12,
+          30,
+          60,
+          140,
+          280,
+          1209600
+        ],
+        "terminal_count": 64
+      },
+      {
+        "chain": "alt",
+        "added_generators": [
+          0,
+          1,
+          7,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "coset_counts": [
+          2,
+          3,
+          2,
+          10,
+          16,
+          27,
+          56,
+          240
+        ],
+        "right_terminal_counts": [
+          2,
+          3,
+          6,
+          10,
+          40,
+          72,
+          576,
+          2160
+        ],
+        "candidates_tested": [
+          2,
+          6,
+          6,
+          60,
+          160,
+          1080,
+          4032,
+          138240
+        ],
+        "terminal_count": 64
+      }
+    ]
+  },
+  "D6_ambient": {
+    "polynomial": [
+      1,
+      6,
+      11,
+      6,
+      1,
+      1
+    ],
+    "mu": 1,
+    "ideal_size": 3184,
+    "interval_size": 1676,
+    "interval_rank_vector": [
+      1,
+      12,
+      55,
+      140,
+      248,
+      339,
+      360,
+      287,
+      162,
+      59,
+      12,
+      1
+    ],
+    "length_gap": 11,
+    "models": [
+      {
+        "model": "E7",
+        "ideal_size": 3184,
+        "interval_size": 1676,
+        "P_xb": [
+          1,
+          6,
+          11,
+          6,
+          1,
+          1
+        ],
+        "P_eb": [
+          1,
+          6,
+          11,
+          6,
+          1,
+          1
+        ],
+        "mu": 1,
+        "b_length": 15,
+        "x_length": 4
+      },
+      {
+        "model": "E8",
+        "ideal_size": 3184,
+        "interval_size": 1676,
+        "P_xb": [
+          1,
+          6,
+          11,
+          6,
+          1,
+          1
+        ],
+        "P_eb": [
+          1,
+          6,
+          11,
+          6,
+          1,
+          1
+        ],
+        "mu": 1,
+        "b_length": 15,
+        "x_length": 4
+      },
+      {
+        "model": "D6",
+        "ideal_size": 3184,
+        "interval_size": 1676,
+        "P_xb": [
+          1,
+          6,
+          11,
+          6,
+          1,
+          1
+        ],
+        "P_eb": [
+          1,
+          6,
+          11,
+          6,
+          1,
+          1
+        ],
+        "mu": 1,
+        "b_length": 15,
+        "x_length": 4
+      }
+    ]
   }
 }

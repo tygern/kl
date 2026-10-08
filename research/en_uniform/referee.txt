@@ -246,3 +246,5 @@ k = 0..3) and are recorded in Remark 4.4 of the manuscript and in
 results/uniform-family-certificate.json (written by
 research/review_checks/uniform_family_checks.py). They are not needed for
 the proof.
+
+The programs named above were deleted in the Go-only revision (October 2026); they are in the repository history at commit d997526 (the Go commands that replace the ported ones are listed in supplement/DEVELOPING.md and tools/README.md).

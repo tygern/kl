@@ -587,3 +587,130 @@ func (g *Group) BadRecords(bads, fc []Element) []Bad {
 	}
 	return out
 }
+
+// ParabolicOrder returns the order of the standard parabolic subgroup W_K of
+// the generalized diagram E_n for the generator mask K. Every connected
+// component of the induced subdiagram is classified from its shape (a path
+// is of type A; a component with one branch node is of type D or E according
+// to its three arm lengths), so the order is computed without enumerating the
+// subgroup. It panics with a Failure for a shape that cannot occur in E_n.
+func (g *Group) ParabolicOrder(K uint32) int64 {
+	var order int64 = 1
+	seen := uint32(0)
+	for start := 0; start < g.N; start++ {
+		if K&(1<<uint(start)) == 0 || seen&(1<<uint(start)) != 0 {
+			continue
+		}
+		component := []int{start}
+		seen |= 1 << uint(start)
+		for i := 0; i < len(component); i++ {
+			for _, t := range g.Adj[component[i]] {
+				if K&(1<<uint(t)) != 0 && seen&(1<<uint(t)) == 0 {
+					seen |= 1 << uint(t)
+					component = append(component, t)
+				}
+			}
+		}
+		order = MulChecked(order, g.componentOrder(K, component))
+	}
+	return order
+}
+
+// componentOrder is the order of the irreducible parabolic subgroup on the
+// connected node set component (a subset of K).
+func (g *Group) componentOrder(K uint32, component []int) int64 {
+	m := len(component)
+	inK := func(t int) bool { return K&(1<<uint(t)) != 0 }
+	branch := -1
+	for _, s := range component {
+		degree := 0
+		for _, t := range g.Adj[s] {
+			if inK(t) {
+				degree++
+			}
+		}
+		Assert(degree <= 3, "node of degree above 3 in a parabolic subdiagram")
+		if degree == 3 {
+			Assert(branch < 0, "two branch nodes in a parabolic subdiagram")
+			branch = s
+		}
+	}
+	factorial := func(k int) int64 {
+		var f int64 = 1
+		for i := 2; i <= k; i++ {
+			f = MulChecked(f, int64(i))
+		}
+		return f
+	}
+	if branch < 0 {
+		return factorial(m + 1) // type A_m
+	}
+	var arms []int
+	for _, first := range g.Adj[branch] {
+		if !inK(first) {
+			continue
+		}
+		length, prev, cur := 1, branch, first
+		for {
+			next := -1
+			for _, t := range g.Adj[cur] {
+				if inK(t) && t != prev {
+					Assert(next < 0, "second branch node in a parabolic subdiagram")
+					next = t
+				}
+			}
+			if next < 0 {
+				break
+			}
+			length++
+			prev, cur = cur, next
+		}
+		arms = append(arms, length)
+	}
+	sort.Ints(arms)
+	Assert(len(arms) == 3 && arms[0]+arms[1]+arms[2]+1 == m, "arm lengths do not cover the component")
+	switch {
+	case arms[0] == 1 && arms[1] == 1: // D_m
+		return MulChecked(int64(1)<<uint(m-1), factorial(m))
+	case arms[0] == 1 && arms[1] == 2 && arms[2] == 2:
+		return 51840
+	case arms[0] == 1 && arms[1] == 2 && arms[2] == 3:
+		return 2903040
+	case arms[0] == 1 && arms[1] == 2 && arms[2] == 4:
+		return 696729600
+	}
+	panic(Failure{fmt.Sprintf("unrecognised parabolic component with arms %v", arms)})
+}
+
+// ChainNames lists the parabolic chains of E8 supported by AdditionChain.
+var ChainNames = []string{"e7", "d7", "a7", "alt"}
+
+// AdditionChain returns the order in which generators are added to build W
+// by recursive pruning along the named chain of standard parabolic
+// subgroups. "e7" is the default chain of the paper (valid for E6, E7 and
+// E8): node n-1, then 2, 3, 1, 0, 4, 5, ..., n-2, so the last parabolic
+// subgroup before W is of type E7 for E8. The other chains are for E8 only:
+// "d7" adds 6,5,4,3,2,1,7 (the parabolic subgroups
+// are of types A1 to A6 and then D7) and finally node 0; "a7" adds the nodes
+// 0,...,6 (types A1 to A7) and finally node 7; "alt" adds 0,1,7,2,3,4,5,6.
+func (g *Group) AdditionChain(name string) []int {
+	n := g.N
+	switch name {
+	case "e7":
+		additions := []int{n - 1, 2, 3, 1, 0, 4}
+		for s := 5; s <= n-2; s++ {
+			additions = append(additions, s)
+		}
+		return additions
+	case "d7":
+		Assert(n == 8, "chain d7 is defined for rank 8 only")
+		return []int{6, 5, 4, 3, 2, 1, 7, 0}
+	case "a7":
+		Assert(n == 8, "chain a7 is defined for rank 8 only")
+		return []int{0, 1, 2, 3, 4, 5, 6, 7}
+	case "alt":
+		Assert(n == 8, "chain alt is defined for rank 8 only")
+		return []int{0, 1, 7, 2, 3, 4, 5, 6}
+	}
+	panic(Failure{fmt.Sprintf("unknown chain %q (want e7, d7, a7 or alt)", name)})
+}

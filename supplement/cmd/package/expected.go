@@ -73,6 +73,7 @@ func expected(read func(string) any) *object {
 	result.set("uniform_family", uniformFamilySummary(uniform))
 	d = read("results/affine-d4-independent.json")
 	result.set("affine_D4", pick(d, "lengths", "lower_ideal_size", "polynomial", "mu"))
+	addedSummaries(read, result)
 
 	// Values stated in the manuscript, asserted here so that a changed
 	// certificate cannot pass unnoticed.
@@ -105,6 +106,36 @@ func expected(read func(string) any) *object {
 	if len(items(field(uniform, "pairs"))) != 24 {
 		panic(failure{"ship the default-mode uniform certificate"})
 	}
+	family := result.values["affine_reflection_family"].(*object)
+	assertEqual(family.values["length_slope"], literal(`58`), "affine reflection family length slope")
+	assertEqual(family.values["lengths"], literal(`[33,91,149,207,265,323,381,439,497,555,613]`), "affine reflection family lengths")
+	assertEqual(family.values["terminal_for_all_checked_k"], true, "affine reflection family terminal")
+	assertEqual(family.values["extension_bottom_lengths_all_5"], true, "affine reflection family extension bottoms")
+	cartanRoots := result.values["E10_cartan_candidates"].(*object).values["real_terminal_roots"].([]any)
+	seedFound := false
+	for _, row := range cartanRoots {
+		if equal, _ := sameJSON(row.(*object).values["beta"], literal(`[3,7,10,9,7,6,4,3,1,6]`)); equal {
+			seedFound = true
+		}
+	}
+	if !seedFound {
+		panic(failure{"assertion failed: cartan_E10_m2_max1.json lacks the beta0 row read by e10-all-k"})
+	}
+	assertEqual(result.values["uniform_construction"].(*object).values["checked_r_maximum"], literal(`30`), "uniform construction checked_r_maximum")
+	assertEqual(field(result.values["terminal_data_checks"], "status"), "All assertions passed", "terminal data checks status")
+	chains := result.values["E8_chains"].(*object)
+	assertEqual(chains.values["terminal_count"], literal(`64`), "E8 chains terminal_count")
+	assertEqual(chains.values["terminal_sets_equal"], true, "E8 chains terminal_sets_equal")
+	assertEqual(chains.values["right_terminal_sets_equal"], true, "E8 chains right_terminal_sets_equal")
+	if len(chains.values["chains"].([]any)) != 4 {
+		panic(failure{"assertion failed: e8-recursive-chains.json does not record four chains"})
+	}
+	ambient := result.values["D6_ambient"].(*object)
+	assertEqual(ambient.values["polynomial"], literal(`[1,6,11,6,1,1]`), "D6 ambient polynomial")
+	assertEqual(ambient.values["mu"], literal(`1`), "D6 ambient mu")
+	assertEqual(ambient.values["ideal_size"], literal(`3184`), "D6 ambient ideal size")
+	assertEqual(ambient.values["interval_size"], literal(`1676`), "D6 ambient interval size")
+	assertEqual(field(read("results/d6-ambient-certificate.json"), "status"), "All assertions passed", "results/d6-ambient-certificate.json status")
 	return result
 }
 
@@ -176,4 +207,67 @@ func sortedInt64(values []int64) []int64 {
 	out := append([]int64(nil), values...)
 	sort.Slice(out, func(i, j int) bool { return out[i] < out[j] })
 	return out
+}
+
+// addedSummaries appends the stable outcomes of the certificates added in
+// release v0.4.0, after every earlier key, so the earlier keys are unchanged.
+func addedSummaries(read func(string) any, into *object) {
+	d := read("research/en_families/affine_reflection_family.json")
+	family := pick(d, "beta", "finite_root_count", "length_slope", "length_offset_for_k_plus_1")
+	lengths := []any{}
+	terminal := true
+	bottoms := true
+	for _, row := range items(field(d, "checks")) {
+		lengths = append(lengths, field(row, "length"))
+		terminal = terminal && boolean(field(row, "terminal"))
+		for _, ext := range items(field(row, "extensions")) {
+			bottoms = bottoms && integer(field(ext, "bottom_length")) == 5
+		}
+	}
+	family.set("lengths", lengths).set("terminal_for_all_checked_k", terminal).set("extension_bottom_lengths_all_5", bottoms)
+	into.set("affine_reflection_family", family)
+
+	d = read("research/en_families/cartan_E10_m2_max1.json")
+	cartan := pick(d, "rank", "max_pairing_absolute_value", "maximum_independent_only", "independence_number",
+		"independent_sets_tested", "pairings_tested", "positive_integer_vectors", "norm_two_vectors")
+	roots := []any{}
+	for _, row := range items(field(d, "real_terminal_roots")) {
+		roots = append(roots, pick(row, "beta", "I", "height", "length"))
+	}
+	cartan.set("real_terminal_roots", roots)
+	into.set("E10_cartan_candidates", cartan)
+
+	d = read("research/en_uniform/construction.json")
+	construction := pick(d, "theorem_r_minimum", "checked_r_maximum", "parameter_formula")
+	rows := []any{}
+	for _, row := range items(field(d, "rows")) {
+		checks := []any{}
+		for _, c := range items(field(row, "checks")) {
+			checks = append(checks, pick(c, "k", "height", "norm", "terminal"))
+		}
+		rows = append(rows, pick(row, "r", "rank", "a").set("checks", checks))
+	}
+	construction.set("rows", rows)
+	into.set("uniform_construction", construction)
+
+	into.set("terminal_data_checks", read("research/exceptional_referee/checks.json"))
+
+	d = read("research/en_e8/e8-recursive-chains.json")
+	chains := pick(d, "group_order", "right_terminal_count", "terminal_count", "commuting_terminals",
+		"noncommuting_terminal_count", "right_terminal_sets_equal", "terminal_sets_equal")
+	perChain := []any{}
+	for _, c := range items(field(d, "chains")) {
+		perChain = append(perChain, pick(c, "chain", "added_generators", "coset_counts", "right_terminal_counts", "candidates_tested", "terminal_count"))
+	}
+	chains.set("chains", perChain)
+	into.set("E8_chains", chains)
+
+	d = read("results/d6-ambient-certificate.json")
+	ambient := pick(d, "polynomial", "mu", "ideal_size", "interval_size", "interval_rank_vector", "length_gap")
+	models := []any{}
+	for _, m := range items(field(d, "models")) {
+		models = append(models, pick(m, "model", "ideal_size", "interval_size", "P_xb", "P_eb", "mu", "b_length", "x_length"))
+	}
+	ambient.set("models", models)
+	into.set("D6_ambient", ambient)
 }

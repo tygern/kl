@@ -401,6 +401,11 @@ func (r *runner) verify(manuscriptSHA256AtBuild string) {
 	terminalStructure := r.build("terminal-structure")
 	uniformCovers := r.build("uniform-covers")
 	affineD4 := r.build("affine-d4")
+	affineReflectionFamily := r.build("affine-reflection-family")
+	cartanCandidates := r.build("cartan-candidates")
+	uniformConstruction := r.build("uniform-construction")
+	terminalDataCheck := r.build("terminal-data-check")
+	d6Ambient := r.build("d6-ambient")
 
 	for _, n := range []int{6, 7, 8, 9} {
 		r.execute(fmt.Sprintf("E%d-FC", n), []string{fc, "-rank", fmt.Sprint(n)}, fmt.Sprintf("research/en_independent/e%d-fc.json", n), "")
@@ -414,6 +419,12 @@ func (r *runner) verify(manuscriptSHA256AtBuild string) {
 		r.execute(fmt.Sprintf("E%d-recursive", n), []string{recursive, "-rank", fmt.Sprint(n)}, fmt.Sprintf("research/en_e8/e%d-recursive.json", n), "")
 	}
 	r.execute("E8-D7", []string{d7}, "research/en_independent/e8-d7-terminals.json", "")
+	// The E8 classification is repeated along four parabolic chains (the
+	// paper's chain through E7, and chains through D7, A7 and a second E7
+	// ordering); the program asserts that all four give the same 64 terminal
+	// elements and records the per-chain coset and terminal counts.
+	r.execute("E8-recursive-chains", []string{recursive, "-rank", "8", "-chains-certificate", "research/en_e8/e8-recursive-chains.json"}, "", "")
+	r.compareSnapshot("research/en_e8/e8-recursive-chains.json", nil)
 	if r.full {
 		rootids := r.build("enumerate-bad")
 		matrix := r.build("matrix-search")
@@ -433,7 +444,16 @@ func (r *runner) verify(manuscriptSHA256AtBuild string) {
 	r.execute("E8-independent-verification", []string{verifyE8}, "", "")
 	r.execute("finite-support-matchings", []string{finiteDescents}, "", "")
 	r.compareSnapshot("research/ai-review-notes/finite-descents.json", nil)
+	// Third check of the Table 1 data from the E6/E7 integer-matrix
+	// certificates: Poincare polynomials, commuting terminal counts, the E7
+	// word transcriptions and the D6 identification.
+	r.execute("terminal-data-check", []string{terminalDataCheck}, "research/exceptional_referee/checks.json", "")
+	r.compareSnapshot("research/exceptional_referee/checks.json", nil)
 	r.execute("D6-recurrence-certificate", []string{d6Certificate}, "", "")
+	// The D6 polynomial of the length-15 pair recomputed from scratch by the
+	// KL recursion inside ambient E7, ambient E8 and the D6 parabolic.
+	r.execute("D6-ambient-E7-E8", []string{d6Ambient, "-out", "results/d6-ambient-certificate.json"}, "", "")
+	r.compareSnapshot("results/d6-ambient-certificate.json", nil)
 	r.execute("uniform-symbolic-and-matrix-checks", []string{uniformVerify}, "", "")
 	// The uniform verifier records the hash of the manuscript it audited; it
 	// must be the manuscript snapshot recorded by the builder in INPUTS.json.
@@ -441,9 +461,21 @@ func (r *runner) verify(manuscriptSHA256AtBuild string) {
 	if audited != manuscriptSHA256AtBuild {
 		panic(failure{"Uniform verifier audited a manuscript other than the one recorded at build time."})
 	}
+	// Finite counterchecks of the rank-uniform construction for r = 3..30.
+	r.execute("uniform-construction", []string{uniformConstruction, "-max-r", "30"}, "", "")
+	r.compareSnapshot("research/en_uniform/construction.json", nil)
 	r.execute("affine-proved-family", []string{affineProof}, "", "")
 	r.compareSnapshot("research/en_affine_referee/proved-affine-certificate.json", nil)
 	r.execute("affine-FC-closure-and-covers", []string{affineFCCovers}, "", "")
+	// The length-33 reflection family r_{beta+k delta} of affine E8: terminal
+	// with full support for k = 0..10, length 33 + 58k.
+	r.execute("affine-reflection-family", []string{affineReflectionFamily}, "", "")
+	r.compareSnapshot("research/en_families/affine_reflection_family.json", nil)
+	// The E10 seed (the real terminal roots with pairings bounded by 2 on
+	// maximum independent sets) is regenerated and compared before e10-all-k
+	// reads its beta0 row from the regenerated file.
+	r.execute("cartan-candidates", []string{cartanCandidates, "-rank", "10", "-max-entry", "2", "-max-only"}, "", "")
+	r.compareSnapshot("research/en_families/cartan_E10_m2_max1.json", nil)
 	r.execute("E10-all-k", []string{e10AllK}, "", "")
 	// Certificates added after the review of 7 October 2026 (Section 5 of the
 	// manuscript and the remarks of Sections 3 and 4). Each program asserts its

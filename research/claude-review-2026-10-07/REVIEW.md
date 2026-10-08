@@ -1,5 +1,7 @@
 # Independent review of the `kl` repository
 
+8 October 2026: the `verification-code/` directory referred to below was removed from the tree in the Go-only revision of the repository; it is in the repository history at commit d997526.
+
 Date: 7 October 2026. Reviewer: Claude Fable 5.1, running an adversarial multi-agent workflow (71 agents: 14 review dimensions, 2 verifiers per substantive finding, a completeness critic, and 6 follow-up investigations). Every reviewer wrote its own code and was instructed not to read the repository's existing AI referee reports until the end. All verification code and outputs are preserved under `verification-code/`; the raw per-dimension findings, with verifier verdicts, are in `findings-digest.md`.
 
 ## 1. Verdict in brief

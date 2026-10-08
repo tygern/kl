@@ -265,3 +265,5 @@ or exactly two coatoms is isomorphic to an interval in a dihedral group.
 Thus the obstruction is a consequence of classical reflection-subgroup
 geometry, with our direct proof supplied for convenience. These are
 antecedents, not support for a priority claim.
+
+The programs named above were deleted in the Go-only revision (October 2026); they are in the repository history at commit d997526 (the Go commands that replace the ported ones are listed in supplement/DEVELOPING.md and tools/README.md).

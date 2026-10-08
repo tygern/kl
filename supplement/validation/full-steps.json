@@ -9,7 +9,7 @@
       "./cmd/terminals-flat"
     ],
     "returncode": 0,
-    "seconds": 0.134
+    "seconds": 0.131
   },
   {
     "step": "build-terminals-recursive",
@@ -21,7 +21,7 @@
       "./cmd/terminals-recursive"
     ],
     "returncode": 0,
-    "seconds": 0.111
+    "seconds": 0.114
   },
   {
     "step": "build-e8-d7",
@@ -45,7 +45,7 @@
       "./cmd/fc-catalogue"
     ],
     "returncode": 0,
-    "seconds": 0.098
+    "seconds": 0.099
   },
   {
     "step": "build-e6-mu-table",
@@ -69,7 +69,7 @@
       "./cmd/e9-quotient-kl"
     ],
     "returncode": 0,
-    "seconds": 0.124
+    "seconds": 0.125
   },
   {
     "step": "build-d8-gern-kl",
@@ -81,7 +81,7 @@
       "./cmd/d8-gern-kl"
     ],
     "returncode": 0,
-    "seconds": 0.115
+    "seconds": 0.114
   },
   {
     "step": "build-fc-maxima",
@@ -93,7 +93,7 @@
       "./cmd/fc-maxima"
     ],
     "returncode": 0,
-    "seconds": 0.098
+    "seconds": 0.102
   },
   {
     "step": "build-verify-exceptional",
@@ -105,7 +105,7 @@
       "./cmd/verify-exceptional"
     ],
     "returncode": 0,
-    "seconds": 0.126
+    "seconds": 0.129
   },
   {
     "step": "build-verify-outputs",
@@ -117,7 +117,7 @@
       "./cmd/verify-outputs"
     ],
     "returncode": 0,
-    "seconds": 0.122
+    "seconds": 0.121
   },
   {
     "step": "build-verify-e8",
@@ -129,7 +129,7 @@
       "./cmd/verify-e8"
     ],
     "returncode": 0,
-    "seconds": 0.135
+    "seconds": 0.138
   },
   {
     "step": "build-finite-descents",
@@ -141,7 +141,7 @@
       "./cmd/finite-descents"
     ],
     "returncode": 0,
-    "seconds": 0.111
+    "seconds": 0.113
   },
   {
     "step": "build-d6-certificate",
@@ -165,7 +165,7 @@
       "./cmd/uniform-verify"
     ],
     "returncode": 0,
-    "seconds": 0.189
+    "seconds": 0.194
   },
   {
     "step": "build-affine-proof",
@@ -189,7 +189,7 @@
       "./cmd/affine-fc-covers"
     ],
     "returncode": 0,
-    "seconds": 0.112
+    "seconds": 0.113
   },
   {
     "step": "build-e10-all-k",
@@ -201,7 +201,7 @@
       "./cmd/e10-all-k"
     ],
     "returncode": 0,
-    "seconds": 0.13
+    "seconds": 0.132
   },
   {
     "step": "build-terminal-structure",
@@ -213,7 +213,7 @@
       "./cmd/terminal-structure"
     ],
     "returncode": 0,
-    "seconds": 0.158
+    "seconds": 0.16
   },
   {
     "step": "build-uniform-covers",
@@ -225,7 +225,7 @@
       "./cmd/uniform-covers"
     ],
     "returncode": 0,
-    "seconds": 0.125
+    "seconds": 0.123
   },
   {
     "step": "build-affine-d4",
@@ -237,7 +237,67 @@
       "./cmd/affine-d4"
     ],
     "returncode": 0,
+    "seconds": 0.118
+  },
+  {
+    "step": "build-affine-reflection-family",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/affine-reflection-family",
+      "./cmd/affine-reflection-family"
+    ],
+    "returncode": 0,
+    "seconds": 0.125
+  },
+  {
+    "step": "build-cartan-candidates",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/cartan-candidates",
+      "./cmd/cartan-candidates"
+    ],
+    "returncode": 0,
+    "seconds": 0.122
+  },
+  {
+    "step": "build-uniform-construction",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/uniform-construction",
+      "./cmd/uniform-construction"
+    ],
+    "returncode": 0,
     "seconds": 0.13
+  },
+  {
+    "step": "build-terminal-data-check",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/terminal-data-check",
+      "./cmd/terminal-data-check"
+    ],
+    "returncode": 0,
+    "seconds": 0.118
+  },
+  {
+    "step": "build-d6-ambient",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/d6-ambient",
+      "./cmd/d6-ambient"
+    ],
+    "returncode": 0,
+    "seconds": 0.123
   },
   {
     "step": "E6-FC",
@@ -247,7 +307,7 @@
       "6"
     ],
     "returncode": 0,
-    "seconds": 0.132
+    "seconds": 0.109
   },
   {
     "step": "E7-FC",
@@ -257,7 +317,7 @@
       "7"
     ],
     "returncode": 0,
-    "seconds": 0.011
+    "seconds": 0.01
   },
   {
     "step": "E8-FC",
@@ -277,7 +337,7 @@
       "9"
     ],
     "returncode": 0,
-    "seconds": 0.147
+    "seconds": 0.152
   },
   {
     "step": "E6-flat",
@@ -287,7 +347,7 @@
       "6"
     ],
     "returncode": 0,
-    "seconds": 0.159
+    "seconds": 0.136
   },
   {
     "step": "E6-recursive",
@@ -297,7 +357,7 @@
       "6"
     ],
     "returncode": 0,
-    "seconds": 0.149
+    "seconds": 0.129
   },
   {
     "step": "E7-flat",
@@ -307,7 +367,7 @@
       "7"
     ],
     "returncode": 0,
-    "seconds": 0.029
+    "seconds": 0.028
   },
   {
     "step": "E7-recursive",
@@ -327,7 +387,7 @@
       "8"
     ],
     "returncode": 0,
-    "seconds": 0.912
+    "seconds": 0.938
   },
   {
     "step": "E8-recursive",
@@ -337,7 +397,7 @@
       "8"
     ],
     "returncode": 0,
-    "seconds": 0.024
+    "seconds": 0.025
   },
   {
     "step": "E8-D7",
@@ -345,7 +405,19 @@
       "<run>/bin/e8-d7"
     ],
     "returncode": 0,
-    "seconds": 0.216
+    "seconds": 0.196
+  },
+  {
+    "step": "E8-recursive-chains",
+    "command": [
+      "<run>/bin/terminals-recursive",
+      "-rank",
+      "8",
+      "-chains-certificate",
+      "research/en_e8/e8-recursive-chains.json"
+    ],
+    "returncode": 0,
+    "seconds": 0.285
   },
   {
     "step": "build-enumerate-bad",
@@ -357,7 +429,7 @@
       "./cmd/enumerate-bad"
     ],
     "returncode": 0,
-    "seconds": 0.102
+    "seconds": 0.104
   },
   {
     "step": "build-matrix-search",
@@ -369,7 +441,7 @@
       "./cmd/matrix-search"
     ],
     "returncode": 0,
-    "seconds": 0.135
+    "seconds": 0.134
   },
   {
     "step": "E6-historical-rootids",
@@ -379,7 +451,7 @@
       "6"
     ],
     "returncode": 0,
-    "seconds": 0.147
+    "seconds": 0.124
   },
   {
     "step": "E7-historical-rootids",
@@ -389,7 +461,7 @@
       "7"
     ],
     "returncode": 0,
-    "seconds": 0.719
+    "seconds": 0.74
   },
   {
     "step": "E6-historical-matrix",
@@ -399,7 +471,7 @@
       "6"
     ],
     "returncode": 0,
-    "seconds": 0.2
+    "seconds": 0.18
   },
   {
     "step": "E7-historical-matrix",
@@ -409,7 +481,7 @@
       "7"
     ],
     "returncode": 0,
-    "seconds": 2.986
+    "seconds": 3.07
   },
   {
     "step": "finite-source-snapshot-audit",
@@ -417,7 +489,7 @@
       "<run>/bin/verify-exceptional"
     ],
     "returncode": 0,
-    "seconds": 0.151
+    "seconds": 0.13
   },
   {
     "step": "finite-method-comparison",
@@ -425,7 +497,7 @@
       "<run>/bin/verify-outputs"
     ],
     "returncode": 0,
-    "seconds": 0.15
+    "seconds": 0.126
   },
   {
     "step": "E8-independent-verification",
@@ -433,7 +505,7 @@
       "<run>/bin/verify-e8"
     ],
     "returncode": 0,
-    "seconds": 0.253
+    "seconds": 0.228
   },
   {
     "step": "finite-support-matchings",
@@ -441,7 +513,15 @@
       "<run>/bin/finite-descents"
     ],
     "returncode": 0,
-    "seconds": 0.139
+    "seconds": 0.14
+  },
+  {
+    "step": "terminal-data-check",
+    "command": [
+      "<run>/bin/terminal-data-check"
+    ],
+    "returncode": 0,
+    "seconds": 0.134
   },
   {
     "step": "D6-recurrence-certificate",
@@ -449,7 +529,17 @@
       "<run>/bin/d6-certificate"
     ],
     "returncode": 0,
-    "seconds": 0.645
+    "seconds": 0.627
+  },
+  {
+    "step": "D6-ambient-E7-E8",
+    "command": [
+      "<run>/bin/d6-ambient",
+      "-out",
+      "results/d6-ambient-certificate.json"
+    ],
+    "returncode": 0,
+    "seconds": 0.747
   },
   {
     "step": "uniform-symbolic-and-matrix-checks",
@@ -457,7 +547,17 @@
       "<run>/bin/uniform-verify"
     ],
     "returncode": 0,
-    "seconds": 0.319
+    "seconds": 0.294
+  },
+  {
+    "step": "uniform-construction",
+    "command": [
+      "<run>/bin/uniform-construction",
+      "-max-r",
+      "30"
+    ],
+    "returncode": 0,
+    "seconds": 0.165
   },
   {
     "step": "affine-proved-family",
@@ -465,7 +565,7 @@
       "<run>/bin/affine-proof"
     ],
     "returncode": 0,
-    "seconds": 0.189
+    "seconds": 0.165
   },
   {
     "step": "affine-FC-closure-and-covers",
@@ -473,7 +573,28 @@
       "<run>/bin/affine-fc-covers"
     ],
     "returncode": 0,
-    "seconds": 0.426
+    "seconds": 0.407
+  },
+  {
+    "step": "affine-reflection-family",
+    "command": [
+      "<run>/bin/affine-reflection-family"
+    ],
+    "returncode": 0,
+    "seconds": 0.143
+  },
+  {
+    "step": "cartan-candidates",
+    "command": [
+      "<run>/bin/cartan-candidates",
+      "-rank",
+      "10",
+      "-max-entry",
+      "2",
+      "-max-only"
+    ],
+    "returncode": 0,
+    "seconds": 0.132
   },
   {
     "step": "E10-all-k",
@@ -481,7 +602,7 @@
       "<run>/bin/e10-all-k"
     ],
     "returncode": 0,
-    "seconds": 0.141
+    "seconds": 0.132
   },
   {
     "step": "E6-complete-mu-table",
@@ -495,7 +616,7 @@
       "results/e6-mu-table.json"
     ],
     "returncode": 0,
-    "seconds": 4.031
+    "seconds": 3.992
   },
   {
     "step": "E9-odd-gap-polynomials",
@@ -507,7 +628,7 @@
       "results/e9-odd-gap-certificate.json"
     ],
     "returncode": 0,
-    "seconds": 5.838
+    "seconds": 5.938
   },
   {
     "step": "D6-D8-Gern-polynomials",
@@ -521,7 +642,7 @@
       "both"
     ],
     "returncode": 0,
-    "seconds": 59.805
+    "seconds": 60.168
   },
   {
     "step": "FC-maxima-E6-E13",
@@ -533,7 +654,7 @@
       "6,7,8,9,10,11,12,13"
     ],
     "returncode": 0,
-    "seconds": 3.543
+    "seconds": 3.739
   },
   {
     "step": "terminal-structure",
@@ -541,7 +662,7 @@
       "<run>/bin/terminal-structure"
     ],
     "returncode": 0,
-    "seconds": 0.223
+    "seconds": 0.251
   },
   {
     "step": "uniform-family-covers",
@@ -550,7 +671,7 @@
       "-full"
     ],
     "returncode": 0,
-    "seconds": 0.477
+    "seconds": 0.474
   },
   {
     "step": "affine-D4-mu-2",
@@ -558,7 +679,7 @@
       "<run>/bin/affine-d4"
     ],
     "returncode": 0,
-    "seconds": 0.145
+    "seconds": 0.165
   },
   {
     "step": "E6-terminal-matrices",
@@ -568,7 +689,7 @@
       "6"
     ],
     "returncode": 0,
-    "seconds": 0.009
+    "seconds": 0.004
   },
   {
     "step": "E7-terminal-matrices",
@@ -578,7 +699,7 @@
       "7"
     ],
     "returncode": 0,
-    "seconds": 0.003
+    "seconds": 0.004
   },
   {
     "step": "E8-terminal-matrices",

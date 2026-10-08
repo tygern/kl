@@ -64,8 +64,8 @@ combinatorial-invariance preprint, searched the literature, and produced:
   literature-audit notes);
 - `computations/` (exact-integer Kazhdan–Lusztig code for small groups, the
   interval-certificate search `run_search.py`, the $D_6$ recurrence
-  certificate and its verifier; since v0.3.0 under
-  `research/archive/python-cpp/computations/`) and `results/computation.json`,
+  certificate and its verifier; now in the repository history only, at
+  commit `d997526`, and in release v0.2.0) and `results/computation.json`,
   `results/d6-recurrence-certificate.json`;
 - the research note now archived as `research/archive/notes/kl-transfer.tex`
   (conditional transfer of Gern's type-$D$ results to arbitrary Coxeter
@@ -81,8 +81,8 @@ for infinite families and for extensions to other types. This stage produced
 the finite $E_6/E_7$ terminal classification and its independent matrix
 verification (`research/verify_e6_independent.py`,
 `research/verify_e7_matrices.cpp`), the affine-$D_4$ example with $\mu=2$
-(`research/verify_affine_d4_r.py`; these three programs are under
-`research/archive/python-cpp/` since v0.3.0), the research note now archived as
+(`research/verify_affine_d4_r.py`; these three programs are in release
+v0.2.0 and in the repository history at commit `d997526`), the research note now archived as
 `research/archive/notes/star-boundary.tex`, and the status record
 `research/broad-search-status.txt`. The agents also found that the star
 family is Mongelli's (arXiv:1111.2945, Corollary 2).
@@ -148,12 +148,8 @@ the existing AI review notes until the end. The review:
 
 The report is `research/claude-review-2026-10-07/REVIEW.md`; the raw findings
 with verifier verdicts are `research/claude-review-2026-10-07/findings-digest.md`;
-the reviewers' code and outputs are under
-`research/claude-review-2026-10-07/verification-code/`. That directory is
-kept verbatim as the review left it: its files contain the reviewers' own
-scratch-directory paths, the repository's root `*.log` rule leaves its `.log`
-files untracked, and the third-party PyCox copy and the build output inside
-its repository snapshot are excluded from version control.
+the reviewers' code and outputs are in the repository history at commit
+`d997526` (see stage 7).
 
 ## Stage 5: revision (7 October 2026)
 
@@ -204,16 +200,15 @@ author's direction:
   `research/archive/python-cpp/` at their v0.2.0 repository-relative paths
   (`git mv`, so git history keeps them at their original paths up to and
   including commit `6fe3eab`, the commit following tag `v0.2.0` = `39f1f7e`),
-  together with the v0.2.0 validation records (`supplement/validation/`, now
-  `research/archive/python-cpp/supplement/validation/`; the v0.3.0 records
-  are under `supplement/validation/`). The scripts `research/reproduce_en.py` and
+  together with the v0.2.0 validation records (`supplement/validation/`). The
+  scripts `research/reproduce_en.py` and
   `research/reproduce_uniform.py` and their manifests
   `results/en-reproduction-manifest.json` and
   `results/uniform-reproduction-manifest.json` were deleted; the archive's
   `INPUTS.json` and `MANIFEST.json` and the runner's `status.json` replace
   them. The research notes and hash records under `research/` that name the
   programs by their original paths were not edited (see
-  `research/archive/python-cpp/README.md`).
+  `research/archive/python-cpp/README.md` at commit `d997526`).
 - The committed certificates were regenerated with the Go commands run from
   the repository root, so that the shipped files equal what the runner
   regenerates; they are semantically equal to the v0.2.0 files except for the
@@ -228,6 +223,16 @@ author's direction:
 The repository README, `supplement/DEVELOPING.md`, the archive README
 (`supplement/README.md`), `supplement/REPORT.txt` and the release notes of
 v0.3.0 record the same facts.
+
+## Stage 7: Go-only repository (8 October 2026)
+
+After release v0.3.0 (8 October 2026, commit `d997526`) the remaining Python
+and C++ files (`research/archive/python-cpp/`,
+`research/claude-review-2026-10-07/verification-code/` and the exploratory
+scripts under `research/`) were deleted; they stay in the history at
+`d997526` and, for the v0.2.0 programs, in that release. The deterministic
+checks among them became six certified steps of the supplement and the module
+`tools/` (`supplement/DEVELOPING.md`, `tools/README.md`).
 
 ## Git history and recorded hashes
 
@@ -257,4 +262,5 @@ reason, `research/editorial/source-before-polish.txt` and
   history squashed; v0.1.0 released at 12:46 UTC; independent review; revision
   and preparation of v0.2.0.
 - 8 October 2026: v0.2.0 released at 02:38 UTC; Go port of the proof
-  supplement (stage 6) and preparation of v0.3.0.
+  supplement (stage 6); v0.3.0 released at 12:20 UTC; Go-only repository
+  (stage 7) and preparation of v0.4.0.

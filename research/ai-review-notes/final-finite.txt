@@ -36,3 +36,5 @@ Small remaining changes suggested
 4. Ensure the cited proof code and certificates are actually packaged as permanent accessible supplementary material. This is the only outstanding practical acceptance condition I regard as essential. Local paths in a working tree do not serve an external referee after publication.
 
 The revised mathematical finite portion needs no further major restructuring. The maximum-descent lemma now visibly unifies the finite and infinite themes, the finite ADE consequence is explicit, the inherited D6 calculation is transparent, and the computational scope is properly bounded. No new blocker or predecessor was discovered in this final check.
+
+The programs named above were deleted in the Go-only revision (October 2026); they are in the repository history at commit d997526 (the Go commands that replace the ported ones are listed in supplement/DEVELOPING.md and tools/README.md).

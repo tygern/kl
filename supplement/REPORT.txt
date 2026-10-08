@@ -167,13 +167,12 @@ outputs of a fresh v0.2.0 run in both modes (three programs needed one fix
 round), under the author's direction; three independent final reviews
 followed and their findings were applied. The files listed under "Files"
 above (build_package.py, run_proofs.py, affine_proof.py) and all other
-Python/C++ programs of the supplement now live under
-research/archive/python-cpp/ at their v0.2.0 repository-relative paths (git
-mv; history keeps them at the original paths up to and including commit
-6fe3eab, the commit after tag v0.2.0 = 39f1f7e), so the "Files" section and
-the validation/ references in the earlier paragraphs are historical: the
-v0.2.0 records resolve to
-research/archive/python-cpp/supplement/validation/.
+Python/C++ programs of the supplement were moved out of the supplement
+directory (git mv; history keeps them at the original paths up to and
+including commit 6fe3eab, the commit after tag v0.2.0 = 39f1f7e), so the
+"Files" section and the validation/ references in the earlier paragraphs are
+historical; the programs and the v0.2.0 records are in release v0.2.0 and in
+the repository history at commit d997526 (see the next section).
 research/reproduce_en.py, research/reproduce_uniform.py,
 results/en-reproduction-manifest.json and
 results/uniform-reproduction-manifest.json were deleted; the archive's
@@ -218,3 +217,47 @@ status prepared_not_published) with the v0.2.0 assets and records moved to
 output/supplement/v0.2.0/; github-release-v0.2.0.json, github-release.json,
 github-readme.base64 and v0.1.0/ are unchanged. Nothing committed, tagged or
 published.
+
+GO-ONLY REPOSITORY AND v0.4.0 BUILD (8 October 2026)
+Added: six runner steps with shipped, compared certificates and six
+expected-summary keys (every v0.3.0 key EQUAL to v0.3.0's expected
+summary): affine-reflection-family (research/en_families/
+affine_reflection_family.json: the length-33 reflection family
+r_{beta+k delta} of Section 5.3 is full-support terminal for all k, lengths
+33+58k), cartan-candidates -rank 10 -max-entry 2 -max-only (regenerates
+research/en_families/cartan_E10_m2_max1.json, now shipped as the full
+file and read by e10-all-k), uniform-construction -max-r 30
+(research/en_uniform/construction.json), terminal-data-check
+(research/exceptional_referee/checks.json, third check of Table 1),
+terminals-recursive -chains-certificate (research/en_e8/
+e8-recursive-chains.json: 2,160 right-terminals and 64 terminals along the
+E7, D7, A7 and second E7 chains, equal sets) and d6-ambient
+(results/d6-ambient-certificate.json: 1+6q+11q^2+6q^3+q^4+q^5, mu=1, in E7,
+E8 and the D6 parabolic; ideal 3,184, interval 1,676). The PDF build and
+checks, the source manifest and the research-note certificates are the
+second Go module tools/ (runner research-checks: 9 outputs equal).
+Removed: research/archive/python-cpp/, research/claude-review-2026-10-07/
+verification-code/ and the remaining exploratory scripts under research/
+(281 tracked files, 182 of them Python and C++; all in the history at
+commit d997526, the v0.2.0 programs also in that release). Manuscript: Appendix A only
+(four Table 2 rows, the four-chain and ambient-D6 sentences cite the
+supplement steps, release v0.4.0), SHA-256
+1b46358a43d0c1157609d89504bd63779db69b6b3cc4a67cb049660a5e16d55c, 12 pages;
+PDF 612,566 bytes, SHA-256
+495f0da8b6e54c9426377b5622df8e2d6649d55f71d5312af34a2c935dc0825d; archive
+supplement/dist/exceptional-leading-proof.zip 972,051 bytes, 101 files,
+SHA-256 95cd14669f0dbaa69304e1a2135d17c680b2d922bf72bfa3f211dc55813dddbd
+(two builds give the same bytes; the zip README is byte-identical to
+supplement/README.md). Both runner modes passed from fresh extractions, one
+after the other: default 61 steps, 29.1 s wall, 1.17 GB peak; -full 67
+steps, 88.4 s wall, 1.17 GB peak; the six new steps take 1.6 s together. In both modes 30 of
+the 32 pre-existing certificates are compare-EQUAL to the v0.3.0 reference
+runs; cartan_E10_m2_max1.json is the full file containing the former seed
+row unchanged, and referee-certificate.json records the new manuscript
+hash; the six new certificates equal the reference outputs of their ports;
+both summaries equal expected-summary.json. Records: validation/
+default-*.json, full-*.json, verified-MANIFEST.json,
+v0.4.0-release-test.json; output/supplement/ holds the v0.4.0 zip, PDF,
+SHA256SUMS, build-summary.json, release-notes.md and publication.json
+(prepared_not_published), with the v0.3.0 assets and records under
+output/supplement/v0.3.0/. Nothing committed, tagged or published.

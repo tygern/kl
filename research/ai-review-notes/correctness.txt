@@ -48,3 +48,5 @@ FRESH EXECUTIONS IN THIS REVIEW (all passed)
 - python3 research/ai-review-notes/correctness_checks.py: fresh independently written support-sensitive maximum-I counterchecks described above.
 
 No edits were made to the main TeX manuscript. Running existing verifiers regenerated their normal certificate/log outputs.
+
+The programs named above were deleted in the Go-only revision (October 2026); they are in the repository history at commit d997526 (the Go commands that replace the ported ones are listed in supplement/DEVELOPING.md and tools/README.md).

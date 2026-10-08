@@ -1,5 +1,4 @@
 # Build outputs and local working artifacts
-__pycache__/
 # Go: sources only are tracked. `go build -C supplement -o bin/ ./cmd/...` writes to
 # supplement/bin/; a bare `go build` inside a command directory writes a binary named
 # after the directory; the proof runner builds into runs/<mode>-*/bin.
@@ -11,12 +10,18 @@ __pycache__/
 /supplement/*.test
 /supplement/**/*.test
 /supplement/**/*.out
-*.py[cod]
+# The tools module (go build -C tools -o bin/ ./cmd/...) is treated the same way;
+# research-checks writes its scratch tree under tmp/, which is ignored below.
+/tools/bin/
+/tools/cmd/*/*
+!/tools/cmd/*/*.go
+/tools/*.test
+/tools/**/*.test
+/tools/**/*.out
 .DS_Store
 *.log
 /tmp/
 **/reproduction-logs/
-/research/archive/python-cpp/research/broad_exceptional/enumerate_bad
 /research/en_independent/e*-fc.json
 /supplement/dist/
 /output/supplement/
@@ -44,8 +49,5 @@ __pycache__/
 /research/exceptional_priority/mongelli-2011.txt
 /research/exceptional_priority/garfinkle-vogan.txt
 /research/ai-review-notes/priority-sources/*
-!/research/ai-review-notes/priority-sources/inspect_pycox.py
 !/research/ai-review-notes/priority-sources/pycox-data-inspection.json
 !/research/ai-review-notes/priority-sources/pycox-commit.json
-# The review record of 7 October 2026 contains a snapshot of the repository;
-# its third-party PyCox copy (GPL-3, never tracked) and its build output stay out.

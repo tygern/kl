@@ -93,3 +93,5 @@ fixed-point subposet embedding alone is insufficient. The B-wide 0/1 theorem
 is already Chmutov's, so only additional exact-polynomial/degree transport or
 a genuinely different target family would add useful content. This thought
 was not tested and should not be cited as a result.
+
+The programs named above were deleted in the Go-only revision (October 2026); they are in the repository history at commit d997526 (the Go commands that replace the ported ones are listed in supplement/DEVELOPING.md and tools/README.md).

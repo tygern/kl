@@ -169,3 +169,5 @@ claim. No whole-E8 enumeration, E8 inference, or all-generalized-E_n
 0/1 theorem was made by this branch. The parent's separate finite-E
 classification and its independently checked certificates are distinct
 work. No additional searches are pending in this branch.
+
+The programs and the review code directory named above were deleted in the Go-only revision (October 2026); they are in the repository history at commit d997526 (the Go commands that replace the ported ones are listed in supplement/DEVELOPING.md and tools/README.md).

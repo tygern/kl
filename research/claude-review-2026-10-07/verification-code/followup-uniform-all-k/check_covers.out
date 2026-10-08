@@ -1,8 +1,0 @@
-r=3 k=0 E13: l(b)=75 distinct covers=74 FC covers=0 min cover support=13 [0.1s]
-r=3 k=1 E13: l(b)=191 distinct covers=162 FC covers=0 min cover support=13 [0.3s]
-r=3 k=2 E13: l(b)=307 distinct covers=230 FC covers=0 min cover support=13 [0.8s]
-r=4 k=0 E17: l(b)=131 distinct covers=130 FC covers=0 min cover support=17 [0.2s]
-r=4 k=1 E17: l(b)=247 distinct covers=218 FC covers=0 min cover support=17 [0.7s]
-r=5 k=0 E21: l(b)=203 distinct covers=202 FC covers=0 min cover support=21 [0.6s]
-r=6 k=0 E25: l(b)=291 distinct covers=290 FC covers=0 min cover support=25 [1.5s]
-r=7 k=0 E29: l(b)=395 distinct covers=394 FC covers=0 min cover support=29 [3.2s]

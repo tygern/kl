@@ -90,3 +90,5 @@ all proved extensions and qualifications. Existing kl-transfer.tex/PDF updated
 to reference this scope. star-boundary.tex remains unchanged and its editor
 left open. research/reproduce_en.py rebuilds proof certificates without network
 access or package installation. All reproduction steps passed.
+
+The programs and the review code directory named above were deleted in the Go-only revision (October 2026); they are in the repository history at commit d997526 (the Go commands that replace the ported ones are listed in supplement/DEVELOPING.md and tools/README.md).

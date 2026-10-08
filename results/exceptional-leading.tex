@@ -896,10 +896,13 @@ $E_6$, $E_7$ & \texttt{enumerate-bad}, \texttt{matrix-search}, \texttt{verify-ex
 $E_8$ & \texttt{terminals-flat}, \texttt{terminals-recursive} (both on \texttt{internal/parabolic}),
  \texttt{verify-outputs}, \texttt{e8-d7}, \texttt{verify-e8};
  \texttt{e8-recursive.json}$^\dagger$, \texttt{e8-d7-terminals.json}$^\dagger$\\
+$E_8$, four chains & \texttt{terminals-recursive -chains-certificate} ($E_7$, $D_7$, $A_7$ and a second $E_7$ chain); \texttt{e8-recursive-chains.json}\\
 Table~\ref{tab:terminals}, Remark~\ref{rem:gern} & \texttt{finite-descents}, \texttt{terminal-structure}$^*$;
  \texttt{finite-descents.json}, \texttt{terminal-structure-certificate.json}\\
+Table~\ref{tab:terminals}, third check & \texttt{terminal-data-check}; \texttt{checks.json}\\
 $D_6$, $D_8$ & \texttt{d6-certificate} (on \texttt{internal/d6}),
  \texttt{d8-gern-kl}$^*$; \texttt{d6-recurrence-certificate.json}, \texttt{d8-gern-certificate.json}\\
+$D_6$ inside $E_7$, $E_8$ & \texttt{d6-ambient}$^*$; \texttt{d6-ambient-certificate.json}\\
 Uniform family & \texttt{uniform-verify}, \texttt{uniform-covers}$^*$,
  \texttt{fc-maxima}$^*$; \texttt{referee-certificate.json}$^\dagger$, \texttt{uniform-family-certificate.json}, \texttt{fc-maxima-certificate.json}\\
 Affine $\widetilde E_8$ & \texttt{affine-proof}, \texttt{affine-fc-covers} (both on \texttt{internal/affine}),
@@ -909,10 +912,11 @@ $E_{10}$ & \texttt{e10-all-k} (on \texttt{internal/indefinite}); \texttt{e10-cer
 Section~\ref{sec:complements} & \texttt{e6-mu-table}$^*$, \texttt{e9-quotient-kl}$^*$,
  \texttt{affine-d4};
  \texttt{e6-mu-table.json}, \texttt{e9-odd-gap-certificate.json}, \texttt{affine-d4-independent.json}\\
+Section~\ref{sec:affineextra} & \texttt{affine-reflection-family}; \texttt{affine\_reflection\_family.json}\\
 \bottomrule
 \end{tabular}
 \caption{Programs (the commands \texttt{cmd/\textit{name}} of the Go module)
-and certificates of the supplement (the zip of release v0.3.0), by result.
+and certificates of the supplement (the zip of release v0.4.0), by result.
 Starred programs were written for the review and share no code with the
 others; the \texttt{internal} libraries in parentheses are the only shared
 code; daggered certificates are written by the runner, not shipped as
@@ -943,17 +947,18 @@ Poincar\'e products; for $E_8$ the recursive pruning engine and a separate
 enumeration along a $D_7$ parabolic reproduce the same list, sharing only
 their packed root representation, an integer-matrix verifier rechecks
 every terminal word, length, terminal test and eligible lower endpoint,
-and the reviewers' own enumeration along four parabolic chains, among them
-the $E_7$ and $D_7$ chains above (code under
-\texttt{research/claude-review-2026-10-07/verification-code/} in the
-repository, not part of the zip), gives the same list. The $D_6$
+and \texttt{terminals-recursive} gives the same list along four parabolic
+chains ($E_7$, $D_7$, $A_7$ and a second $E_7$ chain);
+\texttt{terminal-data-check} rechecks the data of Table~\ref{tab:terminals}
+from the certificates with separate code. The $D_6$
 polynomial comes from a sparse Kazhdan--Lusztig recursion checked through
 all $24{,}245$ dependency records of the saved certificate (a consistency
 check, the checker sharing group arithmetic with the generator);
 \texttt{d8-gern-kl} recomputes it with independent code in the
 signed-permutation model and, in the extended run, in the geometric
-representation as well, and the reviewers' code just cited recomputes it in
-both models and directly inside $E_7$ and $E_8$. The uniform root proof is
+representation as well, and \texttt{d6-ambient} recomputes it directly
+inside $E_7$, $E_8$ and the $D_6$ parabolic ($3{,}184$-element lower
+ideal, geometric representation). The uniform root proof is
 symbolic; a verifier checks
 Lemmas~\ref{lem:uniformseed}--\ref{lem:uniformdescents} symbolically and
 the finite-rank matrices for $3\leq r\leq40$. The starred programs of
@@ -961,13 +966,12 @@ Table~\ref{tab:programs}, written for the review, share no code with the
 others.
 
 Programs, inputs and output certificates (Table~\ref{tab:programs}) are
-archived with SHA-256 checksums in release v0.3.0 of the repository
+archived with SHA-256 checksums in release v0.4.0 of the repository
 \texttt{github.com/tygern/kl} (zip \texttt{exceptional-leading-proof.zip});
 a single command rebuilds every classification and verifies every
 certificate with Go 1.22 or later and no other dependency. The earlier
-Python and C++ programs remain in release v0.2.0 and under
-\texttt{research/archive/python-cpp/}, and the Go port was verified against
-their outputs certificate for certificate. Copies of the daggered
+Python and C++ programs remain in release v0.2.0, and the Go port was
+verified against their outputs certificate for certificate. Copies of the daggered
 certificates of Table~\ref{tab:programs}, which the runner writes rather
 than reads, are kept in the repository. The archived research notes of
 Section~\ref{sec:complements} are in \texttt{research/archive/notes/}.

@@ -28,3 +28,5 @@ The author requested a GitHub release in the newly initialized tygern/kl reposit
 
 Validation:
 Native LaTeX compiler and exported PDF builds succeed. The revised PDF has14 pages, no undefined references or overfull boxes, and was rendered and inspected. The user's open star-boundary.tex document remains unchanged and its editor was preserved.
+
+The programs named above were deleted in the Go-only revision (October 2026); they are in the repository history at commit d997526 (the Go commands that replace the ported ones are listed in supplement/DEVELOPING.md and tools/README.md).

@@ -19,16 +19,17 @@ Code is licensed under the [MIT License](LICENSE). The manuscript text and the P
 ## Contents
 
 - Paper: [LaTeX source](results/exceptional-leading.tex) and [PDF](output/pdf/exceptional-leading.pdf).
-- Independent review (7 October 2026, Claude Fable 5.1): [report](research/claude-review-2026-10-07/REVIEW.md), [findings with verifier verdicts](research/claude-review-2026-10-07/findings-digest.md), and the reviewers' [verification code](research/claude-review-2026-10-07/verification-code/).
+- Independent review (7 October 2026, Claude Fable 5.1): [report](research/claude-review-2026-10-07/REVIEW.md), [findings with verifier verdicts](research/claude-review-2026-10-07/findings-digest.md); the reviewers' code is in the repository history at commit d997526.
 - Archived research notes (superseded, folded into Section 5 of the paper): [research/archive/notes/](research/archive/notes/).
 - Internal AI review and research notes: [research/ai-review-notes/](research/ai-review-notes/), [research/editorial/](research/editorial/) and the other `research/` directories. Every text note carries a banner stating that it is machine-generated and is not peer review or a journal decision.
 - Proof supplement: the Go module [supplement/](supplement/DEVELOPING.md) (one command per program, the proof runner and the archive packager); the archive README and validation records under `supplement/` (built archive under `output/supplement/`, not tracked).
 - Certificates and data: `results/` and the `research/` directories.
-- The Python and C++ programs of releases v0.1.0 and v0.2.0, superseded by the Go module: [research/archive/python-cpp/](research/archive/python-cpp/README.md).
+- Repository tools: the Go module [tools/](tools/README.md) (PDF build and checks, and the research-note certificates that are not part of the proof supplement, with the runner `research-checks`).
+- The repository contains Go only. The Python and C++ programs of releases v0.1.0 and v0.2.0 are in release v0.2.0 and in the repository history at commit d997526.
 
 ## Reproduce
 
-[Release **v0.3.0**](https://github.com/tygern/kl/releases/tag/v0.3.0) of the repository (archive `exceptional-leading-proof.zip`, `SHA256SUMS`, release notes) certifies every computational claim of the current paper with a single Go module. The earlier releases remain the historical tags: [v0.2.0](https://github.com/tygern/kl/releases/tag/v0.2.0) shipped the same computations as Python and C++ programs (the Go port was verified against their outputs certificate for certificate), and [v0.1.0](https://github.com/tygern/kl/releases/tag/v0.1.0) is the earlier version of the manuscript. Extract the supplement archive, enter `exceptional-leading-proof`, and run
+[Release **v0.4.0**](https://github.com/tygern/kl/releases/tag/v0.4.0) of the repository (archive `exceptional-leading-proof.zip`, `SHA256SUMS`, release notes) certifies every computational claim of the current paper with a single Go module. The earlier releases remain the historical tags: [v0.3.0](https://github.com/tygern/kl/releases/tag/v0.3.0) is the first Go-module supplement (v0.4.0 adds six certified steps and removes the last Python and C++ files from the repository), [v0.2.0](https://github.com/tygern/kl/releases/tag/v0.2.0) shipped the same computations as Python and C++ programs (the Go port was verified against their outputs certificate for certificate), and [v0.1.0](https://github.com/tygern/kl/releases/tag/v0.1.0) is the earlier version of the manuscript. Extract the supplement archive, enter `exceptional-leading-proof`, and run
 
 ```sh
 go run ./cmd/proofs
@@ -36,4 +37,4 @@ go run ./cmd/proofs
 
 Go 1.22 or later suffices; the module uses the standard library alone, so no network access, module download, package or compiler other than Go is needed. Add `-full` to regenerate the full-group $E_6/E_7$ searches and the heavier certificates. The supplement includes all inputs, expected outputs, provenance and a SHA-256 manifest; its README states exactly what is rebuilt and what is verified from saved certificates.
 
-Within the repository, `go run -C supplement ./cmd/package` builds the supplement archive, `go build -C supplement -o bin/ ./cmd/...` builds every command into `supplement/bin/` (run from the repository root, a command rewrites its committed certificate in place, or prints it for the commands that write to stdout; see `supplement/DEVELOPING.md` for the redirection form), and `python3 research/build_pdfs.py` rebuilds the PDF with an installed TeX toolchain.
+Within the repository, `go run -C supplement ./cmd/package` builds the supplement archive, `go build -C supplement -o bin/ ./cmd/...` builds every command into `supplement/bin/` (run from the repository root, a command rewrites its committed certificate in place, or prints it for the commands that write to stdout; see `supplement/DEVELOPING.md` for the redirection form), and `go run -C tools ./cmd/build-pdfs` followed by `go run -C tools ./cmd/check-pdf` rebuilds and checks the PDF with an installed TeX toolchain and poppler (see `tools/README.md`).

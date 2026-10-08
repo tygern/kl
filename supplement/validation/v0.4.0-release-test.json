@@ -1,0 +1,77 @@
+{
+  "version": "v0.4.0",
+  "date": "2026-10-08",
+  "archive": {
+    "bytes": 972051,
+    "sha256": "95cd14669f0dbaa69304e1a2135d17c680b2d922bf72bfa3f211dc55813dddbd",
+    "files": 101
+  },
+  "manuscript_sha256": "1b46358a43d0c1157609d89504bd63779db69b6b3cc4a67cb049660a5e16d55c",
+  "pdf": {
+    "bytes": 612566,
+    "sha256": "495f0da8b6e54c9426377b5622df8e2d6649d55f71d5312af34a2c935dc0825d"
+  },
+  "go_version": "go1.27.1",
+  "extraction": "One fresh extraction of the archive per mode into an isolated session scratch directory (path not recorded); the modes ran one after the other on a 10-core 2026 laptop; wall time and peak RSS from /usr/bin/time -l.",
+  "reference": "The v0.3.0 release-test runs of the Go supplement in both modes for the 32 pre-existing certificates, and the per-program reference outputs of the six new steps (each compared with its original program's output when it was ported); comparison semantic, ignoring only the volatile timing keys.",
+  "default": {
+    "run": "default-2846927069",
+    "steps": 61,
+    "seconds": 28.825,
+    "wall_seconds": 29.08,
+    "peak_rss_bytes": 1172406272,
+    "summary_equals_expected": true,
+    "summary_equals_v0_3_0_expected_summary_on_v0_3_0_keys": true,
+    "certificates_compared_with_v0_3_0_reference_run": {
+      "json_files": 32,
+      "equal": 30,
+      "explained": {
+        "research/en_families/cartan_E10_m2_max1.json": "the full regenerated file (8 rows) replaces the one-row seed; the seed row is contained unchanged",
+        "research/en_uniform/referee-certificate.json": "audited_source_sha256 follows the revised manuscript"
+      }
+    },
+    "new_certificates_equal_to_port_references": [
+      "research/en_e8/e8-recursive-chains.json",
+      "research/en_families/affine_reflection_family.json",
+      "research/en_uniform/construction.json",
+      "research/exceptional_referee/checks.json",
+      "results/d6-ambient-certificate.json"
+    ],
+    "no_machine_specific_path_in_records": true
+  },
+  "full": {
+    "run": "full-1496606874",
+    "steps": 67,
+    "seconds": 87.92,
+    "wall_seconds": 88.35,
+    "peak_rss_bytes": 1166458880,
+    "summary_equals_expected": true,
+    "summary_equals_v0_3_0_expected_summary_on_v0_3_0_keys": true,
+    "certificates_compared_with_v0_3_0_reference_run": {
+      "json_files": 32,
+      "equal": 30,
+      "explained": {
+        "research/en_families/cartan_E10_m2_max1.json": "the full regenerated file (8 rows) replaces the one-row seed; the seed row is contained unchanged",
+        "research/en_uniform/referee-certificate.json": "audited_source_sha256 follows the revised manuscript"
+      }
+    },
+    "new_certificates_equal_to_port_references": [
+      "research/en_e8/e8-recursive-chains.json",
+      "research/en_families/affine_reflection_family.json",
+      "research/en_uniform/construction.json",
+      "research/exceptional_referee/checks.json",
+      "results/d6-ambient-certificate.json"
+    ],
+    "no_machine_specific_path_in_records": true
+  },
+  "research_checks": "go run -C tools ./cmd/research-checks: 9 outputs equal",
+  "records": [
+    "default-status.json",
+    "default-steps.json",
+    "default-summary.json",
+    "full-status.json",
+    "full-steps.json",
+    "full-summary.json",
+    "verified-MANIFEST.json"
+  ]
+}

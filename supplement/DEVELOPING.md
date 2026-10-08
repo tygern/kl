@@ -1,6 +1,6 @@
 # Go module of the proof supplement
 
-This directory is the Go module `github.com/tygern/kl/supplement` (Go 1.22 or later, standard library only). It contains every program of the proof supplement of the manuscript `results/exceptional-leading.tex`: the enumeration engines, the certificate verifiers, the six review programs, the proof runner and the archive packager. It replaces, as of release v0.3.0, the Python and C++ programs that releases v0.1.0 and v0.2.0 shipped; those remain under `research/archive/python-cpp/` and in git history, and the Go port was verified against their outputs certificate for certificate.
+This directory is the Go module `github.com/tygern/kl/supplement` (Go 1.22 or later, standard library only). It contains every program of the proof supplement of the manuscript `results/exceptional-leading.tex`: the enumeration engines, the certificate verifiers, the six review programs, the proof runner and the archive packager. It replaces, as of release v0.3.0, the Python and C++ programs that releases v0.1.0 and v0.2.0 shipped; those remain in release v0.2.0 and in git history (commit d997526; the repository has contained Go only since v0.4.0), and the Go port was verified against their outputs certificate for certificate.
 
 Tracked files are sources only. Binaries are never tracked: `go build -C supplement -o bin/ ./cmd/...` writes them to `supplement/bin/` (ignored), and the proof runner builds its own copies into `runs/<mode>-<random>/bin/` inside an extracted archive.
 
@@ -22,7 +22,7 @@ One program per directory under `cmd/`. Every command uses `flag` for its option
 |---|---|---|---|
 | `cmd/fc-catalogue` | `research/en_independent/fc_catalogue.cpp` | `fc-catalogue -rank N` (N = 6..9) | stdout, captured to `research/en_independent/eN-fc.json` |
 | `cmd/terminals-flat` | `research/en_e8/parabolic_terminals.cpp` | `terminals-flat -rank N` (N = 6, 7, 8) | stdout, captured to `research/en_e8/eN-validation.json` (N < 8) or `e8-terminals.json` |
-| `cmd/terminals-recursive` | `research/en_e8/recursive_terminals.cpp` | `terminals-recursive -rank N` | stdout, captured to `research/en_e8/eN-recursive.json` |
+| `cmd/terminals-recursive` | `research/en_e8/recursive_terminals.cpp` | `terminals-recursive -rank N`; `terminals-recursive -rank 8 -chains-certificate research/en_e8/e8-recursive-chains.json` runs the four E8 parabolic chains | stdout, captured to `research/en_e8/eN-recursive.json`; the chains certificate (snapshot compared) |
 | `cmd/e8-d7` | `research/en_independent/e8_d7_cosets.cpp` | `e8-d7` | stdout, captured to `research/en_independent/e8-d7-terminals.json` |
 | `cmd/enumerate-bad` | `research/broad_exceptional/enumerate_bad.cpp` | `enumerate-bad -rank N` (N = 6, 7; full mode) | stdout, captured to `research/broad_exceptional/eN_bad.json` |
 | `cmd/matrix-search` | `research/verify_e6_independent.py`, `research/verify_e7_matrices.cpp` | `matrix-search -rank 6` writes `results/e6-independent-certificate.json`; `-rank 7` prints `results/e7-independent-certificate.json` (full mode) | snapshot compared |
@@ -42,10 +42,15 @@ One program per directory under `cmd/`. Every command uses `flag` for its option
 | `cmd/terminal-structure` | `research/review_checks/terminal_structure.py` | `terminal-structure` | `results/terminal-structure-certificate.json` |
 | `cmd/uniform-covers` | `research/review_checks/uniform_family_checks.py` | `uniform-covers [-full]` | `results/uniform-family-certificate.json` |
 | `cmd/affine-d4` | `research/verify_affine_d4_r.py` | `affine-d4` | `results/affine-d4-independent.json` |
+| `cmd/d6-ambient` | review code `kl.cpp`, `kl_d6.py` (history, d997526) | `d6-ambient -out results/d6-ambient-certificate.json` | snapshot compared |
+| `cmd/terminal-data-check` | `research/exceptional_referee/verify_terminal_data.py` | `terminal-data-check` | stdout, captured to `research/exceptional_referee/checks.json` (snapshot compared) |
+| `cmd/affine-reflection-family` | `research/en_families/affine_reflection_family.py` | `affine-reflection-family` | `research/en_families/affine_reflection_family.json` (snapshot compared) |
+| `cmd/cartan-candidates` | `research/en_families/cartan_candidates.py` | `cartan-candidates -rank 10 -max-entry 2 -max-only` (the other committed variants: `-rank 10`, `-rank 11`, `-rank 12`, `-rank 13`, `-rank 13 -max-entry 2 -max-only`) | `research/en_families/cartan_E{N}_m{M}_max{0|1}.json` (E10 m2 max1 snapshot compared; `-out` overrides) |
+| `cmd/uniform-construction` | `research/en_uniform/construction.py` | `uniform-construction -max-r 30` | `research/en_uniform/construction.json` (snapshot compared) |
 | `cmd/proofs` | `supplement/run_proofs.py` | `go run ./cmd/proofs [-full]` from an extracted archive | `runs/<mode>-<random>/{work,logs,bin,steps.json,summary.json,status.json}` |
 | `cmd/package` | `supplement/build_package.py` | `go run -C supplement ./cmd/package` from the repository root | `supplement/dist/` (staging directory, zip, build-summary.json) |
 
-Not ported: `research/broad_exceptional/exact_e.py` (historical provenance only; `verify-exceptional` records `enumerate-bad` as the snapshot generator). The `Replaces` column names the programs at their v0.2.0 paths; since v0.3.0 they live under `research/archive/python-cpp/` at those relative paths.
+Not ported: `research/broad_exceptional/exact_e.py` (historical provenance only; `verify-exceptional` records `enumerate-bad` as the snapshot generator). The `Replaces` column names the programs at their v0.2.0 paths; they are no longer in the tree (release v0.2.0 and commit d997526 have them).
 
 Debugging-only flags (not used by the runner, never writing a certificate): `e6-mu-table -pairs FILE`, `e9-quotient-kl -mode pairs -pairs FILE` and `d8-gern-kl -pairs FILE` (with `-pairsgeo` to add the geometric model) print the Kazhdan--Lusztig polynomial of each pair listed in `FILE`, one per line. They exist for differential tests against the earlier engines (the port was tested on random pairs in A4, D4, D5, D6 and E6 with zero mismatches); `e9-quotient-kl -mode validate` is the original program's self-validation against a naive recursion.
 
@@ -59,7 +64,7 @@ These are the claims of the manuscript's Appendix A and of the archive README; t
 4. `internal/d6` (SparseCoxeter primitives and polynomial arithmetic) is used by `cmd/d6-certificate`; it contains no KL evaluator at all, so the certificate checker cannot call one.
 5. `cmd/uniform-verify` is self-contained.
 6. The six review programs (`cmd/e6-mu-table`, `cmd/e9-quotient-kl`, `cmd/d8-gern-kl`, `cmd/fc-maxima`, `cmd/terminal-structure`, `cmd/uniform-covers`) are each self-contained.
-7. `cmd/verify-exceptional`, `cmd/verify-outputs`, `cmd/finite-descents`, `cmd/affine-d4`, `cmd/proofs` and `cmd/package` are self-contained.
+7. `cmd/verify-exceptional`, `cmd/verify-outputs`, `cmd/finite-descents`, `cmd/affine-d4`, `cmd/d6-ambient`, `cmd/terminal-data-check`, `cmd/affine-reflection-family`, `cmd/cartan-candidates`, `cmd/uniform-construction`, `cmd/proofs` and `cmd/package` are self-contained.
 
 Small routines (Cartan matrices, reflection actions) are intentionally duplicated across self-contained commands. Where the C++ used threads (`d8-gern-kl`, `fc-maxima`) the Go programs use goroutines with a deterministic merge. All integer arithmetic is `int64` with overflow guards; exact rationals (`math/big`) replace Python fractions.
 

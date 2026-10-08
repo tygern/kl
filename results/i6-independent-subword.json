@@ -1,0 +1,1 @@
+{"interval_size":1676,"rank":11,"atoms":12,"all_common_bounds":720,"minima":[[-4,-3,1,2,6,5],[-2,-4,3,1,6,5]],"relative_ranks":[2,3],"method":"Independent direct subword membership; no lifting-property comparisons or KL computation","status":"All assertions passed"}

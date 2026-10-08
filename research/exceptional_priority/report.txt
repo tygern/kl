@@ -312,3 +312,5 @@ implies a documented global bound; whether an unpublished/software assertion
 explicitly restricts lower endpoints to FC; and whether a post-2016 exceptional
 T-avoidance classification exists outside indexed literature. The presently
 checked literature does NOT justify asserting these types are an open problem.
+
+The programs and the review code directory named above were deleted in the Go-only revision (October 2026); they are in the repository history at commit d997526 (the Go commands that replace the ported ones are listed in supplement/DEVELOPING.md and tools/README.md).

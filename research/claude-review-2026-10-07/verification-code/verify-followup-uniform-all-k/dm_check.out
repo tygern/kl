@@ -1,8 +1,0 @@
-D4: count=48 maxlen=6 m(m-1)/2=6
-D5: count=167 maxlen=10 m(m-1)/2=10
-D6: count=593 maxlen=15 m(m-1)/2=15
-D7: count=2144 maxlen=21 m(m-1)/2=21
-D8: count=7864 maxlen=28 m(m-1)/2=28
-D9: count=29171 maxlen=36 m(m-1)/2=36
-k=1: family length >= l(b_rk)-1 first at r=18
-k=2: family length >= l(b_rk)-1 first at r=34

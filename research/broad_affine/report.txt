@@ -176,3 +176,5 @@ The report does not use the supplied CI theorem to manufacture a witness.
 The missing positive step remains a nonprincipal finite-D FC-bottom model
 for a naturally defined affine interval family that has genuine affine
 reflection support, with a complete subword/poset bijection proof.
+
+The programs named above were deleted in the Go-only revision (October 2026); they are in the repository history at commit d997526 (the Go commands that replace the ported ones are listed in supplement/DEVELOPING.md and tools/README.md).
