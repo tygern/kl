@@ -1,3 +1,6 @@
+AI-generated internal review/research note produced with GPT-6 Astra agents at the author's request (October 2026).
+Not peer review and not a journal decision.
+
 FINAL STYLE REVIEW OF REWRITTEN exceptional-leading.tex
 7 October 2026
 Scope: prose and presentation, not an independent mathematical audit. Source read after the main structural rewrite. Main TeX unchanged by this reviewer.

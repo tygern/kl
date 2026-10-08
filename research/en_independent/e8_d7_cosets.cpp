@@ -1,6 +1,6 @@
 // Independent exhaustive E8 terminal enumeration through D7 (not E7) cosets.
 // E8: chain0--1--2--3--4--5--6, branch7 at2. J={1,...,7} is D7.
-// Build clang++ -O3 -std=c++17 e8_d7_cosets.cpp -o /private/tmp/e8-d7
+// Build: c++ -O3 -std=c++17 e8_d7_cosets.cpp -o e8-d7
 #include <array>
 #include <algorithm>
 #include <cassert>

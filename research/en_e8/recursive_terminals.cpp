@@ -1,7 +1,7 @@
 // Recursively prune right-terminal parabolic factors along a subgroup chain.
 // This reuses exact root arithmetic, not the full-parabolic enumeration.
-// Build: c++ -std=c++17 -O3 research/en_e8/recursive_terminals.cpp -o /private/tmp/e8-recursive
-// Run: /private/tmp/e8-recursive 8 > research/en_e8/e8-recursive.json
+// Build: c++ -std=c++17 -O3 research/en_e8/recursive_terminals.cpp -o e8-recursive
+// Run: ./e8-recursive 8 > research/en_e8/e8-recursive.json
 #define E8_TERMINAL_LIBRARY
 #include "parabolic_terminals.cpp"
 #include <sys/resource.h>

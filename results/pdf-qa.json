@@ -1,37 +1,15 @@
 [
   {
-    "pdf": "/Users/ic/workspace/kl/output/pdf/exceptional-leading.pdf",
-    "pages": 14,
-    "bytes": 363144,
-    "all_pages_have_text": true,
-    "within_page_margins": true,
-    "contact_sheets": [
-      "/Users/ic/workspace/kl/tmp/pdfs/exceptional-leading-contact-1.png",
-      "/Users/ic/workspace/kl/tmp/pdfs/exceptional-leading-contact-2.png",
-      "/Users/ic/workspace/kl/tmp/pdfs/exceptional-leading-contact-3.png"
-    ],
-    "visual_inspection": "Contact sheets and representative full page inspected separately."
-  },
-  {
-    "pdf": "/Users/ic/workspace/kl/output/pdf/kl-transfer.pdf",
+    "pdf": "output/pdf/exceptional-leading.pdf",
     "pages": 12,
-    "bytes": 433694,
+    "bytes": 604122,
+    "title": "Leading Kazhdan\u2013Lusztig coefficients with fully commutative lower endpoints in type E",
+    "author": "Tyson Gern",
     "all_pages_have_text": true,
     "within_page_margins": true,
     "contact_sheets": [
-      "/Users/ic/workspace/kl/tmp/pdfs/kl-transfer-contact-1.png",
-      "/Users/ic/workspace/kl/tmp/pdfs/kl-transfer-contact-2.png"
-    ],
-    "visual_inspection": "Contact sheets and representative full page inspected separately."
-  },
-  {
-    "pdf": "/Users/ic/workspace/kl/output/pdf/star-boundary.pdf",
-    "pages": 3,
-    "bytes": 282484,
-    "all_pages_have_text": true,
-    "within_page_margins": true,
-    "contact_sheets": [
-      "/Users/ic/workspace/kl/tmp/pdfs/star-boundary-contact-1.png"
+      "tmp/pdfs/exceptional-leading-contact-1.png",
+      "tmp/pdfs/exceptional-leading-contact-2.png"
     ],
     "visual_inspection": "Contact sheets and representative full page inspected separately."
   }

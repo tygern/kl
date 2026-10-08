@@ -4,6 +4,7 @@ Independent length formula and lifting-property Bruhat comparison provide
 a second check on the finite BFS/subword implementation in coxeter.py.
 """
 from functools import cache
+from pathlib import Path
 from coxeter import add, mul, trim
 
 
@@ -142,7 +143,14 @@ def bad_d6(certificate_path=None):
                         'independent R-polynomial reciprocity identity'],
                 elapsed_seconds=round(perf_counter()-start, 3),
                 kl_cache_entries=len(g.kl_values),
-                recurrence_certificate=str(certificate_path) if certificate_path else None)
+                recurrence_certificate=relative_label(certificate_path) if certificate_path else None)
+
+
+def relative_label(path):
+    """Repository-relative label for a results file (no machine-specific paths in JSON)."""
+    path = Path(path).resolve()
+    root = Path(__file__).resolve().parents[1]
+    return str(path.relative_to(root)) if root in path.parents else path.name
 
 
 def write_dependency_certificate(g, x, w, filename):

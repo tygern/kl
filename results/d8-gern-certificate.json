@@ -1,0 +1,33 @@
+{
+  "group_conventions": "W(D_n), Gern's labels 1..n: s_1 acts on the right by (w_1,w_2)->(-w_2,-w_1), s_i (i>=2) swaps positions i-1,i; nodes 1 and 2 attached to 3, chain 3-...-n",
+  "models": ["signed permutations", "geometric representation on the root lattice"],
+  "ranks": {
+    "D6": {
+      "w_canonical_word": "123431235654312", "x_canonical_word": "1246",
+      "w_length": 15, "x_length": 4, "lower_ideal_size": 3184, "interval_size": 1676,
+      "lower_ideal_rank_vector": [1,6,20,50,103,184,291,408,506,544,485,339,174,60,12,1],
+      "interval_rank_vector": [1,12,55,140,248,339,360,287,162,59,12,1],
+      "P_x_w_ascending": [1,6,11,6,1,1],
+      "P_e_w_ascending": [1,6,11,6,1,1],
+      "degree": 5,
+      "mu_x_w": 1,
+      "distinct_polynomials": 32, "max_coefficient": 11,
+      "models_agree": true, "direct_recurrence_mismatches": 0
+    },
+    "D8": {
+      "w_canonical_word": "12343123546543123787654312", "x_canonical_word": "12468",
+      "w_length": 26, "x_length": 5, "lower_ideal_size": 265760, "interval_size": 163724,
+      "lower_ideal_rank_vector": [1,8,35,112,292,656,1315,2408,4091,6508,9744,13767,18372,23143,27451,30508,31494,29795,25346,18913,12009,6260,2566,782,163,20,1],
+      "interval_rank_vector": [1,16,108,431,1210,2668,4952,8074,11857,15873,19441,21741,22030,19934,15743,10523,5736,2439,764,162,20,1],
+      "P_x_w_ascending": [1,12,59,154,233,221,147,70,20,2],
+      "P_e_w_ascending": [1,12,59,154,233,221,147,70,20,2],
+      "degree": 9,
+      "mu_x_w": 0,
+      "distinct_polynomials": 3533, "max_coefficient": 233,
+      "models_agree": true, "direct_recurrence_mismatches": 0
+    }
+  },
+  "x_n": "s_1 s_2 s_4 s_6 ... s_n",
+  "w_n": "Gern Corollary 2.2.19, equal to the bracket word of Lemma 2.3.4",
+  "status": "passed"
+}

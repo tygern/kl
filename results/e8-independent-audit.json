@@ -28,13 +28,14 @@
   "FC_ascents_verified": 64632,
   "parabolic_and_coset_poincare_products_match": true,
   "source_sha256": {
-    "research/en_independent/e8-d7-terminals.json": "56f98e9bf0beb2bd46acd4079367757fb9982d118531a164b9c0c84dc38a78c5",
-    "research/en_e8/e8-terminals.json": "af83e8b603b7b9335482aaaeffb9eb90f19512f0275332a0b5b30df12fa32805",
-    "research/en_independent/e8-fc.json": "1758d474706206e9bcaffcdfa6265c572b2c8b199bb40f6aab309e0b413e0c60",
-    "research/en_independent/verify_e8.py": "9a273787eaf813b0852fdf12a972fd7edc1dcae9d0c3340013b0f8af6f9bb65a",
-    "research/en_independent/e8_d7_cosets.cpp": "415c2cf155b93e88815205f77b17e7bede23ec024fb469ad83e520deddb5f951",
-    "research/en_independent/fc_catalogue.cpp": "565edc2325e55c049b94a90354414521c0c0c02c56348424457ec8f850a195ff",
-    "research/en_e8/parabolic_terminals.cpp": "d9c3f1cc12c3fde59d88600816fa618a62bcc5f37195f48d5e5b09d76555ae74"
+    "research/en_independent/e8-d7-terminals.json": "16305f6673d5680f66014a55bc6c8368c76ff3ed280881428b9089b537a95227",
+    "research/en_e8/e8-terminals.json": "cd01afc4c3ee2e2418d84faa5c2fe7690c0fb1f536cba468cb431d1adae3e0e3",
+    "research/en_independent/e8-fc.json": "8be22bb194dfe069c3dc855d0f095b9850d1e199d6e1c06e4380ea2045e128c4",
+    "research/en_independent/verify_e8.py": "369fc2c2dc6a984a9ee622f13ddcd4a8d8ddcc086d3a496b8dc38963b13f11f5",
+    "research/en_independent/e8_d7_cosets.cpp": "c19e4272d78ebdd6fdcbe4dd17a8090d399111c023f97c0561bb50948727c2d1",
+    "research/en_independent/fc_catalogue.cpp": "49cc4103ce2e7b1d97d6677291ceed101ee7ad1c0bfeb737747bca65bd7b6242",
+    "research/en_e8/parabolic_terminals.cpp": "5f63ecd1ae4ffcde8b1875d6487a8b1cb05c65ea182ce1204db520006521b06e"
   },
-  "priority": "Historical novelty remains unconfirmed."
+  "hashing": "JSON inputs are hashed after removing the volatile keys elapsed_seconds, seconds and re-serialising with sorted keys; other files are hashed byte for byte.",
+  "priority": "Not established by this computational audit."
 }

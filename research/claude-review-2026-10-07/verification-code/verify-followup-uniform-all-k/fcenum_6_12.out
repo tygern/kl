@@ -1,0 +1,21 @@
+E6 FC count 662 max length 16
+  max element word: 4 3 2 5 1 2 3 0 1 2 5 4 3 2 1 0
+  multiplicities: 2 3 4 3 2 2
+E7 FC count 2670 max length 27
+  max element word: 5 4 3 2 6 1 2 3 0 1 2 6 4 5 3 4 2 3 1 2 6 0 1 2 3 4 5
+  multiplicities: 2 4 6 5 4 3 3
+E8 FC count 10846 max length 29
+  max element word: 6 5 4 3 2 7 1 2 3 0 1 2 7 4 5 3 4 2 3 1 2 7 6 5 4 3 2 1 0
+  multiplicities: 2 4 6 5 4 3 2 3
+E9 FC count 44199 max length 44
+  max element word: 7 6 5 4 3 2 8 1 2 3 0 1 2 8 4 5 3 4 2 3 1 2 8 6 7 5 6 4 5 3 4 2 3 1 2 8 0 1 2 3 4 5 6 7
+  multiplicities: 2 5 8 7 6 5 4 3 4
+E10 FC count 180438 max length 55
+  max element word: 8 7 6 5 4 3 2 9 1 2 3 0 1 2 9 4 5 6 3 4 5 2 3 4 1 2 3 0 1 2 9 7 8 6 7 5 6 4 5 3 4 2 3 1 2 9 0 1 2 3 4 5 6 7 8
+  multiplicities: 3 6 9 8 7 6 5 4 3 4
+E11 FC count 737762 max length 66
+  max element word: 9 8 7 6 5 4 3 2 10 1 2 3 0 1 2 10 4 5 3 4 2 3 1 2 10 6 7 5 6 4 5 3 4 2 3 0 1 2 10 8 9 7 8 6 7 5 6 4 5 3 4 2 3 1 2 10 0 1 2 3 4 5 6 7 8 9
+  multiplicities: 3 6 10 9 8 7 6 5 4 3 5
+E12 FC count 3021000 max length 78
+  max element word: 10 9 8 7 6 5 4 3 2 11 1 2 3 0 1 2 11 4 5 6 3 4 5 2 3 4 1 2 3 0 1 2 11 7 8 6 7 5 6 4 5 3 4 2 3 1 2 11 9 10 8 9 7 8 6 7 5 6 4 5 3 4 2 3 1 2 11 0 1 2 3 4 5 6 7 8 9 10
+  multiplicities: 3 7 11 10 9 8 7 6 5 4 3 5

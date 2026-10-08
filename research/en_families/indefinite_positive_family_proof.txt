@@ -1,3 +1,6 @@
+AI-generated internal review/research note produced with GPT-6 Astra agents at the author's request (October 2026).
+Not peer review and not a journal decision.
+
 EXPLICIT INFINITE TERMINAL-REFLECTION FAMILIES IN INDEFINITE E10 AND E13
 Research proof, 2026-10-07. Historical priority remains UNCONFIRMED.
 
@@ -147,7 +150,7 @@ FINITE CERTIFICATES AND REPRODUCIBILITY
 
 indefinite_positive_families.py is a standalone exact certificate runner
 using the integral root implementation in targeted.py. Run with
-  UV_CACHE_DIR=/private/tmp/kl-uv-cache uv run python \
+  UV_CACHE_DIR=<local cache directory> uv run python \
     research/en_families/indefinite_positive_families.py
 The runner verifies all real-root reductions, formula (1), the induction
 identities, all polynomial sign coefficients, the matching bounds, and

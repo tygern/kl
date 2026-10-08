@@ -1,0 +1,27 @@
+{
+  "group": "affine E8 = E9, chain 0-1-...-7, node 8 attached to node 2",
+  "method": "Kazhdan-Lusztig recursion in the parabolic quotient W/W_I, I = R(w); exact integers with overflow checks",
+  "beta": [1,2,3,3,2,2,1,1,2],
+  "base_element": "r_beta, the manuscript's length-33 reflection",
+  "engine_validation": {"A4_pairs": 1270, "D4_pairs": 1911, "E6_pairs": 3484, "all_equal_to_naive_recursion": true},
+  "elements": [
+    {"name": "w33", "word": [8,7,5,6,3,4,5,2,3,4,1,2,3,0,1,2,8,2,3,4,1,2,3,0,1,2,8,5,6,7,4,5,3], "word_string": "875634523412301282341230128567453", "length": 33, "L": [3,5,7,8], "R": [3,5,7,8], "involution": true, "terminal": true, "I": [3,5,7,8], "W_I_order": 16, "quotient_size": 364156, "lower_ideal_size": 5826496, "quotient_elements_computed": 18928, "stored_pairs": 2553845, "distinct_polynomials": 35455,
+     "eligible_fully_commutative_bottoms": [
+       {"x": "8753", "length": 4, "gap": 29, "P_ascending": [1,23,236,1391,5298,13861,25666,33996,31954,20820,8985,2380,346,23], "degree": 13, "mu": 0},
+       {"x": "87530", "length": 5, "gap": 28, "P_ascending": [1,23,235,1370,5128,13088,23433,29667,26255,15772,6082,1350,144,5], "degree": 13, "mu": 0},
+       {"x": "875301", "length": 6, "gap": 27, "P_ascending": [1,23,234,1348,4931,12136,20641,24398,19796,10646,3551,621,40,1], "degree": 13, "mu": 1},
+       {"x": "87531", "length": 5, "gap": 28, "P_ascending": [1,23,236,1389,5262,13609,24701,31740,28612,17622,7052,1654,194,9], "degree": 13, "mu": 0},
+       {"x": "875310", "length": 6, "gap": 27, "P_ascending": [1,23,234,1348,4931,12136,20641,24398,19796,10646,3551,621,40,1], "degree": 13, "mu": 1}],
+     "nonzero_mu_histogram_over_quotient_representatives": {"1": 5967, "2": 203, "3": 599, "4": 531, "5": 193, "6": 80, "7": 47, "8": 13, "9": 10, "10": 8, "11": 23, "12": 13, "13": 23, "14": 15, "15": 9, "16": 18, "17": 3, "18": 11, "19": 9, "20": 2, "21": 6, "22": 4, "24": 1, "29": 3, "31": 2, "34": 3, "47": 1, "54": 1, "57": 1, "65": 1, "68": 1, "89": 1}, "max_mu_over_quotient_representatives": 89, "inversion_symmetry": {"pairs_checked": 27311, "mismatches": 0, "inverse_outside_quotient": 0}, "max_coefficient": 33996, "max_degree": 13},
+    {"name": "w34_s0", "word": [8,7,5,6,3,4,5,2,3,4,1,2,3,0,1,2,8,2,3,4,1,2,3,0,1,2,8,5,6,7,4,5,3,0], "word_string": "8756345234123012823412301285674530", "length": 34, "L": [0,3,5,7,8], "R": [0,3,5,7,8], "involution": true, "terminal": true, "I": [0,3,5,7,8], "W_I_order": 32, "quotient_size": 216990, "lower_ideal_size": 6943680, "quotient_elements_computed": 7592, "stored_pairs": 587265, "distinct_polynomials": 10851,
+     "eligible_fully_commutative_bottoms": [
+       {"x": "87530", "length": 5, "gap": 29, "P_ascending": [1,18,146,712,2342,5456,9200,11264,9947,6220,2649,721,116,10,1], "degree": 14, "mu": 1}],
+     "nonzero_mu_histogram_over_quotient_representatives": {"1": 1631, "2": 143, "3": 76, "4": 77, "5": 29, "6": 17, "7": 2, "8": 2, "10": 1, "11": 1, "12": 1, "14": 2, "17": 2}, "max_mu_over_quotient_representatives": 17, "inversion_symmetry": {"pairs_checked": 8882, "mismatches": 0, "inverse_outside_quotient": 0}, "max_coefficient": 11264, "max_degree": 14},
+    {"name": "w34_s1", "word": [8,7,5,6,3,4,5,2,3,4,1,2,3,0,1,2,8,2,3,4,1,2,3,0,1,2,8,5,6,7,4,5,3,1], "word_string": "8756345234123012823412301285674531", "length": 34, "L": [1,3,5,7,8], "R": [1,3,5,7,8], "involution": true, "terminal": true, "I": [1,3,5,7,8], "W_I_order": 32, "quotient_size": 207866, "lower_ideal_size": 6651712, "quotient_elements_computed": 6395, "stored_pairs": 435818, "distinct_polynomials": 9258,
+     "eligible_fully_commutative_bottoms": [
+       {"x": "87531", "length": 5, "gap": 29, "P_ascending": [1,18,140,639,1957,4280,6858,8114,7084,4497,1996,579,100,10,1], "degree": 14, "mu": 1}],
+     "nonzero_mu_histogram_over_quotient_representatives": {"1": 1362, "2": 146, "3": 42, "4": 24, "5": 14, "6": 10, "7": 11, "10": 2, "11": 1, "12": 1}, "max_mu_over_quotient_representatives": 12, "inversion_symmetry": {"pairs_checked": 8466, "mismatches": 0, "inverse_outside_quotient": 0}, "max_coefficient": 8114, "max_degree": 14}
+  ],
+  "all_eligible_mu_values_in": [0, 1],
+  "status": "passed"
+}

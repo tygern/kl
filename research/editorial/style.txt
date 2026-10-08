@@ -1,3 +1,6 @@
+AI-generated internal review/research note produced with GPT-6 Astra agents at the author's request (October 2026).
+Not peer review and not a journal decision.
+
 EDITORIAL REPORT: exceptional-leading.tex
 7 October 2026
 Scope: journal style, hierarchy, presentation, notation, and exact proposed prose. This is an editorial review of the supplied manuscript, not an independent proof or priority audit. No main TeX source has been edited.

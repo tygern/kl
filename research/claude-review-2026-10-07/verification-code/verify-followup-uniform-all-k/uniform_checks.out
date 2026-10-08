@@ -1,0 +1,109 @@
+/private/tmp/claude-501/-Users-ic-workspace-kl/45cb4eb2-517e-46a6-a21d-77de64370e52/scratchpad/verify-followup-uniform-all-k/uniform_checks.py:3: SyntaxWarning: "\{" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\{"? A raw string is also an option.
+  * for each s in I_r: x = bs has s in L(x), L(x)=I_r, R(x)=I_r\{s}, l(x)=l(b)-1, x not FC;
+r=3 k=0 n=13: l(b)=75 (odd=True), 2dp-1=75, R(b)=I_r: True, 8r^2+3+116k=75, FC(b)=False
+   s= 0: m_s=1, l(bs)=74, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=73, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 3: m_s=1, l(bs)=74, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=73, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 5: m_s=1, l(bs)=74, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=73, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 7: m_s=1, l(bs)=74, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=73, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 9: m_s=1, l(bs)=74, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=73, FC(bs)=False, FC(sbs)=False  -> OK
+   s=11: m_s=1, l(bs)=74, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords [11]), l(sbs)=73, FC(bs)=False, FC(sbs)=False  -> OK
+   s=12: m_s=1, l(bs)=74, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=73, FC(bs)=False, FC(sbs)=False  -> OK
+   covers: 74 total, 14 of form sb/bs, 60 others (of which 0 fail L,R ⊇ I_r), FC covers: 0
+r=3 k=1 n=13: l(b)=191 (odd=True), 2dp-1=191, R(b)=I_r: True, 8r^2+3+116k=191, FC(b)=False
+   s= 0: m_s=1, l(bs)=190, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=189, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 3: m_s=3, l(bs)=190, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=189, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 5: m_s=3, l(bs)=190, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=189, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 7: m_s=3, l(bs)=190, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=189, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 9: m_s=1, l(bs)=190, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=189, FC(bs)=False, FC(sbs)=False  -> OK
+   s=11: m_s=1, l(bs)=190, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords [11]), l(sbs)=189, FC(bs)=False, FC(sbs)=False  -> OK
+   s=12: m_s=3, l(bs)=190, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=189, FC(bs)=False, FC(sbs)=False  -> OK
+   covers: 162 total, 14 of form sb/bs, 148 others (of which 0 fail L,R ⊇ I_r), FC covers: 0
+r=3 k=2 n=13: l(b)=307 (odd=True), 2dp-1=307, R(b)=I_r: True, 8r^2+3+116k=307, FC(b)=False
+   s= 0: m_s=1, l(bs)=306, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=305, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 3: m_s=5, l(bs)=306, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=305, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 5: m_s=5, l(bs)=306, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=305, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 7: m_s=5, l(bs)=306, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=305, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 9: m_s=1, l(bs)=306, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=305, FC(bs)=False, FC(sbs)=False  -> OK
+   s=11: m_s=1, l(bs)=306, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords [11]), l(sbs)=305, FC(bs)=False, FC(sbs)=False  -> OK
+   s=12: m_s=5, l(bs)=306, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=305, FC(bs)=False, FC(sbs)=False  -> OK
+   covers: 230 total, 14 of form sb/bs, 216 others (of which 0 fail L,R ⊇ I_r), FC covers: 0
+r=4 k=0 n=17: l(b)=131 (odd=True), 2dp-1=131, R(b)=I_r: True, 8r^2+3+116k=131, FC(b)=False
+   s= 0: m_s=2, l(bs)=130, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=129, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 3: m_s=1, l(bs)=130, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=129, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 5: m_s=1, l(bs)=130, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=129, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 7: m_s=1, l(bs)=130, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=129, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 9: m_s=1, l(bs)=130, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=129, FC(bs)=False, FC(sbs)=False  -> OK
+   s=11: m_s=1, l(bs)=130, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=129, FC(bs)=False, FC(sbs)=False  -> OK
+   s=13: m_s=1, l(bs)=130, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=129, FC(bs)=False, FC(sbs)=False  -> OK
+   s=15: m_s=1, l(bs)=130, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords [15]), l(sbs)=129, FC(bs)=False, FC(sbs)=False  -> OK
+   s=16: m_s=1, l(bs)=130, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=129, FC(bs)=False, FC(sbs)=False  -> OK
+   covers: 130 total, 18 of form sb/bs, 112 others (of which 0 fail L,R ⊇ I_r), FC covers: 0
+r=4 k=1 n=17: l(b)=247 (odd=True), 2dp-1=247, R(b)=I_r: True, 8r^2+3+116k=247, FC(b)=False
+   s= 0: m_s=2, l(bs)=246, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=245, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 3: m_s=5, l(bs)=246, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=245, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 5: m_s=5, l(bs)=246, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=245, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 7: m_s=5, l(bs)=246, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=245, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 9: m_s=1, l(bs)=246, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=245, FC(bs)=False, FC(sbs)=False  -> OK
+   s=11: m_s=1, l(bs)=246, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=245, FC(bs)=False, FC(sbs)=False  -> OK
+   s=13: m_s=1, l(bs)=246, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=245, FC(bs)=False, FC(sbs)=False  -> OK
+   s=15: m_s=1, l(bs)=246, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords [15]), l(sbs)=245, FC(bs)=False, FC(sbs)=False  -> OK
+   s=16: m_s=5, l(bs)=246, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=245, FC(bs)=False, FC(sbs)=False  -> OK
+   covers: 218 total, 18 of form sb/bs, 200 others (of which 0 fail L,R ⊇ I_r), FC covers: 0
+r=5 k=0 n=21: l(b)=203 (odd=True), 2dp-1=203, R(b)=I_r: True, 8r^2+3+116k=203, FC(b)=False
+   s= 0: m_s=3, l(bs)=202, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=201, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 3: m_s=1, l(bs)=202, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=201, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 5: m_s=1, l(bs)=202, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=201, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 7: m_s=1, l(bs)=202, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=201, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 9: m_s=1, l(bs)=202, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=201, FC(bs)=False, FC(sbs)=False  -> OK
+   s=11: m_s=1, l(bs)=202, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=201, FC(bs)=False, FC(sbs)=False  -> OK
+   s=13: m_s=1, l(bs)=202, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=201, FC(bs)=False, FC(sbs)=False  -> OK
+   s=15: m_s=1, l(bs)=202, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=201, FC(bs)=False, FC(sbs)=False  -> OK
+   s=17: m_s=1, l(bs)=202, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=201, FC(bs)=False, FC(sbs)=False  -> OK
+   s=19: m_s=1, l(bs)=202, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords [19]), l(sbs)=201, FC(bs)=False, FC(sbs)=False  -> OK
+   s=20: m_s=1, l(bs)=202, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=201, FC(bs)=False, FC(sbs)=False  -> OK
+   covers: 202 total, 22 of form sb/bs, 180 others (of which 0 fail L,R ⊇ I_r), FC covers: 0
+r=5 k=1 n=21: l(b)=319 (odd=True), 2dp-1=319, R(b)=I_r: True, 8r^2+3+116k=319, FC(b)=False
+   s= 0: m_s=3, l(bs)=318, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=317, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 3: m_s=7, l(bs)=318, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=317, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 5: m_s=7, l(bs)=318, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=317, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 7: m_s=7, l(bs)=318, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=317, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 9: m_s=1, l(bs)=318, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=317, FC(bs)=False, FC(sbs)=False  -> OK
+   s=11: m_s=1, l(bs)=318, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=317, FC(bs)=False, FC(sbs)=False  -> OK
+   s=13: m_s=1, l(bs)=318, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=317, FC(bs)=False, FC(sbs)=False  -> OK
+   s=15: m_s=1, l(bs)=318, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=317, FC(bs)=False, FC(sbs)=False  -> OK
+   s=17: m_s=1, l(bs)=318, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=317, FC(bs)=False, FC(sbs)=False  -> OK
+   s=19: m_s=1, l(bs)=318, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords [19]), l(sbs)=317, FC(bs)=False, FC(sbs)=False  -> OK
+   s=20: m_s=7, l(bs)=318, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=317, FC(bs)=False, FC(sbs)=False  -> OK
+   covers: 290 total, 22 of form sb/bs, 268 others (of which 0 fail L,R ⊇ I_r), FC covers: 0
+r=6 k=0 n=25: l(b)=291 (odd=True), 2dp-1=291, R(b)=I_r: True, 8r^2+3+116k=291, FC(b)=False
+   s= 0: m_s=4, l(bs)=290, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=289, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 3: m_s=1, l(bs)=290, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=289, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 5: m_s=1, l(bs)=290, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=289, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 7: m_s=1, l(bs)=290, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=289, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 9: m_s=1, l(bs)=290, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=289, FC(bs)=False, FC(sbs)=False  -> OK
+   s=11: m_s=1, l(bs)=290, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=289, FC(bs)=False, FC(sbs)=False  -> OK
+   s=13: m_s=1, l(bs)=290, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=289, FC(bs)=False, FC(sbs)=False  -> OK
+   s=15: m_s=1, l(bs)=290, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=289, FC(bs)=False, FC(sbs)=False  -> OK
+   s=17: m_s=1, l(bs)=290, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=289, FC(bs)=False, FC(sbs)=False  -> OK
+   s=19: m_s=1, l(bs)=290, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=289, FC(bs)=False, FC(sbs)=False  -> OK
+   s=21: m_s=1, l(bs)=290, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=289, FC(bs)=False, FC(sbs)=False  -> OK
+   s=23: m_s=1, l(bs)=290, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords [23]), l(sbs)=289, FC(bs)=False, FC(sbs)=False  -> OK
+   s=24: m_s=1, l(bs)=290, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=289, FC(bs)=False, FC(sbs)=False  -> OK
+   covers: 290 total, 26 of form sb/bs, 264 others (of which 0 fail L,R ⊇ I_r), FC covers: 0
+r=7 k=0 n=29: l(b)=395 (odd=True), 2dp-1=395, R(b)=I_r: True, 8r^2+3+116k=395, FC(b)=False
+   s= 0: m_s=5, l(bs)=394, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=393, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 3: m_s=1, l(bs)=394, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=393, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 5: m_s=1, l(bs)=394, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=393, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 7: m_s=1, l(bs)=394, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=393, FC(bs)=False, FC(sbs)=False  -> OK
+   s= 9: m_s=1, l(bs)=394, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=393, FC(bs)=False, FC(sbs)=False  -> OK
+   s=11: m_s=1, l(bs)=394, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=393, FC(bs)=False, FC(sbs)=False  -> OK
+   s=13: m_s=1, l(bs)=394, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=393, FC(bs)=False, FC(sbs)=False  -> OK
+   s=15: m_s=1, l(bs)=394, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=393, FC(bs)=False, FC(sbs)=False  -> OK
+   s=17: m_s=1, l(bs)=394, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=393, FC(bs)=False, FC(sbs)=False  -> OK
+   s=19: m_s=1, l(bs)=394, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=393, FC(bs)=False, FC(sbs)=False  -> OK
+   s=21: m_s=1, l(bs)=394, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=393, FC(bs)=False, FC(sbs)=False  -> OK
+   s=23: m_s=1, l(bs)=394, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=393, FC(bs)=False, FC(sbs)=False  -> OK
+   s=25: m_s=1, l(bs)=394, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=393, FC(bs)=False, FC(sbs)=False  -> OK
+   s=27: m_s=1, l(bs)=394, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords [27]), l(sbs)=393, FC(bs)=False, FC(sbs)=False  -> OK
+   s=28: m_s=1, l(bs)=394, s in L(bs)=True, L(bs)=I_r=True, R(bs)=I_r-s=True, s.beta>0 nonsimple=True (zero coords []), l(sbs)=393, FC(bs)=False, FC(sbs)=False  -> OK
+   covers: 394 total, 30 of form sb/bs, 364 others (of which 0 fail L,R ⊇ I_r), FC covers: 0

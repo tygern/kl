@@ -1,0 +1,13 @@
+word: 8 7 5 6 3 4 5 2 3 4 1 2 3 0 1 2 8 2 3 4 1 2 3 0 1 2 8 5 6 7 4 5 3 0
+length 34
+R={0,3,5,7,8} L={0,3,5,7,8}
+I={0,3,5,7,8}
+involution: yes
+terminal: yes
+quotient size 216990 (|W_I| = 32, full ideal size 6943680)
+eligible FC bottoms (descent-containing, FC, <= w): 1
+  x = 87530  length 5 gap 29
+KL done: 7592 quotient elements computed, 587265 stored pairs, 10851 distinct polys, 1.6 s
+P(x,w) for x=87530 : 1 + 18q^1 + 146q^2 + 712q^3 + 2342q^4 + 5456q^5 + 9200q^6 + 11264q^7 + 9947q^8 + 6220q^9 + 2649q^10 + 721q^11 + 116q^12 + 10q^13 + 1q^14   gap 29  mu = 1
+nonzero mu(x,w) over extremal x in quotient: 1984; histogram: mu=1:1631 mu=2:143 mu=3:76 mu=4:77 mu=5:29 mu=6:17 mu=7:2 mu=8:2 mu=10:1 mu=11:1 mu=12:1 mu=14:2 mu=17:2
+max coefficient seen 11264, max degree 14

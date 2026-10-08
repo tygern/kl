@@ -1,0 +1,54 @@
+# Archived research notes
+
+The two LaTeX files in this directory are superseded research notes from the
+first two stages of the project (6 October 2026). Their still-relevant
+content was folded into Section 5 ("Complements and open problems") of the
+main paper, `results/exceptional-leading.tex`, during the revision of
+7 October 2026, and they are no longer built as project deliverables
+(`research/build_pdfs.py` compiles only `results/*.tex`). They are kept
+because the main paper cites `kl-transfer.tex` as a research note and because
+they record the computations behind the affine-$D_4$ example.
+
+| File | Contents | Where it now lives |
+| --- | --- | --- |
+| `kl-transfer.tex` | Conditional transfer of Gern's type-$D$ results to arbitrary Coxeter intervals through the combinatorial-invariance preprint (witness certificate, bad-interval degree bounds, product intervals, small certified $B_3/B_4$ examples, dihedral obstruction, shape of $I_6$, parabolic-coset examples, literature audit). | One paragraph in Section 5 of the main paper (item "Conditional interval transfer"), which summarises Theorem 2.1 and Corollary 2.2 of the note and cites the note itself. |
+| `star-boundary.tex` | The $m$-leaf star family $x=a_1\cdots a_m$, $w=xcx$ with Catalan leading coefficients; the affine-$D_4$ member has $P_{x,w}=1+3q+2q^2$ and $\mu=2$, independently verified by `research/verify_affine_d4_r.py` (certificate `results/affine-d4-independent.json`). The family is Mongelli's (arXiv:1111.2945v1, Corollary 2). | The affine-$D_4$ obstruction in Section 5 of the main paper (item "The bound fails in affine type"). |
+
+## Edits made on 7 October 2026
+
+The notes were lightly edited when archived; they were not rewritten.
+
+- Author fields set to Tyson Gern with affiliation, ORCID, a one-sentence
+  statement of AI assistance, and a note that the file is an archived note
+  superseded by the main paper; `pdfauthor` set accordingly.
+- `star-boundary.tex`: the companion theorem is now described as covering
+  $E_6$, $E_7$ and $E_8$ (it said $E_6/E_7$); the Mongelli locator reads
+  "Corollary 2 (arXiv v1, p. 10)"; the Brenti entry links the journal DOI and
+  labels the other link "FPSAC 1994 extended abstract".
+- `kl-transfer.tex`: Green's $0$--$1$ theorem is stated with affine type
+  $\widetilde A_{n-1}$ as primary and finite type $A$ as the parabolic
+  consequence; Green's Remark 7.13 is described as a remark with a sketched
+  proof about the variant $\tilde\mu$; the thesis locators are attached to the
+  individual equations; a footnote fixes the signed-permutation convention
+  (Gern's Example 1.1.6); the $D_8$ polynomial
+  $P_{x_8,w_8}=1+12q+59q^2+154q^3+233q^4+221q^5+147q^6+70q^7+20q^8+2q^9$,
+  recomputed independently during the 7 October 2026 review, replaces the
+  "inherited, not reproduced" caveat; the combinatorial-invariance preprint is
+  cited as an OpenAI Math Release preprint with commit and SHA-256 and marked
+  as not peer reviewed.
+
+Everything else, including the descriptions of the companion paper in the
+"Update from the expanded search" paragraph of `kl-transfer.tex`, reflects the
+state of the project on 6 October 2026 and has not been updated. For the
+current statements see the main paper.
+
+## Compiling
+
+Both notes compile with `latexmk -pdf` and no packages beyond a standard TeX
+Live installation. The relative paths they print (`research/verify_affine_d4_r.py`,
+`results/affine-d4-independent.json`, `research/broad_cells/targeted.py`,
+`computations/run_search.py`, `research/exceptional_cosets.py`) are relative to
+the repository root and still resolve.
+
+The text of both notes is licensed under CC BY 4.0 (see `LICENSE-TEXT.md`);
+the code they reference is under the MIT License (see `LICENSE`).

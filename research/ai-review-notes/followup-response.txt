@@ -1,0 +1,30 @@
+AI-generated internal review/research note produced with GPT-6 Astra agents at the author's request (October 2026).
+Not peer review and not a journal decision.
+
+FOLLOW-UP RESPONSE TO PUBLICATION REVISIONS
+7 October 2026
+
+Implemented in the existing results/exceptional-leading.tex:
+- Attribution of Graham's earlier two-FC-endpoint E_n bound through Green Remark9.5; direct attribution of the monomial cell structure to Fan via Green's accessible formulation.
+- Correct published Geck–Halls bibliographic data (Math.Comp.84,2015,3029–3049).
+- Precise W-graph descent-set explanation of why published exceptional cell action matrices alone do not directly display the residual terminal coefficients. This does not assert that internal caches never compute such values.
+- Type-E_n wording for Laird's dated2016 future direction; no present-day open-status or first-proof assertion.
+- Moved the repetitive E10 construction/proof to AppendixC; retained its first-indefinite-rank role, outside the4r+1 uniform sequence, and explicit main-text reference.
+- Placed the ambient root-iteration calculation alongside the uniform construction, so the finite proof follows the structural reductions directly.
+- Replaced scattered working-tree reproduction commands with a precise self-contained supplement description and one runner, documenting default/full modes, shared arithmetic and independence, snapshot checks versus recalculation, and the inheritedD6 input.
+
+Deeper priority checks completed:
+research/ai-review-notes/priority-followup.txt directly inspects the official versioned PyCox source/data interface and full Shi papers, with saved sources and an AST table-inspection script. The W-graph distinction is mathematical as well as based on observed data. No exact predecessor was located; global historical priority remains unconfirmed.
+research/ai-review-notes/uniform-priority-followup.txt identifies older Graham/Fan and indefinite ambient translation machinery, checks related current literature and Laird follow-ups, and isolates the particular all-r seed/terminal/full-support construction as the candidate structural contribution. Version-specific source locators are distinguished.
+
+Software supplement:
+output/supplement/exceptional-leading-proof.zip contains37 files, the current manuscript and PDF, all transitive proof inputs, expected summaries, and aSHA256 manifest. It omits discovery probes and unneeded large FC snapshots. Python3.10+ and an installedC++17 compiler suffice; no network or third-party Python packages.
+Both default24-step and full30-step modes passed after isolated extraction. The final layout refresh passed CRC and all36 input-file hashes; the33 proof inputs match those on which both numeric modes passed. Detailed records are in supplement/validation/.
+The builder is supplement/build_package.py, runner supplement/run_proofs.py, documentation supplement/README.md, report supplement/REPORT.txt.
+The PDF build driver now excludes the supplement's frozen manuscript copy from editable-document enumeration, avoiding duplicate basename builds.
+
+Public release preparation:
+The author requested a GitHub release in the newly initialized tygern/kl repository. The v0.1.0 package and a succinct project README have been prepared for that deposit. No DOI, author identity or distribution license has been assigned. The manuscript remains cautious about historical priority; no citation audit can prove universal absence of an unindexed predecessor. Publication receipts and asset verification will be saved in output/supplement/.
+
+Validation:
+Native LaTeX compiler and exported PDF builds succeed. The revised PDF has14 pages, no undefined references or overfull boxes, and was rendered and inspected. The user's open star-boundary.tex document remains unchanged and its editor was preserved.

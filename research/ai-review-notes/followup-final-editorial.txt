@@ -1,0 +1,61 @@
+AI-generated internal review/research note produced with GPT-6 Astra agents at the author's request (October 2026).
+Not peer review and not a journal decision.
+
+FINAL EDITORIAL FOLLOW-UP
+2026-10-07. Actual source checked: results/exceptional-leading.tex.
+
+The implemented hierarchy is now satisfactory. Finite ADE completion
+remains the main result; the finite proof precedes the uniform construction;
+the symbolic affine-parabolic action is placed with the construction that
+uses it. The geometric terminal test remains before the finite search.
+These changes preserve the logical order of dependencies.
+
+The abstract correctly separates constructing the roots from applying
+Green's cell theory to their coefficients. The Graham attribution is
+explicitly mediated by Green Remark 9.5, which matches the source actually
+checked. Fan's historical cell contribution is credited while Green's
+accessible formulation supplies the argument. The exceptional-computation
+paragraph acknowledges prior work without claiming its cell data is the
+same all-upper statement. Geck--Halls now has the 2015 volume/page citation.
+
+E10 is explicitly said to lie outside E_(4r+1), r>=3, in the main text.
+The full-support assertion there applies to rank10 itself; embeddings into
+larger groups are correctly described as retaining the smaller parabolic
+support. Appendix C contains the independent seed and all-parameter proof,
+and refers back to the general root-action lemma rather than treating E10
+as a specialization of the uniform theorem. This is the right placement.
+
+The all-rank argument remains present and unchanged in substance: the
+D_(4r) even sign change proves real-root membership for every r; the
+nilpotent root-action calculation gives every k; explicit pairings and
+edge sums prove terminality; the matching proves maximality; parity and
+FC-finiteness supply the leading-coefficient conclusions. Finite-rank
+arithmetic checks are still correctly labeled supplementary. Moving the
+lemma has not replaced the symbolic argument with experiments.
+
+Cross-reference check: every \ref and \eqref target in the source has
+a matching label, and no duplicate labels were found. The introduction,
+main-text E10 paragraph, appendix proposition, lowering witnesses and
+root-action references all point to the intended material. This was a
+source-level editorial check, not another compilation or computation run.
+
+One optional tiny wording improvement: Appendix C says gamma differs
+from the root used in the 'preceding affine family'. Now that the section
+has moved, replace this with 'the affine family of Section 5' using its
+label, to avoid a distance-dependent reference. No mathematical issue
+results from the present wording. The embedding observation is repeated
+at the appendix's end; it can remain or be removed for concision.
+
+The KNP translation citation in uniform-priority-followup.txt has been
+corrected to distinguish versions: the inspected 36-page MPI PDF is
+arXiv1010.2212v1, §6.4, Eq.(6.27), printed p.29; the coordinating reviewer's
+verified v2 locator is §5.4, Eq.(5.27), PDF page25. The report now includes
+explicit versioned URLs and does not mix the locators.
+
+No further substantial editorial change is requested in this pass.
+The previously identified publication limitations remain: historical
+priority is not certified by searches, independent computational checks
+must support the stated classification, and the uniform family does not
+solve arbitrary affine/indefinite upper endpoints. The actual source
+acknowledges those scope limits. It offers a plausible specialist paper,
+not a guaranteed acceptance or a newly proved general KL mechanism.

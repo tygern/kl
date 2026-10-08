@@ -1,7 +1,7 @@
 // Direct enumeration of all fully commutative elements of generalized E_n.
 // Unlike group BFS, only FC states are retained. Exact integer root matrices.
-// Build: clang++ -O3 -std=c++17 fc_catalogue.cpp -o /private/tmp/en-fc
-// Run: /private/tmp/en-fc 8 > e8-fc.json
+// Build: c++ -O3 -std=c++17 fc_catalogue.cpp -o en-fc
+// Run: ./en-fc 8 > e8-fc.json
 #include <array>
 #include <algorithm>
 #include <cassert>

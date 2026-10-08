@@ -1,3 +1,6 @@
+AI-generated internal review/research note produced with GPT-6 Astra agents at the author's request (October 2026).
+Not peer review and not a journal decision.
+
 PRIORITY ADDENDUM: FULL-SUPPORT INDEFINITE E10 AND E13 FAMILIES
 Checked 2026-10-07 UTC / 2026-10-06 America/Chicago.
 This supplements report.txt and structural_lemmas.txt in this directory.

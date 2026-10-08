@@ -1,0 +1,574 @@
+{
+ "conventions": "E_n: chain 0-1-...-(n-2), node n-1 attached to node 2; a string of labels is the product of the simple reflections in the order written; columns of the matrix of w are w(alpha_j). Gern D_m labels: 1,2 attached to 3, chain 3-...-m; label map 1->1, 2->n-1, j->j-1.",
+ "gern_plus_two": {
+  "E6": {
+   "type_D_parabolic": "D5 on nodes [1, 2, 3, 4, 5]",
+   "gern_bad_elements_mapped": [
+    {
+     "gern_element": "w4",
+     "gern_word": "2143214",
+     "mapped_word": "5132513",
+     "table_row": "1325213",
+     "length": 7
+    }
+   ],
+   "rows_not_from_type_D": []
+  },
+  "E7": {
+   "type_D_parabolic": "D6 on nodes [1, 2, 3, 4, 5, 6]",
+   "gern_bad_elements_mapped": [
+    {
+     "gern_element": "w4",
+     "gern_word": "2143214",
+     "mapped_word": "6132613",
+     "table_row": "1326213",
+     "length": 7
+    },
+    {
+     "gern_element": "w4*s6",
+     "gern_word": "21432146",
+     "mapped_word": "61326135",
+     "table_row": "13256213",
+     "length": 8
+    },
+    {
+     "gern_element": "w6",
+     "gern_word": "214321654321546",
+     "mapped_word": "613261543261435",
+     "table_row": "132543621324356",
+     "length": 15
+    }
+   ],
+   "rows_not_from_type_D": [
+    "1325436210321432543621324356"
+   ]
+  },
+  "E8": {
+   "type_D_parabolic": "D7 on nodes [1, 2, 3, 4, 5, 6, 7]",
+   "gern_bad_elements_mapped": [
+    {
+     "gern_element": "w4",
+     "gern_word": "2143214",
+     "mapped_word": "7132713",
+     "table_row": "1327213",
+     "length": 7
+    },
+    {
+     "gern_element": "w4*s6",
+     "gern_word": "21432146",
+     "mapped_word": "71327135",
+     "table_row": "13257213",
+     "length": 8
+    },
+    {
+     "gern_element": "w4*s7",
+     "gern_word": "21432147",
+     "mapped_word": "71327136",
+     "table_row": "61327213",
+     "length": 8
+    },
+    {
+     "gern_element": "w6",
+     "gern_word": "214321654321546",
+     "mapped_word": "713271543271435",
+     "table_row": "132543721324357",
+     "length": 15
+    }
+   ],
+   "rows_not_from_type_D": [
+    "1325437210321432543721324357",
+    "75342312701234562103214325437210321432543721324357"
+   ]
+  },
+  "E8_row_28_is_w7_in_parabolic_0_5_7": true
+ },
+ "type_D_enumeration": {
+  "D5": {
+   "elements": 1920,
+   "noncommuting_terminals": 1,
+   "lengths": [
+    7
+   ],
+   "gern_names": [
+    "w4"
+   ],
+   "equals_gern_theorem_2_3_6": true
+  },
+  "D6": {
+   "elements": 23040,
+   "noncommuting_terminals": 3,
+   "lengths": [
+    7,
+    8,
+    15
+   ],
+   "gern_names": [
+    "w4",
+    "w4*s6",
+    "w6"
+   ],
+   "equals_gern_theorem_2_3_6": true
+  },
+  "D7": {
+   "elements": 322560,
+   "noncommuting_terminals": 4,
+   "lengths": [
+    7,
+    8,
+    8,
+    15
+   ],
+   "gern_names": [
+    "w4",
+    "w4*s6",
+    "w4*s7",
+    "w6"
+   ],
+   "equals_gern_theorem_2_3_6": true
+  }
+ },
+ "structure": {
+  "w4": {
+   "type": "E6",
+   "word": "1325213",
+   "length": 7,
+   "layers": [
+    [
+     1,
+     3
+    ],
+    [
+     2
+    ],
+    [
+     5
+    ],
+    [
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "L_equals_R": [
+    1,
+    3,
+    5
+   ],
+   "first_layer": [
+    1,
+    3
+   ],
+   "involution": true,
+   "terminal": true,
+   "negated_positive_roots": [
+    "011101"
+   ],
+   "orthogonal_reflection_count": 1,
+   "fixed_positive_roots": 15,
+   "fixed_root_subsystem": {
+    "rank": 5,
+    "positive_roots": 15
+   }
+  },
+  "w6": {
+   "type": "E7",
+   "word": "132543621324356",
+   "length": 15,
+   "layers": [
+    [
+     1,
+     3,
+     5,
+     6
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     1,
+     3,
+     6
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     1,
+     3,
+     5,
+     6
+    ]
+   ],
+   "L_equals_R": [
+    1,
+    3,
+    5,
+    6
+   ],
+   "first_layer": [
+    1,
+    3,
+    5,
+    6
+   ],
+   "involution": true,
+   "terminal": true,
+   "negated_positive_roots": [
+    "0011001",
+    "0111000",
+    "0111111"
+   ],
+   "orthogonal_reflection_count": 3,
+   "fixed_positive_roots": 4,
+   "fixed_root_subsystem": {
+    "rank": 4,
+    "positive_roots": 4
+   }
+  },
+  "w7": {
+   "type": "E7",
+   "word": "1325436210321432543621324356",
+   "length": 28,
+   "layers": [
+    [
+     1,
+     3,
+     5,
+     6
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     1,
+     3,
+     6
+    ],
+    [
+     0,
+     2,
+     4
+    ],
+    [
+     1,
+     3,
+     5,
+     6
+    ],
+    [
+     0,
+     2,
+     4
+    ],
+    [
+     1,
+     3,
+     6
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     1,
+     3,
+     5,
+     6
+    ]
+   ],
+   "L_equals_R": [
+    1,
+    3,
+    5,
+    6
+   ],
+   "first_layer": [
+    1,
+    3,
+    5,
+    6
+   ],
+   "involution": true,
+   "terminal": true,
+   "negated_positive_roots": [
+    "0011111",
+    "0111101",
+    "0121001",
+    "1222111"
+   ],
+   "orthogonal_reflection_count": 4,
+   "fixed_positive_roots": 3,
+   "fixed_root_subsystem": {
+    "rank": 3,
+    "positive_roots": 3
+   }
+  },
+  "w8": {
+   "type": "E8",
+   "word": "75342312701234562103214325437210321432543721324357",
+   "length": 50,
+   "layers": [
+    [
+     1,
+     3,
+     5,
+     7
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     1,
+     3,
+     7
+    ],
+    [
+     0,
+     2,
+     4
+    ],
+    [
+     1,
+     3,
+     5,
+     7
+    ],
+    [
+     0,
+     2,
+     4,
+     6
+    ],
+    [
+     1,
+     3,
+     5,
+     7
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     1,
+     3,
+     5,
+     7
+    ],
+    [
+     0,
+     2,
+     4,
+     6
+    ],
+    [
+     1,
+     3,
+     5,
+     7
+    ],
+    [
+     0,
+     2,
+     4
+    ],
+    [
+     1,
+     3,
+     7
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     1,
+     3,
+     5,
+     7
+    ]
+   ],
+   "L_equals_R": [
+    1,
+    3,
+    5,
+    7
+   ],
+   "first_layer": [
+    1,
+    3,
+    5,
+    7
+   ],
+   "involution": true,
+   "terminal": true,
+   "negated_positive_roots": [
+    "12332212",
+    "13432102"
+   ],
+   "orthogonal_reflection_count": 2,
+   "fixed_positive_roots": 30,
+   "fixed_root_subsystem": {
+    "rank": 6,
+    "positive_roots": 30,
+    "type": "D6"
+   }
+  }
+ },
+ "right_weak_order_chain": {
+  "E8": {
+   "words": {
+    "w4": "1327213",
+    "w6": "132543721324357",
+    "w7": "1325437210321432543721324357",
+    "w8": "75342312701234562103214325437210321432543721324357"
+   },
+   "relations": [
+    {
+     "lower": "w4",
+     "upper": "w6",
+     "prefix": true,
+     "suffix": true
+    },
+    {
+     "lower": "w6",
+     "upper": "w7",
+     "prefix": true,
+     "suffix": true
+    },
+    {
+     "lower": "w7",
+     "upper": "w8",
+     "prefix": true,
+     "suffix": true
+    }
+   ]
+  },
+  "E7": {
+   "words": {
+    "w4": "1326213",
+    "w6": "132543621324356",
+    "w7": "1325436210321432543621324356"
+   },
+   "relations": [
+    {
+     "lower": "w4",
+     "upper": "w6",
+     "prefix": true,
+     "suffix": true
+    },
+    {
+     "lower": "w6",
+     "upper": "w7",
+     "prefix": true,
+     "suffix": true
+    }
+   ]
+  }
+ },
+ "inner_longest_parabolic_factors": {
+  "w4": {
+   "type": "E6",
+   "right_weak_interval_size": 22,
+   "max_inner_longest_parabolic_length": 3,
+   "achieved_by_J": [
+    1,
+    3,
+    5
+   ]
+  },
+  "w6": {
+   "type": "E7",
+   "right_weak_interval_size": 136,
+   "max_inner_longest_parabolic_length": 5,
+   "achieved_by_J": [
+    1,
+    3,
+    4,
+    6
+   ]
+  },
+  "w7": {
+   "type": "E7",
+   "right_weak_interval_size": 464,
+   "max_inner_longest_parabolic_length": 6,
+   "achieved_by_J": [
+    0,
+    1,
+    3,
+    5,
+    6
+   ],
+   "w0_factorization": {
+    "J": [
+     0,
+     1,
+     3,
+     5,
+     6
+    ],
+    "l_w0_J": 6,
+    "u": "31265234312",
+    "w0_J": "653010",
+    "v": "42312645231",
+    "lengths": [
+     11,
+     6,
+     11
+    ],
+    "length_additive": true,
+    "J_edges": [
+     [
+      0,
+      1
+     ]
+    ]
+   }
+  },
+  "w8": {
+   "type": "E8",
+   "right_weak_interval_size": 1694,
+   "max_inner_longest_parabolic_length": 6,
+   "achieved_by_J": [
+    0,
+    1,
+    3,
+    5,
+    7
+   ],
+   "w0_factorization": {
+    "J": [
+     0,
+     1,
+     3,
+     5,
+     7
+    ],
+    "l_w0_J": 6,
+    "u": "31275234312",
+    "w0_J": "753010",
+    "v": "276453423127563452341230127345231",
+    "lengths": [
+     11,
+     6,
+     33
+    ],
+    "length_additive": true,
+    "J_edges": [
+     [
+      0,
+      1
+     ]
+    ]
+   }
+  }
+ },
+ "status": "passed",
+ "failed_expectations": []
+}

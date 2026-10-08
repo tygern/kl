@@ -1,0 +1,9 @@
+type E7: |W| = 2903040, longest length 63
+fully commutative elements: 2670
+positive roots: 63
+  length 4 done (182 elements), extremal pairs so far 402, distinct polys 2, 0.0s
+  length 8 done (2051 elements), extremal pairs so far 21825, distinct polys 9, 0.1s
+  length 12 done (9632 elements), extremal pairs so far 507959, distinct polys 76, 0.5s
+  length 16 done (27874 elements), extremal pairs so far 6207552, distinct polys 1469, 2.5s
+  length 20 done (58009 elements), extremal pairs so far 45668449, distinct polys 31693, 16.6s
+  length 24 done (93659 elements), extremal pairs so far 222956843, distinct polys 453253, 105.4s

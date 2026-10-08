@@ -1,0 +1,7 @@
+Use the new finding on the Combinatorial Invariance of Kazhdan–Lusztig Polynomials (https://github.com/openai/math/blob/main/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/paper.pdf) to try to apply the results of my thesis (https://arxiv.org/abs/1304.6074) to other cases/types. Use a team of Astra subagents and some variation of this approach:
+- Find possible applications/results
+- Establish that the result is, in fact, new by deeply researching the field
+- Attempt to prove the new result
+- Verify the proof for correctness and use deep research to make sure everything is cited properly
+- Save any code used for computation along the way (prefer Python/uv)
+- Write up any results in latex

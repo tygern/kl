@@ -1,4 +1,7 @@
-EXPOSITION REFEREE: ARGUMENT ARCHITECTURE AND CANDIDATE REWRITES
+AI-generated internal review/research note produced with GPT-6 Astra agents at the author's request (October 2026).
+Not peer review and not a journal decision.
+
+AI EXPOSITION REVIEW NOTE: ARGUMENT ARCHITECTURE AND CANDIDATE REWRITES
 7 October 2026. Source: results/exceptional-leading.tex.
 Read against research/en_uniform/referee.txt, research/en_e8/report.txt,
 and research/exceptional_referee/report.txt. This is an editorial review of

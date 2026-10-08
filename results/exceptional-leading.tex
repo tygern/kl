@@ -1,655 +1,703 @@
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,array}
 \usepackage[margin=1in]{geometry}
 \usepackage{microtype}
-\usepackage{needspace}
-\usepackage[colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
-\hypersetup{pdftitle={Leading Kazhdan-Lusztig coefficients in type E}}
-\newtheorem{theorem}{Theorem}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue,pdfencoding=auto]{hyperref}
+\hypersetup{pdftitle={Leading Kazhdan--Lusztig coefficients with fully commutative lower endpoints in type E},
+ pdfauthor={Tyson Gern}}
+\newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
 \newcommand{\FC}{W_{\mathrm{FC}}}
 \newcommand{\supp}{\operatorname{supp}}
-\title{Leading Kazhdan--Lusztig coefficients with\newline
-fully commutative lower endpoints in type $E$}
-\author{}
-\date{}
+\newcommand{\dpth}{\operatorname{dp}}
+\title{Leading Kazhdan--Lusztig coefficients with
+fully commutative lower endpoints in type $E$\thanks{Text licensed under
+CC BY 4.0; accompanying code under the MIT License.}}
+\author{Tyson Gern\thanks{Initial Capacity, tyson@initialcapacity.io,
+ORCID 0009-0003-8288-8786}}
+\date{October 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-We study the leading coefficients $\mu(x,w)$ of ordinary equal-parameter
-Kazhdan--Lusztig polynomials when $x$ is fully commutative. For finite
-Weyl groups of types $E_6$, $E_7$, and $E_8$, we prove
-$\mu(x,w)\in\{0,1\}$ for every upper endpoint $w$. The proof combines
-star reduction with exhaustive classifications of terminal elements;
-parabolic pruning avoids full-group enumeration in type $E_8$.
-Together with the known type-$A$ and type-$D$ results, this establishes
-the bound for every finite simply laced Coxeter group.
-We also construct full-support terminal reflections in every generalized
-type $E_{4r+1}$, $r\geq3$. Green's monomial cell theory implies that their leading coefficients with fully
-commutative lower endpoint vanish away from covers and, at each fixed
-rank, vanish for all sufficiently large values of the family parameter.
-An infinite family in affine type $\widetilde E_8=E_9$ has every such
-leading coefficient equal to zero. A complementary $E_{10}$ construction
-is recorded in an appendix.
+We prove that the leading coefficient $\mu(x,w)$ of the Kazhdan--Lusztig
+polynomial $P_{x,w}$ lies in $\{0,1\}$ whenever $x$ is fully commutative
+and $W$ is the Weyl group of type $E_6$, $E_7$ or $E_8$. Together with the
+known results in types $A$ and $D$, this settles for every finite simply
+laced Coxeter group the question raised by Green in 2009 and called
+Green's $0$--$1$ conjecture by Chmutov. The proof reduces, by Green's star
+argument as adapted by Gern, to a classification of the terminal
+($T$-avoiding) elements of $E_6$, $E_7$ and $E_8$, obtained by exhaustive
+enumeration with parabolic pruning: the noncommuting terminals are Gern's
+type-$D$ list together with exactly two new elements, of lengths $28$ in
+$E_7$ and $50$ in $E_8$, and the coefficient statement then follows from
+Fan's monomial cell theory, in Green's formulation, and parity. We also
+construct infinite families of full-support terminal reflections in every
+generalized type $E_{4r+1}$, $r\geq3$, and in $E_{10}$, with
+$\mu(x,b)=0$ for every fully commutative $x$ and every member of the
+family, and an affine $E_8$ family with exact lengths $27+92k$ and the
+same vanishing. The bound fails in affine type $D_4$, where $\mu=2$
+occurs, and it fails without the fully commutative hypothesis: $\mu=10$
+occurs already in $E_6$.
 \end{abstract}
+\noindent{\small MSC 2020: 20F55 (primary), 20C08, 05E10.
+Keywords: Kazhdan--Lusztig polynomials, fully commutative elements,
+Coxeter groups of type $E$, $T$-avoiding elements.}
 
-\section{Introduction}
-Let $(W,S)$ be a Coxeter system, with length $\ell$ and Bruhat order $\leq$.
-Write $P_{x,w}(q)$ for its ordinary equal-parameter Kazhdan--Lusztig
-polynomials, and define
-\[
- \mu(x,w)=\begin{cases}
- [q^{(\ell(w)-\ell(x)-1)/2}]P_{x,w}(q),
-       &x<w\text{ and }\ell(w)-\ell(x)\text{ is odd},\\
- 0,&\text{otherwise}.
- \end{cases}
-\]
-An element is fully commutative if any two of its reduced expressions
-are related by interchanging adjacent commuting generators. Denote this set by $W_{\mathrm{FC}}$.
-The first result concerns all upper endpoints in the finite exceptional groups.
+\section{Introduction}\label{sec:intro}
+Let $(W,S)$ be a Coxeter system with length function $\ell$ and Bruhat
+order $\leq$, and let $P_{x,w}(q)$ be its ordinary equal-parameter
+Kazhdan--Lusztig polynomials \cite{KL}. Put
+$\mu(x,w)=[q^{(\ell(w)-\ell(x)-1)/2}]P_{x,w}(q)$ if $x<w$ and
+$\ell(w)-\ell(x)$ is odd, and $\mu(x,w)=0$ otherwise. A \emph{cover} is a
+pair $x<w$ with $\ell(w)-\ell(x)=1$; then $P_{x,w}=1$ and $\mu(x,w)=1$.
+Write $L(w)=\{s\in S:\ell(sw)<\ell(w)\}$ and
+$R(w)=\{s\in S:\ell(ws)<\ell(w)\}$ for the descent sets and $\supp(w)$
+for the set of generators in a reduced word of $w$; $w$ has \emph{full
+support} if $\supp(w)=S$. Following Stembridge \cite{Stembridge}, $w$ is
+\emph{fully commutative} (FC) if any two of its reduced words are related
+by interchanging adjacent commuting generators; in a simply laced system
+this holds if and only if no reduced word of $w$ contains a factor $sts$
+with $m(s,t)=3$ \cite[Proposition~2.1]{Stembridge}. The FC elements form
+the set $\FC$. A set $I\subseteq S$ of pairwise commuting generators is an
+\emph{independent set} of the Coxeter graph; $i(I)=\prod_{s\in I}s$ is a
+\emph{commuting product}. An element is \emph{terminal} if no reduced word
+for it begins or ends with two noncommuting generators, and a
+\emph{noncommuting terminal} if moreover it is not a commuting product;
+these are Gern's weakly bad and bad elements \cite[Definition~2.1.1]{Gern}
+and Laird's $T$-avoiding and $T_2$-avoiding elements \cite{Laird}.
 
 \begin{theorem}[Finite exceptional types]\label{thm:main}
-If $W$ has type $E_6$, $E_7$, or $E_8$, then
-\[
- x\in W_{\mathrm{FC}},\quad w\in W
-       \quad\Longrightarrow\quad\mu(x,w)\in\{0,1\}.
-\]
+If $W$ has type $E_6$, $E_7$ or $E_8$, then $\mu(x,w)\in\{0,1\}$ for all
+$x\in\FC$ and $w\in W$.
 \end{theorem}
-The proof extends Gern's type-$D$ star argument
-\cite[Theorem 4.5.11]{Gern}. It reduces to a finite classification of
-upper endpoints with no noncommuting initial or final pair in any reduced
-expression. We call these elements \emph{terminal}; a terminal is
-\emph{noncommuting} if it is not a product of mutually commuting generators.
-There are respectively $1$, $4$, and $6$ noncommuting terminals in
-$E_6$, $E_7$, and $E_8$. Each has a unique fully commutative lower endpoint
-below it satisfying both descent inclusions. All resulting
-coefficients vanish by parity except for a known pair in a $D_6$ parabolic.
-The $E_8$ classification uses exhaustive parabolic pruning rather than
-enumeration of its $696,729,600$ elements.
 
 \begin{corollary}[Finite simply laced groups]\label{cor:finiteADE}
-If $W$ is a finite simply laced Coxeter group, $x\in W_{\mathrm{FC}}$, and
-$w\in W$, then $\mu(x,w)\in\{0,1\}$.
+If $W$ is a finite simply laced Coxeter group, $x\in\FC$ and $w\in W$,
+then $\mu(x,w)\in\{0,1\}$.
 \end{corollary}
-The irreducible type-$A$ and type-$D$ cases are due to Green
-\cite{GreenLeading} and Gern \cite[Theorem 4.5.11]{Gern}.
-Theorem~\ref{thm:main} supplies the exceptional cases; the direct-product
-argument is given in Section~\ref{sec:finite}.
 
-Our second result applies in arbitrarily large ranks. Throughout, the
-generalized diagram $E_n$, $n\geq6$, is the chain $0-1-\cdots-(n-2)$ with node $n-1$
-attached to node $2$. Thus $E_9=\widetilde E_8$, and $E_n$ is indefinite
-for $n\geq10$. The numbering is
-\[
- \begin{array}{ccccccc}
- &&&&n-1&&\\[-3pt]
- &&&&|&&\\[-3pt]
- 0&-&1&-&2&-\cdots-&n-2
- \end{array}
-\]
-The \emph{support} of an element is the set of generators
-occurring in its reduced expressions; full support means $\supp(w)=S$.
+Our second theme is arbitrarily large rank. Throughout, the generalized
+diagram $E_n$, $n\geq6$, is the chain $0\text{--}1\text{--}\cdots\text{--}(n-2)$ with node $n-1$
+attached to node~$2$; thus $E_9=\widetilde E_8$, and $E_n$ is indefinite
+for $n\geq10$. Section~\ref{sec:uniform} defines, for every $r\geq3$,
+explicit real roots $\beta_{r,k}$ ($k\geq0$) of $E_{4r+1}$, with
+reflections $b_{r,k}=r_{\beta_{r,k}}$, and an independent set $I_r$ of
+size $2r+1$.
 
 \begin{theorem}[A rank-uniform family]\label{thm:uniform}
-For every integer $r\geq3$ there is an explicit family of distinct
-full-support, non-fully-commutative terminal reflections
-$b_{r,k}\in W(E_{4r+1})$, $k\geq0$.
-For every $x\in W(E_{4r+1})_{\mathrm{FC}}$,
-\[
- \mu(x,b_{r,k})\in\{0,1\},\qquad
- x<b_{r,k},\quad \ell(b_{r,k})-\ell(x)>1
-       \quad\Longrightarrow\quad\mu(x,b_{r,k})=0.
-\]
-For each fixed $r$, all these leading coefficients vanish for every
-sufficiently large $k$.
+For every $r\geq3$ the reflections $b_{r,k}$, $k\geq0$, are pairwise
+distinct full-support terminal elements of $W(E_{4r+1})$ that are not fully
+commutative, with $L(b_{r,k})=R(b_{r,k})=I_r$. For every fully commutative
+$x$ and every $k\geq0$, $\mu(x,b_{r,k})=0$.
 \end{theorem}
-These families show that, in the indicated infinite groups, the terminal
-obstructions to length-decreasing star reduction cannot be exhausted by
-a finite list. The construction in Section~\ref{sec:uniform} starts from a staircase
-root and iterates an affine-parabolic root action. An even sign change in
-$D_{4r}$ proves real-root membership uniformly in $r$. The common descent set is an independent set of maximum cardinality
-and has odd size. Green's monomial
-Temperley--Lieb cell theorem then restricts a potentially nonzero
-non-cover coefficient to a single fully commutative lower endpoint,
-and parity forces that coefficient to vanish. This proof requires no
-Kazhdan--Lusztig polynomial computation.
 
-Green proved the fully commutative lower-endpoint bound in type $A$ and
-affine type $A$ \cite{GreenLeading}; Chmutov proved it in finite type $B$
-\cite[\S2.3, Theorem 2.3.8]{Chmutov}, hence also for the identical
-Coxeter system of type $C$. The two-FC-endpoint bound in generalized
-type $E_n$ goes back to Graham's thesis, as recalled by Green
-\cite[Remark 9.5]{GreenEn}. Green's trace formulas
-\cite[Remark 7.12]{GreenJones} and Jones's result with Deodhar upper
-endpoint \cite[Theorem 1.2]{Jones} have different endpoint hypotheses.
-The structural input for both the finite lower-endpoint analysis and the
-infinite families is Green's cell theory in generalized type $E$
-\cite{GreenEn}. Our contribution is a complete certified exceptional
-terminal classification and its coefficient consequence, together with
-the explicit rank-uniform terminal construction. The descent and parity
-mechanism is classical. We are not aware of an earlier proof of the
-exceptional bound or an earlier description of these terminal lists and
-rank-uniform families; historical priority remains unconfirmed.
+Theorem~\ref{thm:affine} gives an analogous family in $\widetilde E_8$
+with exact lengths $27+92k$, and Proposition~\ref{prop:e10} one in
+$E_{10}$; so the terminal obstructions to length-decreasing star reduction
+cannot be exhausted by a finite list in $E_n$ for $n\geq9$.
 
-Exceptional KL computations already feature in Geck's \emph{PyCox}
-\cite{GeckPyCox} and Geck--Halls's type-$E_8$ cell analysis
-\cite{GeckHalls}. Our assertion concerns every coefficient $\mu(x,w)$
-with FC lower endpoint, rather than only cell partitions or leading
-coefficients of character values. A direct appeal to FC cell closure is
-unavailable in type $E$: Green--Losonczy's Example 2.2.5
-\cite{GreenLosonczy} shows that this closure property fails there.
-Moreover, a left $W$-graph action records a coefficient for a pair
-$(x,w)$ only through a generator in $L(x)\setminus L(w)$
-\cite[Remark 2.1]{GeckHalls}. Our residual terminal pairs have equal left
-and right descent sets, so the cell action matrices alone do not determine
-their coefficients.
+Green \cite[Introduction]{GreenLeading} asked whether $\mu(x,w)\in\{0,1\}$
+for fully commutative $x$ in a large class of Coxeter groups, ``possibly
+all of them''; Chmutov \cite[abstract and \S2.3]{Chmutov} calls this
+\emph{Green's $0$--$1$ conjecture}. It is known in types $A$ and
+$\widetilde A$ (Green \cite[Theorem~4.1; Theorem~3.1 of the arXiv
+version]{GreenLeading}), $B=C$ (Chmutov \cite[Theorem~2.3.8]{Chmutov}) and
+$D$ (Gern \cite[Theorem~4.5.11]{Gern}); Theorem~\ref{thm:main} completes
+the finite simply laced case, $F_4$, $H_3$ and $H_4$ remain open (dihedral
+groups, $G_2$ included, have all $P_{x,w}=1$), and finiteness cannot be
+dropped from
+Corollary~\ref{cor:finiteADE}, since $\mu=2$ occurs in $\widetilde D_4$
+(Section~\ref{sec:complements}).
 
-The infinite-type results concern specified upper families, rather than
-arbitrary upper endpoints. They control $\mu$, not all coefficients of
-$P_{x,w}$. Section~\ref{sec:applications} gives the complementary affine
-$E_8$ family; the rank-ten supplement is in Appendix~\ref{app:e10}. Section~\ref{sec:transfer} records a
-conditional consequence of combinatorial invariance. Exact computational
-certificates and reproduction instructions appear in
-Appendix~\ref{app:certificates}.
+Jones \cite[Theorems~1.2 and~6.1]{Jones}
+proved the bound for a Deodhar upper endpoint in every finite Weyl group
+($E_6$, $E_7$, $E_8$, $F_4$ and $G_2$ by computer), the only earlier
+exceptional $0$--$1$ result, with the opposite endpoint hypothesis; when
+both endpoints are fully commutative the bound holds in every $E_n$ by
+Graham's thesis, as recalled in \cite[Remark~9.5]{GreenEn} and
+\cite[Remark~7.12]{GreenJones}. The reduction to terminal upper endpoints
+(Lemma~\ref{lem:reduction}) is Green's argument as adapted by Gern, and
+the lower-endpoint lemma (Lemma~\ref{lem:maxI}) is Fan's monomial cell
+theorem \cite{Fan} in Green's formulation \cite{GreenEn}; what is new is
+the classification of the terminal elements of $E_6$, $E_7$ and $E_8$
+(Proposition~\ref{prop:classification}) by exhaustive enumeration, with
+parabolic pruning in place of the $696{,}729{,}600$ elements of $E_8$. The
+noncommuting terminals turn out to be Gern's type-$D$ list together with
+exactly two new elements, $w_7\in E_7$ of length $28$ and $w_8\in E_8$ of
+length $50$ (Remark~\ref{rem:gern}); each has a unique fully commutative
+lower endpoint satisfying both descent inclusions, with even length gap
+for the new ones, so the only Kazhdan--Lusztig value needed is Gern's $D_6$
+value $\mu(x_6,w_6)=1$ \cite[Lemma~4.5.5]{Gern} (du Cloux's
+\textsf{Coxeter}; recomputed in Appendix~\ref{app:certificates}).
+
+Infinite families of $T$-avoiding elements inside a fixed infinite Coxeter group
+were known in affine type $A$ (Fan--Green
+\cite[Proposition~3.1.2]{FanGreen}, fully commutative), affine type $C$
+(Ernst \cite{Ernst}; Laird \cite[Theorem~4.1.5]{Laird}) and type $F_n$
+(non-FC; Cross, Ernst, Hills-Kimball and Quaranta (2012) and
+Gilbertson--Ernst (2013), as reported in \cite[\S3.3]{Laird}); Laird
+\cite[\S5.3]{Laird} lists the affine type-$E$ questions as open. By Green's
+theorem \cite[Theorem~6.3]{GreenStar} every $E_n$ is star reducible, so
+every fully commutative terminal in $E_n$ is a commuting product, which is
+why all families here are non-FC.
+
+Exceptional Kazhdan--Lusztig computations feature in Geck's \emph{PyCox} \cite{GeckPyCox} and in
+Geck--Halls's analysis of the cells of $E_8$ \cite{GeckHalls}, which
+concern cell partitions and character values rather than every $\mu(x,w)$
+with FC lower endpoint; fully commutative cell closure fails in type $E$
+(Green--Losonczy \cite[Example~2.2.5]{GreenLosonczy}, credited to Graham
+\cite[\S9.9]{Graham}), and a $W$-graph records $\mu(x,w)$ only through a
+generator in $L(x)\setminus L(w)$ \cite[Remark~2.1]{GeckHalls}, whereas
+our residual terminal pairs have equal descent sets. To our knowledge, the
+exceptional bound, the terminal lists of Table~\ref{tab:terminals} and the
+infinite families have not appeared before.
+
+Sections~\ref{sec:reductions},
+\ref{sec:finite} and~\ref{sec:families} contain the structural lemmas,
+the finite theorem and the infinite families, Section~\ref{sec:complements}
+complements and open problems, and Appendix~\ref{app:certificates} the
+computational certificates.
 
 \section{Structural reductions}\label{sec:reductions}
-Write
-\[
- L(w)=\{s\in S:\ell(sw)<\ell(w)\},\qquad
- R(w)=\{s\in S:\ell(ws)<\ell(w)\}.
-\]
-An independent vertex set in the Coxeter graph is a set of mutually
-commuting simple generators. For such a set $I$, write
-$i(I)=\prod_{s\in I}s$; the order of the factors is immaterial.
-The terminal condition is Gern's ``weakly bad'' condition and Laird's
-\emph{$T$-avoiding} condition \cite{Gern,Laird}; a terminal which is not a
-commuting product is called ``bad'' in \cite{Gern}.
-Laird listed the type-$E_n$ classification as a future direction
-in 2016 \cite[\S5.3]{Laird}. We classify the finite exceptional cases and
-give infinite families, without asserting a classification in infinite type.
 
 \subsection{Star reduction}
-We use the descent criterion and length-three star transport
-\cite[\S2.3 and Theorem 4.2]{KL}, also stated in
-\cite[Proposition 1.2.4]{Gern}. Full commutativity is preserved by these
-stars in simply laced systems \cite[Proposition 2.10]{Shi}; see also
-\cite[Proposition 1.1.29]{Gern}.
-\begin{lemma}[Terminal reduction]\label{lem:reduction}
-Let $W$ be simply laced. If $\mu(x,b)\in\{0,1\}$ for every terminal upper
-endpoint $b$ and every fully commutative $x$, then the same conclusion
-holds for all upper endpoints in $W$.
+We use the elementary properties of $\mu$ from \cite[\S2.3 and
+Theorem~4.2]{KL}, restated in \cite[Proposition~1.2.4]{Gern}.
+\begin{lemma}[Descent criterion]\label{lem:descent}
+Let $x<w$. If $s\in L(w)\setminus L(x)$, then $\mu(x,w)=0$ unless $x=sw$;
+if $s\in R(w)\setminus R(x)$, then $\mu(x,w)=0$ unless $x=ws$.
 \end{lemma}
 \begin{proof}
-Induct on $\ell(w)$ and put $d=\ell(w)-\ell(x)$.
-Noncomparable pairs give zero. For comparable pairs,
-even length difference gives zero and difference one gives one.
-Hence assume $x<w$ and $d\geq3$ is odd.
-If $L(w)\not\subseteq L(x)$ or $R(w)\not\subseteq R(x)$, the descent
-criterion gives zero: its only nonzero exception is a cover, already excluded.
-We can thus assume both inclusions. Since the descent sets of a fully
-commutative element are pairwise commuting, so are $L(w)$ and $R(w)$.
+This is \cite[(2.3.e) and (2.3.f)]{KL}; see
+\cite[Proposition~1.2.4(3),(4)]{Gern}.
+\end{proof}
+For noncommuting generators $s,t$ with $m(s,t)=3$ let
+$D_L(s,t)=\{w:|L(w)\cap\{s,t\}|=1\}$. For $w\in D_L(s,t)$ exactly one of
+$sw,tw$ lies in $D_L(s,t)$; it is the left star ${}^*w$. Right stars
+$w^*$ are defined symmetrically. Stars preserve full commutativity in
+simply laced systems \cite[Proposition~2.10]{Shi}, \cite[Proposition~1.1.29]{Gern}.
+Star transport \cite[Theorem~4.2]{KL} says that for $x,w\in D_L(s,t)$,
+\begin{equation}\label{eq:star}
+ \widetilde\mu(x,w)=\widetilde\mu({}^*x,{}^*w),
+\end{equation}
+where $\widetilde\mu(y,z)$ equals $\mu(y,z)$ if $y<z$, $\mu(z,y)$ if
+$z<y$, and $0$ otherwise; the same holds for right stars.
 
-If $w$ is terminal, use the hypothesis. Otherwise, suppose first that
-$w=stv$ is reduced with $m(s,t)=3$. Then $s\in L(w)$ and $t\notin L(w)$.
-The left $\{s,t\}$-star is ${}^*w=sw=tv$, with
-$\ell({}^*w)=\ell(w)-1$. Descent inclusion gives $s\in L(x)$, while full
-commutativity gives $t\notin L(x)$. Therefore ${}^*x$ is defined and fully
-commutative. Star transport gives
-\[
- \mu(x,w)=\widetilde\mu({}^*x,{}^*w),
-\]
-where $\widetilde\mu$ is symmetric and zero on incomparable pairs.
-The new length difference is $d$ or $d-2$, so
-$\ell({}^*x)<\ell({}^*w)$.
-If the new endpoints are incomparable the value is zero. Otherwise the
-induction hypothesis applies to the shorter upper endpoint ${}^*w$.
-The case of a noncommuting suffix uses right stars in the same way.
+\begin{lemma}[Terminal reduction]\label{lem:reduction}
+Let $W$ be simply laced. If $\mu(x,b)\in\{0,1\}$ for every terminal upper
+endpoint $b$ and every fully commutative $x$, then $\mu(x,w)\in\{0,1\}$
+for all $x\in\FC$ and all $w\in W$.
+\end{lemma}
+\begin{proof}
+This is the argument of Green \cite[proof of Theorem~3.1 (published
+Theorem~4.1)]{GreenLeading}, as adapted by Gern \cite[Lemma~2.3.10 and
+Theorem~4.5.11]{Gern}. We induct on $\ell(w)$. Put $d=\ell(w)-\ell(x)$;
+only $x<w$ with $d\geq3$ odd needs proof. If $L(w)\not\subseteq L(x)$ or
+$R(w)\not\subseteq R(x)$, Lemma~\ref{lem:descent} gives zero; so assume
+both inclusions, whence $L(w)$ and $R(w)$ are commuting, like the descent
+sets of the fully commutative $x$. If $w$ is terminal, the hypothesis
+applies. Otherwise let $w=stv$ be reduced with $m(s,t)=3$ (a noncommuting
+suffix is treated with right stars). Then $s\in L(w)$, $t\notin L(w)$
+because $L(w)$ is commuting, and $s,t\notin L(v)$ ($t$ by reducedness, and
+$s\in L(v)$ would give $w=stsv'=tstv'$ and $t\in L(w)$); so $\{tv,stv\}$
+is the left $\{s,t\}$-string in $D_L(s,t)$ and ${}^*w=sw$ has length
+$\ell(w)-1$. Descent inclusion gives $s\in L(x)$ and full commutativity
+$t\notin L(x)$, so $x\in D_L(s,t)$ and ${}^*x$ is defined and fully
+commutative. By \eqref{eq:star}, $\mu(x,w)=\widetilde\mu({}^*x,{}^*w)$; as
+$\ell({}^*x)=\ell(x)\pm1$, the new length difference is $d$ or $d-2$, both
+positive, so the value is zero if the new endpoints are incomparable and
+lies in $\{0,1\}$ by induction otherwise.
 \end{proof}
 
 \subsection{Maximum commuting descents}
-The monomial cell structure is due to Fan \cite{Fan}; we use Green's
-formulation \cite[\S4]{GreenEn}. The next lemma makes explicit the singleton-cell argument in the final
-paragraph of Green's proof of Lemma 5.2 \cite{GreenEn}. It supplies the
-lower-endpoint analysis in both the finite and infinite cases.
+The monomial cell structure of the Temperley--Lieb quotient in type $E_n$
+is due to Fan \cite{Fan}; we use Green's formulation \cite[\S4]{GreenEn}
+(statement numbers follow arXiv:0704.0283v1). The next lemma makes
+explicit the singleton-cell argument ending Green's proof of
+\cite[Lemma~5.2]{GreenEn}; its type-$D$ case is \cite[Lemma~4.5.8]{Gern}.
 \begin{lemma}[Maximum common commuting descents]\label{lem:maxI}
-Let $x$ be fully commutative in $E_n$, and let $K$ contain its support.
-Let $I$ be an independent set of maximum cardinality in the induced graph
-on $K$. If $I\subseteq L(x)\cap R(x)$, then $x=i(I)$.
+Let $n\geq6$, $W=W(E_n)$, and let $x\in\FC$ with $\supp(x)\subseteq K$.
+Let $I$ be an independent set of maximum cardinality in the subgraph
+induced by $K$. If $I\subseteq L(x)\cap R(x)$, then $x=i(I)$.
 \end{lemma}
 \begin{proof}
-Use Green's \emph{monomial Temperley--Lieb} function $a_{\rm TL}$, the maximum
-size of a commuting product occurring as a length-additive factor
-\cite[Definition 4.1]{GreenEn}. The descent inclusions give both a prefix
-and a suffix $i(I)$. Thus $a_{\rm TL}(x)\geq |I|$, whereas the support and
-maximum-cardinality hypothesis give $a_{\rm TL}(x)\leq |I|$.
-Green's Proposition 4.4(iv), and its left-hand version, put $x$ in both the
-monomial right and left cells of $i(I)$. Proposition 4.4(v) says that this
-intersection is a singleton, already containing $i(I)$. Therefore $x=i(I)$.
-No identification of these monomial cells with ordinary KL cells is used.
+Let $a_{\rm TL}(x)$ be the maximum size of a commuting product occurring as
+a length-additive factor of $x$ \cite[Definition~4.1]{GreenEn}, Fan's
+$a$-function \cite[Definition~2.3.1, p.~141]{Fan}. The descent inclusions
+give a prefix and a suffix $i(I)$, so $a_{\rm TL}(x)\geq|I|$, while support
+and maximality give $a_{\rm TL}(x)\leq|I|$. By
+\cite[Proposition~4.4(iv)]{GreenEn}, which is
+\cite[Proposition~4.4.3, p.~148]{Fan}, and its left-hand version (Fan's
+dual statement, p.~148), $x$ lies in both the monomial right cell and the
+monomial left cell of $i(I)$, and by \cite[Proposition~4.4(v)]{GreenEn},
+that is \cite[p.~140 and proof of Theorem~6.1.2, p.~154]{Fan}, this
+intersection is $\{i(I)\}$. Fan proves these statements for the whole
+series $E_n$, $n\geq6$; no identification of monomial cells with
+Kazhdan--Lusztig cells is used.
 \end{proof}
 
 \begin{proposition}[Maximum-descent parity criterion]\label{prop:parity}
-Let $b\in W(E_n)$ satisfy $L(b)=R(b)=I$, where $I$ is a maximum independent set
-in the subgraph induced by $\supp(b)$. If $\ell(b)\equiv |I|\pmod2$, then for every FC $x$
+Let $n\geq6$ and let $b\in W(E_n)$ satisfy $L(b)=R(b)=I$, where $I$ is a
+maximum independent set in the subgraph induced by $\supp(b)$. If
+$\ell(b)\equiv|I|\pmod2$, then for every $x\in\FC$,
 \[
  \mu(x,b)\in\{0,1\},\qquad
  x<b,\ \ell(b)-\ell(x)>1\ \Longrightarrow\ \mu(x,b)=0.
 \]
-This criterion does not require $b$ to be terminal.
 \end{proposition}
 \begin{proof}
-For a non-cover with a potentially nonzero coefficient, descent containment
-is necessary. Since $x\leq b$, its support lies in that of $b$.
-Lemma~\ref{lem:maxI} forces $x=i(I)$. The resulting length difference is
-even, so its coefficient is zero. Covers have coefficient one.
+The type-$D$ prototype is \cite[Lemmas~4.5.4 and 4.5.9]{Gern}. Let $x<b$
+be fully commutative with $\ell(b)-\ell(x)>1$ and $\mu(x,b)\neq0$. By
+Lemma~\ref{lem:descent}, $I\subseteq L(x)\cap R(x)$; the subword property
+gives $\supp(x)\subseteq\supp(b)$, so Lemma~\ref{lem:maxI} with
+$K=\supp(b)$ forces $x=i(I)$. Then $\ell(b)-\ell(x)=\ell(b)-|I|$ is even
+and $\mu(x,b)=0$, a contradiction. Covers have $\mu=1$.
 \end{proof}
+\begin{remark}\label{rem:parityremark}
+Proposition~\ref{prop:parity} does not require $b$ to be terminal. The
+parity hypothesis cannot be dropped: Section~\ref{sec:affineextra} exhibits
+elements of $\widetilde E_8$ satisfying every other hypothesis with
+$\mu(i(I),b)=1$.
+\end{remark}
+\begin{remark}\label{rem:indep}
+The independence number of $E_n$ is $\lceil n/2\rceil$: excluding node
+$2$ leaves three paths with maximum total $2+\lceil(n-4)/2\rceil$, and
+including it gives $2+\lceil(n-5)/2\rceil$, the larger of the two being
+$\lceil n/2\rceil$.
+\end{remark}
 
-The independence number of $E_n$ is $\lceil n/2\rceil$. Excluding node $2$
-leaves three paths with maximum total $2+\lceil(n-4)/2\rceil$;
-including it gives $2+\lceil(n-5)/2\rceil$. Taking the larger proves the claim.
-
-\subsection{Geometric terminal tests}
+\subsection{Geometric tests and covers of terminal reflections}\label{sec:covers}
 Normalize simple roots by $(\alpha_j,\alpha_j)=2$ and
-$(\alpha_s,\alpha_t)=-1$ for adjacent nodes. For a real root $\beta$,
-its reflection acts by $r_\beta(\rho)=\rho-(\rho,\beta)\beta$.
-Root inequalities refer to positivity in the simple-root basis.
-
-In these coordinates, the right-terminal test is
+$(\alpha_s,\alpha_t)=-1$ for adjacent nodes, and write $s\sim t$ when $s$
+and $t$ are adjacent, i.e.\ $m(s,t)=3$. For a real root $\beta$ the
+reflection $r_\beta$ acts by $r_\beta(\rho)=\rho-(\rho,\beta)\beta$; $W$
+acts on the left and the matrix of $w$ has columns $w(\alpha_j)$. Root
+inequalities refer to the simple-root basis, and $s\in R(w)$ if and only
+if $w(\alpha_s)<0$. Since $(ws)(\alpha_t)=w(\alpha_s+\alpha_t)$ for
+$s\sim t$, the right-terminal test is
 \begin{equation}\label{eq:terminaltest}
  s\in R(w)\quad\Longrightarrow\quad
- w(\alpha_s+\alpha_t)>0\quad\text{for every }t\sim s.
+ w(\alpha_s+\alpha_t)>0\quad\text{for every }t\sim s,
 \end{equation}
-Indeed, $(ws)(\alpha_t)=w(\alpha_s+\alpha_t)$ when $s\sim t$.
-Testing $w^{-1}$ gives the left-terminal condition.
+and testing $w^{-1}$ gives the left-terminal condition.
+The \emph{depth} $\dpth(\beta)$ of a positive root $\beta$ is the least $d$
+such that $\beta=s_1\cdots s_{d-1}\alpha_t$ for simple reflections $s_i$
+and a simple root $\alpha_t$ (cf.\ \cite[\S4.6]{BB}).
+\begin{lemma}[Reflections]\label{lem:reflections}
+Let $(W,S)$ be simply laced, let $\beta$ be a positive root and
+$d=\dpth(\beta)$.
+\begin{enumerate}
+\item[(i)] $\ell(r_\beta)=2d-1$, and for every expression
+$\beta=s_1\cdots s_{d-1}\alpha_t$ of minimal length the palindromic word
+$s_1\cdots s_{d-1}\,t\,s_{d-1}\cdots s_1$ is a reduced word for $r_\beta$.
+\item[(ii)] If $s\in S$ and $(\beta,\alpha_s)<0$, then $s\beta$ is a
+positive root of depth $d+1$, $\ell(sr_\beta)=\ell(r_\beta)+1$ and
+$\ell(sr_\beta s)=\ell(r_\beta)+2$. If $(\beta,\alpha_s)>0$ and
+$\beta\neq\alpha_s$, then $s\beta$ is a positive root of depth $d-1$.
+\item[(iii)] $r_\beta$ is fully commutative if and only if $\beta$ is
+simple.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Recall that $\ell(ws)>\ell(w)$ if and only if $w(\alpha_s)>0$, and that
+$s$ negates only $\pm\alpha_s$. Let $(\beta,\alpha_s)=-c<0$. Then
+$s\beta=\beta+c\alpha_s>0$; $r_\beta(\alpha_s)=\alpha_s+c\beta>0$ gives
+$s\notin R(r_\beta)=L(r_\beta)$, so $\ell(sr_\beta)=\ell(r_\beta)+1$; and
+$(sr_\beta)(\alpha_s)=-\alpha_s+c\,s\beta=c\beta+(c^2-1)\alpha_s>0$ gives
+$\ell(sr_\beta s)=\ell(r_\beta)+2$. As $sr_\beta s=r_{s\beta}$, this shows
+$\ell(r_{s\beta})=\ell(r_\beta)+2$ when $(\beta,\alpha_s)<0$ and, applied
+to $s\beta$, $\ell(r_{s\beta})=\ell(r_\beta)-2$ when $(\beta,\alpha_s)>0$,
+$\beta\neq\alpha_s$. Now $\ell(r_\beta)=2\dpth(\beta)-1$ by induction on
+the odd number $\ell(r_\beta)$ (trivial for $\ell(r_\beta)=1$): if
+$\ell(r_\beta)\geq3$, some $s$ has
+$(\beta,\alpha_s)>0$, $\beta\neq\alpha_s$ (as $(\beta,\beta)=2$,
+$\beta\geq0$), so $\beta'=s\beta>0$ has
+$\ell(r_{\beta'})=\ell(r_\beta)-2=2\dpth(\beta')-1$ and
+$\dpth(\beta)\leq\dpth(\beta')+1$ gives $2\dpth(\beta)-1\leq\ell(r_\beta)$,
+while the palindromic word gives $\ell(r_\beta)\leq2d-1$. This proves (i);
+(ii) follows from (i) and the two length formulas. For (iii), if $d\geq2$
+the reduced word of (i) contains $s_{d-1}\,t\,s_{d-1}$, which equals $t$
+unless $m(s_{d-1},t)=3$; so it is a braid factor and $r_\beta\notin\FC$
+\cite[Proposition~2.1]{Stembridge}.
+\end{proof}
+
+\begin{lemma}[Covers of terminal reflections]\label{lem:covers}
+Let $n\geq6$, $W=W(E_n)$, and let $b=r_\beta$ for a positive root $\beta$
+with at least three nonzero coordinates. Suppose $L(b)=R(b)=I$, where $I$
+is a maximum independent set of the subgraph induced by $\supp(b)$ and
+$|I|$ is odd. Then no Bruhat cover of $b$ is fully commutative.
+Consequently $\mu(x,b)=0$ for every fully commutative $x$.
+\end{lemma}
+\begin{proof}
+Let $x<b$ with $\ell(x)=\ell(b)-1$. If $I\subseteq L(x)\cap R(x)$ and
+$x\in\FC$, then $\supp(x)\subseteq\supp(b)$ and Lemma~\ref{lem:maxI} gives
+$x=i(I)$ of odd length $|I|$, impossible as $\ell(b)$ is odd. Otherwise
+some $s\in I$ has $s\notin L(x)$ (or, symmetrically, $s\notin R(x)$); the
+lifting property \cite[Proposition~2.2.7]{BB} gives $x\leq sb$, hence
+$x=sb=(bs)^{-1}$ by length and involutivity, and it suffices to show
+$bs\notin\FC$. Put
+$m=(\alpha_s,\beta)$; $s\in R(b)$ gives $b(\alpha_s)=\alpha_s-m\beta<0$,
+so $m\geq1$, and $s\beta=\beta-m\alpha_s$ is a positive non-simple root,
+its coordinates off $s$ being those of $\beta$. Since $sbs=r_{s\beta}$ and
+$(\alpha_s,s\beta)=-m<0$, Lemma~\ref{lem:reflections}(ii) gives
+$\ell(s\,r_{s\beta})=\ell(r_{s\beta})+1$, so $s$ followed by the
+palindromic word of Lemma~\ref{lem:reflections}(i) for $r_{s\beta}$ is a
+reduced word for $bs$ containing a braid factor; hence $bs\notin\FC$.
+Non-covers are handled by Proposition~\ref{prop:parity}, since $\ell(b)$
+and $|I|$ are odd.
+\end{proof}
+
 \section{Finite exceptional types}\label{sec:finite}
-\subsection{The terminal classification}
+\subsection{The terminal classification}\label{sec:classification}
 A fully commutative $x$ is \emph{eligible} for a terminal $b$ if
-\[
- x\leq b,\qquad L(b)\subseteq L(x),\qquad R(b)\subseteq R(x).
-\]
-For non-covers, every ineligible pair has $\mu(x,b)=0$ by the descent
-criterion. Words in the finite types are written as strings of node labels.
+$x\leq b$, $L(b)\subseteq L(x)$ and $R(b)\subseteq R(x)$; by
+Lemma~\ref{lem:descent}, every ineligible non-cover has $\mu(x,b)=0$.
+Elements are written as strings of node labels in the numbering of
+Section~\ref{sec:intro}: the chain $0\text{--}1\text{--}\cdots\text{--}(n-2)$ with node $n-1$
+attached to node~$2$.\footnote{In Bourbaki's labelling of $E_n$ (chain
+$1\text{--}3\text{--}4\text{--}\cdots\text{--}n$, node $2$ attached to node $4$), our node $0$ is
+Bourbaki's node $1$, our node $j$ with $1\leq j\leq n-2$ is Bourbaki's
+node $j+2$, and our node $n-1$ is Bourbaki's node $2$.} A string denotes
+the product of the corresponding simple reflections in the order written,
+with the left action and column convention of Section~\ref{sec:covers}.
+Every element displayed in Table~\ref{tab:terminals} and in the affine
+family of Section~\ref{sec:affine} is an involution, so a string and its
+reverse denote the same element.
 
 \begin{proposition}[Computational classification]\label{prop:classification}
-The noncommuting terminals in $E_6$, $E_7$, and $E_8$ are exactly those
-in Table~\ref{tab:terminals}. Both descent sets of each terminal are the
-support of the commuting product $x$ shown in the table.
-The remaining terminals are commuting products: $22$, $36$, and $58$,
+The noncommuting terminals in $E_6$, $E_7$ and $E_8$ are exactly the eleven
+elements in Table~\ref{tab:terminals}. Both descent sets of each of them
+equal the support of the commuting product $x$ shown in the table. The
+remaining terminals are commuting products: $22$, $36$ and $58$ of them,
 respectively, including the identity.
 \end{proposition}
-\begin{table}[ht]
-\centering\small
-\begin{tabular}{@{}clrrr@{}}
-\toprule
-Type & Terminal $b$ & $\ell(b)$ & $x=i(I)$ & $\ell(b)-\ell(x)$\\
-\midrule
-$E_6$ & $1325213$ & 7 & $135$ & 4\\
-$E_7$ & $1326213$ & 7 & $136$ & 4\\
-$E_7$ & $13256213$ & 8 & $1356$ & 4\\
-$E_7$ & $132543621324356$ & 15 & $1356$ & 11\\
-$E_7$ & $1325436210321432543621324356$ & 28 & $1356$ & 24\\
-$E_8$ & $1327213$ & 7 & $137$ & 4\\
-$E_8$ & $13257213$ & 8 & $1357$ & 4\\
-$E_8$ & $61327213$ & 8 & $1367$ & 4\\
-$E_8$ & $132543721324357$ & 15 & $1357$ & 11\\
-$E_8$ & $1325437210321432543721324357$ & 28 & $1357$ & 24\\
-$E_8$ & $b_{8,6}$ & 50 & $1357$ & 46\\
-\bottomrule
-\end{tabular}
-\caption{All noncommuting terminals and their common commuting descent products.}
-\label{tab:terminals}
-\end{table}
-Here $b_{8,6}$ is the concatenation of the two reduced-word strings
+Extending Gern's notation \cite[Theorem~2.3.6]{Gern}, we write $w_4$ and
+$w_6$ for his elements of lengths $7$ and $15$ (viewed inside $E_n$ as in
+Remark~\ref{rem:gern}), and $w_7$, $w_8$ for the two new elements of
+lengths $28$ and $50$, where $w_8$ is the concatenation of the two strings
 \[
  (7534231270123456210321432)(5437210321432543721324357).
 \]
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{@{}clrrrl@{}}
+\toprule
+Type & Terminal $b$ & $\ell(b)$ & $x=i(I)$ & $\ell(b)-\ell(x)$ & Source\\
+\midrule
+$E_6$ & $1325213$ & 7 & $135$ & 4 & $w_4$\\
+$E_7$ & $1326213$ & 7 & $136$ & 4 & $w_4$\\
+$E_7$ & $13256213$ & 8 & $1356$ & 4 & $w_4s_5$\\
+$E_7$ & $132543621324356$ & 15 & $1356$ & 11 & $w_6$\\
+$E_7$ & $1325436210321432543621324356$ & 28 & $1356$ & 24 & $w_7$\\
+$E_8$ & $1327213$ & 7 & $137$ & 4 & $w_4$\\
+$E_8$ & $13257213$ & 8 & $1357$ & 4 & $w_4s_5$\\
+$E_8$ & $61327213$ & 8 & $1367$ & 4 & $w_4s_6$\\
+$E_8$ & $132543721324357$ & 15 & $1357$ & 11 & $w_6$\\
+$E_8$ & $1325437210321432543721324357$ & 28 & $1357$ & 24 & $w_7$\\
+$E_8$ & $w_8$ (displayed above) & 50 & $1357$ & 46 & $w_8$\\
+\bottomrule
+\end{tabular}
+\caption{The noncommuting terminals of $E_6$, $E_7$, $E_8$: a reduced
+word, the length, the unique eligible fully commutative lower endpoint
+(Corollary~\ref{cor:eligible}), the gap, and the identification of
+Remark~\ref{rem:gern}. Only the rows of length $15$, Gern's $D_6$ pair,
+have odd gap.}
+\label{tab:terminals}
+\end{table}
 
-\Needspace{7\baselineskip}
 \begin{corollary}\label{cor:eligible}
-Each terminal in Table~\ref{tab:terminals} has the unique eligible FC
-lower endpoint $x$ displayed there.
+Each terminal in Table~\ref{tab:terminals} has the unique eligible fully
+commutative lower endpoint $x$ displayed there.
 \end{corollary}
-\begin{proof}
-The induced support graphs are $D_4$, $D_4\sqcup A_1$, $D_6$, $E_7$,
-or $E_8$. Their independence numbers are respectively $3,4,4,4,4$.
-The common descent set in each row has that cardinality. If $y$ is
-eligible, its support lies in that of $b$ and Lemma~\ref{lem:maxI} forces
-$y$ to be the displayed commuting product $x$. Conversely, $x$ is a
-commuting descent product of $b$, hence a reduced prefix and therefore
-below $b$ in Bruhat order.
+\begin{proof}[Proof of Corollary~\ref{cor:eligible}]
+The induced support graphs have types $D_4$, $D_4\sqcup A_1$, $D_6$,
+$E_7$ and $E_8$, with independence numbers $3,4,4,4,4$: the matchings
+$(1,2)$ in the rows of lengths $7$ and $8$, $(1,2),(3,4)$ in the rows of
+length $15$, $(0,1),(2,3),(4,5)$ in the rows of length $28$ and
+$(0,1),(3,4),(5,6),(2,7)$ in the row of length $50$ bound every independent
+set by the number of support nodes minus the matching size, and the
+displayed descent set attains the bound (compare Remark~\ref{rem:indep}).
+If $y$ is eligible, then $\supp(y)\subseteq\supp(b)$ and
+Lemma~\ref{lem:maxI} forces $y=x$; conversely $x$, a commuting product of
+left descents of $b$, is a reduced prefix of $b$, hence below $b$ and
+eligible.
 \end{proof}
-For a direct check of the independence bounds, use the matching
-$(1,2)$ in the length-$7$ and length-$8$ rows,
-$(1,2),(3,4)$ in the length-$15$ rows,
-$(0,1),(2,3),(4,5)$ in the length-$28$ rows, and
-$(0,1),(3,4),(5,6),(2,7)$ in the length-$50$ row.
-Each bounds an independent set by $|\supp(b)|$ minus the matching size,
-with equality attained by the displayed descent set.
 
-\subsection{Exhaustiveness of the classification}
-All computations use the faithful integral geometric representation.
-For columns $a_j=w(\alpha_j)$, right multiplication by $s_i$ replaces
-\[
- a_i\longmapsto-a_i,\qquad a_j\longmapsto a_j+a_i\quad(j\sim i),
-\]
-and fixes the other columns. Signs determine descents, and
-\eqref{eq:terminaltest} tests terminality on both sides. A noncommuting suffix
-$ts$ is equivalent to $s\in R(w)$ and $t\in R(ws)$.
-In $E_6$ and $E_7$, breadth-first multiplication by all generators until
-closure enumerates the complete group and gives minimal word lengths.
+\begin{remark}[Gern's list plus two]\label{rem:gern}
+The parabolic subgroup of $E_n$ on $\{1,n-1,2,\ldots,n-2\}$ has type
+$D_{n-1}$; sending Gern's labels $1,2,j$ ($3\leq j\leq7$) to $1,n-1,j-1$
+identifies it with Gern's $W(D_{n-1})$, and then the rows of
+Table~\ref{tab:terminals} of lengths $7$, $8$ and $15$ are Gern's bad
+elements $w_4$, $w_4u$ and $w_6$ of \cite[Theorem~2.3.6]{Gern}, while the
+$E_8$ row of length $28$ is $w_7$ in the parabolic subgroup on
+$\{0,\ldots,5,7\}$. The $E_n$ form of \cite[Theorem~2.3.6]{Gern} holds for
+$n=6,7,8$: the noncommuting terminals of $E_n$ are exactly the $w_ku$ with
+$k\in\{4,6,7,8\}$ and $w_k\in W(E_n)$ (so $k=4$ for $n=6$ and $k\leq n$ for
+$n=7,8$), and $u$ a commuting product of generators neither in nor adjacent
+to $\supp(w_k)$; for $n=7,8$, $w_n$ is the unique longest one (matrix
+equality; exhaustive enumeration of $D_5$, $D_6$, $D_7$ for
+the type-$D$ parabolics). Each $w_k$ is an involution with $L=R=I$: $w_4$
+a reflection, $w_6$ a product of three orthogonal reflections, $w_7$ and
+$w_8$ of involution types $4A_1$ and $2A_1$; the palindromic layered
+words, the negated roots and the right weak order chain $w_4<w_6<w_7<w_8$
+are in the certificate (Appendix~\ref{app:certificates}). For $b=w_7,w_8$,
+$\mu(i(I),b)=0$ also follows without parity: $J=I\cup\{0\}$ has type
+$A_2\times A_1^3$ and $\ell(w_0(J))=6$, and $b=u\,w_0(J)\,v$
+length-additively with lengths $11+6+11$ and $11+6+33$ (words in the
+certificate), so $b\leq_{LR}w_0(J)$ \cite[\S2.3]{KL},
+$a(b)\geq a(w_0(J))=6$ for Lusztig's $a$-function
+\cite[Proposition~13.8 and Conjecture~14.2 (P4), (P12), proved for finite
+Weyl groups in \S15.1]{LusztigUP}, \cite[Lemmas~1.3.7 and 1.3.8]{Gern},
+and, as $I\subseteq L(b)$, $P_{i(I),b}=P_{e,b}$ \cite[\S2.3]{KL} has
+degree at most $(\ell(b)-a(b))/2\leq(\ell(b)-6)/2$
+\cite[Proposition~1.3.5]{Gern}, citing \cite[1.3(a)]{LusztigII}, below the
+degree $(\ell(b)-5)/2$ of $\mu(i(I),b)$. Likewise $a(w_6)\geq5$,
+consistent with $a(w_6)=5$ \cite[Proposition~4.5.1]{Gern}.
+\end{remark}
 
-For $E_8$, write the unique length-additive parabolic decomposition
-$w=av$, with $a\in W^J$ and $v\in W_J$, where $W^J$ consists of the
-minimal right coset representatives. Call an element \emph{right-terminal}
-if it has no reduced expression ending in a noncommuting pair.
-
+\subsection{Exhaustiveness, and the proofs of Theorem~\ref{thm:main} and
+Corollary~\ref{cor:finiteADE}}\label{sec:exhaustive}
+All computations use the faithful integral geometric representation: right
+multiplication by $s_i$ replaces the columns $a_j=w(\alpha_j)$ by
+$a_i\mapsto-a_i$ and $a_j\mapsto a_j+a_i$ for $j\sim i$; signs give
+descents and \eqref{eq:terminaltest} tests terminality on both sides. In
+$E_6$ and $E_7$, breadth-first closure under all generators enumerates the
+whole group. For $E_8$, fix $J\subseteq S$ and write $w=av$
+length-additively with $a\in W^J$ (minimal coset representatives) and
+$v\in W_J$; call $w$ \emph{right-terminal} if no reduced word of $w$ ends
+in a noncommuting pair.
 \begin{lemma}[Parabolic pruning]\label{lem:pruning}
 If $w=av$ is right-terminal, then $v$ is right-terminal in $W_J$.
 \end{lemma}
 \begin{proof}
-A reduced expression for $v$ ending in adjacent generators would,
-after prefixing a reduced expression for $a$, give such an expression
-for $w$. Length additivity rules this out.
+A reduced word for $v$ ending in adjacent generators, prefixed by a
+reduced word for $a$, gives such a word for $w$, by length additivity.
 \end{proof}
-Consequently one may enumerate all products $av$ with $v$ right-terminal,
-apply \eqref{eq:terminaltest} in the ambient group, and then test inverses
-to select the two-sided terminals. The recursive implementation follows
-\[
- E_8\supset E_7\supset E_6\supset D_5\supset D_4\supset A_3
- \supset A_2\supset A_1\supset\{e\}.
-\]
-At each step all minimal coset representatives are obtained by closure
-under left multiplication, reducing to right-$J$-minimal form by stripping
-right $J$-descents. This reaches every coset because the left action on
-right cosets is transitive. Starting with the identity, induction using
-Lemma~\ref{lem:pruning} proves completeness at every stage.
-The final $E_7$ parabolic has $576$ right-terminals and $240$ cosets.
-Testing their products gives $2,160$ right-terminals in $E_8$; the inverse
-test leaves exactly the $64$ terminals in
-Proposition~\ref{prop:classification}.
-
-The computation certifies the terminal classification; the eligible
-lower endpoints follow analytically from Corollary~\ref{cor:eligible}.
-In particular, the finite theorem requires neither an enumeration of all
-FC--upper pairs nor a large KL polynomial table. Independent FC
-catalogues provide a supplementary check of the lower-endpoint assertion.
-Their closure test, counts, and certificate locations are given in
-Appendix~\ref{app:certificates}.
+So one enumerates the products $av$ with $v$ right-terminal, applies
+\eqref{eq:terminaltest} in the ambient group and tests inverses. The
+implementation recurses along
+$E_8\supset E_7\supset E_6\supset D_5\supset D_4\supset A_3\supset
+A_2\supset A_1\supset\{e\}$, obtaining the minimal coset representatives
+at each step by closure under left multiplication and stripping of right
+$J$-descents ($W$ acts transitively on $W/W_J$); Lemma~\ref{lem:pruning}
+and induction give completeness at every stage. The final $E_7$ parabolic
+has $576$ right-terminals and $240$ cosets, their products give $2{,}160$
+right-terminals in $E_8$, and the inverse test leaves exactly the $64$
+terminals of Proposition~\ref{prop:classification}. With
+Corollary~\ref{cor:eligible}, the finite theorem thus needs neither an
+enumeration of pairs with FC lower endpoint nor a table of
+Kazhdan--Lusztig polynomials.
 
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
-By Lemma~\ref{lem:reduction}, it suffices to treat terminal upper endpoints.
-For a commuting product $b$, every $x<b$ is a proper subproduct. The
-descent criterion gives zero on non-covers and one on covers.
-For a noncommuting terminal, Table~\ref{tab:terminals} and parity leave
-only the length-$15$ rows. These are the same pair in a $D_6$ parabolic.
-In $E_n$, $n=7,8$, mapping Gern's labels $1,2,3,4,5,6$ to
-$1,n-1,2,3,4,5$ identifies the
-eligible pair with
-\[
- x_6=(-1,-2,4,3,6,5),\qquad w_6=(-1,-6,3,-4,5,-2).
-\]
-Bruhat order and ordinary KL polynomials agree with those in the standard
-parabolic. Gern's Lemma~4.5.5 \cite{Gern} gives $\mu(x_6,w_6)=1$.
-All other non-cover coefficients with terminal upper endpoint are zero.
-Lemma~\ref{lem:reduction} now proves the theorem.
+By Lemma~\ref{lem:reduction} it suffices to treat terminal $b$. If $b$ is
+a commuting product, every $x<b$ is a proper subproduct, so some
+$s\in L(b)\setminus L(x)$ exists and Lemma~\ref{lem:descent} gives
+$\mu(x,b)\in\{0,1\}$. For a noncommuting terminal,
+Corollary~\ref{cor:eligible} and Lemma~\ref{lem:descent} leave one
+candidate non-cover pair $(x,b)$ per row of Table~\ref{tab:terminals}, and
+parity disposes of all rows except the two of length $15$. These are the
+same pair in a $D_6$ parabolic subgroup: in $E_n$, $n=7,8$, mapping Gern's
+labels $1,\ldots,6$ to $1,n-1,2,3,4,5$ identifies it with Gern's
+$x_6=(-1,-2,4,3,6,5)$ and $w_6=(-1,-6,3,-4,5,-2)$ in signed permutation
+notation \cite[Example~1.1.6]{Gern}. Bruhat order and Kazhdan--Lusztig
+polynomials of a standard parabolic subgroup agree with those of $W$, since
+reduced words of $W_J$ are reduced in $W$ and the Hecke algebra of $W_J$ is
+a bar-stable subalgebra containing its Kazhdan--Lusztig basis
+\cite[Chapter~5]{BB}. Gern's Lemma~4.5.5 \cite{Gern}, a computation with du
+Cloux's \textsf{Coxeter}, gives $\mu(x_6,w_6)=1$ (recomputed in
+Appendix~\ref{app:certificates}). Hence every coefficient with terminal
+upper endpoint lies in $\{0,1\}$.
 \end{proof}
 
 \begin{proof}[Proof of Corollary~\ref{cor:finiteADE}]
-The irreducible classification is $A$, $D$, and $E$; combine Green's
-type-$A$ theorem, Gern's type-$D$ theorem, and Theorem~\ref{thm:main}.
-For a direct product $W=\prod_j W_j$, full commutativity is componentwise
-and $P_{x,w}=\prod_jP_{x_j,w_j}$. Suppose $x<w$, and let $m$ be the number
-of components with positive length difference $d_j$ and $d=\sum_jd_j$.
-An even $d$ gives $\mu=0$. For odd $d$ and $m\geq2$, the usual degree
-bound gives
-\[
- \deg P_{x,w}\leq\sum_{d_j>0}\frac{d_j-1}{2}
-       =\frac{d-m}{2}<\frac{d-1}{2},
-\]
-so $\mu=0$. For $m=1$ it is the coefficient in the single nontrivial
-component, which lies in $\{0,1\}$. Noncomparable pairs give zero.
+The irreducible finite simply laced types are $A$, $D$ and $E$; combine
+Green's theorem, Gern's theorem and Theorem~\ref{thm:main}. For a direct
+product $W=\prod_jW_j$, full commutativity is componentwise and
+$P_{x,w}=\prod_jP_{x_j,w_j}$. Let $x<w$, let $d_j$ be the component length
+differences, $d=\sum_jd_j$, and $m$ the number of $j$ with $d_j>0$. Even
+$d$ gives $\mu=0$; for odd $d$ and $m\geq2$,
+$\deg P_{x_j,w_j}\leq(d_j-1)/2$ gives $\deg P_{x,w}\leq(d-m)/2<(d-1)/2$,
+so $\mu=0$; for $m=1$, $\mu(x,w)$ is the coefficient in the single
+nontrivial component, which lies in $\{0,1\}$.
 \end{proof}
 
-\section{The rank-uniform construction}\label{sec:uniform}
-Fix an integer $r\geq3$ and put $n=4r+1$.
+\section{Infinite families}\label{sec:families}
 
-Number the chain
-$0-1-\cdots-(4r-1)$ and attach node $4r$ to node $2$.
-Define a vector $\beta_r$ by
-\[
- (\beta_{r,0},\beta_{r,1},\beta_{r,2},\beta_{r,4r})
-       =(r-1,r,2r-1,r),\qquad
- \beta_{r,j}=2r-\lfloor j/2\rfloor\quad(3\leq j\leq4r-1).
-\]
-Thus the long-arm coordinates are
-$2r-1,2r-2,2r-2,\ldots,1,1$.
-Put
-\[
- I_r=\{0,3,5,\ldots,4r-1,4r\},\qquad a=2r-4.
-\]
-Use the embedded affine $E_8$ subdiagram on $\{0,\ldots,7,4r\}$ and set
-\begin{align*}
- (\delta_0,\ldots,\delta_7)&=(2,4,6,5,4,3,2,1),&\delta_{4r}&=3,\\
- (\gamma_0,\ldots,\gamma_7)&=(1,2,3,2,2,1,1,0),&\gamma_{4r}&=1.
-\end{align*}
-All their other coordinates vanish. Set $T=r_\gamma r_{\gamma+\delta}$.
-For $k\geq0$ define
-\begin{equation}
- \beta_{r,k}=\beta_r-ak\gamma+(ak^2+rk)\delta,
- \qquad b_{r,k}=r_{\beta_{r,k}}.                     \label{eq:uniformroots}
+\subsection{The rank-uniform construction}\label{sec:uniform}
+Fix an integer $r\geq3$, put $n=4r+1$, and use the $E_n$ numbering of
+Section~\ref{sec:intro}, so node $4r$ is attached to node $2$. Define
+$\beta_r$ by its coordinates $(\beta_r)_0=r-1$, $(\beta_r)_1=r$,
+$(\beta_r)_2=2r-1$, $(\beta_r)_{4r}=r$ and $(\beta_r)_j=2r-\lfloor j/2\rfloor$
+for $3\leq j\leq4r-1$, where $(v)_j$ denotes the coefficient of $\alpha_j$
+in $v$; so the long-arm coordinates are $2r-1,2r-2,2r-2,\ldots,1,1$. Put
+$I_r=\{0,3,5,\ldots,4r-1,4r\}$ and $a=2r-4$. On the embedded affine $E_8$
+subdiagram $\{0,\ldots,7,4r\}$ set
+$(\delta_0,\ldots,\delta_7)=(2,4,6,5,4,3,2,1)$, $\delta_{4r}=3$,
+$(\gamma_0,\ldots,\gamma_7)=(1,2,3,2,2,1,1,0)$, $\gamma_{4r}=1$, with all
+other coordinates zero. Set $T=r_\gamma r_{\gamma+\delta}$ and, for
+$k\geq0$,
+\begin{equation}\label{eq:uniformroots}
+ \beta_{r,k}=\beta_r-ak\gamma+(ak^2+rk)\delta,\qquad
+ b_{r,k}=r_{\beta_{r,k}}.
 \end{equation}
 
-\Needspace{9\baselineskip}
-\subsection{The staircase seed}
 \begin{lemma}\label{lem:uniformseed}
-For every $r\geq3$, the vector $\beta_r$ is a real root of $E_{4r+1}$.
+For every $r\geq3$, $\beta_r$ is a real root of $E_{4r+1}$.
 \end{lemma}
 \begin{proof}
-
-Deleting node $0$ gives finite type $D_{4r}$. In an
-orthonormal basis $e_1,\ldots,e_{4r}$ realize its simple roots as
-\[
- \alpha_1=e_1+e_2,\qquad\alpha_{4r}=e_2-e_1,\qquad
- \alpha_j=e_{j+1}-e_j\quad(2\leq j\leq4r-1).
-\]
-Take $z$ orthogonal to this space, with $(z,z)=2-r$, and put
-$\alpha_0=z-\frac12\sum_i e_i$. These vectors have exactly the
-generalized $E_{4r+1}$ Cartan inner products. Expanding the displayed seed
-gives
-\[
- \beta_r=(r-1)z+\sum_{i=1}^{4r}c_i e_i,\qquad
- c_i=\begin{cases}-(r-1)/2&i\text{ odd},\\(3-r)/2&i\text{ even}.
- \end{cases}
-\]
-Since $(\beta_r,\alpha_0)=r-2$, we have
-\[
- s_0\beta_r=z-\tfrac12\sum_{i\text{ odd}}e_i
-                       +\tfrac12\sum_{i\text{ even}}e_i.
-\]
-This equals $F\alpha_0$, where $F$ flips the $2r$ even coordinates.
-An even sign change belongs to $W(D_{4r})$
-\cite[Example 1.1.6]{Gern}. Explicitly, it is a product
-of $r$ double sign changes, each given by
-$r_{e_{4j-2}-e_{4j}}r_{e_{4j-2}+e_{4j}}$, $1\leq j\leq r$.
-Therefore $\beta_r=s_0F\alpha_0$ is a real root for every $r$.
-
+Deleting node $0$ leaves finite type $D_{4r}$; realize its simple roots in
+an orthonormal basis $e_1,\ldots,e_{4r}$ as $\alpha_1=e_1+e_2$,
+$\alpha_{4r}=e_2-e_1$, $\alpha_j=e_{j+1}-e_j$ ($2\leq j\leq4r-1$), take $z$
+orthogonal to them with $(z,z)=2-r$, and put
+$\alpha_0=z-\frac12\sum_ie_i$; these vectors have the Cartan inner
+products of $E_{4r+1}$ and form a basis, the Cartan determinant $9-n$
+being nonzero. Then $\beta_r=(r-1)z+\sum_ic_ie_i$ with $c_i=-(r-1)/2$ for
+odd and $(3-r)/2$ for even $i$, and $(\beta_r,\alpha_0)=r-2$ gives
+$s_0\beta_r=F\alpha_0$, where $F$ flips the $2r$ even coordinates. As
+$F=\prod_{j=1}^r r_{e_{4j-2}-e_{4j}}r_{e_{4j-2}+e_{4j}}\in W(D_{4r})$
+\cite[Example~1.1.6]{Gern}, $\beta_r=s_0F\alpha_0$ is a real root.
 \end{proof}
 
-\subsection{The affine-parabolic action}
-We record the elementary reflection calculation underlying the iteration.
 \begin{lemma}\label{lem:rootaction}
-Suppose that $\gamma$ and $\gamma+\delta$ are real roots, with
-$(\gamma,\gamma)=2$ and $(\gamma,\delta)=(\delta,\delta)=0$.
-For $T=r_\gamma r_{\gamma+\delta}$,
+Suppose $\gamma$ and $\gamma+\delta$ are real roots with
+$(\gamma,\gamma)=2$ and $(\gamma,\delta)=(\delta,\delta)=0$, and let
+$T=r_\gamma r_{\gamma+\delta}$. Then
 \[
- (T-1)\rho=(\rho,\delta)\gamma-
-       ((\rho,\gamma)+(\rho,\delta))\delta,\qquad (T-1)^3=0.
+ (T-1)\rho=(\rho,\delta)\gamma-((\rho,\gamma)+(\rho,\delta))\delta,
+ \qquad(T-1)^3=0,
 \]
-If $(\beta,\delta)=-a$ and $(\beta,\gamma)=-c$, then
+and if $(\beta,\delta)=-a$ and $(\beta,\gamma)=-c$, then
 \begin{equation}\label{eq:rootiterate}
  T^k\beta=\beta-ak\gamma+(ak^2+ck)\delta\qquad(k\geq0).
 \end{equation}
 \end{lemma}
 \begin{proof}
-The first identity follows by multiplying the two reflection formulas.
-Set $N=T-1$. Then $N\delta=0$ and $N\gamma=-2\delta$, so $N^3=0$.
-Moreover $N\beta=-a\gamma+(a+c)\delta$ and $N^2\beta=2a\delta$.
-The binomial expansion of $(1+N)^k$ gives \eqref{eq:rootiterate}.
+Compose the two reflection formulas. With $N=T-1$, $N\delta=0$ and
+$N\gamma=-2\delta$ give $N^3=0$, and $N\beta=-a\gamma+(a+c)\delta$,
+$N^2\beta=2a\delta$; expand $(1+N)^k$ binomially. The lemma holds on the
+whole ambient root space, where $\delta$ need not be in the radical.
 \end{proof}
-The lemma applies on the whole ambient root space. In the indefinite
-constructions below, $\delta$ is null in an affine parabolic but is not
-in the radical of the ambient form.
 
-\subsection{Translated roots and descent sets}
 \begin{lemma}\label{lem:uniformdescents}
-For all $r\geq3$ and $k\geq0$, $\beta_{r,k}=T^k\beta_r$ is a real root
-with every coordinate strictly positive. Its reflection is terminal and
-has both descent sets equal to $I_r$.
+For all $r\geq3$ and $k\geq0$, $\beta_{r,k}=T^k\beta_r$ is a real root with
+every coordinate strictly positive. Its reflection $b_{r,k}$ is terminal
+and has both descent sets equal to $I_r$.
 \end{lemma}
 \begin{proof}
-The vector $\gamma$ is a root of the finite $E_8$ parabolic obtained by
-omitting node $7$, and $\gamma+\delta$ is an affine real root.
-Fixed lowering witnesses are given in Appendix~\ref{app:affinedata}.
-Lemma~\ref{lem:rootaction} applies to $T$. Direct pairing with the seed gives
-\[
- (\beta_r,\gamma)=-r,\qquad(\beta_r,\delta)=-a.
-\]
-Equation~\eqref{eq:rootiterate} gives
-$T^k\beta_r=\beta_{r,k}$. Thus every vector in \eqref{eq:uniformroots} is a real root.
-In the binomial form its first increment is
-$(a+r)\delta-a\gamma$ and its second increment is $2a\delta$.
-Both are coordinatewise nonnegative for $r\geq3$, so every coordinate
-of $\beta_{r,k}$ is strictly positive.
-
-Set $m_j=(\alpha_j,\beta_{r,k})$. The pairings are
-\begin{align*}
- m_0&=r-2,&m_1&=2-r,&m_2&=-1-ak,\\
- m_j&=(-1)^{j+1}(1+ak)&&(3\leq j\leq7),\\
- m_8&=-1-ak^2-rk,\\
- m_j&=(-1)^{j+1}&&(9\leq j\leq4r-1),&m_{4r}&=1+ak.
-\end{align*}
-They are positive exactly on $I_r$. The formula
-\[
- b_{r,k}(\alpha_j)=\alpha_j-m_j\beta_{r,k}
-\]
-is negative exactly when $m_j>0$, since $\beta_{r,k}$ is a strictly
-positive integral real root. Hence $R(b_{r,k})=I_r$, and involutivity
-gives $L(b_{r,k})=I_r$. For every edge incident to $I_r$,
-the sum of its two pairings is nonpositive. At the exceptional edge
-$7-8$ this sum is $-ak(k-1)-rk\leq0$ for integer $k\geq0$; at $8-9$
-it is $-ak^2-rk$. The remaining edge sums are nonpositive by the displayed formulas.
-For $s\in I_r$ and $t\sim s$,
-\[
- b_{r,k}(\alpha_s+\alpha_t)
- =\alpha_s+\alpha_t-(m_s+m_t)\beta_{r,k}>0.
-\]
-Thus deleting a right descent creates no adjacent right descent.
-The reflection is an involution, so the same holds on the left.
-
+The vector $\gamma$ is a root of the finite $E_8$ parabolic subsystem
+obtained by omitting node $7$, and $\gamma+\delta$ is an affine real root
+(lowering words to a simple root are recorded in the certificate,
+Appendix~\ref{app:certificates}). As $(\beta_r,\gamma)=-r$ and
+$(\beta_r,\delta)=-a$, \eqref{eq:rootiterate} gives
+$T^k\beta_r=\beta_{r,k}$, a real root, and the binomial increments
+$(a+r)\delta-a\gamma$ and $2a\delta$ are coordinatewise nonnegative for
+$r\geq3$, so every coordinate of $\beta_{r,k}$ is strictly positive. The
+pairings $m_j=(\alpha_j,\beta_{r,k})$ are
+\begin{gather*}
+ m_0=r-2,\quad m_1=2-r,\quad m_2=-1-ak,\quad m_8=-1-ak^2-rk,\quad
+ m_{4r}=1+ak,\\
+ m_j=(-1)^{j+1}(1+ak)\ \ (3\leq j\leq7),\qquad
+ m_j=(-1)^{j+1}\ \ (9\leq j\leq4r-1),
+\end{gather*}
+positive exactly on $I_r$. Since $\beta_{r,k}>0$,
+$b_{r,k}(\alpha_j)=\alpha_j-m_j\beta_{r,k}$ is negative exactly when
+$m_j>0$, so $R(b_{r,k})=I_r=L(b_{r,k})$ by involutivity. For every edge
+$s\sim t$ with $s\in I_r$ the sum $m_s+m_t$ is nonpositive (at $7-8$ it is
+$-ak(k-1)-rk$, at $8-9$ it is $-ak^2-rk$, elsewhere by inspection), so
+$b_{r,k}(\alpha_s+\alpha_t)=\alpha_s+\alpha_t-(m_s+m_t)\beta_{r,k}>0$,
+which is \eqref{eq:terminaltest}; the left test follows by involutivity.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:uniform}]
-The set $I_r$ is independent of size $2r+1$.
-The matching
-\[
- (0,1),(2,4r),(3,4),(5,6),\ldots,(4r-3,4r-2)
-\]
-has $2r$ edges and leaves one vertex unmatched, proving that $I_r$ is maximum.
-Every reflection has odd length, so Proposition~\ref{prop:parity}
-proves the coefficient assertions.
-If $b_{r,k}$ were FC, Lemma~\ref{lem:maxI} would
-force it to be $i(I_r)$, whose $(-1)$-eigenspace has dimension $2r+1$,
-whereas a real-root reflection has dimension one.
-
-Full support follows because $(\alpha_0,\beta_{r,k})=r-2>0$ and every root coordinate is
-positive: column $0$ of the reflection changes every coordinate row.
-Each simple reflection changes only its own coordinate of a vector, so
-an omitted generator would leave that coordinate row unchanged. Distinctness
-follows from
-\[
- \beta_{r,k,0}=r-1+4k+(4r-8)k^2.
-\]
-Distinct positive norm-two roots give distinct reflections, since
-the image of $1-r_\beta$ is the line spanned by $\beta$. Finally,
-the FC set in each fixed generalized $E_n$ is finite
-\cite[Theorem 5.1]{Stembridge}. Finite Coxeter balls and distinctness
-imply $\ell(b_{r,k})\to\infty$ as $k\to\infty$. For sufficiently large $k$, its length exceeds the maximum FC length
-by more than one, so cover coefficients are also excluded.
+The set $I_r$ is independent of size $2r+1$, and the matching
+$(0,1)$, $(2,4r)$, $(3,4)$, $(5,6)$, \ldots, $(4r-3,4r-2)$ with $2r$ edges
+leaves one vertex unmatched, so $I_r$ is a maximum independent set of
+$E_{4r+1}$ (compare Remark~\ref{rem:indep}). By
+Lemma~\ref{lem:uniformdescents}, $b_{r,k}$ is a terminal reflection with
+$L=R=I_r$, $|I_r|$ is odd, and $\beta_{r,k}$ has $4r+1\geq3$ nonzero
+coordinates, so Lemma~\ref{lem:covers} gives $\mu(x,b_{r,k})=0$ for every
+fully commutative $x$, and $b_{r,k}\notin\FC$ by
+Lemma~\ref{lem:reflections}(iii). Since $m_0=r-2>0$ and $\beta_{r,k}$ is
+positive in every coordinate, column $0$ of $b_{r,k}$ changes every
+coordinate row, whereas omitting a generator would leave its row
+unchanged; so $b_{r,k}$ has full support. Distinct positive roots give
+distinct reflections, and $(\beta_{r,k})_0=r-1+4k+(4r-8)k^2$ gives
+distinctness.
 \end{proof}
 
-At $r=3$ the seed is
+\begin{remark}\label{rem:uniformlengths}
+At $r=3$ the seed is $\beta_3=(2,3,5,5,4,4,3,3,2,2,1,1,3)$ and
+$\ell(b_{3,0})=75$, while the maximum lengths of fully commutative
+elements of $E_{10},\ldots,E_{13}$ are $55$, $66$, $78$ and $92$
+(Appendix~\ref{app:certificates}), so a length-based exclusion of fully
+commutative covers already fails in rank $13$; the lengths
+$\ell(b_{r,k})=8r^2+3+116k$ hold for every pair in the certificate ($r\leq8$,
+$k\leq3$; the supplement's optional extended run adds $r=9$, $10$, $12$) but are not
+needed. The restriction $r\geq3$ is structural: at $r=2$,
+$\beta_2=\delta-\gamma$, $(\alpha_0,\beta_2)=0$, and the descent set has
+even size $4$.
+\end{remark}
+
+\subsection{The affine family}\label{sec:affine}
+Use $E_9$ numbering: chain $0\text{--}1\text{--}\cdots\text{--}7$ with node $8$ attached to $2$;
+the affine node is $7$. Put
 \[
- \beta_3=(2,3,5,5,4,4,3,3,2,2,1,1,3),
+ \delta'=(2,4,6,5,4,3,2,1,3),\qquad
+ \gamma'=(1,1,1,1,1,0,0,0,0),\qquad I'=\{1,3,5,7,8\},
 \]
-giving the $E_{13}$ family. The restriction $r\geq3$ is structural:
-at $r=2$, $(\alpha_0,\beta_2)=0$ and the maximum odd descent set is lost.
-The argument does not give an effective threshold for the eventual
-vanishing in Theorem~\ref{thm:uniform}.
-
-\section{An affine vanishing family}\label{sec:applications}
-
-Use $E_9$ numbering: chain $0-1-\cdots-7$, with node $8$ attached to $2$.
-The affine node is $7$. Coordinates are in the simple-root basis, with
-adjacent pairings $-1$ and squared simple-root lengths $2$. Put
-\begin{align*}
- \delta&=(2,4,6,5,4,3,2,1,3),\\
- \gamma&=(1,1,1,1,1,0,0,0,0),& I&=\{1,3,5,7,8\},\\
- b_0&=312875645234123012856745231.
-\end{align*}
-Let $T=r_\gamma r_{\gamma+\delta}$, so that
-$T(\alpha)=\alpha-(\alpha,\gamma)\delta$, and define
-$b_k=T^k b_0T^{-k}$ for integers $k\geq0$.
+and
+\[
+ c_0=312875645234123012856745231,
+\]
+a reduced word for an involution. Let $T'=r_{\gamma'}r_{\gamma'+\delta'}$,
+so that $T'(\alpha)=\alpha-(\alpha,\gamma')\delta'$, and define
+$c_k=T'^kc_0T'^{-k}$ for $k\geq0$.
 
 \begin{theorem}[Explicit affine family]\label{thm:affine}
-Every $b_k$ is a full-support terminal element in affine type
-$\widetilde E_8$ that is not fully commutative, with
+Every $c_k$ is a full-support terminal element of $W(\widetilde E_8)$ that
+is not fully commutative, with
 \[
- L(b_k)=R(b_k)=I,\qquad \ell(b_k)=27+92k.
+ L(c_k)=R(c_k)=I',\qquad\ell(c_k)=27+92k.
 \]
-For every fully commutative $x\in W(E_9)$, one has $\mu(x,b_k)=0$.
+For every fully commutative $x\in W(\widetilde E_8)$ and every $k\geq0$,
+$\mu(x,c_k)=0$.
 \end{theorem}
 \begin{proof}
-The vector $\delta$ is the null root, and $\gamma$ is a root of the finite
-$E_8$ parabolic obtained by omitting node $7$. Multiplying the displayed word gives $b_0^2=1$.
-Write $B_0$ for the matrix with columns $b_0(\alpha_j)$.
-The matrix is recorded in Appendix~\ref{app:affinedata}. Its columns
-are negative precisely at the indices in $I$, and for every edge incident
-to $I$ the sum of the corresponding columns is a positive root. These checks prove that $b_0$ is terminal on both sides.
-Put
-\[
- d=(2,-1,1,-1,1,-1,1,-1,-1).
-\]
-Computing $(\alpha_j,\gamma-b_0\gamma)$ gives $d_j$, and conjugation yields
-\begin{equation}
- b_k(\alpha_j)=b_0(\alpha_j)+k d_j\delta.                 \label{eq:affinecolumns}
+The vector $\delta'$ is the null root and $\gamma'$ is a root of the
+finite $E_8$ parabolic subsystem obtained by omitting node $7$.
+Multiplying out the displayed word gives $c_0^2=1$. The columns
+$c_0(\alpha_j)$ of the matrix of $c_0$ recorded in the affine certificate
+(Appendix~\ref{app:certificates}; the certificate stores the matrix by rows)
+are negative precisely at the indices
+in $I'$, and for every edge incident to $I'$ the sum of the two columns is
+a positive root; by \eqref{eq:terminaltest} and involutivity, $c_0$ is
+terminal on both sides. Put $d=(2,-1,1,-1,1,-1,1,-1,-1)$. Then
+$(\alpha_j,\gamma'-c_0\gamma')=d_j$, and conjugation gives
+\begin{equation}\label{eq:affinecolumns}
+ c_k(\alpha_j)=c_0(\alpha_j)+kd_j\delta'.
 \end{equation}
-The base columns are negative on $I$ and positive off $I$; $d$ has the
-same sign pattern. Thus the descent set stays $I$. The involution property
-persists under conjugation, giving the same left descent set.
-On every edge $s\sim t$ with $s\in I$, one has $d_s+d_t\geq0$.
-Consequently \eqref{eq:affinecolumns} preserves positivity of $b_k(\alpha_s+\alpha_t)$, which
-is precisely the right-terminal test. Involution gives the left test.
-At $k=0$ the displayed reduced word has full support. At $k\geq1$ each
-descent column is strictly negative in every coordinate. Omitting a
-simple generator would leave its coordinate row unchanged, contradicting
-these columns. Distinctness follows from the nonzero column slopes.
+As $d$ is negative on $I'$ and positive off $I'$, like the base columns,
+both descent sets stay $I'$; on every edge $s\sim t$ with $s\in I'$ one
+has $d_s+d_t\geq0$, so \eqref{eq:affinecolumns} preserves positivity of
+$c_k(\alpha_s+\alpha_t)$, and $c_k$ is terminal. Full support holds at
+$k=0$ by the displayed word and at $k\geq1$ because each descent column is
+strictly negative in every coordinate, whereas omitting a generator would
+leave its row unchanged. The $c_k$ are pairwise distinct by
+\eqref{eq:affinecolumns}, since every $d_j\neq0$.
 
-For completeness, count affine inversions to obtain the exact length.
-For each of the $240$ finite roots $\eta$, write
-$b_0\eta=\eta'+h\delta$ and let $\epsilon(\eta)$ be $0$ for positive finite
-roots and $1$ for negative ones. The positive affine roots with finite
-part $\eta$ are $\eta+n\delta$, $n\geq\epsilon(\eta)$.
-Their contribution to the length of $b_k$ is
-\[
- \max(0,A_\eta+kB_\eta),\quad
- A_\eta=\epsilon(\eta')-h-\epsilon(\eta),\quad
- B_\eta=-\sum_j\eta_j d_j.
-\]
-Finite-root enumeration groups the potentially nonzero contributions
-by $(A_\eta,B_\eta)$ as follows:
+For the length, count affine inversions: for each of the $240$ finite
+roots $\eta$ write $c_0\eta=\eta'+h\delta'$, let $\epsilon(\eta)$ be $0$
+for positive and $1$ for negative $\eta$; the positive affine roots
+$\eta+m\delta'$, $m\geq\epsilon(\eta)$, contribute
+$\max(0,A_\eta+kB_\eta)$ to $\ell(c_k)$, where
+$A_\eta=\epsilon(\eta')-h-\epsilon(\eta)$ and $B_\eta=-\sum_j\eta_jd_j$.
+The nonzero contributions, grouped by $(A_\eta,B_\eta)$, are
 \begin{center}
 \begin{tabular}{@{}rrrrrr@{}}
 \toprule
@@ -658,319 +706,368 @@ Multiplicity & 44 & 8 & 1 & 20 & 6\\
 \bottomrule
 \end{tabular}
 \end{center}
-The remaining $161$ contributions are identically zero for $k\geq0$.
-The sum is $27+92k$. Appendix~\ref{app:certificates} identifies the complete root-string certificate.
+and the remaining $161$ vanish for all $k\geq0$; the sum is $27+92k$.
 
-The set $I$ is a maximum independent set of size $5$. Proposition~\ref{prop:parity}
-therefore gives zero on all FC non-covers. The complete FC catalogue has maximum length $44$, so there are no FC covers when $k\geq1$.
-For $k=0$, delete one letter from the reduced word and retain products
-of length $26$. This gives all $21$ distinct Bruhat covers, none FC.
-It eliminates the cover exception. If $b_k$ were FC,
-Lemma~\ref{lem:maxI} would force $b_k=i(I)$, contradicting
-$\ell(b_k)=27+92k>5$.
+By Remark~\ref{rem:indep}, $I'$ is a maximum independent set, of size
+$5$, and $\ell(c_k)$ is odd, so Proposition~\ref{prop:parity} gives
+$\mu(x,c_k)=0$ for every fully commutative non-cover $x$. Let $x$ be a
+fully commutative cover of $c_k$. If $I'\subseteq L(x)\cap R(x)$, then
+Lemma~\ref{lem:maxI} gives $x=i(I')$ of length $5<\ell(c_k)-1$.
+Otherwise, by the lifting property \cite[Proposition~2.2.7]{BB}, $x=sc_k$
+or $x=c_ks$ for some $s\in I'$, as in the proof of
+Lemma~\ref{lem:covers}. For $k\geq1$ these elements have length
+$26+92k\geq118$, exceeding the maximum length $44$ of a fully commutative
+element of $\widetilde E_8$ (complete catalogue of $44{,}199$ elements,
+Appendix~\ref{app:certificates}, in agreement with \cite[\S5.2]{BJN}). For
+$k=0$, every cover arises by deleting one letter from the displayed
+reduced word, by the strong exchange condition \cite[Theorem~1.4.3]{BB};
+the deletions give exactly $21$ distinct elements of length $26$, none
+fully commutative (Appendix~\ref{app:certificates}). Hence $\mu(x,c_k)=0$ for every fully
+commutative $x$. Finally, $c_k\notin\FC$, since otherwise
+Lemma~\ref{lem:maxI} would force $c_k=i(I')$. (Lemma~\ref{lem:covers}
+does not apply directly: $c_0$ is not a reflection.)
 \end{proof}
 
-The first indefinite rank $E_{10}$ is outside the uniform sequence
-$E_{4r+1}$, $r\geq3$. Appendix~\ref{app:e10} gives a complementary
-full-support terminal reflection family in that rank, with maximum
-common descent set $\{1,3,5,7,9\}$ and the same non-cover vanishing
-conclusion (Proposition~\ref{thm:indefinite}). Standard-parabolic embeddings
-transport the affine and rank-ten examples to larger $E_n$ groups;
-these embedded families retain the support of their original parabolics.
+\subsection{The \texorpdfstring{$E_{10}$}{E10} family}\label{sec:e10}
+The first indefinite rank $E_{10}$ lies outside the sequence $E_{4r+1}$.
+Embed the affine subdiagram on $\{0,\ldots,7,9\}$ and take
+$\hat\delta=(2,4,6,5,4,3,2,1,0,3)$, $\hat\gamma=(1,2,3,2,2,1,1,0,0,1)$ (so
+$\hat\gamma$ differs from $\gamma'$ of Section~\ref{sec:affine}),
+$\hat\beta_0=(3,7,10,9,7,6,4,3,1,6)$, $\hat I=\{1,3,5,7,9\}$,
+$\hat T=r_{\hat\gamma}r_{\hat\gamma+\hat\delta}$, and for $k\geq0$
+\begin{equation}\label{eq:e10roots}
+ \hat\beta_k=\hat\beta_0-k\hat\gamma+(k^2+3k)\hat\delta,\qquad
+ \hat b_k=r_{\hat\beta_k}.
+\end{equation}
+\begin{proposition}\label{prop:e10}
+The reflections $\hat b_k$, $k\geq0$, are pairwise distinct full-support
+terminal elements of $W(E_{10})$ that are not fully commutative, with
+$L(\hat b_k)=R(\hat b_k)=\hat I$. For every fully commutative $x$ and every
+$k\geq0$, $\mu(x,\hat b_k)=0$.
+\end{proposition}
+\begin{proof}
+A lowering word in the certificate (Appendix~\ref{app:certificates})
+reduces $\hat\beta_0$ to $\alpha_9$; $\hat\gamma$, $\hat\gamma+\hat\delta$
+are real roots of the embedded affine subsystem; and
+$(\hat\beta_0,\hat\gamma)=-3$, $(\hat\beta_0,\hat\delta)=-1$, so
+Lemma~\ref{lem:rootaction} gives $\hat\beta_k=\hat T^k\hat\beta_0$ with
+nonnegative increments $4\hat\delta-\hat\gamma$, $2\hat\delta$, whence
+$\hat\beta_k>0$ in every coordinate. The pairings
+\[
+ ((\alpha_j,\hat\beta_k))_{j=0}^9
+ =(-1,\,1,\,-2-k,\,1+k,\,-1-k,\,1+k,\,-1-k,\,1+k,\,-1-k^2-3k,\,2+k)
+\]
+are positive exactly on $\hat I$ with nonpositive sums over adjacent
+entries, giving both descent sets and terminality by
+\eqref{eq:terminaltest}; $(\alpha_1,\hat\beta_k)=1$ gives full support
+(column $1$ changes every row) and $(\hat\beta_k)_0=2k^2+5k+3$
+distinctness. $\hat I$ is a maximum independent set of odd size $5$
+(Remark~\ref{rem:indep}) and $\hat\beta_k$ has ten nonzero coordinates, so
+Lemma~\ref{lem:covers} gives $\mu(x,\hat b_k)=0$ for every fully
+commutative $x$, and $\hat b_k\notin\FC$ by Lemma~\ref{lem:reflections}(iii).
+\end{proof}
+Standard parabolic embeddings transport the $\widetilde E_8$ and $E_{10}$
+families to larger $E_n$, with the supports of the smaller parabolic
+subgroups.
 
-\section{Scope}\label{sec:transfer}
-\paragraph{Interval transfer.}
-Assuming the combinatorial-invariance theorem of \cite[Theorem 1.1]{CI},
-an interval isomorphic to a finite simply laced FC-bottom interval has
-$\mu\in\{0,1\}$ by Corollary~\ref{cor:finiteADE}. The same observation
-transfers the uniform and fixed-rank bounds to intervals admitting those
-models, with $\mu=0$ for an affine-family model. Indeed, the polynomial
-and relative rank are preserved. The target bottom need not be FC.
-This is a formal conditional consequence; no new family of cross-type
-interval isomorphisms is asserted.
+\section{Complements and open problems}\label{sec:complements}
 
-\paragraph{Full polynomials.}
-Vanishing of $\mu$ does not imply $P=1$. In $D_4$, let $x$ be the product
-of the three leaves and let $c$ be the center. The element $b=xcx$ has
-maximum common commuting descents and an even gap $\ell(b)-\ell(x)=4$,
-but $P_{x,b}=1+2q$ \cite[\S3, preprint Corollary 3]{Mongelli}.
-Thus the distinction between the leading coefficient and the full
-polynomial is essential, even for the descent mechanism used here.
+\subsection{Necessity of the fully commutative hypothesis}
+A complete table of Kazhdan--Lusztig polynomials of $W(E_6)$ ($51{,}840$
+elements; Appendix~\ref{app:certificates}) gives $\max\mu(x,w)=10$ over
+all pairs, attained for instance by $x=01254012010$ ($\ell=11$, not FC)
+and $w=123012523412301251234012$ ($\ell=24$, full support), with
+\[
+ P_{x,w}=1+13q+59q^2+121q^3+125q^4+61q^5+10q^6.
+\]
+Exactly $1{,}386$ pairs
+have $\mu\geq2$ ($400$, $556$, $310$, $108$, $4$ and $8$ pairs with
+$\mu=2,3,4,5,6,10$), all with non-FC lower endpoint, while all $6{,}431$
+nonzero values with fully commutative lower endpoint equal $1$, a
+brute-force confirmation of Theorem~\ref{thm:main} for $E_6$ (by parabolic
+inclusion, $\mu\geq10$ occurs in $E_7$ and $E_8$ as well). Full
+commutativity of the upper endpoint alone does not suffice either:
+$x=5343010$ (not FC) and $w=0125342312501234$ (FC, $\ell=16$) have
+\[
+ P_{x,w}=1+8q+22q^2+20q^3+5q^4,\qquad \mu(x,w)=5.
+\]
+
+\subsection{The bound fails in affine type}
+In $\widetilde D_4$, with $x$ the product of the four leaves and $c$ the
+centre, $w=xcx$ has $P_{x,w}=1+3q+2q^2$ and $\mu(x,w)=2$; this star family
+is covered by Mongelli \cite[Corollary~2 (arXiv v1, p.~10)]{Mongelli}, and
+the value is recomputed in Appendix~\ref{app:certificates}. Hence
+Corollary~\ref{cor:finiteADE} is sharp within simply laced type, and the
+universal form of Green's question has a negative answer. Vanishing of
+$\mu$ does not mean $P=1$: in finite $D_4$, with $x$ the product of the
+three leaves, $b=xcx$ has maximum common commuting descents and even gap
+$4$, so $\mu(x,b)=0$, but $P_{x,b}=1+2q$
+\cite[Corollary~3 (arXiv v1, \S4)]{Mongelli}.
+
+\subsection{Terminals in affine \texorpdfstring{$E_8$}{E8} beyond the family}
+\label{sec:affineextra}
+The reflection
+\[
+ w=r_\beta=875634523412301282341230128567453,\qquad
+ \beta=(1,2,3,3,2,2,1,1,2),
+\]
+of length $33$ is a full-support terminal with $L(w)=R(w)=\{3,5,7,8\}$,
+which is not a maximum independent set, so Proposition~\ref{prop:parity}
+does not apply. It has exactly five eligible fully commutative lower
+endpoints, all with $\deg P_{x,w}=13$:
+\begin{center}\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+$x$ & $8753$ & $87530$ & $87531$ & $875301$ & $875310$\\
+gap $\ell(w)-\ell(x)$ & $29$ & $28$ & $28$ & $27$ & $27$\\
+$\mu(x,w)$ & $0$ & $0$ & $0$ & $1$ & $1$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The right extensions $ws_0$ and $ws_1$ of length $34$ are terminal
+involutions with $L=R=\{0,3,5,7,8\}$, respectively $\{1,3,5,7,8\}$, each a
+maximum independent set, each with a unique eligible fully commutative
+lower endpoint ($87530$, respectively $87531$, gap $29$, $\deg P=14$) and
+$\mu=1$, so these two pairs satisfy every hypothesis of
+Proposition~\ref{prop:parity} except parity. All values found lie in
+$\{0,1\}$. The polynomials and the sizes of the lower ideals and
+quotients are recorded in the certificate
+(Appendix~\ref{app:certificates}); the computation runs the
+Kazhdan--Lusztig recursion on the parabolic quotient $W/W_{R(w)}$, which
+is legitimate because $P_{x,w}=P_{xs,w}$ for $s\in R(w)$
+\cite[\S2.3]{KL}.
+
+\subsection{Conditional interval transfer}
+Combinatorial invariance, conjectured independently by Lusztig and Dyer
+\cite{Dyer}, asserts that $P_{x,w}$ depends only on the poset $[x,w]$; it
+is known for lower intervals \cite{Brenti04,BCM,Delanoy}, for the
+coefficient of $q$ \cite{Patimo,BGL} and for short intervals
+\cite{Incitti,BGL,EMS} (see also \cite{BBDVW}), and a complete proof for
+arbitrary Coxeter systems is claimed in the unrefereed machine-generated
+OpenAI preprint \cite[Theorem~1.1]{CI}. Assuming it, the bound of Corollary~\ref{cor:finiteADE} and the
+vanishing for the families of Section~\ref{sec:families} hold for every
+Bruhat interval in any Coxeter group that is isomorphic as a poset to one of
+the intervals concerned; the formal conditional consequences for Gern's
+intervals $[x_n,w_n]$ in $D_n$ are Theorem~2.1 and Corollary~2.2 of the
+archived note \texttt{kl-transfer} (Appendix~\ref{app:certificates}). No new
+interval isomorphisms are asserted.
+
+\subsection{Open problems}
+(1) Is $\mu(x,w)\in\{0,1\}$ for every fully commutative $x$ and every
+$w\in W(\widetilde E_8)$? All values computed so far, including those of
+Section~\ref{sec:affineextra}, lie in $\{0,1\}$.
+(2) Classify the terminal elements of $\widetilde E_8$, and of the
+indefinite groups $E_n$, up to translation.
+(3) Determine $\mu$ for the translated length-$33$ family
+$r_{\beta+k\delta'}$, $k\geq1$.
+(4) Settle Green's question for $F_4$, $H_3$ and $H_4$.
+(5) Give an effective description of all noncommuting terminals of $E_n$
+for $n\geq9$; Theorem~\ref{thm:uniform} shows that no finite list exists.
+
+\section*{Use of AI tools}
+This work was carried out with substantial assistance from large language
+model systems. OpenAI's GPT-6.1 Sol and GPT-6 Astra, run as teams of
+agents, performed the literature searches, proposed and drafted the
+constructions and proofs, wrote the enumeration and verification code,
+produced internal review notes, and drafted the text. Anthropic's Claude
+Fable 5.1 then carried out an independent adversarial review: it
+re-derived every lemma against the primary sources, recomputed every
+computational claim with separately written code, checked every citation,
+and found the strengthening of Theorem~\ref{thm:uniform}, the data in
+Section~\ref{sec:complements}, and the attribution corrections incorporated
+here. The author directed the work, checked the proofs, computations and
+references, and takes full responsibility for the content. The complete
+workflow, including the prompts used, the internal review notes (which are
+machine-generated and are not peer review), and the review code, is
+recorded in the repository cited in Appendix~\ref{app:certificates}.
 
 \appendix
 \section{Computational certificates}\label{app:certificates}
-The terminal classification, the affine inversion count, and the affine
-FC-catalogue and cover checks are computational parts of the proofs.
-All arithmetic is exact. For $E_6$ and $E_7$, one
-implementation stores simple-root images as root indices, and an
-independent implementation stores integer columns; neither imports the other.
-For $E_8$, two different parabolic decompositions certify the same terminal
-list. The $E_7$ method uses $138,240$ candidates at its final stage and
-$143,660$ across the entire recursive chain. The independent $D_7$ method
-uses $280$ right-terminals and $2,160$ cosets, giving $604,800$ candidates.
-
-For the single inherited $D_6$ coefficient, the code also reproduces
-\[
- P_{x_6,w_6}(q)=1+6q+11q^2+6q^3+q^4+q^5.
-\]
-The verifier \path{computations/verify_certificate.py} checks all
-$24,245$ dependency records in
-\path{results/d6-recurrence-certificate.json}, every correction term,
-all right-descent recurrences at the target pair, and its $R$-polynomial
-reciprocity identity, without calling the KL evaluator. This confirms the
-cited value; the value itself is Gern's result.
-
-The supplementary FC catalogues use the recurrence
-\begin{equation}\label{eq:FCrecurrence}
- w\in W_{\mathrm{FC}}\quad\Longleftrightarrow\quad
- R(w)\text{ is commuting and }ws\in W_{\mathrm{FC}}
-      \text{ for every }s\in R(w).
-\end{equation}
-Matsumoto's theorem justifies the test: a noncommuting braid before the
-last letter survives in a shorter prefix, while a length-three braid
-ending at the last letter gives adjacent right descents. Closure under
-all ascents passing the test is exhaustive, since every FC element has
-FC weak predecessors. Bruhat comparison and both descent inclusions then
-check the eligible endpoint assertion independently of
-Corollary~\ref{cor:eligible}. These FC catalogues are supplementary for
-the finite theorem, but essential for excluding covers in the affine
-family of Theorem~\ref{thm:affine}.
-
-The $D_7$ cosets are obtained from the orbit of the integral fundamental weight
-\[
- (4,7,10,8,6,4,2,5).
-\] Its simple-root pairings are $1$ at node $0$
-and zero elsewhere. Distinct orbit images give distinct cosets; the
-orbit has the full index $2,160$, and the stored representatives have
-no right descent in $D_7$. These checks establish completeness and minimality.
-
-\begin{center}
-\begin{tabular}{@{}lrrr@{}}
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.80\textwidth}@{}}
 \toprule
-Check & $E_6$ & $E_7$ & $E_8$\\
+Result & Programs; certificates\\
 \midrule
-Roots & 72 & 126 & 240\\
-FC elements & 662 & 2,670 & 10,846\\
-Noncommuting terminals & 1 & 4 & 6\\
-Commuting terminals & 22 & 36 & 58\\
-FC star moves checked & 3,620 & 16,776 & 77,476\\
+$E_6$, $E_7$ & \texttt{enumerate\_bad.cpp}, \texttt{verify\_e6\_independent.py},
+ \texttt{verify\_e7\_matrices.cpp}, \texttt{verify\_exceptional.py};
+ \texttt{e6\_bad.json}, \texttt{e7\_bad.json}, \texttt{e6-independent-certificate.json}, \texttt{e7-independent-certificate.json}\\
+$E_8$ & \texttt{parabolic\_terminals.cpp}, \texttt{recursive\_terminals.cpp},
+ \texttt{verify\_outputs.py}, \texttt{e8\_d7\_cosets.cpp}, \texttt{verify\_e8.py};
+ \texttt{e8-recursive.json}$^\dagger$, \texttt{e8-d7-terminals.json}$^\dagger$\\
+Table~\ref{tab:terminals}, Remark~\ref{rem:gern} & \texttt{check\_finite\_descents.py}, \texttt{terminal\_structure.py}$^*$;
+ \texttt{finite-descents.json}, \texttt{terminal-structure-certificate.json}\\
+$D_6$, $D_8$ & \texttt{verify\_certificate.py}, \texttt{sparse\_kl.py},
+ \texttt{d8\_gern\_kl.cpp}$^*$; \texttt{d6-recurrence-certificate.json}, \texttt{d8-gern-certificate.json}\\
+Uniform family & \texttt{referee\_verify.py}, \texttt{uniform\_family\_checks.py}$^*$,
+ \texttt{fc\_maxima.cpp}$^*$; \texttt{referee-certificate.json}$^\dagger$, \texttt{uniform-family-certificate.json}, \texttt{fc-maxima-certificate.json}\\
+Affine $\widetilde E_8$ & \texttt{affine\_proof.py}, \texttt{verify\_families.py},
+ \texttt{verify\_fc\_catalogue.py}, \texttt{fc\_catalogue.cpp};
+ \texttt{proved-affine-certificate.json}, \texttt{fc-cover-certificate.json}$^\dagger$\\
+$E_{10}$ & \texttt{verify\_indefinite\_e10.py}; \texttt{e10-certificate.json}$^\dagger$\\
+Section~\ref{sec:complements} & \texttt{e6\_mu\_table.cpp}$^*$, \texttt{e9\_quotient\_kl.cpp}$^*$,
+ \texttt{verify\_affine\_d4\_r.py};
+ \texttt{e6-mu-table.json}, \texttt{e9-odd-gap-certificate.json}, \texttt{affine-d4-independent.json}\\
 \bottomrule
 \end{tabular}
-\end{center}
-The full $E_6$ and $E_7$ searches contain $51,840$ and $2,903,040$
-elements, with maximum lengths $36$ and $63$. Their length distributions
-agree with the Weyl-group Poincar\'e products. The FC counts agree with
-\cite[\S5.1]{BJN}. These are consistency checks; exhaustiveness follows
-from the closure and pruning arguments in Section~\ref{sec:finite}.
-An independent $E_8$ verifier checks the terminal words across both
-decompositions, lengths by all $120$ positive-root inversions, both terminal
-tests, complete FC closure, and every eligible lower endpoint. It also
-checks the $D_7$ parabolic/coset Poincar\'e product against the $E_8$
-exponents $1,7,11,13,17,19,23,29$.
+\caption{Programs and certificates of the supplement (the zip of release
+v0.2.0), by result. Starred programs were written for the review and share no
+code with the others; daggered certificates are written by the runner, not
+shipped as inputs.}
+\label{tab:programs}
+\end{table}
+The following computations are parts of proofs: the terminal
+classification of Proposition~\ref{prop:classification}; the reducedness,
+involution and descent data of the words in Table~\ref{tab:terminals} and
+of $c_0$, whose matrix (hence the columns $c_0(\alpha_j)$) is recorded; the
+$D_6$ polynomial
+$P_{x_6,w_6}=1+6q+11q^2+6q^3+q^4+q^5$; the complete fully commutative
+catalogue of $\widetilde E_8$ ($44{,}199$ elements, maximum length $44$)
+and the cover check for $c_0$; and the lowering words certifying the real
+roots $\gamma$, $\gamma+\delta$, $\hat\beta_0$, $\hat\gamma$ and
+$\hat\gamma+\hat\delta$. Everything else is a cross-check or a complement:
+the fully commutative catalogues of $E_6$, $E_7$, $E_8$ (agreeing with
+\cite{Stembridge98} and \cite[\S5.1]{BJN}), Poincar\'e-polynomial checks,
+finite-rank checks of the uniform family, the structure data of
+Remark~\ref{rem:gern}, the fully commutative catalogues and maxima of
+$E_{10}$--$E_{13}$, the data of Section~\ref{sec:complements}, and the
+$D_8$ polynomial
+$P_{x_8,w_8}=P_{e,w_8}=1+12q+59q^2+154q^3+233q^4+221q^5+147q^6+70q^7
++20q^8+2q^9$ of the archived note \texttt{kl-transfer}. All arithmetic is
+exact. For $E_6$ and $E_7$ two programs sharing no code (root indices
+versus integer columns) give full enumerations agreeing with the
+Poincar\'e products; for $E_8$ the recursive pruning engine and a separate
+enumeration along a $D_7$ parabolic reproduce the same list, sharing only
+their packed root representation, an integer-matrix verifier rechecks
+every terminal word, length, terminal test and eligible lower endpoint,
+and the reviewers' own enumeration along four parabolic chains, among them
+the $E_7$ and $D_7$ chains above (code under
+\texttt{research/claude-review-2026-10-07/verification-code/} in the
+repository, not part of the zip), gives the same list. The $D_6$
+polynomial comes from a sparse Kazhdan--Lusztig recursion checked through
+all $24{,}245$ dependency records of the saved certificate (a consistency
+check, the checker sharing group arithmetic with the generator);
+\texttt{d8\_gern\_kl.cpp} recomputes it with independent code in the
+signed-permutation model and, in the extended run, in the geometric
+representation as well, and the reviewers' code just cited recomputes it in
+both models and directly inside $E_7$ and $E_8$. The uniform root proof is
+symbolic; a verifier checks
+Lemmas~\ref{lem:uniformseed}--\ref{lem:uniformdescents} symbolically and
+the finite-rank matrices for $3\leq r\leq40$. The starred programs of
+Table~\ref{tab:programs}, written for the review, share no code with the
+others.
 
-The affine $E_9$ FC catalogue has $44,199$ elements and maximum length
-$44$. Its closure is certified by \eqref{eq:FCrecurrence}. Deleting one
-letter from the length-$27$ base word and retaining length-$26$ products
-gives exactly $21$ distinct Bruhat covers, none fully commutative. Independent root matrices
-also verify all $240$ affine inversion-string records used in
-Theorem~\ref{thm:affine}.
+Programs, inputs and output certificates (Table~\ref{tab:programs}) are
+archived with SHA-256 checksums in release v0.2.0 of the repository
+\texttt{github.com/tygern/kl} (zip \texttt{exceptional-leading-proof.zip});
+a single runner rebuilds every classification and verifies every
+certificate with Python 3.10+ and a C++17 compiler and no other
+dependencies; copies of the daggered certificates of Table~\ref{tab:programs},
+which the runner writes rather than reads, are kept in the repository. The
+archived research notes of
+Section~\ref{sec:complements} are in \texttt{research/archive/notes/}.
 
-The self-contained proof supplement is distributed as
-\path{exceptional-leading-proof.zip} in
-\href{https://github.com/tygern/kl/releases/tag/v0.1.0}{GitHub release v0.1.0}.
-It includes the manuscript,
-the proof sources and fixed inputs, an expected-output summary, and a
-SHA-256 manifest. The following paths are relative to its
-\path{payload/} directory; output certificates are generated in an
-isolated working copy by the runner.
-\begin{center}\small
-\begin{tabular}{@{}ll@{}}
-\toprule
-Result & Programs and output certificates\\
-\midrule
-$E_6,E_7$ & \path{research/verify_exceptional.py}\\
- & \path{results/e6-independent-certificate.json}\\
- & \path{results/e7-independent-certificate.json}\\
-$E_8$ & \path{research/en_e8/reproduce.py}\\
- & \path{research/en_independent/verify_e8.py}\\
- & \path{results/e8-independent-audit.json}\\
-Affine $E_9$ & \path{affine_proof.py}\\
- & \path{research/en_affine_referee/verify_fc_catalogue.py}\\
- & \path{research/en_affine_referee/fc-cover-certificate.json}\\
-Uniform family & \path{research/en_uniform/referee_verify.py}\\
- & \path{research/en_uniform/referee-certificate.json}\\
-$E_{10}$ & \path{research/en_affine_referee/verify_indefinite_e10.py}\\
- & \path{research/en_affine_referee/e10-certificate.json}\\
-\bottomrule
-\end{tabular}
-\end{center}
-The uniform root proof is symbolic. Arithmetic checks in finitely many
-ranks are supplementary, and do not replace the all-rank argument.
-After extracting the archive, run \path{python3 run_proofs.py} from its
-top-level directory, using Python 3.10 or later and an installed C++17
-compiler. No external Python packages, network access, or package
-installation are required. The runner checks every input hash and then
-rebuilds the flat and recursive $E_6,E_7,E_8$ terminal classifications,
-the independent $E_8/D_7$ classification, and the needed FC catalogues.
-It verifies the uniform identities, affine family and cover exclusion,
-$E_{10}$ family, and finite matching certificates. It also verifies the
-saved $D_6$ recurrence certificate; it does not regenerate that polynomial
-with a KL evaluator. The resulting mathematical summaries and terminal
-matrices must agree with the supplied expectations.
-
-The default mode checks the older full-group $E_6,E_7$ snapshots against
-the regenerated parabolic classifications. The command
-\path{python3 run_proofs.py --full} additionally regenerates those
-full-group root-index and integer-matrix searches. Assertions must remain
-enabled. Each run retains its working copy, commands, output certificates,
-and logs. The recursive engine shares root arithmetic with the flat
-engine; the $D_7$ search and integer-matrix verifiers are separate
-implementations. The proof-only entry point excludes random discovery
-searches and capped unresolved coefficient probes.
-
-\section{Seed data}\label{app:affinedata}
-The matrix of the affine base word, with columns $b_0(\alpha_j)$, is
-\[
- B_0=\begin{pmatrix}
-0 & 0 & 1 & -1 & 1 & 0 & 0 & 0 & -1 \\ 
-1 & 0 & 2 & -2 & 2 & -1 & 1 & -1 & -2 \\ 
-2 & -1 & 3 & -3 & 3 & -2 & 2 & -1 & -2 \\ 
-2 & -1 & 2 & -2 & 3 & -2 & 2 & -1 & -2 \\ 
-2 & -1 & 1 & -1 & 2 & -1 & 1 & -1 & -1 \\ 
-2 & -1 & 1 & -1 & 1 & 0 & 1 & -1 & -1 \\ 
-1 & -1 & 1 & 0 & 0 & 0 & 1 & -1 & -1 \\ 
-1 & -1 & 1 & 0 & 0 & 0 & 0 & 0 & -1 \\ 
-1 & -1 & 2 & -2 & 2 & -1 & 1 & -1 & -1
- \end{pmatrix}.
-\]
-
-For the $E_{10}$ seed, successive simple reflections in the following
-order reduce $\beta_0$ to $\alpha_9$:
-\begin{align*}
- &1,3,5,4,7,6,5,9,2,1,0,3,2,1,4,3,2,\\
- &5,6,7,8,9,2,1,0,3,2,1,4,3,2,5,4,3,6,\\
- &5,4,7,6,5,9,2,1,0,3,2,1,4,3,2.
-\end{align*}
-Each intermediate vector is nonnegative and its height decreases.
-For the uniform finite-$E_8$ root $\gamma$, the fixed sequence
-\[
- 2,1,0,4,3,2,1,6,5,4,3,2
-\]
-reduces it to the branch simple root. For $\gamma+\delta$, concatenate
-that sequence with
-\begin{align*}
- &b,2,1,0,3,2,1,4,3,2,5,4,3,6,5,4,7,6,5,\\
- &b,2,1,0,3,2,1,4,3,2,
-\end{align*}
-where $b$ denotes the branch label ($4r$ or $9$); the concatenated sequence
-again ends at the branch simple root. These fixed witnesses
-also certify the affine real-root input to Lemma~\ref{lem:rootaction}.
-\section{An indefinite \texorpdfstring{$E_{10}$}{E10} supplement}\label{app:e10}
-Embed the affine subdiagram on $\{0,\ldots,7,9\}$ and take
-\[
- \delta=(2,4,6,5,4,3,2,1,0,3),\qquad
- \gamma=(1,2,3,2,2,1,1,0,0,1).
-\]
-Here $\gamma$ differs from the root used in the affine family of
-Section~\ref{sec:applications}.
-Set
-\[
- \beta_0=(3,7,10,9,7,6,4,3,1,6),\qquad I=\{1,3,5,7,9\},
-\]
-set $T=r_\gamma r_{\gamma+\delta}$ and, for integers $k\geq0$, define
-\begin{equation}\label{eq:e10roots}
- \beta_k=\beta_0-k\gamma+(k^2+3k)\delta,\qquad b_k=r_{\beta_k}.
-\end{equation}
-\begin{proposition}\label{thm:indefinite}
-For integers $k\geq0$, the reflections in \eqref{eq:e10roots} are
-distinct full-support terminal elements of $W(E_{10})$, with
-$L(b_k)=R(b_k)=I$. For every fully commutative $x$,
-$\mu(x,b_k)\in\{0,1\}$, and $\mu(x,b_k)=0$ whenever
-$x<b_k$ and $\ell(b_k)-\ell(x)>1$.
-\end{proposition}
-\begin{proof}
-The lowering word in Appendix~\ref{app:affinedata} reduces $\beta_0$
-to $\alpha_9$, proving real-root membership. The roots $\gamma$ and
-$\gamma+\delta$ are real roots of the embedded affine parabolic, with
-$(\beta_0,\gamma)=-3$ and $(\beta_0,\delta)=-1$.
-Lemma~\ref{lem:rootaction} gives $\beta_k=T^k\beta_0$.
-The binomial increments $4\delta-\gamma$ and $2\delta$ are nonnegative,
-so every coordinate of $\beta_k$ is strictly positive.
-Its simple-root pairings are
-\begin{align*}
- ((\alpha_j,\beta_k))_{j=0}^9
- ={}&(-1,1,-2-k,1+k,-1-k,1+k,-1-k,1+k,\\
-    &\hspace{30mm}-1-k^2-3k,2+k).
-\end{align*}
-The positive entries occur exactly on $I$, and their sums with adjacent
-entries are nonpositive. The reflection formula and
-\eqref{eq:terminaltest} give both descent sets and terminality.
-The constant pairing $(\alpha_1,\beta_k)=1$ makes column $1$ change
-every coordinate row, proving full support. The coordinate
-$\beta_{k,0}=2k^2+5k+3$ proves distinctness.
-The set $I$ is a maximum independent set of size $5$. Reflection parity and
-Proposition~\ref{prop:parity} give the coefficient assertions.
-As in Theorem~\ref{thm:uniform}, the reflections are not FC because their
-$(-1)$-eigenspaces have dimension one, whereas that of $i(I)$ has dimension five.
-\end{proof}
-The base reflection has length $101$. No formula for the lengths of the
-indefinite families is needed. Standard-parabolic embeddings transport
-the $E_9$ and $E_{10}$ families to larger generalized $E_n$ groups;
-their supports remain those of the smaller parabolics.
-
-\begin{thebibliography}{99}
-\bibitem{KL} D. Kazhdan and G. Lusztig,
-Representations of Coxeter groups and Hecke algebras,
-Invent. Math. 53 (1979), 165--184.
-\href{https://doi.org/10.1007/BF01390031}{doi:10.1007/BF01390031}.
-\bibitem{Gern} T. C. Gern, Leading coefficients of Kazhdan--Lusztig
-polynomials in type $D$, Ph.D. thesis, University of Colorado Boulder (2013).
-\href{https://arxiv.org/abs/1304.6074}{arXiv:1304.6074}.
-\bibitem{Laird} T. Laird, A Study of $T$-Avoiding Elements of Coxeter
-Groups, M.S. thesis, Northern Arizona University (2016).
-\href{https://in.nau.edu/department-mathematics-statistics/wp-content/uploads/sites/377/2018/08/LairdThesis-ek.pdf}{University repository}.
-\bibitem{Shi} J.-Y. Shi, Fully commutative elements in the Weyl and affine
-Weyl groups, J. Algebra 284 (2005), 13--36.
-\bibitem{GreenLeading} R. M. Green, Leading coefficients of Kazhdan--Lusztig
-polynomials and fully commutative elements, J. Algebraic Combin. 30 (2009),
-165--171. \href{https://arxiv.org/abs/0801.1650}{arXiv:0801.1650}.
-\bibitem{GreenJones} R. M. Green, Generalized Jones traces and
-Kazhdan--Lusztig bases, J. Pure Appl. Algebra 211 (2007), 744--772.
-\href{https://arxiv.org/abs/math/0509362}{arXiv:math/0509362}.
-\bibitem{GreenLosonczy} R. M. Green and J. Losonczy, Fully commutative
-Kazhdan--Lusztig cells, Ann. Inst. Fourier 51 (2001), 1025--1045.
-\href{https://arxiv.org/abs/math/0102003}{arXiv:math/0102003}.
-\bibitem{GeckPyCox} M. Geck, PyCox: Computing with (finite) Coxeter groups
-and Iwahori--Hecke algebras, LMS J. Comput. Math. 15 (2012), 231--256.
-\href{https://arxiv.org/abs/1201.5566}{arXiv:1201.5566}.
-\bibitem{GeckHalls} M. Geck and A. Halls, On the Kazhdan--Lusztig cells
-in type $E_8$, Math. Comp. 84 (2015), 3029--3049.
-\href{https://arxiv.org/abs/1401.6804}{arXiv:1401.6804}.
-\bibitem{Fan} C. K. Fan, Structure of a Hecke algebra quotient,
-J. Amer. Math. Soc. 10 (1997), 139--167.
-\href{https://doi.org/10.1090/S0894-0347-97-00222-1}{doi:10.1090/S0894-0347-97-00222-1}.
-\bibitem{GreenEn} R. M. Green, On the Markov trace for Temperley--Lieb
-algebras of type $E_n$, J. Knot Theory Ramifications 18 (2009), 237--264.
-Definition 4.1 and Proposition 4.4 in the 2007 preprint.
-\href{https://arxiv.org/abs/0704.0283}{arXiv:0704.0283}.
-\bibitem{Stembridge} J. R. Stembridge, On the fully commutative elements
-of Coxeter groups, J. Algebraic Combin. 5 (1996), 353--385, Theorem 5.1.
-\href{https://websites.umich.edu/~jrs/papers/FC.pdf}{Author preprint
-(Theorem 4.1)}.
-\bibitem{Mongelli} P. Mongelli, Kazhdan--Lusztig polynomials of Boolean
-elements, J. Algebraic Combin. 39 (2014), 497--525.
-\href{https://arxiv.org/abs/1111.2945}{arXiv:1111.2945}.
-\bibitem{Chmutov} M. S. Chmutov, The structure of $W$-graphs arising in
-Kazhdan--Lusztig theory, Ph.D. thesis, University of Michigan (2014).
-\href{https://hdl.handle.net/2027.42/108802}{University repository}.
-\bibitem{Jones} B. C. Jones, Leading coefficients of Kazhdan--Lusztig
-polynomials for Deodhar elements, J. Algebraic Combin. 29 (2009), 229--260.
-\href{https://arxiv.org/abs/0711.1391}{arXiv:0711.1391}.
+\begin{thebibliography}{99}\footnotesize\raggedright
+\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}\setlength{\parskip}{0pt}
+\bibitem{BGL} G. T. Barkley, C. Gaetz, and T. Lam, Combinatorial
+invariance for the coefficient of $q$ in Kazhdan--Lusztig polynomials,
+preprint (2026), arXiv:2601.07793.
 \bibitem{BJN} R. Biagioli, F. Jouhet, and P. Nadeau, Fully commutative
 elements in finite and affine Coxeter groups, Monatsh. Math. 178 (2015),
-1--37. \href{https://arxiv.org/abs/1402.2166}{arXiv:1402.2166}.
-\bibitem{CI} OpenAI, Combinatorial Invariance of Kazhdan--Lusztig
-Polynomials, supplied preprint, 24 September 2026, Theorem 1.1.
-\href{https://github.com/openai/math/blob/main/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/paper.pdf}{Source PDF}.
+1--37, doi:10.1007/s00605-014-0674-7.
+\bibitem{BB} A. Bj\"orner and F. Brenti, Combinatorics of Coxeter groups,
+Grad. Texts in Math. 231, Springer, 2005, doi:10.1007/3-540-27596-7.
+\bibitem{BBDVW} C. Blundell, L. Buesing, A. Davies, P. Veli\v{c}kovi\'c,
+and G. Williamson, Towards combinatorial invariance for Kazhdan--Lusztig
+polynomials, Represent. Theory 26 (2022), 1145--1191, doi:10.1090/ert/624.
+\bibitem{Brenti04} F. Brenti, The intersection cohomology of Schubert
+varieties is a combinatorial invariant, European J. Combin. 25 (2004),
+1151--1167, doi:10.1016/j.ejc.2003.10.011.
+\bibitem{BCM} F. Brenti, F. Caselli, and M. Marietti, Special matchings
+and Kazhdan--Lusztig polynomials, Adv. Math. 202 (2006), 555--601,
+doi:10.1016/j.aim.2005.01.011.
+\bibitem{Chmutov} M. S. Chmutov, The structure of $W$-graphs arising in
+Kazhdan--Lusztig theory, Ph.D. thesis, Univ. of Michigan, 2014,
+hdl:2027.42/108802.
+\bibitem{Delanoy} E. Delanoy, Combinatorial invariance of Kazhdan--Lusztig
+polynomials on intervals starting from the identity, J. Algebraic Combin.
+24 (2006), 437--463, doi:10.1007/s10801-006-0014-7.
+\bibitem{Dyer} M. Dyer, On the ``Bruhat graph'' of a Coxeter system,
+Compositio Math. 78 (1991), 185--191,
+\url{https://www.numdam.org/item/CM_1991__78_2_185_0/}.
+\bibitem{Ernst} D. C. Ernst, Non-cancellable elements in type affine $C$
+Coxeter groups, Int. Electron. J. Algebra 8 (2010), 191--218,
+arXiv:0910.0923.
+\bibitem{EMS} F. Esposito, M. Marietti, and S. Stella, Flip combinatorial
+invariance and Weyl groups, preprint (2025; v2 2026), arXiv:2509.16433.
+\bibitem{Fan} C. K. Fan, Structure of a Hecke algebra quotient,
+J. Amer. Math. Soc. 10 (1997), 139--167, doi:10.1090/S0894-0347-97-00222-1.
+\bibitem{FanGreen} C. K. Fan and R. M. Green, On the affine
+Temperley--Lieb algebras, J. London Math. Soc. (2) 60 (1999), 366--380,
+doi:10.1112/S0024610799007796.
+\bibitem{GeckPyCox} M. Geck, PyCox: Computing with (finite) Coxeter groups
+and Iwahori--Hecke algebras, LMS J. Comput. Math. 15 (2012), 231--256,
+doi:10.1112/S1461157012001064.
+\bibitem{GeckHalls} M. Geck and A. Halls, On the Kazhdan--Lusztig cells in
+type $E_8$, Math. Comp. 84 (2015), 3029--3049, doi:10.1090/mcom/2963.
+\bibitem{Gern} T. C. Gern, Leading coefficients of Kazhdan--Lusztig
+polynomials in type $D$, Ph.D. thesis, Univ. of Colorado Boulder, 2013,
+arXiv:1304.6074.
+\bibitem{Graham} J. J. Graham, Modular representations of Hecke algebras
+and related algebras, Ph.D. thesis, Univ. of Sydney, 1995.
+\bibitem{GreenStar} R. M. Green, Star reducible Coxeter groups, Glasgow
+Math. J. 48 (2006), 583--609, doi:10.1017/S0017089506003211.
+\bibitem{GreenJones} R. M. Green, Generalized Jones traces and
+Kazhdan--Lusztig bases, J. Pure Appl. Algebra 211 (2007), 744--772,
+doi:10.1016/j.jpaa.2007.04.004.
+\bibitem{GreenEn} R. M. Green, On the Markov trace for Temperley--Lieb
+algebras of type $E_n$, J. Knot Theory Ramifications 18 (2009), 237--264,
+doi:10.1142/S0218216509006872, arXiv:0704.0283 (statement numbers cited
+here follow v1).
+\bibitem{GreenLeading} R. M. Green, Leading coefficients of
+Kazhdan--Lusztig polynomials and fully commutative elements, J. Algebraic
+Combin. 30 (2009), 165--171, doi:10.1007/s10801-008-0156-x,
+arXiv:0801.1650.
+\bibitem{GreenLosonczy} R. M. Green and J. Losonczy, Fully commutative
+Kazhdan--Lusztig cells, Ann. Inst. Fourier 51 (2001), 1025--1045,
+doi:10.5802/aif.1843.
+\bibitem{Incitti} F. Incitti, More on the combinatorial invariance of
+Kazhdan--Lusztig polynomials, J. Combin. Theory Ser. A 114 (2007),
+461--482, doi:10.1016/j.jcta.2006.06.009.
+\bibitem{Jones} B. C. Jones, Leading coefficients of Kazhdan--Lusztig
+polynomials for Deodhar elements, J. Algebraic Combin. 29 (2009), 229--260,
+doi:10.1007/s10801-008-0131-6.
+\bibitem{KL} D. Kazhdan and G. Lusztig, Representations of Coxeter groups
+and Hecke algebras, Invent. Math. 53 (1979), 165--184,
+doi:10.1007/BF01390031.
+\bibitem{Laird} T. Laird, A study of $T$-avoiding elements of Coxeter
+groups, M.S. thesis, Northern Arizona Univ., 2016,
+\url{https://in.nau.edu/department-mathematics-statistics/wp-content/uploads/sites/377/2018/08/LairdThesis-ek.pdf}.
+\bibitem{LusztigII} G. Lusztig, Cells in affine Weyl groups, II,
+J. Algebra 109 (1987), 536--548, doi:10.1016/0021-8693(87)90154-2.
+\bibitem{LusztigUP} G. Lusztig, Hecke algebras with unequal parameters,
+CRM Monogr. Ser. 18, Amer. Math. Soc., 2003, doi:10.1090/crmm/018.
+\bibitem{Mongelli} P. Mongelli, Kazhdan--Lusztig polynomials of boolean
+elements, J. Algebraic Combin. 39 (2014), 497--525,
+doi:10.1007/s10801-013-0455-8, arXiv:1111.2945.
+\bibitem{CI} OpenAI, Combinatorial invariance of Kazhdan--Lusztig
+polynomials, OpenAI Math Release preprint, 24 September 2026 (not peer
+reviewed), commit adc7f124, SHA-256
+7e1be2107a85e28d9ec339b4ee62d4efeb909968df6768368e2779710624e331,
+\url{https://github.com/openai/math/blob/main/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/paper.pdf}.
+\bibitem{Patimo} L. Patimo, A combinatorial formula for the coefficient of
+$q$ in Kazhdan--Lusztig polynomials, Int. Math. Res. Not. IMRN 2021,
+no.~5, 3203--3223, doi:10.1093/imrn/rnz255.
+\bibitem{Shi} J.-Y. Shi, Fully commutative elements in the Weyl and affine
+Weyl groups, J. Algebra 284 (2005), 13--36,
+doi:10.1016/j.jalgebra.2004.08.036.
+\bibitem{Stembridge} J. R. Stembridge, On the fully commutative elements
+of Coxeter groups, J. Algebraic Combin. 5 (1996), 353--385,
+doi:10.1007/BF00193185; author preprint
+\url{https://websites.umich.edu/~jrs/papers/FC.pdf} (its Proposition~1.1 and
+Theorem~4.1 are Proposition~2.1 and Theorem~5.1 of the published version).
+\bibitem{Stembridge98} J. R. Stembridge, The enumeration of fully
+commutative elements of Coxeter groups, J. Algebraic Combin. 7 (1998),
+291--320, doi:10.1023/A:1008623323374.
 \end{thebibliography}
 \end{document}

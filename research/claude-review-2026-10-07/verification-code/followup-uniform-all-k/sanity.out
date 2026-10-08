@@ -1,0 +1,21 @@
+r=3 k=1: l(T^k)=58 (58k=58)
+r=3 k=2: l(T^k)=116 (58k=116)
+r=3 k=3: l(T^k)=174 (58k=174)
+r=4 k=1: l(T^k)=58 (58k=58)
+r=4 k=2: l(T^k)=116 (58k=116)
+r=4 k=3: l(T^k)=174 (58k=174)
+E6: 36 positive roots; FC reflections of length>=3: 0; l != 2d+1: 0
+E7: 63 positive roots; FC reflections of length>=3: 0; l != 2d+1: 0
+E8: 120 positive roots; FC reflections of length>=3: 0; l != 2d+1: 0
+r=3 k=0: s b s = r_(s beta) non-simple positive, s in L(bs), lengths consistent: False
+r=3 k=1: s b s = r_(s beta) non-simple positive, s in L(bs), lengths consistent: False
+r=3 k=2: s b s = r_(s beta) non-simple positive, s in L(bs), lengths consistent: False
+r=4 k=0: s b s = r_(s beta) non-simple positive, s in L(bs), lengths consistent: False
+r=4 k=1: s b s = r_(s beta) non-simple positive, s in L(bs), lengths consistent: False
+r=4 k=2: s b s = r_(s beta) non-simple positive, s in L(bs), lengths consistent: False
+r=5 k=0: s b s = r_(s beta) non-simple positive, s in L(bs), lengths consistent: False
+r=5 k=1: s b s = r_(s beta) non-simple positive, s in L(bs), lengths consistent: False
+r=5 k=2: s b s = r_(s beta) non-simple positive, s in L(bs), lengths consistent: False
+r=6 k=0: s b s = r_(s beta) non-simple positive, s in L(bs), lengths consistent: False
+r=6 k=1: s b s = r_(s beta) non-simple positive, s in L(bs), lengths consistent: False
+r=6 k=2: s b s = r_(s beta) non-simple positive, s in L(bs), lengths consistent: False

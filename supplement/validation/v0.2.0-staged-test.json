@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "version": "v0.2.0",
+  "note": "Phase 1 staged test build (repository working tree copied to a scratch directory, LICENSE present, built with supplement/build_package.py, archive extracted and both runner modes executed in isolation). The release archive is rebuilt in Phase 2 after the manuscript is final, so its hash will differ from this test build.",
+  "test_archive_bytes": 617771,
+  "test_archive_sha256": "a965327f5cc988c820525cab549688a214017ef6c8d1c1e4f01ff7619ad7f5c1",
+  "archive_files": 52,
+  "default": {
+    "steps": 35,
+    "seconds": 47.2,
+    "peak_rss_bytes": 485539840,
+    "summary_equals_expected": true
+  },
+  "full": {
+    "steps": 41,
+    "seconds": 95.3,
+    "peak_rss_bytes": 517767168,
+    "summary_equals_expected": true
+  },
+  "environment": "Python 3.14.7, Apple clang 21 (-O3 -std=c++17), 10 cores"
+}

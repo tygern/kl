@@ -1,3 +1,6 @@
+AI-generated internal review/research note produced with GPT-6 Astra agents at the author's request (October 2026).
+Not peer review and not a journal decision.
+
 LITERATURE AUDIT: FC mu bounds, interval transport, and Gern bad intervals
 Research date: 2026-10-07 UTC (local task date 2026-10-06)
 Author: literature subagent. Scope: primary-source audit, not an exhaustive novelty certification.
@@ -229,7 +232,7 @@ SEARCH LOG / COVERAGE
 Used web search and opened primary papers, author manuscripts, university thesis
 pages, publisher PDFs, arXiv versioned full texts. Search-result discovery through
 secondary sites was followed to authored text wherever possible. Five public
-arXiv PDFs were downloaded and converted with pdftotext in /private/tmp/kl-literature:
+arXiv PDFs were downloaded and converted with pdftotext in a local scratch directory:
 Green0801.1650, Green–Losonczy math/0102003, Green math/0509362,
 Jones0711.1391, Woo math/0611328. Shell networking initially failed in the sandbox;
 read-only public-paper downloads succeeded after authorized escalation. Chmutov

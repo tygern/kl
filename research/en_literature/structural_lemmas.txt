@@ -1,3 +1,6 @@
+AI-generated internal review/research note produced with GPT-6 Astra agents at the author's request (October 2026).
+Not peer review and not a journal decision.
+
 STRUCTURAL LEMMAS FOR THE GENERALIZED E_n INVESTIGATION
 Checked 2026-10-07 UTC. Graph convention: chain 0--1--...--(n-2),
 with vertex n-1 attached to 2; equivalently arms of lengths 1,2,n-4.

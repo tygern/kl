@@ -1,0 +1,546 @@
+[
+  {
+    "name": "BalancedPairings.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/BalancedPairings.lean",
+    "sha": "ca248c00dc3ac5cf84b6311cfa4bd36a46da04d4",
+    "size": 85243,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/BalancedPairings.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/BalancedPairings.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/ca248c00dc3ac5cf84b6311cfa4bd36a46da04d4",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/BalancedPairings.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/BalancedPairings.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/ca248c00dc3ac5cf84b6311cfa4bd36a46da04d4",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/BalancedPairings.lean"
+    }
+  },
+  {
+    "name": "BottSamelson.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean",
+    "sha": "7eedc87f3ca659a09e7ad60ce3df1a497d04aae2",
+    "size": 89497,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/7eedc87f3ca659a09e7ad60ce3df1a497d04aae2",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/7eedc87f3ca659a09e7ad60ce3df1a497d04aae2",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/BottSamelson.lean"
+    }
+  },
+  {
+    "name": "Bruhat.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/Bruhat.lean",
+    "sha": "1e867b66126a2ebc14c822a98e955682bc484f7f",
+    "size": 22913,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Bruhat.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Bruhat.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/1e867b66126a2ebc14c822a98e955682bc484f7f",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Bruhat.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Bruhat.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/1e867b66126a2ebc14c822a98e955682bc484f7f",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Bruhat.lean"
+    }
+  },
+  {
+    "name": "CanonicalKL.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean",
+    "sha": "fa4df51c96f6884a9b1edb02a4b9246713536478",
+    "size": 20698,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/fa4df51c96f6884a9b1edb02a4b9246713536478",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/fa4df51c96f6884a9b1edb02a4b9246713536478",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/CanonicalKL.lean"
+    }
+  },
+  {
+    "name": "CharacterReciprocity.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean",
+    "sha": "df5761f4de7f4a728c53da39d21853242748c33e",
+    "size": 96634,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/df5761f4de7f4a728c53da39d21853242748c33e",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/df5761f4de7f4a728c53da39d21853242748c33e",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/CharacterReciprocity.lean"
+    }
+  },
+  {
+    "name": "Comparison.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/Comparison.lean",
+    "sha": "37eb39d0f0e9033a1e7d978138a1edbc77208c20",
+    "size": 6079,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Comparison.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Comparison.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/37eb39d0f0e9033a1e7d978138a1edbc77208c20",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Comparison.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Comparison.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/37eb39d0f0e9033a1e7d978138a1edbc77208c20",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Comparison.lean"
+    }
+  },
+  {
+    "name": "Coxeter.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/Coxeter.lean",
+    "sha": "4c72d9fe50e00af5e3eec787e01d1798613d334c",
+    "size": 9445,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Coxeter.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Coxeter.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/4c72d9fe50e00af5e3eec787e01d1798613d334c",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Coxeter.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Coxeter.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/4c72d9fe50e00af5e3eec787e01d1798613d334c",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Coxeter.lean"
+    }
+  },
+  {
+    "name": "Decomposition.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean",
+    "sha": "c2dda4b37cefe2177a31347e0d4e80c91946cf91",
+    "size": 76264,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/c2dda4b37cefe2177a31347e0d4e80c91946cf91",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/c2dda4b37cefe2177a31347e0d4e80c91946cf91",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Decomposition.lean"
+    }
+  },
+  {
+    "name": "Dihedral.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean",
+    "sha": "50f6d6250ec94d19017ad7e4ed3da29b70566ef9",
+    "size": 33762,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/50f6d6250ec94d19017ad7e4ed3da29b70566ef9",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/50f6d6250ec94d19017ad7e4ed3da29b70566ef9",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Dihedral.lean"
+    }
+  },
+  {
+    "name": "DihedralIntervals.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean",
+    "sha": "baf37f5c606cc7deca0c51dc63d70aff81d31748",
+    "size": 94727,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/baf37f5c606cc7deca0c51dc63d70aff81d31748",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/baf37f5c606cc7deca0c51dc63d70aff81d31748",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/DihedralIntervals.lean"
+    }
+  },
+  {
+    "name": "DyerPaths.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean",
+    "sha": "80af4ce3f182aba0624693113288fa11e5e149c7",
+    "size": 113399,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/80af4ce3f182aba0624693113288fa11e5e149c7",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/80af4ce3f182aba0624693113288fa11e5e149c7",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/DyerPaths.lean"
+    }
+  },
+  {
+    "name": "EdgeLocalization.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean",
+    "sha": "3e4b8e4cf2cb856b76f4513ab02a562ecd758eb9",
+    "size": 46746,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/3e4b8e4cf2cb856b76f4513ab02a562ecd758eb9",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/3e4b8e4cf2cb856b76f4513ab02a562ecd758eb9",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/EdgeLocalization.lean"
+    }
+  },
+  {
+    "name": "Frobenius.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean",
+    "sha": "d204229cbdbbb7be7cac1271e1222fb9cc039b0d",
+    "size": 92430,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/d204229cbdbbb7be7cac1271e1222fb9cc039b0d",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/d204229cbdbbb7be7cac1271e1222fb9cc039b0d",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Frobenius.lean"
+    }
+  },
+  {
+    "name": "GradedModules.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/GradedModules.lean",
+    "sha": "864a5c1db1fbfaa3e3f054b032b34bec012bd339",
+    "size": 61314,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedModules.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedModules.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/864a5c1db1fbfaa3e3f054b032b34bec012bd339",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedModules.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedModules.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/864a5c1db1fbfaa3e3f054b032b34bec012bd339",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedModules.lean"
+    }
+  },
+  {
+    "name": "GradedSheaves.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean",
+    "sha": "f760f67863a4b95b3f6311441223078ac587d1ec",
+    "size": 49647,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/f760f67863a4b95b3f6311441223078ac587d1ec",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/f760f67863a4b95b3f6311441223078ac587d1ec",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/GradedSheaves.lean"
+    }
+  },
+  {
+    "name": "Hecke.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean",
+    "sha": "c3449bd23b79103c78f6a87e7cb1cfd1fbba0309",
+    "size": 49388,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/c3449bd23b79103c78f6a87e7cb1cfd1fbba0309",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/c3449bd23b79103c78f6a87e7cb1cfd1fbba0309",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Hecke.lean"
+    }
+  },
+  {
+    "name": "HilbertSeries.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean",
+    "sha": "fec32f6f2cf1d39a3ea209d0ec4671e8079c164b",
+    "size": 24945,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/fec32f6f2cf1d39a3ea209d0ec4671e8079c164b",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/fec32f6f2cf1d39a3ea209d0ec4671e8079c164b",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/HilbertSeries.lean"
+    }
+  },
+  {
+    "name": "IntegralPairings.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean",
+    "sha": "93c3faf61492e72339bb1c6a578c58280640e5f3",
+    "size": 100647,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/93c3faf61492e72339bb1c6a578c58280640e5f3",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/93c3faf61492e72339bb1c6a578c58280640e5f3",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/IntegralPairings.lean"
+    }
+  },
+  {
+    "name": "Invariance.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean",
+    "sha": "2464d455ca2ae383fd64c2c27909c242886fd362",
+    "size": 25318,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/2464d455ca2ae383fd64c2c27909c242886fd362",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/2464d455ca2ae383fd64c2c27909c242886fd362",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Invariance.lean"
+    }
+  },
+  {
+    "name": "MinimalExtensions.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/MinimalExtensions.lean",
+    "sha": "a2c7533a7d6d6ce015b834671f37c1b8189d216d",
+    "size": 71424,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/MinimalExtensions.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/MinimalExtensions.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/a2c7533a7d6d6ce015b834671f37c1b8189d216d",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/MinimalExtensions.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/MinimalExtensions.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/a2c7533a7d6d6ce015b834671f37c1b8189d216d",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/MinimalExtensions.lean"
+    }
+  },
+  {
+    "name": "Model.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/Model.lean",
+    "sha": "3e23e83739c86e3d962295a8bfafffd192f0a184",
+    "size": 3349,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Model.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Model.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/3e23e83739c86e3d962295a8bfafffd192f0a184",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Model.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Model.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/3e23e83739c86e3d962295a8bfafffd192f0a184",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Model.lean"
+    }
+  },
+  {
+    "name": "ModuleAlgebra.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/ModuleAlgebra.lean",
+    "sha": "041cbc16f61cd627aeba39fabb34036d66d84060",
+    "size": 26833,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/ModuleAlgebra.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/ModuleAlgebra.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/041cbc16f61cd627aeba39fabb34036d66d84060",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/ModuleAlgebra.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/ModuleAlgebra.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/041cbc16f61cd627aeba39fabb34036d66d84060",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/ModuleAlgebra.lean"
+    }
+  },
+  {
+    "name": "OrdinaryR.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/OrdinaryR.lean",
+    "sha": "02276d4397e3ee003f0668f5377d13b65d424cf8",
+    "size": 12286,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/OrdinaryR.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/OrdinaryR.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/02276d4397e3ee003f0668f5377d13b65d424cf8",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/OrdinaryR.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/OrdinaryR.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/02276d4397e3ee003f0668f5377d13b65d424cf8",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/OrdinaryR.lean"
+    }
+  },
+  {
+    "name": "PlaneLocalization.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/PlaneLocalization.lean",
+    "sha": "19b044d244799dfcd5816fdc3455b76c0e73b2b3",
+    "size": 76210,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/PlaneLocalization.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/PlaneLocalization.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/19b044d244799dfcd5816fdc3455b76c0e73b2b3",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/PlaneLocalization.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/PlaneLocalization.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/19b044d244799dfcd5816fdc3455b76c0e73b2b3",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/PlaneLocalization.lean"
+    }
+  },
+  {
+    "name": "PositiveTransfer.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean",
+    "sha": "f85e6580ba9ec0695256b3117dcb78544f9baff4",
+    "size": 60818,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/f85e6580ba9ec0695256b3117dcb78544f9baff4",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/f85e6580ba9ec0695256b3117dcb78544f9baff4",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/PositiveTransfer.lean"
+    }
+  },
+  {
+    "name": "ReflectionOrders.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionOrders.lean",
+    "sha": "a925457db408b054eb98ebcc6d43aec213f0f243",
+    "size": 57118,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionOrders.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionOrders.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/a925457db408b054eb98ebcc6d43aec213f0f243",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionOrders.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionOrders.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/a925457db408b054eb98ebcc6d43aec213f0f243",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionOrders.lean"
+    }
+  },
+  {
+    "name": "ReflectionPlane.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionPlane.lean",
+    "sha": "9202213ace07bc1eda9516f0accb6db523a74236",
+    "size": 3805,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionPlane.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionPlane.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/9202213ace07bc1eda9516f0accb6db523a74236",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionPlane.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionPlane.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/9202213ace07bc1eda9516f0accb6db523a74236",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionPlane.lean"
+    }
+  },
+  {
+    "name": "ReflectionSchedules.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean",
+    "sha": "21acc292c882dc2ea1470a8c14637cf2c25cd0f8",
+    "size": 74956,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/21acc292c882dc2ea1470a8c14637cf2c25cd0f8",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/21acc292c882dc2ea1470a8c14637cf2c25cd0f8",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/ReflectionSchedules.lean"
+    }
+  },
+  {
+    "name": "SheafMorphisms.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean",
+    "sha": "ceeda8ada743b5ee2d5110a2e8fca9aa8ed260fd",
+    "size": 76890,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/ceeda8ada743b5ee2d5110a2e8fca9aa8ed260fd",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/ceeda8ada743b5ee2d5110a2e8fca9aa8ed260fd",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/SheafMorphisms.lean"
+    }
+  },
+  {
+    "name": "Sheaves.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/Sheaves.lean",
+    "sha": "db81b8123cf1040162715cecbad29c18179677e7",
+    "size": 10045,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Sheaves.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Sheaves.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/db81b8123cf1040162715cecbad29c18179677e7",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Sheaves.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Sheaves.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/db81b8123cf1040162715cecbad29c18179677e7",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Sheaves.lean"
+    }
+  },
+  {
+    "name": "SimultaneousInvariance.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/SimultaneousInvariance.lean",
+    "sha": "8496d78b374e9c90ba0d5b5b7d48343860ea598f",
+    "size": 20997,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/SimultaneousInvariance.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/SimultaneousInvariance.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/8496d78b374e9c90ba0d5b5b7d48343860ea598f",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/SimultaneousInvariance.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/SimultaneousInvariance.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/8496d78b374e9c90ba0d5b5b7d48343860ea598f",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/SimultaneousInvariance.lean"
+    }
+  },
+  {
+    "name": "Support.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean",
+    "sha": "aa426f51cdd32459b750fe8c02e9d91fea315747",
+    "size": 80781,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/aa426f51cdd32459b750fe8c02e9d91fea315747",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/aa426f51cdd32459b750fe8c02e9d91fea315747",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Support.lean"
+    }
+  },
+  {
+    "name": "TerminalKernels.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean",
+    "sha": "a7ef89fd9c0c8565fa6f3674915a65671f6eda3c",
+    "size": 61207,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/a7ef89fd9c0c8565fa6f3674915a65671f6eda3c",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/a7ef89fd9c0c8565fa6f3674915a65671f6eda3c",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/TerminalKernels.lean"
+    }
+  },
+  {
+    "name": "Tits.lean",
+    "path": "lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean",
+    "sha": "b9521ed050ed240b44bf5a6d4684d5b0757c0893",
+    "size": 95460,
+    "url": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean?ref=main",
+    "html_url": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean",
+    "git_url": "https://api.github.com/repos/openai/math/git/blobs/b9521ed050ed240b44bf5a6d4684d5b0757c0893",
+    "download_url": "https://raw.githubusercontent.com/openai/math/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/openai/math/contents/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean?ref=main",
+      "git": "https://api.github.com/repos/openai/math/git/blobs/b9521ed050ed240b44bf5a6d4684d5b0757c0893",
+      "html": "https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig/Tits.lean"
+    }
+  }
+]

@@ -1,3 +1,6 @@
+AI-generated internal review/research note produced with GPT-6 Astra agents at the author's request (October 2026).
+Not peer review and not a journal decision.
+
 FINAL ARGUMENT/EXPOSITION REVIEW OF REWRITTEN SOURCE
 7 October 2026. Reviewed actual results/exceptional-leading.tex after the
 restructuring, against the original audit reports and prior source.

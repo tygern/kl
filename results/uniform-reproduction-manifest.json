@@ -4,16 +4,16 @@
   "files": {
     "research/en_uniform/construction.json": "9816a64ce830ed7b0451aa0a7c1a87d71cd03a5255370f95cbba4369bb227147",
     "research/en_uniform/construction.py": "2099086aa44487ccae763ecab57b2738125140bee1f619700ad652b953e99c8e",
-    "research/en_uniform/construction.txt": "1cee0320ce2431542e94e02f139c03c9016766bfdfb1534aa159d5b18d6e2e53",
+    "research/en_uniform/construction.txt": "7575ea892b2fe30b34b7370ee918feb89e17ce9ca577ba7b03e31d8874e1ac1e",
     "research/en_uniform/hagiwara-ishikawa-tagawa-fpsac2004.txt": "e4e96c3b77dec51520a22d81ba500a8fab0bd877359e055949e0d31590257e24",
-    "research/en_uniform/literature.txt": "24b11a4009a1816a240a9f317c305108e254a911b8725ff0be512ae6939e4cf8",
-    "research/en_uniform/referee-certificate.json": "cb2d90b8febc531168a228d914076ba64ec0c0b7c7d607bfefea63d07d972e10",
-    "research/en_uniform/referee.txt": "873404cf2cb6446eee7eb369d35e37dbdbce36eb1ae922a116c52ca29e556739",
+    "research/en_uniform/literature.txt": "76305b947cdafc9384600f5eba2a9e2365ed709d84f74712d44031b12e8876e4",
+    "research/en_uniform/referee-certificate.json": "dcab1dd0556c46ceb0e0897b96ad47f3fe961b7df2da5068d9b7d13fe5d2e385",
+    "research/en_uniform/referee.txt": "bdd5007e50b5d24e98e2700fd9446eed5a0e5d82b22f264029c3a4d65a3b88dc",
     "research/en_uniform/referee_verify.py": "b6fb996d17e60e2987c6b237e6bc9d4195f8508cbadab043d6f150859cefcec8",
     "research/en_uniform/seed-probe.json": "039aaee132bf229c865538d9a67af249a6f3a3b355a6d6b1ca890eb97db59bd5",
     "research/en_uniform/seed_probe.py": "28651d0c4eb907b2f641b23741127eddd53934a880cedd449c11302a20041fa4",
     "research/en_uniform/stembridge-countFC.txt": "b7414fee8526ca126f249170d178d05092dbcf4bc36be6d62203e5582ddecfd7",
     "research/reproduce_uniform.py": "3e640a65c35e4f1b091f13d457f04581c6a7e377bb10cef5412f70785c541089",
-    "results/exceptional-leading.tex": "f6e623e00b9d2df27172be18bdaf9b081a24036f664f6808a27b0c3df1b73b4b"
+    "results/exceptional-leading.tex": "c2f81f88913cdfc6ddfe35f8bf39e98a08f4fdc4faa61bf28cefe0c4c79ee569"
   }
 }

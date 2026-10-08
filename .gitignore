@@ -1,23 +1,27 @@
-# Generated files and local working artifacts
+# Build outputs and local working artifacts
 __pycache__/
 *.py[cod]
 .DS_Store
-/tmp/
-/prompts/
 *.log
+/tmp/
 **/reproduction-logs/
 /research/broad_exceptional/enumerate_bad
 /research/en_independent/e*-fc.json
 /supplement/dist/
 /output/supplement/
-/kl-transfer.pdf
+*.aux
+*.fls
+*.fdb_latexmk
+*.synctex.gz
 
-# Primary-source downloads stay local; citations and audits retain their URLs.
+# Third-party sources (downloaded papers, theses, software) stay local;
+# citations and audits retain their URLs. Only the project's own PDF
+# builds under output/pdf/ are tracked.
 /sources/
 *.pdf
 *.png
 *.html
-!/output/pdf/*.pdf
+!/output/pdf/exceptional-leading.pdf
 /research/en_literature/green*.txt
 /research/en_literature/kashiwara-tanisaki*.txt
 /research/en_literature/stembridge-fc.txt
@@ -28,7 +32,9 @@ __pycache__/
 /research/exceptional_priority/geck-halls.txt
 /research/exceptional_priority/mongelli-2011.txt
 /research/exceptional_priority/garfinkle-vogan.txt
-/research/journal-review/priority-sources/*
-!/research/journal-review/priority-sources/inspect_pycox.py
-!/research/journal-review/priority-sources/pycox-data-inspection.json
-!/research/journal-review/priority-sources/pycox-commit.json
+/research/ai-review-notes/priority-sources/*
+!/research/ai-review-notes/priority-sources/inspect_pycox.py
+!/research/ai-review-notes/priority-sources/pycox-data-inspection.json
+!/research/ai-review-notes/priority-sources/pycox-commit.json
+# The review record of 7 October 2026 contains a snapshot of the repository;
+# its third-party PyCox copy (GPL-3, never tracked) and its build output stay out.

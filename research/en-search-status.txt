@@ -1,3 +1,6 @@
+AI-generated internal review/research note produced with GPT-6 Astra agents at the author's request (October 2026).
+Not peer review and not a journal decision.
+
 E_n plan completion record, 2026-10-07 UTC
 
 PROVED AND REPRODUCED
@@ -45,6 +48,35 @@ run hit a3million-state cap before the full33-letter word; no cardinality or
 polynomial inferred. Paired-star components of7056/2500/2500states closed
 without a zero/one witness; this does not determine mu. Parabolic-factor
 screens are recorded with exact bounds and negative outcomes.
+
+ADDENDUM (7 October 2026). The odd-gap coefficients left unresolved above
+were computed during the independent review of 7 October 2026 (Claude Fable
+5.1; code in research/claude-review-2026-10-07/verification-code/
+followup-e9-odd-gap-pairs/klq.cpp, confirmed by the separately written
+verify-followup-e9-odd-gap-pairs/vkl.cpp), using the Kazhdan-Lusztig
+recursion in the parabolic quotient by W_{R(w)}. For the length-33
+reflection w = r_beta, beta = (1,2,3,3,2,2,1,1,2), with reduced word
+8 7 5 6 3 4 5 2 3 4 1 2 3 0 1 2 8 2 3 4 1 2 3 0 1 2 8 5 6 7 4 5 3 and
+L = R = {3,5,7,8} (lower ideal 5,826,496 elements, 364,156 cosets):
+  mu(8753, w) = 0            (gap 29; deg P_{8753,w} = 13),
+  mu(87531, w) = mu(87530, w) = 0   (even gaps 28),
+  mu(875301, w) = mu(875310, w) = 1 (gap 27), with in both cases
+  P = 1 + 23q + 234q^2 + 1348q^3 + 4931q^4 + 12136q^5 + 20641q^6
+      + 24398q^7 + 19796q^8 + 10646q^9 + 3551q^10 + 621q^11 + 40q^12 + q^13.
+For the length-34 extensions w s_0 and w s_1 (terminal involutions with
+L = R = {0,3,5,7,8} and {1,3,5,7,8}; lower ideals 6,943,680 and 6,651,712
+elements; quotients 216,990 and 207,866 cosets) the unique eligible FC
+bottoms 87530 and 87531 (gap 29) both have mu = 1, with
+  P_{87530, w s_0} = 1 + 18q + 146q^2 + 712q^3 + 2342q^4 + 5456q^5 + 9200q^6
+      + 11264q^7 + 9947q^8 + 6220q^9 + 2649q^10 + 721q^11 + 116q^12 + 10q^13 + q^14,
+  P_{87531, w s_1} = 1 + 18q + 140q^2 + 639q^3 + 1957q^4 + 4280q^5 + 6858q^6
+      + 8114q^7 + 7084q^8 + 4497q^9 + 1996q^10 + 579q^11 + 100q^12 + 10q^13 + q^14.
+All these values lie in {0,1}. The two length-34 extensions satisfy every
+hypothesis of the parity criterion except parity and have mu = 1, so the
+parity hypothesis cannot be dropped. The translated members r_{beta + k delta},
+k >= 1, remain open. These values are reported in Section 5 of the revised
+manuscript and certified in the prepared v0.2.0 supplement
+(research/review_checks/).
 
 TEAM AND ARTIFACTS
 Three Astra agents resumed distinct methods: efficient E8 enumeration and

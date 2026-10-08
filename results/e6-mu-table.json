@@ -1,0 +1,38 @@
+{
+  "type": "E6",
+  "labelling": "chain 0-1-...-(n-2), node n-1 attached to node 2; words act on the right, a string of labels is the product of the simple reflections in the order written",
+  "group_order": 51840,
+  "longest_length": 36,
+  "positive_roots": 36,
+  "fully_commutative_count": 662,
+  "bruhat_comparable_pairs": 466250713,
+  "extremal_pairs": 6579176,
+  "distinct_polynomials": 46681,
+  "max_coefficient": 748,
+  "left_right_recursions_agree_on_every_extremal_pair": true,
+  "max_mu": 10,
+  "nonzero_mu_pairs": 846476,
+  "cover_pairs": 459588,
+  "mu_histogram": {"1": 845090, "2": 400, "3": 556, "4": 310, "5": 108, "6": 4, "10": 8},
+  "pairs_with_mu_at_least_2": 1386,
+  "pairs_with_mu_at_least_2_and_fully_commutative_lower_endpoint": 0,
+  "pairs_with_mu_at_least_2_and_fully_commutative_upper_endpoint": 2,
+  "fully_commutative_lower_endpoint": {"nonzero_mu_pairs": 6431, "max_mu": 1},
+  "fully_commutative_upper_endpoint": {"nonzero_mu_pairs": 8740, "max_mu": 5},
+  "pairs_attaining_max_mu": [
+    {"mu": 10, "x": "01254012010", "x_length": 11, "x_fully_commutative": false, "x_L": [0,1,2,4,5], "x_R": [0,1,2,4,5], "w": "123012523412301251234012", "w_length": 24, "w_fully_commutative": false, "w_L": [1], "w_R": [2,4], "gap": 13, "P_ascending": [1,13,59,121,125,61,10]},
+    {"mu": 10, "x": "43252342320", "x_length": 11, "x_fully_commutative": false, "x_L": [0,2,3,4,5], "x_R": [0,2,3,4,5], "w": "230125234123012512340123", "w_length": 24, "w_fully_commutative": false, "w_L": [0,2], "w_R": [3], "gap": 13, "P_ascending": [1,13,59,121,125,61,10]},
+    {"mu": 10, "x": "43252342320", "x_length": 11, "x_fully_commutative": false, "x_L": [0,2,3,4,5], "x_R": [0,2,3,4,5], "w": "342312523412301253423120", "w_length": 24, "w_fully_commutative": false, "w_L": [3], "w_R": [0,2], "gap": 13, "P_ascending": [1,13,59,121,125,61,10]},
+    {"mu": 10, "x": "01254012010", "x_length": 11, "x_fully_commutative": false, "x_L": [0,1,2,4,5], "x_R": [0,1,2,4,5], "w": "423125234123012534231201", "w_length": 24, "w_fully_commutative": false, "w_L": [2,4], "w_R": [1], "gap": 13, "P_ascending": [1,13,59,121,125,61,10]},
+    {"mu": 10, "x": "012540123010", "x_length": 12, "x_fully_commutative": false, "x_L": [0,1,2,4,5], "x_R": [0,1,3,5], "w": "1230125234123012512340123", "w_length": 25, "w_fully_commutative": false, "w_L": [1], "w_R": [3], "gap": 13, "P_ascending": [1,14,72,170,184,82,10]},
+    {"mu": 10, "x": "431252342320", "x_length": 12, "x_fully_commutative": false, "x_L": [1,3,4,5], "x_R": [0,2,3,4,5], "w": "1230125234123012512340123", "w_length": 25, "w_fully_commutative": false, "w_L": [1], "w_R": [3], "gap": 13, "P_ascending": [1,14,72,170,184,82,10]},
+    {"mu": 10, "x": "301254012010", "x_length": 12, "x_fully_commutative": false, "x_L": [0,1,3,5], "x_R": [0,1,2,4,5], "w": "3423125234123012534231201", "w_length": 25, "w_fully_commutative": false, "w_L": [3], "w_R": [1], "gap": 13, "P_ascending": [1,14,72,170,184,82,10]},
+    {"mu": 10, "x": "432523423201", "x_length": 12, "x_fully_commutative": false, "x_L": [0,2,3,4,5], "x_R": [1,3,4,5], "w": "3423125234123012534231201", "w_length": 25, "w_fully_commutative": false, "w_L": [3], "w_R": [1], "gap": 13, "P_ascending": [1,14,72,170,184,82,10]}
+  ],
+  "largest_mu_with_fully_commutative_upper_endpoint": [
+    {"mu": 5, "x": "5343010", "x_length": 7, "x_fully_commutative": false, "x_L": [0,1,3,4,5], "x_R": [0,1,3,4,5], "w": "0125342312501234", "w_length": 16, "w_fully_commutative": true, "w_L": [0], "w_R": [4], "gap": 9, "P_ascending": [1,8,22,20,5]},
+    {"mu": 5, "x": "5343010", "x_length": 7, "x_fully_commutative": false, "x_L": [0,1,3,4,5], "x_R": [0,1,3,4,5], "w": "4325123012543210", "w_length": 16, "w_fully_commutative": true, "w_L": [4], "w_R": [0], "gap": 9, "P_ascending": [1,8,22,20,5]}
+  ],
+  "expectations_checked": "E6 values of the manuscript",
+  "status": "passed"
+}

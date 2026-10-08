@@ -1,3 +1,6 @@
+AI-generated internal review/research note produced with GPT-6 Astra agents at the author's request (October 2026).
+Not peer review and not a journal decision.
+
 PRIORITY AUDIT: FC-BOTTOM LEADING COEFFICIENTS IN E6/E7 AND STAR GROUPS
 Checked 2026-10-07 UTC (2026-10-06 in the user's America/Chicago timezone).
 Prepared by the exceptional_priority research subagent. This is a source audit,
@@ -68,7 +71,7 @@ or FC-finite groups. It also does not state a numbered universal conjecture.
 Calling a star example a counterexample to the universal possibility is fair;
 claiming to refute a formally stated all-types theorem is not. The universal
 possibility already fails by the elementary specialization in A above.
-Local text previously downloaded: /private/tmp/kl-literature/green-leading-2008.txt.
+Local text previously downloaded: sources/green-leading-2008.txt (gitignored).
 
 Michael S. Chmutov, The structure of W-graphs arising in Kazhdan-Lusztig theory,
 University of Michigan PhD thesis, 2014.
@@ -177,6 +180,27 @@ other small classical types. It contains NO E6/E7 entry in the inspected
 data. Therefore it neither establishes nor refutes a global E6/E7 0/1 bound.
 It is a contributed computational database, not a substitute for the missing
 primary E6/E7 coefficient theorem.
+
+ADDENDUM (7 October 2026). The FindStat gap noted above is closed by a
+complete Kazhdan-Lusztig mu table of W(E6) computed during the independent
+review of 7 October 2026 (Claude Fable 5.1; code in
+research/claude-review-2026-10-07/verification-code/followup-e6-e7-global-mu/
+klmu.cpp). Over all 51,840 elements the maximum of mu(x,w) is 10, attained
+by 8 pairs; a witness in the manuscript's numbering is
+  x = 01254012010 (length 11, not fully commutative),
+  w = 123012523412301251234012 (length 24, full support),
+  P_{x,w} = 1 + 13q + 59q^2 + 121q^3 + 125q^4 + 61q^5 + 10q^6.
+Exactly 1,386 pairs have mu >= 2 (histogram 2:400, 3:556, 4:310, 5:108,
+6:4, 10:8), every one with a non-fully-commutative lower endpoint. Among the
+6,431 pairs with fully commutative lower endpoint and nonzero mu, every
+value is 1, a brute-force confirmation of the E6 case of the main theorem.
+By parabolic inclusion mu >= 10 occurs in E7 and E8; the exact maxima there
+are not known. Fully commutative upper endpoint alone does not suffice:
+x = 5343010 (not FC) and w = 0125342312501234 (FC, length 16) have mu = 5
+with P = 1 + 8q + 22q^2 + 20q^3 + 5q^4. So a global E6 0/1 bound is false,
+and the FC hypothesis on the lower endpoint is essential. These values are
+reported in Section 5 of the revised manuscript and certified in the
+prepared v0.2.0 supplement (research/review_checks/).
 
 E. CELL/REDUCTION LITERATURE AND ADDITIONAL CHECKS
 

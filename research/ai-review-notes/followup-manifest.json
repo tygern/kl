@@ -1,0 +1,24 @@
+{
+  "status": "local publication revisions completed; public deposit awaiting destination and license",
+  "files": {
+    "output/pdf/exceptional-leading.pdf": "67bcf288017a101e57db992185c2788242b6467d572f29194a73ef63445ae7e2",
+    "output/supplement/exceptional-leading-proof.zip": "79807c779c73d36d26ab1aac4e3b39f325265339adb8f2928b122f891c95426b",
+    "research/build_pdfs.py": "8aae83da068704d6fe81a891b9586f1f3da3a3cf3b27e75699a7aa57e6c5b201",
+    "research/ai-review-notes/followup-final-editorial.txt": "1cb778008f1000b2fd3484287fa2ebd5640bfc1c07d726369381a81f9bc2f82a",
+    "research/ai-review-notes/followup-response.txt": "26301922ea9738e80dca68a7ea7342e1db50532587135aaff895d2b721d7d5fc",
+    "research/ai-review-notes/priority-followup.txt": "36c4de279733cb0ac0d0651b3566f76707f8d48b1e6cd7b90bd481d84b277311",
+    "research/ai-review-notes/priority-sources/chv1r6180.py": "6677f1994d96eaba3a3c86ab3eb4d1f944d11c837a9030d7ae59d10f3f80833b",
+    "research/ai-review-notes/priority-sources/inspect_pycox.py": "815322d0b131477b134ede2f3cd4d5ee54d2a50abae3c0096a233bec4c00929a",
+    "research/ai-review-notes/priority-sources/pycox-commit.json": "a4601ec9615a865c5dbca16ecf350dd27f68a6d4614a741f558781a2fd23b069",
+    "research/ai-review-notes/priority-sources/pycox-data-inspection.json": "de8a361208b0c26cbf7b79a410f562d6a76dcd30b3fadfed35ca5999bc42e20e",
+    "research/ai-review-notes/priority-sources/shi-fccells-ii.pdf": "09bc4c0efb713189acd12ac384e1de1ff51ca1eb670c9bf934f95088ad30b43d",
+    "research/ai-review-notes/priority-sources/shi-fccells-ii.txt": "68ada758890fc87b5a08ff7360f5093800ceb499125fdb8c2c7c453447e97277",
+    "research/ai-review-notes/priority-sources/shi-leftcells.pdf": "98e33e1b7650ce8c860aa3e7da8cdff792eb44ee520416c96d55285750986417",
+    "research/ai-review-notes/priority-sources/shi-leftcells.txt": "85362ffbbe44b0f0a8a2730c29603da54e7700c8ae105d905d10148fc4caad83",
+    "research/ai-review-notes/source-before-followup.txt": "9518ff26aef8f2eccc0cd47b02341e37ed784887c81a3d5c618f259ecb3f11c5",
+    "research/ai-review-notes/uniform-priority-followup.txt": "7d35723a77b27666fb4535623cf3a5492054ce7e7ca9447bb46cc5e0bcdf0598",
+    "results/exceptional-leading.tex": "c31a21044eb6dffbe719f7660eaf23aaf445f17e48d79bbe5d69eeae76e16aab",
+    "supplement/validation/final-layout-refresh.json": "8609331f0c9f25bb24fff1bca1be27cf28e5a7f7c38c40edf37a49af155931d5"
+  },
+  "note_2026_10_07": "Historical manifest. On 2026-10-07 research/journal-review was renamed research/ai-review-notes, absolute paths were made repository-relative, and an AI-provenance banner was prepended to every text note; the recorded hashes therefore refer to the pre-banner files."
+}

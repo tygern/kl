@@ -1,0 +1,46 @@
+suffix 1 size 2
+suffix 2 size 3
+suffix 3 size 6
+suffix 4 size 10
+suffix 5 size 20
+suffix 6 size 30
+suffix 7 size 44
+suffix 8 size 71
+suffix 9 size 124
+suffix 10 size 248
+suffix 11 size 372
+suffix 12 size 620
+suffix 13 size 1165
+suffix 14 size 1850
+suffix 15 size 2295
+suffix 16 size 3060
+suffix 17 size 4785
+suffix 18 size 5685
+suffix 19 size 6580
+suffix 20 size 11639
+suffix 21 size 15852
+suffix 22 size 20192
+suffix 23 size 29746
+suffix 24 size 47351
+suffix 25 size 58314
+suffix 26 size 80453
+suffix 27 size 96251
+computed 2000 elements, 93882 pairs, 3087 polys
+        0.69 real         0.66 user         0.00 sys
+            58654720  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                3767  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                 715  involuntary context switches
+          7110754989  instructions retired
+          2313849039  cycles elapsed
+            58163656  peak memory footprint

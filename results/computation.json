@@ -8979,7 +8979,7 @@
     ],
     "elapsed_seconds": 0.172,
     "kl_cache_entries": 24245,
-    "recurrence_certificate": "/Users/ic/workspace/kl/results/d6-recurrence-certificate.json"
+    "recurrence_certificate": "results/d6-recurrence-certificate.json"
   },
   "D6_dependency_verification": {
     "records": 24245,

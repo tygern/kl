@@ -1,6 +1,6 @@
 // Exact terminal enumeration by one-sided parabolic pruning.
-// Build: c++ -std=c++17 -O3 research/en_e8/parabolic_terminals.cpp -o /private/tmp/e8-terminals
-// Run: /private/tmp/e8-terminals 8 > research/en_e8/e8-terminals.json
+// Build: c++ -std=c++17 -O3 research/en_e8/parabolic_terminals.cpp -o e8-terminals
+// Run: ./e8-terminals 8 > research/en_e8/e8-terminals.json
 // Optional third argument limits the number of cosets, making the result bounded.
 // No enumeration or storage of the full E8 group is performed.
 #include <algorithm>

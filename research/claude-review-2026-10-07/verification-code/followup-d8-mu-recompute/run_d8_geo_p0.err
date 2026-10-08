@@ -1,0 +1,33 @@
+top word (Gern Lemma 2.3.4): 2 1 4 3 2 1 6 5 4 3 2 1 8 7 6 5 4 3 2 1 6 5 4 7 6 8  (length 26)
+[geo] 56 positive roots
+[geo] ideal size 265760, len(top)=26, len(x)=5, id_x=91825
+[geo] canon(top)=12343123546543123787654312 canon(x)=12468
+[geo] ideal rank vector: 1 8 35 112 292 656 1315 2408 4091 6508 9744 13767 18372 23143 27451 30508 31494 29795 25346 18913 12009 6260 2566 782 163 20 1
+  layer  0:       1 elements, cumulative extremal pairs 1, distinct polys 1, 0.0s
+  layer  1:       8 elements, cumulative extremal pairs 9, distinct polys 1, 0.0s
+  layer  2:      35 elements, cumulative extremal pairs 44, distinct polys 1, 0.0s
+  layer  3:     112 elements, cumulative extremal pairs 170, distinct polys 1, 0.0s
+  layer  4:     292 elements, cumulative extremal pairs 580, distinct polys 2, 0.0s
+  layer  5:     656 elements, cumulative extremal pairs 1802, distinct polys 2, 0.0s
+  layer  6:    1315 elements, cumulative extremal pairs 5215, distinct polys 4, 0.0s
+  layer  7:    2408 elements, cumulative extremal pairs 14143, distinct polys 4, 0.0s
+  layer  8:    4091 elements, cumulative extremal pairs 35620, distinct polys 8, 0.0s
+  layer  9:    6508 elements, cumulative extremal pairs 84300, distinct polys 16, 0.0s
+  layer 10:    9744 elements, cumulative extremal pairs 187145, distinct polys 20, 0.0s
+  layer 11:   13767 elements, cumulative extremal pairs 391295, distinct polys 40, 0.1s
+  layer 12:   18372 elements, cumulative extremal pairs 768032, distinct polys 63, 0.2s
+  layer 13:   23143 elements, cumulative extremal pairs 1415332, distinct polys 119, 0.3s
+  layer 14:   27451 elements, cumulative extremal pairs 2443690, distinct polys 179, 0.6s
+  layer 15:   30508 elements, cumulative extremal pairs 3943417, distinct polys 270, 1.0s
+  layer 16:   31494 elements, cumulative extremal pairs 5930515, distinct polys 433, 1.6s
+  layer 17:   29795 elements, cumulative extremal pairs 8283970, distinct polys 641, 2.5s
+  layer 18:   25346 elements, cumulative extremal pairs 10739680, distinct polys 909, 3.5s
+  layer 19:   18913 elements, cumulative extremal pairs 12952229, distinct polys 1248, 4.6s
+  layer 20:   12009 elements, cumulative extremal pairs 14640751, distinct polys 1670, 5.5s
+  layer 21:    6260 elements, cumulative extremal pairs 15703360, distinct polys 2161, 6.3s
+  layer 22:    2566 elements, cumulative extremal pairs 16236379, distinct polys 2733, 6.7s
+  layer 23:     782 elements, cumulative extremal pairs 16439097, distinct polys 3123, 6.9s
+  layer 24:     163 elements, cumulative extremal pairs 16491614, distinct polys 3424, 6.9s
+  layer 25:      20 elements, cumulative extremal pairs 16499238, distinct polys 3513, 6.9s
+  layer 26:       1 elements, cumulative extremal pairs 16499644, distinct polys 3533, 6.9s
+[geo] top vector: 5 descents checked per x, mismatches=0

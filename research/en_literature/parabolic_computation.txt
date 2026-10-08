@@ -1,3 +1,6 @@
+AI-generated internal review/research note produced with GPT-6 Astra agents at the author's request (October 2026).
+Not peer review and not a journal decision.
+
 SPHERICAL PARABOLIC COMPUTATION FOR THE E9 TARGET
 Checked and derived 2026-10-07 UTC. This is a mathematical algorithm note;
 no E9 numerical KL output is asserted here.

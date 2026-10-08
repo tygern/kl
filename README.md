@@ -1,25 +1,38 @@
-# Leading Kazhdan–Lusztig coefficients in type E
+# Leading Kazhdan–Lusztig coefficients with fully commutative lower endpoints in type E
 
-A research project extending the methods of [Tyson Gern's type-D thesis](https://arxiv.org/abs/1304.6074) to ordinary, equal-parameter Kazhdan–Lusztig polynomials with a fully commutative lower endpoint.
+Tyson Gern (Initial Capacity, tyson@initialcapacity.io, [ORCID 0009-0003-8288-8786](https://orcid.org/0009-0003-8288-8786))
 
-The manuscript establishes:
+## Results
 
-- **Finite exceptional types:** the leading coefficient is 0 or 1 in E6, E7 and E8 for every upper endpoint. Together with earlier A and D results, this gives the bound for every finite simply laced Coxeter group.
-- **Arbitrarily large ranks:** explicit full-support terminal reflection families in E(4r+1), r ≥ 3, with vanishing non-cover leading coefficients and eventual complete vanishing at each fixed rank.
-- **Further examples:** complete leading-coefficient vanishing for an affine E8 family, and a complementary E10 construction.
+The paper proves that for every fully commutative $x$ and arbitrary $w$ in the Weyl groups of types $E_6$, $E_7$ and $E_8$ the leading coefficient $\mu(x,w)$ of the ordinary Kazhdan–Lusztig polynomial is $0$ or $1$. Combined with Green's theorem for type $A$ (proved for affine $A$ as well) and [Gern's type-$D$ thesis](https://arxiv.org/abs/1304.6074), this settles Green's 2009 question (Chmutov's "Green's 0–1 conjecture") for every finite simply laced Coxeter group. The proof reduces, by Green's star-operation argument and Fan's monomial cell theory, to a finite list of noncommuting terminal elements, which is computed exhaustively: it is Gern's type-$D$ list plus exactly two new elements, $w_7$ in $E_7$ (length 28) and $w_8$ in $E_8$ (length 50), and every new element has even gap to its unique eligible lower endpoint, so no Kazhdan–Lusztig computation beyond Gern's $D_6$ value is needed. The paper also constructs infinite families of full-support terminal elements in $E_{4r+1}$ ($r\ge 3$), in affine $E_8$ (lengths $27+92k$) and in $E_{10}$ for which $\mu(x,b)=0$ for every fully commutative $x$ and every member of the family, and shows that the bound is sharp: it fails in affine $D_4$ ($\mu=2$) and it fails without the fully commutative hypothesis ($\mu=10$ already in $E_6$). To our knowledge the exceptional bound, the terminal lists and the infinite families have not appeared before.
 
-The finite classification is computer-assisted; the uniform construction has a symbolic proof. Historical priority remains qualified. These results concern leading coefficients, not formulas for every coefficient of the polynomials or arbitrary upper endpoints in infinite type. Combinatorial-invariance transfer is a separate conditional observation.
+The finite classification is computer-assisted; the families have symbolic proofs. A complete $E_6$ table and the affine $E_8$ odd-gap coefficients of a second terminal family are reported in the paper's final section (Section 5), and the structure of $w_7$ and $w_8$ in Remark 3.3; all are certified in the supplement.
 
-Read the [manuscript PDF](output/pdf/exceptional-leading.pdf) or [LaTeX source](results/exceptional-leading.tex). The [v0.1.0 release](https://github.com/tygern/kl/releases/tag/v0.1.0) supplies a compact, self-contained proof supplement and checksums.
+## Use of AI tools
+
+This work was carried out with substantial assistance from large language model systems. OpenAI's GPT-6.1 Sol and GPT-6 Astra (the "Astra agents" of the internal notes), run as teams of agents, performed the literature searches, proposed and drafted the constructions and proofs, wrote the enumeration and verification code, produced internal review notes, and drafted the text. Anthropic's Claude Fable 5.1 then carried out an independent adversarial review that re-derived every lemma against the primary sources, recomputed every computational claim with separately written code, and found the strengthenings and corrections incorporated in the current version. The author directed the work, checked the proofs, computations and references, and takes full responsibility for the content. The internal review notes are machine-generated and are not peer review. The complete workflow, including the prompts in `prompts/`, is described in [PROVENANCE.md](PROVENANCE.md).
+
+## Licensing
+
+Code is licensed under the [MIT License](LICENSE). The manuscript text and the PDFs are licensed under [CC BY 4.0](LICENSE-TEXT.md).
+
+## Contents
+
+- Paper: [LaTeX source](results/exceptional-leading.tex) and [PDF](output/pdf/exceptional-leading.pdf).
+- Independent review (7 October 2026, Claude Fable 5.1): [report](research/claude-review-2026-10-07/REVIEW.md), [findings with verifier verdicts](research/claude-review-2026-10-07/findings-digest.md), and the reviewers' [verification code](research/claude-review-2026-10-07/verification-code/).
+- Archived research notes (superseded, folded into Section 5 of the paper): [research/archive/notes/](research/archive/notes/).
+- Internal AI review and research notes: [research/ai-review-notes/](research/ai-review-notes/), [research/editorial/](research/editorial/) and the other `research/` directories. Every text note carries a banner stating that it is machine-generated and is not peer review or a journal decision.
+- Computation sources and certificates: `computations/`, `research/` and `results/`.
+- Proof supplement sources: `supplement/` (built archive under `output/supplement/`, not tracked).
 
 ## Reproduce
 
-Download and extract `exceptional-leading-proof.zip` from the release, enter `exceptional-leading-proof`, and run:
+Release **v0.2.0** of the repository is prepared under `output/supplement/` (archive `exceptional-leading-proof.zip`, `SHA256SUMS`, release notes) but has not yet been published; it certifies every computational claim of the current paper. The previous release, [v0.1.0](https://github.com/tygern/kl/releases/tag/v0.1.0), remains the historical tag for the earlier version of the manuscript. Extract the supplement archive, enter `exceptional-leading-proof`, and run
 
 ```sh
 python3 run_proofs.py
 ```
 
-Python 3.10+ and an installed C++17 compiler suffice; no network or Python packages are needed. Add `--full` to regenerate the historical full-group E6/E7 searches. Both modes passed after isolated extraction. The supplement includes all required inputs, expected outputs, provenance and a SHA-256 manifest; its README states exactly what is rebuilt and what is verified from saved certificates.
+Python 3.10+ and an installed C++17 compiler suffice; no network or Python packages are needed. Add `--full` to regenerate the full-group $E_6/E_7$ searches and the heavier certificates. The supplement includes all inputs, expected outputs, provenance and a SHA-256 manifest; its README states exactly what is rebuilt and what is verified from saved certificates.
 
-The repository retains computation sources and research reports in `computations/`, `research/` and `results/`. [Referee reports](research/journal-review/) document Astra-assisted mathematical, literature and editorial reviews; they are not journal decisions. Build the supplement with `python3 supplement/build_package.py`; rebuild the PDFs with `python3 research/build_pdfs.py` using an installed TeX toolchain.
+Within the repository, `python3 supplement/build_package.py` builds the supplement and `python3 research/build_pdfs.py` rebuilds the PDF with an installed TeX toolchain.

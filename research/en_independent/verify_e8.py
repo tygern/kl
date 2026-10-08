@@ -75,6 +75,23 @@ def leq(x, lx, w, lw):
         w, lw = right(w, s), lw - 1
     return True
 
+VOLATILE_KEYS = {'seconds', 'elapsed_seconds'}
+
+def strip_volatile(value):
+    if isinstance(value, dict):
+        return {k: strip_volatile(v) for k, v in value.items() if k not in VOLATILE_KEYS}
+    if isinstance(value, list):
+        return [strip_volatile(v) for v in value]
+    return value
+
+def content_hash(path):
+    # Generated JSON certificates carry wall-clock timing fields; hash a canonical
+    # copy without them so the audit is reproducible across machines.
+    if path.suffix == '.json':
+        data = json.dumps(strip_volatile(json.loads(path.read_text())), sort_keys=True, separators=(',', ':'))
+        return hashlib.sha256(data.encode()).hexdigest()
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
 def convolution(a, b):
     c = [0] * (len(a) + len(b) - 1)
     for i, x in enumerate(a):
@@ -162,11 +179,12 @@ def main():
                'eligible_ranks': sorted(v[0] - v[3][0][1] for v in canonical[0].values()),
                'complete_FC_catalogue': len(fc), 'FC_ascents_verified': ascents,
                'parabolic_and_coset_poincare_products_match': True,
-               'source_sha256': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
+               'source_sha256': {str(p.relative_to(ROOT)): content_hash(p)
                                  for p in paths + [Path(__file__), ROOT / 'research/en_independent/e8_d7_cosets.cpp',
                                                   ROOT / 'research/en_independent/fc_catalogue.cpp',
                                                   ROOT / 'research/en_e8/parabolic_terminals.cpp']},
-               'priority': 'Historical novelty remains unconfirmed.'}
+               'hashing': 'JSON inputs are hashed after removing the volatile keys ' + ', '.join(sorted(VOLATILE_KEYS)) + ' and re-serialising with sorted keys; other files are hashed byte for byte.',
+               'priority': 'Not established by this computational audit.'}
     output = ROOT / 'results/e8-independent-audit.json'
     output.write_text(json.dumps(summary, indent=2) + '\n')
     print(json.dumps(summary, indent=2))

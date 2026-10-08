@@ -1,6 +1,6 @@
 // Independent E7 terminal verification using integral matrices, not root IDs.
-// Build: c++ -std=c++17 -O3 research/verify_e7_matrices.cpp -o /private/tmp/verify-e7
-// Run: /private/tmp/verify-e7 > results/e7-independent-certificate.json
+// Build: c++ -std=c++17 -O3 research/verify_e7_matrices.cpp -o verify-e7
+// Run: ./verify-e7 > results/e7-independent-certificate.json
 #include <array>
 #include <vector>
 #include <unordered_map>

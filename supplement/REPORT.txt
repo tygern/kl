@@ -21,7 +21,7 @@ The affine and E10 arithmetic libraries contain their original optional entry po
 The ZIP and all work remain under supplement/ to respect the assigned directory boundary. A parent may copy the finished ZIP to output/supplement/ without changing its bytes.
 
 Validation
-Clean ZIP extraction: /private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof
+Clean ZIP extraction: (scratch extraction)/exceptional-leading-proof
 Default: all 24 steps passed in 12.331 seconds.
 Full: all 30 steps passed in 16.058 seconds, including fresh historical E6 and E7 root-index and independent integer-matrix full-group enumerations.
 Environment: Python 3.14.7, /usr/bin/clang++ with -O3 -std=c++17. No installation, network, uv, or third-party packages.
@@ -32,7 +32,7 @@ Detailed per-step logs, binaries and generated certificates are retained in the 
 Current archive at validation: 543,395 bytes, 37 files, SHA256 11e11c749d1b0075ac5228494a694bcde428d6bc3fa08e194e972e753abf9a1b.
 Final refresh completed after the parent finalized the manuscript and PDF. Fresh ZIP extraction passed archive CRC and all 36 manifest file hashes. Relative to the fully tested archive, only the manuscript TeX, rendered PDF, and their INPUTS.json provenance hashes changed; all 33 other proof inputs, runner code, fixed seeds, recurrence data, and expected results are byte-identical. No redundant numerical rerun was required. A second build produced the same archive SHA256, confirming deterministic packaging. Record: supplement/validation/final-refresh.json.
 Final archive: 545,155 bytes, 37 files, SHA256 fb48f74d4a7f18e13b4bff15e997b8b79bd01cd17d33f07dfedee5b5dc0734b1.
-Final fresh extraction: /private/tmp/kl-proof-final-m8lv0g70/exceptional-leading-proof.
+Final fresh extraction: (scratch extraction)/exceptional-leading-proof.
 The finished ZIP may be copied unchanged to output/supplement/.
 
 Publication limitation
@@ -43,3 +43,112 @@ Only a Needspace pagination guard was added to the manuscript after the final ag
 
 GITHUB RELEASE PREFLIGHT
 The author requested a GitHub release in tygern/kl. The v0.1.0 archive is 545,490 bytes with SHA256 595d932c3f807c77b2ed7df63244dc376d20f6430b8ebbf456b97ae9974fa703. Fresh extraction passed CRC and all 36 manifest hashes. All proof inputs remain identical to those tested in both modes; only manuscript snapshots and release documentation changed. See validation/release-preflight.json. This supersedes the earlier local-only publication status; publication receipts are saved in output/supplement/.
+
+REVISION v0.2.0 (7 October 2026, after the independent review)
+New certificate programs under research/review_checks/ (adapted from the
+review's verification code; exact integers; Python 3.10+ stdlib or C++17):
+e6_mu_table.cpp (complete E6 KL table, max mu 10, 8 pairs, histogram
+2:400 3:556 4:310 5:108 6:4 10:8, FC-lower max 1 over 6,431 pairs),
+e9_quotient_kl.cpp (affine E8 odd-gap polynomials for the length-33
+reflection and its two length-34 extensions; quotients 364,156 / 216,990 /
+207,866, ideals 5,826,496 / 6,943,680 / 6,651,712), d8_gern_kl.cpp (D6 and
+D8 Gern polynomials in two models), fc_maxima.cpp (E6-E13 FC counts and
+maximum lengths 16, 27, 29, 44, 55, 66, 78, 92), terminal_structure.py
+(Gern-plus-two, D5/D6/D7 enumeration, palindromes, chain, w_0(J)
+factorizations), uniform_family_checks.py (lemma ingredients for b_{r,k},
+lengths 8r^2+3+116k, no FC covers). The affine D4 witness
+(research/verify_affine_d4_r.py) is now a runner step. e6_bad.json is the
+unmodified enumerate_bad output; --full compares every regenerated snapshot
+with the shipped one (timing keys ignored); verify_e8.py hashes JSON inputs
+without timing fields; the runner compares the uniform verifier's manuscript
+hash with the value recorded by the builder in INPUTS.json; LICENSE (MIT)
+is shipped; the README names the author and the AI provenance and labels
+referee.txt as an AI-generated internal note. Scratch paths were removed
+from all shipped sources and from these records.
+Staged test (scratch copy of the working tree): default 35 steps, 47.2 s,
+486 MB; --full 41 steps, 95.3 s, 518 MB; both summaries equal
+expected-summary.json. Records: validation/default-*.json,
+validation/full-*.json, validation/verified-MANIFEST.json,
+validation/v0.2.0-staged-test.json. The release archive itself is built in
+Phase 2 after the manuscript is final.
+
+PHASE 2 RELEASE BUILD (7 October 2026)
+The archive was rebuilt from the repository root after the manuscript was
+final (build_package.py records the manuscript SHA-256 in INPUTS.json and
+build-summary.json). The first release-test run of the default mode failed
+in the step D6-D8-Gern-polynomials with "constant term != 1": d8_gern_kl.cpp
+interned polynomials in a std::vector that worker threads read by address
+while other workers appended to it, so a reallocation during a layer left
+dangling references (the Phase 1 staged test had passed by chance). The
+store was replaced by an append-only chunked table whose element addresses
+never move; the ids read during a layer are all interned before the
+preceding thread join. The fixed program reproduces the shipped certificate
+results/d8-gern-certificate.json byte for byte, three repeated runs passed,
+and ThreadSanitizer reports no race for the fixed program (it does for the
+old one). The final archive and both runner modes are recorded below.
+Final archive: supplement/dist/exceptional-leading-proof.zip, 845,568 bytes,
+53 files, SHA-256
+66a55fc593b8822528799fb8f1872c1524dffcd3d90fe0dac589be888351e7d4, manuscript
+SHA-256 c2f81f88913cdfc6ddfe35f8bf39e98a08f4fdc4faa61bf28cefe0c4c79ee569
+(INPUTS.json; the uniform verifier records the same value; the manuscript is
+the 12-page version after the post-review fixes, and the archive now also
+ships research/en_affine_referee/proved-affine-certificate.json, which the
+runner regenerates and compares). Isolated runs on a fresh extraction,
+sequentially on an otherwise idle machine: default 35 steps, 48 s wall,
+486 MB peak; --full 41 steps, 101 s wall, 518 MB peak (an earlier
+release test under load took 110 s and 156 s); both summaries equal
+expected-summary.json;
+no machine-specific path string occurs in the extracted archive. Records:
+validation/default-*.json, validation/full-*.json (copied from the two
+release-test runs), validation/verified-MANIFEST.json (the archive's
+MANIFEST.json) and validation/v0.2.0-release-test.json. The archive, the PDF,
+SHA256SUMS, release-notes.md, build-summary.json and publication.json
+(status prepared_not_published) are under output/supplement/, with the
+v0.1.0 files moved to output/supplement/v0.1.0/. Nothing was tagged,
+uploaded or committed.
+
+FINAL BUILD (7 October 2026, after the tighten/fix passes)
+The manuscript (results/exceptional-leading.tex, SHA-256
+849faea22ef9f69b73835e3cc33ed5b3151b9b929ffe4391248cf078f129116f, 13 pages
+at 11pt) was unchanged in this pass. The PDF was rebuilt from a clean
+latexmk build directory with research/build_pdfs.py (final pass: no
+undefined or multiply-defined references, no overfull or underfull boxes;
+pdfinfo Author "Tyson Gern"); because PDF output carries build timestamps,
+the PDF bytes differ from the previous build (same size, 561,951 bytes;
+SHA-256 b9fb8546e2444052cf4651d7a5651f16a0efc2665e5ecde42b3edd9abff0edc7),
+so the archive, which ships the PDF, was rebuilt as well. research/check_pdf.py
+passed (results/pdf-qa.json), and research/reproduce_uniform.py and
+research/reproduce_en.py were rerun (all steps passed; the uniform
+certificate and manifest record the manuscript hash above). The only
+source edit was to supplement/README.md: the run-time sentences now give
+bounds (default under two minutes, about 45 s when the machine is otherwise
+idle; --full under three minutes, about 100 s when idle), matching the
+release test recorded in validation/v0.2.0-release-test.json. Final archive:
+806,584 bytes, 53 files, SHA-256
+ffd2a9c38d332a1a7c10ac7d59cff4a8d1ff164932b421fc5e1ac8d5f042e3db; both
+runner modes passed from fresh extractions, run one after the other
+(default 35 steps, 44 s wall, 486 MB peak; --full 41 steps, 102 s wall,
+518 MB peak; both summaries equal expected-summary.json; the zip README is
+byte-identical to supplement/README.md; no machine-specific path occurs in
+the extracted archive). output/supplement/ (zip, PDF, SHA256SUMS,
+build-summary.json, publication.json with status prepared_not_published,
+release-notes.md) was refreshed; github-release.json and v0.1.0/ were left
+unchanged. Nothing was committed, staged, tagged or published.
+
+FINAL LAYOUT BUILD (7 October 2026, 10pt)
+The layout levers used to reach 13 pages at 11pt (0.9in margins, a \small
+appendix, a \scriptsize program table) were reverted in favour of the
+standard 10pt article class with 1in margins and no reduced-size blocks;
+the margin threshold in research/check_pdf.py was restored to 65pt. Three
+overfull lines were resolved by setting the affected vectors and
+polynomials as displays. No mathematical statement, number, polynomial,
+word or citation changed. Manuscript SHA-256
+c2f81f88913cdfc6ddfe35f8bf39e98a08f4fdc4faa61bf28cefe0c4c79ee569, 12 pages;
+PDF 604,122 bytes, SHA-256
+967ca91fa0e38c4987afac0be23ae37050cd87db5ef45c67490befb508a99f2c; archive
+845,568 bytes, 53 files, SHA-256
+66a55fc593b8822528799fb8f1872c1524dffcd3d90fe0dac589be888351e7d4. Both
+runner modes passed from fresh extractions (default 35 steps, 48 s wall,
+486 MB peak; --full 41 steps, 101 s wall, 518 MB peak; summaries equal
+expected-summary.json). output/supplement/ and validation/ were refreshed.
+Nothing committed, tagged or published.

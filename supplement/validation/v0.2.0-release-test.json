@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "version": "v0.2.0",
+  "note": "Release build after the post-review fixes: archive built from the repository root after the manuscript was final (12 pages), copied to a scratch directory, extracted, and both runner modes executed in isolation and sequentially on an otherwise idle machine. This is the archive copied to output/supplement/.",
+  "archive_bytes": 845568,
+  "archive_sha256": "66a55fc593b8822528799fb8f1872c1524dffcd3d90fe0dac589be888351e7d4",
+  "archive_files": 53,
+  "manuscript_sha256": "c2f81f88913cdfc6ddfe35f8bf39e98a08f4fdc4faa61bf28cefe0c4c79ee569",
+  "default": {
+    "steps": 35,
+    "seconds": 47.9,
+    "peak_rss_bytes": 485605376,
+    "summary_equals_expected": true
+  },
+  "full": {
+    "steps": 41,
+    "seconds": 100.9,
+    "peak_rss_bytes": 517767168,
+    "summary_equals_expected": true
+  },
+  "environment": "Python 3.14.7, Apple clang 21 (-O3 -std=c++17), 10 cores, no other heavy process (load average recorded in the run logs)"
+}

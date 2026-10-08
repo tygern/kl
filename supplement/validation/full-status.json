@@ -1,11 +1,27 @@
 {
   "status": "passed",
   "mode": "full",
-  "seconds": 16.058,
+  "seconds": 100.945,
   "compiler": "/usr/bin/clang++",
   "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
-  "steps": 30,
-  "work": "/private/tmp/kl-proof-supplement-uugedcif/exceptional-leading-proof/runs/full-69l0og71/work",
+  "steps": 41,
+  "work": "runs/full-phm0zncm/work",
   "expected_outputs_match": true,
-  "printed_table_matches_generated_terminals": true
+  "printed_table_matches_generated_terminals": true,
+  "manuscript_sha256_matches_build_record": true,
+  "snapshots_compared": [
+    "research/broad_exceptional/e6_bad.json",
+    "research/broad_exceptional/e7_bad.json",
+    "results/e6-independent-certificate.json",
+    "results/e7-independent-certificate.json",
+    "research/ai-review-notes/finite-descents.json",
+    "research/en_affine_referee/proved-affine-certificate.json",
+    "results/e6-mu-table.json",
+    "results/e9-odd-gap-certificate.json",
+    "results/d8-gern-certificate.json",
+    "results/fc-maxima-certificate.json",
+    "results/terminal-structure-certificate.json",
+    "results/uniform-family-certificate.json (shipped rows)",
+    "results/affine-d4-independent.json"
+  ]
 }

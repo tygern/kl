@@ -1,3 +1,6 @@
+AI-generated internal review/research note produced with GPT-6 Astra agents at the author's request (October 2026).
+Not peer review and not a journal decision.
+
 APPLICATIONS OF GERN'S TYPE-D RESULTS AFTER FULL COMBINATORIAL INVARIANCE
 
 Research notes, 2026-10-06 (America/Chicago). These notes distinguish a consequence of the supplied

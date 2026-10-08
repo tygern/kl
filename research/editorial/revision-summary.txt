@@ -1,3 +1,6 @@
+AI-generated internal review/research note produced with GPT-6 Astra agents at the author's request (October 2026).
+Not peer review and not a journal decision.
+
 EDITORIAL REVISION, 7 OCTOBER 2026
 
 Manuscript: results/exceptional-leading.tex

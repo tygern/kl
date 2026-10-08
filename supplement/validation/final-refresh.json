@@ -3,7 +3,7 @@
   "archive": "supplement/dist/exceptional-leading-proof.zip",
   "archive_bytes": 545155,
   "archive_sha256": "fb48f74d4a7f18e13b4bff15e997b8b79bd01cd17d33f07dfedee5b5dc0734b1",
-  "extraction": "/private/tmp/kl-proof-final-m8lv0g70/exceptional-leading-proof",
+  "extraction": "(scratch extraction)/exceptional-leading-proof",
   "manifest_files_verified": 36,
   "archive_files": 37,
   "changed_since_fully_tested_archive": [

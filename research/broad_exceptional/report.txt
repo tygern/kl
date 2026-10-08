@@ -1,3 +1,6 @@
+AI-generated internal review/research note produced with GPT-6 Astra agents at the author's request (October 2026).
+Not peer review and not a journal decision.
+
 Exceptional search: complete E6 and E7 lower-FC mu bound
 Research date: 2026-10-07 UTC
 
@@ -70,6 +73,14 @@ Reproduce from the repository root:
 
 Saved outputs: e6_bad.json, e7_bad.json, and initial e6_bad.json.log.
 Source/output SHA256 hashes are in checksums.txt.
+
+Addendum, 7 October 2026 (after the independent review): the shipped
+e6_bad.json is now the unmodified output of `enumerate_bad 6` (the earlier
+file was the exact_e.py output with a hand-added commuting_weak key); its
+schema therefore matches e7_bad.json, and the v0.2.0 proof supplement
+regenerates both snapshots with --full and requires equality with the
+shipped files. research/verify_exceptional.py compares them with the
+integer-matrix certificates without schema-tolerant code.
 No E8 enumeration or theorem is claimed.
 
 PROOF AUDIT
