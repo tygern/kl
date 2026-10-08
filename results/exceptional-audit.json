@@ -4,17 +4,13 @@
   "poincare_histograms_match": true,
   "d6_signed_pair_matches": true,
   "snapshot_generators": {
-    "research/broad_exceptional/e6_bad.json": "enumerate_bad.cpp 6",
-    "research/broad_exceptional/e7_bad.json": "enumerate_bad.cpp 7",
-    "results/e6-independent-certificate.json": "verify_e6_independent.py",
-    "results/e7-independent-certificate.json": "verify_e7_matrices.cpp"
+    "research/broad_exceptional/e6_bad.json": "enumerate-bad -rank 6",
+    "research/broad_exceptional/e7_bad.json": "enumerate-bad -rank 7",
+    "results/e6-independent-certificate.json": "matrix-search -rank 6",
+    "results/e7-independent-certificate.json": "matrix-search -rank 7"
   },
   "files": {
-    "research/verify_e6_independent.py": "ef0e914cc770d29b0204ae7e1a4a8162c301691371314344834ff246ae1112b1",
-    "research/verify_e7_matrices.cpp": "279c90ab20a0002e0f6ee809358220cd402b13239e440b17e77ba89bc768b4fd",
-    "research/broad_exceptional/exact_e.py": "91ca54463b49cc918e441b72373c114acdc59c3f6ad1d46fd976c8967e5e7160",
-    "research/broad_exceptional/enumerate_bad.cpp": "c4a7deaee54b7069ba565b8182a93658079c947280673ce98632a995c93857cf",
-    "results/e6-independent-certificate.json": "ce136c89a2b1d9419370fcd21e88a7dfa74c8f94bd29920c9efddaceeb4fd165",
+    "results/e6-independent-certificate.json": "a9a658b722a61ab07dfd8eb6254721faf936c4d91c65f0571a388ef2a8e140be",
     "results/e7-independent-certificate.json": "d83b61f9adb080478d9e449ee1556730bdbc3d3048278d549760cceca8099dac",
     "research/broad_exceptional/e6_bad.json": "ed89cfa2e204aeb4af35583e5daa713510056432de7a3608e37122ab6a3ef6d4",
     "research/broad_exceptional/e7_bad.json": "04987b17516e81a10fbb4e5faf529f45cfa0f5f7923ab66a45cdd49002aaedce"

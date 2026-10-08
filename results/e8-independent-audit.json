@@ -30,12 +30,9 @@
   "source_sha256": {
     "research/en_independent/e8-d7-terminals.json": "16305f6673d5680f66014a55bc6c8368c76ff3ed280881428b9089b537a95227",
     "research/en_e8/e8-terminals.json": "cd01afc4c3ee2e2418d84faa5c2fe7690c0fb1f536cba468cb431d1adae3e0e3",
-    "research/en_independent/e8-fc.json": "8be22bb194dfe069c3dc855d0f095b9850d1e199d6e1c06e4380ea2045e128c4",
-    "research/en_independent/verify_e8.py": "369fc2c2dc6a984a9ee622f13ddcd4a8d8ddcc086d3a496b8dc38963b13f11f5",
-    "research/en_independent/e8_d7_cosets.cpp": "c19e4272d78ebdd6fdcbe4dd17a8090d399111c023f97c0561bb50948727c2d1",
-    "research/en_independent/fc_catalogue.cpp": "49cc4103ce2e7b1d97d6677291ceed101ee7ad1c0bfeb737747bca65bd7b6242",
-    "research/en_e8/parabolic_terminals.cpp": "5f63ecd1ae4ffcde8b1875d6487a8b1cb05c65ea182ce1204db520006521b06e"
+    "research/en_independent/e8-fc.json": "8be22bb194dfe069c3dc855d0f095b9850d1e199d6e1c06e4380ea2045e128c4"
   },
-  "hashing": "JSON inputs are hashed after removing the volatile keys elapsed_seconds, seconds and re-serialising with sorted keys; other files are hashed byte for byte.",
+  "program_sources": "cmd/verify-e8 (this audit), cmd/e8-d7, cmd/fc-catalogue, cmd/terminals-flat and internal/parabolic; their Go source files are hashed by the supplement's MANIFEST.json, not here.",
+  "hashing": "JSON inputs are hashed after removing the volatile keys elapsed_seconds, seconds and re-serialising with sorted keys.",
   "priority": "Not established by this computational audit."
 }

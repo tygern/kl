@@ -1,11 +1,22 @@
 # Build outputs and local working artifacts
 __pycache__/
+# Go: sources only are tracked. `go build -C supplement -o bin/ ./cmd/...` writes to
+# supplement/bin/; a bare `go build` inside a command directory writes a binary named
+# after the directory; the proof runner builds into runs/<mode>-*/bin.
+# `/supplement/cmd/*/*` with its `.go` exception also ignores any other non-.go file
+# under supplement/cmd/<name>/ (there are none); add a negation if testdata is needed.
+/supplement/bin/
+/supplement/cmd/*/*
+!/supplement/cmd/*/*.go
+/supplement/*.test
+/supplement/**/*.test
+/supplement/**/*.out
 *.py[cod]
 .DS_Store
 *.log
 /tmp/
 **/reproduction-logs/
-/research/broad_exceptional/enumerate_bad
+/research/archive/python-cpp/research/broad_exceptional/enumerate_bad
 /research/en_independent/e*-fc.json
 /supplement/dist/
 /output/supplement/

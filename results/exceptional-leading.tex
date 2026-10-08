@@ -875,7 +875,9 @@ re-derived every lemma against the primary sources, recomputed every
 computational claim with separately written code, checked every citation,
 and found the strengthening of Theorem~\ref{thm:uniform}, the data in
 Section~\ref{sec:complements}, and the attribution corrections incorporated
-here. The author directed the work, checked the proofs, computations and
+here; the Go port of the supplement was written by Claude Sonnet 5.5 and
+verified by Claude Fable 5.1 against the earlier programs' outputs. The
+author directed the work, checked the proofs, computations and
 references, and takes full responsibility for the content. The complete
 workflow, including the prompts used, the internal review notes (which are
 machine-generated and are not peer review), and the review code, is
@@ -889,31 +891,32 @@ recorded in the repository cited in Appendix~\ref{app:certificates}.
 \toprule
 Result & Programs; certificates\\
 \midrule
-$E_6$, $E_7$ & \texttt{enumerate\_bad.cpp}, \texttt{verify\_e6\_independent.py},
- \texttt{verify\_e7\_matrices.cpp}, \texttt{verify\_exceptional.py};
+$E_6$, $E_7$ & \texttt{enumerate-bad}, \texttt{matrix-search}, \texttt{verify-exceptional};
  \texttt{e6\_bad.json}, \texttt{e7\_bad.json}, \texttt{e6-independent-certificate.json}, \texttt{e7-independent-certificate.json}\\
-$E_8$ & \texttt{parabolic\_terminals.cpp}, \texttt{recursive\_terminals.cpp},
- \texttt{verify\_outputs.py}, \texttt{e8\_d7\_cosets.cpp}, \texttt{verify\_e8.py};
+$E_8$ & \texttt{terminals-flat}, \texttt{terminals-recursive} (both on \texttt{internal/parabolic}),
+ \texttt{verify-outputs}, \texttt{e8-d7}, \texttt{verify-e8};
  \texttt{e8-recursive.json}$^\dagger$, \texttt{e8-d7-terminals.json}$^\dagger$\\
-Table~\ref{tab:terminals}, Remark~\ref{rem:gern} & \texttt{check\_finite\_descents.py}, \texttt{terminal\_structure.py}$^*$;
+Table~\ref{tab:terminals}, Remark~\ref{rem:gern} & \texttt{finite-descents}, \texttt{terminal-structure}$^*$;
  \texttt{finite-descents.json}, \texttt{terminal-structure-certificate.json}\\
-$D_6$, $D_8$ & \texttt{verify\_certificate.py}, \texttt{sparse\_kl.py},
- \texttt{d8\_gern\_kl.cpp}$^*$; \texttt{d6-recurrence-certificate.json}, \texttt{d8-gern-certificate.json}\\
-Uniform family & \texttt{referee\_verify.py}, \texttt{uniform\_family\_checks.py}$^*$,
- \texttt{fc\_maxima.cpp}$^*$; \texttt{referee-certificate.json}$^\dagger$, \texttt{uniform-family-certificate.json}, \texttt{fc-maxima-certificate.json}\\
-Affine $\widetilde E_8$ & \texttt{affine\_proof.py}, \texttt{verify\_families.py},
- \texttt{verify\_fc\_catalogue.py}, \texttt{fc\_catalogue.cpp};
+$D_6$, $D_8$ & \texttt{d6-certificate} (on \texttt{internal/d6}),
+ \texttt{d8-gern-kl}$^*$; \texttt{d6-recurrence-certificate.json}, \texttt{d8-gern-certificate.json}\\
+Uniform family & \texttt{uniform-verify}, \texttt{uniform-covers}$^*$,
+ \texttt{fc-maxima}$^*$; \texttt{referee-certificate.json}$^\dagger$, \texttt{uniform-family-certificate.json}, \texttt{fc-maxima-certificate.json}\\
+Affine $\widetilde E_8$ & \texttt{affine-proof}, \texttt{affine-fc-covers} (both on \texttt{internal/affine}),
+ \texttt{fc-catalogue};
  \texttt{proved-affine-certificate.json}, \texttt{fc-cover-certificate.json}$^\dagger$\\
-$E_{10}$ & \texttt{verify\_indefinite\_e10.py}; \texttt{e10-certificate.json}$^\dagger$\\
-Section~\ref{sec:complements} & \texttt{e6\_mu\_table.cpp}$^*$, \texttt{e9\_quotient\_kl.cpp}$^*$,
- \texttt{verify\_affine\_d4\_r.py};
+$E_{10}$ & \texttt{e10-all-k} (on \texttt{internal/indefinite}); \texttt{e10-certificate.json}$^\dagger$\\
+Section~\ref{sec:complements} & \texttt{e6-mu-table}$^*$, \texttt{e9-quotient-kl}$^*$,
+ \texttt{affine-d4};
  \texttt{e6-mu-table.json}, \texttt{e9-odd-gap-certificate.json}, \texttt{affine-d4-independent.json}\\
 \bottomrule
 \end{tabular}
-\caption{Programs and certificates of the supplement (the zip of release
-v0.2.0), by result. Starred programs were written for the review and share no
-code with the others; daggered certificates are written by the runner, not
-shipped as inputs.}
+\caption{Programs (the commands \texttt{cmd/\textit{name}} of the Go module)
+and certificates of the supplement (the zip of release v0.3.0), by result.
+Starred programs were written for the review and share no code with the
+others; the \texttt{internal} libraries in parentheses are the only shared
+code; daggered certificates are written by the runner, not shipped as
+inputs.}
 \label{tab:programs}
 \end{table}
 The following computations are parts of proofs: the terminal
@@ -947,7 +950,7 @@ repository, not part of the zip), gives the same list. The $D_6$
 polynomial comes from a sparse Kazhdan--Lusztig recursion checked through
 all $24{,}245$ dependency records of the saved certificate (a consistency
 check, the checker sharing group arithmetic with the generator);
-\texttt{d8\_gern\_kl.cpp} recomputes it with independent code in the
+\texttt{d8-gern-kl} recomputes it with independent code in the
 signed-permutation model and, in the extended run, in the geometric
 representation as well, and the reviewers' code just cited recomputes it in
 both models and directly inside $E_7$ and $E_8$. The uniform root proof is
@@ -958,13 +961,15 @@ Table~\ref{tab:programs}, written for the review, share no code with the
 others.
 
 Programs, inputs and output certificates (Table~\ref{tab:programs}) are
-archived with SHA-256 checksums in release v0.2.0 of the repository
+archived with SHA-256 checksums in release v0.3.0 of the repository
 \texttt{github.com/tygern/kl} (zip \texttt{exceptional-leading-proof.zip});
-a single runner rebuilds every classification and verifies every
-certificate with Python 3.10+ and a C++17 compiler and no other
-dependencies; copies of the daggered certificates of Table~\ref{tab:programs},
-which the runner writes rather than reads, are kept in the repository. The
-archived research notes of
+a single command rebuilds every classification and verifies every
+certificate with Go 1.22 or later and no other dependency. The earlier
+Python and C++ programs remain in release v0.2.0 and under
+\texttt{research/archive/python-cpp/}, and the Go port was verified against
+their outputs certificate for certificate. Copies of the daggered
+certificates of Table~\ref{tab:programs}, which the runner writes rather
+than reads, are kept in the repository. The archived research notes of
 Section~\ref{sec:complements} are in \texttt{research/archive/notes/}.
 
 \begin{thebibliography}{99}\footnotesize\raggedright

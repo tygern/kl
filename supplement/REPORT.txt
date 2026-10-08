@@ -152,3 +152,69 @@ runner modes passed from fresh extractions (default 35 steps, 48 s wall,
 486 MB peak; --full 41 steps, 101 s wall, 518 MB peak; summaries equal
 expected-summary.json). output/supplement/ and validation/ were refreshed.
 Nothing committed, tagged or published.
+
+GO PORT AND v0.3.0 BUILD (8 October 2026)
+The shipped supplement was ported to a single Go module (the supplement/
+directory itself, module github.com/tygern/kl/supplement, standard library
+only, Go 1.22 or later): 27 of the 28 Python and C++ program files of the
+v0.2.0 payload (all but research/broad_exceptional/exact_e.py, kept only as
+historical provenance) became 22 commands under supplement/cmd/ and four
+libraries under supplement/internal/, and run_proofs.py and build_package.py
+became supplement/cmd/proofs and supplement/cmd/package. The port was
+written by Claude Sonnet 5.5 agents, one per program, each reviewed by
+Claude Fable 5.1 side by side with the original and against the reference
+outputs of a fresh v0.2.0 run in both modes (three programs needed one fix
+round), under the author's direction; three independent final reviews
+followed and their findings were applied. The files listed under "Files"
+above (build_package.py, run_proofs.py, affine_proof.py) and all other
+Python/C++ programs of the supplement now live under
+research/archive/python-cpp/ at their v0.2.0 repository-relative paths (git
+mv; history keeps them at the original paths up to and including commit
+6fe3eab, the commit after tag v0.2.0 = 39f1f7e), so the "Files" section and
+the validation/ references in the earlier paragraphs are historical: the
+v0.2.0 records resolve to
+research/archive/python-cpp/supplement/validation/.
+research/reproduce_en.py, research/reproduce_uniform.py,
+results/en-reproduction-manifest.json and
+results/uniform-reproduction-manifest.json were deleted; the archive's
+INPUTS.json and MANIFEST.json and the runner's status.json replace them.
+The committed certificates were regenerated with the Go commands from the
+repository root and are compare-EQUAL to the previous versions (timing keys
+dropped) except for provenance keys in three files
+(results/e6-independent-certificate.json code_sha256;
+results/e8-independent-audit.json hashing, program_sources, source_sha256;
+results/exceptional-audit.json files, snapshot_generators) and the new
+audited_source_sha256 in research/en_uniform/referee-certificate.json. The
+final review's code fixes are part of this build: the runner's go build
+steps run with GOWORK=off and an empty GOFLAGS (verified below a go.work
+file), the overflow guards of d8-gern-kl and e6-mu-table are now bounds
+derived from the group order so that no recurrence step can overflow before
+its result is checked (2^19 for D8, 2^23 for E6; both certificates
+byte-identical), internal/affine writes its certificates in one checked
+call, and the manifest check reports malformed manifests in one line. gofmt,
+go vet and go test are clean, and the module builds and vets under Go 1.22.0
+as well as Go 1.27.1.
+Manuscript (Appendix A and the Use-of-AI clause only) SHA-256
+a7e7f0cd649896c184208e51717a72de9c3dd221c76a2f27696afbafcec975ee, 12 pages
+at 10pt; PDF 612,959 bytes, SHA-256
+916bd94ff867660c89b12078923bbb529555a63cb6cb417dbe1801de114e805c; archive
+supplement/dist/exceptional-leading-proof.zip 918,508 bytes, 85 files,
+SHA-256 587ddebcf0647cf682a99ea2e040e1c7e710e1b65bf39fb7bf3909626f7f7c2d
+(two builds give the same bytes; the zip README is byte-identical to
+supplement/README.md). Both runner modes passed from fresh extractions of
+that archive, run one after the other on an otherwise idle machine: default
+50 steps, 27.5 s wall, 1.05 GB peak; -full 56 steps, 85.6 s wall, 1.19 GB
+peak (the Go runner needs about twice the memory of the v0.2.0 runner; the
+README now states a bound of 2 GB). Every regenerated certificate is
+compare-EQUAL to the v0.2.0 reference run in both modes, the four files
+above EQUAL with their provenance keys ignored; both summaries equal
+expected-summary.json and the v0.2.0 expected summary; no machine-specific
+path occurs in the extracted archive or in the run records. Records:
+validation/default-*.json, validation/full-*.json (copied from the two
+runs), validation/verified-MANIFEST.json and
+validation/v0.3.0-release-test.json. output/supplement/ was refreshed (zip,
+PDF, SHA256SUMS, build-summary.json, release-notes.md, publication.json with
+status prepared_not_published) with the v0.2.0 assets and records moved to
+output/supplement/v0.2.0/; github-release-v0.2.0.json, github-release.json,
+github-readme.base64 and v0.1.0/ are unchanged. Nothing committed, tagged or
+published.

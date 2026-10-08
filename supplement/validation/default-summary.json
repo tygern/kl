@@ -123,94 +123,85 @@
   },
   "finite_matchings": [
     {
+      "common_descents": [
+        1,
+        3,
+        5
+      ],
+      "independence_number": 3,
+      "length": 7,
+      "matching": [
+        [
+          1,
+          2
+        ]
+      ],
+      "support": [
+        1,
+        2,
+        3,
+        5
+      ],
       "type": "E6",
-      "word": "1325213",
-      "length": 7,
-      "support": [
-        1,
-        2,
-        3,
-        5
-      ],
+      "word": "1325213"
+    },
+    {
       "common_descents": [
         1,
         3,
-        5
+        6
       ],
+      "independence_number": 3,
+      "length": 7,
       "matching": [
         [
           1,
           2
         ]
       ],
-      "independence_number": 3
-    },
-    {
-      "type": "E7",
-      "word": "1326213",
-      "length": 7,
       "support": [
         1,
         2,
         3,
         6
       ],
+      "type": "E7",
+      "word": "1326213"
+    },
+    {
       "common_descents": [
         1,
         3,
+        5,
         6
       ],
-      "matching": [
-        [
-          1,
-          2
-        ]
-      ],
-      "independence_number": 3
-    },
-    {
-      "type": "E7",
-      "word": "13256213",
+      "independence_number": 4,
       "length": 8,
-      "support": [
-        1,
-        2,
-        3,
-        5,
-        6
-      ],
-      "common_descents": [
-        1,
-        3,
-        5,
-        6
-      ],
       "matching": [
         [
           1,
           2
         ]
       ],
-      "independence_number": 4
-    },
-    {
-      "type": "E7",
-      "word": "132543621324356",
-      "length": 15,
       "support": [
         1,
         2,
         3,
-        4,
         5,
         6
       ],
+      "type": "E7",
+      "word": "13256213"
+    },
+    {
       "common_descents": [
         1,
         3,
         5,
         6
       ],
+      "independence_number": 4,
+      "length": 15,
       "matching": [
         [
           1,
@@ -221,14 +212,7 @@
           4
         ]
       ],
-      "independence_number": 4
-    },
-    {
-      "type": "E7",
-      "word": "1325436210321432543621324356",
-      "length": 28,
       "support": [
-        0,
         1,
         2,
         3,
@@ -236,12 +220,18 @@
         5,
         6
       ],
+      "type": "E7",
+      "word": "132543621324356"
+    },
+    {
       "common_descents": [
         1,
         3,
         5,
         6
       ],
+      "independence_number": 4,
+      "length": 28,
       "matching": [
         [
           0,
@@ -256,99 +246,100 @@
           5
         ]
       ],
-      "independence_number": 4
-    },
-    {
-      "type": "E8",
-      "word": "1327213",
-      "length": 7,
       "support": [
-        1,
-        2,
-        3,
-        7
-      ],
-      "common_descents": [
-        1,
-        3,
-        7
-      ],
-      "matching": [
-        [
-          1,
-          2
-        ]
-      ],
-      "independence_number": 3
-    },
-    {
-      "type": "E8",
-      "word": "13257213",
-      "length": 8,
-      "support": [
-        1,
-        2,
-        3,
-        5,
-        7
-      ],
-      "common_descents": [
-        1,
-        3,
-        5,
-        7
-      ],
-      "matching": [
-        [
-          1,
-          2
-        ]
-      ],
-      "independence_number": 4
-    },
-    {
-      "type": "E8",
-      "word": "61327213",
-      "length": 8,
-      "support": [
-        1,
-        2,
-        3,
-        6,
-        7
-      ],
-      "common_descents": [
-        1,
-        3,
-        6,
-        7
-      ],
-      "matching": [
-        [
-          1,
-          2
-        ]
-      ],
-      "independence_number": 4
-    },
-    {
-      "type": "E8",
-      "word": "132543721324357",
-      "length": 15,
-      "support": [
+        0,
         1,
         2,
         3,
         4,
         5,
+        6
+      ],
+      "type": "E7",
+      "word": "1325436210321432543621324356"
+    },
+    {
+      "common_descents": [
+        1,
+        3,
         7
       ],
+      "independence_number": 3,
+      "length": 7,
+      "matching": [
+        [
+          1,
+          2
+        ]
+      ],
+      "support": [
+        1,
+        2,
+        3,
+        7
+      ],
+      "type": "E8",
+      "word": "1327213"
+    },
+    {
       "common_descents": [
         1,
         3,
         5,
         7
       ],
+      "independence_number": 4,
+      "length": 8,
+      "matching": [
+        [
+          1,
+          2
+        ]
+      ],
+      "support": [
+        1,
+        2,
+        3,
+        5,
+        7
+      ],
+      "type": "E8",
+      "word": "13257213"
+    },
+    {
+      "common_descents": [
+        1,
+        3,
+        6,
+        7
+      ],
+      "independence_number": 4,
+      "length": 8,
+      "matching": [
+        [
+          1,
+          2
+        ]
+      ],
+      "support": [
+        1,
+        2,
+        3,
+        6,
+        7
+      ],
+      "type": "E8",
+      "word": "61327213"
+    },
+    {
+      "common_descents": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "independence_number": 4,
+      "length": 15,
       "matching": [
         [
           1,
@@ -359,14 +350,7 @@
           4
         ]
       ],
-      "independence_number": 4
-    },
-    {
-      "type": "E8",
-      "word": "1325437210321432543721324357",
-      "length": 28,
       "support": [
-        0,
         1,
         2,
         3,
@@ -374,12 +358,18 @@
         5,
         7
       ],
+      "type": "E8",
+      "word": "132543721324357"
+    },
+    {
       "common_descents": [
         1,
         3,
         5,
         7
       ],
+      "independence_number": 4,
+      "length": 28,
       "matching": [
         [
           0,
@@ -394,28 +384,27 @@
           5
         ]
       ],
-      "independence_number": 4
+      "support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "type": "E8",
+      "word": "1325437210321432543721324357"
     },
     {
-      "type": "E8",
-      "word": "75342312701234562103214325437210321432543721324357",
+      "common_descents": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "independence_number": 4,
       "length": 50,
-      "support": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7
-      ],
-      "common_descents": [
-        1,
-        3,
-        5,
-        7
-      ],
       "matching": [
         [
           0,
@@ -434,7 +423,18 @@
           7
         ]
       ],
-      "independence_number": 4
+      "support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "type": "E8",
+      "word": "75342312701234562103214325437210321432543721324357"
     }
   ],
   "E6_mu": {
@@ -443,45 +443,36 @@
     "max_mu": 10,
     "mu_histogram": {
       "1": 845090,
+      "10": 8,
       "2": 400,
       "3": 556,
       "4": 310,
       "5": 108,
-      "6": 4,
-      "10": 8
+      "6": 4
     },
     "pairs_with_mu_at_least_2": 1386,
     "fully_commutative_lower_endpoint": {
-      "nonzero_mu_pairs": 6431,
-      "max_mu": 1
+      "max_mu": 1,
+      "nonzero_mu_pairs": 6431
     },
     "fully_commutative_upper_endpoint": {
-      "nonzero_mu_pairs": 8740,
-      "max_mu": 5
+      "max_mu": 5,
+      "nonzero_mu_pairs": 8740
     },
     "pairs_attaining_max_mu": [
       {
+        "P_ascending": [
+          1,
+          13,
+          59,
+          121,
+          125,
+          61,
+          10
+        ],
+        "gap": 13,
         "mu": 10,
-        "x": "01254012010",
-        "x_length": 11,
-        "x_fully_commutative": false,
-        "x_L": [
-          0,
-          1,
-          2,
-          4,
-          5
-        ],
-        "x_R": [
-          0,
-          1,
-          2,
-          4,
-          5
-        ],
         "w": "123012523412301251234012",
-        "w_length": 24,
-        "w_fully_commutative": false,
         "w_L": [
           1
         ],
@@ -489,102 +480,9 @@
           2,
           4
         ],
-        "gap": 13,
-        "P_ascending": [
-          1,
-          13,
-          59,
-          121,
-          125,
-          61,
-          10
-        ]
-      },
-      {
-        "mu": 10,
-        "x": "43252342320",
-        "x_length": 11,
-        "x_fully_commutative": false,
-        "x_L": [
-          0,
-          2,
-          3,
-          4,
-          5
-        ],
-        "x_R": [
-          0,
-          2,
-          3,
-          4,
-          5
-        ],
-        "w": "230125234123012512340123",
-        "w_length": 24,
         "w_fully_commutative": false,
-        "w_L": [
-          0,
-          2
-        ],
-        "w_R": [
-          3
-        ],
-        "gap": 13,
-        "P_ascending": [
-          1,
-          13,
-          59,
-          121,
-          125,
-          61,
-          10
-        ]
-      },
-      {
-        "mu": 10,
-        "x": "43252342320",
-        "x_length": 11,
-        "x_fully_commutative": false,
-        "x_L": [
-          0,
-          2,
-          3,
-          4,
-          5
-        ],
-        "x_R": [
-          0,
-          2,
-          3,
-          4,
-          5
-        ],
-        "w": "342312523412301253423120",
         "w_length": 24,
-        "w_fully_commutative": false,
-        "w_L": [
-          3
-        ],
-        "w_R": [
-          0,
-          2
-        ],
-        "gap": 13,
-        "P_ascending": [
-          1,
-          13,
-          59,
-          121,
-          125,
-          61,
-          10
-        ]
-      },
-      {
-        "mu": 10,
         "x": "01254012010",
-        "x_length": 11,
-        "x_fully_commutative": false,
         "x_L": [
           0,
           1,
@@ -599,17 +497,10 @@
           4,
           5
         ],
-        "w": "423125234123012534231201",
-        "w_length": 24,
-        "w_fully_commutative": false,
-        "w_L": [
-          2,
-          4
-        ],
-        "w_R": [
-          1
-        ],
-        "gap": 13,
+        "x_fully_commutative": false,
+        "x_length": 11
+      },
+      {
         "P_ascending": [
           1,
           13,
@@ -618,13 +509,139 @@
           125,
           61,
           10
-        ]
+        ],
+        "gap": 13,
+        "mu": 10,
+        "w": "230125234123012512340123",
+        "w_L": [
+          0,
+          2
+        ],
+        "w_R": [
+          3
+        ],
+        "w_fully_commutative": false,
+        "w_length": 24,
+        "x": "43252342320",
+        "x_L": [
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        "x_R": [
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        "x_fully_commutative": false,
+        "x_length": 11
       },
       {
+        "P_ascending": [
+          1,
+          13,
+          59,
+          121,
+          125,
+          61,
+          10
+        ],
+        "gap": 13,
         "mu": 10,
+        "w": "342312523412301253423120",
+        "w_L": [
+          3
+        ],
+        "w_R": [
+          0,
+          2
+        ],
+        "w_fully_commutative": false,
+        "w_length": 24,
+        "x": "43252342320",
+        "x_L": [
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        "x_R": [
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        "x_fully_commutative": false,
+        "x_length": 11
+      },
+      {
+        "P_ascending": [
+          1,
+          13,
+          59,
+          121,
+          125,
+          61,
+          10
+        ],
+        "gap": 13,
+        "mu": 10,
+        "w": "423125234123012534231201",
+        "w_L": [
+          2,
+          4
+        ],
+        "w_R": [
+          1
+        ],
+        "w_fully_commutative": false,
+        "w_length": 24,
+        "x": "01254012010",
+        "x_L": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "x_R": [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        "x_fully_commutative": false,
+        "x_length": 11
+      },
+      {
+        "P_ascending": [
+          1,
+          14,
+          72,
+          170,
+          184,
+          82,
+          10
+        ],
+        "gap": 13,
+        "mu": 10,
+        "w": "1230125234123012512340123",
+        "w_L": [
+          1
+        ],
+        "w_R": [
+          3
+        ],
+        "w_fully_commutative": false,
+        "w_length": 25,
         "x": "012540123010",
-        "x_length": 12,
-        "x_fully_commutative": false,
         "x_L": [
           0,
           1,
@@ -638,16 +655,10 @@
           3,
           5
         ],
-        "w": "1230125234123012512340123",
-        "w_length": 25,
-        "w_fully_commutative": false,
-        "w_L": [
-          1
-        ],
-        "w_R": [
-          3
-        ],
-        "gap": 13,
+        "x_fully_commutative": false,
+        "x_length": 12
+      },
+      {
         "P_ascending": [
           1,
           14,
@@ -656,13 +667,19 @@
           184,
           82,
           10
-        ]
-      },
-      {
+        ],
+        "gap": 13,
         "mu": 10,
+        "w": "1230125234123012512340123",
+        "w_L": [
+          1
+        ],
+        "w_R": [
+          3
+        ],
+        "w_fully_commutative": false,
+        "w_length": 25,
         "x": "431252342320",
-        "x_length": 12,
-        "x_fully_commutative": false,
         "x_L": [
           1,
           3,
@@ -676,16 +693,10 @@
           4,
           5
         ],
-        "w": "1230125234123012512340123",
-        "w_length": 25,
-        "w_fully_commutative": false,
-        "w_L": [
-          1
-        ],
-        "w_R": [
-          3
-        ],
-        "gap": 13,
+        "x_fully_commutative": false,
+        "x_length": 12
+      },
+      {
         "P_ascending": [
           1,
           14,
@@ -694,13 +705,19 @@
           184,
           82,
           10
-        ]
-      },
-      {
+        ],
+        "gap": 13,
         "mu": 10,
+        "w": "3423125234123012534231201",
+        "w_L": [
+          3
+        ],
+        "w_R": [
+          1
+        ],
+        "w_fully_commutative": false,
+        "w_length": 25,
         "x": "301254012010",
-        "x_length": 12,
-        "x_fully_commutative": false,
         "x_L": [
           0,
           1,
@@ -714,31 +731,31 @@
           4,
           5
         ],
-        "w": "3423125234123012534231201",
-        "w_length": 25,
-        "w_fully_commutative": false,
-        "w_L": [
-          3
-        ],
-        "w_R": [
-          1
-        ],
-        "gap": 13,
-        "P_ascending": [
-          1,
-          14,
-          72,
-          170,
-          184,
-          82,
-          10
-        ]
+        "x_fully_commutative": false,
+        "x_length": 12
       },
       {
+        "P_ascending": [
+          1,
+          14,
+          72,
+          170,
+          184,
+          82,
+          10
+        ],
+        "gap": 13,
         "mu": 10,
+        "w": "3423125234123012534231201",
+        "w_L": [
+          3
+        ],
+        "w_R": [
+          1
+        ],
+        "w_fully_commutative": false,
+        "w_length": 25,
         "x": "432523423201",
-        "x_length": 12,
-        "x_fully_commutative": false,
         "x_L": [
           0,
           2,
@@ -752,33 +769,31 @@
           4,
           5
         ],
-        "w": "3423125234123012534231201",
-        "w_length": 25,
-        "w_fully_commutative": false,
-        "w_L": [
-          3
-        ],
-        "w_R": [
-          1
-        ],
-        "gap": 13,
-        "P_ascending": [
-          1,
-          14,
-          72,
-          170,
-          184,
-          82,
-          10
-        ]
+        "x_fully_commutative": false,
+        "x_length": 12
       }
     ],
     "largest_mu_with_fully_commutative_upper_endpoint": [
       {
+        "P_ascending": [
+          1,
+          8,
+          22,
+          20,
+          5
+        ],
+        "gap": 9,
         "mu": 5,
+        "w": "0125342312501234",
+        "w_L": [
+          0
+        ],
+        "w_R": [
+          4
+        ],
+        "w_fully_commutative": true,
+        "w_length": 16,
         "x": "5343010",
-        "x_length": 7,
-        "x_fully_commutative": false,
         "x_L": [
           0,
           1,
@@ -793,29 +808,29 @@
           4,
           5
         ],
-        "w": "0125342312501234",
-        "w_length": 16,
-        "w_fully_commutative": true,
-        "w_L": [
-          0
-        ],
-        "w_R": [
-          4
-        ],
-        "gap": 9,
-        "P_ascending": [
-          1,
-          8,
-          22,
-          20,
-          5
-        ]
+        "x_fully_commutative": false,
+        "x_length": 7
       },
       {
+        "P_ascending": [
+          1,
+          8,
+          22,
+          20,
+          5
+        ],
+        "gap": 9,
         "mu": 5,
+        "w": "4325123012543210",
+        "w_L": [
+          4
+        ],
+        "w_R": [
+          0
+        ],
+        "w_fully_commutative": true,
+        "w_length": 16,
         "x": "5343010",
-        "x_length": 7,
-        "x_fully_commutative": false,
         "x_L": [
           0,
           1,
@@ -830,23 +845,8 @@
           4,
           5
         ],
-        "w": "4325123012543210",
-        "w_length": 16,
-        "w_fully_commutative": true,
-        "w_L": [
-          4
-        ],
-        "w_R": [
-          0
-        ],
-        "gap": 9,
-        "P_ascending": [
-          1,
-          8,
-          22,
-          20,
-          5
-        ]
+        "x_fully_commutative": false,
+        "x_length": 7
       }
     ]
   },
@@ -873,9 +873,6 @@
       "lower_ideal_size": 5826496,
       "eligible_fully_commutative_bottoms": [
         {
-          "x": "8753",
-          "length": 4,
-          "gap": 29,
           "P_ascending": [
             1,
             23,
@@ -893,12 +890,12 @@
             23
           ],
           "degree": 13,
-          "mu": 0
+          "gap": 29,
+          "length": 4,
+          "mu": 0,
+          "x": "8753"
         },
         {
-          "x": "87530",
-          "length": 5,
-          "gap": 28,
           "P_ascending": [
             1,
             23,
@@ -916,12 +913,12 @@
             5
           ],
           "degree": 13,
-          "mu": 0
+          "gap": 28,
+          "length": 5,
+          "mu": 0,
+          "x": "87530"
         },
         {
-          "x": "875301",
-          "length": 6,
-          "gap": 27,
           "P_ascending": [
             1,
             23,
@@ -939,12 +936,12 @@
             1
           ],
           "degree": 13,
-          "mu": 1
+          "gap": 27,
+          "length": 6,
+          "mu": 1,
+          "x": "875301"
         },
         {
-          "x": "87531",
-          "length": 5,
-          "gap": 28,
           "P_ascending": [
             1,
             23,
@@ -962,12 +959,12 @@
             9
           ],
           "degree": 13,
-          "mu": 0
+          "gap": 28,
+          "length": 5,
+          "mu": 0,
+          "x": "87531"
         },
         {
-          "x": "875310",
-          "length": 6,
-          "gap": 27,
           "P_ascending": [
             1,
             23,
@@ -985,7 +982,10 @@
             1
           ],
           "degree": 13,
-          "mu": 1
+          "gap": 27,
+          "length": 6,
+          "mu": 1,
+          "x": "875310"
         }
       ]
     },
@@ -1013,9 +1013,6 @@
       "lower_ideal_size": 6943680,
       "eligible_fully_commutative_bottoms": [
         {
-          "x": "87530",
-          "length": 5,
-          "gap": 29,
           "P_ascending": [
             1,
             18,
@@ -1034,7 +1031,10 @@
             1
           ],
           "degree": 14,
-          "mu": 1
+          "gap": 29,
+          "length": 5,
+          "mu": 1,
+          "x": "87530"
         }
       ]
     },
@@ -1062,9 +1062,6 @@
       "lower_ideal_size": 6651712,
       "eligible_fully_commutative_bottoms": [
         {
-          "x": "87531",
-          "length": 5,
-          "gap": 29,
           "P_ascending": [
             1,
             18,
@@ -1083,7 +1080,10 @@
             1
           ],
           "degree": 14,
-          "mu": 1
+          "gap": 29,
+          "length": 5,
+          "mu": 1,
+          "x": "87531"
         }
       ]
     }
@@ -1145,22 +1145,6 @@
     }
   },
   "FC_maxima": {
-    "E6": {
-      "fully_commutative_count": 662,
-      "maximum_length": 16
-    },
-    "E7": {
-      "fully_commutative_count": 2670,
-      "maximum_length": 27
-    },
-    "E8": {
-      "fully_commutative_count": 10846,
-      "maximum_length": 29
-    },
-    "E9": {
-      "fully_commutative_count": 44199,
-      "maximum_length": 44
-    },
     "E10": {
       "fully_commutative_count": 180438,
       "maximum_length": 55
@@ -1176,6 +1160,22 @@
     "E13": {
       "fully_commutative_count": 12387990,
       "maximum_length": 92
+    },
+    "E6": {
+      "fully_commutative_count": 662,
+      "maximum_length": 16
+    },
+    "E7": {
+      "fully_commutative_count": 2670,
+      "maximum_length": 27
+    },
+    "E8": {
+      "fully_commutative_count": 10846,
+      "maximum_length": 29
+    },
+    "E9": {
+      "fully_commutative_count": 44199,
+      "maximum_length": 44
     }
   },
   "terminal_structure": {
@@ -1435,22 +1435,22 @@
           5,
           6
         ],
-        "l_w0_J": 6,
-        "u": "31265234312",
-        "w0_J": "653010",
-        "v": "42312645231",
-        "lengths": [
-          11,
-          6,
-          11
-        ],
-        "length_additive": true,
         "J_edges": [
           [
             0,
             1
           ]
-        ]
+        ],
+        "l_w0_J": 6,
+        "length_additive": true,
+        "lengths": [
+          11,
+          6,
+          11
+        ],
+        "u": "31265234312",
+        "v": "42312645231",
+        "w0_J": "653010"
       },
       "w8": {
         "J": [
@@ -1460,22 +1460,22 @@
           5,
           7
         ],
-        "l_w0_J": 6,
-        "u": "31275234312",
-        "w0_J": "753010",
-        "v": "276453423127563452341230127345231",
-        "lengths": [
-          11,
-          6,
-          33
-        ],
-        "length_additive": true,
         "J_edges": [
           [
             0,
             1
           ]
-        ]
+        ],
+        "l_w0_J": 6,
+        "length_additive": true,
+        "lengths": [
+          11,
+          6,
+          33
+        ],
+        "u": "31275234312",
+        "v": "276453423127563452341230127345231",
+        "w0_J": "753010"
       }
     }
   },

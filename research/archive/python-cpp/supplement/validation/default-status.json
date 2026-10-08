@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "mode": "default",
+  "seconds": 47.864,
+  "compiler": "/usr/bin/clang++",
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "steps": 35,
+  "work": "runs/default-5_rvishe/work",
+  "expected_outputs_match": true,
+  "printed_table_matches_generated_terminals": true,
+  "manuscript_sha256_matches_build_record": true,
+  "snapshots_compared": [
+    "research/ai-review-notes/finite-descents.json",
+    "research/en_affine_referee/proved-affine-certificate.json",
+    "results/e6-mu-table.json",
+    "results/e9-odd-gap-certificate.json",
+    "results/d8-gern-certificate.json",
+    "results/fc-maxima-certificate.json",
+    "results/terminal-structure-certificate.json",
+    "results/uniform-family-certificate.json",
+    "results/affine-d4-independent.json"
+  ]
+}

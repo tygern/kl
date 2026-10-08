@@ -1,361 +1,528 @@
 [
   {
-    "step": "build-flat",
+    "step": "build-terminals-flat",
     "command": [
-      "/usr/bin/clang++",
-      "-O3",
-      "-std=c++17",
-      "research/en_e8/parabolic_terminals.cpp",
+      "go",
+      "build",
       "-o",
-      "<run>/bin/flat"
+      "<run>/bin/terminals-flat",
+      "./cmd/terminals-flat"
     ],
     "returncode": 0,
-    "seconds": 0.813
+    "seconds": 0.128
   },
   {
-    "step": "build-recursive",
+    "step": "build-terminals-recursive",
     "command": [
-      "/usr/bin/clang++",
-      "-O3",
-      "-std=c++17",
-      "research/en_e8/recursive_terminals.cpp",
+      "go",
+      "build",
       "-o",
-      "<run>/bin/recursive"
+      "<run>/bin/terminals-recursive",
+      "./cmd/terminals-recursive"
     ],
     "returncode": 0,
-    "seconds": 0.791
+    "seconds": 0.108
   },
   {
-    "step": "build-d7",
+    "step": "build-e8-d7",
     "command": [
-      "/usr/bin/clang++",
-      "-O3",
-      "-std=c++17",
-      "research/en_independent/e8_d7_cosets.cpp",
+      "go",
+      "build",
       "-o",
-      "<run>/bin/d7"
+      "<run>/bin/e8-d7",
+      "./cmd/e8-d7"
     ],
     "returncode": 0,
-    "seconds": 0.756
+    "seconds": 0.106
   },
   {
-    "step": "build-fc",
+    "step": "build-fc-catalogue",
     "command": [
-      "/usr/bin/clang++",
-      "-O3",
-      "-std=c++17",
-      "research/en_independent/fc_catalogue.cpp",
+      "go",
+      "build",
       "-o",
-      "<run>/bin/fc"
+      "<run>/bin/fc-catalogue",
+      "./cmd/fc-catalogue"
     ],
     "returncode": 0,
-    "seconds": 0.773
+    "seconds": 0.094
   },
   {
     "step": "build-e6-mu-table",
     "command": [
-      "/usr/bin/clang++",
-      "-O3",
-      "-std=c++17",
-      "research/review_checks/e6_mu_table.cpp",
+      "go",
+      "build",
       "-o",
-      "<run>/bin/e6-mu-table"
+      "<run>/bin/e6-mu-table",
+      "./cmd/e6-mu-table"
     ],
     "returncode": 0,
-    "seconds": 0.925
+    "seconds": 0.128
   },
   {
     "step": "build-e9-quotient-kl",
     "command": [
-      "/usr/bin/clang++",
-      "-O3",
-      "-std=c++17",
-      "research/review_checks/e9_quotient_kl.cpp",
+      "go",
+      "build",
       "-o",
-      "<run>/bin/e9-quotient-kl"
+      "<run>/bin/e9-quotient-kl",
+      "./cmd/e9-quotient-kl"
     ],
     "returncode": 0,
-    "seconds": 1.079
+    "seconds": 0.126
   },
   {
     "step": "build-d8-gern-kl",
     "command": [
-      "/usr/bin/clang++",
-      "-O3",
-      "-std=c++17",
-      "research/review_checks/d8_gern_kl.cpp",
+      "go",
+      "build",
       "-o",
-      "<run>/bin/d8-gern-kl"
+      "<run>/bin/d8-gern-kl",
+      "./cmd/d8-gern-kl"
     ],
     "returncode": 0,
-    "seconds": 1.142
+    "seconds": 0.114
   },
   {
     "step": "build-fc-maxima",
     "command": [
-      "/usr/bin/clang++",
-      "-O3",
-      "-std=c++17",
-      "research/review_checks/fc_maxima.cpp",
+      "go",
+      "build",
       "-o",
-      "<run>/bin/fc-maxima"
+      "<run>/bin/fc-maxima",
+      "./cmd/fc-maxima"
     ],
     "returncode": 0,
-    "seconds": 0.616
+    "seconds": 0.098
   },
   {
-    "step": "E6-FC",
+    "step": "build-verify-exceptional",
     "command": [
-      "<run>/bin/fc",
-      "6"
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/verify-exceptional",
+      "./cmd/verify-exceptional"
     ],
     "returncode": 0,
-    "seconds": 0.232
+    "seconds": 0.122
   },
   {
-    "step": "E7-FC",
+    "step": "build-verify-outputs",
     "command": [
-      "<run>/bin/fc",
-      "7"
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/verify-outputs",
+      "./cmd/verify-outputs"
     ],
     "returncode": 0,
-    "seconds": 0.015
+    "seconds": 0.12
   },
   {
-    "step": "E8-FC",
+    "step": "build-verify-e8",
     "command": [
-      "<run>/bin/fc",
-      "8"
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/verify-e8",
+      "./cmd/verify-e8"
     ],
     "returncode": 0,
-    "seconds": 0.037
+    "seconds": 0.133
   },
   {
-    "step": "E9-FC",
+    "step": "build-finite-descents",
     "command": [
-      "<run>/bin/fc",
-      "9"
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/finite-descents",
+      "./cmd/finite-descents"
+    ],
+    "returncode": 0,
+    "seconds": 0.109
+  },
+  {
+    "step": "build-d6-certificate",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/d6-certificate",
+      "./cmd/d6-certificate"
+    ],
+    "returncode": 0,
+    "seconds": 0.132
+  },
+  {
+    "step": "build-uniform-verify",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/uniform-verify",
+      "./cmd/uniform-verify"
+    ],
+    "returncode": 0,
+    "seconds": 0.191
+  },
+  {
+    "step": "build-affine-proof",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/affine-proof",
+      "./cmd/affine-proof"
+    ],
+    "returncode": 0,
+    "seconds": 0.126
+  },
+  {
+    "step": "build-affine-fc-covers",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/affine-fc-covers",
+      "./cmd/affine-fc-covers"
+    ],
+    "returncode": 0,
+    "seconds": 0.112
+  },
+  {
+    "step": "build-e10-all-k",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/e10-all-k",
+      "./cmd/e10-all-k"
     ],
     "returncode": 0,
     "seconds": 0.131
   },
   {
-    "step": "E6-flat",
+    "step": "build-terminal-structure",
     "command": [
-      "<run>/bin/flat",
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/terminal-structure",
+      "./cmd/terminal-structure"
+    ],
+    "returncode": 0,
+    "seconds": 0.156
+  },
+  {
+    "step": "build-uniform-covers",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/uniform-covers",
+      "./cmd/uniform-covers"
+    ],
+    "returncode": 0,
+    "seconds": 0.121
+  },
+  {
+    "step": "build-affine-d4",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/affine-d4",
+      "./cmd/affine-d4"
+    ],
+    "returncode": 0,
+    "seconds": 0.114
+  },
+  {
+    "step": "E6-FC",
+    "command": [
+      "<run>/bin/fc-catalogue",
+      "-rank",
       "6"
     ],
     "returncode": 0,
-    "seconds": 0.105
+    "seconds": 0.144
+  },
+  {
+    "step": "E7-FC",
+    "command": [
+      "<run>/bin/fc-catalogue",
+      "-rank",
+      "7"
+    ],
+    "returncode": 0,
+    "seconds": 0.012
+  },
+  {
+    "step": "E8-FC",
+    "command": [
+      "<run>/bin/fc-catalogue",
+      "-rank",
+      "8"
+    ],
+    "returncode": 0,
+    "seconds": 0.031
+  },
+  {
+    "step": "E9-FC",
+    "command": [
+      "<run>/bin/fc-catalogue",
+      "-rank",
+      "9"
+    ],
+    "returncode": 0,
+    "seconds": 0.143
+  },
+  {
+    "step": "E6-flat",
+    "command": [
+      "<run>/bin/terminals-flat",
+      "-rank",
+      "6"
+    ],
+    "returncode": 0,
+    "seconds": 0.149
   },
   {
     "step": "E6-recursive",
     "command": [
-      "<run>/bin/recursive",
+      "<run>/bin/terminals-recursive",
+      "-rank",
       "6"
     ],
     "returncode": 0,
-    "seconds": 0.11
+    "seconds": 0.141
   },
   {
     "step": "E7-flat",
     "command": [
-      "<run>/bin/flat",
+      "<run>/bin/terminals-flat",
+      "-rank",
       "7"
     ],
     "returncode": 0,
-    "seconds": 0.016
+    "seconds": 0.029
   },
   {
     "step": "E7-recursive",
     "command": [
-      "<run>/bin/recursive",
+      "<run>/bin/terminals-recursive",
+      "-rank",
       "7"
     ],
     "returncode": 0,
-    "seconds": 0.008
+    "seconds": 0.009
   },
   {
     "step": "E8-flat",
     "command": [
-      "<run>/bin/flat",
+      "<run>/bin/terminals-flat",
+      "-rank",
       "8"
     ],
     "returncode": 0,
-    "seconds": 0.557
+    "seconds": 0.898
   },
   {
     "step": "E8-recursive",
     "command": [
-      "<run>/bin/recursive",
+      "<run>/bin/terminals-recursive",
+      "-rank",
       "8"
     ],
     "returncode": 0,
-    "seconds": 0.016
+    "seconds": 0.024
   },
   {
     "step": "E8-D7",
     "command": [
-      "<run>/bin/d7"
+      "<run>/bin/e8-d7"
     ],
     "returncode": 0,
-    "seconds": 0.169
+    "seconds": 0.228
   },
   {
     "step": "finite-source-snapshot-audit",
     "command": [
-      "/opt/homebrew/opt/python@3.14/bin/python3.14",
-      "research/verify_exceptional.py"
+      "<run>/bin/verify-exceptional"
     ],
     "returncode": 0,
-    "seconds": 0.039
+    "seconds": 0.148
   },
   {
     "step": "finite-method-comparison",
     "command": [
-      "/opt/homebrew/opt/python@3.14/bin/python3.14",
-      "research/en_e8/verify_outputs.py"
+      "<run>/bin/verify-outputs"
     ],
     "returncode": 0,
-    "seconds": 0.023
+    "seconds": 0.153
   },
   {
     "step": "E8-independent-verification",
     "command": [
-      "/opt/homebrew/opt/python@3.14/bin/python3.14",
-      "research/en_independent/verify_e8.py"
+      "<run>/bin/verify-e8"
     ],
     "returncode": 0,
-    "seconds": 1.046
+    "seconds": 0.258
   },
   {
     "step": "finite-support-matchings",
     "command": [
-      "/opt/homebrew/opt/python@3.14/bin/python3.14",
-      "research/ai-review-notes/check_finite_descents.py"
+      "<run>/bin/finite-descents"
     ],
     "returncode": 0,
-    "seconds": 0.02
+    "seconds": 0.149
   },
   {
     "step": "D6-recurrence-certificate",
     "command": [
-      "/opt/homebrew/opt/python@3.14/bin/python3.14",
-      "computations/verify_certificate.py"
+      "<run>/bin/d6-certificate"
     ],
     "returncode": 0,
-    "seconds": 2.119
+    "seconds": 0.656
   },
   {
     "step": "uniform-symbolic-and-matrix-checks",
     "command": [
-      "/opt/homebrew/opt/python@3.14/bin/python3.14",
-      "research/en_uniform/referee_verify.py"
+      "<run>/bin/uniform-verify"
     ],
     "returncode": 0,
-    "seconds": 1.298
+    "seconds": 0.294
   },
   {
     "step": "affine-proved-family",
     "command": [
-      "/opt/homebrew/opt/python@3.14/bin/python3.14",
-      "affine_proof.py"
+      "<run>/bin/affine-proof"
     ],
     "returncode": 0,
-    "seconds": 0.06
+    "seconds": 0.195
   },
   {
     "step": "affine-FC-closure-and-covers",
     "command": [
-      "/opt/homebrew/opt/python@3.14/bin/python3.14",
-      "research/en_affine_referee/verify_fc_catalogue.py"
+      "<run>/bin/affine-fc-covers"
     ],
     "returncode": 0,
-    "seconds": 3.353
+    "seconds": 0.43
   },
   {
     "step": "E10-all-k",
     "command": [
-      "/opt/homebrew/opt/python@3.14/bin/python3.14",
-      "research/en_affine_referee/verify_indefinite_e10.py"
+      "<run>/bin/e10-all-k"
     ],
     "returncode": 0,
-    "seconds": 0.025
+    "seconds": 0.14
   },
   {
     "step": "E6-complete-mu-table",
     "command": [
       "<run>/bin/e6-mu-table",
+      "-type",
       "E",
+      "-rank",
       "6",
+      "-out",
       "results/e6-mu-table.json"
     ],
     "returncode": 0,
-    "seconds": 3.61
+    "seconds": 4.233
   },
   {
     "step": "E9-odd-gap-polynomials",
     "command": [
       "<run>/bin/e9-quotient-kl",
+      "-mode",
       "certify",
+      "-out",
       "results/e9-odd-gap-certificate.json"
     ],
     "returncode": 0,
-    "seconds": 5.466
+    "seconds": 5.957
   },
   {
     "step": "D6-D8-Gern-polynomials",
     "command": [
       "<run>/bin/d8-gern-kl",
+      "-out",
       "results/d8-gern-certificate.json",
+      "-threads",
       "0",
+      "-models",
       "sp"
     ],
     "returncode": 0,
-    "seconds": 11.731
+    "seconds": 6.061
   },
   {
     "step": "FC-maxima-E6-E13",
     "command": [
       "<run>/bin/fc-maxima",
+      "-out",
       "results/fc-maxima-certificate.json",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10",
-      "11",
-      "12",
-      "13"
+      "-ranks",
+      "6,7,8,9,10,11,12,13"
     ],
     "returncode": 0,
-    "seconds": 3.068
+    "seconds": 3.58
   },
   {
     "step": "terminal-structure",
     "command": [
-      "/opt/homebrew/opt/python@3.14/bin/python3.14",
-      "research/review_checks/terminal_structure.py"
+      "<run>/bin/terminal-structure"
     ],
     "returncode": 0,
-    "seconds": 2.547
+    "seconds": 0.238
   },
   {
     "step": "uniform-family-covers",
     "command": [
-      "/opt/homebrew/opt/python@3.14/bin/python3.14",
-      "research/review_checks/uniform_family_checks.py"
+      "<run>/bin/uniform-covers"
     ],
     "returncode": 0,
-    "seconds": 5.068
+    "seconds": 0.256
   },
   {
     "step": "affine-D4-mu-2",
     "command": [
-      "/opt/homebrew/opt/python@3.14/bin/python3.14",
-      "research/verify_affine_d4_r.py"
+      "<run>/bin/affine-d4"
     ],
     "returncode": 0,
-    "seconds": 0.073
+    "seconds": 0.161
+  },
+  {
+    "step": "E6-terminal-matrices",
+    "command": [
+      "<run>/bin/verify-outputs",
+      "-matrices",
+      "6"
+    ],
+    "returncode": 0,
+    "seconds": 0.01
+  },
+  {
+    "step": "E7-terminal-matrices",
+    "command": [
+      "<run>/bin/verify-outputs",
+      "-matrices",
+      "7"
+    ],
+    "returncode": 0,
+    "seconds": 0.004
+  },
+  {
+    "step": "E8-terminal-matrices",
+    "command": [
+      "<run>/bin/verify-outputs",
+      "-matrices",
+      "8"
+    ],
+    "returncode": 0,
+    "seconds": 0.003
   }
 ]

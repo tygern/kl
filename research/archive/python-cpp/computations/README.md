@@ -1,6 +1,10 @@
 # Reproducing the finite computations
 
-Run from the repository root with Python 3.10 or later:
+Archived with release v0.3.0 (see `../README.md`): the paths below are those of
+the v0.2.0 layout, in which this directory was `computations/` at the
+repository root; the certificate verifier is now `go/cmd/d6-certificate`.
+
+Run from the repository root of release v0.2.0 with Python 3.10 or later:
 
 ```sh
 python3 computations/run_search.py

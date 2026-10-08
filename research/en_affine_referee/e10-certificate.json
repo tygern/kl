@@ -318,7 +318,7 @@
   ],
   "maximum_independent_size": 5,
   "full_support_for_all_k": true,
-  "full_support_witness": "<alpha1,beta_k>=1, so column1 of r_beta_k differs from identity in every row",
+  "full_support_witness": "\u003calpha1,beta_k\u003e=1, so column1 of r_beta_k differs from identity in every row",
   "distinctness_witness": "beta_k[0]=2*k*k+5*k+3",
   "length_parity": "odd for every k, because each element is a real-root reflection",
   "unique_eligible_FC_bottom": [

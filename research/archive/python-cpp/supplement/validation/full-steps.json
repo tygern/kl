@@ -1,0 +1,423 @@
+[
+  {
+    "step": "build-flat",
+    "command": [
+      "/usr/bin/clang++",
+      "-O3",
+      "-std=c++17",
+      "research/en_e8/parabolic_terminals.cpp",
+      "-o",
+      "<run>/bin/flat"
+    ],
+    "returncode": 0,
+    "seconds": 0.826
+  },
+  {
+    "step": "build-recursive",
+    "command": [
+      "/usr/bin/clang++",
+      "-O3",
+      "-std=c++17",
+      "research/en_e8/recursive_terminals.cpp",
+      "-o",
+      "<run>/bin/recursive"
+    ],
+    "returncode": 0,
+    "seconds": 0.799
+  },
+  {
+    "step": "build-d7",
+    "command": [
+      "/usr/bin/clang++",
+      "-O3",
+      "-std=c++17",
+      "research/en_independent/e8_d7_cosets.cpp",
+      "-o",
+      "<run>/bin/d7"
+    ],
+    "returncode": 0,
+    "seconds": 0.761
+  },
+  {
+    "step": "build-fc",
+    "command": [
+      "/usr/bin/clang++",
+      "-O3",
+      "-std=c++17",
+      "research/en_independent/fc_catalogue.cpp",
+      "-o",
+      "<run>/bin/fc"
+    ],
+    "returncode": 0,
+    "seconds": 0.772
+  },
+  {
+    "step": "build-e6-mu-table",
+    "command": [
+      "/usr/bin/clang++",
+      "-O3",
+      "-std=c++17",
+      "research/review_checks/e6_mu_table.cpp",
+      "-o",
+      "<run>/bin/e6-mu-table"
+    ],
+    "returncode": 0,
+    "seconds": 0.919
+  },
+  {
+    "step": "build-e9-quotient-kl",
+    "command": [
+      "/usr/bin/clang++",
+      "-O3",
+      "-std=c++17",
+      "research/review_checks/e9_quotient_kl.cpp",
+      "-o",
+      "<run>/bin/e9-quotient-kl"
+    ],
+    "returncode": 0,
+    "seconds": 1.071
+  },
+  {
+    "step": "build-d8-gern-kl",
+    "command": [
+      "/usr/bin/clang++",
+      "-O3",
+      "-std=c++17",
+      "research/review_checks/d8_gern_kl.cpp",
+      "-o",
+      "<run>/bin/d8-gern-kl"
+    ],
+    "returncode": 0,
+    "seconds": 1.131
+  },
+  {
+    "step": "build-fc-maxima",
+    "command": [
+      "/usr/bin/clang++",
+      "-O3",
+      "-std=c++17",
+      "research/review_checks/fc_maxima.cpp",
+      "-o",
+      "<run>/bin/fc-maxima"
+    ],
+    "returncode": 0,
+    "seconds": 0.568
+  },
+  {
+    "step": "E6-FC",
+    "command": [
+      "<run>/bin/fc",
+      "6"
+    ],
+    "returncode": 0,
+    "seconds": 0.076
+  },
+  {
+    "step": "E7-FC",
+    "command": [
+      "<run>/bin/fc",
+      "7"
+    ],
+    "returncode": 0,
+    "seconds": 0.009
+  },
+  {
+    "step": "E8-FC",
+    "command": [
+      "<run>/bin/fc",
+      "8"
+    ],
+    "returncode": 0,
+    "seconds": 0.028
+  },
+  {
+    "step": "E9-FC",
+    "command": [
+      "<run>/bin/fc",
+      "9"
+    ],
+    "returncode": 0,
+    "seconds": 0.127
+  },
+  {
+    "step": "E6-flat",
+    "command": [
+      "<run>/bin/flat",
+      "6"
+    ],
+    "returncode": 0,
+    "seconds": 0.076
+  },
+  {
+    "step": "E6-recursive",
+    "command": [
+      "<run>/bin/recursive",
+      "6"
+    ],
+    "returncode": 0,
+    "seconds": 0.076
+  },
+  {
+    "step": "E7-flat",
+    "command": [
+      "<run>/bin/flat",
+      "7"
+    ],
+    "returncode": 0,
+    "seconds": 0.013
+  },
+  {
+    "step": "E7-recursive",
+    "command": [
+      "<run>/bin/recursive",
+      "7"
+    ],
+    "returncode": 0,
+    "seconds": 0.007
+  },
+  {
+    "step": "E8-flat",
+    "command": [
+      "<run>/bin/flat",
+      "8"
+    ],
+    "returncode": 0,
+    "seconds": 0.549
+  },
+  {
+    "step": "E8-recursive",
+    "command": [
+      "<run>/bin/recursive",
+      "8"
+    ],
+    "returncode": 0,
+    "seconds": 0.016
+  },
+  {
+    "step": "E8-D7",
+    "command": [
+      "<run>/bin/d7"
+    ],
+    "returncode": 0,
+    "seconds": 0.133
+  },
+  {
+    "step": "build-historical-rootids",
+    "command": [
+      "/usr/bin/clang++",
+      "-O3",
+      "-std=c++17",
+      "research/broad_exceptional/enumerate_bad.cpp",
+      "-o",
+      "<run>/bin/historical-rootids"
+    ],
+    "returncode": 0,
+    "seconds": 0.479
+  },
+  {
+    "step": "build-historical-e7-matrix",
+    "command": [
+      "/usr/bin/clang++",
+      "-O3",
+      "-std=c++17",
+      "research/verify_e7_matrices.cpp",
+      "-o",
+      "<run>/bin/historical-e7-matrix"
+    ],
+    "returncode": 0,
+    "seconds": 0.387
+  },
+  {
+    "step": "E6-historical-rootids",
+    "command": [
+      "<run>/bin/historical-rootids",
+      "6"
+    ],
+    "returncode": 0,
+    "seconds": 0.107
+  },
+  {
+    "step": "E7-historical-rootids",
+    "command": [
+      "<run>/bin/historical-rootids",
+      "7"
+    ],
+    "returncode": 0,
+    "seconds": 0.596
+  },
+  {
+    "step": "E6-historical-matrix",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/verify_e6_independent.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.567
+  },
+  {
+    "step": "E7-historical-matrix",
+    "command": [
+      "<run>/bin/historical-e7-matrix"
+    ],
+    "returncode": 0,
+    "seconds": 1.817
+  },
+  {
+    "step": "finite-source-snapshot-audit",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/verify_exceptional.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.036
+  },
+  {
+    "step": "finite-method-comparison",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/en_e8/verify_outputs.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.022
+  },
+  {
+    "step": "E8-independent-verification",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/en_independent/verify_e8.py"
+    ],
+    "returncode": 0,
+    "seconds": 1.054
+  },
+  {
+    "step": "finite-support-matchings",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/ai-review-notes/check_finite_descents.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.02
+  },
+  {
+    "step": "D6-recurrence-certificate",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "computations/verify_certificate.py"
+    ],
+    "returncode": 0,
+    "seconds": 2.096
+  },
+  {
+    "step": "uniform-symbolic-and-matrix-checks",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/en_uniform/referee_verify.py"
+    ],
+    "returncode": 0,
+    "seconds": 1.301
+  },
+  {
+    "step": "affine-proved-family",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "affine_proof.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.059
+  },
+  {
+    "step": "affine-FC-closure-and-covers",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/en_affine_referee/verify_fc_catalogue.py"
+    ],
+    "returncode": 0,
+    "seconds": 3.345
+  },
+  {
+    "step": "E10-all-k",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/en_affine_referee/verify_indefinite_e10.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.024
+  },
+  {
+    "step": "E6-complete-mu-table",
+    "command": [
+      "<run>/bin/e6-mu-table",
+      "E",
+      "6",
+      "results/e6-mu-table.json"
+    ],
+    "returncode": 0,
+    "seconds": 3.529
+  },
+  {
+    "step": "E9-odd-gap-polynomials",
+    "command": [
+      "<run>/bin/e9-quotient-kl",
+      "certify",
+      "results/e9-odd-gap-certificate.json"
+    ],
+    "returncode": 0,
+    "seconds": 5.395
+  },
+  {
+    "step": "D6-D8-Gern-polynomials",
+    "command": [
+      "<run>/bin/d8-gern-kl",
+      "results/d8-gern-certificate.json",
+      "0",
+      "both"
+    ],
+    "returncode": 0,
+    "seconds": 47.394
+  },
+  {
+    "step": "FC-maxima-E6-E13",
+    "command": [
+      "<run>/bin/fc-maxima",
+      "results/fc-maxima-certificate.json",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "returncode": 0,
+    "seconds": 3.15
+  },
+  {
+    "step": "terminal-structure",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/review_checks/terminal_structure.py"
+    ],
+    "returncode": 0,
+    "seconds": 2.614
+  },
+  {
+    "step": "uniform-family-covers",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/review_checks/uniform_family_checks.py",
+      "--full"
+    ],
+    "returncode": 0,
+    "seconds": 18.887
+  },
+  {
+    "step": "affine-D4-mu-2",
+    "command": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "research/verify_affine_d4_r.py"
+    ],
+    "returncode": 0,
+    "seconds": 0.075
+  }
+]

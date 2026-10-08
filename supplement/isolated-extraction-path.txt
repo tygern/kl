@@ -1,1 +1,1 @@
-v0.1.0 isolated test extraction: a session scratch directory (path not recorded); v0.2.0 validation records are under supplement/validation/.
+v0.1.0 isolated test extraction: a session scratch directory (path not recorded); v0.2.0 validation records are under research/archive/python-cpp/supplement/validation/; v0.3.0 validation records are under supplement/validation/.
