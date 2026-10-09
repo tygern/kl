@@ -12,7 +12,8 @@ The paper also constructs infinite families of full-support terminals in affine 
 
 ## Read the paper
 
-- [LaTeX source](results/exceptional-leading.tex) and [PDF](output/pdf/exceptional-leading.pdf), synchronized for release v0.5.0.
+- [LaTeX source](results/exceptional-leading.tex) and [PDF](output/pdf/exceptional-leading.pdf), synchronized for release v0.5.1.
+- [Citation audit](results/citation-audit.md): source locators, corrections, retained references, and verification limits.
 - Section 2 develops star reduction, the maximum-descent lemma, and the geometric terminal test.
 - Section 3 proves the finite theorem, then gives the supplementary structure of the terminals.
 - Section 4 proves the reflection-cover lemmas, motivates the root constructions, and works through an $E_{13}$ example.
@@ -39,7 +40,7 @@ go run ./cmd/proofs -full
 
 Go 1.22 or later suffices. The module uses only the standard library. The runner checks the manifest, rebuilds the computations in an isolated working tree, compares regenerated outputs, and checks the mathematical summary. Without `-full`, it omits the heavier cross-checks and compares against saved full-group $E_6/E_7$ snapshots. See the [supplement README](supplement/README.md) for the precise scope and [development guide](supplement/DEVELOPING.md) for individual commands.
 
-[Release v0.5.0](https://github.com/tygern/kl/releases/tag/v0.5.0) contains the revised manuscript, proof-study companion, and reproducible supplement. [Release v0.4.0](https://github.com/tygern/kl/releases/tag/v0.4.0) preserves the earlier snapshot. Each archive records its manuscript and source hashes.
+[Release v0.5.1](https://github.com/tygern/kl/releases/tag/v0.5.1) contains the citation revision, proof-study companion, citation audit, and reproducible supplement. [Release v0.5.0](https://github.com/tygern/kl/releases/tag/v0.5.0) preserves the preceding exposition revision. Each archive records its manuscript and source hashes.
 
 The [repository tools](tools/README.md) reproduce the additional research certificates and build the PDF:
 

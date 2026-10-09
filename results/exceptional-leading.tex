@@ -16,6 +16,7 @@
 \newcommand{\FC}{W_{\mathrm{FC}}}
 \newcommand{\supp}{\operatorname{supp}}
 \newcommand{\dpth}{\operatorname{dp}}
+\newcommand{\doi}[1]{doi:\href{https://doi.org/#1}{\nolinkurl{#1}}}
 \title{Leading Kazhdan--Lusztig coefficients with
 fully commutative lower endpoints in type $E$\thanks{Text licensed under
 CC BY 4.0; accompanying code under the MIT License.}}
@@ -69,7 +70,7 @@ the set $\FC$. A set $I\subseteq S$ of pairwise commuting generators is an
 for it begins or ends with two noncommuting generators, and a
 \emph{noncommuting terminal} if moreover it is not a commuting product;
 these are Gern's weakly bad and bad elements \cite[Definition~2.1.1]{Gern}
-and Laird's $T$-avoiding and $T_2$-avoiding elements \cite{Laird}.
+and Laird's $T$-avoiding and $T_2$-avoiding elements \cite[\S2.2]{Laird}.
 
 \begin{theorem}[Finite exceptional types]\label{thm:main}
 If $W$ has type $E_6$, $E_7$ or $E_8$, then $\mu(x,w)\in\{0,1\}$ for all
@@ -108,9 +109,10 @@ all of them''; Chmutov \cite[abstract and \S2.3]{Chmutov} calls this
 $\widetilde A$ (Green \cite[Theorem~4.1; Theorem~3.1 of the arXiv
 version]{GreenLeading}), $B=C$ (Chmutov \cite[Theorem~2.3.8]{Chmutov}) and
 $D$ (Gern \cite[Theorem~4.5.11]{Gern}). Theorem~\ref{thm:main} completes
-the finite simply laced case. The remaining finite cases are $F_4$,
-$H_3$ and $H_4$; dihedral groups, including $G_2$, have $P_{x,w}=1$
-for $x\leq w$. Finiteness cannot be dropped from
+the finite simply laced case. The finite irreducible types not covered by
+these results are $F_4$, $H_3$ and $H_4$; dihedral groups, including
+$G_2$, have $P_{x,w}=1$ for $x\leq w$
+\cite[Proposition~7.3]{LusztigUP}. Finiteness cannot be dropped from
 Corollary~\ref{cor:finiteADE}: $\mu=2$ occurs in $\widetilde D_4$.
 The FC hypothesis is also essential, since $\mu=10$ occurs in $E_6$
 with a non-FC lower endpoint (Section~\ref{sec:complements}).
@@ -120,8 +122,8 @@ proved the bound for a Deodhar upper endpoint in every finite Weyl group
 ($E_6$, $E_7$, $E_8$, $F_4$ and $G_2$ by computer). This uses a
 hypothesis on the upper endpoint. When both endpoints are fully
 commutative the bound holds in every $E_n$ by
-Graham's thesis, as recalled in \cite[Remark~9.5]{GreenEn} and
-\cite[Remark~7.12]{GreenJones}.
+Graham's thesis \cite{Graham}, as reported in
+Green \cite[Remark~9.5]{GreenEn}.
 
 The reduction to terminal upper endpoints
 (Lemma~\ref{lem:reduction}) is Green's argument as adapted by Gern, and
@@ -156,26 +158,30 @@ catalogue and a base-cover check. Appendix~\ref{app:certificates} separates
 these proof inputs from the additional computational checks.
 
 Infinite families of $T$-avoiding elements inside a fixed infinite Coxeter group
-were known in affine type $A$ (Fan--Green
-\cite[Proposition~3.1.2]{FanGreen}, fully commutative), affine type $C$
-(Ernst \cite{Ernst}; Laird \cite[Theorem~4.1.5]{Laird}) and type $F_n$
-(non-FC; Cross, Ernst, Hills-Kimball and Quaranta (2012) and
-Gilbertson--Ernst (2013), as reported in \cite[\S3.3]{Laird}); Laird
-\cite[\S5.3]{Laird} lists the affine type-$E$ questions as open. By Green's
-theorem \cite[Theorem~6.3]{GreenStar} every $E_n$ is star reducible, so
-every fully commutative terminal in $E_n$ is a commuting product, which is
-why all families here are non-FC.
+were known in affine type $A$ with an even number of generators
+(Fan--Green \cite[Proposition~3.1.2]{FanGreen}, fully commutative), and
+in affine type $C$ (the sandwich stacks of Laird \cite[\S2.3, Figures~2.8--2.9]{Laird},
+within Ernst's type-II non-cancellable elements \cite[\S3.2]{Ernst}).
+For type $F_n$, Laird \cite[\S3.3]{Laird} reports unpublished non-FC
+constructions of Cross, Ernst, Hills-Kimball and Quaranta (2012) and
+Gilbertson--Ernst (2013). Laird's 2016 list of open classification problems
+includes affine type $E$ \cite[\S5.3]{Laird}. By Green's theorem
+\cite[Theorem~6.3]{GreenStar} every $E_n$ is star reducible, so every fully
+commutative terminal in $E_n$ is a commuting product, which is why all
+families here are non-FC.
 
-Exceptional Kazhdan--Lusztig computations feature in Geck's \emph{PyCox} \cite{GeckPyCox} and in
-Geck--Halls's analysis of the cells of $E_8$ \cite{GeckHalls}, which
-concern cell partitions and character values rather than every $\mu(x,w)$
-with FC lower endpoint; fully commutative cell closure fails in type $E$
-(Green--Losonczy \cite[Example~2.2.5]{GreenLosonczy}, credited to Graham
-\cite[\S9.9]{Graham}), and a $W$-graph records $\mu(x,w)$ only through a
-generator in $L(x)\setminus L(w)$ \cite[Remark~2.1]{GeckHalls}, whereas
-our residual terminal pairs have equal descent sets. To our knowledge, the
-exceptional bound, the terminal lists of Table~\ref{tab:terminals} and the
-infinite families have not appeared before.
+Related computational work includes Geck's \emph{PyCox}
+\cite{GeckPyCox} and Geck--Halls's analysis of the cells of $E_8$
+\cite{GeckHalls}. Cell partitions alone do not settle the bound here:
+the FC elements are not a union of Kazhdan--Lusztig left cells in type $E$
+\cite[Example~2.2.5]{GreenLosonczy}. Green--Losonczy attribute this
+phenomenon to Graham's thesis \cite[\S9.9]{Graham}.
+Moreover, the off-diagonal action in a left-cell $W$-graph only uses a
+coefficient $\widetilde\mu(x,w)$ when some generator belongs to
+$L(x)\setminus L(w)$ \cite[Remark~2.1]{GeckHalls}; equal-descent pairs,
+such as our residual terminal pairs, are invisible to this action.
+To our knowledge, the exceptional bound, the terminal lists of
+Table~\ref{tab:terminals} and the infinite families have not appeared before.
 
 Sections~\ref{sec:reductions},
 \ref{sec:finite} and~\ref{sec:families} contain the structural lemmas,
@@ -200,8 +206,10 @@ For noncommuting generators $s,t$ with $m(s,t)=3$ let
 $D_L(s,t)=\{w:|L(w)\cap\{s,t\}|=1\}$. For $w\in D_L(s,t)$ exactly one of
 $sw,tw$ lies in $D_L(s,t)$; it is the left star ${}^*w$. Right stars
 $w^*$ are defined symmetrically. Stars preserve full commutativity in
-simply laced systems \cite[Proposition~2.10]{Shi}, \cite[Proposition~1.1.29]{Gern}.
-Star transport \cite[Theorem~4.2]{KL} says that for $x,w\in D_L(s,t)$,
+simply laced systems \cite[Introduction]{GreenStar}; see also
+\cite[Proposition~1.1.29]{Gern}.
+Star transport \cite[Theorem~4.2]{KL}, also stated in
+\cite[Proposition~1.2.4(1),(2)]{Gern}, says that for $x,w\in D_L(s,t)$,
 \begin{equation}\label{eq:star}
  \widetilde\mu(x,w)=\widetilde\mu({}^*x,{}^*w),
 \end{equation}
@@ -240,7 +248,7 @@ On the path $0\text{--}1\text{--}2$, take
  x=s_1,\qquad w=s_1s_0s_2s_1.
 \]
 These words are reduced, with lengths $1$ and $4$, and $x<w$ by the
-subword property. Both left descent sets equal $\{s_1\}$, so both
+subword property \cite[Theorem~2.2.2]{BB}. Both left descent sets equal $\{s_1\}$, so both
 elements lie in $D_L(s_1,s_0)$. Their left stars are
 \[
  {}^*x=s_0s_1,\qquad {}^*w=s_0s_2s_1.
@@ -351,7 +359,7 @@ and $t$ are adjacent, i.e.\ $m(s,t)=3$. For a real root $\beta$ the
 reflection $r_\beta$ acts by $r_\beta(\rho)=\rho-(\rho,\beta)\beta$; $W$
 acts on the left and the matrix of $w$ has columns $w(\alpha_j)$. Root
 inequalities refer to the simple-root basis, and $s\in R(w)$ if and only
-if $w(\alpha_s)<0$. Since $(ws)(\alpha_t)=w(\alpha_s+\alpha_t)$ for
+if $w(\alpha_s)<0$ \cite[Proposition~4.4.6]{BB}. Since $(ws)(\alpha_t)=w(\alpha_s+\alpha_t)$ for
 $s\sim t$, the right-terminal test is
 \begin{equation}\label{eq:terminaltest}
  s\in R(w)\quad\Longrightarrow\quad
@@ -439,14 +447,15 @@ eligible.
 
 \subsection{Exhaustiveness, and the proofs of Theorem~\ref{thm:main} and
 Corollary~\ref{cor:finiteADE}}\label{sec:exhaustive}
-All computations use the faithful integral geometric representation: right
+All computations use the faithful integral geometric representation
+\cite[Theorem~4.2.7]{BB}: right
 multiplication by $s_i$ replaces the columns $a_j=w(\alpha_j)$ by
 $a_i\mapsto-a_i$ and $a_j\mapsto a_j+a_i$ for $j\sim i$; signs give
 descents and \eqref{eq:terminaltest} tests terminality on both sides. In
 $E_6$ and $E_7$, breadth-first closure under all generators enumerates the
 whole group. For $E_8$, fix $J\subseteq S$ and write $w=av$
 length-additively with $a\in W^J$ (minimal coset representatives) and
-$v\in W_J$; call $w$ \emph{right-terminal} if no reduced word of $w$ ends
+$v\in W_J$ \cite[Proposition~2.4.4 and Corollary~2.4.5]{BB}; call $w$ \emph{right-terminal} if no reduced word of $w$ ends
 in a noncommuting pair.
 \begin{lemma}[Parabolic pruning]\label{lem:pruning}
 If $w=av$ is right-terminal, then $v$ is right-terminal in $W_J$.
@@ -515,7 +524,7 @@ notation \cite[Example~1.1.6]{Gern}. Bruhat order and Kazhdan--Lusztig
 polynomials of a standard parabolic subgroup agree with those of $W$, since
 reduced words of $W_J$ are reduced in $W$ and the Hecke algebra of $W_J$ is
 a bar-stable subalgebra containing its Kazhdan--Lusztig basis
-\cite[Chapter~5]{BB}. Gern's Lemma~4.5.5 \cite{Gern}, a computation with du
+\cite[\S9.6 and Lemma~9.10(c),(d), with $z=e$]{LusztigUP}. Gern's Lemma~4.5.5 \cite{Gern}, a computation with du
 Cloux's \textsf{Coxeter}, gives $\mu(x_6,w_6)=1$ (recomputed in
 Appendix~\ref{app:certificates}). Hence every coefficient with terminal
 upper endpoint lies in $\{0,1\}$.
@@ -525,7 +534,10 @@ upper endpoint lies in $\{0,1\}$.
 The irreducible finite simply laced types are $A$, $D$ and $E$; combine
 Green's theorem, Gern's theorem and Theorem~\ref{thm:main}. For a direct
 product $W=\prod_jW_j$, full commutativity is componentwise and
-$P_{x,w}=\prod_jP_{x_j,w_j}$. Let $x<w$, let $d_j$ be the component length
+$P_{x,w}=\prod_jP_{x_j,w_j}$: the Hecke algebra and its bar involution
+factor as tensor products, and the tensor product of the component
+Kazhdan--Lusztig bases satisfies the defining invariance and triangularity
+conditions \cite[\S5.1]{BB}. Let $x<w$, let $d_j$ be the component length
 differences, $d=\sum_jd_j$, and $m$ the number of $j$ with $d_j>0$. Even
 $d$ gives $\mu=0$; for odd $d$ and $m\geq2$,
 the bounds $\deg P_{x_j,w_j}\leq(d_j-1)/2$ for $d_j>0$ give $\deg P_{x,w}\leq(d-m)/2<(d-1)/2$,
@@ -553,7 +565,8 @@ in $E_7$ and $E_8$ are $w_7^{E}$ and $w_8^{E}$, respectively.
 The terminal-structure certificate records reduced layered words and
 orthogonal-reflection decompositions. The element $w_4$ is a reflection,
 $w_6$ is a product of three orthogonal reflections, and $w_7^{E}$ and
-$w_8^{E}$ have involution types $4A_1$ and $2A_1$. In the compatible
+$w_8^{E}$ are products of four and two pairwise orthogonal reflections,
+respectively. In the compatible
 embeddings into $E_8$ they form a right weak order chain
 $w_4<w_6<w_7^{E}<w_8^{E}$. These observations are not needed for
 Theorem~\ref{thm:main}.
@@ -562,14 +575,17 @@ There is also an alternative degree bound. For $b=w_7^{E},w_8^{E}$,
 $\mu(i(I),b)=0$ also follows without parity: $J=I\cup\{0\}$ has type
 $A_2\times A_1^3$ and $\ell(w_0(J))=6$, and $b=u\,w_0(J)\,v$
 length-additively with lengths $11+6+11$ and $11+6+33$ (words in the
-certificate), so $b\leq_{LR}w_0(J)$ \cite[\S2.3]{KL},
-$a(b)\geq a(w_0(J))=6$ for Lusztig's $a$-function
-\cite[Proposition~13.8 and Conjecture~14.2 (P4), (P12), proved for finite
-Weyl groups in \S15.1]{LusztigUP}, \cite[Lemmas~1.3.7 and 1.3.8]{Gern},
-and, as $I\subseteq L(b)$, $P_{i(I),b}=P_{e,b}$ \cite[\S2.3]{KL} has
-degree at most $(\ell(b)-a(b))/2\leq(\ell(b)-6)/2$
-\cite[Proposition~1.3.5]{Gern}, citing \cite[1.3(a)]{LusztigII}, below the
-degree $(\ell(b)-5)/2$ of $\mu(i(I),b)$. Likewise $a(w_6)\geq5$,
+certificate). A length-increasing simple multiplication decreases the
+Kazhdan--Lusztig left or right preorder \cite[\S2]{GeckHalls}, so
+$b\leq_{LR}w_0(J)$. Consequently Lusztig's $a$-function satisfies
+$a(b)\geq a(w_0(J))=6$, by \cite[Proposition~13.8 and properties
+P4, P12 of \S14.2, proved in Chapter~15]{LusztigUP}.
+As $I\subseteq L(b)$, repeated left descent invariance gives
+$P_{i(I),b}=P_{e,b}$ \cite[Proposition~5.1.8 and its left analogue]{BB}.
+In the equal-parameter normalization, $\Delta(b)=\ell(b)-2\deg P_{e,b}$;
+property P1 gives $a(b)\leq\Delta(b)$ \cite[\S14.1 and \S15.2]{LusztigUP}.
+Thus $\deg P_{i(I),b}\leq(\ell(b)-6)/2$, below the degree
+$(\ell(b)-5)/2$ of $\mu(i(I),b)$. Likewise $a(w_6)\geq5$,
 consistent with $a(w_6)=5$ \cite[Proposition~4.5.1]{Gern}.
 \end{remark}
 
@@ -850,7 +866,9 @@ strictly negative in every coordinate, whereas omitting a generator would
 leave its row unchanged. The $c_k$ are pairwise distinct by
 \eqref{eq:affinecolumns}, since every $d_j\neq0$.
 
-For the length, count affine inversions: for each of the $240$ finite
+For the length, use the affine-root realization
+\cite[\S\S4.1--4.3 and \S6.5]{Humphreys} and count positive roots sent
+negative \cite[Proposition~4.4.4]{BB}: for each of the $240$ finite
 roots $\eta$ write $c_0\eta=\eta'+h\delta'$, let $\epsilon(\eta)$ be $0$
 for positive and $1$ for negative $\eta$; the positive affine roots
 $\eta+m\delta'$, $m\geq\epsilon(\eta)$, contribute
@@ -956,15 +974,19 @@ $x=5343010$ (not FC) and $w=0125342312501234$ (FC, $\ell=16$) have
 
 \subsection{The bound fails in affine type}
 In $\widetilde D_4$, with $x$ the product of the four leaves and $c$ the
-centre, $w=xcx$ has $P_{x,w}=1+3q+2q^2$ and $\mu(x,w)=2$; this star family
-is covered by Mongelli \cite[Corollary~2 (arXiv v1, p.~10)]{Mongelli}, and
-the value is recomputed in Appendix~\ref{app:certificates}. Hence
+centre, $w=xcx$ has $P_{x,w}=1+3q+2q^2$ and $\mu(x,w)=2$.
+The upper endpoint is a boolean reflection: commuting the leaves rewrites
+it as a palindrome whose first half and centre use distinct generators.
+Thus Mongelli's formula for boolean elements in tree Coxeter groups
+\cite[Corollary~3]{Mongelli} applies and gives $f_4(q)=1+3q+2q^2$;
+Corollary~2 of the same source also gives $\mu(x,w)=2$ directly.
+The value is recomputed in Appendix~\ref{app:certificates}. Hence
 Corollary~\ref{cor:finiteADE} is sharp within simply laced type, and the
 universal form of Green's question has a negative answer. Vanishing of
 $\mu$ does not mean $P=1$: in finite $D_4$, with $x$ the product of the
 three leaves, $b=xcx$ has maximum common commuting descents and even gap
 $4$, so $\mu(x,b)=0$, but $P_{x,b}=1+2q$
-\cite[Corollary~3 (arXiv v1, \S4)]{Mongelli}.
+\cite[Corollary~3]{Mongelli} (the same construction with three leaves gives $f_3$).
 
 \subsection{Terminals in affine \texorpdfstring{$E_8$}{E8} beyond the family}
 \label{sec:affineextra}
@@ -995,9 +1017,11 @@ Proposition~\ref{prop:parity} except parity. All values found lie in
 $\{0,1\}$. The polynomials and the sizes of the lower ideals and
 quotients are recorded in the certificate
 (Appendix~\ref{app:certificates}); the computation runs the
-Kazhdan--Lusztig recursion on the parabolic quotient $W/W_{R(w)}$, which
-is legitimate because $P_{x,w}=P_{xs,w}$ for $s\in R(w)$
-\cite[\S2.3]{KL}.
+ordinary Kazhdan--Lusztig recursion \cite[Theorem~5.1.7]{BB}, identifying
+lower endpoints in the same right coset of $W_{R(w)}$: for fixed $w$,
+$P_{x,w}=P_{xs,w}$ for $s\in R(w)$ \cite[Proposition~5.1.8]{BB}.
+These are ordinary polynomials computed using coset representatives, not
+parabolic Kazhdan--Lusztig polynomials.
 
 \subsection{Open problems}
 \begin{enumerate}
@@ -1013,7 +1037,8 @@ subgroup. Here the relation is restricted to terminal endpoints;
 translation conjugation need not preserve terminality in general.
 \item Determine $\mu$ for the translated length-$33$ reflection family
 $r_{\beta+k\delta'}$, $k\geq1$, of Section~\ref{sec:affineextra}.
-\item Settle Green's question for $F_4$, $H_3$ and $H_4$.
+\item Determine the bound in $F_4$, $H_3$ and $H_4$, the finite irreducible
+types not treated by the results cited here.
 \item Give an effective description of all noncommuting terminals of
 $E_n$ for $n\geq9$. The affine family and its standard parabolic embeddings
 show that no finite list exists.
@@ -1083,7 +1108,7 @@ The further computations concern the structure in
 Remarks~\ref{rem:gern}--\ref{rem:structure}, the results of
 Section~\ref{sec:complements}, and checks beyond what the proofs require.
 These include the finite FC counts (agreeing with
-\cite{Stembridge98} and \cite[\S5.1]{BJN}), FC maxima in
+\cite[Appendix, Table~1]{Stembridge98} and \cite[\S5.1]{BJN}), FC maxima in
 $E_{10}$--$E_{13}$, and finite-rank checks of the uniform identities.
 The $D_8$ calculation provides a further check against Gern's thesis:
 \[
@@ -1201,9 +1226,9 @@ snapshots, and checks a stable summary. Go 1.22 or later suffices; no
 external packages are required. Without \texttt{-full}, the runner still
 recomputes the classifications but uses saved full-group $E_6/E_7$
 snapshots for comparison and omits the heavier cross-checks. Release
-\href{https://github.com/tygern/kl/releases/tag/v0.5.0}{v0.5.0}
-contains this revision and its study companion; v0.4.0 preserves the
-earlier snapshot. Manifests identify the exact
+\href{https://github.com/tygern/kl/releases/tag/v0.5.1}{v0.5.1}
+contains this manuscript, its study companion and the citation audit;
+v0.5.0 preserves the preceding exposition revision. Manifests identify the exact
 sources used in each run and provide integrity checks, not proof by
 themselves.
 
@@ -1211,72 +1236,69 @@ themselves.
 \setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}\setlength{\parskip}{0pt}
 \bibitem{BJN} R. Biagioli, F. Jouhet, and P. Nadeau, Fully commutative
 elements in finite and affine Coxeter groups, Monatsh. Math. 178 (2015),
-1--37, doi:10.1007/s00605-014-0674-7.
+1--37, \doi{10.1007/s00605-014-0674-7}.
 \bibitem{BB} A. Bj\"orner and F. Brenti, Combinatorics of Coxeter groups,
-Grad. Texts in Math. 231, Springer, 2005, doi:10.1007/3-540-27596-7.
+Grad. Texts in Math. 231, Springer, 2005, \doi{10.1007/3-540-27596-7}.
 \bibitem{Chmutov} M. S. Chmutov, The structure of $W$-graphs arising in
 Kazhdan--Lusztig theory, Ph.D. thesis, Univ. of Michigan, 2014,
-hdl:2027.42/108802.
+\url{https://hdl.handle.net/2027.42/108802}.
 \bibitem{Ernst} D. C. Ernst, Non-cancellable elements in type affine $C$
 Coxeter groups, Int. Electron. J. Algebra 8 (2010), 191--218,
-arXiv:0910.0923.
+\href{https://arxiv.org/abs/0910.0923}{arXiv:0910.0923}.
 \bibitem{Fan} C. K. Fan, Structure of a Hecke algebra quotient,
-J. Amer. Math. Soc. 10 (1997), 139--167, doi:10.1090/S0894-0347-97-00222-1.
+J. Amer. Math. Soc. 10 (1997), 139--167, \doi{10.1090/S0894-0347-97-00222-1}.
 \bibitem{FanGreen} C. K. Fan and R. M. Green, On the affine
 Temperley--Lieb algebras, J. London Math. Soc. (2) 60 (1999), 366--380,
-doi:10.1112/S0024610799007796.
+\doi{10.1112/S0024610799007796}.
 \bibitem{GeckPyCox} M. Geck, PyCox: Computing with (finite) Coxeter groups
 and Iwahori--Hecke algebras, LMS J. Comput. Math. 15 (2012), 231--256,
-doi:10.1112/S1461157012001064.
+\doi{10.1112/S1461157012001064}.
 \bibitem{GeckHalls} M. Geck and A. Halls, On the Kazhdan--Lusztig cells in
-type $E_8$, Math. Comp. 84 (2015), 3029--3049, doi:10.1090/mcom/2963.
+type $E_8$, Math. Comp. 84 (2015), 3029--3049, \doi{10.1090/mcom/2963}.
 \bibitem{Gern} T. C. Gern, Leading coefficients of Kazhdan--Lusztig
 polynomials in type $D$, Ph.D. thesis, Univ. of Colorado Boulder, 2013,
-arXiv:1304.6074.
+\href{https://arxiv.org/abs/1304.6074}{arXiv:1304.6074}.
 \bibitem{Graham} J. J. Graham, Modular representations of Hecke algebras
 and related algebras, Ph.D. thesis, Univ. of Sydney, 1995.
 \bibitem{GreenStar} R. M. Green, Star reducible Coxeter groups, Glasgow
-Math. J. 48 (2006), 583--609, doi:10.1017/S0017089506003211.
-\bibitem{GreenJones} R. M. Green, Generalized Jones traces and
-Kazhdan--Lusztig bases, J. Pure Appl. Algebra 211 (2007), 744--772,
-doi:10.1016/j.jpaa.2007.04.004.
+Math. J. 48 (2006), 583--609, \doi{10.1017/S0017089506003211}.
 \bibitem{GreenEn} R. M. Green, On the Markov trace for Temperley--Lieb
 algebras of type $E_n$, J. Knot Theory Ramifications 18 (2009), 237--264,
-doi:10.1142/S0218216509006872, arXiv:0704.0283 (statement numbers cited
-here follow v1).
+\doi{10.1142/S0218216509006872}, \href{https://arxiv.org/abs/0704.0283v1}{arXiv:0704.0283v1}
+(statement numbers follow this version).
 \bibitem{GreenLeading} R. M. Green, Leading coefficients of
 Kazhdan--Lusztig polynomials and fully commutative elements, J. Algebraic
-Combin. 30 (2009), 165--171, doi:10.1007/s10801-008-0156-x,
-arXiv:0801.1650.
+Combin. 30 (2009), 165--171, \doi{10.1007/s10801-008-0156-x},
+\href{https://arxiv.org/abs/0801.1650v1}{arXiv:0801.1650v1}
+(published Theorem~4.1 is Theorem~3.1 of this preprint).
 \bibitem{GreenLosonczy} R. M. Green and J. Losonczy, Fully commutative
 Kazhdan--Lusztig cells, Ann. Inst. Fourier 51 (2001), 1025--1045,
-doi:10.5802/aif.1843.
+\doi{10.5802/aif.1843}.
+\bibitem{Humphreys} J. E. Humphreys, Reflection groups and Coxeter groups,
+Cambridge Stud. Adv. Math. 29, Cambridge Univ. Press, 1990,
+\doi{10.1017/CBO9780511623646}.
 \bibitem{Jones} B. C. Jones, Leading coefficients of Kazhdan--Lusztig
 polynomials for Deodhar elements, J. Algebraic Combin. 29 (2009), 229--260,
-doi:10.1007/s10801-008-0131-6.
+\doi{10.1007/s10801-008-0131-6}.
 \bibitem{KL} D. Kazhdan and G. Lusztig, Representations of Coxeter groups
 and Hecke algebras, Invent. Math. 53 (1979), 165--184,
-doi:10.1007/BF01390031.
+\doi{10.1007/BF01390031}.
 \bibitem{Laird} T. Laird, A study of $T$-avoiding elements of Coxeter
 groups, M.S. thesis, Northern Arizona Univ., 2016,
 \url{https://in.nau.edu/department-mathematics-statistics/wp-content/uploads/sites/377/2018/08/LairdThesis-ek.pdf}.
-\bibitem{LusztigII} G. Lusztig, Cells in affine Weyl groups, II,
-J. Algebra 109 (1987), 536--548, doi:10.1016/0021-8693(87)90154-2.
 \bibitem{LusztigUP} G. Lusztig, Hecke algebras with unequal parameters,
-CRM Monogr. Ser. 18, Amer. Math. Soc., 2003, doi:10.1090/crmm/018.
+CRM Monogr. Ser. 18, Amer. Math. Soc., 2003, \doi{10.1090/crmm/018}; revised version (2014),
+\href{https://arxiv.org/abs/math/0208154v2}{arXiv:math/0208154v2}
+(statement numbers follow the revised version).
 \bibitem{Mongelli} P. Mongelli, Kazhdan--Lusztig polynomials of boolean
 elements, J. Algebraic Combin. 39 (2014), 497--525,
-doi:10.1007/s10801-013-0455-8, arXiv:1111.2945.
-\bibitem{Shi} J.-Y. Shi, Fully commutative elements in the Weyl and affine
-Weyl groups, J. Algebra 284 (2005), 13--36,
-doi:10.1016/j.jalgebra.2004.08.036.
+\doi{10.1007/s10801-013-0455-8}, \href{https://arxiv.org/abs/1111.2945v1}{arXiv:1111.2945v1}
+(statement numbers follow this version).
 \bibitem{Stembridge} J. R. Stembridge, On the fully commutative elements
 of Coxeter groups, J. Algebraic Combin. 5 (1996), 353--385,
-doi:10.1007/BF00193185; author preprint
-\url{https://websites.umich.edu/~jrs/papers/FC.pdf} (its Proposition~1.1 and
-Theorem~4.1 are Proposition~2.1 and Theorem~5.1 of the published version).
+\doi{10.1007/BF00193185} (statement numbers follow the published version).
 \bibitem{Stembridge98} J. R. Stembridge, The enumeration of fully
 commutative elements of Coxeter groups, J. Algebraic Combin. 7 (1998),
-291--320, doi:10.1023/A:1008623323374.
+291--320, \doi{10.1023/A:1008623323374}.
 \end{thebibliography}
 \end{document}

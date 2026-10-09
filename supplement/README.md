@@ -1,8 +1,8 @@
-# Proof supplement v0.5.0
+# Proof supplement v0.5.1
 
 Author: Tyson Gern (Initial Capacity, tyson@initialcapacity.io, ORCID 0009-0003-8288-8786).
 
-This supplement reproduces the computational parts of `results/exceptional-leading.tex`. Release v0.5.0 includes the 9 October 2026 exposition revision, a matching PDF, and the proof-study companion at `payload/results/proof-study-companion.md` in the archive (`results/proof-study-companion.md` in the repository). Release v0.4.0 preserves the earlier manuscript snapshot. The mathematical outputs are unchanged.
+This supplement reproduces the computational parts of `results/exceptional-leading.tex`. Release v0.5.1 includes the citation revision, a matching PDF, the proof-study companion, and the reference-by-reference citation audit. The two companion documents are at `payload/results/proof-study-companion.md` and `payload/results/citation-audit.md` in the archive (`results/` in the repository). Release v0.5.0 preserves the preceding exposition revision. The mathematical outputs are unchanged.
 
 The programs and notes were developed with assistance from OpenAI and Anthropic models under the author's direction. AI-generated review notes are not peer review. Computational dependencies and implementation independence are documented below; the repository's `PROVENANCE.md` records the development history. Code is licensed under MIT and the manuscript under CC BY 4.0.
 

@@ -1,5 +1,5 @@
 // Command package collects the explicit, minimal proof supplement archive
-// for release v0.5.0; no network, no installations.
+// for release v0.5.1; no network, no installations.
 //
 // It ports supplement/build_package.py: the same payload inventory of data
 // files (shipped certificates, snapshots, the manuscript snapshot and its
@@ -35,7 +35,7 @@ import (
 	"time"
 )
 
-const version = "v0.5.0"
+const version = "v0.5.1"
 
 // renamed maps the current location of the internal review notes to their
 // pre-rename location; the archive always uses the new path.
@@ -43,6 +43,7 @@ var renamed = map[string]string{"research/ai-review-notes/": "research/journal-r
 
 // files is the payload inventory: archive path (under payload/) and purpose.
 var files = map[string]string{
+	"results/citation-audit.md":                                 "Reference-by-reference citation audit, source locators, editorial decisions, and verification limits; not a computational proof input.",
 	"results/proof-study-companion.md":                          "Study companion with worked examples, exercises, and solution sketches; not a computational proof input.",
 	"output/pdf/exceptional-leading.pdf":                        "Rendered manuscript snapshot supplied alongside the TeX; not executed by the proof runner.",
 	"results/exceptional-leading.tex":                           "Manuscript snapshot; the uniform verifier records its SHA256, which the runner compares with the value recorded here at build time.",

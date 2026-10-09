@@ -2,9 +2,9 @@
   {
     "source": "results/exceptional-leading.tex",
     "pdf": "output/pdf/exceptional-leading.pdf",
-    "source_sha256": "703d9aafcbb6157a80600b6f5e1bac1dee3472d56bc2670ac73ac801bfdf5c86",
-    "pdf_sha256": "896f45449ebf7456b7aca033492b1a5ace0ce5cf44fce84e60fe177a7ddb163c",
-    "bytes": 622586,
+    "source_sha256": "3a39fef2c91b510f9f0ab745206efdd3afa3e2a9836a22bde28315599d8b8937",
+    "pdf_sha256": "115bd226156787780cca137edf9b2a6bd3c06595119384c834cc40651add7d89",
+    "bytes": 627290,
     "command": [
       "latexmk",
       "-pdf",
