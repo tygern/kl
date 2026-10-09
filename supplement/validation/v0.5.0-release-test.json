@@ -1,0 +1,95 @@
+{
+  "version": "v0.5.0",
+  "date": "2026-10-09",
+  "archive": {
+    "bytes": 992279,
+    "sha256": "e9aa2baf1f429d90b2aa593e964232cf1fade8d11d87ce9ffb0c0b7a61237115",
+    "files": 102
+  },
+  "manuscript_sha256": "703d9aafcbb6157a80600b6f5e1bac1dee3472d56bc2670ac73ac801bfdf5c86",
+  "pdf": {
+    "bytes": 622586,
+    "sha256": "896f45449ebf7456b7aca033492b1a5ace0ce5cf44fce84e60fe177a7ddb163c",
+    "pages": 15
+  },
+  "extraction": "Each mode ran from a separate fresh extraction of the exact release ZIP into an isolated scratch directory.",
+  "default": {
+    "run": "default-2034881209",
+    "status": {
+      "status": "passed",
+      "mode": "default",
+      "seconds": 29.686,
+      "go_version": "go1.27.2",
+      "steps": 61,
+      "work": "runs/default-2034881209/work",
+      "expected_outputs_match": true,
+      "printed_table_matches_generated_terminals": true,
+      "manuscript_sha256_matches_build_record": true,
+      "snapshots_compared": [
+        "research/en_e8/e8-recursive-chains.json",
+        "research/ai-review-notes/finite-descents.json",
+        "research/exceptional_referee/checks.json",
+        "results/d6-ambient-certificate.json",
+        "research/en_uniform/construction.json",
+        "research/en_affine_referee/proved-affine-certificate.json",
+        "research/en_families/affine_reflection_family.json",
+        "research/en_families/cartan_E10_m2_max1.json",
+        "results/e6-mu-table.json",
+        "results/e9-odd-gap-certificate.json",
+        "results/d8-gern-certificate.json",
+        "results/fc-maxima-certificate.json",
+        "results/terminal-structure-certificate.json",
+        "results/uniform-family-certificate.json",
+        "results/affine-d4-independent.json"
+      ]
+    },
+    "summary_equals_expected": true,
+    "summary_equals_v0_4_0_full_summary": true
+  },
+  "full": {
+    "run": "full-2352794492",
+    "status": {
+      "status": "passed",
+      "mode": "full",
+      "seconds": 89.326,
+      "go_version": "go1.27.2",
+      "steps": 67,
+      "work": "runs/full-2352794492/work",
+      "expected_outputs_match": true,
+      "printed_table_matches_generated_terminals": true,
+      "manuscript_sha256_matches_build_record": true,
+      "snapshots_compared": [
+        "research/en_e8/e8-recursive-chains.json",
+        "research/broad_exceptional/e6_bad.json",
+        "research/broad_exceptional/e7_bad.json",
+        "results/e6-independent-certificate.json",
+        "results/e7-independent-certificate.json",
+        "research/ai-review-notes/finite-descents.json",
+        "research/exceptional_referee/checks.json",
+        "results/d6-ambient-certificate.json",
+        "research/en_uniform/construction.json",
+        "research/en_affine_referee/proved-affine-certificate.json",
+        "research/en_families/affine_reflection_family.json",
+        "research/en_families/cartan_E10_m2_max1.json",
+        "results/e6-mu-table.json",
+        "results/e9-odd-gap-certificate.json",
+        "results/d8-gern-certificate.json",
+        "results/fc-maxima-certificate.json",
+        "results/terminal-structure-certificate.json",
+        "results/uniform-family-certificate.json (shipped rows)",
+        "results/affine-d4-independent.json"
+      ]
+    },
+    "summary_equals_expected": true,
+    "summary_equals_v0_4_0_full_summary": true
+  },
+  "research_checks": "All 9 regenerated outputs equal the saved results.",
+  "static_and_unit_checks": "go vet ./... and go test ./... passed in the supplement module.",
+  "pdf_checks": {
+    "native_editor_compilation": "passed",
+    "export_compilation": "passed without warnings",
+    "all_pages_have_text": true,
+    "within_page_margins": true,
+    "visual_inspection": "All contact sheets and the full-size algorithm page inspected."
+  }
+}

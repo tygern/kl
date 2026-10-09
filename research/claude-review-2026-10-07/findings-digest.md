@@ -1,4 +1,10 @@
 LOGS:
+
+> Historical AI-generated review of the 7 October 2026 manuscript, not peer
+> review. Its recommendations, verdicts, section numbers and descriptions
+> of missing content refer to that earlier snapshot. Subsequent revisions
+> incorporated changes; see the [current manuscript](../../results/exceptional-leading.tex)
+> and [provenance](../../PROVENANCE.md) for the current scope and workflow.
 Launching 14 independent review dimensions
 bibliography-metadata: 7 findings, verifying substantive ones
 uniform-family: 5 findings, verifying substantive ones

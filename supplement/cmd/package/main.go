@@ -1,5 +1,5 @@
 // Command package collects the explicit, minimal proof supplement archive
-// for release v0.4.0; no network, no installations.
+// for release v0.5.0; no network, no installations.
 //
 // It ports supplement/build_package.py: the same payload inventory of data
 // files (shipped certificates, snapshots, the manuscript snapshot and its
@@ -35,7 +35,7 @@ import (
 	"time"
 )
 
-const version = "v0.4.0"
+const version = "v0.5.0"
 
 // renamed maps the current location of the internal review notes to their
 // pre-rename location; the archive always uses the new path.
@@ -43,6 +43,7 @@ var renamed = map[string]string{"research/ai-review-notes/": "research/journal-r
 
 // files is the payload inventory: archive path (under payload/) and purpose.
 var files = map[string]string{
+	"results/proof-study-companion.md":                          "Study companion with worked examples, exercises, and solution sketches; not a computational proof input.",
 	"output/pdf/exceptional-leading.pdf":                        "Rendered manuscript snapshot supplied alongside the TeX; not executed by the proof runner.",
 	"results/exceptional-leading.tex":                           "Manuscript snapshot; the uniform verifier records its SHA256, which the runner compares with the value recorded here at build time.",
 	"research/broad_exceptional/e6_bad.json":                    "Full E6 root-index snapshot written by enumerate-bad -rank 6; regenerated and compared with -full.",
@@ -318,8 +319,8 @@ func main() {
 	inventory = append(inventory, entry{"LICENSE", "LICENSE", digest(licenseFile), "unchanged", "MIT License covering all code in this archive (copyright 2026 Tyson Gern)."})
 
 	save(filepath.Join(p.stage, "INPUTS.json"), newObject().set("version", version).set("files", inventory).
-		set("scope", fmt.Sprintf("Proof-only snapshot prepared for release %s of https://github.com/tygern/kl.", version)).
-		set("provenance", "Programs and notes were drafted by large language model systems (OpenAI GPT-6.1 Sol and GPT-6 Astra; review certificates adapted from an independent review by Anthropic Claude Fable 5.1) under the direction of the author, Tyson Gern, who takes responsibility for the content. The Go port of the supplement (release v0.3.0) was written by Anthropic Claude Sonnet 5.5, one agent per program, and verified by Claude Fable 5.1 against the earlier Python/C++ programs' outputs certificate for certificate, under the author's direction."))
+		set("scope", fmt.Sprintf("Current-checkout proof snapshot using the %s program suite of https://github.com/tygern/kl; source hashes identify this build.", version)).
+		set("provenance", "Programs and notes were developed with assistance from OpenAI and Anthropic models under the direction of Tyson Gern, who takes responsibility for the manuscript. AI-generated review notes are not peer review. The archive README describes the computational checks and implementation dependencies."))
 	save(filepath.Join(p.stage, "expected-summary.json"), expected(p.read))
 
 	hashes := newObject()

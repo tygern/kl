@@ -1,15 +1,16 @@
 [
   {
     "pdf": "output/pdf/exceptional-leading.pdf",
-    "pages": 12,
-    "bytes": 612566,
+    "pages": 15,
+    "bytes": 622586,
     "title": "Leading Kazhdan\u2013Lusztig coefficients with fully commutative lower endpoints in type E",
     "author": "Tyson Gern",
     "all_pages_have_text": true,
     "within_page_margins": true,
     "contact_sheets": [
       "tmp/pdfs/exceptional-leading-contact-1.png",
-      "tmp/pdfs/exceptional-leading-contact-2.png"
+      "tmp/pdfs/exceptional-leading-contact-2.png",
+      "tmp/pdfs/exceptional-leading-contact-3.png"
     ],
     "visual_inspection": "Contact sheets and representative full page inspected separately."
   }
