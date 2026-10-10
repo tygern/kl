@@ -82,7 +82,7 @@ The inequalities alone do not finish the argument. The singleton intersection is
 
 On the path $0-1-2$, the independent set $\{1\}$ is maximal under inclusion but is not maximum: $\{0,2\}$ is larger. The FC element $s_1s_0s_2s_1$ has both descent sets $\{s_1\}$ and contains the commuting factor $s_0s_2$. Consequently its $a_{\rm TL}$ value is two, not one. This is why “maximum” cannot be weakened to “maximal.”
 
-For a terminal $b$, eligibility includes $x\leq b$. The subword property gives $\operatorname{supp}(x)\subseteq\operatorname{supp}(b)$, which supplies the $K$ needed above. Once $x=i(I)$ is forced, the gap $\ell(b)-|I|$ determines whether parity disposes of the coefficient.
+For a terminal $b$, eligibility includes $x\leq b$. The subword property gives $\mathrm{supp}(x)\subseteq\mathrm{supp}(b)$, which supplies the $K$ needed above. Once $x=i(I)$ is forced, the gap $\ell(b)-|I|$ determines whether parity disposes of the coefficient.
 
 **Exercise 4.** Write the maximum-descent proof in five lines, marking the two lines that invoke imported cell results. Explain why the support assumption is needed for the upper bound on $a_{\rm TL}(x)$.
 
