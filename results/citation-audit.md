@@ -1,6 +1,12 @@
 # Citation audit
 
-Reviewed 9 October 2026 against the manuscript following release v0.5.0. This is an editorial and source audit, not an independent proof verification or a guarantee of priority. The current manuscript has 22 bibliography entries: three were removed and one added. Every remaining entry has an identifiable mathematical or historical purpose.
+Reviewed 9 October 2026 against the manuscript following release v0.5.0. This is an editorial and source audit, not an independent proof verification or a guarantee of priority. At that revision the manuscript had 22 bibliography entries: three were removed and one added. Every remaining entry has an identifiable mathematical or historical purpose.
+
+## Update for v0.6.0 on 10 October 2026
+
+The manuscript now has 23 bibliography entries. It adds Biagioli, Costantini and Sasso, [arXiv:2508.08388v1](https://arxiv.org/abs/2508.08388v1), for recent FC star-irreducibility work in affine B and D; this is context, not a proof input or a competing arbitrary-upper-endpoint theorem. Laird's historical locator now explicitly mentions his finite-E and affine-E classification questions (§5.3, p. 63). The fixed-rank FC-finiteness observation cites BJN §5.1. The earlier 22-entry audit below is retained as the record of the citation revision.
+
+The affine proof now uses five explicit reduced braid words propagated by a length-additive translation factorization. BJN's affine-E8 length enumerator and the independently regenerated FC catalogue are supplementary corroboration, not dependencies of that cover argument. No novelty guarantee is added by this revision.
 
 ## Substantive corrections
 

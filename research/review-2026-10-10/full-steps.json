@@ -1,0 +1,714 @@
+[
+  {
+    "step": "build-terminals-flat",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/terminals-flat",
+      "./cmd/terminals-flat"
+    ],
+    "returncode": 0,
+    "seconds": 0.15
+  },
+  {
+    "step": "build-terminals-recursive",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/terminals-recursive",
+      "./cmd/terminals-recursive"
+    ],
+    "returncode": 0,
+    "seconds": 0.121
+  },
+  {
+    "step": "build-e8-d7",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/e8-d7",
+      "./cmd/e8-d7"
+    ],
+    "returncode": 0,
+    "seconds": 0.118
+  },
+  {
+    "step": "build-fc-catalogue",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/fc-catalogue",
+      "./cmd/fc-catalogue"
+    ],
+    "returncode": 0,
+    "seconds": 0.116
+  },
+  {
+    "step": "build-e6-mu-table",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/e6-mu-table",
+      "./cmd/e6-mu-table"
+    ],
+    "returncode": 0,
+    "seconds": 0.138
+  },
+  {
+    "step": "build-e9-quotient-kl",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/e9-quotient-kl",
+      "./cmd/e9-quotient-kl"
+    ],
+    "returncode": 0,
+    "seconds": 0.131
+  },
+  {
+    "step": "build-d8-gern-kl",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/d8-gern-kl",
+      "./cmd/d8-gern-kl"
+    ],
+    "returncode": 0,
+    "seconds": 0.122
+  },
+  {
+    "step": "build-fc-maxima",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/fc-maxima",
+      "./cmd/fc-maxima"
+    ],
+    "returncode": 0,
+    "seconds": 0.108
+  },
+  {
+    "step": "build-verify-exceptional",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/verify-exceptional",
+      "./cmd/verify-exceptional"
+    ],
+    "returncode": 0,
+    "seconds": 0.141
+  },
+  {
+    "step": "build-verify-outputs",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/verify-outputs",
+      "./cmd/verify-outputs"
+    ],
+    "returncode": 0,
+    "seconds": 0.357
+  },
+  {
+    "step": "build-verify-e8",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/verify-e8",
+      "./cmd/verify-e8"
+    ],
+    "returncode": 0,
+    "seconds": 0.148
+  },
+  {
+    "step": "build-finite-descents",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/finite-descents",
+      "./cmd/finite-descents"
+    ],
+    "returncode": 0,
+    "seconds": 0.116
+  },
+  {
+    "step": "build-d6-certificate",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/d6-certificate",
+      "./cmd/d6-certificate"
+    ],
+    "returncode": 0,
+    "seconds": 0.145
+  },
+  {
+    "step": "build-uniform-verify",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/uniform-verify",
+      "./cmd/uniform-verify"
+    ],
+    "returncode": 0,
+    "seconds": 0.204
+  },
+  {
+    "step": "build-affine-proof",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/affine-proof",
+      "./cmd/affine-proof"
+    ],
+    "returncode": 0,
+    "seconds": 0.134
+  },
+  {
+    "step": "build-affine-fc-covers",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/affine-fc-covers",
+      "./cmd/affine-fc-covers"
+    ],
+    "returncode": 0,
+    "seconds": 0.118
+  },
+  {
+    "step": "build-e10-all-k",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/e10-all-k",
+      "./cmd/e10-all-k"
+    ],
+    "returncode": 0,
+    "seconds": 0.138
+  },
+  {
+    "step": "build-terminal-structure",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/terminal-structure",
+      "./cmd/terminal-structure"
+    ],
+    "returncode": 0,
+    "seconds": 0.164
+  },
+  {
+    "step": "build-uniform-covers",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/uniform-covers",
+      "./cmd/uniform-covers"
+    ],
+    "returncode": 0,
+    "seconds": 0.13
+  },
+  {
+    "step": "build-affine-d4",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/affine-d4",
+      "./cmd/affine-d4"
+    ],
+    "returncode": 0,
+    "seconds": 0.127
+  },
+  {
+    "step": "build-affine-reflection-family",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/affine-reflection-family",
+      "./cmd/affine-reflection-family"
+    ],
+    "returncode": 0,
+    "seconds": 0.129
+  },
+  {
+    "step": "build-cartan-candidates",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/cartan-candidates",
+      "./cmd/cartan-candidates"
+    ],
+    "returncode": 0,
+    "seconds": 0.132
+  },
+  {
+    "step": "build-uniform-construction",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/uniform-construction",
+      "./cmd/uniform-construction"
+    ],
+    "returncode": 0,
+    "seconds": 0.135
+  },
+  {
+    "step": "build-terminal-data-check",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/terminal-data-check",
+      "./cmd/terminal-data-check"
+    ],
+    "returncode": 0,
+    "seconds": 0.126
+  },
+  {
+    "step": "build-d6-ambient",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/d6-ambient",
+      "./cmd/d6-ambient"
+    ],
+    "returncode": 0,
+    "seconds": 0.13
+  },
+  {
+    "step": "E6-FC",
+    "command": [
+      "<run>/bin/fc-catalogue",
+      "-rank",
+      "6"
+    ],
+    "returncode": 0,
+    "seconds": 0.134
+  },
+  {
+    "step": "E7-FC",
+    "command": [
+      "<run>/bin/fc-catalogue",
+      "-rank",
+      "7"
+    ],
+    "returncode": 0,
+    "seconds": 0.012
+  },
+  {
+    "step": "E8-FC",
+    "command": [
+      "<run>/bin/fc-catalogue",
+      "-rank",
+      "8"
+    ],
+    "returncode": 0,
+    "seconds": 0.032
+  },
+  {
+    "step": "E9-FC",
+    "command": [
+      "<run>/bin/fc-catalogue",
+      "-rank",
+      "9"
+    ],
+    "returncode": 0,
+    "seconds": 0.156
+  },
+  {
+    "step": "E6-flat",
+    "command": [
+      "<run>/bin/terminals-flat",
+      "-rank",
+      "6"
+    ],
+    "returncode": 0,
+    "seconds": 0.14
+  },
+  {
+    "step": "E6-recursive",
+    "command": [
+      "<run>/bin/terminals-recursive",
+      "-rank",
+      "6"
+    ],
+    "returncode": 0,
+    "seconds": 0.141
+  },
+  {
+    "step": "E7-flat",
+    "command": [
+      "<run>/bin/terminals-flat",
+      "-rank",
+      "7"
+    ],
+    "returncode": 0,
+    "seconds": 0.029
+  },
+  {
+    "step": "E7-recursive",
+    "command": [
+      "<run>/bin/terminals-recursive",
+      "-rank",
+      "7"
+    ],
+    "returncode": 0,
+    "seconds": 0.009
+  },
+  {
+    "step": "E8-flat",
+    "command": [
+      "<run>/bin/terminals-flat",
+      "-rank",
+      "8"
+    ],
+    "returncode": 0,
+    "seconds": 0.997
+  },
+  {
+    "step": "E8-recursive",
+    "command": [
+      "<run>/bin/terminals-recursive",
+      "-rank",
+      "8"
+    ],
+    "returncode": 0,
+    "seconds": 0.027
+  },
+  {
+    "step": "E8-D7",
+    "command": [
+      "<run>/bin/e8-d7"
+    ],
+    "returncode": 0,
+    "seconds": 0.208
+  },
+  {
+    "step": "E8-recursive-chains",
+    "command": [
+      "<run>/bin/terminals-recursive",
+      "-rank",
+      "8",
+      "-chains-certificate",
+      "research/en_e8/e8-recursive-chains.json"
+    ],
+    "returncode": 0,
+    "seconds": 0.284
+  },
+  {
+    "step": "build-enumerate-bad",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/enumerate-bad",
+      "./cmd/enumerate-bad"
+    ],
+    "returncode": 0,
+    "seconds": 0.111
+  },
+  {
+    "step": "build-matrix-search",
+    "command": [
+      "go",
+      "build",
+      "-o",
+      "<run>/bin/matrix-search",
+      "./cmd/matrix-search"
+    ],
+    "returncode": 0,
+    "seconds": 0.154
+  },
+  {
+    "step": "E6-historical-rootids",
+    "command": [
+      "<run>/bin/enumerate-bad",
+      "-rank",
+      "6"
+    ],
+    "returncode": 0,
+    "seconds": 0.134
+  },
+  {
+    "step": "E7-historical-rootids",
+    "command": [
+      "<run>/bin/enumerate-bad",
+      "-rank",
+      "7"
+    ],
+    "returncode": 0,
+    "seconds": 0.792
+  },
+  {
+    "step": "E6-historical-matrix",
+    "command": [
+      "<run>/bin/matrix-search",
+      "-rank",
+      "6"
+    ],
+    "returncode": 0,
+    "seconds": 0.188
+  },
+  {
+    "step": "E7-historical-matrix",
+    "command": [
+      "<run>/bin/matrix-search",
+      "-rank",
+      "7"
+    ],
+    "returncode": 0,
+    "seconds": 3.187
+  },
+  {
+    "step": "finite-source-snapshot-audit",
+    "command": [
+      "<run>/bin/verify-exceptional"
+    ],
+    "returncode": 0,
+    "seconds": 0.133
+  },
+  {
+    "step": "finite-method-comparison",
+    "command": [
+      "<run>/bin/verify-outputs"
+    ],
+    "returncode": 0,
+    "seconds": 0.142
+  },
+  {
+    "step": "E8-independent-verification",
+    "command": [
+      "<run>/bin/verify-e8"
+    ],
+    "returncode": 0,
+    "seconds": 0.252
+  },
+  {
+    "step": "finite-support-matchings",
+    "command": [
+      "<run>/bin/finite-descents"
+    ],
+    "returncode": 0,
+    "seconds": 0.134
+  },
+  {
+    "step": "terminal-data-check",
+    "command": [
+      "<run>/bin/terminal-data-check"
+    ],
+    "returncode": 0,
+    "seconds": 0.145
+  },
+  {
+    "step": "D6-recurrence-certificate",
+    "command": [
+      "<run>/bin/d6-certificate"
+    ],
+    "returncode": 0,
+    "seconds": 0.635
+  },
+  {
+    "step": "D6-ambient-E7-E8",
+    "command": [
+      "<run>/bin/d6-ambient",
+      "-out",
+      "results/d6-ambient-certificate.json"
+    ],
+    "returncode": 0,
+    "seconds": 0.744
+  },
+  {
+    "step": "uniform-symbolic-and-matrix-checks",
+    "command": [
+      "<run>/bin/uniform-verify"
+    ],
+    "returncode": 0,
+    "seconds": 0.311
+  },
+  {
+    "step": "uniform-construction",
+    "command": [
+      "<run>/bin/uniform-construction",
+      "-max-r",
+      "30"
+    ],
+    "returncode": 0,
+    "seconds": 0.169
+  },
+  {
+    "step": "affine-proved-family",
+    "command": [
+      "<run>/bin/affine-proof"
+    ],
+    "returncode": 0,
+    "seconds": 0.177
+  },
+  {
+    "step": "affine-FC-closure-and-covers",
+    "command": [
+      "<run>/bin/affine-fc-covers"
+    ],
+    "returncode": 0,
+    "seconds": 0.466
+  },
+  {
+    "step": "affine-reflection-family",
+    "command": [
+      "<run>/bin/affine-reflection-family"
+    ],
+    "returncode": 0,
+    "seconds": 0.142
+  },
+  {
+    "step": "cartan-candidates",
+    "command": [
+      "<run>/bin/cartan-candidates",
+      "-rank",
+      "10",
+      "-max-entry",
+      "2",
+      "-max-only"
+    ],
+    "returncode": 0,
+    "seconds": 0.137
+  },
+  {
+    "step": "E10-all-k",
+    "command": [
+      "<run>/bin/e10-all-k"
+    ],
+    "returncode": 0,
+    "seconds": 0.129
+  },
+  {
+    "step": "E6-complete-mu-table",
+    "command": [
+      "<run>/bin/e6-mu-table",
+      "-type",
+      "E",
+      "-rank",
+      "6",
+      "-out",
+      "results/e6-mu-table.json"
+    ],
+    "returncode": 0,
+    "seconds": 4.094
+  },
+  {
+    "step": "E9-odd-gap-polynomials",
+    "command": [
+      "<run>/bin/e9-quotient-kl",
+      "-mode",
+      "certify",
+      "-out",
+      "results/e9-odd-gap-certificate.json"
+    ],
+    "returncode": 0,
+    "seconds": 9.654
+  },
+  {
+    "step": "D6-D8-Gern-polynomials",
+    "command": [
+      "<run>/bin/d8-gern-kl",
+      "-out",
+      "results/d8-gern-certificate.json",
+      "-threads",
+      "0",
+      "-models",
+      "both"
+    ],
+    "returncode": 0,
+    "seconds": 62.336
+  },
+  {
+    "step": "FC-maxima-E6-E13",
+    "command": [
+      "<run>/bin/fc-maxima",
+      "-out",
+      "results/fc-maxima-certificate.json",
+      "-ranks",
+      "6,7,8,9,10,11,12,13"
+    ],
+    "returncode": 0,
+    "seconds": 4.154
+  },
+  {
+    "step": "terminal-structure",
+    "command": [
+      "<run>/bin/terminal-structure"
+    ],
+    "returncode": 0,
+    "seconds": 0.223
+  },
+  {
+    "step": "uniform-family-covers",
+    "command": [
+      "<run>/bin/uniform-covers",
+      "-full"
+    ],
+    "returncode": 0,
+    "seconds": 0.464
+  },
+  {
+    "step": "affine-D4-mu-2",
+    "command": [
+      "<run>/bin/affine-d4"
+    ],
+    "returncode": 0,
+    "seconds": 0.16
+  },
+  {
+    "step": "E6-terminal-matrices",
+    "command": [
+      "<run>/bin/verify-outputs",
+      "-matrices",
+      "6"
+    ],
+    "returncode": 0,
+    "seconds": 0.01
+  },
+  {
+    "step": "E7-terminal-matrices",
+    "command": [
+      "<run>/bin/verify-outputs",
+      "-matrices",
+      "7"
+    ],
+    "returncode": 0,
+    "seconds": 0.004
+  },
+  {
+    "step": "E8-terminal-matrices",
+    "command": [
+      "<run>/bin/verify-outputs",
+      "-matrices",
+      "8"
+    ],
+    "returncode": 0,
+    "seconds": 0.004
+  }
+]

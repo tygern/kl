@@ -17,6 +17,16 @@ constructions, proof drafts, code, editing, and internal checks.
   and shortened the review-history material. The stated main results and
   mathematical certificate values were retained.
 
+- On 10 October, three GPT-6 Astra subagents independently reviewed finite
+  correctness, infinite families, and novelty. The current revision fixes
+  the FC-cover proof's opening quantifier, replaces the affine catalogue
+  dependency by five braid witnesses and a translation factorization,
+  prints compact terminal descriptions, and adds finite-only reproduction.
+  The internal reports and fresh validation records are retained under
+  `research/review-2026-10-10*`. Their audit scripts were preserved as
+  independent Go commands under `tools/cmd/review-finite` and
+  `tools/cmd/review-infinite`; these reviews are not peer review.
+
 The original research prompts are retained in `prompts/`. Historical notes
 and reviews are under `research/`; they describe earlier snapshots and are
 not an alternative specification of the current results. Earlier Python,

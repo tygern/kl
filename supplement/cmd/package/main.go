@@ -1,5 +1,5 @@
 // Command package collects the explicit, minimal proof supplement archive
-// for release v0.5.1; no network, no installations.
+// for release v0.6.0; no network, no installations.
 //
 // It ports supplement/build_package.py: the same payload inventory of data
 // files (shipped certificates, snapshots, the manuscript snapshot and its
@@ -35,7 +35,7 @@ import (
 	"time"
 )
 
-const version = "v0.5.1"
+const version = "v0.6.0"
 
 // renamed maps the current location of the internal review notes to their
 // pre-rename location; the archive always uses the new path.
@@ -52,7 +52,7 @@ var files = map[string]string{
 	"results/e6-independent-certificate.json":                   "Full E6 integer-matrix snapshot written by matrix-search -rank 6; regenerated and compared with -full.",
 	"results/e7-independent-certificate.json":                   "Full E7 integer-matrix snapshot written by matrix-search -rank 7; regenerated and compared with -full.",
 	"research/en_uniform/referee.txt":                           "AI-generated internal review note (not peer review) explaining the all-rank argument referenced by the uniform verifier.",
-	"research/en_affine_referee/proved-affine-certificate.json": "Shipped certificate of the proved affine family written by affine-proof (matrix of c_0 by rows, column slopes, inversion data, eligible lower endpoint); regenerated and compared.",
+	"research/en_affine_referee/proved-affine-certificate.json": "Shipped certificate of the proved affine family written by affine-proof (matrix of c_0 by rows, column slopes, inversion data, translation factorization and five braid witnesses); regenerated and compared.",
 	"research/ai-review-notes/finite-descents.json":             "Expected finite table matching certificate; regenerated and compared.",
 	"results/d6-recurrence-certificate.json":                    "All 24,245 saved D6 dependency records, checked without calling a KL evaluator.",
 	"results/affine-d4-independent.json":                        "Shipped affine D4 certificate; regenerated and compared.",
@@ -73,7 +73,7 @@ var files = map[string]string{
 // purposes describes each package of the Go module, keyed by its directory
 // relative to go/.
 var purposes = map[string]string{
-	"cmd/proofs":                   "Proof runner: builds every program below, rebuilds every classification and certificate in an isolated working copy of payload/, compares the regenerated snapshots with the shipped ones and the stable outcomes with expected-summary.json (go run ./cmd/proofs [-full]).",
+	"cmd/proofs":                   "Proof runner: builds every program below, rebuilds every classification and certificate in an isolated working copy of payload/, compares the regenerated snapshots with the shipped ones and the stable outcomes with expected-summary.json (go run ./cmd/proofs [-full | -finite]).",
 	"cmd/fc-catalogue":             "Generates complete FC catalogues of E6-E9 (ports fc_catalogue.cpp); no catalogue snapshots shipped.",
 	"cmd/terminals-flat":           "Flat finite terminal engine (ports parabolic_terminals.cpp); shares its arithmetic with the recursive engine through internal/parabolic.",
 	"cmd/terminals-recursive":      "Recursive complete finite parabolic pruning engine (ports recursive_terminals.cpp); -chains-certificate repeats the E8 classification along four parabolic chains; shares its arithmetic with the flat engine through internal/parabolic.",

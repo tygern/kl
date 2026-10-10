@@ -1,0 +1,125 @@
+{
+  "version": "v0.6.0",
+  "date": "2026-10-10",
+  "archive": {
+    "bytes": 1017813,
+    "sha256": "92530b52bf30a3c998b40a0cb20bf6c14a990b5a7b107056f9f426ebbef3961a",
+    "files": 106
+  },
+  "manuscript_sha256": "29dd69d1a9210460d91f26cc0834e7480451a4aecd306c915b34ce135205fb40",
+  "pdf": {
+    "bytes": 632258,
+    "sha256": "fda5ceced0f5bd70168b9fe09d5b9cc5a52aba34518528809eebdaa0089dea1f",
+    "pages": 15
+  },
+  "extraction": "Each mode ran from a separate fresh extraction of the exact release ZIP into an isolated scratch directory.",
+  "finite": {
+    "run": "finite-2504851153",
+    "status": {
+      "status": "passed",
+      "mode": "finite",
+      "seconds": 5.141,
+      "go_version": "go1.27.2",
+      "steps": 26,
+      "work": "runs/finite-2504851153/work",
+      "expected_outputs_match": true,
+      "printed_table_matches_generated_terminals": true,
+      "manuscript_sha256_matches_build_record": true,
+      "snapshots_compared": [
+        "research/en_e8/e8-recursive-chains.json",
+        "research/ai-review-notes/finite-descents.json",
+        "research/exceptional_referee/checks.json",
+        "results/d6-ambient-certificate.json"
+      ]
+    },
+    "summary_matches_expected_scope": true
+  },
+  "default": {
+    "run": "default-2020668237",
+    "status": {
+      "status": "passed",
+      "mode": "default",
+      "seconds": 35.834,
+      "go_version": "go1.27.2",
+      "steps": 61,
+      "work": "runs/default-2020668237/work",
+      "expected_outputs_match": true,
+      "printed_table_matches_generated_terminals": true,
+      "manuscript_sha256_matches_build_record": true,
+      "snapshots_compared": [
+        "research/en_e8/e8-recursive-chains.json",
+        "research/ai-review-notes/finite-descents.json",
+        "research/exceptional_referee/checks.json",
+        "results/d6-ambient-certificate.json",
+        "research/en_uniform/construction.json",
+        "research/en_affine_referee/proved-affine-certificate.json",
+        "research/en_families/affine_reflection_family.json",
+        "research/en_families/cartan_E10_m2_max1.json",
+        "results/e6-mu-table.json",
+        "results/e9-odd-gap-certificate.json",
+        "results/d8-gern-certificate.json",
+        "results/fc-maxima-certificate.json",
+        "results/terminal-structure-certificate.json",
+        "results/uniform-family-certificate.json",
+        "results/affine-d4-independent.json"
+      ]
+    },
+    "summary_matches_expected_scope": true
+  },
+  "full": {
+    "run": "full-2330743373",
+    "status": {
+      "status": "passed",
+      "mode": "full",
+      "seconds": 98.689,
+      "go_version": "go1.27.2",
+      "steps": 67,
+      "work": "runs/full-2330743373/work",
+      "expected_outputs_match": true,
+      "printed_table_matches_generated_terminals": true,
+      "manuscript_sha256_matches_build_record": true,
+      "snapshots_compared": [
+        "research/en_e8/e8-recursive-chains.json",
+        "research/broad_exceptional/e6_bad.json",
+        "research/broad_exceptional/e7_bad.json",
+        "results/e6-independent-certificate.json",
+        "results/e7-independent-certificate.json",
+        "research/ai-review-notes/finite-descents.json",
+        "research/exceptional_referee/checks.json",
+        "results/d6-ambient-certificate.json",
+        "research/en_uniform/construction.json",
+        "research/en_affine_referee/proved-affine-certificate.json",
+        "research/en_families/affine_reflection_family.json",
+        "research/en_families/cartan_E10_m2_max1.json",
+        "results/e6-mu-table.json",
+        "results/e9-odd-gap-certificate.json",
+        "results/d8-gern-certificate.json",
+        "results/fc-maxima-certificate.json",
+        "results/terminal-structure-certificate.json",
+        "results/uniform-family-certificate.json (shipped rows)",
+        "results/affine-d4-independent.json"
+      ]
+    },
+    "summary_matches_expected_scope": true
+  },
+  "historical_comparison": "All previous stable summary values match the October 10 pre-revision full run; only affine braid-count and all-parameter cover-exclusion fields were added.",
+  "research_checks": "All 9 regenerated outputs equal the saved results.",
+  "independent_review_commands": {
+    "review-finite": "passed: all 11 printed rows and both orthogonal-reflection descriptors",
+    "review-infinite": "passed: affine inversion classes, 21 braid-certified base covers, five descent witnesses, translation length, printed lowering witnesses and exact large-parameter samples"
+  },
+  "static_and_unit_checks": "go vet ./... and go test ./... passed in both supplement and tools modules; gofmt and git diff --check clean.",
+  "citation_keys": {
+    "bibliography_entries": 23,
+    "missing": [],
+    "duplicate": [],
+    "unused": []
+  },
+  "pdf_checks": {
+    "native_editor_compilation": "passed",
+    "export_compilation": "passed without warnings",
+    "all_pages_have_text": true,
+    "within_page_margins": true,
+    "visual_inspection": "All three final contact sheets and the full-size bibliography page inspected."
+  }
+}

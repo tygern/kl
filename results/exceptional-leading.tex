@@ -153,8 +153,9 @@ Covers have $\mu=1$ from the outset.
 The infinite families use the same maximum-descent principle, but a
 vanishing statement also requires excluding FC covers. For reflections,
 Lemma~\ref{lem:covers} does this by the lifting property and a braid in a
-reduced palindromic word. The affine family instead uses a finite FC
-catalogue and a base-cover check. Appendix~\ref{app:certificates} separates
+reduced palindromic word. The affine family instead propagates five reduced
+braid witnesses along a length-additive translation factorization.
+Appendix~\ref{app:certificates} separates
 these proof inputs from the additional computational checks.
 
 Infinite families of $T$-avoiding elements inside a fixed infinite Coxeter group
@@ -165,7 +166,11 @@ within Ernst's type-II non-cancellable elements \cite[\S3.2]{Ernst}).
 For type $F_n$, Laird \cite[\S3.3]{Laird} reports unpublished non-FC
 constructions of Cross, Ernst, Hills-Kimball and Quaranta (2012) and
 Gilbertson--Ernst (2013). Laird's 2016 list of open classification problems
-includes affine type $E$ \cite[\S5.3]{Laird}. By Green's theorem
+includes finite type $E_n$ as well as affine types $\widetilde E_6$,
+$\widetilde E_7$ and $\widetilde E_8$ \cite[\S5.3, p.~63]{Laird}.
+Recent work on star and weak star irreducibility in affine types
+$\widetilde B$ and $\widetilde D$ concerns fully commutative elements
+\cite{BCS}, whereas the families here are non-FC. By Green's theorem
 \cite[Theorem~6.3]{GreenStar} every $E_n$ is star reducible, so every fully
 commutative terminal in $E_n$ is a commuting product, which is why all
 families here are non-FC.
@@ -502,7 +507,8 @@ The implementation uses the chain
 $E_8\supset E_7\supset E_6\supset D_5\supset D_4\supset A_3\supset
 A_2\supset A_1\supset\{e\}$, traversed from smallest to largest.
 The final $E_7$ parabolic
-has $576$ right-terminals and $240$ cosets, their products give $2{,}160$
+has $576$ right-terminals and $240$ cosets, so this stage tests
+$138{,}240$ products ($143{,}660$ over all stages). These give $2{,}160$
 right-terminals in $E_8$, and the inverse test leaves exactly the $64$
 terminals of Proposition~\ref{prop:classification}. With
 Corollary~\ref{cor:eligible}, the finite theorem thus needs neither an
@@ -571,6 +577,26 @@ embeddings into $E_8$ they form a right weak order chain
 $w_4<w_6<w_7^{E}<w_8^{E}$. These observations are not needed for
 Theorem~\ref{thm:main}.
 
+For compact descriptions of the two new terminals, in the respective
+$E_7$ and $E_8$ simple-root coordinates put
+\[
+\begin{split}
+ (\rho_1,\rho_2,\rho_3,\rho_4)
+ &=\bigl((0,0,1,1,1,1,1),\ (0,1,1,1,1,0,1),\\
+ &\hspace{2.6em}(0,1,2,1,0,0,1),\ (1,2,2,2,1,1,1)\bigr),\\
+ \eta_1&=(1,2,3,3,2,2,1,2),\qquad
+ \eta_2=(1,3,4,3,2,1,0,2).
+\end{split}
+\]
+These are positive roots, pairwise orthogonal within each set, and
+\[
+ w_7^{E}=r_{\rho_1}r_{\rho_2}r_{\rho_3}r_{\rho_4},\qquad
+ w_8^{E}=r_{\eta_1}r_{\eta_2}.
+\]
+The certificate verifies these identities against the reduced words in
+Table~\ref{tab:terminals}; they describe the new elements without
+replacing the exhaustive classification.
+
 There is also an alternative degree bound. For $b=w_7^{E},w_8^{E}$,
 $\mu(i(I),b)=0$ also follows without parity: $J=I\cup\{0\}$ has type
 $A_2\times A_1^3$ and $\ell(w_0(J))=6$, and $b=u\,w_0(J)\,v$
@@ -595,7 +621,8 @@ The finite theorem is now complete. To prove vanishing for the infinite
 families, the maximum-descent parity criterion handles non-covers, but
 fully commutative covers would still contribute $1$. We first give a
 geometric argument excluding these covers for the reflections used below.
-The affine family will use a separate finite catalogue argument.
+The affine family will use a length-additive translation factorization
+and five explicit braid witnesses instead.
 
 \subsection{Reflections and their covers}\label{sec:covers}
 The \emph{depth} $\dpth(\beta)$ of a positive root $\beta$ is the least $d$
@@ -647,8 +674,9 @@ $|I|$ is odd. Then no Bruhat cover of $b$ is fully commutative.
 Consequently $\mu(x,b)=0$ for every fully commutative $x$.
 \end{lemma}
 \begin{proof}
-Let $x<b$ with $\ell(x)=\ell(b)-1$. If $I\subseteq L(x)\cap R(x)$ and
-$x\in\FC$, then $\supp(x)\subseteq\supp(b)$ and Lemma~\ref{lem:maxI} gives
+Suppose, for a contradiction, that $x$ is a fully commutative cover of $b$.
+If $I\subseteq L(x)\cap R(x)$, then
+$\supp(x)\subseteq\supp(b)$ and Lemma~\ref{lem:maxI} gives
 $x=i(I)$ of odd length $|I|$, impossible as $\ell(b)$ is odd. Otherwise
 some $s\in I$ has $s\notin L(x)$ (or, symmetrically, $s\notin R(x)$); the
 lifting property \cite[Proposition~2.2.7]{BB} gives $x\leq sb$, hence
@@ -892,14 +920,41 @@ fully commutative cover of $c_k$. If $I'\subseteq L(x)\cap R(x)$, then
 Lemma~\ref{lem:maxI} gives $x=i(I')$ of length $5<\ell(c_k)-1$.
 Otherwise, by the lifting property \cite[Proposition~2.2.7]{BB}, $x=sc_k$
 or $x=c_ks$ for some $s\in I'$, as in the proof of
-Lemma~\ref{lem:covers}. For $k\geq1$ these elements have length
-$26+92k\geq118$, exceeding the maximum length $44$ of a fully commutative
-element of $\widetilde E_8$ (complete catalogue of $44{,}199$ elements,
-Appendix~\ref{app:certificates}, in agreement with \cite[\S5.2]{BJN}). For
-$k=0$, every cover arises by deleting one letter from the displayed
-reduced word, by the strong exchange condition \cite[Theorem~1.4.3]{BB};
-the deletions give exactly $21$ distinct elements of length $26$, none
-fully commutative (Appendix~\ref{app:certificates}). Hence $\mu(x,c_k)=0$ for every fully
+Lemma~\ref{lem:covers}. To exclude these possibilities for all $k$, write $C$ for the matrix of
+$c_0$, regard $\delta'$ as a column and $d$ as a row, and put
+$R=1+\delta'd$. Since $d\delta'=0$ and $C\delta'=\delta'$, equation
+\eqref{eq:affinecolumns} gives
+\[
+ R^k=1+k\delta'd,\qquad c_k=CR^k.
+\]
+In particular $R=Cc_1\in W$, since $C^2=1$. Its finite part is the
+identity, so the inversion calculation above has $A_\eta=0$ and the same
+$B_\eta$ for $R^k$. Thus
+\[
+ \ell(R^k)=k\sum_\eta\max(0,B_\eta)=92k,
+\]
+and $c_k=c_0R^k$ is length-additive. For every $s\in I'$ this also gives
+$sc_k=(sc_0)R^k$ length-additively, since
+$\ell(sc_k)=26+92k=\ell(sc_0)+\ell(R^k)$.
+The following reduced words for $sc_0$ each have length $26$; brackets
+mark a noncommuting braid and are not part of the word:
+\begin{center}\small
+\begin{tabular}{@{}cl@{}}
+\toprule
+$s$ & Reduced word for $sc_0$\\
+\midrule
+$1$ & $3[282]7564534123012856745231$\\
+$3$ & $1[282]7564534123012856745231$\\
+$5$ & $31[282]764534123012856745231$\\
+$7$ & $31[282]564534123012856745231$\\
+$8$ & $3[121]8756453423012856745231$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Their products and reducedness are checked by the simple-root action in
+Appendix~\ref{app:certificates}. Each braid persists in a reduced word for
+$sc_k$, so $sc_k$ is not FC; inversion gives the same conclusion for
+$c_ks$. Hence $\mu(x,c_k)=0$ for every fully
 commutative $x$. Finally, $c_k\notin\FC$, since otherwise
 Lemma~\ref{lem:maxI} would force $c_k=i(I')$. (Lemma~\ref{lem:covers}
 does not apply directly: $c_0$ is not a reflection.)
@@ -946,6 +1001,16 @@ commutative $x$, and $\hat b_k\notin\FC$ by Lemma~\ref{lem:reflections}(iii).
 Standard parabolic embeddings transport the $\widetilde E_8$ and $E_{10}$
 families to larger $E_n$, with the supports of the smaller parabolic
 subgroups.
+
+Every fixed $E_n$ has only finitely many FC elements
+\cite[\S5.1]{BJN}; hence sufficiently long members of a
+pairwise distinct family have no FC covers. This observation alone does
+not give vanishing for non-covers. Here those coefficients vanish by
+maximum common descents and parity, while the reflection and translation
+arguments exclude covers for every parameter, without rank-dependent
+FC catalogues. The constructions give full support in the stated ranks;
+they do not classify all terminals or settle the bound for arbitrary
+upper endpoints in infinite type.
 
 \section{Complements and open problems}\label{sec:complements}
 
@@ -1073,9 +1138,11 @@ including directly in the ambient $E_7$ and $E_8$ groups.
 For the uniform and $E_{10}$ families, the parameter arguments are the
 symbolic proofs of Section~\ref{sec:families}. Their finite real-root
 witnesses are printed in Appendix~\ref{app:roots}. The affine family
-additionally uses the matrix and inversion data of $c_0$, the complete
-FC catalogue with maximum length $44$, and the exclusion of all $21$
-base covers. The catalogue criterion is proved below. Table~\ref{tab:programs}
+additionally uses the matrix and inversion data of $c_0$ and the five
+reduced braid words for its simple descents. The translation factorization
+then excludes FC covers for every parameter. The complete FC catalogue
+and the exclusion of all $21$ base covers are supplementary checks, not
+inputs to Theorem~\ref{thm:affine}; the catalogue criterion is proved below. Table~\ref{tab:programs}
 identifies the principal programs; the supplement README gives the full
 command and certificate inventory.
 
@@ -1092,9 +1159,7 @@ Printed finite words and descents & \texttt{finite-descents},
 $D_6$ coefficient & \texttt{d6-certificate}, \texttt{d8-gern-kl},
 \texttt{d6-ambient}\\
 Uniform root identities & \texttt{uniform-verify}\\
-Affine matrix and inversions & \texttt{affine-proof}\\
-Affine FC catalogue and covers & \texttt{fc-catalogue},
-\texttt{affine-fc-covers}\\
+Affine matrix, inversions and braid witnesses & \texttt{affine-proof}\\
 $E_{10}$ root identities & \texttt{e10-all-k}\\
 \bottomrule
 \end{tabular}
@@ -1104,7 +1169,9 @@ implementations and the supplementary results.}
 \label{tab:programs}
 \end{table}
 
-The further computations concern the structure in
+The further computations include the affine FC catalogue and all base
+covers, checked by \path{fc-catalogue} and \path{affine-fc-covers}.
+They also concern the structure in
 Remarks~\ref{rem:gern}--\ref{rem:structure}, the results of
 Section~\ref{sec:complements}, and checks beyond what the proofs require.
 These include the finite FC counts (agreeing with
@@ -1159,7 +1226,9 @@ $44$. A separate verifier checks the catalogue and closure, and tests
 the elements obtained by single-letter deletions from the reduced word
 for $c_0$. Exactly $21$ distinct deletions have length $26$; these are all
 Bruhat covers by strong exchange, and none belongs to the FC catalogue.
-This is the finite computational input to Theorem~\ref{thm:affine}.
+These independently corroborate the braid-witness proof of
+Theorem~\ref{thm:affine}. The maximum and count also agree with
+\cite[\S5.2]{BJN}.
 
 \subsection{Explicit real-root witnesses}\label{app:roots}
 The finite witnesses used in Section~\ref{sec:families} can be checked
@@ -1220,23 +1289,30 @@ Extract it, enter the directory \path{exceptional-leading-proof}, and run
 \begin{verbatim}
 go run ./cmd/proofs -full
 \end{verbatim}
-The runner builds the programs, recomputes the results in an isolated
-working directory, compares regenerated certificates with the supplied
-snapshots, and checks a stable summary. Go 1.22 or later suffices; no
-external packages are required. Without \texttt{-full}, the runner still
-recomputes the classifications but uses saved full-group $E_6/E_7$
-snapshots for comparison and omits the heavier cross-checks. Release
-\href{https://github.com/tygern/kl/releases/tag/v0.5.1}{v0.5.1}
-contains this manuscript, its study companion and the citation audit;
-v0.5.0 preserves the preceding exposition revision. Manifests identify the exact
-sources used in each run and provide integrity checks, not proof by
-themselves.
+The runner rebuilds the programs, recomputes in an isolated directory,
+compares certificates with the supplied snapshots, and checks a stable
+summary. Go 1.22 or later suffices; no external packages are required.
+For the finite theorem alone, run \texttt{go run ./cmd/proofs -finite}:
+this regenerates the terminal classifications, checks the printed words
+and maximum descents, and verifies and recomputes the residual $D_6$
+coefficient. Its summary contains only finite inputs. The flags
+\texttt{-finite} and \texttt{-full} are mutually exclusive.
+The default mode recomputes the classifications, compares saved
+full-group $E_6/E_7$ snapshots, and omits heavier cross-checks.
+Release \href{https://github.com/tygern/kl/releases/tag/v0.6.0}{v0.6.0}
+contains this manuscript, its study companion and citation audit;
+v0.5.1 preserves the preceding revision. Manifests identify exact sources
+and provide integrity checks, not proof by themselves.
 
 \begin{thebibliography}{99}\footnotesize\raggedright
 \setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}\setlength{\parskip}{0pt}
 \bibitem{BJN} R. Biagioli, F. Jouhet, and P. Nadeau, Fully commutative
 elements in finite and affine Coxeter groups, Monatsh. Math. 178 (2015),
 1--37, \doi{10.1007/s00605-014-0674-7}.
+\bibitem{BCS} R. Biagioli, L. Costantini, and E. Sasso,
+Star and weak star irreducible fully commutative elements in Coxeter groups
+of affine types $\widetilde B$ and $\widetilde D$, preprint (2025),
+\href{https://arxiv.org/abs/2508.08388v1}{arXiv:2508.08388v1}.
 \bibitem{BB} A. Bj\"orner and F. Brenti, Combinatorics of Coxeter groups,
 Grad. Texts in Math. 231, Springer, 2005, \doi{10.1007/3-540-27596-7}.
 \bibitem{Chmutov} M. S. Chmutov, The structure of $W$-graphs arising in

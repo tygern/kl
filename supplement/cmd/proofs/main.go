@@ -7,6 +7,9 @@
 // historical full-group E6/E7 searches, the second (geometric) model of the
 // D6/D8 Kazhdan-Lusztig computation and the larger uniform-family checks,
 // comparing every regenerated snapshot with the shipped one.
+// -finite runs only the finite theorem's terminal classifications, printed
+// table checks and D6 coefficient checks, comparing their stable outcomes
+// with the corresponding part of expected-summary.json.
 //
 // It ports supplement/run_proofs.py of release v0.2.0: the same step names,
 // the same snapshot comparisons (ignoring the same volatile timing keys), the
@@ -17,7 +20,7 @@
 // executes it inside the isolated working copy of payload/.
 //
 // Run from the archive root (the directory holding go.mod, MANIFEST.json and
-// payload/): `go run ./cmd/proofs [-full]`. Standard library only; it imports
+// payload/): `go run ./cmd/proofs [-finite | -full]`. Standard library only; it imports
 // none of the engines or internal packages of this module, so it cannot
 // share arithmetic with any program it verifies.
 package main
@@ -96,6 +99,7 @@ type runner struct {
 	root, run, work, logs, bins string
 	goTool                      string
 	full                        bool
+	finite                      bool
 	started                     time.Time
 	steps                       []step
 	snapshots                   []string
@@ -273,9 +277,15 @@ func findGo() string {
 
 func main() {
 	full := flag.Bool("full", false, "also rerun the historical E6/E7 full-group searches, the geometric D6/D8 model and the larger uniform-family checks")
+	finite := flag.Bool("finite", false, "verify only the finite terminal classifications, printed table and D6 coefficient")
 	flag.Parse()
 	if flag.NArg() != 0 {
 		fmt.Fprintln(os.Stderr, "proofs: positional arguments are not used")
+		os.Exit(2)
+	}
+	mode, err := proofMode(*full, *finite)
+	if err != nil {
+		fmt.Fprintln(os.Stderr, "proofs: "+err.Error())
 		os.Exit(2)
 	}
 	root, err := os.Getwd()
@@ -289,11 +299,7 @@ func main() {
 			os.Exit(1)
 		}
 	}
-	r := &runner{root: root, full: *full, goTool: findGo()}
-	mode := "default"
-	if r.full {
-		mode = "full"
-	}
+	r := &runner{root: root, full: *full, finite: *finite, goTool: findGo()}
 
 	// Integrity of every distributed input, then the manuscript hash
 	// recorded by the builder.
@@ -380,6 +386,10 @@ func main() {
 // verify runs every step of the supplement in the order of the original
 // runner and raises a failure on the first problem.
 func (r *runner) verify(manuscriptSHA256AtBuild string) {
+	if r.finite {
+		r.verifyFinite(manuscriptSHA256AtBuild)
+		return
+	}
 	flat := r.build("terminals-flat")
 	recursive := r.build("terminals-recursive")
 	d7 := r.build("e8-d7")
@@ -527,15 +537,27 @@ func (r *runner) verify(manuscriptSHA256AtBuild string) {
 	r.execute("affine-D4-mu-2", []string{affineD4}, "", "")
 	r.compareSnapshot("results/affine-d4-independent.json", nil)
 
-	summary := r.summary()
+	r.compareSummary(r.summary(), nil)
+	r.verifyPrintedTable(verifyOutputs)
+}
+
+// compareSummary saves only the outcomes recomputed by this mode. A nil
+// selection compares the full summary; finite mode selects its proof inputs.
+func (r *runner) compareSummary(summary any, selection []string) {
 	expected, err := readJSON(filepath.Join(r.root, "expected-summary.json"))
 	must(err)
+	if selection != nil {
+		expected = pick(expected, selection...)
+	}
 	data, err := encodeJSON(summary)
 	must(err)
 	must(os.WriteFile(filepath.Join(r.run, "summary.json"), data, 0o644))
 	if equal, diff := sameJSON(summary, expected); !equal {
 		panic(failure{"Stable proof outputs differ from expected-summary.json; inspect " + r.rel(filepath.Join(r.run, "summary.json")) + " (first difference " + diff + ")"})
 	}
+}
+
+func (r *runner) verifyPrintedTable(verifyOutputs string) {
 	// Also match the table words checked by the independent matching verifier
 	// to the actual generated terminal matrices, not merely their lengths.
 	matching := r.read("research/ai-review-notes/finite-descents.json")

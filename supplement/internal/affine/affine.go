@@ -1,12 +1,11 @@
 // Package affine is the shared affine-E8 arithmetic used by cmd/affine-proof
 // and cmd/affine-fc-covers.
 //
-// It ports the library part of research/en_affine_referee/verify_families.py
-// (row integer matrices over the affine E8 Cartan data, the 240 finite E8
-// roots, affine inversion formulas, terminal certificates, subword witnesses
-// and the family audit). The exploratory main() of the original is not
-// ported; the proof entry points are cmd/affine-proof (supplement/affine_proof.py)
-// and cmd/affine-fc-covers (research/en_affine_referee/verify_fc_catalogue.py).
+// Its row integer matrices, 240 finite E8 roots and inversion formulas port
+// the library part of research/en_affine_referee/verify_families.py. The family
+// audit certifies reduced translation prefixes and explicit descent braids
+// without an FC catalogue. cmd/affine-fc-covers separately uses the catalogue
+// for the supplementary closure and complete base-cover checks.
 //
 // Standard library only. No KL computation and no affine group enumeration.
 // Any failed assertion of the original is a panic carrying an
@@ -457,47 +456,6 @@ func ComputeTerminalCertificate(a Mat, d Vec) TerminalCert {
 	return cert
 }
 
-// SubwordWitness finds positions of top forming a reduced subword whose
-// product is the matrix of bottom (first success in the original search order).
-func SubwordWitness(top, bottom []int) []int {
-	var counts [N]int
-	for _, s := range bottom {
-		counts[s]++
-	}
-	target := WordMatrix(bottom, true)
-	var search func(i int, a Mat, positions []int, left int) ([]int, bool)
-	search = func(i int, a Mat, positions []int, left int) ([]int, bool) {
-		if left == 0 {
-			if a == target {
-				return positions, true
-			}
-			return nil, false
-		}
-		if i == len(top) || len(top)-i < left {
-			return nil, false
-		}
-		s := top[i]
-		if counts[s] > 0 {
-			counts[s]--
-			np := append(append([]int{}, positions...), i)
-			found, ok := search(i+1, Right(a, s), np, left-1)
-			counts[s]++
-			if ok {
-				return found, true
-			}
-		}
-		return search(i+1, a, positions, left)
-	}
-	positions, ok := search(0, E, []int{}, len(bottom))
-	Assert(ok, "no subword witness")
-	sub := make([]int, len(positions))
-	for k, p := range positions {
-		sub[k] = top[p]
-	}
-	Assert(WordMatrix(sub, true) == target, "subword witness mismatch")
-	return positions
-}
-
 // Row is one element of research/en_independent/e9-fc.json.
 type Row struct {
 	Word   []int `json:"word"`
@@ -555,30 +513,12 @@ func BaseWord27() []int {
 	panic(AssertionError{"no length-27 word in seed"})
 }
 
-// CatalogueCandidates returns catalogue rows whose both masks contain I.
-func CatalogueCandidates(I []int) []Row {
-	data := LoadCatalogue()
-	Assert(data.Complete && data.FcCount == 44199, "catalogue not complete")
-	mask := 0
-	for _, i := range I {
-		mask |= 1 << i
-	}
-	out := []Row{}
-	for _, row := range data.Elements {
-		if row.Lmask&mask == mask && row.Rmask&mask == mask {
-			out = append(out, row)
-		}
-	}
-	return out
-}
-
-// Bottom is an eligible FC bottom with its subword witness.
-type Bottom struct {
-	Word                 []int `json:"word"`
-	Length               int   `json:"length"`
-	BaseSubwordPositions []int `json:"base_subword_positions"`
-	GapIntercept         int64 `json:"gap_intercept"`
-	GapSlope             int64 `json:"gap_slope"`
+// DescentBraidWitness is a reduced expression for s*c_0 with an explicit
+// noncommuting braid. BraidStart is a zero-based index into Word.
+type DescentBraidWitness struct {
+	Generator  int   `json:"generator"`
+	Word       []int `json:"word"`
+	BraidStart int   `json:"braid_start_zero_based"`
 }
 
 // Family is the audit result for one affine family.
@@ -590,11 +530,15 @@ type Family struct {
 	LengthFormula                 LengthFormula `json:"length_formula"`
 	RightTranslationReducedWord   []int         `json:"right_translation_reduced_word"`
 	RightTranslationLength        int           `json:"right_translation_length"`
+	RightTranslationLengthFormula LengthFormula `json:"right_translation_length_formula"`
+	RightTranslationPowersForAllK bool          `json:"right_translation_powers_for_all_k"`
 	BasePrefixForAllK             bool          `json:"base_prefix_for_all_k"`
 	DistinctAndFullSupportForAllK bool          `json:"distinct_and_full_support_for_all_k"`
 	TerminalCert
-	CompleteFCMaskCandidates int      `json:"complete_FC_mask_candidates"`
-	EligibleFCBottomsForAllK []Bottom `json:"eligible_FC_bottoms_for_all_k"`
+	MaximumIndependentSize    int                   `json:"maximum_independent_size"`
+	LeftDescentBraidWitnesses []DescentBraidWitness `json:"left_descent_braid_witnesses"`
+	DescentPrefixesForAllK    bool                  `json:"descent_prefixes_for_all_k"`
+	NoFCCoversForAllK         bool                  `json:"no_FC_covers_for_all_k"`
 }
 
 func intsEqual(a, b []int) bool {
@@ -609,8 +553,59 @@ func intsEqual(a, b []int) bool {
 	return true
 }
 
-// AuditFamily ports audit_family; expected is (length intercept, slope).
-func AuditFamily(baseWord []int, d Vec, expected [2]int64, I []int, name string) Family {
+// VerifyDescentBraids checks a complete set of reduced braid witnesses for
+// s*a, s in I. It uses exact matrix products and root signs, not FC membership.
+func VerifyDescentBraids(a Mat, baseLength int, I []int, witnesses []DescentBraidWitness) {
+	Assert(len(witnesses) == len(I), "descent braid witness count")
+	for i, witness := range witnesses {
+		Assert(witness.Generator == I[i], "descent braid generator %d != %d", witness.Generator, I[i])
+		Assert(len(witness.Word) == baseLength-1, "descent braid word length")
+		for _, s := range witness.Word {
+			Assert(s >= 0 && s < N, "invalid braid word generator %d", s)
+		}
+		Assert(WordMatrix(witness.Word, true) == Left(a, witness.Generator), "descent braid product for %d", witness.Generator)
+		p := witness.BraidStart
+		Assert(p >= 0 && p+2 < len(witness.Word), "invalid braid position")
+		s, t, u := witness.Word[p], witness.Word[p+1], witness.Word[p+2]
+		adjacent := false
+		for _, v := range Adj[s] {
+			adjacent = adjacent || v == t
+		}
+		Assert(s == u && adjacent, "not a noncommuting braid at %d", p)
+	}
+}
+
+// MaximumIndependentSize enumerates the 2^9 vertex subsets of the fixed E9
+// diagram. This small graph check has no group-element or FC-catalogue input.
+func MaximumIndependentSize() int {
+	maximum := 0
+	for mask := 0; mask < 1<<N; mask++ {
+		independent := true
+		for _, e := range Edges {
+			if mask&(1<<e[0]) != 0 && mask&(1<<e[1]) != 0 {
+				independent = false
+				break
+			}
+		}
+		if independent {
+			size := 0
+			for s := 0; s < N; s++ {
+				if mask&(1<<s) != 0 {
+					size++
+				}
+			}
+			if size > maximum {
+				maximum = size
+			}
+		}
+	}
+	return maximum
+}
+
+// AuditFamily certifies terminality, lengths and absence of FC covers for
+// every k>=0 using reduced translation prefixes and descent braid witnesses.
+// expected is (length intercept, slope). No FC catalogue is read.
+func AuditFamily(baseWord []int, d Vec, expected [2]int64, I []int, witnesses []DescentBraidWitness, name string) Family {
 	a := WordMatrix(baseWord, true)
 	symbolic := ComputeTerminalCertificate(a, d)
 	Assert(intsEqual(symbolic.Descents, I), "descents %v != %v", symbolic.Descents, I)
@@ -628,17 +623,34 @@ func AuditFamily(baseWord []int, d Vec, expected [2]int64, I []int, name string)
 	Assert(int64(len(rword)) == expected[1] && WordMatrix(rword, true) == R, "right translation word")
 	rformula := ComputeLengthFormula(E, d)
 	Assert(rformula.Intercept == 0 && rformula.Slope == expected[1], "right translation length formula")
-	candidates := CatalogueCandidates(I)
-	bottoms := make([]Bottom, 0, len(candidates))
-	for _, x := range candidates {
-		witness := SubwordWitness(baseWord, x.Word)
-		bottoms = append(bottoms, Bottom{Word: x.Word, Length: x.Length, BaseSubwordPositions: witness,
-			GapIntercept: expected[0] - int64(x.Length), GapSlope: expected[1]})
+	// d.delta=0, already checked by ComputeTerminalCertificate, gives
+	// (R-1)^2=0 and R^k=1+k*delta*d on the whole affine root space.
+	Assert(MM(R, R) == Shifted(E, d, 2), "right translation square")
+	Assert(expected[1] > 0, "family is not pairwise distinct")
+	// Since a.delta=delta, aR^k=a+k*delta*d. The length formulas above
+	// give ell(aR^k)=ell(a)+ell(R^k). For s in the constant descent set,
+	// ell(saR^k)=ell(sa)+ell(R^k), so the checked braid in sa persists.
+	VerifyDescentBraids(a, len(baseWord), I, witnesses)
+	maximum := MaximumIndependentSize()
+	Assert(len(I) == maximum && len(I)%2 == 1, "descents not maximum of odd size")
+	mask := 0
+	for _, s := range I {
+		mask |= 1 << s
 	}
+	for _, e := range Edges {
+		Assert(mask&(1<<e[0]) == 0 || mask&(1<<e[1]) == 0, "descents not independent")
+	}
+	Assert(expected[0]%2 == int64(len(I)%2) && expected[1]%2 == 0, "maximum-descent parity")
+	Assert(expected[0]-1 > int64(len(I)), "commuting product could be a base cover")
+	// The maximum-descent lemma excludes an FC cover retaining every
+	// left/right descent. The lifting property makes any other cover saR^k
+	// or its inverse, both excluded by the persistent braid witnesses.
 	return Family{Name: name, BaseWord: baseWord, BaseRowMatrix: a, ColumnSlopes: d,
 		LengthFormula: formula, RightTranslationReducedWord: rword, RightTranslationLength: len(rword),
+		RightTranslationLengthFormula: rformula, RightTranslationPowersForAllK: true,
 		BasePrefixForAllK: true, DistinctAndFullSupportForAllK: true, TerminalCert: symbolic,
-		CompleteFCMaskCandidates: len(candidates), EligibleFCBottomsForAllK: bottoms}
+		MaximumIndependentSize: maximum, LeftDescentBraidWitnesses: witnesses,
+		DescentPrefixesForAllK: true, NoFCCoversForAllK: true}
 }
 
 // WriteJSON writes v as indented JSON (2 spaces, no HTML escaping, trailing

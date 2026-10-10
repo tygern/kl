@@ -47,7 +47,7 @@ One program per directory under `cmd/`. Every command uses `flag` for its option
 | `cmd/affine-reflection-family` | `research/en_families/affine_reflection_family.py` | `affine-reflection-family` | `research/en_families/affine_reflection_family.json` (snapshot compared) |
 | `cmd/cartan-candidates` | `research/en_families/cartan_candidates.py` | `cartan-candidates -rank 10 -max-entry 2 -max-only` (the other committed variants: `-rank 10`, `-rank 11`, `-rank 12`, `-rank 13`, `-rank 13 -max-entry 2 -max-only`) | `research/en_families/cartan_E{N}_m{M}_max{0|1}.json` (E10 m2 max1 snapshot compared; `-out` overrides) |
 | `cmd/uniform-construction` | `research/en_uniform/construction.py` | `uniform-construction -max-r 30` | `research/en_uniform/construction.json` (snapshot compared) |
-| `cmd/proofs` | `supplement/run_proofs.py` | `go run ./cmd/proofs [-full]` from an extracted archive | `runs/<mode>-<random>/{work,logs,bin,steps.json,summary.json,status.json}` |
+| `cmd/proofs` | `supplement/run_proofs.py` | `go run ./cmd/proofs [-finite \| -full]` from an extracted archive | `runs/<mode>-<random>/{work,logs,bin,steps.json,summary.json,status.json}` |
 | `cmd/package` | `supplement/build_package.py` | `go run -C supplement ./cmd/package` from the repository root | `supplement/dist/` (staging directory, zip, build-summary.json) |
 
 Not ported: `research/broad_exceptional/exact_e.py` (historical provenance only; `verify-exceptional` records `enumerate-bad` as the snapshot generator). The `Replaces` column names the programs at their v0.2.0 paths; they are no longer in the tree (release v0.2.0 and commit d997526 have them).
@@ -77,12 +77,15 @@ go run -C supplement ./cmd/package                      # from the repository ro
 unzip supplement/dist/exceptional-leading-proof.zip -d /some/scratch/dir
 cd /some/scratch/dir/exceptional-leading-proof
 go run ./cmd/proofs                             # default mode, about 30 s
+go run ./cmd/proofs -finite                     # finite theorem only
 go run ./cmd/proofs -full                       # full mode, about 90-100 s
 ```
 
 The runner checks `MANIFEST.json`, copies `payload/` to `runs/<mode>-<random>/work/`, builds every command into `runs/<mode>-<random>/bin/` with `go build`, runs the steps, compares the regenerated snapshots with the shipped ones (ignoring only `seconds` and `elapsed_seconds`), checks that the manuscript hash recorded by `uniform-verify` equals the one in `INPUTS.json`, builds `summary.json` and requires it to equal `expected-summary.json`, and finally checks that the printed table words generate the regenerated terminal matrices (`verify-outputs -matrices N`). `status.json` records status, mode, seconds, `go_version`, the step count, the relative work path, the three boolean checks and the list of compared snapshots.
 
-Do not add a `go.work` file at the repository root: it would make `go run ./cmd/proofs` fail inside any archive extracted below the repository (including the staging directory). The runner's own `go build` steps run with `GOWORK=off` and an empty `GOFLAGS`, so an enclosing workspace cannot break them; below a `go.work` the initial command itself must be invoked as `GOWORK=off go run ./cmd/proofs [-full]`.
+`-finite` and `-full` are mutually exclusive. Finite mode rebuilds the flat and recursive E6/E7/E8 terminal classifications, the independent E8/D7 classification, all four E8 parabolic chains, the printed descent/support matching data, and both the D6 recurrence check and the fresh ambient E7/E8/D6 polynomial calculation. It compares the regenerated terminal matrices with the printed table and with the saved full-group E6/E7 snapshots; only full mode reruns those historical full-group searches. Finite mode checks the manuscript hash directly against `INPUTS.json` and compares only the `finite`, `E8_D7`, `D6`, `finite_matchings`, `terminal_data_checks`, `E8_chains` and `D6_ambient` fields of `expected-summary.json`. Its saved summary contains only these recomputed outcomes. It builds no affine or indefinite-family program and does not run the additional complete E6 KL table.
+
+Do not add a `go.work` file at the repository root: it would make `go run ./cmd/proofs` fail inside any archive extracted below the repository (including the staging directory). The runner's own `go build` steps run with `GOWORK=off` and an empty `GOFLAGS`, so an enclosing workspace cannot break them; below a `go.work` the initial command itself must be invoked as `GOWORK=off go run ./cmd/proofs [-finite | -full]`.
 
 From the repository root (regenerating a committed certificate): the repository layout equals the runner's work-directory layout, so a command run from the repository root rewrites the committed file in place.
 

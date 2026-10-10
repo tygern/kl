@@ -9,25 +9,8 @@ import (
 )
 
 func (r *runner) summary() *object {
-	summary := newObject()
-	finite := newObject()
-	for _, n := range []int{6, 7, 8} {
-		row := r.read(sprintf("research/en_e8/e%d-recursive.json", n))
-		entry := pick(row, "group_order", "right_terminal_count", "commuting_terminals", "noncommuting_terminal_count", "fc_count")
-		var lengths []int64
-		for _, x := range items(field(row, "bad")) {
-			lengths = append(lengths, integer(field(x, "length")))
-		}
-		entry.set("bad_lengths", sortedInt64(lengths))
-		finite.set(sprintf("E%d", n), entry)
-	}
-	summary.set("finite", finite)
-	d := r.read("research/en_independent/e8-d7-terminals.json")
-	summary.set("E8_D7", pick(d, "cosets", "parabolic_right_terminals", "candidates_tested", "terminal_count"))
-	d, err := readJSON(filepath.Join(r.logs, "D6-recurrence-certificate.stdout.log"))
-	must(err)
-	summary.set("D6", pick(d, "records", "root_polynomial", "root_right_descent_checks", "root_R_reciprocity", "evaluator_called"))
-	d = r.read("research/en_uniform/referee-certificate.json")
+	summary := finiteCoreSummary(r.read, r.readD6RecurrenceReport())
+	d := r.read("research/en_uniform/referee-certificate.json")
 	var ranks []any
 	for _, row := range items(field(d, "rows")) {
 		ranks = append(ranks, field(row, "r"))
@@ -35,7 +18,9 @@ func (r *runner) summary() *object {
 	summary.set("uniform", newObject().set("symbolic_assertions", field(field(d, "symbolic"), "all_assertions_pass")).set("checked_ranks", ranks))
 	d = r.read("research/en_affine_referee/proved-affine-certificate.json")
 	affine := newObject().set("length", []any{field(field(d, "length_formula"), "intercept"), field(field(d, "length_formula"), "slope")}).
-		set("terminal_for_all_k", field(d, "terminal_for_all_k"))
+		set("terminal_for_all_k", field(d, "terminal_for_all_k")).
+		set("base_descent_braid_count", len(items(field(d, "left_descent_braid_witnesses")))).
+		set("no_FC_covers_for_all_k", field(d, "no_FC_covers_for_all_k"))
 	d = r.read("research/en_affine_referee/fc-cover-certificate.json")
 	for _, k := range []string{"FC_count", "maximum_FC_length", "base_Bruhat_cover_count", "FC_base_covers"} {
 		affine.set(k, field(d, k))
@@ -121,7 +106,11 @@ func addedSummaries(read func(string) any, into *object) {
 
 	into.set("terminal_data_checks", read("research/exceptional_referee/checks.json"))
 
-	d = read("research/en_e8/e8-recursive-chains.json")
+	into.set("E8_chains", finiteChainsSummary(read("research/en_e8/e8-recursive-chains.json")))
+	into.set("D6_ambient", d6AmbientSummary(read("results/d6-ambient-certificate.json")))
+}
+
+func finiteChainsSummary(d any) *object {
 	chains := pick(d, "group_order", "right_terminal_count", "terminal_count", "commuting_terminals",
 		"noncommuting_terminal_count", "right_terminal_sets_equal", "terminal_sets_equal")
 	perChain := []any{}
@@ -129,16 +118,17 @@ func addedSummaries(read func(string) any, into *object) {
 		perChain = append(perChain, pick(c, "chain", "added_generators", "coset_counts", "right_terminal_counts", "candidates_tested", "terminal_count"))
 	}
 	chains.set("chains", perChain)
-	into.set("E8_chains", chains)
+	return chains
+}
 
-	d = read("results/d6-ambient-certificate.json")
+func d6AmbientSummary(d any) *object {
 	ambient := pick(d, "polynomial", "mu", "ideal_size", "interval_size", "interval_rank_vector", "length_gap")
 	models := []any{}
 	for _, m := range items(field(d, "models")) {
 		models = append(models, pick(m, "model", "ideal_size", "interval_size", "P_xb", "P_eb", "mu", "b_length", "x_length"))
 	}
 	ambient.set("models", models)
-	into.set("D6_ambient", ambient)
+	return ambient
 }
 
 // terminalStructureSummary extracts the stable parts of the structure

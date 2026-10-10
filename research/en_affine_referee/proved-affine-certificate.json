@@ -298,6 +298,39 @@
     1
   ],
   "right_translation_length": 92,
+  "right_translation_length_formula": {
+    "intercept": 0,
+    "slope": 92,
+    "inversion_classes": [
+      {
+        "A": 0,
+        "B": -2,
+        "count": 14
+      },
+      {
+        "A": 0,
+        "B": -1,
+        "count": 64
+      },
+      {
+        "A": 0,
+        "B": 0,
+        "count": 84
+      },
+      {
+        "A": 0,
+        "B": 1,
+        "count": 64
+      },
+      {
+        "A": 0,
+        "B": 2,
+        "count": 14
+      }
+    ],
+    "no_breakpoints_for_k_ge_0": true
+  },
+  "right_translation_powers_for_all_k": true,
   "base_prefix_for_all_k": true,
   "distinct_and_full_support_for_all_k": true,
   "descents": [
@@ -439,26 +472,169 @@
       ]
     }
   ],
-  "complete_FC_mask_candidates": 1,
-  "eligible_FC_bottoms_for_all_k": [
+  "maximum_independent_size": 5,
+  "left_descent_braid_witnesses": [
     {
+      "generator": 1,
       "word": [
-        1,
         3,
-        5,
+        2,
+        8,
+        2,
         7,
-        8
-      ],
-      "length": 5,
-      "base_subword_positions": [
-        0,
-        1,
+        5,
+        6,
+        4,
+        5,
         3,
         4,
-        5
+        1,
+        2,
+        3,
+        0,
+        1,
+        2,
+        8,
+        5,
+        6,
+        7,
+        4,
+        5,
+        2,
+        3,
+        1
       ],
-      "gap_intercept": 22,
-      "gap_slope": 92
+      "braid_start_zero_based": 1
+    },
+    {
+      "generator": 3,
+      "word": [
+        1,
+        2,
+        8,
+        2,
+        7,
+        5,
+        6,
+        4,
+        5,
+        3,
+        4,
+        1,
+        2,
+        3,
+        0,
+        1,
+        2,
+        8,
+        5,
+        6,
+        7,
+        4,
+        5,
+        2,
+        3,
+        1
+      ],
+      "braid_start_zero_based": 1
+    },
+    {
+      "generator": 5,
+      "word": [
+        3,
+        1,
+        2,
+        8,
+        2,
+        7,
+        6,
+        4,
+        5,
+        3,
+        4,
+        1,
+        2,
+        3,
+        0,
+        1,
+        2,
+        8,
+        5,
+        6,
+        7,
+        4,
+        5,
+        2,
+        3,
+        1
+      ],
+      "braid_start_zero_based": 2
+    },
+    {
+      "generator": 7,
+      "word": [
+        3,
+        1,
+        2,
+        8,
+        2,
+        5,
+        6,
+        4,
+        5,
+        3,
+        4,
+        1,
+        2,
+        3,
+        0,
+        1,
+        2,
+        8,
+        5,
+        6,
+        7,
+        4,
+        5,
+        2,
+        3,
+        1
+      ],
+      "braid_start_zero_based": 2
+    },
+    {
+      "generator": 8,
+      "word": [
+        3,
+        1,
+        2,
+        1,
+        8,
+        7,
+        5,
+        6,
+        4,
+        5,
+        3,
+        4,
+        2,
+        3,
+        0,
+        1,
+        2,
+        8,
+        5,
+        6,
+        7,
+        4,
+        5,
+        2,
+        3,
+        1
+      ],
+      "braid_start_zero_based": 1
     }
-  ]
+  ],
+  "descent_prefixes_for_all_k": true,
+  "no_FC_covers_for_all_k": true
 }

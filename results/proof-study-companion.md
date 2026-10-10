@@ -200,7 +200,11 @@ The cover lemma considers two possibilities for an FC cover $x$ of $b$. If all d
 
 The assumption that $\beta$ has at least three nonzero coordinates ensures that $s\beta$ is still nonsimple: changing the coordinate at $s$ leaves at least two other nonzero coordinates. This is the place to look for the role of that hypothesis.
 
-The affine family in the paper has a different upper endpoint, an involution that is not a reflection. Its cover exclusion uses the complete FC catalogue and the base-cover computation. Do not transfer the reflection proof to that family without checking its hypotheses.
+The affine family has a different upper endpoint, an involution that is not a reflection. Its cover exclusion uses a reduced-prefix argument. Write $C=c_0$ and $R=1+\delta'd$, with $\delta'$ a column and $d$ a row. The column formula gives $c_k=CR^k$, while inversion counting gives $\ell(R^k)=92k$ and $\ell(c_k)=27+92k$. Thus the product is length-additive. For each $s\in I'$, the factorization $sc_k=(sc_0)R^k$ is also length-additive, with length $26+92k$.
+
+The paper prints five reduced words for $sc_0$, each containing a noncommuting braid. Appending a reduced word for $R^k$ preserves that braid in a reduced expression for $sc_k$; inversion handles $c_ks$. The same lifting argument therefore excludes all FC covers. The FC catalogue and the check of all 21 base covers corroborate this conclusion but are not required for it.
+
+At any fixed rank, FC-finiteness already excludes covers of sufficiently long elements. It does not by itself give vanishing for non-covers: that still requires maximum common descents and parity. The reflection and translation arguments settle the cover issue for every parameter, including the short cases.
 
 **Exercise 7.** Derive the formula for $N\rho$ directly from the two reflections, keeping their order. Then derive $N^3=0$ and the orbit formula without assuming that $\delta$ is in the ambient radical.
 

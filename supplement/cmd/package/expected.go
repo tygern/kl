@@ -39,6 +39,11 @@ func expected(read func(string) any) *object {
 	for _, k := range []string{"FC_count", "maximum_FC_length", "base_Bruhat_cover_count", "FC_base_covers"} {
 		affine.set(k, field(d, k))
 	}
+	d = read("research/en_affine_referee/proved-affine-certificate.json")
+	affine.set("base_descent_braid_count", int64(len(items(field(d, "left_descent_braid_witnesses")))))
+	affine.set("no_FC_covers_for_all_k", field(d, "no_FC_covers_for_all_k"))
+	assertEqual(affine.values["base_descent_braid_count"], int64(5), "five affine descent braid witnesses")
+	assertEqual(affine.values["no_FC_covers_for_all_k"], true, "affine covers excluded for all parameters")
 	result.set("affine", affine)
 	d = read("research/en_affine_referee/e10-certificate.json")
 	result.set("E10", pick(d, "rank", "base_length", "T_minus_identity_cube_zero", "full_support_for_all_k", "maximum_independent_size", "eligible_mu"))
