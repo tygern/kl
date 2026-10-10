@@ -12,7 +12,7 @@
 // L(y) subset L(x) and uses the right-descent recurrence (Kazhdan-Lusztig 1979,
 // (2.2.c) transported to the right).  At the top element it recomputes
 // P_{x,w} for every x in the ideal by the direct recurrence for every right
-// descent of w, and all values must agree with the stored ones.
+// descent of w, and all values must match the stored ones.
 //
 // Certified: D6 (P_{x_6,w_6} = 1+6q+11q^2+6q^3+q^4+q^5) and D8
 // (P_{x_8,w_8} = P_{e,w_8} = 1+12q+59q^2+154q^3+233q^4+221q^5+147q^6+70q^7+20q^8+2q^9,
@@ -127,7 +127,7 @@ func runModel(model string, n, nth int) result {
 			w = g.rmul(w, s-1)
 		}
 		if !g.equal(w, top) {
-			fatal("Lemma 2.3.4 word and Corollary 2.2.19 disagree")
+			fatal("elements from Lemma 2.3.4 and Corollary 2.2.19 differ")
 		}
 		if g.length(top) != (3*n*n+2*n)/8 {
 			fatal("length of w_n is not 3n^2/8 + n/4")
@@ -411,8 +411,8 @@ func main() {
 			b = runModel("geo", n, nth)
 		}
 		expect(a.Px == b.Px && a.Pe == b.Pe && a.ideal == b.ideal && a.interval == b.interval &&
-			eqVec(a.rankIdeal, b.rankIdeal) && eqVec(a.rankInterval, b.rankInterval), "the two models agree")
-		expect(a.mismatches == 0 && b.mismatches == 0, "direct recurrence for every right descent agrees with the stored table")
+			eqVec(a.rankIdeal, b.rankIdeal) && eqVec(a.rankInterval, b.rankInterval), "the two models have equal polynomials, sizes and rank vectors")
+		expect(a.mismatches == 0 && b.mismatches == 0, "direct recurrence values for every right descent match the stored table")
 		px := a.Px[:deg(&a.Px)+1]
 		pe := a.Pe[:deg(&a.Pe)+1]
 		if n == 6 {

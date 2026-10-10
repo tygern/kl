@@ -439,13 +439,13 @@ func main() {
 		_, reference, _ := checkCertificate(fmt.Sprintf("results/e%d-independent-certificate.json", n), n)
 		_, flat, _ := checkCertificate(fmt.Sprintf("research/en_e8/e%d-validation.json", n), n)
 		_, recursive, _ := checkCertificate(fmt.Sprintf("research/en_e8/e%d-recursive.json", n), n)
-		assert(resultsEqual(reference, flat) && resultsEqual(flat, recursive), "E%d methods disagree", n)
+		assert(resultsEqual(reference, flat) && resultsEqual(flat, recursive), "E%d terminal records differ between methods", n)
 	}
 
 	flatData, flat, _ := checkCertificate("research/en_e8/e8-terminals.json", 8)
 	recursiveData, recursive, _ := checkCertificate("research/en_e8/e8-recursive.json", 8)
 	d7Data, d7, _ := checkCertificate("research/en_independent/e8-d7-terminals.json", 8)
-	assert(resultsEqual(flat, recursive) && resultsEqual(recursive, d7), "E8 methods disagree")
+	assert(resultsEqual(flat, recursive) && resultsEqual(recursive, d7), "E8 terminal records differ between methods")
 	fr := need(flatData.RightTerminalCount, "right_terminal_count")
 	rr := need(recursiveData.RightTerminalCount, "right_terminal_count")
 	dr := need(d7Data.FullRightTerminals, "full_right_terminals")

@@ -1,10 +1,9 @@
 package main
 
 // expected computes the stable mathematical outcomes from the shipped
-// certificates in the repository; it must agree with the summary built by
+// certificates in the repository; it must match the summary built by
 // cmd/proofs. It is the Go counterpart of expected() in
-// supplement/build_package.py, including its assertions of the values stated
-// in the manuscript, so that a changed certificate cannot pass unnoticed.
+// supplement/build_package.py and asserts the values stated in the manuscript.
 
 import (
 	"fmt"
@@ -80,8 +79,7 @@ func expected(read func(string) any) *object {
 	result.set("affine_D4", pick(d, "lengths", "lower_ideal_size", "polynomial", "mu"))
 	addedSummaries(read, result)
 
-	// Values stated in the manuscript, asserted here so that a changed
-	// certificate cannot pass unnoticed.
+	// Check the values stated in the manuscript.
 	assertEqual(e6mu.values["max_mu"], literal(`10`), "E6 max_mu")
 	assertEqual(field(e6mu.values["mu_histogram"], "10"), literal(`8`), "E6 mu_histogram[10]")
 	assertEqual(e6mu.values["fully_commutative_lower_endpoint"], literal(`{"nonzero_mu_pairs":6431,"max_mu":1}`), "E6 fully_commutative_lower_endpoint")

@@ -1,5 +1,5 @@
 // Command affine-fc-covers independently certifies the complete E9 FC
-// catalogue (by FC-ascent closure, not by trusting its status field) and
+// catalogue by FC-ascent closure and
 // that none of the 21 Bruhat covers of the length-27 base element is fully
 // commutative. It writes research/en_affine_referee/fc-cover-certificate.json
 // and prints a summary (without the cover words) on stdout.

@@ -4,25 +4,25 @@ Tyson Gern (Initial Capacity, tyson@initialcapacity.io, [ORCID 0009-0003-8288-87
 
 ## Results
 
-For every fully commutative $x$ and arbitrary $w$ in $E_6$, $E_7$ and $E_8$, the paper proves $\mu(x,w)\in\{0,1\}$. Together with Green's type-$A$ theorem and [Gern's type-$D$ thesis](https://arxiv.org/abs/1304.6074), this settles Green's question for every finite simply laced Coxeter group.
+For every fully commutative $x$ and arbitrary $w$ in $E_6$, $E_7$ and $E_8$, $\mu(x,w)\in\{0,1\}$. Green proved the type-$A$ case, and [Gern proved the type-$D$ case](https://arxiv.org/abs/1304.6074). The bound therefore holds for every finite simply laced Coxeter group, as Green asked.
 
-The finite proof reduces to an exhaustive classification of terminal elements. Beyond Gern's type-$D$ list and its parabolic embeddings, there are two new elements: $w_7^E$ of length 28 and $w_8^E$ of length 50. A maximum-descent lemma forces one eligible FC lower endpoint for each terminal. Parity eliminates the new cases; the only remaining KL value is the known $D_6$ coefficient.
+The finite proof uses an exhaustive classification of terminal elements. Beyond Gern's type-$D$ list and its parabolic embeddings, there are two new elements: $w_7^E$ of length 28 and $w_8^E$ of length 50. By the maximum-descent lemma, each terminal has one eligible FC lower endpoint. For the new cases, the length gap is even and $\mu=0$; the only remaining KL value is the known $D_6$ coefficient.
 
-The paper also constructs infinite families of full-support terminals in affine $E_8$, $E_{10}$ and $E_{4r+1}$ for $r\geq3$, with $\mu(x,b)=0$ for every FC $x$. These arguments are symbolic in their parameters, with finite computational inputs stated in Appendix A. The affine family propagates five explicit braid witnesses through a length-additive translation factorization. The FC catalogue and all-base-cover computation remain supplementary checks. The bound fails in affine $D_4$, where $\mu=2$, and without the FC hypothesis, where $\mu=10$ already in $E_6$.
+Explicit infinite families of full-support terminals in affine $E_8$, $E_{10}$ and $E_{4r+1}$ for $r\geq3$ satisfy $\mu(x,b)=0$ for every FC $x$. The proofs hold for all parameter values, with finite computational inputs stated in Appendix A. For the affine family, five explicit braid witnesses persist in reduced words under a length-additive translation factorization. The FC catalogue and all-base-cover computation remain supplementary checks. The bound fails in affine $D_4$, where $\mu=2$, and without the FC hypothesis, where $\mu=10$ already in $E_6$.
 
 ## Read the paper
 
-- [LaTeX source](results/exceptional-leading.tex) and [PDF](output/pdf/exceptional-leading.pdf), synchronized for release v0.6.0.
+- [LaTeX source](results/exceptional-leading.tex) and matching [PDF](output/pdf/exceptional-leading.pdf) for release v0.6.1.
 - [Citation audit](results/citation-audit.md): source locators, corrections, retained references, and verification limits.
 - Section 2 develops star reduction, the maximum-descent lemma, and the geometric terminal test.
-- Section 3 proves the finite theorem, then gives the supplementary structure of the terminals.
+- Section 3 proves the finite theorem, then describes the supplementary structure of the terminals.
 - Section 4 proves the reflection-cover lemmas, motivates the root constructions, and works through an $E_{13}$ example.
-- Section 5 gives complementary computations and open problems.
+- Section 5 contains complementary computations and open problems.
 - Appendix A explains the computational dependencies, proves the catalogue criterion, and prints the real-root witnesses.
 
-For a first reading, follow the finite proof before studying the infinite families. The key inputs are the inherited maximum-descent argument and the new exceptional terminal classification by exhaustive parabolic pruning; the large supplementary KL tables are not prerequisites.
+Start with the finite proof, which uses the inherited maximum-descent argument and the new exceptional terminal classification by exhaustive parabolic pruning. The supplementary KL tables are optional for that proof. Then study the infinite families.
 
-The [proof-study companion](results/proof-study-companion.md) works through star transport, the Fan–Green cell argument, parabolic pruning, and the root construction with small examples, eight exercises, and solution sketches.
+The [proof-study companion](results/proof-study-companion.md) contains small examples, eight exercises, and solution sketches on star transport, the Fan–Green cell argument, parabolic pruning, and the root construction.
 
 ## Reproduce the current revision
 
@@ -38,11 +38,11 @@ Extract `supplement/dist/exceptional-leading-proof.zip`, enter `exceptional-lead
 go run ./cmd/proofs -full
 ```
 
-For just the finite theorem, run `go run ./cmd/proofs -finite` instead. This regenerates the classifications, verifies the printed terminal data, and recomputes the residual $D_6$ coefficient, with a summary restricted to those inputs. The `-finite` and `-full` flags are mutually exclusive.
+For the finite theorem alone, run `go run ./cmd/proofs -finite`. The runner regenerates the classifications, verifies the printed terminal data, and recomputes the residual $D_6$ coefficient. Its summary contains only those inputs. The `-finite` and `-full` flags are mutually exclusive.
 
 Go 1.22 or later suffices. The module uses only the standard library. The runner checks the manifest, rebuilds the computations in an isolated working tree, compares regenerated outputs, and checks the mathematical summary. Without `-full`, it omits the heavier cross-checks and compares against saved full-group $E_6/E_7$ snapshots. See the [supplement README](supplement/README.md) for the precise scope and [development guide](supplement/DEVELOPING.md) for individual commands.
 
-[Release v0.6.0](https://github.com/tygern/kl/releases/tag/v0.6.0) contains the affine braid-witness proof, compact descriptions of the exceptional terminals, and a finite-only verification mode, with the updated PDF, companion, audit, and supplement. [Release v0.5.1](https://github.com/tygern/kl/releases/tag/v0.5.1) preserves the preceding citation revision. Each archive records its manuscript and source hashes.
+[Release v0.6.1](https://github.com/tygern/kl/releases/tag/v0.6.1) contains the revised prose, two Dynkin diagrams, and the [repository-wide style audit](results/style-audit-2026-10-10.json), with a matching PDF and proof supplement. [Release v0.6.0](https://github.com/tygern/kl/releases/tag/v0.6.0) preserves the preceding structural proof revision. [Release v0.5.1](https://github.com/tygern/kl/releases/tag/v0.5.1) preserves the preceding citation revision. Each archive records its manuscript and source hashes.
 
 The [repository tools](tools/README.md) reproduce the additional research certificates and build the PDF:
 

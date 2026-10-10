@@ -1,5 +1,5 @@
 // Command enumerate-bad exhaustively enumerates the Weyl group of E6/E7
-// (E8 is available but very expensive) by its action on the exact root
+// (E8 enumeration is also available) by its action on the exact root
 // system (roots as integer coordinate vectors in the simple-root basis),
 // computes right descent sets, the fully commutative (FC) elements, and the
 // "bad" elements: non-FC elements whose right and left descents are both

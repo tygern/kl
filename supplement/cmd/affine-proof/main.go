@@ -2,10 +2,10 @@
 // terminal conjugates (length 27+92k for every k>=0) and writes
 // research/en_affine_referee/proved-affine-certificate.json.
 //
-// The displayed base word and five reduced braid witnesses are checked
-// directly. The translation length formula propagates their braids to every
-// parameter, without reading a seed file or the FC catalogue. The separate
-// affine-fc-covers command retains catalogue closure and all 21 base covers
+// The command checks the displayed base word and five reduced braid witnesses
+// directly. By the translation length formula, these braids occur in reduced
+// descent words for every parameter. No seed file or FC catalogue is read.
+// The separate affine-fc-covers command retains catalogue closure and all 21 base covers
 // as supplementary checks.
 //
 // Imports: internal/affine only (shared with cmd/affine-fc-covers, as the
@@ -65,7 +65,7 @@ func prove() q.Family {
 	q.Assert(q.MM(q.MM(q.Translate(q.Gamma, 1), a), q.Translate(q.Gamma, -1)) == q.Shifted(a, d, 1),
 		"conjugation formula")
 	witnesses := []q.DescentBraidWitness{
-		// Concatenated strings make the verified three-letter braids visible.
+		// The middle string in each concatenation is the verified three-letter braid.
 		{Generator: 1, Word: word("3" + "282" + "7564534123012856745231"), BraidStart: 1},
 		{Generator: 3, Word: word("1" + "282" + "7564534123012856745231"), BraidStart: 1},
 		{Generator: 5, Word: word("31" + "282" + "764534123012856745231"), BraidStart: 2},

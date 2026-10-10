@@ -1,5 +1,5 @@
-// Command package collects the explicit, minimal proof supplement archive
-// for release v0.6.0; no network, no installations.
+// Command package builds the proof supplement archive for release v0.6.1
+// using the Go standard library.
 //
 // It ports supplement/build_package.py: the same payload inventory of data
 // files (shipped certificates, snapshots, the manuscript snapshot and its
@@ -13,7 +13,7 @@
 // except this packager, which only runs in the repository.
 //
 // Run from the repository root as `go run -C supplement ./cmd/package` (the module
-// lives in supplement/, so the go command changes into it; the packager then
+// is in supplement/, so the go command changes into it; the packager then
 // treats the parent of its module directory as the repository root). It writes
 // supplement/dist/exceptional-leading-proof/ (staging),
 // supplement/dist/exceptional-leading-proof.zip and
@@ -35,7 +35,7 @@ import (
 	"time"
 )
 
-const version = "v0.6.0"
+const version = "v0.6.1"
 
 // renamed maps the current location of the internal review notes to their
 // pre-rename location; the archive always uses the new path.
@@ -43,6 +43,7 @@ var renamed = map[string]string{"research/ai-review-notes/": "research/journal-r
 
 // files is the payload inventory: archive path (under payload/) and purpose.
 var files = map[string]string{
+	"results/style-audit-2026-10-10.json":                       "Repository-wide prose audit with file coverage, retained historical wording, and inspection limits; records the pre-release audit snapshot.",
 	"results/citation-audit.md":                                 "Reference-by-reference citation audit, source locators, editorial decisions, and verification limits; not a computational proof input.",
 	"results/proof-study-companion.md":                          "Study companion with worked examples, exercises, and solution sketches; not a computational proof input.",
 	"output/pdf/exceptional-leading.pdf":                        "Rendered manuscript snapshot supplied alongside the TeX; not executed by the proof runner.",
@@ -89,7 +90,7 @@ var purposes = map[string]string{
 	"internal/d6":                  "D6 signed permutation, length, Bruhat, lower ideal, R-polynomial and polynomial primitives (ports sparse_kl.py and coxeter.py without any KL evaluator); shared with the generator's design, so the checker is not an independent implementation.",
 	"cmd/uniform-verify":           "Independent symbolic uniform verifier and finite matrix diagnostics (ports referee_verify.py); records the manuscript hash.",
 	"internal/affine":              "Row-matrix affine arithmetic and all-k inversion/terminal verifier (ports the library part of verify_families.py); shared by affine-proof and affine-fc-covers.",
-	"cmd/affine-proof":             "Proof-only entry point for the proved affine conjugate family (ports affine_proof.py); writes proved-affine-certificate.json.",
+	"cmd/affine-proof":             "Affine conjugate-family verifier with five braid witnesses and translation-length identities (ports affine_proof.py); writes proved-affine-certificate.json.",
 	"cmd/affine-fc-covers":         "E9 exact FC closure and complete base cover verification (ports verify_fc_catalogue.py); independent of the FC enumerator but shares affine arithmetic with affine-proof.",
 	"internal/indefinite":          "Arithmetic library of the E10 verifier (ports the library part of verify_indefinite.py; the E13 main is not ported).",
 	"cmd/e10-all-k":                "All-k E10 root/reflection proof verifier (ports verify_indefinite_e10.py).",
@@ -97,7 +98,7 @@ var purposes = map[string]string{
 	"cmd/e9-quotient-kl":           "Parabolic-quotient KL engine for the length-33 affine E8 reflection r_beta and its two length-34 extensions; polynomials of the odd-gap eligible bottoms (Section 5; ports e9_quotient_kl.cpp); validated against a naive recursion.",
 	"cmd/d8-gern-kl":               "KL polynomials on the lower ideals of Gern's w_6 and w_8 in two independent models of D_n: the D6 value 1+6q+11q^2+6q^3+q^4+q^5 and the D8 polynomial of the archived transfer note (geometric model with -full; ports d8_gern_kl.cpp).",
 	"cmd/fc-maxima":                "Independent FC enumeration of E6-E13 by height vectors: counts and maximum lengths (55, 66, 78, 92 for E10-E13; Section 4 remark; ports fc_maxima.cpp).",
-	"cmd/terminal-structure":       "Gern-plus-two matrix identities, exhaustive D5/D6/D7 enumeration, layered palindromes, orthogonal reflections, weak-order chain and w_0(J) factorizations of w_4, w_6, w_7, w_8 (Section 3 remarks; ports terminal_structure.py).",
+	"cmd/terminal-structure":       "Matrix identities for Gern's terminals and the two exceptional terminals, exhaustive D5/D6/D7 enumeration, layered palindromes, orthogonal reflections, weak-order chain and w_0(J) factorizations of w_4, w_6, w_7, w_8 (Section 3 remarks; ports terminal_structure.py).",
 	"cmd/uniform-covers":           "Finite checks of the cover lemma ingredients for b_{r,k}: descents and non-FC status of bs, sbs = r_{s beta}, lengths 8r^2+3+116k, no FC Bruhat covers (Section 4; ports uniform_family_checks.py; more rows with -full).",
 	"cmd/affine-d4":                "Independent affine D4 witness P_{x,xcx} = 1+3q+2q^2, mu = 2, by direct subwords and R-polynomial reciprocity (Section 5; ports verify_affine_d4_r.py).",
 	"cmd/affine-reflection-family": "Certifies the affine E8 reflection family r_{beta+k delta} (length 33 + 58k, terminal with full support, both one-generator extensions with a full-support FC bottom) for k = 0..10 (Section 5; ports affine_reflection_family.py).",
@@ -225,8 +226,8 @@ func main() {
 		}
 	}()
 
-	// Only replace this builder's generated staging directory. Runs live in
-	// extracted archives, so no proof-review logs are erased here.
+	// Only replace this builder's generated staging directory. Proof-review
+	// logs are stored in extracted archives and are preserved.
 	must(os.RemoveAll(p.stage))
 	must(os.MkdirAll(p.stage, 0o755))
 	var inventory []entry
@@ -242,7 +243,7 @@ func main() {
 		inventory = append(inventory, entry{"payload/" + archivePath, archivePath, digest(origin), "unchanged", files[archivePath]})
 	}
 
-	// One discovery-result file is reduced to the exact seed row the proofs use.
+	// Retain the base row used by the supplementary affine base-cover check.
 	type selection struct {
 		path    string
 		selects func(any) any
@@ -258,13 +259,13 @@ func main() {
 				}
 				panic(failure{"no length-27 row in e9_full_support_eligible.json"})
 			},
-			"Retain only the length-27 base word row used by the proved affine family."},
+			"Retain only the length-27 base word row used by the supplementary affine base-cover check."},
 	}
 	for _, s := range selections {
 		target := filepath.Join(p.stage, "payload", filepath.FromSlash(s.path))
 		save(target, s.selects(p.read(s.path)))
 		inventory = append(inventory, entry{"payload/" + s.path, s.path, digest(filepath.Join(p.root, filepath.FromSlash(s.path))), s.purpose,
-			"Required fixed proof seed; discovery code and other results excluded."})
+			"Fixed input for the supplementary affine base-cover check; discovery code and other results excluded."})
 	}
 
 	// The Go module is this supplement directory itself: go.mod and every

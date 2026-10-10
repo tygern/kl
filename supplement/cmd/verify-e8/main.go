@@ -592,8 +592,8 @@ func main() {
 	}
 	assert(len(fc) == 10846, "FC catalogue size %d", len(fc))
 
-	// Recursive FC criterion, together with a minimal-missing-element
-	// argument, proves that the finite catalogue is sound and complete.
+	// By the recursive FC criterion and a minimal-missing-element argument,
+	// the finite catalogue contains exactly the FC elements.
 	ascents := 0
 	for _, it := range fcOrder {
 		a, row := it.a, it.info
@@ -626,7 +626,7 @@ func main() {
 				}
 			}
 			_, inFC := fc[b]
-			assert(valid == inFC, "FC closure criterion disagrees with catalogue")
+			assert(valid == inFC, "recursive FC test and catalogue membership differ")
 		}
 	}
 	assert(int64(ascents) == catalogue.AscentsTested, "ascents %d vs %d", ascents, catalogue.AscentsTested)

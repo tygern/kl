@@ -15,7 +15,7 @@
 // WORD boxes, so this port tests word boxes (xMin < 65 or xMax > width - 65).
 // A word box is the union of its character boxes, so any character outside
 // the margins puts its word outside too: the word test flags every page the
-// character test flags (it can only be stricter, never weaker, apart from tiny
+// character test flags (it can only be stricter, never weaker, apart from
 // differences between pdftotext and pdfplumber glyph-advance conventions).
 // A page "has text" when pdftotext finds at least one non-empty word on it.
 //

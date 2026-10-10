@@ -34,7 +34,7 @@ func TestGroupBasics(t *testing.T) {
 func TestRunSynthetic(t *testing.T) {
 	g := newEn(4) // type A4 path 0-1-2-3
 	// The program does not re-derive full support, so a small terminal word
-	// (s0 s2, commuting) flagged full_support exercises the whole pipeline.
+	// (s0 s2, commuting) flagged full_support exercises the whole computation.
 	word := []int{0, 2}
 	w := g.elt(word)
 	if !g.terminal(w) || !g.fc(w) {

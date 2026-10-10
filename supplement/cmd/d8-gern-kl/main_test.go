@@ -13,7 +13,7 @@ func TestD6BothModels(t *testing.T) {
 		t.Fatalf("wrong P: %v", a.Px)
 	}
 	if a.Px != b.Px || a.Pe != b.Pe || a.ideal != b.ideal || !eqVec(a.rankInterval, b.rankInterval) {
-		t.Fatal("models disagree")
+		t.Fatal("model polynomials, ideal sizes or interval rank vectors differ")
 	}
 	if a.mismatches != 0 || b.mismatches != 0 || a.polys != 32 {
 		t.Fatalf("mismatches %d %d polys %d", a.mismatches, b.mismatches, a.polys)

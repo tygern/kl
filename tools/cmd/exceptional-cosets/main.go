@@ -4,9 +4,9 @@
 // It ports research/exceptional_cosets.py to Go. Matrices are stored by
 // columns in the basis of simple roots, in the Python original's layout. The
 // numbering of E_n is 1--3--4--5--...--n with 2 attached to 4. The program
-// checks Coxeter length and descent statements only; it makes no Kazhdan-
-// Lusztig computation. All arithmetic is exact integer arithmetic (entries are
-// tiny, far below the int range). The output is deterministic and is
+// checks Coxeter length and descent statements only; it does not compute
+// Kazhdan-Lusztig polynomials. All arithmetic is exact integer arithmetic
+// (entries stay within the int range). The output is deterministic and is
 // byte-identical to the Python original's standard output (the original prints
 // text lines, with Python tuple/list reprs, not JSON); every assert of the
 // original is an explicit check here that exits non-zero with a message.

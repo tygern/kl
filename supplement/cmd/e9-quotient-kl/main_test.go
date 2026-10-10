@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-// The quotient engine must agree with the naive recursion on random elements;
+// The quotient engine and naive recursion must compute the same polynomials on random elements;
 // the pair counts are those recorded in the certificate (same mt19937 stream).
 func TestValidateA4D4(t *testing.T) {
 	if got := validate("A4", 1, 200, 10); got != 1270 {

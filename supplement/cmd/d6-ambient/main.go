@@ -720,7 +720,7 @@ func record(m *model, ambientRank int, b, x string) (modelRecord, klResult) {
 	require(rec.IdealSize == expectedIdeal, "%s: ideal size %d, expected %d", m.name, rec.IdealSize, expectedIdeal)
 	require(rec.IntervalSize == expectedIntvl, "%s: interval size %d, expected %d", m.name, rec.IntervalSize, expectedIntvl)
 	require(sameInts(rec.IntervalRankVector, expectedRanks), "%s: rank vector %v", m.name, rec.IntervalRankVector)
-	require(rec.BruhatByLifting, "%s: the lifting-property Bruhat test disagrees with the recursion", m.name)
+	require(rec.BruhatByLifting, "%s: Bruhat comparisons from lifting and recursion differ", m.name)
 	require(rec.NonCoverMuCount == 8, "%s: %d non-cover mu-nonzero pairs, expected 8 (the original's printed value)", m.name, rec.NonCoverMuCount)
 	return rec, r
 }

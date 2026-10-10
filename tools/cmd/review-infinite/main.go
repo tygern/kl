@@ -185,7 +185,7 @@ func reduced(m matrix, a diagram) []int {
 }
 
 // A convex sts chain in the dependency poset can be made consecutive by
-// commutations. We verify the resulting order and its reduced word matrix.
+// commutations. Check the resulting order and its reduced-word matrix.
 func braidWord(word []int, a diagram) ([]int, int, bool) {
 	n := len(word)
 	pred := make([][]bool, n)

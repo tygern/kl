@@ -49,7 +49,7 @@ func TestWeakOrderConditionRejected(t *testing.T) {
 	}
 }
 
-// A single generator adjacent to nothing it dominates is weak-terminal.
+// A simple reflection is weak-terminal.
 func TestWeakTerminalAccepted(t *testing.T) {
 	p := writeCert(t, `{"bad":[{"word":[0],"length":1,"Rmask":1,"Lmask":1,"bottoms":[]}]}`)
 	if panics(func() { checkCertificate(p, 6) }) {

@@ -198,8 +198,9 @@ func e6Compute() e6Certificate {
 	fc := make([]bool, n)
 	fcCount := 0
 	for k := 0; k < n; k++ {
-		// A reduced braid suffix is detected after stripping descents. Matsumoto
-		// gives the equivalence with full commutativity in simply laced type.
+		// Detect a reduced braid suffix after removing descents. By Matsumoto's
+		// theorem, the absence of such a braid is equivalent to full commutativity
+		// in simply laced type.
 		ok := true
 		for s := 0; s < e6N; s++ {
 			if hasBit(desc[k], s) {

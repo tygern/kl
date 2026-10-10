@@ -4,7 +4,7 @@
 // maximum length and the reduced words of the longest elements.  Elements are
 // stored as height vectors h(w)_i = height of w(alpha_i); right multiplication
 // by s_j acts as h_i += h_j for i adjacent to j, then h_j = -h_j, and s_j is a
-// right descent iff h_j < 0.  Full commutativity is decided by the recurrence
+// right descent iff h_j < 0. The program tests full commutativity using the recurrence
 // "w is FC iff R(w) is pairwise commuting and w t is FC for every t in R(w)".
 //
 // Ports research/review_checks/fc_maxima.cpp.  Imports only the Go standard

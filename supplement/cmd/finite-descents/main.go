@@ -2,8 +2,8 @@
 // ai-review-notes: for each (type E_n, word, lower set) it verifies that the
 // common left/right descent set of the word equals the stated independent set
 // (computed with integer-column reflection arithmetic), that the independent
-// set contains no edge of the Coxeter diagram, and that a maximum matching on
-// the support edges gives alpha(support) <= |support| - |matching| with
+// set contains no edge of the Coxeter diagram, and that, for a maximum matching
+// on the support edges, alpha(support) <= |support| - |matching| with
 // equality |support| - |matching| = |independent set|.
 //
 // Ports research/ai-review-notes/check_finite_descents.py.

@@ -77,8 +77,8 @@ func (r *runner) readD6RecurrenceReport() any {
 	return d
 }
 
-// finiteCoreSummary is also used by default/full mode, so the finite
-// outcomes cannot drift between the different modes' summary builders.
+// finiteCoreSummary computes the finite outcomes for default, full and
+// finite modes.
 func finiteCoreSummary(read func(string) any, d6 any) *object {
 	summary := newObject()
 	finite := newObject()

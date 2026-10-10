@@ -4,14 +4,14 @@
 // checks.  It produces the affine E8 (= E9) odd-gap certificate of the
 // manuscript: the length-33 reflection r_beta, beta = (1,2,3,3,2,2,1,1,2), and
 // its two length-34 right extensions w s_0 and w s_1, whose eligible fully
-// commutative lower endpoints have odd gaps, so parity gives no information
-// and the polynomials must be computed.
+// commutative lower endpoints have odd gaps. For these odd gaps, vanishing
+// cannot be concluded from parity, and the polynomials must be computed.
 //
 // Port of research/review_checks/e9_quotient_kl.cpp (C++), keeping its
 // structure, its assertions, its self-validation (random elements of A4, D4
 // and E6 with random commuting I subset R(w), compared pair by pair with a
-// naive ordinary Kazhdan-Lusztig recursion, driven by the same Mersenne
-// twister mt19937 so the pair counts agree) and its output text byte for byte.
+// naive ordinary Kazhdan-Lusztig recursion, using the same Mersenne
+// twister mt19937 so the pair counts match) and its output text byte for byte.
 //
 // Method.  Elements are integer matrices on the span of the simple roots (row
 // j is w(alpha_j) in the simple-root basis); right multiplication acts on
@@ -855,8 +855,9 @@ func (m *mt19937) next() uint32 {
 	return y
 }
 
-// validate: random elements w, random commuting I subset R(w); every quotient
-// pair must agree with the naive recursion.  Returns the number of pairs compared.
+// validate compares polynomials for every quotient pair, using random
+// elements w and commuting I subset R(w), with the naive recursion.
+// It returns the number of pairs compared.
 func validate(typ string, seed uint32, count, maxlen int) int64 {
 	setup(typ)
 	rng := newMT(seed)
@@ -918,7 +919,7 @@ func validate(typ string, seed uint32, count, maxlen int) int64 {
 		}
 		tested++
 	}
-	fmt.Fprintf(os.Stderr, "validated %s: %d elements, %d quotient pairs agree with the naive recursion\n", typ, tested, pairs)
+	fmt.Fprintf(os.Stderr, "validated %s: %d elements, polynomials match the naive recursion on %d quotient pairs\n", typ, tested, pairs)
 	return pairs
 }
 

@@ -2,7 +2,7 @@
 
 Reviewed `results/exceptional-leading.tex`, especially lines 194–545, and the finite terminal and residual-polynomial implementations. Reviewed source SHA-256: `3a39fef2c91b510f9f0ab745206efdd3afa3e2a9836a22bde28315599d8b8937`. This review did not use prior AI review conclusions. The manuscript was not edited during the review. Line references below refer to the source as read on 10 October 2026.
 
-**Subsequent revision, v0.6.0.** The manuscript now prints the total candidate count and the two orthogonal-reflection descriptions, and the supplement provides a finite-only runner. These implement the three optional suggestions recorded below. The original findings and line references are retained as a historical review. The independent scratch checker was ported to standard-library Go and checked against its original output; the preserved command is linked below.
+**Subsequent revision, v0.6.0.** The release contains the total candidate count, descriptions of both exceptional terminals as products of orthogonal reflections, and a finite-only supplement runner. These were the three optional suggestions recorded below. The original findings and line references are retained as a historical review. The independent scratch checker was ported to standard-library Go and checked against its original output; the preserved command is linked below.
 
 ## Verdict
 

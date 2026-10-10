@@ -3,11 +3,11 @@
 // set of small root pairings with the simple roots, and certifies each one it
 // finds.
 //
-// For a reflection r_beta (beta a norm-2 vector, i.e. a real root) the
-// pairings m_j = (beta, alpha_j) determine beta = A^{-1} m, where A is the
-// Cartan matrix.  The search enumerates
+// For a reflection r_beta with beta a real root of norm 2,
+// beta = A^{-1} m, where m_j = (beta, alpha_j) and A is the Cartan matrix.
+// The search enumerates
 //   - a nonempty independent set I of the Dynkin diagram (all of them, or only
-//     those of maximal size with -max-only),
+//     those of maximum size with -max-only),
 //   - the pairings m_s in 1..M on I (these are the right and left descents of
 //     r_beta), and
 //   - the pairings m_j in -M..-demand(j) on the other nodes, where demand(j)
@@ -498,7 +498,7 @@ func search(n, maxEntry int, maxOnly bool, emit func(rootRecord)) result {
 					m[j] = vals[k]
 				}
 				processCandidate(g, &res, I, m, N, den, alpha, emit)
-				// odometer: last position varies fastest
+				// The last position varies fastest.
 				k := len(rest) - 1
 				for ; k >= 0; k-- {
 					if vals[k] < hi[k] {

@@ -162,7 +162,7 @@ func contains(l []int, x int) bool {
 	return false
 }
 
-// word returns the reduced word obtained by peeling the smallest right
+// word returns the reduced word obtained by removing the smallest right
 // descent repeatedly: word(w) = word(w s) + (s,).
 func (g *coxeter) word(w mat) []int {
 	var rev []int
@@ -352,7 +352,7 @@ func sumOf(a vec) int64 {
 }
 
 // reflectionWord returns a palindromic word for the reflection of the
-// positive real root a, peeling positive-pairing simple roots.
+// positive real root a, using simple reflections with positive pairings.
 func (g *coxeter) reflectionWord(a vec) []int {
 	for i := 0; i < n; i++ {
 		if a == g.e[i] {
@@ -479,7 +479,7 @@ func build() output {
 	bword := g.reflectionWord(beta)
 	check(g.elt(bword) == g.rootReflection(beta), "reflection word of beta")
 
-	// Finite-root counting gives the affine inversion count symbolically.
+	// Count affine inversions symbolically from the finite roots.
 	b0 := addScaled(beta, delta, -1)
 	roots := g.finiteRoots()
 	check(len(roots) == 240, "240 finite roots")

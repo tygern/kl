@@ -4,8 +4,8 @@ package main
 // table (Objects/setobject.c: linear probing of 9 slots, perturbation
 // i = 5*i + 1 + perturb, resizing rules, and the exact construction paths of
 // frozenset([x]) and frozenset | set). The Python original iterates frozensets
-// of group elements to decide the order in which Kazhdan-Lusztig values are
-// first computed, and that order is the record order of the committed
+// of group elements when first computing Kazhdan-Lusztig values. That
+// iteration order is the record order of the committed
 // certificate affine_d4_kl_certificate.json; reproducing it byte for byte
 // requires reproducing the iteration order of those sets.
 

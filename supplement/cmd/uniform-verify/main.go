@@ -76,7 +76,7 @@ func symbolic() symbolicOut {
 	c := cst
 	half := frac(1, 2)
 	a := c(2).mul(r).sub(c(4))
-	// Pair cancellation on the long arm leaves exactly this seed norm.
+	// Seed norm after cancelling paired terms on the long arm.
 	must(r.sub(c(1)).mul(r.sub(c(2))).add(r.mul(c(2).sub(r))).add(r).eq(c(2)), "seed norm")
 	// In the independently chosen D-coordinate realization, s_0 beta has
 	// alpha_0 coefficient one and alternating finite coordinates -1/2,+1/2.
@@ -257,8 +257,8 @@ func checkRank(r int) (rowOut, []witness) {
 		return out
 	}
 	pair := func(x, y vec) int64 {
-		// Individual products reach about 1e22 for the k=10^6 roots (the sum
-		// is tiny), so accumulate exactly in big.Int.
+		// Individual products reach about 1e22 for the k=10^6 roots, so
+		// accumulate exactly in big.Int.
 		cy := cartan(y)
 		s := new(big.Int)
 		for i := range x {
@@ -293,8 +293,8 @@ func checkRank(r int) (rowOut, []witness) {
 	}
 
 	// Uniform positive-real-root witness for gamma and gamma+delta, supported
-	// in the same affine parabolic. A greedy path is a certificate, not a
-	// criterion claiming that norm two by itself implies a real root.
+	// in the same affine parabolic. The lowering path certifies real-root
+	// membership by reduction to a simple root. Norm two alone is insufficient.
 	var witnesses []witness
 	for _, root := range []vec{gamma, gd} {
 		x := root
@@ -409,7 +409,7 @@ func checkRank(r int) (rowOut, []witness) {
 			coef := addc(mulc(mulc(a, k), k), mulc(ri, k))
 			root[i] = addc(t, mulc(coef, delta[i]))
 		}
-		// k*(k-1) >= 0 for k >= 0, so floor and truncating division agree.
+		// For k >= 0, k*(k-1) >= 0 and floor and truncating division return the same integer.
 		tri := mulc(k, k-1) / 2
 		for i := 0; i < n; i++ {
 			alt := addc(addc(beta0[i], mulc(k, v[i])), mulc(tri, u[i]))

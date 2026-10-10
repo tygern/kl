@@ -9,9 +9,8 @@
 // Group elements are integral matrices (stored by columns) acted on by the
 // simple reflections in the faithful geometric representation; no root-index
 // engine is used. This command imports only the Go standard library: it
-// imports no internal package and none of the other engines, preserving the
-// claim that the integer-matrix engine and the root-index engine
-// (cmd/enumerate-bad) share no code.
+// imports no internal package and none of the other engines. The integer-matrix
+// engine and the root-index engine (cmd/enumerate-bad) share no code.
 //
 // Usage (run in the work directory):
 //

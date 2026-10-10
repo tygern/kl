@@ -14,7 +14,7 @@
 // (Kazhdan-Lusztig 1979, (2.2.c)) is evaluated on extremal pairs only
 // (x extremal for w iff x <= w, L(w) subset L(x), R(w) subset R(x)).  Every
 // polynomial is recomputed with the right recursion (w = v t, t the largest
-// right descent) and the two values must agree.  Constant terms,
+// right descent) and the two values must match. Constant terms,
 // nonnegativity and the degree bound are asserted for every pair.  mu(x,w) for
 // a Bruhat cover x of w is 1 by definition; covers are found as w t over all
 // reflections t.
@@ -620,7 +620,7 @@ func main() {
 			}
 			checked++
 		}
-		fmt.Fprintf(os.Stderr, "Bruhat bitsets agree with the lifting test on %d sampled pairs\n", checked)
+		fmt.Fprintf(os.Stderr, "Bruhat bitset and lifting comparisons match on %d sampled pairs\n", checked)
 	}
 
 	// Kazhdan-Lusztig recursion, by increasing length.
@@ -752,7 +752,7 @@ func main() {
 						}
 					}
 					if !eqPoly(P, Q) {
-						fail(3, "left and right recursions disagree")
+						fail(3, "left and right recursions return different polynomials")
 					}
 				}
 				if d%2 == 1 {

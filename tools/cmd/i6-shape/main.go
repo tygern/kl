@@ -18,7 +18,7 @@
 //     compact JSON line the original printed; compare with
 //     results/i6-independent-subword.log).
 //
-// The two parts live in shape.go and subword.go and share no code except the
+// The two parts are in shape.go and subword.go and share no code except the
 // element type and output helpers: each has its own signed-permutation
 // arithmetic (length, right multiplication), exactly as the two Python
 // programs were independent of each other.

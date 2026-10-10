@@ -10,7 +10,7 @@
 // Usage: fc-catalogue -rank N   (N = 6..10; the supplement uses 6..9)
 // Output: one JSON document on stdout (the runner redirects it to eN-fc.json).
 //
-// Imports: standard library only. This command is deliberately self-contained
+// Imports: standard library only. This command is self-contained
 // and imports no internal package and none of the other engines.
 package main
 

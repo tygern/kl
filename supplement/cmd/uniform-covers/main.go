@@ -352,7 +352,7 @@ func (g *En) covers(w Elem) []Elem {
 	return out
 }
 
-// uniformData gives beta_r, gamma, delta of the manuscript's Section 4.1 in
+// uniformData returns beta_r, gamma, delta of the manuscript's Section 4.1 in
 // E_{4r+1}; a = 2r - 4.
 func uniformData(r int) (n int, beta, gamma, delta []int64, a int64) {
 	n = 4*r + 1

@@ -46,10 +46,10 @@ func TestAffineD4Certificate(t *testing.T) {
 	}
 }
 
-// TestCPythonSetOrder pins the set-table emulation (insertClean, resize and
+// TestCPythonSetOrder checks the set-table emulation (insertClean, resize and
 // the merge paths of pyset.go) independently of the committed certificate:
 // the expected order is CPython 3.14.7's list(g.lower(w)) for the original
-// targeted.py; the 20 elements cross a table resize.
+// targeted.py; the set resizes while inserting the 20 elements.
 func TestCPythonSetOrder(t *testing.T) {
 	g := star(2)
 	w := g.elt([]int{1, 2, 0, 1, 2})

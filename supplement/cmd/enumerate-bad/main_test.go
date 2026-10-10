@@ -3,7 +3,7 @@ package main
 import "testing"
 
 func TestWordRoundTrip(t *testing.T) {
-	// minimal sanity: rset/rget round trip
+	// Check the rset/rget round trip.
 	var x uint64
 	x = rset(x, 3, 77)
 	if rget(x, 3) != 77 || rget(x, 2) != 0 {

@@ -178,8 +178,8 @@ func (c *checker) build(module, name string) string {
 	if runtime.GOOS == "windows" {
 		exe += ".exe"
 	}
-	// GOWORK=off and an empty GOFLAGS keep an enclosing workspace or the
-	// caller's flags from changing what is built.
+	// With GOWORK=off and empty GOFLAGS, builds ignore the enclosing workspace
+	// and the caller's flags.
 	if _, err := c.run("build-"+name, filepath.Join(c.root, module), []string{"GOWORK=off", "GOFLAGS="},
 		c.goTool, "build", "-o", exe, "./cmd/"+name); err != nil {
 		fatalf("%v", err)
@@ -249,8 +249,8 @@ func main() {
 	if err := os.RemoveAll(c.scratch); err != nil {
 		fatalf("%v", err)
 	}
-	// The scratch tree must look like a repository root to the programs'
-	// own -root check (results/ and tools/go.mod).
+	// The scratch directory must contain results/ and tools/go.mod for the
+	// programs' -root check.
 	for _, dir := range []string{c.bins, c.logs, "results", "research/broad_cells", "research/broad_affine", "research/en_families", "research/en_independent", "sources", "tools"} {
 		if !filepath.IsAbs(dir) {
 			dir = filepath.Join(c.scratch, filepath.FromSlash(dir))

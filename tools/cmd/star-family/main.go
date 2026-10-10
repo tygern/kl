@@ -12,9 +12,9 @@
 // degree m/2, the 4^m forms L 0 R are distinct elements with the stated lengths
 // and right descents, |lower ideal| = 4^m + 2^m, |[x,w]| = 3^m + 1, the unique
 // eligible bottom is x (m >= 2), w is terminal exactly for m >= 3, the Bruhat
-// order on the forms is the product of inclusion orders (m <= 4), and every
-// right descent of w gives the same polynomial. For m = 4 it also writes the
-// full dependency certificate.
+// order on the forms is the product of inclusion orders (m <= 4), and the
+// recursion computes the same polynomial for every right descent of w.
+// For m = 4 it also writes the full dependency certificate.
 //
 // Outputs (relative to the repository root, original schemas):
 //
@@ -253,7 +253,7 @@ func certify(m int, certificate, allOrders bool) (object, []byte) {
 		}
 	}
 	for _, s := range g.desc(w) {
-		check(equalPoly(g.withDescent(x, w, s), p), "m=%d: descent %d disagrees", m, s)
+		check(equalPoly(g.withDescent(x, w, s), p), "m=%d: polynomial for descent %d differs from the reference polynomial", m, s)
 	}
 	ranks := map[int]int{}
 	for _, z := range interval {

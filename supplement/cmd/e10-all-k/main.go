@@ -110,7 +110,7 @@ func run() error {
 		return errors.New("seed has no real terminal root equal to beta0")
 	}
 	q.Assert(len(row.ReducedWord) == 101, "reduced word length is %d, not 101", len(row.ReducedWord))
-	q.Assert(q.MatEq(c.ReducedMatrix(row.ReducedWord), c.Reflection(beta)), "reduced word does not give the reflection")
+	q.Assert(q.MatEq(c.ReducedMatrix(row.ReducedWord), c.Reflection(beta)), "reduced-word matrix differs from the reflection matrix")
 	letters := map[int]bool{}
 	for _, s := range row.ReducedWord {
 		letters[s] = true

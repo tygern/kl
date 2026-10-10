@@ -1,6 +1,8 @@
 # Go module of the proof supplement
 
-This directory is the Go module `github.com/tygern/kl/supplement` (Go 1.22 or later, standard library only). It contains every program of the proof supplement of the manuscript `results/exceptional-leading.tex`: the enumeration engines, the certificate verifiers, the six review programs, the proof runner and the archive packager. It replaces, as of release v0.3.0, the Python and C++ programs that releases v0.1.0 and v0.2.0 shipped; those remain in release v0.2.0 and in git history (commit d997526; the repository has contained Go only since v0.4.0), and the Go port was verified against their outputs certificate for certificate.
+The Go module `github.com/tygern/kl/supplement` contains the enumeration engines, certificate verifiers, six review programs, proof runner and archive packager for `results/exceptional-leading.tex`. Go 1.22 or later suffices; the module uses only the standard library.
+
+The Go programs replaced the Python and C++ programs in release v0.3.0. The earlier programs remain in release v0.2.0 and in git history (commit d997526); the repository has contained Go only since v0.4.0. Every certificate from the Go port was compared with the earlier programs' outputs.
 
 Tracked files are sources only. Binaries are never tracked: `go build -C supplement -o bin/ ./cmd/...` writes them to `supplement/bin/` (ignored), and the proof runner builds its own copies into `runs/<mode>-<random>/bin/` inside an extracted archive.
 
@@ -16,7 +18,7 @@ go test ./...       # small sanity tests, a few seconds
 
 ## Commands
 
-One program per directory under `cmd/`. Every command uses `flag` for its options (no positional arguments), reads its inputs relative to the current working directory with the repository's layout, writes its certificate to the path the original program wrote (or to stdout where the original did, in which case the runner captures it), exits non-zero on any failed assertion, and emits no timing, host, compiler or absolute-path fields.
+Each directory under `cmd/` contains one program. Commands use `flag` for options and take no positional arguments. They read inputs relative to the current working directory, using the repository's layout, and write certificates to the original programs' paths or to stdout for capture by the runner. On a failed assertion, the command exits with a non-zero status. Certificate fields exclude timing, host, compiler and absolute paths.
 
 | Command | Replaces | Invocation | Output |
 |---|---|---|---|
@@ -54,23 +56,23 @@ Not ported: `research/broad_exceptional/exact_e.py` (historical provenance only;
 
 Debugging-only flags (not used by the runner, never writing a certificate): `e6-mu-table -pairs FILE`, `e9-quotient-kl -mode pairs -pairs FILE` and `d8-gern-kl -pairs FILE` (with `-pairsgeo` to add the geometric model) print the Kazhdan--Lusztig polynomial of each pair listed in `FILE`, one per line. They exist for differential tests against the earlier engines (the port was tested on random pairs in A4, D4, D5, D6 and E6 with zero mismatches); `e9-quotient-kl -mode validate` is the original program's self-validation against a naive recursion.
 
-## Independence boundaries
+## Shared code and separate implementations
 
-These are the claims of the manuscript's Appendix A and of the archive README; the imports enforce them.
+Appendix A and the archive README list the following package imports and shared routines.
 
 1. The root-index engine (`cmd/enumerate-bad`) and the integer-matrix engine (`cmd/matrix-search`) share no code: each imports no `internal` package.
 2. The flat and recursive parabolic engines share arithmetic: `internal/parabolic`, imported by `cmd/terminals-flat` and `cmd/terminals-recursive` only. `cmd/e8-d7` and `cmd/verify-e8` are self-contained (the latter has its own integer-column arithmetic and inversion-count lengths).
 3. `cmd/fc-catalogue` is self-contained. `internal/affine` is shared by `cmd/affine-proof` and `cmd/affine-fc-covers`. `internal/indefinite` is used by `cmd/e10-all-k`.
-4. `internal/d6` (SparseCoxeter primitives and polynomial arithmetic) is used by `cmd/d6-certificate`; it contains no KL evaluator at all, so the certificate checker cannot call one.
+4. `cmd/d6-certificate` uses `internal/d6` for SparseCoxeter primitives and polynomial arithmetic. This library contains no KL evaluator.
 5. `cmd/uniform-verify` is self-contained.
 6. The six review programs (`cmd/e6-mu-table`, `cmd/e9-quotient-kl`, `cmd/d8-gern-kl`, `cmd/fc-maxima`, `cmd/terminal-structure`, `cmd/uniform-covers`) are each self-contained.
 7. `cmd/verify-exceptional`, `cmd/verify-outputs`, `cmd/finite-descents`, `cmd/affine-d4`, `cmd/d6-ambient`, `cmd/terminal-data-check`, `cmd/affine-reflection-family`, `cmd/cartan-candidates`, `cmd/uniform-construction`, `cmd/proofs` and `cmd/package` are self-contained.
 
 Small routines (Cartan matrices, reflection actions) are intentionally duplicated across self-contained commands. Where the C++ used threads (`d8-gern-kl`, `fc-maxima`) the Go programs use goroutines with a deterministic merge. All integer arithmetic is `int64` with overflow guards; exact rationals (`math/big`) replace Python fractions.
 
-## Running the full verification
+## Running verification
 
-From the archive (what a reader does): build the archive, extract it anywhere outside this repository's directory tree, and run the runner from the archive root.
+Build the archive, extract it outside the repository, then run the verification command from the archive root.
 
 ```sh
 go run -C supplement ./cmd/package                      # from the repository root; writes supplement/dist/
@@ -81,13 +83,13 @@ go run ./cmd/proofs -finite                     # finite theorem only
 go run ./cmd/proofs -full                       # full mode, about 90-100 s
 ```
 
-The runner checks `MANIFEST.json`, copies `payload/` to `runs/<mode>-<random>/work/`, builds every command into `runs/<mode>-<random>/bin/` with `go build`, runs the steps, compares the regenerated snapshots with the shipped ones (ignoring only `seconds` and `elapsed_seconds`), checks that the manuscript hash recorded by `uniform-verify` equals the one in `INPUTS.json`, builds `summary.json` and requires it to equal `expected-summary.json`, and finally checks that the printed table words generate the regenerated terminal matrices (`verify-outputs -matrices N`). `status.json` records status, mode, seconds, `go_version`, the step count, the relative work path, the three boolean checks and the list of compared snapshots.
+The runner checks `MANIFEST.json`, copies `payload/` to `runs/<mode>-<random>/work/`, then builds the selected commands into `runs/<mode>-<random>/bin/` with `go build`. It executes the commands and compares regenerated snapshots with the shipped files, ignoring only `seconds` and `elapsed_seconds`. In default and full modes, it checks that the manuscript hash recorded by `uniform-verify` matches the one in `INPUTS.json` and that `summary.json` matches `expected-summary.json`. It also checks that the printed table words generate the regenerated terminal matrices (`verify-outputs -matrices N`). `status.json` records status, mode, seconds, `go_version`, step count, relative work path, the three boolean checks and the compared snapshots.
 
 `-finite` and `-full` are mutually exclusive. Finite mode rebuilds the flat and recursive E6/E7/E8 terminal classifications, the independent E8/D7 classification, all four E8 parabolic chains, the printed descent/support matching data, and both the D6 recurrence check and the fresh ambient E7/E8/D6 polynomial calculation. It compares the regenerated terminal matrices with the printed table and with the saved full-group E6/E7 snapshots; only full mode reruns those historical full-group searches. Finite mode checks the manuscript hash directly against `INPUTS.json` and compares only the `finite`, `E8_D7`, `D6`, `finite_matchings`, `terminal_data_checks`, `E8_chains` and `D6_ambient` fields of `expected-summary.json`. Its saved summary contains only these recomputed outcomes. It builds no affine or indefinite-family program and does not run the additional complete E6 KL table.
 
-Do not add a `go.work` file at the repository root: it would make `go run ./cmd/proofs` fail inside any archive extracted below the repository (including the staging directory). The runner's own `go build` steps run with `GOWORK=off` and an empty `GOFLAGS`, so an enclosing workspace cannot break them; below a `go.work` the initial command itself must be invoked as `GOWORK=off go run ./cmd/proofs [-finite | -full]`.
+With a `go.work` file at the repository root, `go run ./cmd/proofs` fails inside archives extracted below the repository, including the staging directory. The runner's `go build` steps use `GOWORK=off` and an empty `GOFLAGS`. For an archive below a `go.work` file, invoke the initial command as `GOWORK=off go run ./cmd/proofs [-finite | -full]`.
 
-From the repository root (regenerating a committed certificate): the repository layout equals the runner's work-directory layout, so a command run from the repository root rewrites the committed file in place.
+To regenerate a committed certificate, run its command from the repository root. The repository and runner's working directory have the same layout; the command rewrites the committed file in place.
 
 ```sh
 go build -C supplement -o bin/ ./cmd/...                # binaries in supplement/bin/ (ignored by git)

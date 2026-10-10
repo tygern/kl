@@ -1,5 +1,5 @@
 // Command sources-manifest records the locally archived public sources with
-// immutable SHA-256 digests.
+// SHA-256 digests.
 //
 // It ports research/source_manifest.py to Go (standard library only; no other
 // package of this repository is imported). Nothing is downloaded: the program

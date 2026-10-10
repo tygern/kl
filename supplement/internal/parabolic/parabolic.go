@@ -9,8 +9,7 @@
 // a standard parabolic subgroup, minimal coset representatives, and the
 // fully commutative elements with their star-operation closure check.
 //
-// The package imports only the Go standard library. It deliberately knows
-// nothing about the other engines of the supplement.
+// The package imports only the Go standard library and imports no supplement engine.
 package parabolic
 
 import (
@@ -407,7 +406,7 @@ func (g *Group) Cosets() []Element {
 
 // RootPermutation returns the permutation of root ids induced by the element
 // whose reduced word is word (letters applied from the right end), asserting
-// that it agrees with the images of the simple roots stored in a.
+// that it matches the images of the simple roots stored in a.
 func (g *Group) RootPermutation(a Element) []uint8 {
 	R := len(g.Roots)
 	permutation := make([]uint8, R)
@@ -420,7 +419,7 @@ func (g *Group) RootPermutation(a Element) []uint8 {
 		}
 	}
 	for s := 0; s < g.N; s++ {
-		Assert(int(permutation[s]) == Image(a.W, s), "coset permutation disagrees with representative")
+		Assert(int(permutation[s]) == Image(a.W, s), "coset permutation differs from the representative on a simple root")
 	}
 	return permutation
 }
@@ -443,7 +442,7 @@ func (g *Group) FullyCommutative() []Element {
 	ids := map[State]int{g.Identity: 0}
 	for i := 0; i < len(fc); i++ {
 		for s := 0; s < n; s++ {
-			// Appending a descent cannot discover a longer FC element.
+			// Right multiplication by a descent decreases length.
 			if !g.positive[Image(fc[i].W, s)] {
 				continue
 			}
@@ -687,7 +686,7 @@ var ChainNames = []string{"e7", "d7", "a7", "alt"}
 
 // AdditionChain returns the order in which generators are added to build W
 // by recursive pruning along the named chain of standard parabolic
-// subgroups. "e7" is the default chain of the paper (valid for E6, E7 and
+// subgroups. "e7" is the default chain (valid for E6, E7 and
 // E8): node n-1, then 2, 3, 1, 0, 4, 5, ..., n-2, so the last parabolic
 // subgroup before W is of type E7 for E8. The other chains are for E8 only:
 // "d7" adds 6,5,4,3,2,1,7 (the parabolic subgroups

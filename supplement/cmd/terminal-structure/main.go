@@ -282,7 +282,7 @@ func partStructure() obj {
 		for _, layer := range layers {
 			full = append(full, layer...)
 		}
-		expect(equalMat(rs.wordMatrix(full), W), name+": layered word gives the table element")
+		expect(equalMat(rs.wordMatrix(full), W), name+": layered-word matrix equals the table-element matrix")
 		expect(len(full) == rs.length(W) && rs.length(W) == len(wstr), name+": layered word is reduced")
 		pal := true
 		for i := range layers {

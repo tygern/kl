@@ -1,8 +1,8 @@
 // Package affine is the shared affine-E8 arithmetic used by cmd/affine-proof
 // and cmd/affine-fc-covers.
 //
-// Its row integer matrices, 240 finite E8 roots and inversion formulas port
-// the library part of research/en_affine_referee/verify_families.py. The family
+// The package ports row-matrix arithmetic, the 240 finite E8 roots and inversion
+// formulas from research/en_affine_referee/verify_families.py. The family
 // audit certifies reduced translation prefixes and explicit descent braids
 // without an FC catalogue. cmd/affine-fc-covers separately uses the catalogue
 // for the supplementary closure and complete base-cover checks.
@@ -27,7 +27,7 @@ const N = 9
 type Vec [N]int64
 type Mat [N][N]int64
 
-// limit guards against silent int64 overflow; real entries stay far smaller.
+// limit bounds entries before arithmetic to prevent int64 overflow.
 const limit = int64(1) << 28
 
 // AssertionError is the panic value used for every failed assertion.
@@ -351,7 +351,7 @@ type InversionClass struct {
 	Count int64 `json:"count"`
 }
 
-// LengthFormula proves ell(a+k delta*d)=intercept+slope*k for all k>=0.
+// LengthFormula records ell(a+k delta*d)=intercept+slope*k for all k>=0.
 type LengthFormula struct {
 	Intercept            int64            `json:"intercept"`
 	Slope                int64            `json:"slope"`
@@ -623,12 +623,12 @@ func AuditFamily(baseWord []int, d Vec, expected [2]int64, I []int, witnesses []
 	Assert(int64(len(rword)) == expected[1] && WordMatrix(rword, true) == R, "right translation word")
 	rformula := ComputeLengthFormula(E, d)
 	Assert(rformula.Intercept == 0 && rformula.Slope == expected[1], "right translation length formula")
-	// d.delta=0, already checked by ComputeTerminalCertificate, gives
-	// (R-1)^2=0 and R^k=1+k*delta*d on the whole affine root space.
+	// With d.delta=0 (checked by ComputeTerminalCertificate), (R-1)^2=0
+	// and R^k=1+k*delta*d on the whole affine root space.
 	Assert(MM(R, R) == Shifted(E, d, 2), "right translation square")
 	Assert(expected[1] > 0, "family is not pairwise distinct")
-	// Since a.delta=delta, aR^k=a+k*delta*d. The length formulas above
-	// give ell(aR^k)=ell(a)+ell(R^k). For s in the constant descent set,
+	// Since a.delta=delta, aR^k=a+k*delta*d. By the length formulas above,
+	// ell(aR^k)=ell(a)+ell(R^k). For s in the constant descent set,
 	// ell(saR^k)=ell(sa)+ell(R^k), so the checked braid in sa persists.
 	VerifyDescentBraids(a, len(baseWord), I, witnesses)
 	maximum := MaximumIndependentSize()
@@ -642,9 +642,9 @@ func AuditFamily(baseWord []int, d Vec, expected [2]int64, I []int, witnesses []
 	}
 	Assert(expected[0]%2 == int64(len(I)%2) && expected[1]%2 == 0, "maximum-descent parity")
 	Assert(expected[0]-1 > int64(len(I)), "commuting product could be a base cover")
-	// The maximum-descent lemma excludes an FC cover retaining every
-	// left/right descent. The lifting property makes any other cover saR^k
-	// or its inverse, both excluded by the persistent braid witnesses.
+	// By the maximum-descent lemma, no FC cover retains every left/right
+	// descent. By lifting, every remaining candidate FC cover is saR^k or
+	// its inverse; both have a reduced word containing a braid.
 	return Family{Name: name, BaseWord: baseWord, BaseRowMatrix: a, ColumnSlopes: d,
 		LengthFormula: formula, RightTranslationReducedWord: rword, RightTranslationLength: len(rword),
 		RightTranslationLengthFormula: rformula, RightTranslationPowersForAllK: true,

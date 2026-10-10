@@ -190,7 +190,7 @@ func (r *runner) execute(name string, command []string, output string, dir strin
 	cmd := exec.Command(command[0], command[1:]...)
 	cmd.Dir = dir
 	if command[0] == r.goTool {
-		// The build steps must not see an enclosing Go workspace or the
+		// Build commands ignore the enclosing Go workspace and the
 		// caller's GOFLAGS: a go.work file in a directory above the extracted
 		// archive would otherwise exclude this module from every go build.
 		cmd.Env = append(os.Environ(), "GOWORK=off", "GOFLAGS=")
@@ -429,10 +429,10 @@ func (r *runner) verify(manuscriptSHA256AtBuild string) {
 		r.execute(fmt.Sprintf("E%d-recursive", n), []string{recursive, "-rank", fmt.Sprint(n)}, fmt.Sprintf("research/en_e8/e%d-recursive.json", n), "")
 	}
 	r.execute("E8-D7", []string{d7}, "research/en_independent/e8-d7-terminals.json", "")
-	// The E8 classification is repeated along four parabolic chains (the
-	// paper's chain through E7, and chains through D7, A7 and a second E7
-	// ordering); the program asserts that all four give the same 64 terminal
-	// elements and records the per-chain coset and terminal counts.
+	// Repeat the E8 classification along four parabolic chains (through E7,
+	// D7, A7 and a second E7 ordering). The program asserts that all four
+	// terminal sets contain the same 64 elements and records the per-chain
+	// coset and terminal counts.
 	r.execute("E8-recursive-chains", []string{recursive, "-rank", "8", "-chains-certificate", "research/en_e8/e8-recursive-chains.json"}, "", "")
 	r.compareSnapshot("research/en_e8/e8-recursive-chains.json", nil)
 	if r.full {
@@ -528,7 +528,7 @@ func (r *runner) verify(manuscriptSHA256AtBuild string) {
 			}
 		}
 		if !ok {
-			panic(failure{"Full uniform-family run disagrees with the shipped certificate."})
+			panic(failure{"Rows from the full uniform-family run differ from the shipped certificate."})
 		}
 		r.snapshots = append(r.snapshots, "results/uniform-family-certificate.json (shipped rows)")
 	} else {

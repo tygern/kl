@@ -21,14 +21,14 @@
 // The chains differ in the order in which generators are added (node
 // numbering: path 0-1-...-(n-2), node n-1 attached to node 2):
 //
-//	e7   (default, the paper's chain)  7,2,3,1,0,4,5,6   last step E7 < E8
+//	e7   (default)  7,2,3,1,0,4,5,6   last step E7 < E8
 //	d7   6,5,4,3,2,1,7,0                                  last step D7 < E8
 //	a7   0,1,2,3,4,5,6,7                                  last step A7 < E8
 //	alt  0,1,7,2,3,4,5,6                                  last step E7 < E8
 //
 // With -chain the recursive certificate of that chain is written to stdout.
-// The default chain e7 gives byte for byte the default output; the other
-// chains add a "chain" key. With -chains-certificate all four chains are run
+// The chains other than the default e7 add a "chain" key.
+// With -chains-certificate all four chains are run
 // and, per chain, the coset counts, right-terminal counts, candidate counts
 // and the sorted canonical words of the two-sided terminal elements are
 // written to the named file; the program asserts that the right-terminal
@@ -340,8 +340,7 @@ func runAllChains(g *parabolic.Group, path string) {
 			rec.RightTerminalCounts = append(rec.RightTerminalCounts, st.RightCnt)
 			rec.Candidates = append(rec.Candidates, st.Cands)
 		}
-		// The values proved in the paper for E8 (Table 1 and the proposition
-		// on the computational classification).
+		// E8 counts in Table 1 and the computational classification proposition.
 		parabolic.Assert(rec.RightTerminalCount == 2160 && rec.TerminalCount == 64 &&
 			rec.CommutingTerminals == 58 && rec.NoncommutingCount == 6,
 			"chain %s: counts %d/%d/%d/%d, expected 2160/64/58/6", name,
@@ -364,7 +363,7 @@ func runAllChains(g *parabolic.Group, path string) {
 func main() {
 	defer parabolic.ExitOnFailure()
 	rank := flag.Int("rank", 8, "rank n of E_n (6, 7 or 8)")
-	chain := flag.String("chain", "e7", "parabolic chain: e7 (default, the paper's), d7, a7 or alt (the last three for rank 8)")
+	chain := flag.String("chain", "e7", "parabolic chain: e7 (default), d7, a7 or alt (the last three require rank 8)")
 	chainsPath := flag.String("chains-certificate", "", "run all four chains (rank 8) and write the multi-chain certificate to this file")
 	flag.Parse()
 	parabolic.Assert(flag.NArg() == 0, "unexpected positional arguments")

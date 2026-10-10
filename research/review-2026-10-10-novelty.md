@@ -2,7 +2,7 @@
 
 Manuscript: `results/exceptional-leading.tex`, read 10 October 2026. Reviewed source SHA-256: `3a39fef2c91b510f9f0ab745206efdd3afa3e2a9836a22bde28315599d8b8937`. This report concerns novelty, attribution, scope, and significance. It is not an independent verification of the enumeration programs. Primary mathematical texts were inspected; the existing citation audit supplied leads, not authority. Web searches were conducted afresh, including recent work. No manuscript edits were made during the review.
 
-**Subsequent revision, v0.6.0.** The manuscript now explicitly cites Laird's finite-E open-problem statement in §5.3, p. 63, and acknowledges the 2025 affine-B/D fully commutative irreducibility paper of Biagioli–Costantini–Sasso. These implement the optional literature improvements recorded below. The original novelty assessment, scope qualifications, and historical account of the reviewed proof are retained.
+**Subsequent revision, v0.6.0.** The release contains references to Laird's finite-E open-problem statement in §5.3, p. 63, and to the 2025 affine-B/D fully commutative irreducibility paper of Biagioli–Costantini–Sasso. These were the optional literature improvements recorded below. The original novelty assessment, scope qualifications, and historical account of the reviewed proof are retained.
 
 ## Assessment
 

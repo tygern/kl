@@ -2,7 +2,7 @@
 
 Review date: 2026-10-10. Source SHA-256: `3a39fef2c91b510f9f0ab745206efdd3afa3e2a9836a22bde28315599d8b8937`. Scope: `results/exceptional-leading.tex`, especially lines 592–948, the maximum-descent prerequisites at 265–368, and Appendix A at 1073–1078, 1126–1199. No manuscript edits were made during the review. I did not read previous AI review notes. I independently derived the main formulas, inspected the relevant supplement implementations, consulted the primary papers below, and wrote a separate arbitrary-precision scratch checker using no repository libraries.
 
-**Subsequent revision, v0.6.0.** The manuscript now explicitly assumes a fully commutative cover in the relevant proof step and uses the five braid witnesses with length-additive translation propagation in the affine cover argument. These implement the wording repair and optional simplification recorded below. The original conclusions and line references are retained as a historical review. The independent checker was ported to standard-library Go, with `math/big` for large root samples, and checked against its original output; the preserved command is linked below.
+**Subsequent revision, v0.6.0.** In the revised cover proof, the cover is explicitly assumed to be fully commutative. The affine cover proof uses five braid witnesses and a length-additive translation argument. These were the wording repair and optional simplification recorded below. The original conclusions and line references are retained as a historical review. The independent checker was ported to standard-library Go, with `math/big` for large root samples, and checked against its original output; the preserved command is linked below.
 
 ## Verdict
 

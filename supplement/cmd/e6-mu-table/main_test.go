@@ -18,9 +18,9 @@ func TestMain(m *testing.M) {
 	os.Exit(m.Run())
 }
 
-// TestA4 runs the full pipeline on A4 (|W| = 120): all assertions inside the
-// command (left/right recursion agreement, nonnegativity, degree bound) must
-// pass, and the certificate must carry the known group data.
+// TestA4 runs the full computation on A4 (|W| = 120): all assertions inside
+// the command (matching left/right recursions, nonnegativity, degree bound)
+// must pass, and the certificate must contain the known group data.
 func TestA4(t *testing.T) {
 	out := filepath.Join(t.TempDir(), "a4.json")
 	exe, err := os.Executable()

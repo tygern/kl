@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-// A minimal ordered JSON writer reproducing Python's json.dumps byte for byte:
+// An ordered JSON writer reproducing Python's json.dumps byte for byte:
 // indent=2 (every array element on its own line) or compact separators.
 
 type kv struct {

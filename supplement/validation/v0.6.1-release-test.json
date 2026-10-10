@@ -1,0 +1,126 @@
+{
+  "version": "v0.6.1",
+  "date": "2026-10-10",
+  "archive": {
+    "bytes": 1056134,
+    "sha256": "90eb590631552baf5baff5f645363f9fcd9e15e3e0572d7fd74e36a5af2bfaf8",
+    "files": 107
+  },
+  "manuscript_sha256": "c64c34690ea458bfba2efde40c3d8f2d263a7456e30fca01edaa987834de5370",
+  "pdf": {
+    "bytes": 636910,
+    "sha256": "16208bd177177b4e95bee54129cbd5f29c79a456ba58b0eb25cf436fa0df98fb",
+    "pages": 16
+  },
+  "extraction": "Each mode ran from a separate fresh extraction of the exact release ZIP into an isolated scratch directory.",
+  "finite": {
+    "run": "finite-914658216",
+    "status": {
+      "status": "passed",
+      "mode": "finite",
+      "seconds": 4.928,
+      "go_version": "go1.27.2",
+      "steps": 26,
+      "work": "runs/finite-914658216/work",
+      "expected_outputs_match": true,
+      "printed_table_matches_generated_terminals": true,
+      "manuscript_sha256_matches_build_record": true,
+      "snapshots_compared": [
+        "research/en_e8/e8-recursive-chains.json",
+        "research/ai-review-notes/finite-descents.json",
+        "research/exceptional_referee/checks.json",
+        "results/d6-ambient-certificate.json"
+      ]
+    },
+    "summary_matches_expected_scope": true
+  },
+  "default": {
+    "run": "default-3424955415",
+    "status": {
+      "status": "passed",
+      "mode": "default",
+      "seconds": 29.418,
+      "go_version": "go1.27.2",
+      "steps": 61,
+      "work": "runs/default-3424955415/work",
+      "expected_outputs_match": true,
+      "printed_table_matches_generated_terminals": true,
+      "manuscript_sha256_matches_build_record": true,
+      "snapshots_compared": [
+        "research/en_e8/e8-recursive-chains.json",
+        "research/ai-review-notes/finite-descents.json",
+        "research/exceptional_referee/checks.json",
+        "results/d6-ambient-certificate.json",
+        "research/en_uniform/construction.json",
+        "research/en_affine_referee/proved-affine-certificate.json",
+        "research/en_families/affine_reflection_family.json",
+        "research/en_families/cartan_E10_m2_max1.json",
+        "results/e6-mu-table.json",
+        "results/e9-odd-gap-certificate.json",
+        "results/d8-gern-certificate.json",
+        "results/fc-maxima-certificate.json",
+        "results/terminal-structure-certificate.json",
+        "results/uniform-family-certificate.json",
+        "results/affine-d4-independent.json"
+      ]
+    },
+    "summary_matches_expected_scope": true
+  },
+  "full": {
+    "run": "full-28538264",
+    "status": {
+      "status": "passed",
+      "mode": "full",
+      "seconds": 89.829,
+      "go_version": "go1.27.2",
+      "steps": 67,
+      "work": "runs/full-28538264/work",
+      "expected_outputs_match": true,
+      "printed_table_matches_generated_terminals": true,
+      "manuscript_sha256_matches_build_record": true,
+      "snapshots_compared": [
+        "research/en_e8/e8-recursive-chains.json",
+        "research/broad_exceptional/e6_bad.json",
+        "research/broad_exceptional/e7_bad.json",
+        "results/e6-independent-certificate.json",
+        "results/e7-independent-certificate.json",
+        "research/ai-review-notes/finite-descents.json",
+        "research/exceptional_referee/checks.json",
+        "results/d6-ambient-certificate.json",
+        "research/en_uniform/construction.json",
+        "research/en_affine_referee/proved-affine-certificate.json",
+        "research/en_families/affine_reflection_family.json",
+        "research/en_families/cartan_E10_m2_max1.json",
+        "results/e6-mu-table.json",
+        "results/e9-odd-gap-certificate.json",
+        "results/d8-gern-certificate.json",
+        "results/fc-maxima-certificate.json",
+        "results/terminal-structure-certificate.json",
+        "results/uniform-family-certificate.json (shipped rows)",
+        "results/affine-d4-independent.json"
+      ]
+    },
+    "summary_matches_expected_scope": true
+  },
+  "historical_comparison": "All expected mathematical summary values equal v0.6.0. Regeneration changed only the E6 matrix certificate code_sha256 field and the uniform certificate audited_source_sha256 field.",
+  "research_checks": "All 9 regenerated outputs equal the saved results.",
+  "independent_review_commands": {
+    "review-finite": "passed",
+    "review-infinite": "passed"
+  },
+  "static_and_unit_checks": "go vet ./... and go test ./... passed in both modules; gofmt and git diff --check passed.",
+  "citation_keys": {
+    "bibliography_entries": 23,
+    "missing": [],
+    "duplicate": [],
+    "unused": []
+  },
+  "pdf_checks": {
+    "native_editor_compilation": "passed",
+    "export_compilation": "passed; epstopdf reports disabled shell escape, which is intentional; no unresolved references or overfull/underfull boxes",
+    "all_pages_have_text": true,
+    "within_page_margins": true,
+    "visual_inspection": "All page contact sheets and full-size diagram pages inspected; final release-reference paragraph inspected after rebuild."
+  },
+  "style_audit_snapshot": "results/style-audit-2026-10-10.json describes the checkout at the end of the prose audit, before release metadata, PDF and source-hash regeneration."
+}
